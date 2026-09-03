@@ -20,8 +20,10 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import time
           import urllib.parse
           import urllib.request
+          import urllib.error
           from datetime import datetime, timezone
 
           topics = {
@@ -34,10 +36,32 @@ jobs:
               "AI": '"artificial intelligence" OR "generative AI" OR "machine learning"'
           }
 
-          results = {}
+          output_file = "data/gdelt.json"
 
-          for topic, query in topics.items():
-              print(f"Fetching {topic}...")
+          # 读取上一次的数据。
+          # 即使本次某个主题失败，也保留之前成功的数据。
+          try:
+              with open(output_file, "r", encoding="utf-8") as f:
+                  previous = json.load(f)
+          except Exception:
+              previous = {
+                  "updated_at": None,
+                  "source": "GDELT DOC 2.0",
+                  "timespan": "7d",
+                  "topics": {}
+              }
+
+          if "topics" not in previous:
+              previous["topics"] = {}
+
+          results = previous["topics"].copy()
+
+          def fetch_topic(topic, query):
+
+              print("")
+              print("=" * 60)
+              print(f"Fetching: {topic}")
+              print("=" * 60)
 
               params = urllib.parse.urlencode({
                   "query": query,
@@ -51,69 +75,202 @@ jobs:
                   + params
               )
 
-              try:
-                  request = urllib.request.Request(
-                      url,
-                      headers={
-                          "User-Agent": "Psychohistory/0.2"
-                      }
-                  )
+              max_attempts = 4
 
-                  with urllib.request.urlopen(
-                      request,
-                      timeout=60
-                  ) as response:
-                      raw = response.read()
-
-                  data = json.loads(raw)
-
-                  points = []
-
-                  if (
-                      isinstance(data, dict)
-                      and isinstance(data.get("timeline"), list)
-                      and len(data["timeline"]) > 0
-                  ):
-                      series = data["timeline"][0]
-
-                      if isinstance(series, dict):
-                          series_data = series.get("data", [])
-
-                          if isinstance(series_data, list):
-                              points = series_data
-
-                  results[topic] = {
-                      "success": True,
-                      "points": points
-                  }
+              for attempt in range(1, max_attempts + 1):
 
                   print(
-                      f"{topic}: {len(points)} data points"
+                      f"Attempt {attempt}/{max_attempts}"
                   )
 
-              except Exception as e:
-                  print(f"{topic}: ERROR: {e}")
+                  try:
 
-                  results[topic] = {
-                      "success": False,
-                      "error": str(e),
-                      "points": []
-                  }
+                      request = urllib.request.Request(
+                          url,
+                          headers={
+                              "User-Agent":
+                                  "Mozilla/5.0 Psychohistory/0.2"
+                          }
+                      )
+
+                      with urllib.request.urlopen(
+                          request,
+                          timeout=45
+                      ) as response:
+
+                          raw = response.read()
+
+                      # 先确认返回内容不是明显的 HTML。
+                      text = raw.decode(
+                          "utf-8",
+                          errors="replace"
+                      ).strip()
+
+                      if not text.startswith("{"):
+                          raise ValueError(
+                              "GDELT returned non-JSON response"
+                          )
+
+                      data = json.loads(text)
+
+                      points = []
+
+                      timeline = data.get("timeline")
+
+                      if (
+                          isinstance(timeline, list)
+                          and len(timeline) > 0
+                      ):
+
+                          series = timeline[0]
+
+                          if isinstance(series, dict):
+
+                              series_data = series.get(
+                                  "data",
+                                  []
+                              )
+
+                              if isinstance(
+                                  series_data,
+                                  list
+                              ):
+                                  points = series_data
+
+                      if len(points) == 0:
+                          raise ValueError(
+                              "No timeline data returned"
+                          )
+
+                      print(
+                          f"SUCCESS: {len(points)} points"
+                      )
+
+                      return {
+                          "success": True,
+                          "points": points,
+                          "updated_at": datetime.now(
+                              timezone.utc
+                          ).isoformat()
+                      }
+
+                  except urllib.error.HTTPError as e:
+
+                      print(
+                          f"HTTP ERROR {e.code}: {e.reason}"
+                      )
+
+                      if e.code == 429:
+
+                          wait_time = 60 * attempt
+
+                          print(
+                              f"Rate limited. "
+                              f"Waiting {wait_time} seconds..."
+                          )
+
+                          time.sleep(wait_time)
+                          continue
+
+                      if e.code >= 500:
+
+                          wait_time = 30 * attempt
+
+                          print(
+                              f"Server error. "
+                              f"Waiting {wait_time} seconds..."
+                          )
+
+                          time.sleep(wait_time)
+                          continue
+
+                      break
+
+                  except Exception as e:
+
+                      print(
+                          f"ERROR: {type(e).__name__}: {e}"
+                      )
+
+                      if attempt < max_attempts:
+
+                          wait_time = 30 * attempt
+
+                          print(
+                              f"Retrying in "
+                              f"{wait_time} seconds..."
+                          )
+
+                          time.sleep(wait_time)
+
+                      else:
+                          print(
+                              "All attempts failed."
+                          )
+
+              return None
+
+          success_count = 0
+
+          for index, (topic, query) in enumerate(
+              topics.items()
+          ):
+
+              result = fetch_topic(topic, query)
+
+              if result is not None:
+
+                  results[topic] = result
+                  success_count += 1
+
+              else:
+
+                  # 保留旧数据。
+                  if topic in results:
+
+                      print(
+                          f"{topic}: keeping previous data"
+                      )
+
+                  else:
+
+                      results[topic] = {
+                          "success": False,
+                          "points": []
+                      }
+
+              # 非常重要：
+              # 每个主题之间主动等待，降低 API 限流概率。
+              if index < len(topics) - 1:
+
+                  print(
+                      "Waiting 15 seconds before next topic..."
+                  )
+
+                  time.sleep(15)
 
           output = {
               "updated_at": datetime.now(
                   timezone.utc
               ).isoformat(),
+
               "source": "GDELT DOC 2.0",
+
               "timespan": "7d",
-              "topics": results
+
+              "topics": results,
+
+              "success_count": success_count,
+
+              "total_topics": len(topics)
           }
 
           with open(
-              "data/gdelt.json",
+              output_file,
               "w",
               encoding="utf-8"
           ) as f:
+
               json.dump(
                   output,
                   f,
@@ -121,7 +278,14 @@ jobs:
                   indent=2
               )
 
-          print("GDELT data saved.")
+          print("")
+          print("=" * 60)
+          print(
+              f"Completed: "
+              f"{success_count}/{len(topics)} topics"
+          )
+          print("=" * 60)
+
           PY
 
       - name: Commit updated data
@@ -131,7 +295,9 @@ jobs:
 
           git add data/gdelt.json
 
-          git diff --cached --quiet || \
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
             git commit -m "Update GDELT data"
-
-          git push
+            git push
+          fi
