@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T07:09:50.143872+00:00",
+  "updated_at": "2026-09-03T08:06:47.130614+00:00",
   "source": "GDELT DOC 2.0",
   "timespan": "7d",
   "topics": {
@@ -38,5 +38,7 @@
       "error": "<urlopen error timed out>",
       "points": []
     }
-  }
+  },
+  "success_count": 0,
+  "total_topics": 7
 }
