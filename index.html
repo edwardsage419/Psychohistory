@@ -1,975 +1,1497 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Psychohistory</title>
 
 <style>
+
+/* ==============================
+   基础
+   ============================== */
+
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
+
     background: #0b0e13;
+
     color: #e8e9ed;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 }
 
 .container {
+
     max-width: 1100px;
+
     margin: 0 auto;
-    padding: 0 30px 60px;
+
+    padding:
+        0 30px 60px;
 }
 
-/* 顶部状态栏 */
+
+/* ==============================
+   状态栏
+   ============================== */
 
 .status-bar {
+
     width: 100%;
+
     padding: 17px 20px;
+
     text-align: center;
+
     background: #d8ad5d;
+
     color: #101218;
+
     font-size: 18px;
+
     font-weight: 600;
+
     letter-spacing: 1.5px;
 }
 
-.status-bar.loading {
-    background: #d8ad5d;
-}
-
 .status-bar.success {
+
     background: #718f69;
-    color: #ffffff;
+
+    color: white;
 }
 
 .status-bar.partial {
+
     background: #9b7b43;
-    color: #ffffff;
+
+    color: white;
 }
 
 .status-bar.error {
+
     background: #7e4d4d;
-    color: #ffffff;
+
+    color: white;
 }
 
-/* Header */
+
+/* ==============================
+   Header
+   ============================== */
 
 .header {
+
     display: flex;
+
     align-items: center;
+
     gap: 28px;
-    padding: 75px 0 60px;
+
+    padding:
+        75px 0 60px;
 }
 
 .symbol {
+
     font-family: Georgia, serif;
+
     font-size: 76px;
+
     color: #d8ad5d;
+
     line-height: 1;
 }
 
 .title-area h1 {
+
     margin: 0;
+
     font-family: Georgia, serif;
+
     font-size: 54px;
+
     font-weight: 400;
-    letter-spacing: -1px;
 }
 
 .subtitle {
+
     margin-top: 12px;
+
     color: #9199aa;
+
     font-size: 27px;
 }
 
-/* Metadata */
+
+/* ==============================
+   Metadata
+   ============================== */
 
 .metadata {
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap: 0 42px;
+
     margin-bottom: 70px;
 }
 
 .meta-item {
-    border-top: 2px solid #293140;
-    padding: 27px 0 43px;
+
+    border-top:
+        2px solid #293140;
+
+    padding:
+        27px 0 43px;
 }
 
 .meta-label {
+
     color: #818a9c;
+
     font-size: 21px;
+
     margin-bottom: 20px;
 }
 
 .meta-value {
+
     font-size: 32px;
+
     color: #e5e7eb;
 }
 
-/* Section */
+
+/* ==============================
+   Section
+   ============================== */
 
 .section {
+
     margin-top: 45px;
 }
 
 .section-header {
+
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 2px solid #293140;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        baseline;
+
+    border-bottom:
+        2px solid #293140;
+
     padding-bottom: 25px;
+
     margin-bottom: 30px;
 }
 
 .section-title {
+
     font-family: Georgia, serif;
+
     font-size: 47px;
+
     font-weight: 400;
 }
 
 .section-description {
+
     color: #7f899b;
+
     font-size: 19px;
 }
 
-/* Cards */
+
+/* ==============================
+   Cards
+   ============================== */
 
 .cards {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 18px;
 }
 
 .card {
+
     background: #141923;
-    border: 1px solid #293140;
+
+    border:
+        1px solid #293140;
+
     border-radius: 15px;
+
     padding: 24px;
 }
 
 .card-name {
+
     color: #d8ad5d;
+
     font-size: 22px;
+
     font-weight: 600;
+
     margin-bottom: 15px;
 }
 
 .card-value {
+
     font-size: 36px;
+
     font-weight: 500;
 }
 
 .card-unit {
+
     color: #7e8798;
+
     font-size: 15px;
+
     margin-left: 5px;
 }
 
 .card-row {
+
     display: flex;
-    justify-content: space-between;
+
+    justify-content:
+        space-between;
+
     margin-top: 20px;
+
     padding-top: 15px;
-    border-top: 1px solid #293140;
+
+    border-top:
+        1px solid #293140;
 }
 
 .card-stat {
+
     color: #8992a3;
+
     font-size: 14px;
 }
 
 .card-stat strong {
+
     display: block;
+
     color: #d9dce2;
+
     font-size: 17px;
+
     margin-top: 5px;
 }
 
 .up {
+
     color: #91b875 !important;
 }
 
 .down {
+
     color: #bd7777 !important;
 }
 
 .stable {
+
     color: #aaaeb7 !important;
 }
 
-/* Trend */
+
+/* ==============================
+   Trend
+   ============================== */
 
 .trend-list {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
 }
 
 .trend {
+
     background: #141923;
-    border: 1px solid #293140;
+
+    border:
+        1px solid #293140;
+
     border-radius: 15px;
-    padding: 21px 24px;
+
+    padding:
+        21px 24px;
 }
 
 .trend-main {
+
     display: flex;
-    justify-content: space-between;
+
+    justify-content:
+        space-between;
+
     align-items: center;
 }
 
 .trend-name {
+
     font-size: 20px;
 }
 
 .trend-change {
+
     font-size: 20px;
+
     font-weight: 600;
 }
 
 .trend-detail {
+
     margin-top: 9px;
+
     color: #7f899b;
+
     font-size: 14px;
 }
 
-/* Empty / Error */
+
+/* ==============================
+   Message
+   ============================== */
 
 .message {
+
     background: #141923;
-    border: 1px solid #293140;
+
+    border:
+        1px solid #293140;
+
     border-radius: 15px;
+
     padding: 25px;
+
     color: #8c95a6;
+
     line-height: 1.7;
 }
 
 .error-message {
+
     color: #d08b8b;
 }
 
-/* Predictions */
+
+/* ==============================
+   Predictions
+   ============================== */
 
 .prediction-box {
+
     background: #10141c;
-    border: 1px solid #293140;
+
+    border:
+        1px solid #293140;
+
     border-radius: 15px;
+
     padding: 27px;
+
     color: #7f899b;
+
     line-height: 1.8;
 }
 
 .prediction-label {
+
     color: #d8ad5d;
+
     font-weight: 600;
 }
 
-/* Footer */
+
+/* ==============================
+   Footer
+   ============================== */
 
 .footer {
+
     margin-top: 65px;
+
     padding-top: 25px;
-    border-top: 1px solid #293140;
+
+    border-top:
+        1px solid #293140;
+
     color: #626b7b;
+
     font-size: 13px;
+
     line-height: 1.7;
 }
 
-/* Mobile */
+
+/* ==============================
+   Mobile
+   ============================== */
 
 @media (max-width: 700px) {
 
     .container {
-        padding: 0 30px 45px;
+
+        padding:
+            0 30px 45px;
     }
 
     .status-bar {
+
         font-size: 16px;
-        padding: 16px 12px;
+
+        padding:
+            16px 12px;
     }
 
     .header {
+
         gap: 18px;
-        padding: 62px 0 48px;
+
+        padding:
+            62px 0 48px;
     }
 
     .symbol {
+
         font-size: 58px;
     }
 
     .title-area h1 {
+
         font-size: 43px;
     }
 
     .subtitle {
+
         font-size: 21px;
+
         line-height: 1.3;
     }
 
     .metadata {
+
         gap: 0 25px;
+
         margin-bottom: 45px;
     }
 
     .meta-item {
-        padding: 23px 0 30px;
+
+        padding:
+            23px 0 30px;
     }
 
     .meta-label {
+
         font-size: 18px;
     }
 
     .meta-value {
+
         font-size: 27px;
     }
 
     .section {
+
         margin-top: 38px;
     }
 
     .section-header {
+
         display: block;
+
         padding-bottom: 20px;
     }
 
     .section-title {
+
         font-size: 38px;
     }
 
     .section-description {
+
         display: block;
+
         margin-top: 8px;
+
         font-size: 16px;
     }
 
     .cards {
+
         grid-template-columns: 1fr;
     }
 
     .card {
+
         padding: 21px;
     }
 
     .card-value {
+
         font-size: 32px;
     }
 
     .trend {
+
         padding: 19px;
     }
 
-    .trend-main {
+}
+
+
+/* 防止手机上标题溢出 */
+
+@media (max-width: 420px) {
+
+    .header {
+
         align-items: flex-start;
     }
+
+    .symbol {
+
+        font-size: 50px;
+    }
+
+    .title-area h1 {
+
+        font-size: 36px;
+    }
+
+    .subtitle {
+
+        font-size: 18px;
+    }
+
+    .section-title {
+
+        font-size: 34px;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<div id="statusBar" class="status-bar loading">
+
+<div
+    id="statusBar"
+    class="status-bar"
+>
     正在连接 GDELT 全球新闻数据库…
 </div>
 
+
 <div class="container">
 
-    <!-- Header -->
 
-    <div class="header">
+<!-- ==========================
+     Header
+     ========================== -->
 
-        <div class="symbol">Ψ</div>
+<div class="header">
 
-        <div class="title-area">
-            <h1>Psychohistory</h1>
-            <div class="subtitle">
-                Global Social Trend &amp; Prediction System
-            </div>
+    <div class="symbol">
+        Ψ
+    </div>
+
+    <div class="title-area">
+
+        <h1>
+            Psychohistory
+        </h1>
+
+        <div class="subtitle">
+            Global Social Trend &amp;
+            Prediction System
         </div>
 
     </div>
 
+</div>
 
-    <!-- Metadata -->
 
-    <div class="metadata">
+<!-- ==========================
+     Metadata
+     ========================== -->
 
-        <div class="meta-item">
-            <div class="meta-label">数据更新时间</div>
-            <div id="updateTime" class="meta-value">
-                Loading…
-            </div>
-        </div>
+<div class="metadata">
 
-        <div class="meta-item">
-            <div class="meta-label">数据源</div>
-            <div class="meta-value">
-                GDELT
-            </div>
-        </div>
 
-        <div class="meta-item">
-            <div class="meta-label">监测主题</div>
-            <div class="meta-value">
-                7 个
-            </div>
-        </div>
+<div class="meta-item">
 
-        <div class="meta-item">
-            <div class="meta-label">系统版本</div>
-            <div class="meta-value">
-                V0.2
-            </div>
-        </div>
-
+    <div class="meta-label">
+        数据更新时间
     </div>
 
-
-    <!-- News Attention -->
-
-    <div class="section">
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Global News Attention
-            </div>
-
-            <div class="section-description">
-                全球新闻关注度
-            </div>
-
-        </div>
-
-        <div id="cards" class="cards">
-
-            <div class="message">
-                正在读取 GDELT 全球新闻数据…
-            </div>
-
-        </div>
-
+    <div
+        id="updateTime"
+        class="meta-value"
+    >
+        Loading...
     </div>
 
+</div>
 
-    <!-- Trends -->
 
-    <div class="section">
+<div class="meta-item">
 
-        <div class="section-header">
-
-            <div class="section-title">
-                Detected Trends
-            </div>
-
-            <div class="section-description">
-                自动识别的新闻趋势
-            </div>
-
-        </div>
-
-        <div id="trends" class="trend-list">
-
-            <div class="message">
-                正在分析趋势…
-            </div>
-
-        </div>
-
+    <div class="meta-label">
+        数据源
     </div>
 
-
-    <!-- Predictions -->
-
-    <div class="section">
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Predictions
-            </div>
-
-            <div class="section-description">
-                当前阶段暂不生成 AI 预测
-            </div>
-
-        </div>
-
-        <div class="prediction-box">
-
-            <span class="prediction-label">
-                CURRENT STAGE
-            </span>
-
-            <br>
-
-            系统当前处于 V0.2 数据观察阶段。
-
-            <br><br>
-
-            当前任务是建立稳定的全球新闻数据层，
-            观察不同主题的新闻关注度及其变化。
-
-            <br><br>
-
-            预测模型将在获得足够的历史数据后加入。
-            所有未来预测都将保存为不可修改的历史记录，
-            并根据真实结果进行自动验证。
-
-        </div>
-
+    <div class="meta-value">
+        GDELT
     </div>
 
+</div>
 
-    <!-- Footer -->
 
-    <div class="footer">
+<div class="meta-item">
 
-        Data source: GDELT Project<br>
-
-        Current metric: raw matched news article volume<br>
-
-        Note: 新闻数量反映媒体关注度，不等于现实世界风险本身。
-
+    <div class="meta-label">
+        监测主题
     </div>
+
+    <div class="meta-value">
+        7 个
+    </div>
+
+</div>
+
+
+<div class="meta-item">
+
+    <div class="meta-label">
+        系统版本
+    </div>
+
+    <div class="meta-value">
+        V0.2
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ==========================
+     Global News Attention
+     ========================== -->
+
+<div class="section">
+
+
+<div class="section-header">
+
+    <div class="section-title">
+        Global News Attention
+    </div>
+
+    <div class="section-description">
+        全球新闻关注度
+    </div>
+
+</div>
+
+
+<div
+    id="cards"
+    class="cards"
+>
+
+    <div class="message">
+        正在读取 GDELT 全球新闻数据…
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ==========================
+     Detected Trends
+     ========================== -->
+
+<div class="section">
+
+
+<div class="section-header">
+
+    <div class="section-title">
+        Detected Trends
+    </div>
+
+    <div class="section-description">
+        自动识别的新闻趋势
+    </div>
+
+</div>
+
+
+<div
+    id="trends"
+    class="trend-list"
+>
+
+    <div class="message">
+        正在分析趋势…
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ==========================
+     Predictions
+     ========================== -->
+
+<div class="section">
+
+
+<div class="section-header">
+
+    <div class="section-title">
+        Predictions
+    </div>
+
+    <div class="section-description">
+        当前阶段暂不生成 AI 预测
+    </div>
+
+</div>
+
+
+<div class="prediction-box">
+
+    <span class="prediction-label">
+        CURRENT STAGE
+    </span>
+
+    <br><br>
+
+    系统当前处于 V0.2 数据观察阶段。
+
+    <br><br>
+
+    当前任务是建立稳定的全球新闻数据层，
+    观察不同主题的新闻关注度及其变化。
+
+    <br><br>
+
+    预测模型将在获得足够的历史数据后加入。
+    所有未来预测都将保存为历史记录，
+    并根据真实结果进行自动验证。
+
+</div>
+
+
+</div>
+
+
+<!-- ==========================
+     Footer
+     ========================== -->
+
+<div class="footer">
+
+    Data source: GDELT Project
+
+    <br>
+
+    Current metric:
+    raw matched news article volume
+
+    <br>
+
+    Note:
+    新闻数量反映媒体关注度，
+    不等于现实世界风险本身。
+
+</div>
+
 
 </div>
 
 
 <script>
 
-/* =========================================================
-   Psychohistory V0.2
-   GDELT real-time observation layer
-   ========================================================= */
+
+/* ==========================================================
+   PSYCHOHISTORY V0.2
+   GDELT OBSERVATION LAYER
+   ========================================================== */
 
 
-/* ---------------------------------------------------------
-   1. GDELT API
-   --------------------------------------------------------- */
+/* ==========================
+   1. GDELT
+   ========================== */
 
 const GDELT_API =
     "https://api.gdeltproject.org/api/v2/doc/doc";
 
 
-/* ---------------------------------------------------------
-   2. Monitoring topics
-   --------------------------------------------------------- */
+/* ==========================
+   2. 监测主题
+   ========================== */
 
 const TOPICS = [
 
     {
         name: "Economic",
-        query: '(economy OR economic OR recession OR "economic growth")'
+
+        query:
+            '(economy OR economic OR recession OR "economic growth")'
     },
 
     {
         name: "Geopolitics",
-        query: '(geopolitics OR diplomacy OR "foreign policy")'
+
+        query:
+            '(geopolitics OR diplomacy OR "foreign policy")'
     },
 
     {
         name: "Technology",
-        query: '(technology OR semiconductor OR software OR innovation)'
+
+        query:
+            '(technology OR semiconductor OR software OR innovation)'
     },
 
     {
         name: "Energy",
-        query: '(energy OR oil OR "natural gas" OR electricity)'
+
+        query:
+            '(energy OR oil OR "natural gas" OR electricity)'
     },
 
     {
         name: "War & Conflict",
-        query: '(war OR conflict OR military OR attack)'
+
+        query:
+            '(war OR conflict OR military OR attack)'
     },
 
     {
         name: "Inflation",
-        query: '(inflation OR prices OR "cost of living")'
+
+        query:
+            '(inflation OR prices OR "cost of living")'
     },
 
     {
         name: "AI",
-        query: '("artificial intelligence" OR "machine learning" OR "generative AI")'
+
+        query:
+            '("artificial intelligence" OR "machine learning" OR "generative AI")'
     }
 
 ];
 
 
-/* ---------------------------------------------------------
-   3. Build API URL
-   --------------------------------------------------------- */
+/* ==========================
+   3. 状态
+   ========================== */
 
-function buildUrl(query) {
+function updateStatus(
+    type,
+    text
+) {
 
-    const params = new URLSearchParams({
+    const bar =
+        document.getElementById(
+            "statusBar"
+        );
 
-        query: query,
+    bar.className =
+        "status-bar " + type;
 
-        mode: "timelinevolraw",
-
-        timespan: "7d",
-
-        format: "json"
-
-    });
-
-    return GDELT_API + "?" + params.toString();
-}
-
-
-/* ---------------------------------------------------------
-   4. Fetch with timeout
-   --------------------------------------------------------- */
-
-async function fetchWithTimeout(url, timeout = 12000) {
-
-    const controller = new AbortController();
-
-    const timer = setTimeout(() => {
-
-        controller.abort();
-
-    }, timeout);
-
-
-    try {
-
-        const response = await fetch(url, {
-
-            method: "GET",
-
-            cache: "no-store",
-
-            signal: controller.signal
-
-        });
-
-        return response;
-
-    } finally {
-
-        clearTimeout(timer);
-
-    }
+    bar.textContent =
+        text;
 
 }
 
 
-/* ---------------------------------------------------------
-   5. Fetch one topic
-   --------------------------------------------------------- */
+/* ==========================
+   4. JSONP URL
+   ========================== */
 
-async function fetchTopic(topic) {
+function buildUrl(
+    query,
+    callback
+) {
 
-    const url = buildUrl(topic.query);
-
-    let lastError = null;
-
-
-    for (let attempt = 1; attempt <= 2; attempt++) {
-
-        try {
-
-            const response =
-                await fetchWithTimeout(url, 12000);
+    const params =
+        new URLSearchParams();
 
 
-            if (!response.ok) {
+    params.set(
+        "query",
+        query
+    );
 
-                throw new Error(
-                    "HTTP " + response.status
+
+    params.set(
+        "mode",
+        "timelinevolraw"
+    );
+
+
+    params.set(
+        "timespan",
+        "7d"
+    );
+
+
+    params.set(
+        "format",
+        "jsonp"
+    );
+
+
+    params.set(
+        "callback",
+        callback
+    );
+
+
+    return (
+        GDELT_API +
+        "?" +
+        params.toString()
+    );
+
+}
+
+
+/* ==========================
+   5. JSONP 请求
+   ========================== */
+
+function fetchTopic(
+    topic
+) {
+
+    return new Promise(
+        resolve => {
+
+
+            const callbackName =
+                "gdelt_" +
+                Math.random()
+                    .toString(36)
+                    .substring(2);
+
+
+            let finished =
+                false;
+
+
+            const script =
+                document.createElement(
+                    "script"
                 );
 
-            }
+
+            script.id =
+                callbackName;
 
 
-            const data = await response.json();
+            function cleanup() {
+
+                if (script) {
+
+                    script.remove();
+
+                }
 
 
-            /*
-             * GDELT TimelineVolRaw normally returns:
-             *
-             * {
-             *   timeline: [
-             *      {
-             *         series: "...",
-             *         data: [
-             *            {
-             *               date: "...",
-             *               value: 123
-             *            }
-             *         ]
-             *      }
-             *   ]
-             * }
-             *
-             * The actual data points therefore live inside
-             * timeline[0].data.
-             */
+                try {
 
-            let points = [];
+                    delete window[
+                        callbackName
+                    ];
 
+                } catch (error) {
 
-            if (
-                data &&
-                Array.isArray(data.timeline) &&
-                data.timeline.length > 0
-            ) {
-
-                const firstSeries = data.timeline[0];
-
-
-                if (
-                    firstSeries &&
-                    Array.isArray(firstSeries.data)
-                ) {
-
-                    points = firstSeries.data;
+                    window[
+                        callbackName
+                    ] = undefined;
 
                 }
 
             }
 
 
-            /*
-             * Compatibility fallback.
-             */
-
-            if (
-                points.length === 0 &&
-                Array.isArray(data.data)
+            function finish(
+                result
             ) {
 
-                points = data.data;
+                if (finished) {
 
-            }
+                    return;
+
+                }
 
 
-            if (points.length === 0) {
+                finished = true;
 
-                throw new Error(
-                    "GDELT 返回了数据，但没有找到时间序列"
+                cleanup();
+
+                resolve(
+                    result
                 );
 
             }
 
 
-            return {
+            window[
+                callbackName
+            ] = function(data) {
 
-                topic: topic.name,
+                try {
 
-                points: points,
+                    let points = [];
 
-                success: true,
 
-                error: null
+                    /*
+                     * GDELT TimelineVolRaw
+                     *
+                     * timeline[0].data
+                     */
+
+                    if (
+
+                        data &&
+
+                        Array.isArray(
+                            data.timeline
+                        ) &&
+
+                        data.timeline.length > 0
+
+                    ) {
+
+                        const series =
+                            data.timeline[0];
+
+
+                        if (
+
+                            series &&
+
+                            Array.isArray(
+                                series.data
+                            )
+
+                        ) {
+
+                            points =
+                                series.data;
+
+                        }
+
+                    }
+
+
+                    /*
+                     * 兼容另一种可能结构
+                     */
+
+                    if (
+
+                        points.length === 0 &&
+
+                        Array.isArray(
+                            data.data
+                        )
+
+                    ) {
+
+                        points =
+                            data.data;
+
+                    }
+
+
+                    if (
+                        points.length === 0
+                    ) {
+
+                        finish({
+
+                            topic:
+                                topic.name,
+
+                            points: [],
+
+                            success: false,
+
+                            error:
+                                "GDELT 返回数据为空"
+
+                        });
+
+                        return;
+
+                    }
+
+
+                    finish({
+
+                        topic:
+                            topic.name,
+
+                        points:
+                            points,
+
+                        success:
+                            true,
+
+                        error:
+                            null
+
+                    });
+
+                }
+
+                catch (error) {
+
+                    finish({
+
+                        topic:
+                            topic.name,
+
+                        points: [],
+
+                        success:
+                            false,
+
+                        error:
+                            error.message
+
+                    });
+
+                }
 
             };
 
 
-        } catch (error) {
+            script.src =
+                buildUrl(
+                    topic.query,
+                    callbackName
+                );
 
-            lastError = error;
 
-            console.error(
-                "GDELT request failed:",
-                topic.name,
-                error
+            script.async =
+                true;
+
+
+            script.onerror =
+                function() {
+
+                    finish({
+
+                        topic:
+                            topic.name,
+
+                        points: [],
+
+                        success:
+                            false,
+
+                        error:
+                            "GDELT 网络请求失败"
+
+                    });
+
+                };
+
+
+            document.body.appendChild(
+                script
             );
 
 
             /*
-             * 第一次失败后短暂等待，再重试。
+             * 10 秒超时
              */
 
-            if (attempt === 1) {
+            setTimeout(
+                function() {
 
-                await new Promise(resolve => {
+                    if (!finished) {
 
-                    setTimeout(resolve, 700);
+                        finish({
 
-                });
+                            topic:
+                                topic.name,
 
-            }
+                            points: [],
+
+                            success:
+                                false,
+
+                            error:
+                                "请求超时"
+
+                        });
+
+                    }
+
+                },
+                10000
+            );
 
         }
-
-    }
-
-
-    return {
-
-        topic: topic.name,
-
-        points: [],
-
-        success: false,
-
-        error:
-            lastError &&
-            lastError.name === "AbortError"
-
-                ? "请求超时"
-
-                : (
-                    lastError
-                        ? lastError.message
-                        : "未知错误"
-                  )
-
-    };
+    );
 
 }
 
 
-/* ---------------------------------------------------------
-   6. Convert raw GDELT points
-   --------------------------------------------------------- */
+/* ==========================
+   6. 数据标准化
+   ========================== */
 
-function normalizePoints(points) {
+function normalizePoints(
+    points
+) {
 
     return points
 
-        .map(point => {
+        .map(
+            point => ({
 
-            return {
+                date:
+                    point.date || "",
 
-                date: point.date || "",
+                value:
+                    Number(
+                        point.value
+                    ) || 0
 
-                value: Number(point.value) || 0
+            })
+        )
 
-            };
+        .filter(
+            point =>
 
-        })
+                point.date &&
 
-        .filter(point => {
+                Number.isFinite(
+                    point.value
+                )
+        )
 
-            return point.date && Number.isFinite(point.value);
+        .sort(
+            (a, b) =>
 
-        })
-
-        .sort((a, b) => {
-
-            return a.date.localeCompare(b.date);
-
-        });
+                a.date.localeCompare(
+                    b.date
+                )
+        );
 
 }
 
 
-/* ---------------------------------------------------------
-   7. Calculate statistics
-   --------------------------------------------------------- */
+/* ==========================
+   7. 统计
+   ========================== */
 
-function calculateStats(points) {
+function calculateStats(
+    points
+) {
 
-    const clean = normalizePoints(points);
+    const clean =
+        normalizePoints(
+            points
+        );
 
 
-    if (clean.length === 0) {
+    if (
+        clean.length === 0
+    ) {
 
         return null;
 
     }
 
 
-    const values = clean.map(
-        point => point.value
-    );
+    const values =
+        clean.map(
+            point =>
+                point.value
+        );
 
 
     const latest =
-        values[values.length - 1];
+        values[
+            values.length - 1
+        ];
 
 
     const average =
         values.reduce(
-            (sum, value) => sum + value,
+            (
+                sum,
+                value
+            ) =>
+                sum + value,
             0
-        ) / values.length;
+        ) /
+        values.length;
 
 
-    /*
-     * Compare the latest period with the
-     * average of the previous periods.
-     */
+    const previous =
+        values.length > 1
 
-    let baselineValues =
-        values.slice(0, -1);
+            ? values.slice(
+                0,
+                -1
+            )
 
-
-    if (baselineValues.length === 0) {
-
-        baselineValues = values;
-
-    }
+            : values;
 
 
     const baseline =
-        baselineValues.reduce(
-            (sum, value) => sum + value,
+        previous.reduce(
+            (
+                sum,
+                value
+            ) =>
+                sum + value,
             0
-        ) / baselineValues.length;
+        ) /
+        previous.length;
 
 
     let change = 0;
 
 
-    if (baseline > 0) {
+    if (
+        baseline > 0
+    ) {
 
         change =
-            ((latest - baseline) / baseline) * 100;
+            (
+                (
+                    latest -
+                    baseline
+                ) /
+                baseline
+            ) *
+            100;
 
     }
 
 
     return {
 
-        latest: latest,
+        latest:
+            latest,
 
-        average: average,
+        average:
+            average,
 
-        change: change,
+        change:
+            change,
 
-        points: clean
+        points:
+            clean
 
     };
 
 }
 
 
-/* ---------------------------------------------------------
-   8. Trend classification
-   --------------------------------------------------------- */
+/* ==========================
+   8. 趋势判断
+   ========================== */
 
-function getTrend(change) {
+function getTrend(
+    change
+) {
 
-    if (change >= 10) {
+    if (
+        change >= 10
+    ) {
 
         return {
 
-            label: "RISING",
+            label:
+                "RISING",
 
-            className: "up"
+            className:
+                "up"
 
         };
 
     }
 
 
-    if (change <= -10) {
+    if (
+        change <= -10
+    ) {
 
         return {
 
-            label: "FALLING",
+            label:
+                "FALLING",
 
-            className: "down"
+            className:
+                "down"
 
         };
 
@@ -978,41 +1500,55 @@ function getTrend(change) {
 
     return {
 
-        label: "STABLE",
+        label:
+            "STABLE",
 
-        className: "stable"
+        className:
+            "stable"
 
     };
 
 }
 
 
-/* ---------------------------------------------------------
-   9. Format number
-   --------------------------------------------------------- */
+/* ==========================
+   9. 数字格式
+   ========================== */
 
-function formatNumber(value) {
+function formatNumber(
+    value
+) {
 
-    return Math.round(value)
-        .toLocaleString("en-US");
+    return Math.round(
+        value
+    ).toLocaleString(
+        "en-US"
+    );
 
 }
 
 
-/* ---------------------------------------------------------
-   10. Create topic card
-   --------------------------------------------------------- */
+/* ==========================
+   10. 创建卡片
+   ========================== */
 
-function createCard(result) {
+function createCard(
+    result
+) {
 
     const card =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
-    card.className = "card";
+    card.className =
+        "card";
 
 
-    if (!result.success) {
+    if (
+        !result.success
+    ) {
 
         card.innerHTML = `
 
@@ -1021,9 +1557,13 @@ function createCard(result) {
             </div>
 
             <div class="message error-message">
+
                 数据获取失败
+
                 <br>
-                ${result.error || "Unknown error"}
+
+                ${result.error}
+
             </div>
 
         `;
@@ -1034,7 +1574,9 @@ function createCard(result) {
 
 
     const stats =
-        calculateStats(result.points);
+        calculateStats(
+            result.points
+        );
 
 
     if (!stats) {
@@ -1057,7 +1599,9 @@ function createCard(result) {
 
 
     const trend =
-        getTrend(stats.change);
+        getTrend(
+            stats.change
+        );
 
 
     card.innerHTML = `
@@ -1068,7 +1612,9 @@ function createCard(result) {
 
         <div class="card-value">
 
-            ${formatNumber(stats.latest)}
+            ${formatNumber(
+                stats.latest
+            )}
 
             <span class="card-unit">
                 articles
@@ -1083,28 +1629,40 @@ function createCard(result) {
                 7D Average
 
                 <strong>
-                    ${formatNumber(stats.average)}
+                    ${formatNumber(
+                        stats.average
+                    )}
                 </strong>
 
             </div>
+
 
             <div class="card-stat">
 
                 Change
 
-                <strong class="${trend.className}">
+                <strong
+                    class="${trend.className}"
+                >
 
-                    ${stats.change >= 0 ? "+" : ""}${stats.change.toFixed(1)}%
+                    ${
+                        stats.change >= 0
+                            ? "+"
+                            : ""
+                    }${stats.change.toFixed(1)}%
 
                 </strong>
 
             </div>
 
+
             <div class="card-stat">
 
                 Trend
 
-                <strong class="${trend.className}">
+                <strong
+                    class="${trend.className}"
+                >
 
                     ${trend.label}
 
@@ -1122,13 +1680,17 @@ function createCard(result) {
 }
 
 
-/* ---------------------------------------------------------
-   11. Create trend item
-   --------------------------------------------------------- */
+/* ==========================
+   11. 创建趋势
+   ========================== */
 
-function createTrend(result) {
+function createTrend(
+    result
+) {
 
-    if (!result.success) {
+    if (
+        !result.success
+    ) {
 
         return null;
 
@@ -1136,7 +1698,9 @@ function createTrend(result) {
 
 
     const stats =
-        calculateStats(result.points);
+        calculateStats(
+            result.points
+        );
 
 
     if (!stats) {
@@ -1147,14 +1711,19 @@ function createTrend(result) {
 
 
     const trend =
-        getTrend(stats.change);
+        getTrend(
+            stats.change
+        );
 
 
     const element =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
-    element.className = "trend";
+    element.className =
+        "trend";
 
 
     element.innerHTML = `
@@ -1165,21 +1734,42 @@ function createTrend(result) {
                 ${result.topic}
             </div>
 
-            <div class="trend-change ${trend.className}">
+            <div
+                class="
+                    trend-change
+                    ${trend.className}
+                "
+            >
 
-                ${stats.change >= 0 ? "+" : ""}${stats.change.toFixed(1)}%
+                ${
+                    stats.change >= 0
+                        ? "+"
+                        : ""
+                }${stats.change.toFixed(1)}%
 
             </div>
 
         </div>
 
+
         <div class="trend-detail">
 
             ${trend.label}
+
             ·
-            Latest ${formatNumber(stats.latest)} articles
+
+            Latest
+            ${formatNumber(
+                stats.latest
+            )}
+            articles
+
             ·
-            7D average ${formatNumber(stats.average)}
+
+            7D average
+            ${formatNumber(
+                stats.average
+            )}
 
         </div>
 
@@ -1191,39 +1781,28 @@ function createTrend(result) {
 }
 
 
-/* ---------------------------------------------------------
-   12. Update status
-   --------------------------------------------------------- */
-
-function updateStatus(type, text) {
-
-    const bar =
-        document.getElementById("statusBar");
-
-
-    bar.className =
-        "status-bar " + type;
-
-
-    bar.textContent = text;
-
-}
-
-
-/* ---------------------------------------------------------
-   13. Main initialization
-   --------------------------------------------------------- */
+/* ==========================
+   12. 主程序
+   ========================== */
 
 async function init() {
 
     const cards =
-        document.getElementById("cards");
+        document.getElementById(
+            "cards"
+        );
+
 
     const trends =
-        document.getElementById("trends");
+        document.getElementById(
+            "trends"
+        );
+
 
     const updateTime =
-        document.getElementById("updateTime");
+        document.getElementById(
+            "updateTime"
+        );
 
 
     cards.innerHTML = "";
@@ -1231,139 +1810,153 @@ async function init() {
     trends.innerHTML = "";
 
 
+    updateStatus(
+
+        "",
+
+        "正在连接 GDELT 全球新闻数据库…"
+
+    );
+
+
+    const results = [];
+
+
     /*
-     * All seven requests run simultaneously.
+     * 逐个请求。
+     *
+     * 这样可以清楚知道
+     * 到底是哪一个主题失败。
      */
 
-    const results =
-        await Promise.all(
+    for (
+        const topic of TOPICS
+    ) {
 
-            TOPICS.map(topic => {
 
-                return fetchTopic(topic);
+        const result =
+            await fetchTopic(
+                topic
+            );
 
-            })
 
+        results.push(
+            result
         );
 
 
-    /*
-     * Render cards.
-     */
-
-    results.forEach(result => {
+        /*
+         * 立即显示
+         */
 
         cards.appendChild(
-            createCard(result)
-        );
 
-    });
+            createCard(
+                result
+            )
 
-
-    /*
-     * Successful results only.
-     */
-
-    const successful =
-        results.filter(
-            result => result.success
         );
 
 
-    /*
-     * Sort by change.
-     */
+        /*
+         * 成功数据立即生成趋势
+         */
 
-    successful.sort((a, b) => {
+        if (
+            result.success
+        ) {
 
-        const statsA =
-            calculateStats(a.points);
-
-        const statsB =
-            calculateStats(b.points);
-
-
-        return statsB.change - statsA.change;
-
-    });
+            const trend =
+                createTrend(
+                    result
+                );
 
 
-    /*
-     * Render trends.
-     */
+            if (trend) {
 
-    successful.forEach(result => {
+                trends.appendChild(
+                    trend
+                );
 
-        const trend =
-            createTrend(result);
-
-
-        if (trend) {
-
-            trends.appendChild(trend);
+            }
 
         }
 
-    });
 
+        const successCount =
+            results.filter(
+                item =>
+                    item.success
+            ).length;
 
-    /*
-     * If nothing worked.
-     */
-
-    if (successful.length === 0) {
-
-        trends.innerHTML = `
-
-            <div class="message error-message">
-
-                GDELT 数据连接失败。
-
-                <br><br>
-
-                请稍后刷新页面。
-
-                <br><br>
-
-                如果连续多次失败，需要进一步检查
-                GDELT API 或浏览器网络环境。
-
-            </div>
-
-        `;
 
         updateStatus(
-            "error",
-            "GDELT 数据连接失败"
+
+            "",
+
+            "GDELT 已连接 · " +
+
+            successCount +
+
+            "/7 个主题已返回"
+
         );
-
-        updateTime.textContent =
-            "Connection failed";
-
-        return;
 
     }
 
 
     /*
-     * Some worked, some failed.
+     * 最终统计
      */
 
-    if (
-        successful.length < TOPICS.length
-    ) {
+    const successCount =
+        results.filter(
+            item =>
+                item.success
+        ).length;
 
-        updateStatus(
 
-            "partial",
+    /*
+     * 更新时间
+     */
 
-            "GDELT 已连接 · " +
-            successful.length +
-            "/7 个主题成功"
+    updateTime.textContent =
+        new Date().toLocaleString(
+
+            "zh-CN",
+
+            {
+
+                year:
+                    "numeric",
+
+                month:
+                    "2-digit",
+
+                day:
+                    "2-digit",
+
+                hour:
+                    "2-digit",
+
+                minute:
+                    "2-digit",
+
+                second:
+                    "2-digit"
+
+            }
 
         );
 
-    } else {
+
+    /*
+     * 全部成功
+     */
+
+    if (
+        successCount === 7
+    ) {
 
         updateStatus(
 
@@ -1373,40 +1966,80 @@ async function init() {
 
         );
 
+        return;
+
     }
 
 
     /*
-     * Current browser time.
+     * 部分成功
      */
 
-    const now =
-        new Date();
+    if (
+        successCount > 0
+    ) {
 
+        updateStatus(
 
-    updateTime.textContent =
-        now.toLocaleString(
-            "zh-CN",
-            {
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit"
-            }
+            "partial",
+
+            "GDELT 已连接 · " +
+
+            successCount +
+
+            "/7 个主题成功"
+
         );
+
+        return;
+
+    }
+
+
+    /*
+     * 全部失败
+     */
+
+    updateStatus(
+
+        "error",
+
+        "GDELT 数据连接失败"
+
+    );
+
+
+    trends.innerHTML = `
+
+        <div class="message error-message">
+
+            GDELT 无法返回数据。
+
+            <br><br>
+
+            页面已经完成数据请求测试，
+            但当前浏览器没有获得有效的 GDELT 数据。
+
+            <br><br>
+
+            下一步将根据具体错误继续处理。
+
+        </div>
+
+    `;
 
 }
 
 
-/* ---------------------------------------------------------
-   14. Start
-   --------------------------------------------------------- */
+/* ==========================
+   13. 启动
+   ========================== */
 
 init();
 
 </script>
 
+
 </body>
+
 </html>
