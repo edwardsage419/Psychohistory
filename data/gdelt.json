@@ -1,6 +1,42 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-09-03T07:09:50.143872+00:00",
   "source": "GDELT DOC 2.0",
   "timespan": "7d",
-  "topics": {}
+  "topics": {
+    "Economic": {
+      "success": false,
+      "error": "HTTP Error 429: Too Many Requests",
+      "points": []
+    },
+    "Geopolitics": {
+      "success": false,
+      "error": "<urlopen error timed out>",
+      "points": []
+    },
+    "Technology": {
+      "success": false,
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "points": []
+    },
+    "Energy": {
+      "success": false,
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>",
+      "points": []
+    },
+    "War & Conflict": {
+      "success": false,
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "points": []
+    },
+    "Inflation": {
+      "success": false,
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>",
+      "points": []
+    },
+    "AI": {
+      "success": false,
+      "error": "<urlopen error timed out>",
+      "points": []
+    }
+  }
 }
