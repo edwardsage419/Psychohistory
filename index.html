@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychohistory — 个人心理史学系统</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mock-banner">MOCK DATA — 当前页面所有数据均为占位数据，非真实观测结果</div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">Ψ</span>
+        <div class="brand-text">
+          <h1>Psychohistory</h1>
+          <p>Global Social Trend &amp; Prediction System</p>
+        </div>
+      </div>
+      <dl class="header-meta">
+        <div><dt>数据更新</dt><dd id="meta-updated">—</dd></div>
+        <div><dt>数据源</dt><dd id="meta-sources">—</dd></div>
+        <div><dt>当前预测</dt><dd id="meta-predictions">—</dd></div>
+        <div><dt>模型版本</dt><dd id="meta-model">—</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Global State -->
+    <section class="panel" id="global-state">
+      <div class="panel-head">
+        <h2>Global State</h2>
+        <p class="panel-sub">七个核心社会指标，0–100</p>
+      </div>
+      <div class="indicator-grid" id="indicator-grid"></div>
+    </section>
+
+    <!-- Today's Trends -->
+    <section class="panel" id="todays-trends">
+      <div class="panel-head">
+        <h2>Today's Trends</h2>
+        <p class="panel-sub">当天最重要的趋势变化</p>
+      </div>
+      <div class="trend-list" id="trend-list"></div>
+    </section>
+
+    <!-- Predictions -->
+    <section class="panel" id="predictions">
+      <div class="panel-head">
+        <h2>Predictions</h2>
+        <p class="panel-sub">当前有效的概率预测</p>
+      </div>
+      <div class="prediction-grid" id="prediction-grid"></div>
+    </section>
+
+    <!-- Prediction History -->
+    <section class="panel" id="prediction-history">
+      <div class="panel-head">
+        <h2>Prediction History</h2>
+        <p class="panel-sub">过去所有预测与验证结果</p>
+      </div>
+      <div class="history-table-wrap">
+        <table class="history-table" id="history-table">
+          <thead>
+            <tr>
+              <th>事件</th>
+              <th>概率</th>
+              <th>创建日期</th>
+              <th>目标日期</th>
+              <th>结果</th>
+            </tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Model Performance -->
+    <section class="panel" id="model-performance">
+      <div class="panel-head">
+        <h2>Model Performance</h2>
+        <p class="panel-sub">已验证预测的评分表现</p>
+      </div>
+      <div class="metric-grid" id="metric-grid"></div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="panel" id="data-sources">
+      <div class="panel-head">
+        <h2>Data Sources</h2>
+        <p class="panel-sub">规划中的数据来源与当前接入状态</p>
+      </div>
+      <div class="source-list" id="source-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Psychohistory · V0.1 · 所有内容均为 Mock Data，仅用于验证页面结构。系统不对未来做出确定性断言，所有预测均为概率判断。</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

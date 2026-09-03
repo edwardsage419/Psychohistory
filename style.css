@@ -1,0 +1,454 @@
+/* ===========================================================
+   Psychohistory — V0.1
+   Palette: near-black navy canvas, warm amber data accent,
+   muted teal for "improving" signals, muted clay-red for risk.
+   Type: serif for headings (Encyclopedia-Galactica feel),
+   monospace for every number (terminal / instrument-panel feel).
+   =========================================================== */
+
+:root {
+  --bg:        #0B0F14;
+  --panel:     #121821;
+  --panel-2:   #171F2A;
+  --border:    #232E3B;
+  --text:      #E4E9EE;
+  --text-dim:  #8B97A6;
+  --text-faint:#5C6878;
+
+  --amber:     #E3A345;
+  --amber-dim: #7A5A28;
+  --teal:      #4FA382;
+  --clay:      #C9614F;
+  --blue:      #5C8FBE;
+
+  --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+  --mono:  'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------- Mock data banner ---------- */
+.mock-banner {
+  background: var(--amber);
+  color: #1A1206;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 6px 12px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #0D1218 0%, #0B0F14 100%);
+}
+
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 22px 18px 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: var(--amber);
+  line-height: 1;
+}
+
+.brand-text h1 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.brand-text p {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.header-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px;
+  margin: 18px 0 0;
+}
+
+.header-meta div {
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+.header-meta dt {
+  font-size: 10.5px;
+  color: var(--text-faint);
+  margin: 0 0 2px;
+}
+
+.header-meta dd {
+  font-family: var(--mono);
+  font-size: 13px;
+  margin: 0;
+  color: var(--text);
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 8px 18px 40px;
+}
+
+.panel {
+  margin-top: 28px;
+}
+
+.panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.panel-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+  margin: 0;
+}
+
+.panel-sub {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 0;
+  text-align: right;
+}
+
+/* ---------- Global State indicators ---------- */
+.indicator-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.indicator-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.indicator-name {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.indicator-value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.indicator-value {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.indicator-dir {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.dir-up   { color: var(--clay); }
+.dir-down { color: var(--teal); }
+.dir-flat { color: var(--text-dim); }
+
+.indicator-bar {
+  height: 4px;
+  background: var(--panel-2);
+  border-radius: 2px;
+  margin: 8px 0 6px;
+  overflow: hidden;
+}
+
+.indicator-bar-fill {
+  height: 100%;
+  background: var(--amber);
+}
+
+.indicator-deltas {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* ---------- Today's Trends ---------- */
+.trend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trend-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--amber-dim);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.trend-item.trend-up   { border-left-color: var(--clay); }
+.trend-item.trend-down { border-left-color: var(--teal); }
+
+.trend-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.trend-title {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.trend-change {
+  font-family: var(--mono);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.trend-meta {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.trend-tag {
+  background: var(--panel-2);
+  border-radius: 2px;
+  padding: 1px 6px;
+  color: var(--text-dim);
+}
+
+/* ---------- Predictions ---------- */
+.prediction-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.prediction-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.prediction-event {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.prediction-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prediction-stat-label {
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-bottom: 2px;
+}
+
+.prediction-stat-value {
+  font-family: var(--mono);
+  font-size: 15px;
+}
+
+.prob-value { color: var(--amber); }
+
+.prediction-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  font-family: var(--mono);
+}
+
+/* ---------- Prediction History table ---------- */
+.history-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 560px;
+}
+
+.history-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  padding: 10px 12px;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.history-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  vertical-align: top;
+}
+
+.history-table tr:last-child td { border-bottom: none; }
+
+.history-table td:first-child {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-width: 260px;
+}
+
+.result-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.result-correct   { background: rgba(79,163,130,0.15); color: var(--teal); }
+.result-incorrect { background: rgba(201,97,79,0.15);  color: var(--clay); }
+.result-pending   { background: rgba(139,151,166,0.15); color: var(--text-dim); }
+
+/* ---------- Model Performance ---------- */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  text-align: left;
+}
+
+.metric-value {
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--amber);
+}
+
+.metric-label {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ---------- Data Sources ---------- */
+.source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.source-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.source-name { font-weight: 600; }
+.source-desc { display: block; font-size: 11.5px; color: var(--text-faint); margin-top: 2px; }
+
+.source-status {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.status-mock    { background: rgba(227,163,69,0.15); color: var(--amber); }
+.status-planned { background: rgba(92,143,190,0.15); color: var(--blue); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 18px;
+  text-align: center;
+}
+
+.site-footer p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* ---------- Responsive: wider screens ---------- */
+@media (min-width: 640px) {
+  .indicator-grid { grid-template-columns: repeat(3, 1fr); }
+  .metric-grid { grid-template-columns: repeat(3, 1fr); }
+  .header-meta { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 860px) {
+  .indicator-grid { grid-template-columns: repeat(4, 1fr); }
+  .prediction-grid { grid-template-columns: repeat(2, 1fr); }
+  .metric-grid { grid-template-columns: repeat(6, 1fr); }
+}
