@@ -1,44 +1,13 @@
 {
-  "updated_at": "2026-09-03T08:06:47.130614+00:00",
-  "source": "GDELT DOC 2.0",
-  "timespan": "7d",
-  "topics": {
-    "Economic": {
-      "success": false,
-      "error": "HTTP Error 429: Too Many Requests",
-      "points": []
-    },
-    "Geopolitics": {
-      "success": false,
-      "error": "<urlopen error timed out>",
-      "points": []
-    },
-    "Technology": {
-      "success": false,
-      "error": "Expecting value: line 1 column 1 (char 0)",
-      "points": []
-    },
-    "Energy": {
-      "success": false,
-      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>",
-      "points": []
-    },
-    "War & Conflict": {
-      "success": false,
-      "error": "Expecting value: line 1 column 1 (char 0)",
-      "points": []
-    },
-    "Inflation": {
-      "success": false,
-      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>",
-      "points": []
-    },
-    "AI": {
-      "success": false,
-      "error": "<urlopen error timed out>",
-      "points": []
-    }
+  "metadata": {
+    "source": "GDELT DOC 2.0 API (timelinevol mode)",
+    "updated_at": null,
+    "topics": ["Economic", "Geopolitics", "Technology", "Energy", "War & Conflict", "Inflation", "AI"],
+    "trend_threshold_percent": 10,
+    "value_definition": "value 表示该主题查询词匹配到的新闻，占 GDELT 监测的全球新闻总量的百分比（媒体报道量占比），是媒体关注度的代理指标，不代表事件真实发生的程度、严重性或风险水平。",
+    "system_version": "V0.2",
+    "last_run_status": "not_yet_run"
   },
-  "success_count": 0,
-  "total_topics": 7
+  "current": {},
+  "history": []
 }
