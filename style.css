@@ -212,6 +212,150 @@ main {
   color: var(--text-faint);
 }
 
+/* ---------- GDELT Data Status ---------- */
+#gdelt-status-panel { margin-top: 18px; }
+
+.gdelt-status-bar {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--teal);
+}
+
+.status-row.status-bad { color: var(--clay); }
+.status-row.status-warn { color: var(--amber); }
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  margin: 10px 0 0;
+}
+
+.status-meta div {
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+.status-meta dt {
+  font-size: 10.5px;
+  color: var(--text-faint);
+  margin: 0 0 2px;
+}
+
+.status-meta dd {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  margin: 0;
+}
+
+/* ---------- Monitoring Topics (real GDELT data) ---------- */
+.topic-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.topic-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.topic-card-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.topic-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.topic-name {
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.topic-trend {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+
+.topic-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.topic-stat-label {
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-bottom: 2px;
+}
+
+.topic-stat-value {
+  font-family: var(--mono);
+  font-size: 16px;
+}
+
+.sparkline {
+  width: 100%;
+  height: 28px;
+  display: block;
+  margin-top: 4px;
+}
+
+.sparkline polyline {
+  fill: none;
+  stroke: var(--amber);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.topic-stale-note {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--clay);
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+.empty-state {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.topic-disclaimer {
+  margin: 12px 2px 0;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
 /* ---------- Today's Trends ---------- */
 .trend-list {
   display: flex;
@@ -424,6 +568,7 @@ main {
 
 .status-mock    { background: rgba(227,163,69,0.15); color: var(--amber); }
 .status-planned { background: rgba(92,143,190,0.15); color: var(--blue); }
+.status-live    { background: rgba(79,163,130,0.15); color: var(--teal); }
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -445,10 +590,13 @@ main {
   .indicator-grid { grid-template-columns: repeat(3, 1fr); }
   .metric-grid { grid-template-columns: repeat(3, 1fr); }
   .header-meta { grid-template-columns: repeat(4, 1fr); }
+  .topic-grid { grid-template-columns: repeat(2, 1fr); }
+  .status-meta { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (min-width: 860px) {
   .indicator-grid { grid-template-columns: repeat(4, 1fr); }
   .prediction-grid { grid-template-columns: repeat(2, 1fr); }
   .metric-grid { grid-template-columns: repeat(6, 1fr); }
+  .topic-grid { grid-template-columns: repeat(3, 1fr); }
 }

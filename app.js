@@ -1,27 +1,17 @@
 /* ===========================================================
-   Psychohistory — V0.1
-   本文件所有数据均为 MOCK DATA（占位数据），用于验证页面结构。
-   V0.2 起将逐步替换为 GDELT 等真实数据源。
+   Psychohistory — V0.2
+   "Monitoring Topics" 板块读取 data/gdelt.json（真实 GDELT 数据）。
+   浏览器不直接访问 GDELT，只读取本仓库内的静态 JSON 文件，
+   该文件由 GitHub Actions（scripts/update_gdelt.py）每日更新。
+
+   Today's Trends / Predictions / Prediction History / Model
+   Performance 仍是 V0.1 遗留的 MOCK DATA，尚未接入真实数据源，
+   将在后续版本（V0.4 起）逐步替换。
    =========================================================== */
 
+const GDELT_DATA_URL = "data/gdelt.json";
+
 const MOCK = {
-
-  meta: {
-    updatedAt: "2026-09-03 08:00 (Mock)",
-    sourceCount: 0,
-    modelVersion: "V0.1-mock"
-  },
-
-  // Global State: 0-100，deltas 为百分点变化
-  indicators: [
-    { name: "Global Risk",          value: 58, d7: +3, d30: +7,  dir: "up"   },
-    { name: "Economic Pressure",    value: 47, d7: +1, d30: -2,  dir: "flat" },
-    { name: "Geopolitical Risk",    value: 63, d7: +5, d30: +11, dir: "up"   },
-    { name: "Technology Momentum",  value: 71, d7: +2, d30: +9,  dir: "up"   },
-    { name: "Market Stress",        value: 39, d7: -4, d30: -6,  dir: "down" },
-    { name: "Energy Stress",        value: 44, d7: 0,  d30: +3,  dir: "flat" },
-    { name: "Social Attention",     value: 52, d7: +6, d30: +2,  dir: "up"   }
-  ],
 
   trends: [
     {
@@ -82,73 +72,198 @@ const MOCK = {
   ],
 
   metrics: [
-    { label: "Accuracy",              value: "0.71" },
-    { label: "Brier Score",           value: "0.19" },
-    { label: "Calibration",           value: "0.86" },
-    { label: "Log Loss",              value: "0.52" },
-    { label: "预测总数",              value: "12" },
-    { label: "已验证预测",            value: "9" }
+    { label: "Accuracy",   value: "0.71" },
+    { label: "Brier Score",value: "0.19" },
+    { label: "Calibration",value: "0.86" },
+    { label: "Log Loss",   value: "0.52" },
+    { label: "预测总数",   value: "12" },
+    { label: "已验证预测", value: "9" }
   ],
 
   sources: [
-    { name: "GDELT",        desc: "全球新闻事件数据库", status: "planned" },
-    { name: "World Bank",   desc: "宏观经济指标",       status: "planned" },
-    { name: "FRED",         desc: "美国经济数据",       status: "planned" },
-    { name: "Mock Generator", desc: "V0.1 占位数据生成器", status: "mock" }
+    { name: "GDELT DOC 2.0 API", desc: "全球新闻媒体报道量（timelinevol）— 已接入", status: "live" },
+    { name: "World Bank",        desc: "宏观经济指标", status: "planned" },
+    { name: "FRED",               desc: "美国经济数据", status: "planned" },
+    { name: "Mock Generator",     desc: "Predictions / History 板块占位数据生成器", status: "mock" }
   ]
 };
 
-/* ---------- Helpers ---------- */
-
-function dirArrow(dir) {
-  if (dir === "up") return "▲";
-  if (dir === "down") return "▼";
-  return "▬";
-}
+/* ---------- Generic helpers ---------- */
 
 function dirClass(dir) {
-  if (dir === "up") return "dir-up";
-  if (dir === "down") return "dir-down";
+  if (dir === "up" || dir === "rising")  return "dir-up";
+  if (dir === "down" || dir === "falling") return "dir-down";
   return "dir-flat";
 }
 
-function fmtDelta(n) {
-  if (n > 0) return `+${n}`;
-  return `${n}`;
+function dirArrow(dir) {
+  if (dir === "up" || dir === "rising")  return "▲";
+  if (dir === "down" || dir === "falling") return "▼";
+  return "▬";
 }
 
-/* ---------- Render: Header meta ---------- */
-
-function renderMeta() {
-  document.getElementById("meta-updated").textContent = MOCK.meta.updatedAt;
-  document.getElementById("meta-sources").textContent = `${MOCK.sources.length} 个（规划中）`;
-  document.getElementById("meta-predictions").textContent = `${MOCK.predictions.length} 条`;
-  document.getElementById("meta-model").textContent = MOCK.meta.modelVersion;
+function fmtPct(v) {
+  if (v === null || v === undefined || Number.isNaN(v)) return "—";
+  return `${v.toFixed(3)}%`;
 }
 
-/* ---------- Render: Global State ---------- */
+function fmtChange(v) {
+  if (v === null || v === undefined || Number.isNaN(v)) return "—";
+  const sign = v > 0 ? "+" : "";
+  return `${sign}${v.toFixed(1)}%`;
+}
 
-function renderIndicators() {
-  const grid = document.getElementById("indicator-grid");
-  grid.innerHTML = MOCK.indicators.map(ind => `
-    <div class="indicator-card">
-      <div class="indicator-name">${ind.name}</div>
-      <div class="indicator-value-row">
-        <span class="indicator-value">${ind.value}</span>
-        <span class="indicator-dir ${dirClass(ind.dir)}">${dirArrow(ind.dir)}</span>
-      </div>
-      <div class="indicator-bar">
-        <div class="indicator-bar-fill" style="width:${ind.value}%"></div>
-      </div>
-      <div class="indicator-deltas">
-        <span>7天 ${fmtDelta(ind.d7)}</span>
-        <span>30天 ${fmtDelta(ind.d30)}</span>
-      </div>
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+/* ---------- Load GDELT data ---------- */
+
+async function loadGdeltData() {
+  try {
+    const res = await fetch(GDELT_DATA_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data || typeof data !== "object") throw new Error("Invalid JSON shape");
+    return data;
+  } catch (err) {
+    console.error("Failed to load data/gdelt.json:", err);
+    return null;
+  }
+}
+
+/* ---------- Render: Header meta + GDELT status ---------- */
+
+function renderHeaderMeta(gdelt) {
+  const meta = gdelt && gdelt.metadata ? gdelt.metadata : null;
+  document.getElementById("meta-updated").textContent = meta && meta.updated_at ? meta.updated_at : "—";
+  document.getElementById("meta-sources").textContent = meta && meta.source ? meta.source : "—";
+  document.getElementById("meta-topics").textContent = meta && meta.topics ? `${meta.topics.length}` : "—";
+  document.getElementById("meta-model").textContent = meta && meta.system_version ? meta.system_version : "V0.2";
+}
+
+function renderGdeltStatus(gdelt) {
+  const bar = document.getElementById("gdelt-status");
+  const meta = gdelt && gdelt.metadata ? gdelt.metadata : null;
+
+  if (!gdelt || !meta || !meta.updated_at) {
+    bar.innerHTML = `
+      <div class="status-row status-bad">
+        <span class="status-dot"></span>
+        GDELT Data Unavailable — 尚未成功运行过数据抓取
+      </div>`;
+    return;
+  }
+
+  const ok = meta.last_run_status === "ok";
+  bar.innerHTML = `
+    <div class="status-row ${ok ? "" : "status-warn"}">
+      <span class="status-dot"></span>
+      ${ok ? "GDELT Data Updated" : "GDELT Update Issue — 显示最后一次成功数据"}
     </div>
-  `).join("");
+    <dl class="status-meta">
+      <div><dt>Data Updated</dt><dd>${escapeHtml(meta.updated_at)}</dd></div>
+      <div><dt>Data Source</dt><dd>${escapeHtml(meta.source || "—")}</dd></div>
+      <div><dt>Monitoring Topics</dt><dd>${(meta.topics || []).length}</dd></div>
+      <div><dt>System Version</dt><dd>${escapeHtml(meta.system_version || "—")}</dd></div>
+    </dl>`;
 }
 
-/* ---------- Render: Today's Trends ---------- */
+/* ---------- Render: Monitoring Topics (real GDELT data) ---------- */
+
+function buildSparkline(history, name) {
+  if (!Array.isArray(history) || history.length === 0) return "";
+
+  const points = history
+    .slice(-7)
+    .map(row => (row.topics && row.topics[name] ? row.topics[name].value : null))
+    .filter(v => v !== null && v !== undefined && !Number.isNaN(v));
+
+  if (points.length < 2) return "";
+
+  const max = Math.max(...points);
+  const min = Math.min(...points);
+  const range = max - min || 1;
+  const w = 100, h = 28;
+  const step = w / (points.length - 1);
+
+  const coords = points
+    .map((v, i) => {
+      const x = i * step;
+      const y = h - ((v - min) / range) * h;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(" ");
+
+  return `<svg class="sparkline" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polyline points="${coords}" />
+  </svg>`;
+}
+
+function renderTopics(gdelt) {
+  const grid = document.getElementById("topic-grid");
+  const defEl = document.getElementById("topic-value-def");
+
+  const meta = gdelt && gdelt.metadata ? gdelt.metadata : null;
+  const current = gdelt && gdelt.current ? gdelt.current : {};
+  const history = gdelt && gdelt.history ? gdelt.history : [];
+  const topicNames = meta && Array.isArray(meta.topics) && meta.topics.length
+    ? meta.topics
+    : ["Economic", "Geopolitics", "Technology", "Energy", "War & Conflict", "Inflation", "AI"];
+
+  defEl.textContent = meta && meta.value_definition
+    ? meta.value_definition
+    : "value 表示该主题相关新闻占 GDELT 监测的全球新闻总量的百分比（媒体报道量占比），不代表真实世界风险或事件发生程度。";
+
+  grid.innerHTML = topicNames.map(name => {
+    const t = current[name];
+
+    if (!t || t.value === null || t.value === undefined) {
+      return `
+        <div class="topic-card topic-card-empty">
+          <div class="topic-top">
+            <span class="topic-name">${escapeHtml(name)}</span>
+          </div>
+          <div class="empty-state">Data Unavailable</div>
+        </div>`;
+    }
+
+    const trend = t.trend || "stable";
+    const spark = buildSparkline(history, name);
+    const staleNote = t.status === "failed"
+      ? `<div class="topic-stale-note">最近一次抓取失败（${escapeHtml(t.error || "unknown error")}），显示为最后一次成功数据${t.last_success_at ? `（${escapeHtml(t.last_success_at)}）` : ""}</div>`
+      : "";
+
+    return `
+      <div class="topic-card">
+        <div class="topic-top">
+          <span class="topic-name">${escapeHtml(name)}</span>
+          <span class="topic-trend ${dirClass(trend)}">${dirArrow(trend)} ${trend.toUpperCase()}</span>
+        </div>
+        <div class="topic-stats">
+          <div>
+            <div class="topic-stat-label">CURRENT</div>
+            <div class="topic-stat-value">${fmtPct(t.value)}</div>
+          </div>
+          <div>
+            <div class="topic-stat-label">7D AVG</div>
+            <div class="topic-stat-value">${fmtPct(t["7_day_average"])}</div>
+          </div>
+          <div>
+            <div class="topic-stat-label">CHANGE</div>
+            <div class="topic-stat-value">${fmtChange(t.change_percent)}</div>
+          </div>
+        </div>
+        ${spark}
+        ${staleNote}
+      </div>`;
+  }).join("");
+}
+
+/* ---------- Render: Today's Trends (mock) ---------- */
 
 function renderTrends() {
   const list = document.getElementById("trend-list");
@@ -167,7 +282,7 @@ function renderTrends() {
   `).join("");
 }
 
-/* ---------- Render: Predictions ---------- */
+/* ---------- Render: Predictions (mock) ---------- */
 
 function renderPredictions() {
   const grid = document.getElementById("prediction-grid");
@@ -190,13 +305,13 @@ function renderPredictions() {
       </div>
       <div class="prediction-foot">
         <span>Created: ${p.created}</span>
-        <span>Model: ${MOCK.meta.modelVersion}</span>
+        <span>Model: V0.1-mock</span>
       </div>
     </div>
   `).join("");
 }
 
-/* ---------- Render: Prediction History ---------- */
+/* ---------- Render: Prediction History (mock) ---------- */
 
 function resultBadge(result) {
   if (result === "correct")   return `<span class="result-badge result-correct">Correct</span>`;
@@ -217,7 +332,7 @@ function renderHistory() {
   `).join("");
 }
 
-/* ---------- Render: Model Performance ---------- */
+/* ---------- Render: Model Performance (mock) ---------- */
 
 function renderMetrics() {
   const grid = document.getElementById("metric-grid");
@@ -233,22 +348,27 @@ function renderMetrics() {
 
 function renderSources() {
   const list = document.getElementById("source-list");
+  const statusLabel = { live: "LIVE", planned: "PLANNED", mock: "MOCK" };
   list.innerHTML = MOCK.sources.map(s => `
     <div class="source-item">
       <div>
         <span class="source-name">${s.name}</span>
         <span class="source-desc">${s.desc}</span>
       </div>
-      <span class="source-status status-${s.status}">${s.status === "mock" ? "MOCK" : "PLANNED"}</span>
+      <span class="source-status status-${s.status}">${statusLabel[s.status] || s.status.toUpperCase()}</span>
     </div>
   `).join("");
 }
 
 /* ---------- Init ---------- */
 
-function init() {
-  renderMeta();
-  renderIndicators();
+async function init() {
+  const gdelt = await loadGdeltData();
+
+  renderHeaderMeta(gdelt);
+  renderGdeltStatus(gdelt);
+  renderTopics(gdelt);
+
   renderTrends();
   renderPredictions();
   renderHistory();
