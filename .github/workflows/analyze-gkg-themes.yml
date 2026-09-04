@@ -1,0 +1,35 @@
+name: Analyze GKG Themes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run offline tests
+        working-directory: scripts
+        run: python test_analyze_gkg_themes.py
+
+      - name: Analyze latest live GKG batch
+        run: python scripts/analyze_gkg_themes.py --top-themes 100
+
+      - name: Upload analysis report
+        uses: actions/upload-artifact@v4
+        with:
+          name: gkg-theme-analysis-report
+          path: scripts/gkg_theme_analysis_report.json
+          retention-days: 14
