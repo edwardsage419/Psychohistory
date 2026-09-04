@@ -1,12 +1,17 @@
 {
   "analysis_version": "V0.2.1-C",
-  "generated_at_utc": "2026-09-04T11:34:33.017208+00:00",
+  "generated_at_utc": "2026-09-04T11:46:17.842612+00:00",
   "window": {
     "valid_batches": 1,
+    "daily_samples": 1,
+    "sample_dates_utc": [
+      "20260904"
+    ],
     "unique_sources": 1,
     "minimum_days": 7,
     "target_days": 14,
-    "status": "collecting"
+    "status": "collecting",
+    "selection_rule": "latest valid GKG batch per UTC calendar day"
   },
   "topics": {
     "AI": {
@@ -104,6 +109,7 @@
   "method": {
     "normalization": "topic union documents per 1000 valid GKG documents",
     "cv_definition": "sample standard deviation divided by mean; descriptive only",
+    "stability_window": "distinct UTC calendar days, not raw batch count",
     "production_decision": "manual review required; no automatic promotion",
     "analysis_only": true
   }
