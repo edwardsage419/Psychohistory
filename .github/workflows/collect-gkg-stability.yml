@@ -14,6 +14,11 @@ on:
   schedule:
     - cron: '35 12 * * *'
 
+# Prevent two stability runs from racing while both try to append analysis history.
+concurrency:
+  group: gkg-stability-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
