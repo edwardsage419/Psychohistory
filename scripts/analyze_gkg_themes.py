@@ -13,8 +13,9 @@ import urllib.error
 import urllib.request
 import zipfile
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+import re
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_MAPPING = HERE / "gkg_theme_mapping.json"
@@ -53,12 +54,25 @@ def discover_latest_gkg_url() -> str:
     return discover_gkg_urls()[0]
 
 
+def publication_lag_candidates(url: str, intervals: int = 8) -> list[str]:
+    """Generate the latest GKG URL plus prior 15-minute intervals."""
+    match = re.search(r"/(\d{14})\.gkg\.csv\.zip(?:$|[?#])", url)
+    if not match:
+        return [url]
+    stamp = datetime.strptime(match.group(1), "%Y%m%d%H%M%S")
+    prefix = url[:match.start(1)]
+    suffix = url[match.end(1):]
+    return [f"{prefix}{(stamp - timedelta(minutes=15 * i)).strftime('%Y%m%d%H%M%S')}{suffix}" for i in range(intervals)]
+
+
 def download_latest_gkg() -> tuple[str, bytes]:
-    """Download the newest available GKG file despite publication lag."""
     errors = []
-    candidates = discover_gkg_urls()
+    seeds = discover_gkg_urls()
+    candidates = []
+    for seed in seeds[:2]:
+        candidates.extend(publication_lag_candidates(seed, intervals=8))
     attempted = set()
-    for original in candidates[:8]:
+    for original in candidates:
         variants = [original]
         if original.startswith("http://"):
             variants.append("https://" + original[len("http://"):])
@@ -72,7 +86,7 @@ def download_latest_gkg() -> tuple[str, bytes]:
                 return url, download_bytes(url)
             except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
                 errors.append(f"{url}: {type(exc).__name__}: {exc}")
-    raise RuntimeError("Unable to download any recent GKG batch. " + " | ".join(errors[-8:]))
+    raise RuntimeError("Unable to download a recent published GKG batch. " + " | ".join(errors[-8:]))
 
 
 def parse_lookup(text: str) -> dict[str, dict]:
@@ -228,6 +242,7 @@ def main() -> int:
             "lookup_definition": "official lookup count is historical document frequency; it is not a natural-language description",
             "production_status": "analysis_only",
             "ai_status": "proxy_only_not_for_production",
+            "publication_lag_policy": "try the latest GKG timestamp, then prior 15-minute intervals before failing",
         },
     }
     out = Path(args.report)
