@@ -1,26 +1,28 @@
 {
   "mapping_version": "V0.2.1-B",
+  "status": "provisional",
   "source": {
     "official_lookup": "https://data.gdeltproject.org/api/v2/guides/LOOKUP-GKGTHEMES.TXT",
     "official_lookup_announcement": "https://blog.gdeltproject.org/new-november-2021-gkg-2-0-themes-lookup/",
     "official_codebook": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
-    "method_note": "GDELT's official lookup supplies theme codes and historical occurrence counts. It does not provide a natural-language definition for every code, so descriptions in this file are conservative labels derived from the official code string and corroborated where possible by GDELT documentation or published GDELT analyses."
+    "method_note": "The official lookup is a histogram of Theme document frequency. It is not a natural-language description table. Human-readable labels below are conservative interpretations of the Theme code and official taxonomy context."
   },
   "rules": {
     "primary": "Directly measures the intended topic with relatively low semantic ambiguity.",
     "secondary": "Useful supporting signal but broader, narrower, or overlapping with another topic.",
-    "excluded": "Known to create substantial false positives for this topic or is too generic to be a useful standalone signal.",
-    "overlap_policy": "A theme may support more than one topic during research, but production indices must record overlap so correlated coverage is not silently double-counted.",
-    "ai_policy": "GDELT's general Theme taxonomy does not expose a single native AI-specific Theme in the official lookup. AI therefore remains a proxy mapping at this stage and must not be treated as a production AI index until a keyword or enhanced-theme layer is added and validated."
+    "excluded": "Too generic or likely to create substantial false positives for this topic.",
+    "overlap_policy": "Overlap is allowed during research but must be recorded before production scoring so correlated coverage is not silently double-counted.",
+    "single_batch_policy": "The 2026-09-04 live batch is a validation sample, not enough evidence to establish long-run stability. Production mapping requires multi-day testing.",
+    "ai_policy": "No single native GKG Theme is treated as an AI index. AI remains analysis-only until a dedicated lexical/entity/enhanced-theme layer is validated."
   },
   "topics": {
     "Economic": {
-      "confidence": "high",
+      "confidence": "provisional-high",
       "primary_themes": [
-        {"code": "EPU_ECONOMY", "rationale": "Broad economic-policy and economic-conditions signal; explicitly used in published GDELT-based economic coverage research."}
+        {"code": "EPU_ECONOMY", "rationale": "Broad economic-policy/economic-conditions signal."}
       ],
       "secondary_themes": [
-        {"code": "ECON_DEBT", "rationale": "Debt and sovereign/private leverage."},
+        {"code": "ECON_DEBT", "rationale": "Debt and leverage conditions."},
         {"code": "ECON_STOCKMARKET", "rationale": "Financial-market conditions."},
         {"code": "ECON_WORLDCURRENCIES", "rationale": "Currency conditions."},
         {"code": "ECON_INTEREST_RATES", "rationale": "Interest-rate conditions."},
@@ -28,101 +30,100 @@
         {"code": "ECON_ENTREPRENEURSHIP", "rationale": "Business formation and entrepreneurship."},
         {"code": "ECON_HOUSING_PRICES", "rationale": "Housing-price conditions."},
         {"code": "WB_471_ECONOMIC_GROWTH", "rationale": "World Bank economic-growth taxonomy."},
-        {"code": "WB_1104_MACROECONOMIC_VULNERABILITY_AND_DEBT", "rationale": "Macro vulnerability and debt taxonomy."},
-        {"code": "UNEMPLOYMENT", "rationale": "Labor-market weakness; useful but narrower than the topic."}
+        {"code": "WB_1104_MACROECONOMIC_VULNERABILITY_AND_DEBT", "rationale": "Macroeconomic vulnerability and debt taxonomy."},
+        {"code": "UNEMPLOYMENT", "rationale": "Labor-market weakness; narrower than the parent topic."}
       ],
       "excluded_themes": [
-        {"code": "TAX_FNCACT", "reason": "Generic function/person taxonomy; not an economic condition."},
-        {"code": "GENERAL_GOVERNMENT", "reason": "Too broad and dominated by government coverage."}
+        {"code": "TAX_FNCACT", "reason": "Generic function/person taxonomy."},
+        {"code": "GENERAL_GOVERNMENT", "reason": "Too broad and government-dominated."}
       ]
     },
     "Geopolitics": {
-      "confidence": "medium-high",
+      "confidence": "provisional-medium-high",
       "primary_themes": [
-        {"code": "EPU_POLICY_POLITICAL", "rationale": "Political-policy uncertainty and international political coverage."},
+        {"code": "EPU_POLICY_POLITICAL", "rationale": "Political-policy uncertainty signal."},
         {"code": "EPU_CATS_NATIONAL_SECURITY", "rationale": "National-security policy uncertainty."},
-        {"code": "SANCTIONS", "rationale": "Cross-border coercive economic/diplomatic instrument."},
+        {"code": "SANCTIONS", "rationale": "Cross-border coercive policy signal."},
         {"code": "ALLIANCE", "rationale": "Interstate alliance relationships."},
-        {"code": "BORDER", "rationale": "Interstate territorial/border issues."},
-        {"code": "NEGOTIATIONS", "rationale": "Diplomatic negotiation signal; broad but directly relevant."}
+        {"code": "BORDER", "rationale": "Cross-border territorial issues."},
+        {"code": "NEGOTIATIONS", "rationale": "Diplomatic negotiation signal."}
       ],
       "secondary_themes": [
-        {"code": "WB_2473_DIPLOMACY_AND_NEGOTIATIONS", "rationale": "World Bank diplomacy/negotiation taxonomy."},
-        {"code": "WB_2490_NATIONAL_PROTECTION_AND_SECURITY", "rationale": "National protection and security."},
-        {"code": "EPU_POLICY_GOVERNMENT", "rationale": "Government policy uncertainty; useful context but not inherently geopolitical."},
-        {"code": "EPU_POLICY", "rationale": "Broad policy uncertainty; high coverage but low specificity."}
+        {"code": "WB_2473_DIPLOMACY_AND_NEGOTIATIONS", "rationale": "World Bank diplomacy and negotiations taxonomy."},
+        {"code": "WB_2490_NATIONAL_PROTECTION_AND_SECURITY", "rationale": "National protection and security context."},
+        {"code": "EPU_POLICY_GOVERNMENT", "rationale": "Government policy uncertainty; not inherently geopolitical."},
+        {"code": "EPU_POLICY", "rationale": "Broad policy uncertainty; high recall but low specificity."}
       ],
       "excluded_themes": [
-        {"code": "ARMEDCONFLICT", "reason": "Reserved as primary conflict signal for War & Conflict to reduce overlap."},
-        {"code": "MILITARY", "reason": "Military coverage can be domestic or routine and is therefore too broad as a primary geopolitical signal."}
+        {"code": "ARMEDCONFLICT", "reason": "Reserved for War & Conflict to reduce double counting."},
+        {"code": "MILITARY", "reason": "Includes routine/domestic military coverage."}
       ]
     },
     "Technology": {
-      "confidence": "medium-high",
+      "confidence": "provisional-medium",
       "primary_themes": [
-        {"code": "SCIENCE", "rationale": "General science signal; broad but directly within science/technology discourse."},
-        {"code": "WB_133_INFORMATION_AND_COMMUNICATION_TECHNOLOGIES", "rationale": "World Bank ICT taxonomy; direct technology signal."},
+        {"code": "WB_133_INFORMATION_AND_COMMUNICATION_TECHNOLOGIES", "rationale": "Direct ICT technology taxonomy."},
         {"code": "WB_669_SOFTWARE_INFRASTRUCTURE", "rationale": "Software infrastructure taxonomy."},
-        {"code": "WB_667_ICT_INFRASTRUCTURE", "rationale": "ICT infrastructure taxonomy."}
+        {"code": "WB_667_ICT_INFRASTRUCTURE", "rationale": "ICT infrastructure taxonomy."},
+        {"code": "WB_658_ENTERPRISE_APPLICATIONS", "rationale": "Enterprise application technology taxonomy."},
+        {"code": "WB_652_ICT_APPLICATIONS", "rationale": "ICT applications taxonomy."}
       ],
       "secondary_themes": [
+        {"code": "SCIENCE", "rationale": "Broad science signal; useful context but not technology-specific."},
         {"code": "CYBER_ATTACK", "rationale": "Technology-related cyber incident signal."},
         {"code": "WB_851_INTELLECTUAL_PROPERTY_RIGHTS", "rationale": "Technology/IP policy context."},
-        {"code": "SOC_INNOVATION", "rationale": "Innovation discourse."},
-        {"code": "WB_658_ENTERPRISE_APPLICATIONS", "rationale": "Enterprise software/application adoption."},
-        {"code": "WB_652_ICT_APPLICATIONS", "rationale": "ICT applications."}
+        {"code": "SOC_INNOVATION", "rationale": "Innovation discourse."}
       ],
       "excluded_themes": [
-        {"code": "MEDIA_MSM", "reason": "Media coverage is not equivalent to technology."}
+        {"code": "MEDIA_MSM", "reason": "Media coverage is not technology itself."}
       ]
     },
     "Energy": {
-      "confidence": "high",
+      "confidence": "provisional-high",
       "primary_themes": [
-        {"code": "ENV_OIL", "rationale": "Direct oil/environmental-energy coverage signal."},
-        {"code": "ECON_OILPRICE", "rationale": "Direct oil-price signal; explicitly used in GDELT-based oil monitoring."},
-        {"code": "WB_507_ENERGY_AND_EXTRACTIVES", "rationale": "World Bank energy/extractives taxonomy."},
+        {"code": "ENV_OIL", "rationale": "Direct oil/environment-energy signal."},
+        {"code": "ECON_OILPRICE", "rationale": "Direct oil-price signal."},
+        {"code": "WB_507_ENERGY_AND_EXTRACTIVES", "rationale": "World Bank energy and extractives taxonomy."},
         {"code": "WB_539_OIL_AND_GAS_POLICY_STRATEGY_AND_INSTITUTIONS", "rationale": "Oil and gas policy/institutions."}
       ],
       "secondary_themes": [
-        {"code": "ENV_MINING", "rationale": "Extractive-energy/resource context, but broader than energy."},
-        {"code": "ECON_OILPRICE", "rationale": "Can also act as an economic-price signal; overlap must be recorded."}
+        {"code": "ENV_MINING", "rationale": "Resource/extractive context; broader than energy."}
       ],
       "excluded_themes": [
-        {"code": "UNGP_FORESTS_RIVERS_OCEANS", "reason": "Environmental coverage is far broader than energy."}
+        {"code": "UNGP_FORESTS_RIVERS_OCEANS", "reason": "General environmental coverage is too broad."}
       ]
     },
     "War & Conflict": {
-      "confidence": "high",
+      "confidence": "provisional-high",
       "primary_themes": [
-        {"code": "ARMEDCONFLICT", "rationale": "Direct armed-conflict signal and widely used in GDELT conflict analyses."},
-        {"code": "MILITARY", "rationale": "Direct military activity signal, though broader than armed conflict."},
-        {"code": "WB_2462_POLITICAL_VIOLENCE_AND_WAR", "rationale": "World Bank political-violence/war taxonomy."},
-        {"code": "WB_2433_CONFLICT_AND_VIOLENCE", "rationale": "World Bank conflict/violence taxonomy."}
+        {"code": "ARMEDCONFLICT", "rationale": "Direct armed-conflict signal."},
+        {"code": "MILITARY", "rationale": "Military activity signal; broader than armed conflict."},
+        {"code": "WB_2462_POLITICAL_VIOLENCE_AND_WAR", "rationale": "World Bank political-violence and war taxonomy."},
+        {"code": "WB_2433_CONFLICT_AND_VIOLENCE", "rationale": "World Bank conflict and violence taxonomy."}
       ],
       "secondary_themes": [
-        {"code": "KILL", "rationale": "Conflict casualty signal but also appears in non-war contexts."},
-        {"code": "WOUND", "rationale": "Conflict casualty signal but not conflict-specific."},
-        {"code": "SANCTIONS", "rationale": "Often associated with geopolitical conflict but also with economic policy."},
+        {"code": "KILL", "rationale": "Casualty signal but not conflict-specific."},
+        {"code": "WOUND", "rationale": "Casualty signal but not conflict-specific."},
+        {"code": "SANCTIONS", "rationale": "Often associated with geopolitical conflict but also economic policy."},
         {"code": "TERROR", "rationale": "Security/conflict signal but not synonymous with war."},
-        {"code": "REBELLION", "rationale": "Insurgency/internal conflict signal."},
-        {"code": "EVACUATION", "rationale": "Possible conflict/disaster consequence, weakly specific."}
+        {"code": "REBELLION", "rationale": "Insurgency/internal-conflict signal."},
+        {"code": "EVACUATION", "rationale": "Possible conflict consequence but weakly specific."}
       ],
       "excluded_themes": [
         {"code": "GENERAL_GOVERNMENT", "reason": "Too broad."},
-        {"code": "LEADER", "reason": "Generic political/person role, not conflict-specific."}
+        {"code": "LEADER", "reason": "Generic political/person role."}
       ]
     },
     "Inflation": {
-      "confidence": "high",
+      "confidence": "provisional-high",
       "primary_themes": [
-        {"code": "ECON_INFLATION", "rationale": "Direct inflation theme; independently used in published GDELT inflation research."}
+        {"code": "ECON_INFLATION", "rationale": "Direct inflation signal."}
       ],
       "secondary_themes": [
-        {"code": "TAX_ECON_PRICE", "rationale": "Economic price signal; broader than inflation."},
-        {"code": "ECON_OILPRICE", "rationale": "Input-price pressure channel; should not be treated as inflation itself."},
-        {"code": "SHORTAGE", "rationale": "Supply pressure channel; weakly specific."},
-        {"code": "ECON_INTEREST_RATES", "rationale": "Monetary-policy response channel, not inflation itself."},
+        {"code": "TAX_ECON_PRICE", "rationale": "Broader economic-price signal."},
+        {"code": "ECON_OILPRICE", "rationale": "Input-price pressure channel, not inflation itself."},
+        {"code": "SHORTAGE", "rationale": "Supply-pressure channel, weakly specific."},
+        {"code": "ECON_INTEREST_RATES", "rationale": "Monetary-policy response channel."},
         {"code": "WB_442_INFLATION", "rationale": "World Bank inflation taxonomy."}
       ],
       "excluded_themes": []
@@ -132,18 +133,17 @@
       "status": "proxy_only_not_for_production",
       "primary_themes": [],
       "secondary_themes": [
-        {"code": "WB_133_INFORMATION_AND_COMMUNICATION_TECHNOLOGIES", "rationale": "ICT is a broad technological context, not an AI identifier."},
-        {"code": "WB_669_SOFTWARE_INFRASTRUCTURE", "rationale": "Software context, not AI-specific."},
-        {"code": "SCIENCE", "rationale": "Science/technology context, not AI-specific."},
+        {"code": "WB_133_INFORMATION_AND_COMMUNICATION_TECHNOLOGIES", "rationale": "Broad ICT context, not AI-specific."},
+        {"code": "WB_669_SOFTWARE_INFRASTRUCTURE", "rationale": "Broad software context, not AI-specific."},
+        {"code": "SCIENCE", "rationale": "Broad science context, not AI-specific."},
         {"code": "SOC_INNOVATION", "rationale": "Innovation context, not AI-specific."},
-        {"code": "WB_851_INTELLECTUAL_PROPERTY_RIGHTS", "rationale": "AI copyright/IP policy context, not AI-specific."},
-        {"code": "CYBER_ATTACK", "rationale": "Some AI/security overlap exists, but cyber is not an AI identifier."}
+        {"code": "WB_851_INTELLECTUAL_PROPERTY_RIGHTS", "rationale": "AI-related IP context but not AI-specific."},
+        {"code": "CYBER_ATTACK", "rationale": "Possible AI/security overlap but not an AI identifier."}
       ],
       "excluded_themes": [
-        {"code": "TECHNOLOGY", "reason": "No verified native GKG Theme code named TECHNOLOGY was found in the official lookup."},
-        {"code": "SCIENCE", "reason": "Cannot be used as an AI-specific production metric because it captures all science."}
+        {"code": "SCIENCE", "reason": "Cannot serve as an AI-specific production metric because it captures all science."}
       ],
-      "required_next_step": "Build a separate AI lexical/entity layer using validated keywords, model names, organizations and/or V2EnhancedThemes/context evidence, then compare it against these broad proxy themes before production use."
+      "required_next_step": "Build and validate a dedicated AI lexical/entity/enhanced-theme layer before production use."
     }
   }
 }
