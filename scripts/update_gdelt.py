@@ -29,27 +29,32 @@ Design goals (see project spec V0.2, sections 15/17/18/24/27):
 
 Why GDELT DOC 2.0 API and not GDELT's raw bulk files (GKG/Events)?
     Bulk GKG/Event files are the most rate-limit-proof option long
-    term, but require downloading and parsing ~96 files/day per topic
-    set, which is a heavier V0.3+ migration. For V0.2 this script uses
-    the DOC API's lightweight `timelinevol` mode (a small time-series
-    payload, not full article lists) with:
-      - a browser-like User-Agent (GDELT's API has been observed to
-        reject requests without one — see api client library issue
-        trackers),
-      - one request per topic per day (7 requests/day total, spaced
-        out), which is a much lower volume than the burst patterns
-        that reliably trigger GDELT's rate limiter,
-      - defensive parsing that treats ANY unexpected response shape
-        (including HTTP 200 with a plain-text error body, which GDELT
-        is known to return) as a failure rather than crashing.
-    If this still proves unreliable in practice on GitHub-hosted
-    runners, the documented next step is to migrate to bulk GKG
-    files — the JSON schema this script writes is designed so that
-    migration would not require changing the frontend.
+    term, but require downloading and parsing ~96 files/day and mapping
+    our 7 topics onto GDELT's 275+ official GKG theme codes correctly
+    (not guessed), which is a heavier V0.3+ migration.
+
+    A first real run on GitHub-hosted runners (2026-09-03) showed 6 of
+    7 topics failing with "HTTP 429: Too Many Requests" and one with an
+    SSL handshake timeout, with exactly 1 of 7 succeeding. A rate limit
+    that lets through roughly 1 in 7 requests spaced 15s apart, rather
+    than blocking all of them, behaves like a sliding-window limiter
+    with occasional free slots — not a hard per-IP block. That justifies
+    trying a properly rate-limit-aware backoff before abandoning this
+    API for the heavier GKG migration:
+      - topic-to-topic spacing increased from 15s to 45s + jitter,
+      - on HTTP 429 specifically, honor the `Retry-After` response
+        header when GDELT sends one, otherwise wait ~60s+jitter,
+      - other errors (timeouts, SSL, DNS) use exponential backoff,
+      - up to 3 attempts per topic instead of 2.
+    If this still fails most of the time, the next step is the GKG
+    migration described above — the JSON schema this script writes is
+    designed so that migration would not require changing the frontend.
 """
+
 
 import json
 import os
+import random
 import sys
 import time
 import urllib.error
@@ -77,10 +82,13 @@ USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
-REQUEST_TIMEOUT = 20   # seconds
-REQUEST_SPACING = 15   # seconds between topic requests, to avoid bursting
-MAX_ATTEMPTS = 2        # 1 try + 1 retry per topic
-RETRY_DELAY = 5         # seconds before the retry
+REQUEST_TIMEOUT = 20        # seconds
+REQUEST_SPACING = 45        # seconds between topic requests (base; jitter added)
+SPACING_JITTER = 15         # up to +N extra random seconds between topics
+MAX_ATTEMPTS = 3            # 1 try + 2 retries per topic
+DEFAULT_RATE_LIMIT_WAIT = 60   # seconds to wait on HTTP 429 if no Retry-After given
+GENERIC_BACKOFF_BASE = 10      # seconds; doubles each retry for non-429 errors
+GENERIC_BACKOFF_CAP = 60       # seconds; ceiling for the exponential backoff
 
 
 def utc_now():
@@ -93,6 +101,34 @@ def today_str():
 
 def iso(dt):
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def compute_backoff_seconds(attempt, exc):
+    """
+    Decides how long to sleep before retrying, based on what just failed.
+
+    - HTTP 429: honor GDELT's `Retry-After` header if it sent one;
+      otherwise assume a long cooldown is needed (DEFAULT_RATE_LIMIT_WAIT).
+    - Everything else (timeout, SSL, DNS, other HTTP errors): exponential
+      backoff, capped, with a little jitter so parallel-ish workflow runs
+      don't all retry at the exact same moment.
+    """
+    if isinstance(exc, urllib.error.HTTPError) and exc.code == 429:
+        retry_after = None
+        try:
+            if exc.headers:
+                retry_after = exc.headers.get("Retry-After")
+        except Exception:
+            retry_after = None
+        if retry_after:
+            try:
+                return min(float(retry_after), 180) + random.uniform(0, 5)
+            except ValueError:
+                pass
+        return DEFAULT_RATE_LIMIT_WAIT + random.uniform(0, 15)
+
+    backoff = min(GENERIC_BACKOFF_BASE * (2 ** (attempt - 1)), GENERIC_BACKOFF_CAP)
+    return backoff + random.uniform(0, 5)
 
 
 def fetch_timeline(query):
@@ -252,7 +288,9 @@ def main():
             except Exception as e:  # noqa: BLE001 (deliberately broad; see module docstring)
                 last_error = f"{type(e).__name__}: {e}"
                 if attempt < MAX_ATTEMPTS:
-                    time.sleep(RETRY_DELAY)
+                    delay = compute_backoff_seconds(attempt, e)
+                    print(f"[RETRY] {name}: attempt {attempt} failed ({last_error}); waiting {delay:.0f}s")
+                    time.sleep(delay)
 
         if result_entry is None:
             # Every attempt failed for this topic: keep the previous
@@ -276,7 +314,7 @@ def main():
             "status": result_entry["status"],
         }
 
-        time.sleep(REQUEST_SPACING)
+        time.sleep(REQUEST_SPACING + random.uniform(0, SPACING_JITTER))
 
     # ---- history: one row per UTC calendar day, updated in place ----
     history = store["history"]
@@ -311,6 +349,14 @@ def main():
 
     save(store)
 
+    ok_count = sum(1 for t in today_topics.values() if t["status"] == "ok")
+    print("\n[GDELT] Fetch Summary")
+    for t in TOPICS:
+        name = t["name"]
+        status = today_topics[name]["status"]
+        print(f"  {name}: {'SUCCESS' if status == 'ok' else 'FAILED'}")
+    print(f"  Total: {len(TOPICS)}  Success: {ok_count}  Failed: {len(TOPICS) - ok_count}")
+
     if not any_success:
         # Exit 0 on purpose: a transient GDELT-wide outage shouldn't
         # show as a broken workflow run every single day, and the
@@ -324,4 +370,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
