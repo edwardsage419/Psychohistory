@@ -140,9 +140,7 @@
         {"code": "WB_851_INTELLECTUAL_PROPERTY_RIGHTS", "rationale": "AI-related IP context but not AI-specific."},
         {"code": "CYBER_ATTACK", "rationale": "Possible AI/security overlap but not an AI identifier."}
       ],
-      "excluded_themes": [
-        {"code": "SCIENCE", "reason": "Cannot serve as an AI-specific production metric because it captures all science."}
-      ],
+      "excluded_themes": [],
       "required_next_step": "Build and validate a dedicated AI lexical/entity/enhanced-theme layer before production use."
     }
   }
