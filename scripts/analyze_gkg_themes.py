@@ -51,10 +51,11 @@ def discover_latest_gkg_url() -> str:
 def parse_lookup(text: str) -> dict[str, dict]:
     """Parse the official GKG theme histogram lookup.
 
-    The current official LOOKUP-GKGTHEMES.TXT is a two-column histogram:
-    THEME and historical document count. Older/presentation variants may have
-    additional columns, so parsing remains tolerant. A numeric second column
-    is always treated as the count, never as a description.
+    The official LOOKUP-GKGTHEMES.TXT is a histogram with a Theme code and
+    historical document count. It does not provide a natural-language
+    description column. Preserve that distinction explicitly: numeric values
+    are counts, and descriptions remain empty unless a future source actually
+    supplies a verified description field.
     """
     result: dict[str, dict] = {}
     for raw in text.splitlines():
@@ -76,16 +77,12 @@ def parse_lookup(text: str) -> dict[str, dict]:
                 break
             except ValueError:
                 continue
-        description = ""
-        # GKG Theme codes themselves encode useful labels, especially WB_*.
-        # Do not invent a description from an unrelated numeric histogram count.
-        if code.startswith("WB_") and "_" in code[3:]:
-            description = code[3:].split("_", 1)[1].replace("_", " ").title()
-        elif code.startswith("EPU_"):
-            description = code[4:].replace("_", " ").title()
-        elif code.startswith("ECON_"):
-            description = code[5:].replace("_", " ").title()
-        result[code] = {"code": code, "description": description, "lookup_count": count, "raw": parts}
+        result[code] = {
+            "code": code,
+            "description": "",
+            "lookup_count": count,
+            "raw": parts,
+        }
     return result
 
 
