@@ -4,11 +4,11 @@ on:
   push:
     branches: ["v0.2.1-b-gkg-theme-analysis"]
     paths:
-      - "scripts/**"
+      - "scripts/analyze_gkg_themes.py"
+      - "scripts/test_analyze_gkg_themes.py"
+      - "scripts/gkg_theme_mapping.json"
       - ".github/workflows/analyze-gkg-themes.yml"
   workflow_dispatch:
-  schedule:
-    - cron: '35 * * * *'
 
 permissions:
   contents: read
