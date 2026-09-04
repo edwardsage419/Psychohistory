@@ -15,6 +15,25 @@
 
 系统**不**声称能够真正预测历史。所有预测都是概率判断，会被持续记录并与真实结果对照验证。
 
+
+### V0.2.1-A：GKG 数据源验证（当前阶段）
+
+V0.2.1-A 只验证 GDELT GKG 2.1 批量文件的可获取性和格式，不修改 `data/gdelt.json`，也不把任何 GKG 数据写入生产数据。GDELT 官方说明 GKG 2.1 每条记录使用制表符分隔，并包含固定字段，其中 `V1THEMES` 位于第 8 个字段；GKG 2.1 是按文档逐条记录的格式。
+
+新增：
+- `scripts/validate_gkg.py`：发现最新 GKG 文件、下载、ZIP 完整性检查、流式解析、字段数检查、日期检查、`V1THEMES` 统计和 SHA-256 记录。
+- `scripts/test_validate_gkg.py`：离线合成数据测试，不依赖网络。
+- `.github/workflows/validate-gkg.yml`：在 GitHub Actions 中定时验证最新线上 GKG 文件，每小时运行一次，也支持手动运行。该工作流只生成 Artifact，不提交生产数据。
+
+当前阶段的验收标准：
+1. GitHub Actions 能从 `lastupdate.txt` 找到最新 `.gkg.csv.zip`。
+2. ZIP 可以完整读取且包含单一 GKG 数据文件。
+3. 每条记录至少包含 GKG 2.1 的前 8 个字段。
+4. 第 8 个字段可以稳定解析为分号分隔的主题列表。
+5. 不修改现有 DOC API 数据。
+
+通过 V0.2.1-A 后，下一阶段才建立 7 个 Psychohistory 主题的 GKG Theme Mapping。主题映射会先依据 GDELT 官方主题列表和实际频次验证，再进入生产聚合。
+
 ## 当前状态：V0.2
 
 V0.2 把 **Monitoring Topics** 板块从 Mock Data 换成了真实的 GDELT 数据，并建立了每日自动更新机制。其余板块（Today's Trends / Predictions / Prediction History / Model Performance）仍是 V0.1 的占位数据，尚未接入真实数据源，会在后续版本中逐步替换。
@@ -85,6 +104,24 @@ Economic / Geopolitics / Technology / Energy / War & Conflict / Inflation / AI
 同时，脚本对 GDELT「返回 HTTP 200 但内容是纯文本错误提示」这种已知的怪异行为做了防御性处理：任何非预期的响应格式都会被当作失败处理，而不会让整个工作流崩溃或产生假数据。这部分逻辑已经用本地模拟的 HTTP 响应测试过（成功 / 纯文本报错 / 单主题失败三种情况）。
 
 **已知局限**：这次开发环境本身无法访问外网，所以这个脚本从未真正打到 GDELT 的服务器——已验证的是 JSON 解析、聚合计算、趋势判断、失败保护、历史去重这些逻辑本身没问题，但**没有验证 GitHub Actions 实际运行时能否连上 GDELT**。请在推送后手动运行一次 workflow（见下方验证步骤），如果仍然频繁失败，下一步会迁移到 GDELT 的批量数据文件（GKG）而不是继续调整这个 API 方案。
+
+## 已知问题（实测结果，2026-09-04）
+
+部署到 GitHub Actions 后跑了两次真实的数据抓取，结果：
+
+| 次数 | 退避策略 | 成功 / 总数 | 耗时 |
+|---|---|---|---|
+| 第 1 次 | 15 秒间隔，1 次重试 | 1 / 7 | 7 秒（脚本几乎没跑，另有上传不完整的问题，已修复） |
+| 第 2 次 | 45 秒+抖动间隔，最多 3 次尝试，按 429 的 `Retry-After` 智能退避 | 2 / 7 | 24 分 26 秒 |
+
+失败原因几乎全是 `HTTP 429: Too Many Requests`，偶尔混一个 SSL 握手超时。**结论：GDELT DOC 2.0 API 在 GitHub Actions 的共享 IP 环境下不适合长期稳定使用**，退避策略已经调得比较讲道理了，成功率依然只有 15-30%，这不是"重试次数不够"能解决的。
+
+**下一步方向（尚未实施）**：迁移到 GDELT 的批量数据文件（GKG，Global Knowledge Graph），这是静态文件下载（每 15 分钟发布一次），不经过会被限流的查询接口。已确认的技术细节：
+- GKG 2.1 格式，`V1THEMES` 字段固定在每行第 8 列（已核实官方 Codebook：http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf）
+- 已核实"通胀"对应真实存在的主题代码 `ECON_INFLATION`
+- 其余 6 个主题（Economic / Geopolitics / Technology / Energy / War & Conflict / AI）对应的官方主题代码**还没有逐一核实**，在核实完之前不会写死猜测的代码，避免用错误代码产出「看起来正常但其实是错的」数据
+
+在决定继续深入做 GKG 迁移、还是先用"每天轮换只抓 2-3 个主题"的折中方案降低失败率之前，`scripts/update_gdelt.py` 暂时保持当前这版（45 秒间隔 + 429 感知退避）。
 
 ## 后续规划（尚未开始）
 
