@@ -8,7 +8,9 @@ runs can measure day-to-day stability without re-downloading old batches.
 from __future__ import annotations
 
 import argparse
+import io
 import json
+import re
 import sys
 import urllib.request
 import zipfile
@@ -29,7 +31,9 @@ def download_bytes(url: str) -> bytes:
 
 def discover_latest_gkg_url() -> str:
     url = "http://data.gdeltproject.org/gdeltv2/lastupdate.txt"
-    text = urllib.request.urlopen(url, timeout=60).read().decode("utf-8", errors="replace")
+    req = urllib.request.Request(url, headers={"User-Agent": "Psychohistory/0.2.1-C"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        text = r.read().decode("utf-8", errors="replace")
     candidates = []
     for line in text.splitlines():
         parts = line.split()
@@ -42,7 +46,7 @@ def discover_latest_gkg_url() -> str:
 
 
 def iter_gkg_rows(blob: bytes):
-    with zipfile.ZipFile(__import__("io").BytesIO(blob)) as zf:
+    with zipfile.ZipFile(io.BytesIO(blob)) as zf:
         members = [n for n in zf.namelist() if not n.endswith("/")]
         if len(members) != 1:
             raise RuntimeError(f"Expected one GKG member, found {len(members)}")
@@ -138,6 +142,14 @@ def serialize_topic_stats(stats, rows):
     return out
 
 
+def source_timestamp_label(source: str) -> str | None:
+    match = re.search(r"/(\d{14})\.gkg\.csv\.zip(?:$|[?#])", source)
+    if match:
+        stamp = match.group(1)
+        return f"{stamp[:8]}-{stamp[8:]}"
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--gkg-url")
@@ -160,7 +172,7 @@ def main() -> int:
         raise RuntimeError(f"Unsafe batch: rows={rows}, bad_rows={bad_rows}")
 
     generated = datetime.now(timezone.utc)
-    label = args.label or generated.strftime("%Y%m%d-%H%M%S")
+    label = args.label or source_timestamp_label(source) or generated.strftime("%Y%m%d-%H%M%S")
     outdir = Path(args.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
     outfile = outdir / f"{label}.json"
