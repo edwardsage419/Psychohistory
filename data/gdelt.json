@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "GDELT DOC 2.0 API (timelinevol mode)",
-    "updated_at": "2026-09-04T03:10:20Z",
+    "updated_at": "2026-09-04T03:29:13Z",
     "topics": [
       "Economic",
       "Geopolitics",
@@ -36,13 +36,13 @@
       "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "Technology": {
-      "value": 9.0821,
-      "7_day_average": 8.0127,
-      "change_percent": 13.35,
+      "value": 12.0307,
+      "7_day_average": 8.5309,
+      "change_percent": 41.03,
       "trend": "rising",
-      "status": "failed",
-      "last_success_at": "2026-09-03T22:35:41Z",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "status": "ok",
+      "last_success_at": "2026-09-04T03:29:13Z",
+      "error": null
     },
     "Energy": {
       "value": null,
@@ -51,7 +51,7 @@
       "trend": null,
       "status": "failed",
       "last_success_at": null,
-      "error": "ValueError: Invalid JSON (likely a GDELT text error): Expecting value: line 1 column 1 (char 0)"
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "War & Conflict": {
       "value": null,
@@ -63,12 +63,12 @@
       "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "Inflation": {
-      "value": 2.6382,
-      "7_day_average": 2.3089,
-      "change_percent": 14.26,
+      "value": 2.6246,
+      "7_day_average": 2.3069,
+      "change_percent": 13.77,
       "trend": "rising",
       "status": "ok",
-      "last_success_at": "2026-09-04T03:10:20Z",
+      "last_success_at": "2026-09-04T03:29:13Z",
       "error": null
     },
     "AI": {
@@ -78,7 +78,7 @@
       "trend": null,
       "status": "failed",
       "last_success_at": null,
-      "error": "ValueError: Invalid JSON (likely a GDELT text error): Expecting value: line 1 column 1 (char 0)"
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     }
   },
   "history": [
@@ -118,7 +118,7 @@
     },
     {
       "date": "2026-09-04",
-      "retrieved_at": "2026-09-04T03:10:20Z",
+      "retrieved_at": "2026-09-04T03:29:13Z",
       "topics": {
         "Economic": {
           "value": null,
@@ -129,8 +129,8 @@
           "status": "failed"
         },
         "Technology": {
-          "value": 9.0821,
-          "status": "failed"
+          "value": 12.0307,
+          "status": "ok"
         },
         "Energy": {
           "value": null,
@@ -141,7 +141,7 @@
           "status": "failed"
         },
         "Inflation": {
-          "value": 2.6382,
+          "value": 2.6246,
           "status": "ok"
         },
         "AI": {
