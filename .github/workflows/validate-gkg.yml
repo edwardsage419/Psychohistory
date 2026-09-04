@@ -1,0 +1,42 @@
+name: Validate GKG Source
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "20 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-gkg
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run local validator tests
+        working-directory: scripts
+        run: python test_validate_gkg.py
+
+      - name: Validate latest live GKG batch
+        run: python scripts/validate_gkg.py --top-themes 100
+
+      - name: Upload validation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: gkg-validation-report
+          path: scripts/gkg_validation_report.json
+          if-no-files-found: error
+          retention-days: 14
