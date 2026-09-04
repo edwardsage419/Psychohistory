@@ -221,13 +221,31 @@ function renderTopics(gdelt) {
   grid.innerHTML = topicNames.map(name => {
     const t = current[name];
 
-    if (!t || t.value === null || t.value === undefined) {
+    // Never fetched at all for this topic (key missing entirely).
+    if (!t) {
       return `
         <div class="topic-card topic-card-empty">
           <div class="topic-top">
             <span class="topic-name">${escapeHtml(name)}</span>
           </div>
           <div class="empty-state">Data Unavailable</div>
+        </div>`;
+    }
+
+    // Has never succeeded yet (no fallback value) — still show WHY,
+    // instead of a bare "Data Unavailable" that hides the reason.
+    if (t.value === null || t.value === undefined) {
+      return `
+        <div class="topic-card topic-card-empty">
+          <div class="topic-top">
+            <span class="topic-name">${escapeHtml(name)}</span>
+            <span class="topic-trend status-warn">NO DATA YET</span>
+          </div>
+          <div class="empty-state">Data Unavailable</div>
+          <div class="topic-stale-note">
+            最近一次抓取失败：${escapeHtml(t.error || "unknown error")}
+            ${t.last_success_at ? "" : "（此主题尚未成功获取过数据）"}
+          </div>
         </div>`;
     }
 

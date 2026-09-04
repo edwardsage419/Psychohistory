@@ -303,6 +303,8 @@ main {
   letter-spacing: 0.03em;
 }
 
+.topic-trend.status-warn { color: var(--amber); }
+
 .topic-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
