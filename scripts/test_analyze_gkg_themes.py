@@ -3,8 +3,6 @@
 from __future__ import annotations
 
 import io
-import json
-import tempfile
 import zipfile
 from pathlib import Path
 
@@ -32,7 +30,7 @@ def main():
         row("20260904083000", ""),
         "bad\trow",
     ]
-    freq, rows, dates, samples, bad = mod.analyze_rows(lines, {})
+    freq, rows, dates, samples, bad = mod.analyze_rows(lines)
     assert rows == 3, rows
     assert bad == 1, bad
     assert freq["ECON_INFLATION"] == 1, freq
@@ -56,16 +54,27 @@ def main():
     assert sets["Economic"]["secondary"] == ["ECON_INFLATION"]
     assert sets["Economic"]["excluded"] == ["ARMEDCONFLICT"]
 
-    lookup = mod.parse_lookup("# comment\nEPU_ECONOMY\tEconomy\t123\nECON_INFLATION\tInflation\t456\n")
-    assert lookup["EPU_ECONOMY"]["description"] == "Economy"
+    # Current official lookup shape: THEME + historical document count.
+    lookup = mod.parse_lookup("# comment\nEPU_ECONOMY\t123\nECON_INFLATION\t456\n")
+    assert lookup["EPU_ECONOMY"]["description"] == ""
     assert lookup["EPU_ECONOMY"]["lookup_count"] == 123
+    assert lookup["ECON_INFLATION"]["lookup_count"] == 456
 
-    with tempfile.TemporaryDirectory() as td:
-        p = Path(td) / "sample.zip"
+    # Tolerate a legacy three-column presentation without mistaking the count
+    # for a description when the second column is numeric.
+    lookup2 = mod.parse_lookup("EPU_ECONOMY\t987\textra\n")
+    assert lookup2["EPU_ECONOMY"]["lookup_count"] == 987
+    assert lookup2["EPU_ECONOMY"]["description"] == ""
+
+    p = Path("sample_test.gkg.csv.zip")
+    try:
         p.write_bytes(make_zip(lines[:3]))
         extracted = list(mod.iter_gkg_rows(p.read_bytes()))
         assert len(extracted) == 3
         assert extracted[0].split("\t")[7].count("ECON_INFLATION") == 2
+    finally:
+        if p.exists():
+            p.unlink()
 
     print("test_analyze_gkg_themes: PASS")
 
