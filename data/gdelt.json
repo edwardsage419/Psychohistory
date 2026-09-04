@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "GDELT DOC 2.0 API (timelinevol mode)",
-    "updated_at": "2026-09-03T22:35:41Z",
+    "updated_at": "2026-09-04T03:10:20Z",
     "topics": [
       "Economic",
       "Geopolitics",
@@ -40,9 +40,9 @@
       "7_day_average": 8.0127,
       "change_percent": 13.35,
       "trend": "rising",
-      "status": "ok",
+      "status": "failed",
       "last_success_at": "2026-09-03T22:35:41Z",
-      "error": null
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "Energy": {
       "value": null,
@@ -51,7 +51,7 @@
       "trend": null,
       "status": "failed",
       "last_success_at": null,
-      "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "error": "ValueError: Invalid JSON (likely a GDELT text error): Expecting value: line 1 column 1 (char 0)"
     },
     "War & Conflict": {
       "value": null,
@@ -63,13 +63,13 @@
       "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "Inflation": {
-      "value": null,
-      "7_day_average": null,
-      "change_percent": null,
-      "trend": null,
-      "status": "failed",
-      "last_success_at": null,
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "value": 2.6382,
+      "7_day_average": 2.3089,
+      "change_percent": 14.26,
+      "trend": "rising",
+      "status": "ok",
+      "last_success_at": "2026-09-04T03:10:20Z",
+      "error": null
     },
     "AI": {
       "value": null,
@@ -78,7 +78,7 @@
       "trend": null,
       "status": "failed",
       "last_success_at": null,
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "error": "ValueError: Invalid JSON (likely a GDELT text error): Expecting value: line 1 column 1 (char 0)"
     }
   },
   "history": [
@@ -109,6 +109,40 @@
         "Inflation": {
           "value": null,
           "status": "failed"
+        },
+        "AI": {
+          "value": null,
+          "status": "failed"
+        }
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "retrieved_at": "2026-09-04T03:10:20Z",
+      "topics": {
+        "Economic": {
+          "value": null,
+          "status": "failed"
+        },
+        "Geopolitics": {
+          "value": null,
+          "status": "failed"
+        },
+        "Technology": {
+          "value": 9.0821,
+          "status": "failed"
+        },
+        "Energy": {
+          "value": null,
+          "status": "failed"
+        },
+        "War & Conflict": {
+          "value": null,
+          "status": "failed"
+        },
+        "Inflation": {
+          "value": 2.6382,
+          "status": "ok"
         },
         "AI": {
           "value": null,
