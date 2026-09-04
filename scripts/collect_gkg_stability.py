@@ -12,6 +12,7 @@ import io
 import json
 import re
 import sys
+import urllib.error
 import urllib.request
 import zipfile
 from collections import Counter
@@ -21,6 +22,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 DEFAULT_MAPPING = HERE / "gkg_theme_mapping.json"
 DEFAULT_OUTDIR = HERE / "gkg_stability_history"
+LASTUPDATE_URL = "http://data.gdeltproject.org/gdeltv2/lastupdate.txt"
 
 
 def download_bytes(url: str) -> bytes:
@@ -29,20 +31,52 @@ def download_bytes(url: str) -> bytes:
         return r.read()
 
 
-def discover_latest_gkg_url() -> str:
-    url = "http://data.gdeltproject.org/gdeltv2/lastupdate.txt"
-    req = urllib.request.Request(url, headers={"User-Agent": "Psychohistory/0.2.1-C"})
+def discover_gkg_urls() -> list[str]:
+    req = urllib.request.Request(LASTUPDATE_URL, headers={"User-Agent": "Psychohistory/0.2.1-C"})
     with urllib.request.urlopen(req, timeout=60) as r:
         text = r.read().decode("utf-8", errors="replace")
     candidates = []
     for line in text.splitlines():
         parts = line.split()
         if parts and parts[-1].endswith(".gkg.csv.zip"):
-            if parts[-1].startswith(("http://", "https://")):
-                candidates.append(parts[-1])
+            url = parts[-1]
+            if url.startswith(("http://", "https://")):
+                candidates.append(url)
     if not candidates:
         raise RuntimeError("No GKG .gkg.csv.zip URL found in lastupdate.txt")
-    return candidates[-1]
+    return list(reversed(candidates))
+
+
+def discover_latest_gkg_url() -> str:
+    return discover_gkg_urls()[0]
+
+
+def download_latest_gkg() -> tuple[str, bytes]:
+    """Download the newest available GKG file.
+
+    GDELT can publish lastupdate.txt before the newest ZIP is reachable. Try
+    recent candidates newest-first and then HTTPS/HTTP alternate forms before
+    failing, so a transient publication lag does not break the daily pipeline.
+    """
+    errors = []
+    candidates = discover_gkg_urls()
+    attempted = set()
+    for original in candidates[:8]:
+        variants = [original]
+        if original.startswith("http://"):
+            variants.append("https://" + original[len("http://"):])
+        elif original.startswith("https://"):
+            variants.append("http://" + original[len("https://"):])
+        for url in variants:
+            if url in attempted:
+                continue
+            attempted.add(url)
+            try:
+                blob = download_bytes(url)
+                return url, blob
+            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
+                errors.append(f"{url}: {type(exc).__name__}: {exc}")
+    raise RuntimeError("Unable to download any recent GKG batch. " + " | ".join(errors[-8:]))
 
 
 def iter_gkg_rows(blob: bytes):
@@ -163,9 +197,11 @@ def main() -> int:
     if args.gkg_file:
         blob = Path(args.gkg_file).read_bytes()
         source = str(Path(args.gkg_file))
-    else:
-        source = args.gkg_url or discover_latest_gkg_url()
+    elif args.gkg_url:
+        source = args.gkg_url
         blob = download_bytes(source)
+    else:
+        source, blob = download_latest_gkg()
 
     rows, bad_rows, dates, freq, topic_stats = analyze_lines(iter_gkg_rows(blob), mapping)
     if rows == 0 or bad_rows:
