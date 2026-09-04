@@ -1,13 +1,120 @@
 {
   "metadata": {
     "source": "GDELT DOC 2.0 API (timelinevol mode)",
-    "updated_at": null,
-    "topics": ["Economic", "Geopolitics", "Technology", "Energy", "War & Conflict", "Inflation", "AI"],
+    "updated_at": "2026-09-04T18:56:33Z",
+    "topics": [
+      "Economic",
+      "Geopolitics",
+      "Technology",
+      "Energy",
+      "War & Conflict",
+      "Inflation",
+      "AI"
+    ],
     "trend_threshold_percent": 10,
     "value_definition": "value 表示该主题查询词匹配到的新闻，占 GDELT 监测的全球新闻总量的百分比（媒体报道量占比），是媒体关注度的代理指标，不代表事件真实发生的程度、严重性或风险水平。",
     "system_version": "V0.2",
-    "last_run_status": "not_yet_run"
+    "last_run_status": "ok"
   },
-  "current": {},
-  "history": []
+  "current": {
+    "Economic": {
+      "value": null,
+      "7_day_average": null,
+      "change_percent": null,
+      "trend": null,
+      "status": "failed",
+      "last_success_at": null,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "Geopolitics": {
+      "value": null,
+      "7_day_average": null,
+      "change_percent": null,
+      "trend": null,
+      "status": "failed",
+      "last_success_at": null,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "Technology": {
+      "value": null,
+      "7_day_average": null,
+      "change_percent": null,
+      "trend": null,
+      "status": "failed",
+      "last_success_at": null,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "Energy": {
+      "value": null,
+      "7_day_average": null,
+      "change_percent": null,
+      "trend": null,
+      "status": "failed",
+      "last_success_at": null,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "War & Conflict": {
+      "value": null,
+      "7_day_average": null,
+      "change_percent": null,
+      "trend": null,
+      "status": "failed",
+      "last_success_at": null,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "Inflation": {
+      "value": 2.4485,
+      "7_day_average": 2.2818,
+      "change_percent": 7.31,
+      "trend": "stable",
+      "status": "ok",
+      "last_success_at": "2026-09-04T18:56:33Z",
+      "error": null
+    },
+    "AI": {
+      "value": null,
+      "7_day_average": null,
+      "change_percent": null,
+      "trend": null,
+      "status": "failed",
+      "last_success_at": null,
+      "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-09-04",
+      "retrieved_at": "2026-09-04T18:56:33Z",
+      "topics": {
+        "Economic": {
+          "value": null,
+          "status": "failed"
+        },
+        "Geopolitics": {
+          "value": null,
+          "status": "failed"
+        },
+        "Technology": {
+          "value": null,
+          "status": "failed"
+        },
+        "Energy": {
+          "value": null,
+          "status": "failed"
+        },
+        "War & Conflict": {
+          "value": null,
+          "status": "failed"
+        },
+        "Inflation": {
+          "value": 2.4485,
+          "status": "ok"
+        },
+        "AI": {
+          "value": null,
+          "status": "failed"
+        }
+      }
+    }
+  ]
 }
