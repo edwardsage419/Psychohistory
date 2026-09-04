@@ -9,6 +9,7 @@ import argparse
 import io
 import json
 import sys
+import urllib.error
 import urllib.request
 import zipfile
 from collections import Counter
@@ -34,7 +35,7 @@ def download_bytes(url: str) -> bytes:
         return r.read()
 
 
-def discover_latest_gkg_url() -> str:
+def discover_gkg_urls() -> list[str]:
     text = download_text(LASTUPDATE_URL)
     candidates = []
     for line in text.splitlines():
@@ -45,7 +46,33 @@ def discover_latest_gkg_url() -> str:
                 candidates.append(url)
     if not candidates:
         raise RuntimeError("No GKG .gkg.csv.zip URL found in lastupdate.txt")
-    return candidates[-1]
+    return list(reversed(candidates))
+
+
+def discover_latest_gkg_url() -> str:
+    return discover_gkg_urls()[0]
+
+
+def download_latest_gkg() -> tuple[str, bytes]:
+    """Download the newest available GKG file despite publication lag."""
+    errors = []
+    candidates = discover_gkg_urls()
+    attempted = set()
+    for original in candidates[:8]:
+        variants = [original]
+        if original.startswith("http://"):
+            variants.append("https://" + original[len("http://"):])
+        elif original.startswith("https://"):
+            variants.append("http://" + original[len("https://"):])
+        for url in variants:
+            if url in attempted:
+                continue
+            attempted.add(url)
+            try:
+                return url, download_bytes(url)
+            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
+                errors.append(f"{url}: {type(exc).__name__}: {exc}")
+    raise RuntimeError("Unable to download any recent GKG batch. " + " | ".join(errors[-8:]))
 
 
 def parse_lookup(text: str) -> dict[str, dict]:
@@ -53,9 +80,7 @@ def parse_lookup(text: str) -> dict[str, dict]:
 
     The official LOOKUP-GKGTHEMES.TXT is a histogram with a Theme code and
     historical document count. It does not provide a natural-language
-    description column. Preserve that distinction explicitly: numeric values
-    are counts, and descriptions remain empty unless a future source actually
-    supplies a verified description field.
+    description column.
     """
     result: dict[str, dict] = {}
     for raw in text.splitlines():
@@ -65,9 +90,7 @@ def parse_lookup(text: str) -> dict[str, dict]:
         parts = line.split("\t")
         if len(parts) == 1:
             parts = line.split()
-        if not parts:
-            continue
-        code = parts[0].strip()
+        code = parts[0].strip() if parts else ""
         if not code or code.upper() in {"THEME", "THEMES", "CODE"}:
             continue
         count = None
@@ -145,9 +168,11 @@ def main() -> int:
     if args.gkg_file:
         gkg_blob = Path(args.gkg_file).read_bytes()
         gkg_source = str(Path(args.gkg_file))
-    else:
-        gkg_source = args.gkg_url or discover_latest_gkg_url()
+    elif args.gkg_url:
+        gkg_source = args.gkg_url
         gkg_blob = download_bytes(gkg_source)
+    else:
+        gkg_source, gkg_blob = download_latest_gkg()
 
     lookup_error = None
     try:
