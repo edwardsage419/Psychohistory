@@ -16,7 +16,7 @@ import urllib.error
 import urllib.request
 import zipfile
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -51,17 +51,30 @@ def discover_latest_gkg_url() -> str:
     return discover_gkg_urls()[0]
 
 
-def download_latest_gkg() -> tuple[str, bytes]:
-    """Download the newest available GKG file.
+def publication_lag_candidates(url: str, intervals: int = 8) -> list[str]:
+    """Generate the latest GKG URL plus prior 15-minute intervals.
 
-    GDELT can publish lastupdate.txt before the newest ZIP is reachable. Try
-    recent candidates newest-first and then HTTPS/HTTP alternate forms before
-    failing, so a transient publication lag does not break the daily pipeline.
+    lastupdate.txt can advance before the corresponding ZIP is reachable.
+    GKG files are published on 15-minute boundaries, so stepping backward
+    avoids failing an otherwise healthy collection run during that lag.
     """
+    match = re.search(r"/(\d{14})\.gkg\.csv\.zip(?:$|[?#])", url)
+    if not match:
+        return [url]
+    stamp = datetime.strptime(match.group(1), "%Y%m%d%H%M%S")
+    prefix = url[:match.start(1)]
+    suffix = url[match.end(1):]
+    return [f"{prefix}{(stamp - timedelta(minutes=15 * i)).strftime('%Y%m%d%H%M%S')}{suffix}" for i in range(intervals)]
+
+
+def download_latest_gkg() -> tuple[str, bytes]:
     errors = []
-    candidates = discover_gkg_urls()
+    seeds = discover_gkg_urls()
     attempted = set()
-    for original in candidates[:8]:
+    candidates = []
+    for seed in seeds[:2]:
+        candidates.extend(publication_lag_candidates(seed, intervals=8))
+    for original in candidates:
         variants = [original]
         if original.startswith("http://"):
             variants.append("https://" + original[len("http://"):])
@@ -76,7 +89,7 @@ def download_latest_gkg() -> tuple[str, bytes]:
                 return url, blob
             except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
                 errors.append(f"{url}: {type(exc).__name__}: {exc}")
-    raise RuntimeError("Unable to download any recent GKG batch. " + " | ".join(errors[-8:]))
+    raise RuntimeError("Unable to download a recent published GKG batch. " + " | ".join(errors[-8:]))
 
 
 def iter_gkg_rows(blob: bytes):
@@ -227,6 +240,7 @@ def main() -> int:
             "theme_frequency": "each V1THEMES code counts at most once per document",
             "topic_union": "a document counts once for a topic if it contains at least one Theme in that topic group",
             "normalization": "union document counts per 1000 valid GKG documents",
+            "publication_lag_policy": "try the latest GKG timestamp, then prior 15-minute intervals before failing",
             "production_status": "analysis_only",
             "stability_window_target_days": 14,
         },
