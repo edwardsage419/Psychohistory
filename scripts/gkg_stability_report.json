@@ -1,0 +1,116 @@
+{
+  "analysis_version": "V0.2.1-C",
+  "generated_at_utc": "2026-09-04T11:46:17.842612+00:00",
+  "window": {
+    "valid_batches": 1,
+    "daily_samples": 1,
+    "sample_dates_utc": [
+      "20260904"
+    ],
+    "unique_sources": 1,
+    "minimum_days": 7,
+    "target_days": 14,
+    "status": "collecting",
+    "selection_rule": "latest valid GKG batch per UTC calendar day"
+  },
+  "topics": {
+    "AI": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 255.6098,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 255.6098,
+        "max": 255.6098
+      },
+      "primary_rate_mean_per_1000": 0.0,
+      "secondary_rate_mean_per_1000": 255.6098,
+      "interpretation": "collecting"
+    },
+    "Economic": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 247.8049,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 247.8049,
+        "max": 247.8049
+      },
+      "primary_rate_mean_per_1000": 115.122,
+      "secondary_rate_mean_per_1000": 195.122,
+      "interpretation": "collecting"
+    },
+    "Energy": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 133.6585,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 133.6585,
+        "max": 133.6585
+      },
+      "primary_rate_mean_per_1000": 129.7561,
+      "secondary_rate_mean_per_1000": 16.5854,
+      "interpretation": "collecting"
+    },
+    "Geopolitics": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 406.8293,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 406.8293,
+        "max": 406.8293
+      },
+      "primary_rate_mean_per_1000": 163.9024,
+      "secondary_rate_mean_per_1000": 372.6829,
+      "interpretation": "collecting"
+    },
+    "Inflation": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 223.4146,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 223.4146,
+        "max": 223.4146
+      },
+      "primary_rate_mean_per_1000": 21.4634,
+      "secondary_rate_mean_per_1000": 223.4146,
+      "interpretation": "collecting"
+    },
+    "Technology": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 255.6098,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 255.6098,
+        "max": 255.6098
+      },
+      "primary_rate_mean_per_1000": 181.4634,
+      "secondary_rate_mean_per_1000": 97.561,
+      "interpretation": "collecting"
+    },
+    "War & Conflict": {
+      "samples": 1,
+      "all_rate_per_1000": {
+        "mean": 318.0488,
+        "stdev": 0.0,
+        "cv": 0.0,
+        "min": 318.0488,
+        "max": 318.0488
+      },
+      "primary_rate_mean_per_1000": 198.0488,
+      "secondary_rate_mean_per_1000": 200.0,
+      "interpretation": "collecting"
+    }
+  },
+  "method": {
+    "normalization": "topic union documents per 1000 valid GKG documents",
+    "cv_definition": "sample standard deviation divided by mean; descriptive only",
+    "stability_window": "distinct UTC calendar days, not raw batch count",
+    "production_decision": "manual review required; no automatic promotion",
+    "analysis_only": true
+  }
+}

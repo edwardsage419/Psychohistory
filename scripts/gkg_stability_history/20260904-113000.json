@@ -1,0 +1,185 @@
+{
+  "analysis_version": "V0.2.1-C",
+  "generated_at_utc": "2026-09-04T11:46:17.783639+00:00",
+  "source": {
+    "gkg": "http://data.gdeltproject.org/gdeltv2/20260904113000.gkg.csv.zip"
+  },
+  "dataset": {
+    "rows": 1025,
+    "bad_rows": 0,
+    "dates": {
+      "20260904": 1025
+    },
+    "distinct_themes": 2173
+  },
+  "topics": {
+    "Economic": {
+      "primary_theme_document_counts": {
+        "EPU_ECONOMY": 118
+      },
+      "secondary_theme_document_counts": {
+        "ECON_CENTRALBANK": 12,
+        "ECON_DEBT": 14,
+        "ECON_ENTREPRENEURSHIP": 25,
+        "ECON_HOUSING_PRICES": 12,
+        "ECON_INTEREST_RATES": 21,
+        "ECON_STOCKMARKET": 99,
+        "ECON_WORLDCURRENCIES": 37,
+        "UNEMPLOYMENT": 5,
+        "WB_1104_MACROECONOMIC_VULNERABILITY_AND_DEBT": 43,
+        "WB_471_ECONOMIC_GROWTH": 23
+      },
+      "excluded_theme_document_counts": {
+        "GENERAL_GOVERNMENT": 167,
+        "TAX_FNCACT": 830
+      },
+      "primary_union_documents": 118,
+      "secondary_union_documents": 200,
+      "all_union_documents": 254,
+      "primary_rate_per_1000_documents": 115.122,
+      "secondary_rate_per_1000_documents": 195.122,
+      "all_rate_per_1000_documents": 247.8049
+    },
+    "Geopolitics": {
+      "primary_theme_document_counts": {
+        "ALLIANCE": 24,
+        "BORDER": 28,
+        "EPU_CATS_NATIONAL_SECURITY": 82,
+        "EPU_POLICY_POLITICAL": 56,
+        "NEGOTIATIONS": 31,
+        "SANCTIONS": 19
+      },
+      "secondary_theme_document_counts": {
+        "EPU_POLICY": 369,
+        "EPU_POLICY_GOVERNMENT": 147,
+        "WB_2473_DIPLOMACY_AND_NEGOTIATIONS": 18,
+        "WB_2490_NATIONAL_PROTECTION_AND_SECURITY": 39
+      },
+      "excluded_theme_document_counts": {
+        "ARMEDCONFLICT": 116,
+        "MILITARY": 41
+      },
+      "primary_union_documents": 168,
+      "secondary_union_documents": 382,
+      "all_union_documents": 417,
+      "primary_rate_per_1000_documents": 163.9024,
+      "secondary_rate_per_1000_documents": 372.6829,
+      "all_rate_per_1000_documents": 406.8293
+    },
+    "Technology": {
+      "primary_theme_document_counts": {
+        "WB_133_INFORMATION_AND_COMMUNICATION_TECHNOLOGIES": 186,
+        "WB_652_ICT_APPLICATIONS": 62,
+        "WB_658_ENTERPRISE_APPLICATIONS": 62,
+        "WB_667_ICT_INFRASTRUCTURE": 27,
+        "WB_669_SOFTWARE_INFRASTRUCTURE": 12
+      },
+      "secondary_theme_document_counts": {
+        "CYBER_ATTACK": 12,
+        "SCIENCE": 74,
+        "SOC_INNOVATION": 40,
+        "WB_851_INTELLECTUAL_PROPERTY_RIGHTS": 12
+      },
+      "excluded_theme_document_counts": {
+        "MEDIA_MSM": 119
+      },
+      "primary_union_documents": 186,
+      "secondary_union_documents": 100,
+      "all_union_documents": 262,
+      "primary_rate_per_1000_documents": 181.4634,
+      "secondary_rate_per_1000_documents": 97.561,
+      "all_rate_per_1000_documents": 255.6098
+    },
+    "Energy": {
+      "primary_theme_document_counts": {
+        "ECON_OILPRICE": 19,
+        "ENV_OIL": 48,
+        "WB_507_ENERGY_AND_EXTRACTIVES": 92,
+        "WB_539_OIL_AND_GAS_POLICY_STRATEGY_AND_INSTITUTIONS": 15
+      },
+      "secondary_theme_document_counts": {
+        "ENV_MINING": 17
+      },
+      "excluded_theme_document_counts": {
+        "UNGP_FORESTS_RIVERS_OCEANS": 361
+      },
+      "primary_union_documents": 133,
+      "secondary_union_documents": 17,
+      "all_union_documents": 137,
+      "primary_rate_per_1000_documents": 129.7561,
+      "secondary_rate_per_1000_documents": 16.5854,
+      "all_rate_per_1000_documents": 133.6585
+    },
+    "War & Conflict": {
+      "primary_theme_document_counts": {
+        "ARMEDCONFLICT": 116,
+        "MILITARY": 41,
+        "WB_2433_CONFLICT_AND_VIOLENCE": 122,
+        "WB_2462_POLITICAL_VIOLENCE_AND_WAR": 26
+      },
+      "secondary_theme_document_counts": {
+        "EVACUATION": 4,
+        "KILL": 166,
+        "REBELLION": 6,
+        "SANCTIONS": 19,
+        "TERROR": 25,
+        "WOUND": 33
+      },
+      "excluded_theme_document_counts": {
+        "GENERAL_GOVERNMENT": 167,
+        "LEADER": 200
+      },
+      "primary_union_documents": 203,
+      "secondary_union_documents": 205,
+      "all_union_documents": 326,
+      "primary_rate_per_1000_documents": 198.0488,
+      "secondary_rate_per_1000_documents": 200.0,
+      "all_rate_per_1000_documents": 318.0488
+    },
+    "Inflation": {
+      "primary_theme_document_counts": {
+        "ECON_INFLATION": 22
+      },
+      "secondary_theme_document_counts": {
+        "ECON_INTEREST_RATES": 21,
+        "ECON_OILPRICE": 19,
+        "SHORTAGE": 20,
+        "TAX_ECON_PRICE": 209,
+        "WB_442_INFLATION": 21
+      },
+      "excluded_theme_document_counts": {},
+      "primary_union_documents": 22,
+      "secondary_union_documents": 229,
+      "all_union_documents": 229,
+      "primary_rate_per_1000_documents": 21.4634,
+      "secondary_rate_per_1000_documents": 223.4146,
+      "all_rate_per_1000_documents": 223.4146
+    },
+    "AI": {
+      "primary_theme_document_counts": {},
+      "secondary_theme_document_counts": {
+        "CYBER_ATTACK": 12,
+        "SCIENCE": 74,
+        "SOC_INNOVATION": 40,
+        "WB_133_INFORMATION_AND_COMMUNICATION_TECHNOLOGIES": 186,
+        "WB_669_SOFTWARE_INFRASTRUCTURE": 12,
+        "WB_851_INTELLECTUAL_PROPERTY_RIGHTS": 12
+      },
+      "excluded_theme_document_counts": {},
+      "primary_union_documents": 0,
+      "secondary_union_documents": 262,
+      "all_union_documents": 262,
+      "primary_rate_per_1000_documents": 0.0,
+      "secondary_rate_per_1000_documents": 255.6098,
+      "all_rate_per_1000_documents": 255.6098
+    }
+  },
+  "method": {
+    "theme_frequency": "each V1THEMES code counts at most once per document",
+    "topic_union": "a document counts once for a topic if it contains at least one Theme in that topic group",
+    "normalization": "union document counts per 1000 valid GKG documents",
+    "publication_lag_policy": "try the latest GKG timestamp, then prior 15-minute intervals before failing",
+    "production_status": "analysis_only",
+    "stability_window_target_days": 14
+  }
+}

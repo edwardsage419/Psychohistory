@@ -1,0 +1,69 @@
+name: Collect GKG Stability
+
+on:
+  push:
+    branches: ["v0.2.1-b-gkg-theme-analysis"]
+    paths:
+      - "scripts/collect_gkg_stability.py"
+      - "scripts/evaluate_gkg_stability.py"
+      - "scripts/test_collect_gkg_stability.py"
+      - "scripts/test_evaluate_gkg_stability.py"
+      - "scripts/gkg_theme_mapping.json"
+      - ".github/workflows/collect-gkg-stability.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: '35 12 * * *'
+
+# Prevent two stability runs from racing while both try to append analysis history.
+concurrency:
+  group: gkg-stability-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run offline tests
+        working-directory: scripts
+        run: |
+          python test_analyze_gkg_themes.py
+          python test_collect_gkg_stability.py
+          python test_evaluate_gkg_stability.py
+
+      - name: Collect latest live GKG batch
+        run: python scripts/collect_gkg_stability.py
+
+      - name: Evaluate accumulated stability
+        run: python scripts/evaluate_gkg_stability.py
+
+      - name: Commit new analysis-only history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/gkg_stability_history scripts/gkg_stability_report.json
+          if git diff --cached --quiet; then
+            echo "[OK] No new analysis data to commit."
+          else
+            git commit -m "Record GKG stability analysis batch"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
+
+      - name: Publish stability report
+        uses: actions/upload-artifact@v4
+        with:
+          name: gkg-stability-report
+          path: scripts/gkg_stability_report.json
+          retention-days: 30
