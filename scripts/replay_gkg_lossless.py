@@ -141,6 +141,14 @@ def validate_replay(report):
 
 
 def compare(manifest, first, second):
+    study.check_manifest(manifest)
+    if Path(first).resolve() == Path(second).resolve():
+        raise core.Rejection('replay_not_independent', 'Replay inputs resolve to the same directory')
+    for batch in manifest['batches']:
+        left_path = Path(first) / (batch['batch_id'] + '.json')
+        right_path = Path(second) / (batch['batch_id'] + '.json')
+        if left_path.samefile(right_path):
+            raise core.Rejection('replay_not_independent', 'Replay ledgers alias the same file')
     m1, a = read_run(first, manifest)
     m2, b = read_run(second, manifest)
     if m1['phase2_report_sha256'] != m2['phase2_report_sha256']:
@@ -174,6 +182,28 @@ def compare(manifest, first, second):
 
 
 def assess(manifest, batches, replay, regression_passed=False):
+    # Reject malformed shapes before accessing counters or nested references.
+    # A contract exception must not be followed by unsafe field dereferences.
+    try:
+        study.check_manifest(manifest)
+        validate_record('replay', replay)
+        if not isinstance(batches, list):
+            raise core.Rejection('invalid_batches', 'Expected a batch list')
+        for batch in batches:
+            validate_record('batch', batch)
+    except (ValueError, core.Rejection, study.StudyError) as exc:
+        result = {'schema_version': '1.0.0',
+                  'scope': 'raw acquisition, archive verification, lossless parsing, quarantine and provenance only',
+                  'recommendation': 'continue_validation',
+                  'gates': {name: False for name in ('exact_sample_identity', 'archive_identity_integrity',
+                      'no_duplicate_batches', 'disposition_provenance_complete', 'independent_replay',
+                      'mutation_and_failure_regressions', 'batch_transparency_usability',
+                      'zero_unexpected_exceptions', 'encoding_ambiguity_contained')},
+                  'replay_sha256': core.digest(replay),
+                  'errors': [core.error(getattr(exc, 'code', 'contract_failure'), 'Malformed assessment evidence')],
+                  'limitations': ['Invalid input fingerprint identifies rejected evidence, not a verified replay']}
+        validate_record('assessment', result)
+        return result
     errors = []
     try:
         validate_replay(replay)

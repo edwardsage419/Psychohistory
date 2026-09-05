@@ -89,3 +89,8 @@ Receipts bind source URL/hash/size, acquisition clocks and HTTP metadata to the
 Phase 2 report SHA-256. Storage measures canonical JSONL payload bytes, separates
 raw/quarantine/accepted-ledger/provenance categories and labels extrapolations.
 See GKG_RETENTION_POLICY.md for permanent evidence and future raw policy limits.
+
+Post-publication validation fixes are recorded in [Phase 3 self-review](PHASE_3_SELF_REVIEW.md).
+Current compare rejects identical/aliased inputs; original run identities require
+the preserved source-snapshot evaluator. Quarantine diagnostics are rechecked
+against embedded bytes even without a supplied member.

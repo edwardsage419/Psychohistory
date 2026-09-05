@@ -246,6 +246,8 @@ def validate_batch(result, payload=None):
     validate_record('batch', result)
     if result['semantic_sha256'] != digest({k: v for k, v in result.items() if k != 'semantic_sha256'}):
         raise Rejection('semantic_hash_mismatch', 'Batch semantic fingerprint contradicts content')
+    if payload is not None and (len(payload) != result['member_bytes'] or sha(payload) != result['member_sha256']):
+        raise Rejection('member_revision_mismatch', 'Supplied member differs from recorded hash or size')
     rows = result['rows']
     accepted = sum(r['disposition'] == 'accepted' for r in rows)
     if (result['physical_rows'] != len(rows) or result['accepted_rows'] != accepted
@@ -287,6 +289,11 @@ def validate_batch(result, payload=None):
             raw = base64.b64decode(r['raw_base64'], validate=True)
             if sha(raw) != r['raw_sha256'] or len(raw) != r['end'] - r['start']:
                 raise Rejection('quarantine_bytes', 'Quarantine bytes contradict row fingerprint')
+            # Embedded bytes permit diagnostics to be checked without the ZIP.
+            # Duplicate-ID membership still requires the complete member below.
+            claimed_duplicates = {body(raw).split(b'\t', 1)[0]} if r['disposition'] == 'quarantined_other' else set()
+            if r != classify(raw, result['source'], result['member'], i, r['start'], claimed_duplicates):
+                raise Rejection('quarantine_diagnostics', 'Quarantine disposition or diagnostics contradict raw bytes')
         if payload is not None:
             raw = payload[r['start']:r['end']]
             if r != classify(raw, result['source'], result['member'], i, r['start'], duplicate_ids):

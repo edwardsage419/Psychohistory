@@ -259,6 +259,27 @@ class LosslessTests(unittest.TestCase):
         core.seal(result)
         with self.assertRaises(core.Rejection): core.validate_batch(result)
 
+    def test_supplied_member_payload_hash_is_verified(self):
+        result = self.ingest()
+        result['member_sha256'] = '0' * 64
+        core.seal(result)
+        with self.assertRaises(core.Rejection):
+            core.validate_batch(result, raw_row())
+
+    def test_quarantine_diagnostics_cannot_contradict_embedded_bytes(self):
+        original = self.ingest(raw_row().replace(b'TEST_A', b'\xff'))
+        for change in ('span', 'reason', 'category'):
+            result = copy.deepcopy(original)
+            q = result['rows'][0]
+            if change == 'span': q['invalid_sequences'][0]['bytes_hex'] = '00'
+            if change == 'reason': q['reasons'][0]['code'] = 'unrelated_failure'
+            if change == 'category':
+                q['disposition'] = 'quarantined_timestamp'
+                result['disposition_counts'] = {'quarantined_timestamp': 1}
+            core.seal(result)
+            with self.subTest(change=change), self.assertRaises(core.Rejection):
+                core.validate_batch(result)
+
     def test_output_collision_and_exclusive_write(self):
         path, _ = self.store()
         for output in (path, self.root, self.root / 'nested'):
@@ -345,6 +366,28 @@ class CorpusTests(unittest.TestCase):
         self.assertEqual(profile['measured_totals_bytes']['quarantine_evidence'], 0)
         self.assertFalse(profile['normalized_field_records']['created'])
         self.assertEqual(profile['recent_extrapolations']['raw_archives']['extrapolated_bytes_per_365_days'], batches[0]['source']['archive_bytes'] * 35040)
+
+    def test_same_run_cannot_count_as_independent_replay(self):
+        with self.assertRaises(core.Rejection) as caught:
+            runner.compare(manifest(), self.root / 'one', self.root / 'one' / '.')
+        self.assertEqual(caught.exception.code, 'replay_not_independent')
+
+    def test_hard_linked_ledgers_cannot_count_as_independent(self):
+        right = self.root / 'two' / (STAMP + '.json')
+        right.unlink()
+        os.link(self.root / 'one' / (STAMP + '.json'), right)
+        with self.assertRaises(core.Rejection) as caught:
+            runner.compare(manifest(), self.root / 'one', self.root / 'two')
+        self.assertEqual(caught.exception.code, 'replay_not_independent')
+
+    def test_malformed_assessment_evidence_fails_without_crashing(self):
+        replay = runner.compare(manifest(), self.root / 'one', self.root / 'two')
+        _, batches = runner.read_run(self.root / 'one', manifest())
+        for supplied_batches, supplied_replay in [(batches, {}), ([{}], replay)]:
+            result = runner.assess(manifest(), supplied_batches, supplied_replay, True)
+            self.assertEqual(result['recommendation'], 'continue_validation')
+            self.assertTrue(result['errors'])
+            validate_record('assessment', result)
 
     def test_existing_output_cannot_overwrite_evidence(self):
         with self.assertRaises(FileExistsError):
