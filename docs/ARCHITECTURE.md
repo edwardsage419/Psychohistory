@@ -189,6 +189,16 @@ The interface should eventually distinguish:
 * Historical forecast performance
 * Data quality and freshness
 
+## Infrastructure cost principle
+
+Default to zero or near-zero recurring infrastructure cost. Paid infrastructure should be introduced only when a free approach materially harms data integrity, reproducibility, reliability, analytical quality, or product capability, and the benefit is supported by evidence.
+
+Local files, Git/GitHub for compact evidence, and lightweight local SQLite,
+DuckDB or Parquet storage are compatibility targets, not selections. Free
+execution capacity must be measured rather than assumed unlimited. The
+[retention design](GKG_RETENTION_POLICY.md) separates permanent evidence from
+raw retention; no Phase 3 deletion or reduced sampling is authorized.
+
 ## Initial technology posture
 
 For the next stage, prefer simple technology that Codex can maintain reliably:

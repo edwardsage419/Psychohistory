@@ -133,3 +133,15 @@ promises remain unknown. Measured raw ZIP volume is 494,483,985 bytes; recent me
 extrapolates to about 164 GB/year for that feed alone. Raw data remains local,
 content-addressed and outside Git; compact evidence is committed. Long-term
 backup/storage is not selected. See PHASE_2_REPORT.md and GKG_STUDY_SCHEMA.md.
+
+## 2026 09 06: project-wide infrastructure cost constraint
+
+Default to zero or near-zero recurring infrastructure cost. Paid infrastructure should be introduced only when a free approach materially harms data integrity, reproducibility, reliability, analytical quality, or product capability, and the benefit is supported by evidence.
+
+This constraint does not weaken provenance, validation, quarantine, or the
+preregistered Phase 3 promotion gates. Keep all 96 research archives intact.
+Do not implement deletion or reduce acquisition/fields/coverage for cost.
+Retain exact quarantined bytes and compact acquisition/provenance evidence
+permanently; future ordinary raw retention requires a separately reviewed,
+configurable policy. Hashes verify a recovered revision but cannot recreate it.
+No paid service or new recurring dependency is introduced.

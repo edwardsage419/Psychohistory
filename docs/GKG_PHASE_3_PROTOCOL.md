@@ -93,3 +93,8 @@ report with unchanged-production checks, push/CI status and unresolved questions
 Original 96 raw archives and Phase 2 outputs must not be overwritten. Use a new,
 exclusive output directory outside the input corpus; a second run uses another
 new directory. Local reports/ledgers need the same backup policy as raw evidence.
+
+Pre-evaluation implementation refinement: more than 256 invalid UTF-8 spans in
+one row triggers quarantined_resource with the complete raw row preserved. This
+bounds diagnostic work/list growth on adversarial bytes; no partial diagnostic
+list is presented as complete. It does not change any promotion threshold.
