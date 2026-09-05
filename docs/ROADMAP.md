@@ -153,3 +153,11 @@ Immediate engineering sequence:
 7. Research and propose the first production ingestion path before modifying the current dashboard data contract.
 
 Do not begin production forecast logic until the data foundation has passed its acceptance criteria.
+
+## Execution note: 2026-09-06
+
+The owner requested a Phase 2 GKG continuity/reproducibility/historical study
+before indicator research. That bounded acquisition phase is recorded in
+PHASE_2_REPORT.md and does not authorize the indicator Phase 2 described above.
+Its next recommended issue is lossless encoding and row-quarantine policy;
+production ingestion, ontology and forecast work remain deferred.

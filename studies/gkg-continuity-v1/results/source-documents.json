@@ -1,0 +1,46 @@
+[
+  {
+    "name": "terms",
+    "url": "https://www.gdeltproject.org/about.html",
+    "retrieved_at": "2026-09-05T22:45:17.831006+00:00",
+    "status": "passed",
+    "http_status": 200,
+    "effective_url": "https://gdeltproject.org:443/about.html",
+    "content_length": "24355",
+    "content_range": null,
+    "truncated_to_limit": false,
+    "stored_bytes": 24355,
+    "stored_bytes_sha256": "384754b514042255c4542d51dc1e631da55c83c67d46a92b53b48a812d94be6b"
+  },
+  {
+    "name": "data",
+    "url": "https://www.gdeltproject.org/data.html",
+    "retrieved_at": "2026-09-05T22:45:18.674182+00:00",
+    "status": "passed",
+    "http_status": 200,
+    "effective_url": "https://gdeltproject.org:443/data.html",
+    "content_length": "55068",
+    "content_range": null,
+    "truncated_to_limit": false,
+    "stored_bytes": 55068,
+    "stored_bytes_sha256": "dc2e607696f7cc0914f20d9d788491bb3d46f2fb8193216d6ffafc5f3ce2641f"
+  },
+  {
+    "name": "masterfilelist-prefix",
+    "url": "https://data.gdeltproject.org/gdeltv2/masterfilelist.txt",
+    "retrieved_at": "2026-09-05T22:45:19.219142+00:00",
+    "status": "passed",
+    "http_status": 206,
+    "effective_url": "https://data.gdeltproject.org/gdeltv2/masterfilelist.txt",
+    "content_length": "65536",
+    "content_range": "bytes 0-65535/127354357",
+    "truncated_to_limit": false,
+    "stored_bytes": 65536,
+    "stored_bytes_sha256": "67b482f47253e6c412678172a7dcfcb36ccc4d7c174fa9605d8a6251fb41921d",
+    "gkg_example_lines": [
+      "10768507 ea8dde0beb0ba98810a92db068c0ce99 http://data.gdeltproject.org/gdeltv2/20150218230000.gkg.csv.zip",
+      "10269336 2f1a504a3c4558694ade0442e9a5ae6f http://data.gdeltproject.org/gdeltv2/20150218231500.gkg.csv.zip",
+      "11279827 66b03e2efd7d51dabf916b1666910053 http://data.gdeltproject.org/gdeltv2/20150218233000.gkg.csv.zip"
+    ]
+  }
+]

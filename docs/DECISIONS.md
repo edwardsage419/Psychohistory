@@ -110,3 +110,26 @@ old --date/--top-themes CLI flags are removed. Prototype frontend, DOC updater,
 production workflow and data/gdelt.json are unchanged. Bytecode and the inactive
 root workflow copy are retired on the development branch only. No theme mapping,
 final ontology, indicator, forecast or storage-engine decision was made.
+
+## 2026 09 06: Phase 2 bounded GKG continuity study
+
+The user's Phase 2 acquisition study takes precedence over the roadmap's original
+Phase 2 indicator research heading. The 96-address manifest was fixed before
+acquisition: 72 consecutive recent slots plus six four-slot historical windows.
+
+Evidence: 96/96 HTTPS GETs and independent ZIP CRC checks passed, including all 24
+historical samples; 92/96 strict UTF-8 parses passed. Four intact ZIPs contain five
+invalid UTF-8 lines, all in field 27. All 96 stored archives reproduced their
+original deterministic semantic outputs in an independent offline replay.
+
+Decision: continue_validation, not promote_to_ingestion_candidate. No silent
+codec fallback or field deletion is permitted to turn these failures into success.
+Next: evidence-backed lossless encoding/row-quarantine policy against this corpus.
+
+Provider terms permit dataset use and redistribution with attribution/link; this
+is distinct from linked publisher article rights. English master-list feed only
+was sampled; translated feeds, unsampled historical continuity and retention
+promises remain unknown. Measured raw ZIP volume is 494,483,985 bytes; recent mean
+extrapolates to about 164 GB/year for that feed alone. Raw data remains local,
+content-addressed and outside Git; compact evidence is committed. Long-term
+backup/storage is not selected. See PHASE_2_REPORT.md and GKG_STUDY_SCHEMA.md.

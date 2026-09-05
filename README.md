@@ -52,3 +52,21 @@ foundation. The historical implementation narrative remains in Git history at
 No dashboard data-contract migration, forecasting, redesign or paid infrastructure
 is included in Issue 2. Changes remain on `codex/project-reset-architecture` for
 review and must not be merged to main without separate approval.
+
+## Phase 2: GKG continuity study
+
+The bounded 96-batch study is complete: 96 HTTPS acquisitions and integrity checks
+passed, 92 strict parses passed, and all 96 stored inputs reproduced exactly.
+Four batches contain invalid UTF-8; recommendation remains **continue_validation**.
+See [Phase 2 report](docs/PHASE_2_REPORT.md), [preregistered protocol](docs/GKG_STUDY_PROTOCOL.md)
+and [machine-readable results](studies/gkg-continuity-v1/results/study.json).
+
+```sh
+python -B scripts/study_gkg.py --integration --root artifacts/gkg-study-96-v1
+python -B scripts/study_gkg.py --replay --root artifacts/gkg-study-96-v1
+```
+
+Raw inputs are preserved locally under the ignored study directory. A fresh clone
+includes compact evidence, not 494 MB of raw ZIPs; follow the [retention/replay
+instructions](docs/GKG_STUDY_SCHEMA.md) to use the retained dataset. No production
+migration or theme mapping is authorized by these results.

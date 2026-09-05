@@ -6,15 +6,15 @@
       "provider": "GDELT Project",
       "dataset_name": "Global Knowledge Graph 2.1",
       "source_version": "2.1",
-      "access_method": "Public batch ZIP downloads; discovery through gdeltv2/lastupdate.txt",
+      "access_method": "HTTPS batch ZIP downloads; Phase 2 sampled the standard English master-list path only; Translingual not evaluated",
       "documentation_url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
-      "license_note": "unknown: redistribution and underlying publisher rights require review before production",
+      "license_note": "Provider Terms of Use permit dataset use without fee and redistribution with GDELT attribution/link; inspected 2026-09-06. Linked publisher article rights are separate. See docs/PHASE_2_REPORT.md.",
       "update_frequency": "15-minute batches per provider documentation; continuity requires empirical validation",
       "geographic_coverage": "Global news monitoring; representativeness and per-geography completeness unknown",
-      "historical_coverage": "unknown: no backfill completeness audit performed",
-      "reliability_note": "Candidate only; see docs/GKG_EVALUATION.md for measured evidence and limitations",
+      "historical_coverage": "24 selected older batches from 2015-03-02 through 2026-08-05 acquired successfully; availability between sampled windows and retention guarantees unknown",
+      "reliability_note": "96/96 HTTPS acquisitions and CRC checks; 92/96 strict parsing; 96/96 deterministic local replays. Four encoding-failed batches keep recommendation continue_validation. See docs/PHASE_2_REPORT.md.",
       "bias_note": "Media selection, syndication, language coverage and extraction affect observations; media attention is not societal severity",
-      "cost_note": "Public downloads without credentials; measured storage/compute budget remains unknown",
+      "cost_note": "Measured 494483985 compressed bytes for 96 study batches. Recent 72-batch mean extrapolates to about 164 decimal GB/year for this feed only; not a full-year measurement or paid-service commitment.",
       "production_status": "candidate"
     }
   ]

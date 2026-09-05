@@ -108,3 +108,9 @@ output must not resolve to the input archive (including hard-link aliases);
 rejected writes return exit 4 with JSON on stderr and leave source bytes intact.
 Timezone offsets require hours 00–23 and minutes 00–59; Python's normalization of
 out-of-range offset minutes is not accepted as input validation.
+
+## Continuity study contracts
+
+The separate v1 study manifest, results, replay and byte-diagnostic contracts are
+documented in [GKG_STUDY_SCHEMA.md](GKG_STUDY_SCHEMA.md). They do not change the
+observation or dashboard contracts. Phase 2 keeps source production status candidate.
