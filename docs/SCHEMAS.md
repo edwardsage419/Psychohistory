@@ -57,3 +57,44 @@ Live: `python -B scripts/validate_gkg.py --integration [--url GKG_URL]`.
 The misleading old `--date` and display-only `--top-themes` options are removed.
 The report replaces V0.2.1-A's unversioned shape; only validation artifact consumers
 need migration. The dashboard reads no validation reports and is unchanged.
+
+## Source registry v1.0.0
+
+`schemas/source-registry.v1.schema.json` describes a registry envelope containing
+unique source IDs and `registry/sources.v1.json` is its initial candidate entry.
+Required notes cover access, documentation, usage rights, cadence, geographic and
+historical coverage, reliability, biases and cost. Unknown facts are explicitly
+marked `unknown` in notes; unknown source version is null. Production status is
+candidate, production, rejected or retired. Status changes require evidence;
+passing a contract does not authorize promotion. This is a research registry,
+not an ingestion adapter, and it does not alter the legacy dashboard sources.
+
+## Normalized numeric observation v1.0.0
+
+`schemas/observation.v1.schema.json` is an initial scalar numeric observation
+contract. It is source-independent and has no seven-topic enum. Each observation
+requires source ID/version, metric ID, observation and retrieval time, finite
+numeric value (or null), explicit unit, geography/entity scope, quality status
+and note, exact source record reference, snapshot SHA-256 and transformation
+version. A scope is a `scheme`/`code` pair so FIPS, ISO or another explicitly named
+scheme cannot be silently conflated. Unknown geography/entity/time/version is
+null; unknown geography is never silently converted to worldwide coverage.
+`observed_at` reflects the metric's documented time semantics, not automatically
+an event time. Retrieval time must have a timezone. No production metric is
+introduced by this contract; adapters must document metric semantics separately.
+
+`missing` requires null value and nonmissing values require valid/suspect quality.
+Zero is a real value. NaN, infinity, booleans-as-numbers, missing provenance,
+unknown fields and unknown schema versions are rejected. Missing source/time or
+scope knowledge must be explained in quality_note; quality remains an explicit
+adapter judgment, not inferred from numerical magnitude. Registry referential
+integrity must be checked by the eventual ingestion transaction.
+
+`observation_id` is SHA-256 of sorted compact UTF-8 JSON of all fields except
+observation_id and retrieved_at. `observation_id()` computes it and validation
+checks it. Re-fetching identical facts preserves identity; value/provenance/
+transformation/quality changes produce a distinct revision. This is content
+identity, not an upsert/database implementation. Integer 1 and float 1.0 have
+different serialized identities; adapters must choose a stable numeric form.
+Preserve all retrieval attempts in run metadata when persistence is implemented.
+No observations or theme mappings are written to production in this phase.

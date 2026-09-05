@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "gdelt-gkg-2.1",
+      "provider": "GDELT Project",
+      "dataset_name": "Global Knowledge Graph 2.1",
+      "source_version": "2.1",
+      "access_method": "Public batch ZIP downloads; discovery through gdeltv2/lastupdate.txt",
+      "documentation_url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
+      "license_note": "unknown: redistribution and underlying publisher rights require review before production",
+      "update_frequency": "15-minute batches per provider documentation; continuity requires empirical validation",
+      "geographic_coverage": "Global news monitoring; representativeness and per-geography completeness unknown",
+      "historical_coverage": "unknown: no backfill completeness audit performed",
+      "reliability_note": "Candidate only; see docs/GKG_EVALUATION.md for measured evidence and limitations",
+      "bias_note": "Media selection, syndication, language coverage and extraction affect observations; media attention is not societal severity",
+      "cost_note": "Public downloads without credentials; measured storage/compute budget remains unknown",
+      "production_status": "candidate"
+    }
+  ]
+}
