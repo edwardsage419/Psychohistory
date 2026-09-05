@@ -216,6 +216,35 @@ class StudyTests(unittest.TestCase):
         self.assertEqual(one['replay']['first_semantic_sha256'], two['replay']['first_semantic_sha256'])
         self.assertEqual(one['analysis'], two['analysis'])
 
+class StudyPublicationTests(unittest.TestCase):
+    def test_study_and_replay_contracts(self):
+        from study_contracts import check_publication
+        with tempfile.TemporaryDirectory() as directory, patch.object(study, 'SAMPLE_SIZE', 2), contextlib.redirect_stdout(io.StringIO()):
+            report = study.run_study(manifest(), directory, True, fake_download)
+            check_publication(manifest(), report)
+            replay = study.replay_study(manifest(), directory)
+            check_publication(manifest(), replay, replay=True)
+            for key in ('acquired', 'scheduled'):
+                altered = copy.deepcopy(report)
+                altered['summary']['counts'][key] += 1
+                with self.assertRaises(ValueError): check_publication(manifest(), altered)
+            altered = copy.deepcopy(report)
+            altered['batches'].pop()
+            with self.assertRaises(ValueError): check_publication(manifest(), altered)
+            replay['batches'][0]['semantic_equal'] = False
+            with self.assertRaises(ValueError): check_publication(manifest(), replay, replay=True)
+
+    def test_failure_publication_and_pending_contract(self):
+        from study_contracts import check_publication
+        def fail(url): raise urllib.error.HTTPError(url, 404, 'fixture', {}, None)
+        with tempfile.TemporaryDirectory() as directory, patch.object(study, 'SAMPLE_SIZE', 2), contextlib.redirect_stdout(io.StringIO()):
+            report = study.run_study(manifest(), directory, True, fail)
+            check_publication(manifest(), report)
+            self.assertEqual(report['summary']['counts']['acquisition_failed'], 2)
+            replay = study.replay_study(manifest(), directory)
+            check_publication(manifest(), replay, replay=True)
+            self.assertEqual(replay['counts'], {'not_available': 2})
+
 
 if __name__ == '__main__':
     unittest.main()

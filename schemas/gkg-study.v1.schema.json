@@ -1,0 +1,953 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gkg-study v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "study_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "run": {
+      "type": "object",
+      "properties": {
+        "identity": {
+          "type": "object",
+          "properties": {
+            "manifest_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "study_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "validator_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "study_code_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "validator_code_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "manifest_sha256",
+            "study_version",
+            "validator_version",
+            "study_code_sha256",
+            "validator_code_sha256"
+          ],
+          "additionalProperties": false
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "python": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "socket_timeout_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_zip_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "identity",
+        "started_at",
+        "python",
+        "platform",
+        "policy",
+        "socket_timeout_seconds",
+        "max_zip_bytes"
+      ],
+      "additionalProperties": false
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "acquisition_success_rate": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "failure_batches_by_code": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "unavailable_batch_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "duplicate_archive_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "duplicate_member_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "field_count_distribution_complete_scans": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "date_counts_valid_rows_complete_scans": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "theme_counts_valid_rows_complete_scans": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "distinct_theme_tokens_complete_scans": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "empty_theme_fraction_valid_rows": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "storage_by_cohort": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "scheduled": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "acquired": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "total_measured_zip_bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mean_zip_bytes": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "min_zip_bytes": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "max_zip_bytes": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "extrapolated_bytes_per_day": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "extrapolated_bytes_per_30_days": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "extrapolated_bytes_per_365_days": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "scheduled",
+              "acquired",
+              "total_measured_zip_bytes",
+              "mean_zip_bytes",
+              "min_zip_bytes",
+              "max_zip_bytes",
+              "extrapolated_bytes_per_day",
+              "extrapolated_bytes_per_30_days",
+              "extrapolated_bytes_per_365_days"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "counts",
+        "acquisition_success_rate",
+        "failure_batches_by_code",
+        "unavailable_batch_ids",
+        "duplicate_archive_hashes",
+        "duplicate_member_hashes",
+        "field_count_distribution_complete_scans",
+        "date_counts_valid_rows_complete_scans",
+        "theme_counts_valid_rows_complete_scans",
+        "distinct_theme_tokens_complete_scans",
+        "empty_theme_fraction_valid_rows",
+        "storage_by_cohort"
+      ],
+      "additionalProperties": false
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "batch_id": {
+                "type": "string",
+                "pattern": "^[0-9]{14}$"
+              },
+              "cohort": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "type": "string",
+                "const": "complete"
+              },
+              "acquisition": {
+                "type": "string",
+                "enum": [
+                  "passed",
+                  "failed"
+                ]
+              },
+              "started_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "finished_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "download_seconds": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "processing_seconds": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "transport": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "effective_url": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "content_length": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "content_type": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "last_modified": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "etag": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "effective_url",
+                      "content_length",
+                      "content_type",
+                      "last_modified",
+                      "etag"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "raw_path": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "sha256": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "download_bytes": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "analysis": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "validator_version": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "validation": {
+                        "type": "object",
+                        "properties": {
+                          "zip_bytes": {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "sha256": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "members": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "compressed_bytes": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                },
+                                "uncompressed_bytes": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "compressed_bytes",
+                                "uncompressed_bytes"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "statistics": {
+                            "type": "object",
+                            "properties": {
+                              "rows": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "valid_rows": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "bad_rows": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "unknown_date_rows": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "empty_theme_rows": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "complete": {
+                                "type": "boolean"
+                              },
+                              "field_count_distribution": {
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                }
+                              },
+                              "date_counts": {
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                }
+                              },
+                              "row_error_counts": {
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                }
+                              },
+                              "distinct_theme_tokens": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "theme_counts_sha256": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                              }
+                            },
+                            "required": [
+                              "rows",
+                              "valid_rows",
+                              "bad_rows",
+                              "unknown_date_rows",
+                              "empty_theme_rows",
+                              "complete",
+                              "field_count_distribution",
+                              "date_counts",
+                              "row_error_counts",
+                              "distinct_theme_tokens",
+                              "theme_counts_sha256"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "errors": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "type": "string",
+                                  "enum": [
+                                    "resource_limit",
+                                    "metadata_encoding",
+                                    "metadata_invalid",
+                                    "zip_member_count",
+                                    "zip_member_name",
+                                    "zip_encrypted",
+                                    "empty_data",
+                                    "invalid_rows",
+                                    "invalid_encoding",
+                                    "invalid_zip",
+                                    "unsupported_zip",
+                                    "invalid_arguments",
+                                    "integration_required",
+                                    "invalid_url",
+                                    "metadata_mismatch",
+                                    "http_error",
+                                    "network_error",
+                                    "io_error",
+                                    "report_write_error"
+                                  ]
+                                },
+                                "stage": {
+                                  "type": "string",
+                                  "enum": [
+                                    "discovery",
+                                    "acquisition",
+                                    "validation",
+                                    "report"
+                                  ]
+                                },
+                                "message": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "stage",
+                                "message"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "zip_bytes",
+                          "sha256",
+                          "members",
+                          "statistics",
+                          "errors"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "integrity": {
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "passed",
+                              "failed",
+                              "not_checked"
+                            ]
+                          },
+                          "content_sha256": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "code": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "status",
+                          "content_sha256",
+                          "code"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "timestamp_consistency": {
+                        "type": "object",
+                        "properties": {
+                          "scope": {
+                            "type": "string",
+                            "const": "valid_rows_only"
+                          },
+                          "complete": {
+                            "type": "boolean"
+                          },
+                          "unknown_rows": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "mismatched_rows": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "member_name_matches": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "scope",
+                          "complete",
+                          "unknown_rows",
+                          "mismatched_rows",
+                          "member_name_matches"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "validator_version",
+                      "validation",
+                      "integrity",
+                      "timestamp_consistency"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "replay": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "passed",
+                          "failed"
+                        ]
+                      },
+                      "first_raw_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "second_raw_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "first_semantic_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "second_semantic_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "hash_matches_acquisition": {
+                        "type": "boolean"
+                      },
+                      "semantic_equal": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "first_raw_sha256",
+                      "second_raw_sha256",
+                      "first_semantic_sha256",
+                      "second_semantic_sha256",
+                      "hash_matches_acquisition",
+                      "semantic_equal"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "stage": {
+                      "type": "string",
+                      "enum": [
+                        "acquisition",
+                        "storage",
+                        "validation",
+                        "replay",
+                        "study"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "http_status": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "stage",
+                    "message",
+                    "http_status"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "batch_id",
+              "cohort",
+              "url",
+              "state",
+              "acquisition",
+              "started_at",
+              "finished_at",
+              "download_seconds",
+              "processing_seconds",
+              "transport",
+              "raw_path",
+              "sha256",
+              "download_bytes",
+              "analysis",
+              "replay",
+              "errors"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "batch_id": {
+                "type": "string",
+                "pattern": "^[0-9]{14}$"
+              },
+              "cohort": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "interrupted"
+                ]
+              },
+              "acquisition": {
+                "type": "string",
+                "const": "not_attempted"
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "stage": {
+                      "type": "string",
+                      "enum": [
+                        "acquisition",
+                        "storage",
+                        "validation",
+                        "replay",
+                        "study"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "http_status": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "stage",
+                    "message",
+                    "http_status"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "batch_id",
+              "cohort",
+              "url",
+              "state",
+              "acquisition",
+              "errors"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "study_id",
+    "manifest_sha256",
+    "run",
+    "finished_at",
+    "summary",
+    "batches"
+  ],
+  "additionalProperties": false
+}

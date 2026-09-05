@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gkg-study-replay v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "study_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "replayed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "batch_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "passed",
+                  "failed"
+                ]
+              },
+              "first_raw_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "second_raw_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "first_semantic_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "second_semantic_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "hash_matches_acquisition": {
+                "type": "boolean"
+              },
+              "semantic_equal": {
+                "type": "boolean"
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "stage": {
+                      "type": "string",
+                      "enum": [
+                        "acquisition",
+                        "storage",
+                        "validation",
+                        "replay",
+                        "study"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "http_status": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "stage",
+                    "message",
+                    "http_status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "matches_original_semantics": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "batch_id",
+              "status",
+              "first_raw_sha256",
+              "second_raw_sha256",
+              "first_semantic_sha256",
+              "second_semantic_sha256",
+              "hash_matches_acquisition",
+              "semantic_equal",
+              "errors",
+              "matches_original_semantics"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "batch_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_available",
+                  "failed"
+                ]
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "stage": {
+                      "type": "string",
+                      "enum": [
+                        "acquisition",
+                        "storage",
+                        "validation",
+                        "replay",
+                        "study"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "http_status": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "stage",
+                    "message",
+                    "http_status"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "batch_id",
+              "status",
+              "errors"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "study_id",
+    "manifest_sha256",
+    "replayed_at",
+    "counts",
+    "batches"
+  ],
+  "additionalProperties": false
+}
