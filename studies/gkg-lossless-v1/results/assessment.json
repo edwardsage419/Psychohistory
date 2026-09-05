@@ -1,0 +1,24 @@
+{
+  "errors": [],
+  "gates": {
+    "archive_identity_integrity": true,
+    "batch_transparency_usability": true,
+    "disposition_provenance_complete": true,
+    "encoding_ambiguity_contained": true,
+    "exact_sample_identity": true,
+    "independent_replay": true,
+    "mutation_and_failure_regressions": true,
+    "no_duplicate_batches": true,
+    "zero_unexpected_exceptions": true
+  },
+  "limitations": [
+    "English-feed bounded retrospective corpus only; no operational SLA",
+    "Unknown invalid-byte origin remains quarantined; no codec guessed",
+    "Accepted means syntactic/provenance eligibility, not theme or indicator validity",
+    "Regression gate is supplied from separately recorded offline test evidence"
+  ],
+  "recommendation": "promote_to_ingestion_candidate",
+  "replay_sha256": "92936274e7ae98eb25c29905196c817e70e4403122baff795f9fd2318be76c51",
+  "schema_version": "1.0.0",
+  "scope": "raw acquisition, archive verification, lossless parsing, quarantine and provenance only"
+}

@@ -63,8 +63,8 @@ registry or production source. Invalid or contradictory evidence fails closed.
 From the repository root, Python 3.12+ standard library only:
 
 ```sh
-python -B scripts/replay_gkg_lossless.py --corpus artifacts/gkg-study-96-v1 --output artifacts/gkg-phase3-run1
-python -B scripts/replay_gkg_lossless.py --corpus artifacts/gkg-study-96-v1 --output artifacts/gkg-phase3-run2
+python -B scripts/replay_gkg_lossless.py --corpus artifacts/gkg-study-96-v1 --output artifacts/gkg-phase3-replay-a
+python -B scripts/replay_gkg_lossless.py --corpus artifacts/gkg-study-96-v1 --output artifacts/gkg-phase3-replay-b
 python -B -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 

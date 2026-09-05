@@ -114,3 +114,5 @@ out-of-range offset minutes is not accepted as input validation.
 The separate v1 study manifest, results, replay and byte-diagnostic contracts are
 documented in [GKG_STUDY_SCHEMA.md](GKG_STUDY_SCHEMA.md). They do not change the
 observation or dashboard contracts. Phase 2 keeps source production status candidate.
+
+Phase 3 adds separate [lossless row, quarantine, batch, replay and assessment contracts](GKG_LOSSLESS_CONTRACTS.md). Phase 2 evidence is not reinterpreted.

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "runs": [
+    {
+      "id": 33998856519,
+      "head_sha": "97798e236673c0120f6097bf18480ca859fb0411",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/edwardsage419/Psychohistory/actions/runs/33998856519"
+    },
+    {
+      "id": 33998854547,
+      "head_sha": "97798e236673c0120f6097bf18480ca859fb0411",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/edwardsage419/Psychohistory/actions/runs/33998854547"
+    }
+  ],
+  "job_id": 101394007643,
+  "tests_run": 111,
+  "passed": 111,
+  "skipped": 0,
+  "symlink_test": "passed on GitHub Actions Ubuntu",
+  "log_evidence": [
+    "2026-09-05T23:30:37.0347003Z test_symlink_switch_after_snapshot (test_gkg_lossless.LosslessTests.test_symlink_switch_after_snapshot) ... ok",
+    "2026-09-05T23:30:37.1236069Z Ran 111 tests in 0.292s",
+    "2026-09-05T23:30:37.1237053Z OK"
+  ]
+}

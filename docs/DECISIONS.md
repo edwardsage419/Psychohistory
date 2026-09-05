@@ -145,3 +145,14 @@ Retain exact quarantined bytes and compact acquisition/provenance evidence
 permanently; future ordinary raw retention requires a separately reviewed,
 configurable policy. Hashes verify a recovered revision but cannot recreate it.
 No paid service or new recurring dependency is introduced.
+
+## 2026 09 06: Phase 3 limited ingestion candidate recommendation
+
+The preregistered gates pass for 96 verified archives: 118,415 accepted rows, five
+exact-byte quarantines, 92 clean batches and four with quarantine. Two independent
+final replays agree on all hashes/semantics; 111 offline tests pass on Ubuntu CI.
+Recommend promote_to_ingestion_candidate for raw acquisition, archive verification,
+lossless parsing, quarantine and provenance only. This validates no theme semantics
+or indicators and does not activate production ingestion. See PHASE_3_REPORT.md.
+Near-zero-cost retention separates permanent quarantine/receipts from future
+configurable ordinary raw retention. No research archive is deleted.
