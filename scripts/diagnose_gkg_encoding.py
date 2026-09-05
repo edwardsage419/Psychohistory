@@ -3,6 +3,7 @@
 import argparse
 from collections import Counter
 import hashlib
+import io
 import json
 from pathlib import Path
 import zipfile
@@ -20,7 +21,7 @@ def diagnose(path, expected_hash):
               'raw_field_count_distribution': {}, 'invalid_byte_samples': [], 'samples_truncated': False}
     fields = Counter()
     offset = 0
-    with zipfile.ZipFile(path) as archive:
+    with zipfile.ZipFile(io.BytesIO(blob)) as archive:
         members = [m for m in archive.infolist() if not m.is_dir()]
         if len(members) != 1 or members[0].file_size > gkg.MAX_UNCOMPRESSED_BYTES:
             raise study.StudyError('diagnostic_limit', 'Expected one bounded data member')

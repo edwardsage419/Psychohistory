@@ -115,7 +115,7 @@ set and must not replace the original study evidence.
 
 ```sh
 python -B scripts/study_gkg.py --integration --root artifacts/gkg-study-96-v1
-python -B scripts/study_gkg.py --replay --root artifacts/gkg-study-96-v1
+python -B artifacts/gkg-study-96-v1/source-code/study_gkg.py --manifest studies/gkg-continuity-v1/manifest.json --replay --root artifacts/gkg-study-96-v1
 python -B scripts/diagnose_gkg_encoding.py --root artifacts/gkg-study-96-v1
 python -B -m unittest discover -s scripts -p 'test_*.py' -v
 ```

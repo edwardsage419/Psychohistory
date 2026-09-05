@@ -32,6 +32,6 @@ def check_publication(manifest, report, replay=False):
                 raise ContractError('$.batches', 'batch_reference_mismatch')
             if actual.get('replay') and actual['replay']['status'] == 'passed':
                 r = actual['replay']
-                if not r['semantic_equal'] or not r['hash_matches_acquisition'] or r['first_raw_sha256'] != r['second_raw_sha256'] or r['first_raw_sha256'] != actual['sha256']:
+                if not r['semantic_equal'] or not r['hash_matches_acquisition'] or r['first_raw_sha256'] != r['second_raw_sha256'] or r['first_raw_sha256'] != actual['sha256'] or r['first_semantic_sha256'] != r['second_semantic_sha256']:
                     raise ContractError('$.batches', 'false_replay_success')
     return report

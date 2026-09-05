@@ -374,6 +374,8 @@ def replay_study(manifest, root):
                 raw_path = root / 'raw' / (previous['sha256'] + '.zip')
                 analysis, check = replay(raw_path, batch, previous['sha256'])
                 item.update(check)
+                if check['status'] != 'passed':
+                    item['errors'].append(failure('replay_mismatch', 'replay', 'Raw or semantic comparison disagrees'))
                 item['matches_original_semantics'] = digest(analysis) == digest(previous['analysis'])
                 if not item['matches_original_semantics']:
                     item['status'] = 'failed'

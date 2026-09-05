@@ -183,6 +183,21 @@ class StudyTests(unittest.TestCase):
             result = study.replay_study(manifest(), self.root)
         self.assertEqual(result['counts'], {'failed': 1, 'passed': 1})
 
+    def test_replay_raw_mismatch_has_failure_code(self):
+        self.run_fixture()
+        original = study.replay
+        def mismatch(*args):
+            analysis, check = original(*args)
+            check.update(status='failed', hash_matches_acquisition=False,
+                         first_raw_sha256='0' * 64)
+            return analysis, check
+        with patch.object(study, 'SAMPLE_SIZE', 2), patch.object(study, 'replay', side_effect=mismatch):
+            report = study.replay_study(manifest(), self.root)
+        self.assertEqual(report['counts'], {'failed': 2})
+        for batch in report['batches']:
+            self.assertTrue(batch['matches_original_semantics'])
+            self.assertIn('replay_mismatch', [e['code'] for e in batch['errors']])
+
     def test_compaction_preserves_fingerprint(self):
         result = study.attempt(self.batch, self.root, fake_download)
         compact = study.compact(result)
@@ -230,6 +245,9 @@ class StudyPublicationTests(unittest.TestCase):
                 with self.assertRaises(ValueError): check_publication(manifest(), altered)
             altered = copy.deepcopy(report)
             altered['batches'].pop()
+            with self.assertRaises(ValueError): check_publication(manifest(), altered)
+            altered = copy.deepcopy(report)
+            altered['batches'][0]['replay']['second_semantic_sha256'] = '0' * 64
             with self.assertRaises(ValueError): check_publication(manifest(), altered)
             replay['batches'][0]['semantic_equal'] = False
             with self.assertRaises(ValueError): check_publication(manifest(), replay, replay=True)

@@ -244,3 +244,19 @@ or Actions SLA; unexplained encoding anomalies; untested Translingual coverage;
 unknown cross-batch document duplication; no verified complete historical index,
 immutability or guaranteed retention; storage/backup plan not selected. These
 unknowns are recorded rather than filled with fabricated assumptions.
+
+## Post-study bug review (2026-09-06)
+
+Three implementation defects were corrected after publication: offline replay now
+records a replay_mismatch failure code when raw hashes disagree even if parsed
+semantics agree; publication validation rejects inconsistent semantic hashes
+marked as passed; encoding diagnostics parse the same in-memory bytes whose hash
+was verified instead of reopening a potentially changed file. Regression coverage
+includes all three cases. All 75 offline tests pass. Published study and replay
+contracts pass the stricter checks, and re-diagnosis of all four retained encoding
+failures exactly matches published results. The recommendation remains
+continue_validation. Production files and original study evidence are unchanged.
+
+The runner's code-byte hash changed, so original-run replay must use the retained
+source-code snapshot (README commands updated). Do not rewrite run.json identity
+to bypass the evaluator check. The patched runner is for new study directories.

@@ -1,6 +1,7 @@
 import tempfile
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 import diagnose_gkg_encoding as diagnostics
 import study_gkg as study
@@ -25,6 +26,19 @@ class EncodingDiagnosticTests(unittest.TestCase):
             path, checksum = study.persist_raw(Path(directory), fixture())
             path.write_bytes(b'changed')
             with self.assertRaises(study.StudyError): diagnostics.diagnose(path, checksum)
+
+    def test_diagnosis_uses_the_exact_bytes_hashed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            original = fixture(row().encode())
+            path, checksum = study.persist_raw(Path(directory), original)
+            def replace_after_read(source):
+                path.write_bytes(b'changed after read')
+                return original
+            with patch.object(study, 'local_read', side_effect=replace_after_read):
+                result = diagnostics.diagnose(path, checksum)
+            self.assertEqual(result['sha256'], checksum)
+            self.assertEqual(result['lines'], 1)
+            self.assertEqual(result['utf8_rejected_lines'], 0)
 
     def test_valid_unicode_is_not_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
