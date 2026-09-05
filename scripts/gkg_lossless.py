@@ -138,10 +138,13 @@ def classify(raw, source, member, line, start, duplicate_ids):
          'disposition': 'accepted', 'reasons': [], 'invalid_sequences': [],
          'timestamp': None, 'fields_sha256': None, 'raw_base64': None}
     r['row_id'] = row_identity(r)
-    fields = body(raw).split(b'\t')
-    if len(fields) > 1:
+    # Locate only the bounded timestamp prefix before any full field split.
+    # A huge tab-dense quarantined row must not allocate millions of fields.
+    first_tab = raw.find(b'\t')
+    second_tab = raw.find(b'\t', first_tab + 1) if first_tab >= 0 else -1
+    if first_tab >= 0 and second_tab - first_tab == 15:
         try:
-            stamp = fields[1].decode('ascii')
+            stamp = raw[first_tab + 1:second_tab].decode('ascii')
             if legacy.valid_date(stamp):
                 r['timestamp'] = stamp
         except UnicodeDecodeError:
@@ -150,6 +153,7 @@ def classify(raw, source, member, line, start, duplicate_ids):
         r['disposition'] = 'quarantined_resource'
         r['reasons'] = [error('row_resource', 'Physical row exceeds configured bound')]
     else:
+        fields = body(raw).split(b'\t')
         try:
             r['invalid_sequences'] = encoding_errors(raw)
         except Rejection as exc:

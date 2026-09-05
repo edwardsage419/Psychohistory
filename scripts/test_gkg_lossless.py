@@ -215,6 +215,15 @@ class LosslessTests(unittest.TestCase):
         self.assertEqual(q['disposition'], 'quarantined_resource')
         self.assertEqual(base64.b64decode(q['raw_base64']), raw_row())
 
+    def test_oversize_row_is_not_split_into_fields(self):
+        _, source = self.store()
+        raw = b'a\t' + STAMP.encode() + b'\t' * 100
+        with patch.object(core, 'MAX_ROW_BYTES', 20), patch.object(core, 'body', side_effect=AssertionError('oversize field split')):
+            result = core.classify(raw, source, STAMP + '.gkg.csv', 1, 0, set())
+        self.assertEqual(result['disposition'], 'quarantined_resource')
+        self.assertEqual(result['timestamp'], STAMP)
+        self.assertEqual(base64.b64decode(result['raw_base64']), raw)
+
     def test_diagnostic_resource_bound_preserves_row(self):
         raw = raw_row().replace(b'TEST_A', b'\xff' * 10)
         with patch.object(core, 'MAX_INVALID_SEQUENCES', 2):
