@@ -89,3 +89,24 @@ The following remain unresolved and require evidence before implementation:
 * AI provider and model strategy.
 * Criteria that justify moving from free infrastructure to paid services.
 * Multi user product architecture and authentication timing.
+
+## 2026 09 06: Issue 2 foundation implementation
+
+Decision: retain GKG as `continue_validation`; do not promote it to production.
+The strict local integration run parsed 479 complete 27-field records, rejected
+none, and observed 76 empty theme rows and 1,459 literal theme codes. Full source
+reference, checksums and frequency evidence are in GKG_EVALUATION.md and its
+retained report. One batch cannot establish continuity or indicator validity.
+
+Decision: require explicit network integration opt-in, strict UTF-8, bounded ZIP
+processing, complete/partial statistics and machine-readable failure reports.
+Adopt v1.0.0 contracts for reports, a source registry and numeric observations.
+Use standard-library contract validation and tests; no runtime dependency added.
+Observation content identity excludes retrieval timestamps, preserving replay
+identity while allowing distinct content revisions. Persistence remains future work.
+
+Migration impact: validation report consumers must adopt the new versioned shape;
+old --date/--top-themes CLI flags are removed. Prototype frontend, DOC updater,
+production workflow and data/gdelt.json are unchanged. Bytecode and the inactive
+root workflow copy are retired on the development branch only. No theme mapping,
+final ontology, indicator, forecast or storage-engine decision was made.

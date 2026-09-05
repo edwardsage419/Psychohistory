@@ -44,10 +44,6 @@ class ReportContractTests(unittest.TestCase):
             with self.assertRaises(ContractError):
                 validate_contract('validation-report', report)
 
-
-if __name__ == '__main__':
-    unittest.main()
-
 class FoundationContractTests(unittest.TestCase):
     def observation(self):
         from contracts import observation_id
@@ -126,3 +122,7 @@ class FoundationContractTests(unittest.TestCase):
                      observed_at='2026-09-06T08:00:00+08:00')
         value['observation_id'] = observation_id(value)
         validate_contract('observation', value)
+
+
+if __name__ == '__main__':
+    unittest.main()

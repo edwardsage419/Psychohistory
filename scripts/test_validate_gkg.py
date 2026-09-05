@@ -189,6 +189,37 @@ class ValidatorTests(unittest.TestCase):
             self.assertEqual(report['errors'][0]['code'], 'invalid_url')
             fetch.assert_not_called()
 
+    def test_encrypted_and_unsupported_zip(self):
+        import struct
+        for encrypted, expected in [(True, 'zip_encrypted'), (False, 'unsupported_zip')]:
+            blob = bytearray(fixture())
+            central = blob.index(b'PK\x01\x02')
+            if encrypted:
+                struct.pack_into('<H', blob, 6, 1)
+                struct.pack_into('<H', blob, central + 8, 1)
+            else:
+                struct.pack_into('<H', blob, 8, 99)
+                struct.pack_into('<H', blob, central + 10, 99)
+            self.assertEqual(self.code(bytes(blob)), expected)
+
+    def test_partial_scan_is_explicit(self):
+        report = gkg.validate_zip(fixture(row().encode() + b'\xff\n'))
+        self.assertFalse(report['statistics']['complete'])
+        self.assertEqual(report['statistics']['rows'], 1)
+        self.assertEqual(report['errors'][0]['code'], 'invalid_encoding')
+
+    def test_download_limit(self):
+        with patch.object(gkg.urllib.request, 'urlopen', return_value=io.BytesIO(b'1234')):
+            with self.assertRaises(gkg.Failure) as caught:
+                gkg.fetch_bytes(URL, limit=3)
+            self.assertEqual(caught.exception.code, 'resource_limit')
+
+    def test_conflicting_arguments(self):
+        with patch.object(gkg, 'fetch_bytes') as fetch:
+            report = gkg.run_validation(input_path='fixture.zip', integration=True)
+            self.assertEqual(report['errors'][0]['code'], 'invalid_arguments')
+            fetch.assert_not_called()
+
 
 if __name__ == '__main__':
     unittest.main()
