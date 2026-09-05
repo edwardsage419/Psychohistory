@@ -104,3 +104,23 @@ prototype still has its documented legacy limitations; this issue preserves it.
 manifests, compare replays, measure coverage/resource needs, investigate HTTPS
 and usage terms, and propose storage/retention with a revised promotion decision.
 No dashboard migration or theme mapping belongs in that issue.
+
+## Post-implementation self-review (2026-09-06)
+
+Four reproducible defects were found and fixed in validator 1.0.1. The report
+schema stays at 1.0.0; retained live evidence still records its original 1.0.0
+validator and has not been rewritten.
+
+| Severity | Reproduction / impact | Fix |
+| --- | --- | --- |
+| High | --input and --output target the same file: a valid source ZIP is replaced with JSON | Reject identical/resolved paths and hard-link aliases; preserve source; JSON report_write_error on stderr, exit 4 |
+| Medium | Discovery size contains 5,000 digits: Python int conversion raises uncaught ValueError instead of producing a failure report | Bound the numeric metadata token before conversion; return metadata_invalid |
+| Medium | Retrieved timestamp ends in +00:99: datetime.fromisoformat normalizes the invalid offset and the contract accepts it | Validate explicit offset hour/minute ranges |
+| Medium | Local ZIP exceeds read limit: the prefix checksum and prefix length are presented as the entire archive's provenance | Leave archive checksum/size null until the input is known to fit the limit |
+
+All four new regression cases failed before the fixes (three assertions and one
+uncaught exception). After fixes: `python -B -m unittest discover -s scripts -p
+ 'test_*.py' -v` ran **45 tests, OK, exit 0** (0.116 seconds in the recorded run).
+The original 41 tests still pass. Tests are offline; a new live run was not needed
+for these local failure and contract fixes. The GKG recommendation remains
+continue_validation. Production frontend/data/updater/workflow remain unchanged.

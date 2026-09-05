@@ -21,7 +21,7 @@ import zlib
 
 BASE_URL = 'https://data.gdeltproject.org/gdeltv2/'
 LASTUPDATE_URL = BASE_URL + 'lastupdate.txt'
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 EXPECTED_FIELDS = 27
 MAX_ZIP_BYTES = 64 * 1024 * 1024
 MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
@@ -55,7 +55,8 @@ def discover_latest():
         if '.gkg.csv.zip' not in line:
             continue
         parts = line.split()
-        if (len(parts) != 3 or not parts[0].isascii() or not parts[0].isdigit()
+        if (len(parts) != 3 or len(parts[0]) > 20
+                or not parts[0].isascii() or not parts[0].isdigit()
                 or int(parts[0]) <= 0 or not re.fullmatch(r'[a-fA-F0-9]{32}', parts[1])
                 or not re.fullmatch(URL_PATTERN, parts[2])):
             raise Failure('metadata_invalid', 'Invalid GKG metadata entry')
@@ -188,10 +189,10 @@ def run_validation(*, input_path=None, url=None, integration=False, run_at=None)
             report['source_reference'] = url
             stage = 'acquisition'
             blob = fetch_bytes(url)
-        report['zip_bytes'] = len(blob)
-        report['sha256'] = hashlib.sha256(blob).hexdigest()
         if len(blob) > MAX_ZIP_BYTES:
             raise Failure('resource_limit', 'Archive exceeds byte limit')
+        report['zip_bytes'] = len(blob)
+        report['sha256'] = hashlib.sha256(blob).hexdigest()
         if report['discovery']:
             meta = report['discovery']
             if len(blob) != meta['bytes'] or hashlib.md5(blob).hexdigest() != meta['md5']:
@@ -238,6 +239,13 @@ def main(argv=None):
     args = parser.parse_args(argv)
     report = run_validation(input_path=args.input, url=args.url, integration=args.integration)
     try:
+        if args.input is not None:
+            # Resolve aliases/symlinks and detect hard links before replacing anything.
+            same_path = args.input.resolve() == args.output.resolve()
+            same_file = (args.input.exists() and args.output.exists()
+                         and args.input.samefile(args.output))
+            if same_path or same_file:
+                raise OSError('Report output must not overwrite the source archive')
         write_report(report, args.output)
     except OSError as exc:
         report['status'] = 'failed'

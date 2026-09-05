@@ -98,3 +98,13 @@ identity, not an upsert/database implementation. Integer 1 and float 1.0 have
 different serialized identities; adapters must choose a stable numeric form.
 Preserve all retrieval attempts in run metadata when persistence is implemented.
 No observations or theme mappings are written to production in this phase.
+
+### Validator 1.0.1 self-review corrections
+
+The report schema remains v1.0.0. Oversized local inputs leave zip_bytes/sha256
+null because only a bounded prefix was read. Discovery size tokens longer than
+20 digits are rejected as metadata_invalid before numeric conversion. Report
+output must not resolve to the input archive (including hard-link aliases);
+rejected writes return exit 4 with JSON on stderr and leave source bytes intact.
+Timezone offsets require hours 00–23 and minutes 00–59; Python's normalization of
+out-of-range offset minutes is not accepted as input validation.

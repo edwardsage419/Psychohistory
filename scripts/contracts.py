@@ -71,7 +71,7 @@ def validate(value, schema, path='$'):
         if schema.get('format') == 'date-time':
             try:
                 parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
-                if parsed.tzinfo is None or not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})', value):
+                if parsed.tzinfo is None or not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]+)?(?:Z|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])', value):
                     raise ValueError()
             except ValueError:
                 raise ContractError(path, 'date_time') from None
