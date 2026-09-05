@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "GDELT DOC 2.0 API (timelinevol mode)",
-    "updated_at": "2026-09-04T18:56:33Z",
+    "updated_at": "2026-09-05T18:06:04Z",
     "topics": [
       "Economic",
       "Geopolitics",
@@ -14,7 +14,7 @@
     "trend_threshold_percent": 10,
     "value_definition": "value 表示该主题查询词匹配到的新闻，占 GDELT 监测的全球新闻总量的百分比（媒体报道量占比），是媒体关注度的代理指标，不代表事件真实发生的程度、严重性或风险水平。",
     "system_version": "V0.2",
-    "last_run_status": "ok"
+    "last_run_status": "all_failed"
   },
   "current": {
     "Economic": {
@@ -67,9 +67,9 @@
       "7_day_average": 2.2818,
       "change_percent": 7.31,
       "trend": "stable",
-      "status": "ok",
+      "status": "failed",
       "last_success_at": "2026-09-04T18:56:33Z",
-      "error": null
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "AI": {
       "value": null,
@@ -78,7 +78,7 @@
       "trend": null,
       "status": "failed",
       "last_success_at": null,
-      "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     }
   },
   "history": [
@@ -109,6 +109,40 @@
         "Inflation": {
           "value": 2.4485,
           "status": "ok"
+        },
+        "AI": {
+          "value": null,
+          "status": "failed"
+        }
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "retrieved_at": "2026-09-05T18:06:04Z",
+      "topics": {
+        "Economic": {
+          "value": null,
+          "status": "failed"
+        },
+        "Geopolitics": {
+          "value": null,
+          "status": "failed"
+        },
+        "Technology": {
+          "value": null,
+          "status": "failed"
+        },
+        "Energy": {
+          "value": null,
+          "status": "failed"
+        },
+        "War & Conflict": {
+          "value": null,
+          "status": "failed"
+        },
+        "Inflation": {
+          "value": 2.4485,
+          "status": "failed"
         },
         "AI": {
           "value": null,
