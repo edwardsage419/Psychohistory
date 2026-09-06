@@ -3,3 +3,5 @@
 studies/gkg-indicators-v1/results/*.json text eol=lf
 studies/gkg-indicators-v1/results/*.jsonl text eol=lf
 studies/gkg-indicators-v1/results/*.gz binary
+
+studies/gkg-indicators-v1/integrity-review/*.json text eol=lf

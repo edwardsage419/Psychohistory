@@ -151,3 +151,13 @@ Keep compact irreplaceable quarantine bytes, source/definition/version receipts 
 Unresolved: historic dictionary/extractor version boundaries; per-token precision and recall; whether empty themes reflect content or detection coverage; representativeness across outlets/languages; syndicated and repeated-story bias; event/publication lag; geographic attribution; sustained full-day continuity; and future archive retention. Independent external validation was explicitly deferred: zero additional series acquired, with no defensible paired complete daily/geographic comparison in this sparse corpus.
 
 **Next recommended issue: bounded human semantic audit and historical extractor evidence for three representative tokens** (PROTEST, FOOD_SECURITY, WB_2747_UNEMPLOYMENT). Preregister sampling and annotation rules before inspecting article meaning; use at most 120 retained-corpus document references across all six years, with positive and negative rows, exact provenance, independently reviewed labels where feasible, unavailable documents explicitly recorded, and no repaired or fabricated text. Distinguish mention/topic detection from actual events. Investigate provider taxonomy/version evidence and stratify missing-token periods. Do not compute recall from positive-only samples or treat unavailable article text as a negative. Report whether token-level interpretation can be validated; any additional continuity acquisition needs its own bounded sampling plan. No forecast, final ontology, geography inference or production activation.
+
+
+## Post-Phase-4 integrity correction
+
+The targeted review starting at b3627a0 reproduced a coherent numerical forgery
+that the original importer accepted despite an unchanged source-metric receipt.
+This limits the original report's importer-integrity assurance; it does not rewrite
+its legitimate numerical evidence. See [PHASE_4_INTEGRITY_REVIEW.md](PHASE_4_INTEGRITY_REVIEW.md)
+for the authenticated-source fix, adjacent findings, adversarial regressions and
+exact 96-batch comparison. No next phase or semantic promotion is authorized.

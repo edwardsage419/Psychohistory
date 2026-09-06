@@ -87,9 +87,12 @@ python -B scripts/study_gkg_indicators.py --output artifacts/phase4-replay-b --l
 python -B -m unittest discover -s scripts -p "test_*.py"
 ```
 
-To compare, import `study_gkg_indicators.compare_runs(first, second)` with scripts
-on Python's module path. It verifies actual stable output bytes and input/code
-pins, requires distinct evidence directories, and excludes only execution clocks.
+To compare, import `study_gkg_indicators.compare_runs(first, second,
+trusted_manifest_hashes=[root_a, root_b])` with scripts on Python's module path.
+Roots must be captured from an independently trusted completed execution or
+separately verified Git evidence, not calculated from the candidate manifests
+being audited. It verifies those roots, actual artifact bytes and input/code pins,
+requires distinct evidence directories, and excludes only execution clocks.
 Published `results/` contains additional review/CI artifacts; compare the original
 run directories, not a publication directory with extra files.
 
@@ -105,3 +108,41 @@ Snapshots are under `artifacts/gkg-phase4/source-documents` and the earlier code
 path; hashes, URLs and all failed attempts are committed. No paid APIs or hosted
 analytics are used. Detailed findings, sizes and unresolved questions are in
 PHASE_4_REPORT.md; these modules never write dashboard or production files.
+
+## Post-Phase-4 authenticated import correction
+
+The original importer checked normalized counts only against bounds, so a
+coherently resealed numerical forgery could pass while retaining the original
+source-metric hash. See PHASE_4_INTEGRITY_REVIEW.md; the original Phase 4 report
+remains historical evidence and its numerical results are not rewritten.
+
+`validate_bundle(bundle, definitions, *, source_metrics, trusted_metric_hashes,
+history, implementation_sha256)` now requires complete resolved source metrics
+and caller-supplied independent trust context. It verifies each metric's structural
+contract and full semantic digest against the exact batch-to-hash map, reconstructs
+receipts from those authenticated records, and checks each normalized value equals
+`theme_counts.get(exact_token, 0)`. It also reconciles source and indicator quality,
+repetition diagnostics, available batch coverage, versioned definitions and code
+identity. Evidence and receipt sets must match exactly. Missing, replaced, orphan
+or duplicate source evidence fails closed. `build` also requires an explicit
+`trusted_metric_hashes` argument; the study creates pins only after raw archive
+and published Phase 3 ledger authentication has succeeded for every batch.
+
+Example import context for the original publication: obtain source-metric pins
+from the separately trusted b3627a0 batch-outcomes artifact, verify its containing
+manifest/Git revision independently, and resolve complete metrics from the existing
+local gzip cache or regenerate them from pinned raw ZIPs and Phase 3 ledgers.
+Never use the untrusted bundle's receipt hash as its own trust anchor. Definition
+history and the original implementation fingerprint come from that same trusted
+publication context, outside the candidate bundle. Historical bundles use their
+pinned historical implementation identity; current implementation bytes need not
+be substituted into their receipts.
+
+No new hash or projection is asserted around derived counts. No metric format,
+indicator definition, numeric transformation or production behavior changes.
+Complete source metrics are an external verification dependency, not embedded in
+every bundle: 16,060,713 compressed bytes for all 96 retained research batches.
+If both source metrics and regenerable raw evidence are unavailable, receipts alone
+cannot prove numeric claims; fail rather than claiming authenticated validation.
+Hashes cannot recreate missing evidence. No new retention/deletion policy, paid
+service or storage engine is introduced in this repair.

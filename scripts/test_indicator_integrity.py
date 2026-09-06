@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import indicator_engine as engine
 import gkg_indicator_metrics as gm
@@ -221,3 +222,18 @@ class Integrity(unittest.TestCase):
             for r in roots:
                 (r/'x.json').unlink();(r/'semantic-manifest.json').write_bytes(gm.core.canonical({'files':{},'semantic_sha256':digest({})}))
             with self.assertRaises(ContractError):runner.compare_runs(*roots,trusted_manifest_hashes=pins)
+
+    def test_duplicate_prior_batch_index_rejected_before_ingestion(self):
+        for which in ('study','acquisition'):
+            with self.subTest(which=which),tempfile.TemporaryDirectory() as td:
+                root=Path(td);prior=root/'studies/gkg-lossless-v1/results';prior.mkdir(parents=True)
+                ids=[(engine.utc('20260904000000')+i*engine.STEP).strftime('%Y%m%d%H%M%S') for i in range(96)]
+                manifest={'batches':[{'batch_id':b,'cohort':'fixture','url':'fixture'} for b in ids]}
+                rows=[{'source':{'batch_id':b}} for b in ids];acquisitions=[{'batch_id':b} for b in ids]
+                if which=='study':rows.append(copy.deepcopy(rows[0]))
+                else:acquisitions.append(copy.deepcopy(acquisitions[0]))
+                runner.write(root/'manifest.json',manifest)
+                runner.write(prior/'study.json',{'manifest_sha256':digest(manifest),'batches':rows})
+                runner.write(prior/'provenance.json',{'batches':acquisitions})
+                with patch.object(runner,'ROOT',root),patch.object(runner,'code_hashes',return_value={}),patch('builtins.print'):
+                    with self.assertRaises(ContractError):runner.study(root/'manifest.json',root/'raw',root/'ledgers',root/'out')

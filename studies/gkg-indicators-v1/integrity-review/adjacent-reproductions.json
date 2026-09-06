@@ -1,0 +1,11 @@
+{
+  "baseline_commit": "b3627a059ecf4332291f58cd744941978bb45838",
+  "old_validator_accepted_known_available_batch_as_missing": true,
+  "old_replay_accepted_two_self_consistent_empty_artifact_manifests": true,
+  "initial_adversarial_suite": {
+    "tests": 15,
+    "passed": 2,
+    "failed_rejection_assertions": 13
+  },
+  "note": "These are synthetic attacks on baseline code, not altered published evidence. Final regressions reject the cases under independently pinned upstream evidence."
+}
