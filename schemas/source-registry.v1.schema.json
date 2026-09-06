@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "source-registry v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dataset_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "access_method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "documentation_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "update_frequency": {
+            "type": "string",
+            "minLength": 1
+          },
+          "geographic_coverage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "historical_coverage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reliability_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bias_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cost_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "production_status": {
+            "type": "string",
+            "enum": [
+              "candidate",
+              "production",
+              "rejected",
+              "retired"
+            ]
+          },
+          "source_version": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "source_id",
+          "provider",
+          "dataset_name",
+          "access_method",
+          "documentation_url",
+          "license_note",
+          "update_frequency",
+          "geographic_coverage",
+          "historical_coverage",
+          "reliability_note",
+          "bias_note",
+          "cost_note",
+          "production_status",
+          "source_version"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "sources"
+  ],
+  "additionalProperties": false
+}

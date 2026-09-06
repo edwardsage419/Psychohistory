@@ -1,0 +1,1926 @@
+{
+  "batches": [
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4887176,
+      "archive_sha256": "96bd98bec450ed7f8208e962bb4964c600a05fc90562552729369d6efc09d9ea",
+      "batch_id": "20260904000000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:00Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904000000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:39:58Z",
+      "transport": {
+        "content_length": "4887176",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904000000.gkg.csv.zip",
+        "etag": "\"8948e432fd3027f8c8d63266428bbff2\"",
+        "last_modified": "Thu, 03 Sep 2026 23:48:53 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4821947,
+      "archive_sha256": "9af140aecec36608d289684152d74878af6d081e49bddf9447996e7300643a6f",
+      "batch_id": "20260904001500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:01Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904001500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:00Z",
+      "transport": {
+        "content_length": "4821947",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904001500.gkg.csv.zip",
+        "etag": "\"beb2ba32b00a3bdee734cca3d2c60f91\"",
+        "last_modified": "Fri, 04 Sep 2026 00:04:08 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4771547,
+      "archive_sha256": "04c33187b3f90c1ed4d86c910f967b5bd06c1803e3fbde4848d127113a8eec9e",
+      "batch_id": "20260904003000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:03Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904003000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:01Z",
+      "transport": {
+        "content_length": "4771547",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904003000.gkg.csv.zip",
+        "etag": "\"055c6e8b3ef91548b3677e038eccac24\"",
+        "last_modified": "Fri, 04 Sep 2026 00:19:01 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4469033,
+      "archive_sha256": "e84387088b8a4f3fc27f997a548f187e2663142d79657cb1153666a3007e6583",
+      "batch_id": "20260904004500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:04Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904004500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:03Z",
+      "transport": {
+        "content_length": "4469033",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904004500.gkg.csv.zip",
+        "etag": "\"d679b6234862ebb1e840eacb5fba6d8f\"",
+        "last_modified": "Fri, 04 Sep 2026 00:34:02 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4538281,
+      "archive_sha256": "57faf969dc89a0647a7338c8f13ded6f860523d91f2bc7bb4e7f11e521f8c7ab",
+      "batch_id": "20260904010000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:05Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904010000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:04Z",
+      "transport": {
+        "content_length": "4538281",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904010000.gkg.csv.zip",
+        "etag": "\"dd8956c07accad05e28476a8125ecb51\"",
+        "last_modified": "Fri, 04 Sep 2026 00:49:06 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4910629,
+      "archive_sha256": "b05cdeec5569986a9a64f8ff5e52c6d4bab1da19fa7fee4658f6ff456ee65cad",
+      "batch_id": "20260904011500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:07Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904011500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:05Z",
+      "transport": {
+        "content_length": "4910629",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904011500.gkg.csv.zip",
+        "etag": "\"f81a4a415f64c153c9cd1e839c56607d\"",
+        "last_modified": "Fri, 04 Sep 2026 01:04:13 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3510759,
+      "archive_sha256": "105cf44b42ca242d0778f187275117b74c8122d0e01019c8091c4873d07584e0",
+      "batch_id": "20260904013000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:08Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904013000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:07Z",
+      "transport": {
+        "content_length": "3510759",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904013000.gkg.csv.zip",
+        "etag": "\"ffb5fc28d3a379547c9cb0652b1de44e\"",
+        "last_modified": "Fri, 04 Sep 2026 01:18:24 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3513752,
+      "archive_sha256": "7d21148d7af4843be2c4c138f2f7608170b41a6de40acfc62058113f0fb8a87e",
+      "batch_id": "20260904014500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:09Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904014500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:08Z",
+      "transport": {
+        "content_length": "3513752",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904014500.gkg.csv.zip",
+        "etag": "\"d1f365adc20c917e9fdf44dc6811befd\"",
+        "last_modified": "Fri, 04 Sep 2026 01:33:32 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3395018,
+      "archive_sha256": "4ca593252b42c4cfa44938f98a2a227ce591e9cf2b31528e68b616b80f786c57",
+      "batch_id": "20260904020000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:10Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904020000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:09Z",
+      "transport": {
+        "content_length": "3395018",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904020000.gkg.csv.zip",
+        "etag": "\"12c44ceaa16a75ab9d0de4a9d4108179\"",
+        "last_modified": "Fri, 04 Sep 2026 01:48:52 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3649963,
+      "archive_sha256": "85a2ff8eb174bdcb2ccf99fc20da260c179475bfef37ba9f654120549b04fc76",
+      "batch_id": "20260904021500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:11Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904021500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:10Z",
+      "transport": {
+        "content_length": "3649963",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904021500.gkg.csv.zip",
+        "etag": "\"28d7c91ad4d9b09bf468e0e9ee30a686\"",
+        "last_modified": "Fri, 04 Sep 2026 02:03:22 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4234704,
+      "archive_sha256": "72a5684513ca46a19d33c08e37bbd7a060de88cbcd2cdbae77b412377fc4514a",
+      "batch_id": "20260904023000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:12Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904023000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:11Z",
+      "transport": {
+        "content_length": "4234704",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904023000.gkg.csv.zip",
+        "etag": "\"9409cc8d38d07e361ba62a9f6c23f639\"",
+        "last_modified": "Fri, 04 Sep 2026 02:19:26 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3712090,
+      "archive_sha256": "3ba6f9f1294d460828679289417d52a67621f4b0ca337bb4868eadbbfd43364e",
+      "batch_id": "20260904024500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:14Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904024500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:12Z",
+      "transport": {
+        "content_length": "3712090",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904024500.gkg.csv.zip",
+        "etag": "\"02c3dd7c03d30ea08d2f58eedeeed9b2\"",
+        "last_modified": "Fri, 04 Sep 2026 02:33:27 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3224175,
+      "archive_sha256": "b86fda57bc75cfd1a0b81cd0078f633eb5051c9fda72f94c3bf7e84a7e28bff6",
+      "batch_id": "20260904030000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:15Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904030000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:14Z",
+      "transport": {
+        "content_length": "3224175",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904030000.gkg.csv.zip",
+        "etag": "\"0055fe72c36dec96d8b22b9c53c8e1ab\"",
+        "last_modified": "Fri, 04 Sep 2026 02:48:46 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3462460,
+      "archive_sha256": "b57ca2302720fd70e427f98ada7ea87da7bc810318085b610a7026786b614820",
+      "batch_id": "20260904031500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:16Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904031500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:15Z",
+      "transport": {
+        "content_length": "3462460",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904031500.gkg.csv.zip",
+        "etag": "\"f8d3bfea730568714290f080ea656176\"",
+        "last_modified": "Fri, 04 Sep 2026 03:03:20 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3091218,
+      "archive_sha256": "23d0a96eddd76da341fdf6f2fa07fbed6b420d40fec79c8e3bbfb5735d3ad7ad",
+      "batch_id": "20260904033000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:17Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904033000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:16Z",
+      "transport": {
+        "content_length": "3091218",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904033000.gkg.csv.zip",
+        "etag": "\"f08f264b6145c315b610b4aeb801c05c\"",
+        "last_modified": "Fri, 04 Sep 2026 03:18:42 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3648282,
+      "archive_sha256": "ea875ce1a401ffb71c03c350ecd9f35f30466e01276a355142cd4eff42231388",
+      "batch_id": "20260904034500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:18Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904034500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:17Z",
+      "transport": {
+        "content_length": "3648282",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904034500.gkg.csv.zip",
+        "etag": "\"4d398d956a84dbc5b0d2af01d9b28794\"",
+        "last_modified": "Fri, 04 Sep 2026 03:33:49 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3448200,
+      "archive_sha256": "d46eb2dafa5243119876e5728512a6e1ba7a3463fd5ea45c0c617d71afcbeb9e",
+      "batch_id": "20260904040000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:19Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904040000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:18Z",
+      "transport": {
+        "content_length": "3448200",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904040000.gkg.csv.zip",
+        "etag": "\"0f5ec619507dfa08e69536c1f559a868\"",
+        "last_modified": "Fri, 04 Sep 2026 03:48:44 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3250645,
+      "archive_sha256": "2adc113082db27dba6a118953d4afa7c32e47e08e13ae177ef6c8720bda2ce70",
+      "batch_id": "20260904041500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:20Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904041500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:19Z",
+      "transport": {
+        "content_length": "3250645",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904041500.gkg.csv.zip",
+        "etag": "\"33c6a90945e5a41a413de313edc44400\"",
+        "last_modified": "Fri, 04 Sep 2026 04:03:43 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3417893,
+      "archive_sha256": "41cfef11ff54ee61808a1cc2a515ab89b996c0e61b8a9626767e275de7636826",
+      "batch_id": "20260904043000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:21Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904043000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:20Z",
+      "transport": {
+        "content_length": "3417893",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904043000.gkg.csv.zip",
+        "etag": "\"e740f994984619811b691367be32cf1d\"",
+        "last_modified": "Fri, 04 Sep 2026 04:18:29 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3325725,
+      "archive_sha256": "178af433e4206bdda21d70a48fb484fe3541ebc599ebb3c94d9055c07f84153b",
+      "batch_id": "20260904044500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:23Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904044500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:21Z",
+      "transport": {
+        "content_length": "3325725",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904044500.gkg.csv.zip",
+        "etag": "\"5a9159fba9c85dabdf1b0d93bdff15b4\"",
+        "last_modified": "Fri, 04 Sep 2026 04:33:42 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 2887763,
+      "archive_sha256": "6116266a2ee55e5c1b9b932a4b5735f22f4636cab927b749143d7d752e166993",
+      "batch_id": "20260904050000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:24Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904050000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:23Z",
+      "transport": {
+        "content_length": "2887763",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904050000.gkg.csv.zip",
+        "etag": "\"97dc9c534e17a1595e6478d7a08161b1\"",
+        "last_modified": "Fri, 04 Sep 2026 04:48:39 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3129386,
+      "archive_sha256": "68b21f02efa6d0a8307e480c22d4255d92cfbf372769da077d7adae85e62f492",
+      "batch_id": "20260904051500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:25Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904051500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:24Z",
+      "transport": {
+        "content_length": "3129386",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904051500.gkg.csv.zip",
+        "etag": "\"8b0f6bb933dd40b1caef1c293f6e94ba\"",
+        "last_modified": "Fri, 04 Sep 2026 05:04:15 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4255744,
+      "archive_sha256": "73c88df639d50f45737992b6e9d25f6a201c6ca3ea2a3dedc056a6ba8281d353",
+      "batch_id": "20260904053000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:26Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904053000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:25Z",
+      "transport": {
+        "content_length": "4255744",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904053000.gkg.csv.zip",
+        "etag": "\"b670bc491f051d2328f29856dd1ae7cf\"",
+        "last_modified": "Fri, 04 Sep 2026 05:19:17 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3050604,
+      "archive_sha256": "338d50c9427ad7b0b5df11f52be35326cb4e8b6be1f9bef79c9f0215a67c957e",
+      "batch_id": "20260904054500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:27Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904054500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:26Z",
+      "transport": {
+        "content_length": "3050604",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904054500.gkg.csv.zip",
+        "etag": "\"6841f8d75e9d4a7523bfa5c589918992\"",
+        "last_modified": "Fri, 04 Sep 2026 05:33:27 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3035193,
+      "archive_sha256": "44240bd39a02cf68d34fd6ceab75af79199c38fd4e49c705531a3bddd87c84a8",
+      "batch_id": "20260904060000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:28Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904060000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:27Z",
+      "transport": {
+        "content_length": "3035193",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904060000.gkg.csv.zip",
+        "etag": "\"22942fd743777b5f44f8e879eafcf19c\"",
+        "last_modified": "Fri, 04 Sep 2026 05:49:01 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3216239,
+      "archive_sha256": "1fdc88e69ae0898f0afd8d21758fae50874bf3e4991c18bbe9fff906b58b23a6",
+      "batch_id": "20260904061500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:29Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904061500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:28Z",
+      "transport": {
+        "content_length": "3216239",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904061500.gkg.csv.zip",
+        "etag": "\"21a56a4d8b080b8f3eb36d651827c45c\"",
+        "last_modified": "Fri, 04 Sep 2026 06:03:41 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3979940,
+      "archive_sha256": "d1b65efd0dabe83ad9a3ba02d2dc872a175b7d046ebd0b11693d078fbb4714f8",
+      "batch_id": "20260904063000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:30Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904063000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:29Z",
+      "transport": {
+        "content_length": "3979940",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904063000.gkg.csv.zip",
+        "etag": "\"50597d95eaf347e8dc8c47f3d25a4008\"",
+        "last_modified": "Fri, 04 Sep 2026 06:19:16 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3365100,
+      "archive_sha256": "58fb1e80d5f5a6ad20c4fcdd9de8281f495a8ecf966427ace65d221eef9137f6",
+      "batch_id": "20260904064500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:32Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904064500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:30Z",
+      "transport": {
+        "content_length": "3365100",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904064500.gkg.csv.zip",
+        "etag": "\"ba141effad2559410009b971b3a7a58a\"",
+        "last_modified": "Fri, 04 Sep 2026 06:33:58 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3603323,
+      "archive_sha256": "7a6d13604aba86e12e9a29607bbd943b59a83596bfc2525683ab87114ea6fbe8",
+      "batch_id": "20260904070000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:33Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904070000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:32Z",
+      "transport": {
+        "content_length": "3603323",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904070000.gkg.csv.zip",
+        "etag": "\"3fbe269aca80ac3f10dc901e23e431de\"",
+        "last_modified": "Fri, 04 Sep 2026 06:49:45 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3220160,
+      "archive_sha256": "ecda92850a4c38ed752ed30d0c89a6d14328c1b10ae64e54962b82ac017ed585",
+      "batch_id": "20260904071500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:34Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904071500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:33Z",
+      "transport": {
+        "content_length": "3220160",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904071500.gkg.csv.zip",
+        "etag": "\"ae6c7c7be4d1680963cc0d81ea516cb3\"",
+        "last_modified": "Fri, 04 Sep 2026 07:03:56 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3198406,
+      "archive_sha256": "8a90c9da6d8f824eb717e8e983caa915b50c802662940c7aa5867c6f4fa1c9dc",
+      "batch_id": "20260904073000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:35Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904073000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:34Z",
+      "transport": {
+        "content_length": "3198406",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904073000.gkg.csv.zip",
+        "etag": "\"9b675b153022e69a4ccffedef9392e7d\"",
+        "last_modified": "Fri, 04 Sep 2026 07:19:31 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3857761,
+      "archive_sha256": "92c5b7038cba8cfa15603dba9780be5816bd845defce3ac80872f4922b7a301b",
+      "batch_id": "20260904074500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:37Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904074500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:36Z",
+      "transport": {
+        "content_length": "3857761",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904074500.gkg.csv.zip",
+        "etag": "\"fca1c753acd6a6204904bc0711493e19\"",
+        "last_modified": "Fri, 04 Sep 2026 07:34:39 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3700192,
+      "archive_sha256": "a30cfbcf15de1690a550cd46fec537e0a258a8b5e6be68c3d75490b108bf7d9e",
+      "batch_id": "20260904080000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:38Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904080000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:37Z",
+      "transport": {
+        "content_length": "3700192",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904080000.gkg.csv.zip",
+        "etag": "\"aa6478e487748598a0cf76c1d8595204\"",
+        "last_modified": "Fri, 04 Sep 2026 07:49:24 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3740064,
+      "archive_sha256": "c0b0c93bc924783d1e71df550ebbdb7aaadcfa8634bca9aa00f79d562fcc4503",
+      "batch_id": "20260904081500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:39Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904081500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:38Z",
+      "transport": {
+        "content_length": "3740064",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904081500.gkg.csv.zip",
+        "etag": "\"ec773275dc4f130b40371a27a94e119f\"",
+        "last_modified": "Fri, 04 Sep 2026 08:04:22 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3704970,
+      "archive_sha256": "94b0b3759c9890be078ad68dbad91bccb30685b952eb6a969d88b19a6fd0b902",
+      "batch_id": "20260904083000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:40Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904083000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:39Z",
+      "transport": {
+        "content_length": "3704970",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904083000.gkg.csv.zip",
+        "etag": "\"f4f5205bc62e05fad3cba07ba4a577d4\"",
+        "last_modified": "Fri, 04 Sep 2026 08:19:13 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4030872,
+      "archive_sha256": "65fdb924c819dfec6a2db940e8cf89e29da0b57bab957908571789fd51f327a0",
+      "batch_id": "20260904084500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:42Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904084500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:41Z",
+      "transport": {
+        "content_length": "4030872",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904084500.gkg.csv.zip",
+        "etag": "\"6a8484f0c0b1147a399d27334326561b\"",
+        "last_modified": "Fri, 04 Sep 2026 08:34:43 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3825920,
+      "archive_sha256": "99c2aa48e03c0f5818ee144cddb55f581475d94acf103edfd588810a0b288ccb",
+      "batch_id": "20260904090000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:43Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904090000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:42Z",
+      "transport": {
+        "content_length": "3825920",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904090000.gkg.csv.zip",
+        "etag": "\"0cb0e039f3086fa728074f616117fee9\"",
+        "last_modified": "Fri, 04 Sep 2026 08:49:36 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4467410,
+      "archive_sha256": "1689519473ac34a164e1e8a27f04f50ac5e39730be0183b273781a2969251765",
+      "batch_id": "20260904091500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:44Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904091500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:43Z",
+      "transport": {
+        "content_length": "4467410",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904091500.gkg.csv.zip",
+        "etag": "\"0def240cfecf8dce9f96919bd7d2ad83\"",
+        "last_modified": "Fri, 04 Sep 2026 09:04:42 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3932053,
+      "archive_sha256": "c79c034a7113d9a90b570644228522463b3a6774d4e7d9af5d24be19e16a2741",
+      "batch_id": "20260904093000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:46Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904093000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:44Z",
+      "transport": {
+        "content_length": "3932053",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904093000.gkg.csv.zip",
+        "etag": "\"cccab457c6e5ed94455dc175164ff3b3\"",
+        "last_modified": "Fri, 04 Sep 2026 09:19:25 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4530464,
+      "archive_sha256": "66ace1d0aeaa38d68ad4fa4275f6e09fad428a1f8bde0438f975c1ef9a7bad31",
+      "batch_id": "20260904094500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:47Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904094500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:46Z",
+      "transport": {
+        "content_length": "4530464",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904094500.gkg.csv.zip",
+        "etag": "\"6f38a32c3a0c4fd2c22fa34d6d1d453d\"",
+        "last_modified": "Fri, 04 Sep 2026 09:35:09 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5108651,
+      "archive_sha256": "cc901b54ef1d34f51184ed51fa7c39dc1f1ac34b4056051701339354471ea016",
+      "batch_id": "20260904100000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:49Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904100000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:47Z",
+      "transport": {
+        "content_length": "5108651",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904100000.gkg.csv.zip",
+        "etag": "\"6838320d63a0449db0c35158beb82ead\"",
+        "last_modified": "Fri, 04 Sep 2026 09:50:02 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4309177,
+      "archive_sha256": "45b8ae530ff61a5bc777b87ae10a79161ba97dc876cb510e77490545a6db3c94",
+      "batch_id": "20260904101500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:50Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904101500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:49Z",
+      "transport": {
+        "content_length": "4309177",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904101500.gkg.csv.zip",
+        "etag": "\"250f1a529dd2c87f158596fc2e369625\"",
+        "last_modified": "Fri, 04 Sep 2026 10:04:52 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4340620,
+      "archive_sha256": "b1f6810b715143eb875a0fdac98ab08c9a03b103a6cffbfa3650fde56c093bc9",
+      "batch_id": "20260904103000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:51Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904103000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:50Z",
+      "transport": {
+        "content_length": "4340620",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904103000.gkg.csv.zip",
+        "etag": "\"19a5182123733bebb2460c83e3a588cb\"",
+        "last_modified": "Fri, 04 Sep 2026 10:19:35 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5456894,
+      "archive_sha256": "5625b64352e3741ed41fe12042c71b1f5b818ec9d9749b69410ad115ec936f21",
+      "batch_id": "20260904104500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:53Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904104500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:52Z",
+      "transport": {
+        "content_length": "5456894",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904104500.gkg.csv.zip",
+        "etag": "\"2e6d08ba68b94ee91fdf2cc484cbd352\"",
+        "last_modified": "Fri, 04 Sep 2026 10:35:12 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5027894,
+      "archive_sha256": "de16ac0a6aea6f0048774f318345e951ede67ffc94488441f9f543207e667356",
+      "batch_id": "20260904110000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:55Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904110000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:53Z",
+      "transport": {
+        "content_length": "5027894",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904110000.gkg.csv.zip",
+        "etag": "\"8fd180b6675107c829a0758b673da037\"",
+        "last_modified": "Fri, 04 Sep 2026 10:50:23 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4378037,
+      "archive_sha256": "e50ec74a668ba4fc50e8a74ad4d421b56d61c90071a76a298fcc3649802fa895",
+      "batch_id": "20260904111500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:56Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904111500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:55Z",
+      "transport": {
+        "content_length": "4378037",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904111500.gkg.csv.zip",
+        "etag": "\"d26d5be4d4450036d4e02474232088b1\"",
+        "last_modified": "Fri, 04 Sep 2026 11:05:09 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4368254,
+      "archive_sha256": "a084ad170b72933029e7bc29128cb35ebd77e755817baa896a331ea44575c03a",
+      "batch_id": "20260904113000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:57Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904113000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:56Z",
+      "transport": {
+        "content_length": "4368254",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904113000.gkg.csv.zip",
+        "etag": "\"b7d8216d7914f7854d7ea3a5f91f6635\"",
+        "last_modified": "Fri, 04 Sep 2026 11:20:09 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5301228,
+      "archive_sha256": "50b9a0d71a8123693c7d514eca7c11c939f08a1204fed3f1270f577f81aaebdc",
+      "batch_id": "20260904114500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:40:59Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904114500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:57Z",
+      "transport": {
+        "content_length": "5301228",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904114500.gkg.csv.zip",
+        "etag": "\"a56d21a08ac9e07993cb12fc0535e61f\"",
+        "last_modified": "Fri, 04 Sep 2026 11:35:12 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4592134,
+      "archive_sha256": "d51cbf732802e8d0cc093add7886b10f2a1db76382f0ec4f1d37e7feeaf86c8c",
+      "batch_id": "20260904120000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:00Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904120000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:40:59Z",
+      "transport": {
+        "content_length": "4592134",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904120000.gkg.csv.zip",
+        "etag": "\"1273bb5cc88e964ffce516533e0b66e1\"",
+        "last_modified": "Fri, 04 Sep 2026 11:49:57 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5296495,
+      "archive_sha256": "717d5682eebbba8b053a24d8fd8ce274eb4a9095486f1d518f9d306fdde3975d",
+      "batch_id": "20260904121500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:02Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904121500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:00Z",
+      "transport": {
+        "content_length": "5296495",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904121500.gkg.csv.zip",
+        "etag": "\"c34758387c6178b4674bf6042af8d70e\"",
+        "last_modified": "Fri, 04 Sep 2026 12:06:00 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6346438,
+      "archive_sha256": "8d8a3b9dfec404a1bee8699a88c43d7ccbbfba14d4eb39a0d5ce9e0ae1ace962",
+      "batch_id": "20260904123000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:04Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904123000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:02Z",
+      "transport": {
+        "content_length": "6346438",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904123000.gkg.csv.zip",
+        "etag": "\"4f7330f246dfc6862f868e23f5b82c75\"",
+        "last_modified": "Fri, 04 Sep 2026 12:20:34 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6504108,
+      "archive_sha256": "d840a5f00fe71c99d0513281e13600239278a9976e478a8b9c9ebacb5bd2bbb2",
+      "batch_id": "20260904124500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:06Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904124500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:04Z",
+      "transport": {
+        "content_length": "6504108",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904124500.gkg.csv.zip",
+        "etag": "\"869c7fccd13216bbc9f823b448a4c65a\"",
+        "last_modified": "Fri, 04 Sep 2026 12:35:46 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6008943,
+      "archive_sha256": "dc4cfb41a72b5717b5221a810c7c8f8ba3d15e3609748a72d6d670a1bfdbe490",
+      "batch_id": "20260904130000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:07Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904130000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:06Z",
+      "transport": {
+        "content_length": "6008943",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904130000.gkg.csv.zip",
+        "etag": "\"66d70eda0291352482641dcf309be956\"",
+        "last_modified": "Fri, 04 Sep 2026 12:50:04 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5746965,
+      "archive_sha256": "1a79a6c846fd0afcdedc55dbd6466f850d215a1388b8d666df32c56abef1402a",
+      "batch_id": "20260904131500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:09Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904131500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:07Z",
+      "transport": {
+        "content_length": "5746965",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904131500.gkg.csv.zip",
+        "etag": "\"4bff7cccbdcb4b0af55ef8cf2569d860\"",
+        "last_modified": "Fri, 04 Sep 2026 13:04:43 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5364098,
+      "archive_sha256": "77e58479541926eadd20c2e6cee8714fdd13dc76a9836e79589bd71593649cd9",
+      "batch_id": "20260904133000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:10Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904133000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:09Z",
+      "transport": {
+        "content_length": "5364098",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904133000.gkg.csv.zip",
+        "etag": "\"d736dd507fd7f08b7e23c4ff20cb7d0b\"",
+        "last_modified": "Fri, 04 Sep 2026 13:20:32 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5821481,
+      "archive_sha256": "5cf169d55963831acdf97b133ea6eb0fb6c9d92fe71dbc2659aa2f64c3adcee5",
+      "batch_id": "20260904134500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:12Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904134500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:11Z",
+      "transport": {
+        "content_length": "5821481",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904134500.gkg.csv.zip",
+        "etag": "\"b533e184cc27dcc873212e137e882af9\"",
+        "last_modified": "Fri, 04 Sep 2026 13:36:02 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 7399439,
+      "archive_sha256": "b5cae55c01af6e11f0ba4e137ae1e1bf5f0f5fab9e240c0ea9bf87d396c7a9f6",
+      "batch_id": "20260904140000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:14Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904140000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:12Z",
+      "transport": {
+        "content_length": "7399439",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904140000.gkg.csv.zip",
+        "etag": "\"6458c54c5761ee028242ea8dabccb665\"",
+        "last_modified": "Fri, 04 Sep 2026 13:50:42 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5980126,
+      "archive_sha256": "67a45a737223d56e16c41a09129afbd5cd2cf508d01a7cf89d77200841b2f3c8",
+      "batch_id": "20260904141500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:15Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904141500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:14Z",
+      "transport": {
+        "content_length": "5980126",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904141500.gkg.csv.zip",
+        "etag": "\"a236a670fb44cf86879d55008f1b027a\"",
+        "last_modified": "Fri, 04 Sep 2026 14:05:39 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6488863,
+      "archive_sha256": "4aca54b8f6dc0bc2c1f9b54aa5773f00021e39f47b7c57830acece8a1de5be84",
+      "batch_id": "20260904143000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:17Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904143000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:16Z",
+      "transport": {
+        "content_length": "6488863",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904143000.gkg.csv.zip",
+        "etag": "\"5453e322f89f66cac874122a2044b2be\"",
+        "last_modified": "Fri, 04 Sep 2026 14:20:17 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5856726,
+      "archive_sha256": "8b0c81806bd591397b7fa82ae65ff0ab48284f9d9ff91ad789cda9eba2d8daa9",
+      "batch_id": "20260904144500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:19Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904144500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:17Z",
+      "transport": {
+        "content_length": "5856726",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904144500.gkg.csv.zip",
+        "etag": "\"111d595f157f4ce5f4fb0751d2a90466\"",
+        "last_modified": "Fri, 04 Sep 2026 14:35:04 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6171038,
+      "archive_sha256": "40b8178a389caa889f3e434aa9d9ff66a747bf6baacb358df2a1f20bfbf818b0",
+      "batch_id": "20260904150000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:21Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904150000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:19Z",
+      "transport": {
+        "content_length": "6171038",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904150000.gkg.csv.zip",
+        "etag": "\"499dca5dcc0710ec87931a10e5c7de7a\"",
+        "last_modified": "Fri, 04 Sep 2026 14:50:02 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6429208,
+      "archive_sha256": "b443e400767676ecec2a8737a40521a6b7503563b9f626167ef2642fcba79bbb",
+      "batch_id": "20260904151500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:23Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904151500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:21Z",
+      "transport": {
+        "content_length": "6429208",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904151500.gkg.csv.zip",
+        "etag": "\"cdba7b2b1f2edf5afe89a706b2b01e7f\"",
+        "last_modified": "Fri, 04 Sep 2026 15:05:00 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 7093584,
+      "archive_sha256": "cb10d3f287189dc2c9fea1d9b4eb1b77eae390143a0a22514d865486ef31e0dc",
+      "batch_id": "20260904153000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:24Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904153000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:23Z",
+      "transport": {
+        "content_length": "7093584",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904153000.gkg.csv.zip",
+        "etag": "\"5d202fd7db569f99161a9b6b102134e8\"",
+        "last_modified": "Fri, 04 Sep 2026 15:20:16 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6368841,
+      "archive_sha256": "dab3f1216d7295bd8e7c8c71d09a175ec865a55c5870deb25e3127e49d57209b",
+      "batch_id": "20260904154500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:26Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904154500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:25Z",
+      "transport": {
+        "content_length": "6368841",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904154500.gkg.csv.zip",
+        "etag": "\"74d2df9beef1e5275fb826597bd782b2\"",
+        "last_modified": "Fri, 04 Sep 2026 15:35:46 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6539667,
+      "archive_sha256": "3024aa1f859ef45e7869daa755d860339c9888470de7f6e089f40182717c6eb6",
+      "batch_id": "20260904160000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:28Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904160000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:26Z",
+      "transport": {
+        "content_length": "6539667",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904160000.gkg.csv.zip",
+        "etag": "\"33fbe6f655d7d27c0d2346c56c3c54bb\"",
+        "last_modified": "Fri, 04 Sep 2026 15:50:17 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5798370,
+      "archive_sha256": "c47d338f0bb538bf688e842386088c3a6ded5f986dc6769266fb9b0593c45551",
+      "batch_id": "20260904161500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:30Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904161500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:28Z",
+      "transport": {
+        "content_length": "5798370",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904161500.gkg.csv.zip",
+        "etag": "\"0b0b9e60532b6489e72c8285b2ccc57b\"",
+        "last_modified": "Fri, 04 Sep 2026 16:05:41 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6253237,
+      "archive_sha256": "0a50fd3a424ad636f5073fc99ce053f4824644cc782c7dd323b3b0eae35400de",
+      "batch_id": "20260904163000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:32Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904163000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:30Z",
+      "transport": {
+        "content_length": "6253237",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904163000.gkg.csv.zip",
+        "etag": "\"ceb514e197b76d9874fe6d0d5dec4f1d\"",
+        "last_modified": "Fri, 04 Sep 2026 16:20:23 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6888016,
+      "archive_sha256": "a8954b6659aed607b63a2b6f788dfe22c7314a3eeb4e4ef19359d53d50d7b2f9",
+      "batch_id": "20260904164500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:34Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904164500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:32Z",
+      "transport": {
+        "content_length": "6888016",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904164500.gkg.csv.zip",
+        "etag": "\"2f10c14c777d3010f72cf318799b2e3c\"",
+        "last_modified": "Fri, 04 Sep 2026 16:34:53 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5277627,
+      "archive_sha256": "a2d299ce1b3a7d1d5b05bba4ffca02a69e2d68d96f2d8077295763153ce8a1a6",
+      "batch_id": "20260904170000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:35Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904170000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:34Z",
+      "transport": {
+        "content_length": "5277627",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904170000.gkg.csv.zip",
+        "etag": "\"da83e9c055dc50de1b87c77aabf2a0c6\"",
+        "last_modified": "Fri, 04 Sep 2026 16:49:43 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6779868,
+      "archive_sha256": "e3eb4db13bffa2787a64836733e8e12a87d0cfe60326e7eae7a0ea38e1208b34",
+      "batch_id": "20260904171500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:37Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904171500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:35Z",
+      "transport": {
+        "content_length": "6779868",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904171500.gkg.csv.zip",
+        "etag": "\"c44b65c18c75ac65ee38c2d9da339c2a\"",
+        "last_modified": "Fri, 04 Sep 2026 17:05:17 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6457380,
+      "archive_sha256": "e972a41a62fa540609055e453f5832542d3b02cf1d6a52c21aaa6d3300abf973",
+      "batch_id": "20260904173000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:39Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904173000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:37Z",
+      "transport": {
+        "content_length": "6457380",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904173000.gkg.csv.zip",
+        "etag": "\"07eebe19b7c07291850a56843ab8d71e\"",
+        "last_modified": "Fri, 04 Sep 2026 17:19:31 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 7216421,
+      "archive_sha256": "b7bfee113f1e4759deb7ca728ac9a484a4ff63a44468497514b90852471b6ac0",
+      "batch_id": "20260904174500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:41Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260904174500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:39Z",
+      "transport": {
+        "content_length": "7216421",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260904174500.gkg.csv.zip",
+        "etag": "\"b32b169f760fa3d9888a505f0d21f88b\"",
+        "last_modified": "Fri, 04 Sep 2026 17:35:13 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6088938,
+      "archive_sha256": "a99eccbd468f572c811d8aa2a8addcb76c6401c36ccb4c783ac4b6279a029107",
+      "batch_id": "20150302000000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:43Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20150302000000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:41Z",
+      "transport": {
+        "content_length": "6088938",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20150302000000.gkg.csv.zip",
+        "etag": "\"a3f607294c2408315c072e5b427ace8a\"",
+        "last_modified": "Sun, 01 Mar 2015 23:48:59 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5692428,
+      "archive_sha256": "8b8ff84830b34a02eb0e9653106e2e3f0b22495cf52ab3ba2685ac4a4c15d9cf",
+      "batch_id": "20150302001500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:45Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20150302001500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:43Z",
+      "transport": {
+        "content_length": "5692428",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20150302001500.gkg.csv.zip",
+        "etag": "\"683e98e42c0417cbcdff2ac866a76afe\"",
+        "last_modified": "Mon, 02 Mar 2015 00:04:38 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5929095,
+      "archive_sha256": "054b9333c24edc976ad764e30daeac585a1a44bfa89f35d00c5cd81656adc139",
+      "batch_id": "20150302003000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:48Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20150302003000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:46Z",
+      "transport": {
+        "content_length": "5929095",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20150302003000.gkg.csv.zip",
+        "etag": "\"923f74c77d286425a82a6c11a5aada51\"",
+        "last_modified": "Mon, 02 Mar 2015 00:19:06 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5995827,
+      "archive_sha256": "51a8ef932d2b2da260a365861dc6df6322d9d30c3a175189e2879d006346f0ab",
+      "batch_id": "20150302004500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:50Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20150302004500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:48Z",
+      "transport": {
+        "content_length": "5995827",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20150302004500.gkg.csv.zip",
+        "etag": "\"c787d1a4e1c200b3433bbb9f873673c8\"",
+        "last_modified": "Mon, 02 Mar 2015 00:34:09 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 7422734,
+      "archive_sha256": "d74547d710275c8b85e7065c27105892fbafef9f12d56e26223d570b8cf1341b",
+      "batch_id": "20160905060000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:52Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20160905060000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:50Z",
+      "transport": {
+        "content_length": "7422734",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20160905060000.gkg.csv.zip",
+        "etag": "\"1e37b8aa4f840496c8d0b55a659a22d7\"",
+        "last_modified": "Mon, 05 Sep 2016 05:52:13 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6990870,
+      "archive_sha256": "46b590ecd0f7c03ccb4140ff0b70aea3e52ab0fd3d38835f30afb882ab6af9cf",
+      "batch_id": "20160905061500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:55Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20160905061500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:53Z",
+      "transport": {
+        "content_length": "6990870",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20160905061500.gkg.csv.zip",
+        "etag": "\"3e32abbc9df34f6d49b191defbb664ef\"",
+        "last_modified": "Mon, 05 Sep 2016 06:07:34 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 8201749,
+      "archive_sha256": "7ce9cda4070a80eea09bce9428588e67fa636b72ccde9ee624718cdf8eb84703",
+      "batch_id": "20160905063000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:41:58Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20160905063000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:55Z",
+      "transport": {
+        "content_length": "8201749",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20160905063000.gkg.csv.zip",
+        "etag": "\"2227853dcc35660c1d4fa8a64f774f5c\"",
+        "last_modified": "Mon, 05 Sep 2016 06:23:07 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 8528153,
+      "archive_sha256": "fd78060201e1201b5c93a52c3400fb9e31f14592f3265aba86d17794bafee6fb",
+      "batch_id": "20160905064500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:01Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20160905064500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:41:59Z",
+      "transport": {
+        "content_length": "8528153",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20160905064500.gkg.csv.zip",
+        "etag": "\"29af370f54551bc89a4b9f2662505811\"",
+        "last_modified": "Mon, 05 Sep 2016 06:38:21 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3462206,
+      "archive_sha256": "a6163f256df4e0768a0b8fde5b4b1a86819c0294b7070874588d4cff9deeb6f1",
+      "batch_id": "20200905120000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:03Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20200905120000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:02Z",
+      "transport": {
+        "content_length": "3462206",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20200905120000.gkg.csv.zip",
+        "etag": "\"d6bdf6e3774ce681b9ad6d78d95949dc\"",
+        "last_modified": "Sat, 05 Sep 2020 11:52:14 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3674685,
+      "archive_sha256": "45081daed4091b31bc1c8ff9b76f8fcc9ae2b3be0e22949d6724c60ea37a6c92",
+      "batch_id": "20200905121500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:05Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20200905121500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:04Z",
+      "transport": {
+        "content_length": "3674685",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20200905121500.gkg.csv.zip",
+        "etag": "\"75063508d2dc0d568f7da941daeadfa5\"",
+        "last_modified": "Sat, 05 Sep 2020 12:07:15 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 4419757,
+      "archive_sha256": "b2edcf7f8ec77e45d2da92d9a53c9b2464e760d7e09da6ea5cfe6052d5aa027f",
+      "batch_id": "20200905123000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:07Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20200905123000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:05Z",
+      "transport": {
+        "content_length": "4419757",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20200905123000.gkg.csv.zip",
+        "etag": "\"cc2f0d5591c574e75d8f7895f7b996b8\"",
+        "last_modified": "Sat, 05 Sep 2020 12:22:57 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 3071144,
+      "archive_sha256": "b08c5743d916eafb0a39337f570cadfc31b87e28c0e236c9df44016bc931694b",
+      "batch_id": "20200905124500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:09Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20200905124500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:07Z",
+      "transport": {
+        "content_length": "3071144",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20200905124500.gkg.csv.zip",
+        "etag": "\"4d6ed94c83eb9b8fe0a45ec12ce3d27a\"",
+        "last_modified": "Sat, 05 Sep 2020 12:37:06 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 9777462,
+      "archive_sha256": "e235ebad1a7fe296fade0f447fd848d4ae79b2ad7b7f4fed9028dab486b1710f",
+      "batch_id": "20230905180000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:11Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20230905180000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:09Z",
+      "transport": {
+        "content_length": "9777462",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20230905180000.gkg.csv.zip",
+        "etag": "\"7aeaa4005cb7d79033c67ec9f9b041c8\"",
+        "last_modified": "Tue, 05 Sep 2023 17:50:30 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 9405058,
+      "archive_sha256": "cdb127db833f3dbc241dd325c9260dd5252a3caa3df4be2e889845239dfd59a5",
+      "batch_id": "20230905181500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:14Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20230905181500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:11Z",
+      "transport": {
+        "content_length": "9405058",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20230905181500.gkg.csv.zip",
+        "etag": "\"34e770ef6404e8e2ffa538da55c10b35\"",
+        "last_modified": "Tue, 05 Sep 2023 18:05:19 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 10518491,
+      "archive_sha256": "6ad363f31e17c830b97ed618b9de79e8172cdb6ab048d115b9bf4844c4f7b8eb",
+      "batch_id": "20230905183000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:17Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20230905183000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:14Z",
+      "transport": {
+        "content_length": "10518491",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20230905183000.gkg.csv.zip",
+        "etag": "\"fe2bfdb66a589d9f545f679c051c22da\"",
+        "last_modified": "Tue, 05 Sep 2023 18:20:09 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 10495325,
+      "archive_sha256": "15523cfe24d1403f175909d75dddda9a38c7c3d0fe546550e60889cb502523cb",
+      "batch_id": "20230905184500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:20Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20230905184500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:17Z",
+      "transport": {
+        "content_length": "10495325",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20230905184500.gkg.csv.zip",
+        "etag": "\"e6f04bf2af6732347423eb322a926623\"",
+        "last_modified": "Tue, 05 Sep 2023 18:35:05 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5792514,
+      "archive_sha256": "cdf27b65f0037da689f1c6e7c2f2d67736076c54667445e97352d2d506d1455d",
+      "batch_id": "20250905000000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:22Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20250905000000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:20Z",
+      "transport": {
+        "content_length": "5792514",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20250905000000.gkg.csv.zip",
+        "etag": "\"406e9b9947ca411938abfb60ab8ce1d7\"",
+        "last_modified": "Thu, 04 Sep 2025 23:49:21 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6120090,
+      "archive_sha256": "d093a5244c72b3d63d3d31a376a41f19b9fbde3175c036fde4f8cae5b8d3625d",
+      "batch_id": "20250905001500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:24Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20250905001500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:22Z",
+      "transport": {
+        "content_length": "6120090",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20250905001500.gkg.csv.zip",
+        "etag": "\"f46b16d04edcbddc26d63a8cc78a0320\"",
+        "last_modified": "Fri, 05 Sep 2025 00:04:53 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6138895,
+      "archive_sha256": "c9d30bcc64f407eb9419df5ae0eb6c7f408aeb6e829e43984e0cbfc60ec429e0",
+      "batch_id": "20250905003000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:27Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20250905003000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:24Z",
+      "transport": {
+        "content_length": "6138895",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20250905003000.gkg.csv.zip",
+        "etag": "\"02c055443826adfcb18898a64b49c84e\"",
+        "last_modified": "Fri, 05 Sep 2025 00:19:22 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6968532,
+      "archive_sha256": "1aec981b8ad97918e4d6d99ff5e9e59af1f70805edc468fb2b47942806e8a223",
+      "batch_id": "20250905004500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:29Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20250905004500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:27Z",
+      "transport": {
+        "content_length": "6968532",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20250905004500.gkg.csv.zip",
+        "etag": "\"7a0ab93910b77bf90c6f00619ea3ef88\"",
+        "last_modified": "Fri, 05 Sep 2025 00:34:56 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5332870,
+      "archive_sha256": "c21636fce3e67cbccfd62a5c7bbac29856e023f9437ae6c44a7e04c7c2b8d61b",
+      "batch_id": "20260805120000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:31Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260805120000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:29Z",
+      "transport": {
+        "content_length": "5332870",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260805120000.gkg.csv.zip",
+        "etag": "\"d7f60cb7fb4a83d25b685f166602c5e2\"",
+        "last_modified": "Wed, 05 Aug 2026 11:50:56 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 6147233,
+      "archive_sha256": "f4f1fe514bf472f9f46082b5f0fdad7eaae55393f8cf4fb28b133c699e45c304",
+      "batch_id": "20260805121500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:34Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260805121500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:32Z",
+      "transport": {
+        "content_length": "6147233",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260805121500.gkg.csv.zip",
+        "etag": "\"5245992f546980780a8a6d21abd0e691\"",
+        "last_modified": "Wed, 05 Aug 2026 12:06:11 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5771929,
+      "archive_sha256": "dd3ac0e3ce272d1939c0c8e7f370c648d9f7d14538d17a0b5e033db17c45e75d",
+      "batch_id": "20260805123000",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:36Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260805123000.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:34Z",
+      "transport": {
+        "content_length": "5771929",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260805123000.gkg.csv.zip",
+        "etag": "\"4ee2e3631ccf4a58795f3fd73f76d0b8\"",
+        "last_modified": "Wed, 05 Aug 2026 12:20:39 GMT",
+        "status": 200
+      }
+    },
+    {
+      "acquisition": "passed",
+      "archive_bytes": 5553111,
+      "archive_sha256": "e322077b12cd5bac6c3331e71459af9acfac4720024d201a1016e095de3f103b",
+      "batch_id": "20260805124500",
+      "contract_version": "1.0.0",
+      "finished_at": "2026-09-05T22:42:38Z",
+      "parser_version": "1.0.0",
+      "source_id": "gdelt-gkg-2.1",
+      "source_url": "https://data.gdeltproject.org/gdeltv2/20260805124500.gkg.csv.zip",
+      "started_at": "2026-09-05T22:42:36Z",
+      "transport": {
+        "content_length": "5553111",
+        "content_type": "application/zip",
+        "effective_url": "https://data.gdeltproject.org/gdeltv2/20260805124500.gkg.csv.zip",
+        "etag": "\"b7c7eb659e78a723d5dcc20bd679fb79\"",
+        "last_modified": "Wed, 05 Aug 2026 12:35:00 GMT",
+        "status": 200
+      }
+    }
+  ],
+  "phase2_report_sha256": "1b5256a4e5c240fe91185b455443e15af3f67dd374386ab7f9de4a20af2df141",
+  "schema_version": "1.0.0"
+}

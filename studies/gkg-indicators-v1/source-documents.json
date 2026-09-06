@@ -1,0 +1,85 @@
+[
+  {
+    "url": "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/",
+    "status": "failed",
+    "failure_category": "URLError"
+  },
+  {
+    "url": "https://blog.gdeltproject.org/announcing-our-first-api-gkg-geojson/",
+    "status": "failed",
+    "failure_category": "URLError"
+  },
+  {
+    "url": "https://blog.gdeltproject.org/google-bigquery-gkg-2-0-sample-queries/",
+    "status": "failed",
+    "failure_category": "URLError"
+  },
+  {
+    "url": "https://blog.gdeltproject.org/new-november-2021-gkg-2-0-themes-lookup/",
+    "status": "failed",
+    "failure_category": "URLError"
+  },
+  {
+    "url": "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/",
+    "status": "failed",
+    "failure_category": "URLError"
+  },
+  {
+    "url": "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/",
+    "effective_url": "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/",
+    "retrieved_at": "2026-09-06T00:11:20.497795+00:00",
+    "bytes": 47638,
+    "sha256": "7e6bc0917165080d611855c5a8443f99738be5d7792e26daa3053befeddcc0b5",
+    "local_snapshot": "artifacts/gkg-phase4/source-documents/7e6bc0917165080d611855c5a8443f99738be5d7792e26daa3053befeddcc0b5.html",
+    "status": "passed",
+    "attempt": 2
+  },
+  {
+    "url": "https://blog.gdeltproject.org/announcing-our-first-api-gkg-geojson/",
+    "effective_url": "https://blog.gdeltproject.org/announcing-our-first-api-gkg-geojson/",
+    "retrieved_at": "2026-09-06T00:11:20.886506+00:00",
+    "bytes": 59208,
+    "sha256": "2c06655d007268f5e5d796bbd318df05a4e456059ee6bbb6d15677925f91f9b6",
+    "local_snapshot": "artifacts/gkg-phase4/source-documents/2c06655d007268f5e5d796bbd318df05a4e456059ee6bbb6d15677925f91f9b6.html",
+    "status": "passed",
+    "attempt": 2
+  },
+  {
+    "url": "https://blog.gdeltproject.org/google-bigquery-gkg-2-0-sample-queries/",
+    "effective_url": "https://blog.gdeltproject.org/google-bigquery-gkg-2-0-sample-queries/",
+    "retrieved_at": "2026-09-06T00:11:21.334346+00:00",
+    "bytes": 86094,
+    "sha256": "9194b59c52425dbe5e06b277621171368f6679e3332e1715d6674e6e5831cf10",
+    "local_snapshot": "artifacts/gkg-phase4/source-documents/9194b59c52425dbe5e06b277621171368f6679e3332e1715d6674e6e5831cf10.html",
+    "status": "passed",
+    "attempt": 2
+  },
+  {
+    "url": "https://blog.gdeltproject.org/new-november-2021-gkg-2-0-themes-lookup/",
+    "effective_url": "https://blog.gdeltproject.org/new-november-2021-gkg-2-0-themes-lookup/",
+    "retrieved_at": "2026-09-06T00:11:21.709249+00:00",
+    "bytes": 36923,
+    "sha256": "bbf9104734386a41ee50a31514945223760af7345507aee1831b76582c1f3139",
+    "local_snapshot": "artifacts/gkg-phase4/source-documents/bbf9104734386a41ee50a31514945223760af7345507aee1831b76582c1f3139.html",
+    "status": "passed",
+    "attempt": 2
+  },
+  {
+    "url": "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/",
+    "effective_url": "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/",
+    "retrieved_at": "2026-09-06T00:11:22.089721+00:00",
+    "bytes": 36503,
+    "sha256": "92cef5d2f19e79a1392df55f8a83eb70bdad195354215fb32be5d8a9b85295ee",
+    "local_snapshot": "artifacts/gkg-phase4/source-documents/92cef5d2f19e79a1392df55f8a83eb70bdad195354215fb32be5d8a9b85295ee.html",
+    "status": "passed",
+    "attempt": 2
+  },
+  {
+    "url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
+    "status": "retained_phase3_snapshot",
+    "sha256": "64062c0173a5b97180c0cbdb8b858715d03d4c8a1ebbc9956e6db80dd376281f",
+    "bytes": 434652,
+    "local_snapshot": "artifacts/gkg-phase3-evidence/source-documents/codebook-v2.1.pdf",
+    "phase4_use": "field semantics, row and geographic boundaries; not taxonomy historical version evidence"
+  }
+]

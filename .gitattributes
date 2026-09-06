@@ -1,0 +1,5 @@
+# Preserve byte hashes of the new canonical Phase 4 evidence on every checkout.
+# Deliberately scoped: historical/protected production files keep existing behavior.
+studies/gkg-indicators-v1/results/*.json text eol=lf
+studies/gkg-indicators-v1/results/*.jsonl text eol=lf
+studies/gkg-indicators-v1/results/*.gz binary

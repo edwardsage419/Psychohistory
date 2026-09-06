@@ -1,0 +1,821 @@
+{
+  "batches": [
+    {
+      "batch_id": "20260904000000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 854894,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4887176
+    },
+    {
+      "batch_id": "20260904001500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 836790,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4821947
+    },
+    {
+      "batch_id": "20260904003000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 832224,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4771547
+    },
+    {
+      "batch_id": "20260904004500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 770362,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4469033
+    },
+    {
+      "batch_id": "20260904010000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 792968,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4538281
+    },
+    {
+      "batch_id": "20260904011500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 797750,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4910629
+    },
+    {
+      "batch_id": "20260904013000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 624765,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3510759
+    },
+    {
+      "batch_id": "20260904014500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 630015,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3513752
+    },
+    {
+      "batch_id": "20260904020000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 614189,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3395018
+    },
+    {
+      "batch_id": "20260904021500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 640613,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3649963
+    },
+    {
+      "batch_id": "20260904023000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 749931,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4234704
+    },
+    {
+      "batch_id": "20260904024500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 641395,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3712090
+    },
+    {
+      "batch_id": "20260904030000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 561466,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3224175
+    },
+    {
+      "batch_id": "20260904031500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 587899,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3462460
+    },
+    {
+      "batch_id": "20260904033000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 562210,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3091218
+    },
+    {
+      "batch_id": "20260904034500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 630089,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3648282
+    },
+    {
+      "batch_id": "20260904040000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 608199,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3448200
+    },
+    {
+      "batch_id": "20260904041500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 580269,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3250645
+    },
+    {
+      "batch_id": "20260904043000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 597647,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3417893
+    },
+    {
+      "batch_id": "20260904044500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 593851,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3325725
+    },
+    {
+      "batch_id": "20260904050000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 522356,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 2887763
+    },
+    {
+      "batch_id": "20260904051500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 545658,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3129386
+    },
+    {
+      "batch_id": "20260904053000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 726621,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4255744
+    },
+    {
+      "batch_id": "20260904054500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 534410,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3050604
+    },
+    {
+      "batch_id": "20260904060000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 550174,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3035193
+    },
+    {
+      "batch_id": "20260904061500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 610330,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3216239
+    },
+    {
+      "batch_id": "20260904063000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 694912,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 9662,
+      "raw_archives": 3979940
+    },
+    {
+      "batch_id": "20260904064500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 625427,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3365100
+    },
+    {
+      "batch_id": "20260904070000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 664663,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3603323
+    },
+    {
+      "batch_id": "20260904071500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 580267,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3220160
+    },
+    {
+      "batch_id": "20260904073000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 581768,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3198406
+    },
+    {
+      "batch_id": "20260904074500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 664787,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3857761
+    },
+    {
+      "batch_id": "20260904080000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 684361,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3700192
+    },
+    {
+      "batch_id": "20260904081500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 684321,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3740064
+    },
+    {
+      "batch_id": "20260904083000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 680515,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3704970
+    },
+    {
+      "batch_id": "20260904084500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 712999,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4030872
+    },
+    {
+      "batch_id": "20260904090000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 671545,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3825920
+    },
+    {
+      "batch_id": "20260904091500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 823086,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4467410
+    },
+    {
+      "batch_id": "20260904093000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 729507,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 3932053
+    },
+    {
+      "batch_id": "20260904094500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 829150,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4530464
+    },
+    {
+      "batch_id": "20260904100000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 896451,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5108651
+    },
+    {
+      "batch_id": "20260904101500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 777820,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4309177
+    },
+    {
+      "batch_id": "20260904103000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 803484,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4340620
+    },
+    {
+      "batch_id": "20260904104500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 974140,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5456894
+    },
+    {
+      "batch_id": "20260904110000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 918246,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5027894
+    },
+    {
+      "batch_id": "20260904111500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 811743,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4378037
+    },
+    {
+      "batch_id": "20260904113000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 770351,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 19541,
+      "raw_archives": 4368254
+    },
+    {
+      "batch_id": "20260904114500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 932641,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5301228
+    },
+    {
+      "batch_id": "20260904120000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 806552,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 4592134
+    },
+    {
+      "batch_id": "20260904121500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 926631,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5296495
+    },
+    {
+      "batch_id": "20260904123000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1105566,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6346438
+    },
+    {
+      "batch_id": "20260904124500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1107909,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6504108
+    },
+    {
+      "batch_id": "20260904130000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1067798,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6008943
+    },
+    {
+      "batch_id": "20260904131500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1042086,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5746965
+    },
+    {
+      "batch_id": "20260904133000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 927360,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5364098
+    },
+    {
+      "batch_id": "20260904134500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 996119,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5821481
+    },
+    {
+      "batch_id": "20260904140000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1240769,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 7399439
+    },
+    {
+      "batch_id": "20260904141500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1054960,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 15065,
+      "raw_archives": 5980126
+    },
+    {
+      "batch_id": "20260904143000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1117688,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6488863
+    },
+    {
+      "batch_id": "20260904144500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1021755,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5856726
+    },
+    {
+      "batch_id": "20260904150000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1091185,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6171038
+    },
+    {
+      "batch_id": "20260904151500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1108662,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6429208
+    },
+    {
+      "batch_id": "20260904153000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1221852,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 7093584
+    },
+    {
+      "batch_id": "20260904154500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1143296,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6368841
+    },
+    {
+      "batch_id": "20260904160000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1206658,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6539667
+    },
+    {
+      "batch_id": "20260904161500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 990063,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5798370
+    },
+    {
+      "batch_id": "20260904163000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1107042,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6253237
+    },
+    {
+      "batch_id": "20260904164500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1208262,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6888016
+    },
+    {
+      "batch_id": "20260904170000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 962036,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 5277627
+    },
+    {
+      "batch_id": "20260904171500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1194656,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6779868
+    },
+    {
+      "batch_id": "20260904173000",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1164400,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 6457380
+    },
+    {
+      "batch_id": "20260904174500",
+      "cohort": "recent",
+      "derived_accepted_row_ledger": 1257409,
+      "manifests_provenance": 779,
+      "quarantine_evidence": 0,
+      "raw_archives": 7216421
+    },
+    {
+      "batch_id": "20150302000000",
+      "cohort": "historical_2015",
+      "derived_accepted_row_ledger": 1281914,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 6088938
+    },
+    {
+      "batch_id": "20150302001500",
+      "cohort": "historical_2015",
+      "derived_accepted_row_ledger": 1167961,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5692428
+    },
+    {
+      "batch_id": "20150302003000",
+      "cohort": "historical_2015",
+      "derived_accepted_row_ledger": 1317299,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5929095
+    },
+    {
+      "batch_id": "20150302004500",
+      "cohort": "historical_2015",
+      "derived_accepted_row_ledger": 1250224,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5995827
+    },
+    {
+      "batch_id": "20160905060000",
+      "cohort": "historical_2016",
+      "derived_accepted_row_ledger": 1457979,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 7422734
+    },
+    {
+      "batch_id": "20160905061500",
+      "cohort": "historical_2016",
+      "derived_accepted_row_ledger": 1322159,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 6990870
+    },
+    {
+      "batch_id": "20160905063000",
+      "cohort": "historical_2016",
+      "derived_accepted_row_ledger": 1462689,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 8201749
+    },
+    {
+      "batch_id": "20160905064500",
+      "cohort": "historical_2016",
+      "derived_accepted_row_ledger": 1595519,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 8528153
+    },
+    {
+      "batch_id": "20200905120000",
+      "cohort": "historical_2020",
+      "derived_accepted_row_ledger": 617233,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 3462206
+    },
+    {
+      "batch_id": "20200905121500",
+      "cohort": "historical_2020",
+      "derived_accepted_row_ledger": 654943,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 3674685
+    },
+    {
+      "batch_id": "20200905123000",
+      "cohort": "historical_2020",
+      "derived_accepted_row_ledger": 779372,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 4419757
+    },
+    {
+      "batch_id": "20200905124500",
+      "cohort": "historical_2020",
+      "derived_accepted_row_ledger": 575742,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 3071144
+    },
+    {
+      "batch_id": "20230905180000",
+      "cohort": "historical_2023",
+      "derived_accepted_row_ledger": 1778236,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 28087,
+      "raw_archives": 9777462
+    },
+    {
+      "batch_id": "20230905181500",
+      "cohort": "historical_2023",
+      "derived_accepted_row_ledger": 1763768,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 9405058
+    },
+    {
+      "batch_id": "20230905183000",
+      "cohort": "historical_2023",
+      "derived_accepted_row_ledger": 1983084,
+      "manifests_provenance": 790,
+      "quarantine_evidence": 0,
+      "raw_archives": 10518491
+    },
+    {
+      "batch_id": "20230905184500",
+      "cohort": "historical_2023",
+      "derived_accepted_row_ledger": 1957400,
+      "manifests_provenance": 790,
+      "quarantine_evidence": 0,
+      "raw_archives": 10495325
+    },
+    {
+      "batch_id": "20250905000000",
+      "cohort": "historical_2025",
+      "derived_accepted_row_ledger": 1081272,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5792514
+    },
+    {
+      "batch_id": "20250905001500",
+      "cohort": "historical_2025",
+      "derived_accepted_row_ledger": 1088936,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 6120090
+    },
+    {
+      "batch_id": "20250905003000",
+      "cohort": "historical_2025",
+      "derived_accepted_row_ledger": 1187693,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 6138895
+    },
+    {
+      "batch_id": "20250905004500",
+      "cohort": "historical_2025",
+      "derived_accepted_row_ledger": 1224103,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 6968532
+    },
+    {
+      "batch_id": "20260805120000",
+      "cohort": "historical_2026",
+      "derived_accepted_row_ledger": 954506,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5332870
+    },
+    {
+      "batch_id": "20260805121500",
+      "cohort": "historical_2026",
+      "derived_accepted_row_ledger": 1061075,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 6147233
+    },
+    {
+      "batch_id": "20260805123000",
+      "cohort": "historical_2026",
+      "derived_accepted_row_ledger": 1005149,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5771929
+    },
+    {
+      "batch_id": "20260805124500",
+      "cohort": "historical_2026",
+      "derived_accepted_row_ledger": 996047,
+      "manifests_provenance": 788,
+      "quarantine_evidence": 0,
+      "raw_archives": 5553111
+    }
+  ],
+  "limitations": [
+    "18-hour convenience sample, not full periods or confidence intervals",
+    "Accepted-row ledgers contain hashes/locators, not normalized field values",
+    "Excludes report wrappers, schema/code files, backups, indexes and Git history",
+    "Quarantine bytes are permanently retained; future rates may differ"
+  ],
+  "measured_totals_bytes": {
+    "derived_accepted_row_ledger": 89144276,
+    "manifests_provenance": 75004,
+    "quarantine_evidence": 72355,
+    "raw_archives": 494483985
+  },
+  "measurement": "Canonical UTF-8 JSONL record payload bytes; raw ZIP sizes from verified acquisition",
+  "normalized_field_records": {
+    "bytes": null,
+    "created": false,
+    "estimate": null
+  },
+  "recent_extrapolations": {
+    "derived_accepted_row_ledger": {
+      "extrapolated_bytes_per_30_days": 2383198920.0,
+      "extrapolated_bytes_per_365_days": 28995586860.0,
+      "extrapolated_bytes_per_day": 79439964.0,
+      "mean_bytes_per_batch": 827499.625,
+      "measured_recent_batches": 72
+    },
+    "manifests_provenance": {
+      "extrapolated_bytes_per_30_days": 2243520.0,
+      "extrapolated_bytes_per_365_days": 27296160.0,
+      "extrapolated_bytes_per_day": 74784.0,
+      "mean_bytes_per_batch": 779.0,
+      "measured_recent_batches": 72
+    },
+    "quarantine_evidence": {
+      "extrapolated_bytes_per_30_days": 1770720.0,
+      "extrapolated_bytes_per_365_days": 21543760.0,
+      "extrapolated_bytes_per_day": 59024.0,
+      "mean_bytes_per_batch": 614.8333333333334,
+      "measured_recent_batches": 72
+    },
+    "raw_archives": {
+      "extrapolated_bytes_per_30_days": 13479395560.000002,
+      "extrapolated_bytes_per_365_days": 163999312646.6667,
+      "extrapolated_bytes_per_day": 449313185.3333334,
+      "mean_bytes_per_batch": 4680345.680555556,
+      "measured_recent_batches": 72
+    }
+  },
+  "schema_version": "1.0.0"
+}

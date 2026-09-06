@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "tests_run": 111,
+  "passed": 110,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [
+    {
+      "test": "test_gkg_lossless.LosslessTests.test_symlink_switch_after_snapshot",
+      "reason": "OS does not permit symlink creation: OSError"
+    }
+  ],
+  "successful": true,
+  "duration_seconds": 3.8206754000002547,
+  "python": "3.12.14",
+  "scope": "complete offline unittest discovery; no network",
+  "implementation_commit": "97798e2"
+}

@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GKG lossless quarantine v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "parser_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "const": "gdelt-gkg-2.1"
+        },
+        "batch_id": {
+          "type": "string",
+          "pattern": "^[0-9]{14}$"
+        },
+        "source_url": {
+          "type": "string",
+          "pattern": "^https://data\\.gdeltproject\\.org/gdeltv2/[0-9]{14}\\.gkg\\.csv\\.zip$"
+        },
+        "archive_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "archive_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "acquisition": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "failed"
+          ]
+        }
+      },
+      "required": [
+        "source_id",
+        "batch_id",
+        "source_url",
+        "archive_sha256",
+        "archive_bytes",
+        "acquisition"
+      ],
+      "additionalProperties": false
+    },
+    "member": {
+      "type": "string"
+    },
+    "line": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "start": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "end": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "row_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "disposition": {
+      "type": "string",
+      "enum": [
+        "quarantined_encoding",
+        "quarantined_schema",
+        "quarantined_timestamp",
+        "quarantined_resource",
+        "quarantined_other"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "detail"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "invalid_sequences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes_hex": {
+            "type": "string"
+          },
+          "field": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "bytes_hex",
+          "field",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "timestamp": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fields_sha256": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "raw_base64": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "parser_version",
+    "source",
+    "member",
+    "line",
+    "start",
+    "end",
+    "raw_sha256",
+    "row_id",
+    "disposition",
+    "reasons",
+    "invalid_sequences",
+    "timestamp",
+    "fields_sha256",
+    "raw_base64"
+  ],
+  "additionalProperties": false
+}

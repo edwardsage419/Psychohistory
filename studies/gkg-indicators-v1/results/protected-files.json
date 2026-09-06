@@ -1,0 +1,54 @@
+{
+  "baseline": "09586cdeed612ed878c9b340e7cd23622ec4eddb",
+  "method": "Compare Git blobs byte-for-byte; separately record existing Windows CRLF checkout bytes. No source archive is normalized.",
+  "files": [
+    {
+      "path": "app.js",
+      "baseline_git_blob_sha256": "1e565599af4f7388eb0d684c4ec20bb50a5f204ef61da28d4dab9e003fe75713",
+      "current_git_blob_sha256": "1e565599af4f7388eb0d684c4ec20bb50a5f204ef61da28d4dab9e003fe75713",
+      "working_file_sha256": "51ceae1023db8a2f5940edd17fc26ca8e7e9f1bed06811f070474d683d41c376",
+      "git_blob_identical": true,
+      "working_text_matches_after_crlf_to_lf": true
+    },
+    {
+      "path": "index.html",
+      "baseline_git_blob_sha256": "edd3b7f3dda1ae9eaef042c23013de3d8a7c538f550805953baa53af0f5fb8ae",
+      "current_git_blob_sha256": "edd3b7f3dda1ae9eaef042c23013de3d8a7c538f550805953baa53af0f5fb8ae",
+      "working_file_sha256": "91ee6e05a97e2d03b63b2b33767493c50ac1511dc4d110c358a5c9a69fd0e908",
+      "git_blob_identical": true,
+      "working_text_matches_after_crlf_to_lf": true
+    },
+    {
+      "path": "style.css",
+      "baseline_git_blob_sha256": "262f8e6e9538155788d05c5c8cb2e6a0883e03607b97a80df0c0bac9b0c1c214",
+      "current_git_blob_sha256": "262f8e6e9538155788d05c5c8cb2e6a0883e03607b97a80df0c0bac9b0c1c214",
+      "working_file_sha256": "4987c00968817039dc7020acb554892ee36d91e014c70e16c38b8da3c46e40fa",
+      "git_blob_identical": true,
+      "working_text_matches_after_crlf_to_lf": true
+    },
+    {
+      "path": "data/gdelt.json",
+      "baseline_git_blob_sha256": "cb624cb33cb46cf304d54cbc078a011e272e380488686eabc69a963f7d1796e9",
+      "current_git_blob_sha256": "cb624cb33cb46cf304d54cbc078a011e272e380488686eabc69a963f7d1796e9",
+      "working_file_sha256": "575f7a6ff66b5d01e567b6ea0a883c1710f107a5e0344d896d3394ee9f0eee25",
+      "git_blob_identical": true,
+      "working_text_matches_after_crlf_to_lf": true
+    },
+    {
+      "path": "scripts/update_gdelt.py",
+      "baseline_git_blob_sha256": "69bcefaca719e74632e7db80284964b781b35c477a5894d42c32c511dfdf98bf",
+      "current_git_blob_sha256": "69bcefaca719e74632e7db80284964b781b35c477a5894d42c32c511dfdf98bf",
+      "working_file_sha256": "6b8e52b7e31b99cd6deb334053c8b407374551ac6d128f2aed754e082c3eab80",
+      "git_blob_identical": true,
+      "working_text_matches_after_crlf_to_lf": true
+    },
+    {
+      "path": ".github/workflows/update-gdelt.yml",
+      "baseline_git_blob_sha256": "704c216946f8aaca088fc2994d659c76331e2394c040c14b4eb12f83ea9858d7",
+      "current_git_blob_sha256": "704c216946f8aaca088fc2994d659c76331e2394c040c14b4eb12f83ea9858d7",
+      "working_file_sha256": "c5bdc898f4a0fa1cdbc1a42067fdf34690316bbd53ac868d3645357d0abf4c23",
+      "git_blob_identical": true,
+      "working_text_matches_after_crlf_to_lf": true
+    }
+  ]
+}

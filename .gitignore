@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+scripts/gkg_validation_report.json
+artifacts/
+*.tmp
