@@ -80,14 +80,46 @@ def check_public(url):
     sem.require(sem.public_reference(url),'unsupported_reference')
     u=urlsplit(url)
     addresses=socket.getaddrinfo(u.hostname,u.port or (443 if u.scheme=='https' else 80),type=socket.SOCK_STREAM)
-    sem.require(addresses and all(ipaddress.ip_address(a[4][0]).is_global for a in addresses),'nonpublic_address')
+    resolved=frozenset(str(ipaddress.ip_address(a[4][0])) for a in addresses)
+    sem.require(resolved and all(ipaddress.ip_address(a).is_global for a in resolved),'nonpublic_address')
+    return resolved
+
+def _peer_ip(response):
+    """Return the actual connected peer address from urllib/http.client wrappers."""
+    queue=[response];seen=set()
+    while queue:
+        obj=queue.pop(0)
+        if obj is None or id(obj) in seen:continue
+        seen.add(id(obj))
+        getpeer=getattr(obj,'getpeername',None)
+        if callable(getpeer):
+            try:
+                peer=getpeer()
+                if peer:return str(ipaddress.ip_address(peer[0] if isinstance(peer,tuple) else peer))
+            except (OSError,ValueError,TypeError):
+                pass
+        for attr in ('fp','raw','_sock','sock'):
+            child=getattr(obj,attr,None)
+            if child is not None:queue.append(child)
+    return None
+
+def verify_public_peer(response,approved_addresses):
+    peer=_peer_ip(response)
+    sem.require(peer is not None,'peer_address_unavailable')
+    sem.require(ipaddress.ip_address(peer).is_global,'nonpublic_peer_address')
+    sem.require(peer in approved_addresses,'peer_address_not_preapproved')
+    return peer
 
 class Redirects(urllib.request.HTTPRedirectHandler):
-    def __init__(self,limit):super().__init__();self.limit=limit;self.chain=[]
+    def __init__(self,limit):super().__init__();self.limit=limit;self.chain=[];self.approved={}
+    def approve(self,url,addresses):self.approved[url]=frozenset(addresses)
     def redirect_request(self,req,fp,code,msg,headers,newurl):
+        source=self.approved.get(req.full_url)
+        sem.require(source,'redirect_source_not_preapproved')
+        verify_public_peer(fp,source)
         self.chain.append({'from':req.full_url,'status':code,'to':newurl})
         sem.require(len(self.chain)<=self.limit,'redirect_limit')
-        check_public(newurl)
+        self.approve(newurl,check_public(newurl))
         return super().redirect_request(req,fp,code,msg,headers,newurl)
 
 def identity_requires_review(original,final):
@@ -108,11 +140,15 @@ def retrieve(case,p,*,opener_factory=None):
         'title':'','title_available':False,'title_omitted_for_quote_budget':False,'excerpt':'','locator':None,
         'extractor_version':sem.VERSION,'context_level':'none','manual_context_required':True}
     try:
-        if opener_factory is None:check_public(url)
+        if opener_factory is None:redirects.approve(url,check_public(url))
         opener=opener_factory(redirects) if opener_factory else urllib.request.build_opener(redirects)
         req=urllib.request.Request(url,headers={'User-Agent':'Psychohistory-research/0.5 (bounded semantic audit)','Accept':'text/html,application/xhtml+xml','Accept-Encoding':'identity'})
         with opener.open(req,timeout=cfg['timeout_seconds']) as response:
             e['http_status']=response.status;e['final_url']=response.geturl()
+            if opener_factory is None:
+                approved=redirects.approved.get(e['final_url'])
+                sem.require(approved,'final_url_not_preapproved')
+                verify_public_peer(response,approved)
             e['content_type']=response.headers.get_content_type();e['charset']=response.headers.get_content_charset() or 'utf-8'
             e['identity_review_required']=identity_requires_review(url,e['final_url'])
             blob=response.read(cfg['max_bytes']+1)
