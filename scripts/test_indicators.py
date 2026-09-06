@@ -57,8 +57,11 @@ class Indicators(unittest.TestCase):
 
     def run_engine(self,metrics=None,definition=None,**kwargs):
         d=definition or self.definition
-        return engine.build(metrics if metrics is not None else [self.m],[d],{d['indicator_id']+'@'+d['version']:core.digest(d)},
-            'a'*64,'2026-09-05T00:00:01Z',**kwargs)
+        metrics=metrics if metrics is not None else [self.m]
+        self.validation_context={'source_metrics':metrics, 'trusted_metric_hashes':{m['batch_id']:m['semantic_sha256'] for m in metrics},
+                                 'history':{d['indicator_id']+'@'+d['version']:core.digest(d)},'implementation_sha256':'a'*64}
+        return engine.build(metrics,[d],{d['indicator_id']+'@'+d['version']:core.digest(d)},
+            'a'*64,'2026-09-05T00:00:01Z',trusted_metric_hashes=self.validation_context['trusted_metric_hashes'],**kwargs)
 
     def test_exact_token_presence_and_quarantine(self):
         self.assertEqual(self.m['theme_counts'],{'PROTEST':1})
@@ -286,18 +289,18 @@ class Indicators(unittest.TestCase):
         for records in (b['quality'],b['provenance']):
             for r in records:
                 if r['observation_id']==old:r['observation_id']=o['observation_id']
-        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition],**self.validation_context)
 
     def test_review_required_quality_flags_cannot_disappear(self):
         b=self.run_engine(windows=(15,));o=b['indicator_values'][0]['observation'];old=o['observation_id']
         q=b['quality'][-1];q['flags'].remove('quarantined_rows_excluded')
         o['quality_note']=';'.join(q['flags']);o['observation_id']=engine.observation_id(o)
         q['observation_id']=o['observation_id'];b['provenance'][0]['observation_id']=o['observation_id']
-        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition],**self.validation_context)
 
     def test_review_source_observation_quality_accounting(self):
         b=self.run_engine(windows=(15,));b['quality'][0]['accepted_rows']=0
-        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition],**self.validation_context)
 
     def test_committed_initial_history_is_append_only(self):
         initial = INITIAL_HISTORY
@@ -308,7 +311,7 @@ class Indicators(unittest.TestCase):
     def test_bundle_tampered_hash_denominator_and_scope(self):
         for field,value in [('definition_sha256','b'*64),('sampled_denominator',99),('sampled_all_accepted_prevalence',.99)]:
             b=self.run_engine(windows=(15,));b['indicator_values'][0][field]=value
-            with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+            with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition],**self.validation_context)
 
     def test_replay_integrity_and_alias_checks(self):
         with tempfile.TemporaryDirectory() as td:
@@ -317,10 +320,11 @@ class Indicators(unittest.TestCase):
                 r.mkdir();runner.write(r/'x.json',{'stable':1});runner.write(r/'execution.json',{'status':'passed','clock':r.name})
                 files={'x.json':core.sha((r/'x.json').read_bytes())}
                 runner.write(r/'semantic-manifest.json',{'files':files,'semantic_sha256':core.digest(files)})
-            self.assertEqual(runner.compare_runs(*roots)['status'],'passed')
-            with self.assertRaises(ContractError):runner.compare_runs(roots[0],roots[0])
+            pins=[core.digest(runner.read(r/'semantic-manifest.json')) for r in roots]
+            self.assertEqual(runner.compare_runs(*roots,trusted_manifest_hashes=pins)['status'],'passed')
+            with self.assertRaises(ContractError):runner.compare_runs(roots[0],roots[0],trusted_manifest_hashes=pins)
             (roots[1]/'x.json').write_text('{}',encoding='utf-8')
-            with self.assertRaises(ContractError):runner.compare_runs(*roots)
+            with self.assertRaises(ContractError):runner.compare_runs(*roots,trusted_manifest_hashes=pins)
 
     def test_runner_96_offline_batches_and_machine_failure(self):
         with tempfile.TemporaryDirectory() as td:
@@ -342,7 +346,7 @@ class Indicators(unittest.TestCase):
             with patch.object(runner,'ROOT',root),patch.object(runner,'code_hashes',return_value={'fixture':'a'*64}),patch.object(runner,'evaluate',return_value=[]),patch('builtins.print'):
                 self.assertTrue(runner.study(root/'manifest.json',raw,ledgers,root/'run-a'))
                 self.assertTrue(runner.study(root/'manifest.json',raw,ledgers,root/'run-b',True))
-                self.assertEqual(runner.compare_runs(root/'run-a',root/'run-b')['status'],'passed')
+                self.assertEqual(runner.compare_runs(root/'run-a',root/'run-b',trusted_manifest_hashes=[core.digest(runner.read(root/n/'semantic-manifest.json')) for n in ('run-a','run-b')])['status'],'passed')
                 # Corrupt only this temporary synthetic input; the retained research corpus is untouched.
                 (raw/(acquisitions[0]['archive_sha256']+'.zip')).write_bytes(b'broken fixture')
                 self.assertFalse(runner.study(root/'manifest.json',raw,ledgers,root/'run-c'))

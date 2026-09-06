@@ -100,7 +100,7 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
     pmap = {b['source']['batch_id']:b for b in published['batches']}
     acquisitions = read(ROOT/'studies/gkg-lossless-v1/results/provenance.json')['batches']
     amap = {b['batch_id']:b for b in acquisitions}
-    if len(pmap) != 96 or len(amap) != 96 or set(pmap) != set(ids) or set(amap) != set(ids):
+    if len(published['batches']) != 96 or len(acquisitions) != 96 or len(pmap) != 96 or len(amap) != 96 or set(pmap) != set(ids) or set(amap) != set(ids):
         raise ContractError('inputs','batch_set_mismatch')
     definitions, history = read(STUDY/'definitions.json'),read(STUDY/'definition-history.json')
     validate_registry(definitions,history)
@@ -144,7 +144,10 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
         'rejected_interpretations':['event count','risk','severity','public opinion','economic magnitude','conflict intensity'],
         'external_comparison':'deferred; no comparable complete daily geographic series in this corpus'})
     write(output/'cooccurrence.json',gm.cooccurrence(metrics,[d['transformation']['parameters']['token'] for d in definitions]))
-    bundle = build(metrics,definitions,history,core.digest(code),max(a['finished_at'] for a in acquisitions))
+    # These pins are created only after archive and published Phase 3 ledger authentication above.
+    trusted_metric_hashes={m['batch_id']:m['semantic_sha256'] for m in metrics}
+    bundle = build(metrics,definitions,history,core.digest(code),max(a['finished_at'] for a in acquisitions),
+                   trusted_metric_hashes=trusted_metric_hashes)
     for name,records in bundle.items():
         with (output/(name+'.jsonl')).open('xb') as f:
             for record in records: f.write(core.canonical(record)+b'\n')
@@ -215,13 +218,17 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
     return True
 
 
-def compare_runs(first, second):
+def compare_runs(first, second, *, trusted_manifest_hashes):
     first,second=Path(first).resolve(),Path(second).resolve()
     if first==second or (first/'semantic-manifest.json').samefile(second/'semantic-manifest.json'):
         raise ContractError('replay','same_evidence')
+    if len(trusted_manifest_hashes)!=2:
+        raise ContractError('replay','trusted_manifest_count')
     manifests=[]
-    for root in (first,second):
+    for root,pin in zip((first,second),trusted_manifest_hashes):
         manifest=read(root/'semantic-manifest.json')
+        if core.digest(manifest)!=pin:
+            raise ContractError('replay','untrusted_manifest')
         if manifest['semantic_sha256']!=core.digest(manifest['files']):
             raise ContractError('replay','manifest_hash')
         expected=set(manifest['files'])|{'semantic-manifest.json','execution.json'}
@@ -237,7 +244,7 @@ def compare_runs(first, second):
         raise ContractError('replay','semantic_mismatch')
     return {'schema_version':'1.0.0','status':'passed','distinct_runs':True,
         'semantic_sha256':manifests[0]['semantic_sha256'],'compared_files':sorted(manifests[0]['files']),
-        'excluded':['execution.json'],'rule':'all stable output bytes and input/code/definition pins equal'}
+        'excluded':['execution.json'],'rule':'independently pinned manifest roots, all stable output bytes and input/code/definition pins equal'}
 
 
 def main():

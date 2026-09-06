@@ -66,13 +66,34 @@ def observation(metric_id, at, retrieved, value, unit, snapshot, reference, flag
     return validate_contract('observation', o)
 
 
-def build(metrics, definitions, history, code_sha256, retrieved_at, windows=(60, 1440), requested=None):
+def source_receipt(m, code_sha256):
+    receipt = {'schema_version': VERSION, 'batch_id': m['batch_id'], **m['provenance'],
+               'source_metric_sha256': m['semantic_sha256'],
+               'counts': {k:m[k] for k in ('accepted_rows','quarantined_rows','empty_theme_rows','nonempty_theme_rows')},
+               'transformation_version': VERSION, 'implementation_sha256': code_sha256}
+    receipt['receipt_sha256'] = digest(receipt)
+    return receipt
+
+
+def authenticated_metrics(metrics, trusted_metric_hashes):
+    """Pins must come from independently verified ingestion/run evidence, not a bundle."""
+    if not isinstance(trusted_metric_hashes, dict) or any(
+            not isinstance(k,str) or not isinstance(v,str) or not re.fullmatch('[a-f0-9]{64}',v)
+            for k,v in trusted_metric_hashes.items()):
+        raise ContractError('source_metrics','invalid_trust_pins')
+    metrics=checked_metrics(metrics)
+    if {m['batch_id']:m['semantic_sha256'] for m in metrics} != trusted_metric_hashes:
+        raise ContractError('source_metrics','authenticated_metric_set_mismatch')
+    return metrics
+
+
+def build(metrics, definitions, history, code_sha256, retrieved_at, windows=(60, 1440), requested=None, *, trusted_metric_hashes):
     """Requested window starts allow entirely missing windows to be represented.
 
     The default evaluates only calendar windows touched by the bounded sample;
     this is explicitly not a continuous history across the sample's many years.
     """
-    metrics = checked_metrics(metrics)
+    metrics = authenticated_metrics(metrics, trusted_metric_hashes)
     validate_registry(definitions, history)
     definitions = sorted((require_gkg_prevalence(d) for d in definitions), key=lambda d: (d['indicator_id'], d['version']))
     if not re.fullmatch('[a-f0-9]{64}', code_sha256):
@@ -86,12 +107,7 @@ def build(metrics, definitions, history, code_sha256, retrieved_at, windows=(60,
     receipts, normalized, quality, values, provenance = [], [], [], [], []
     source_ids = {}
     for m in metrics:
-        receipt = {'schema_version': VERSION, 'batch_id': m['batch_id'], **m['provenance'],
-                   'source_metric_sha256': m['semantic_sha256'],
-                   'counts': {k:m[k] for k in ('accepted_rows','quarantined_rows','empty_theme_rows','nonempty_theme_rows')},
-                   'transformation_version': VERSION,
-                   'implementation_sha256': code_sha256}
-        receipt['receipt_sha256'] = digest(receipt)
+        receipt = source_receipt(m, code_sha256)
         receipts.append(receipt)
         for token in sorted({d['transformation']['parameters']['token'] for d in definitions}):
             flags = ['quarantined_rows_excluded'] if m['quarantined_rows'] else []
@@ -164,14 +180,20 @@ def build(metrics, definitions, history, code_sha256, retrieved_at, windows=(60,
                     'diagnostics_are_partial_when_incomplete': bool(missing)})
     bundle = {'normalized_observations': normalized, 'indicator_values': values,
               'quality': quality, 'provenance': provenance, 'batch_receipts': receipts}
-    validate_bundle(bundle, definitions)
+    validate_bundle(bundle, definitions, source_metrics=metrics, trusted_metric_hashes=trusted_metric_hashes,
+                    history=history, implementation_sha256=code_sha256)
     return bundle
 
 
-def validate_bundle(bundle, definitions):
+def validate_bundle(bundle, definitions, *, source_metrics, trusted_metric_hashes, history, implementation_sha256):
     """Reject broken identities, numerical claims and provenance links on import."""
     def need(condition, code):
         if not condition: raise ContractError('bundle', code)
+    metrics=authenticated_metrics(source_metrics, trusted_metric_hashes)
+    validate_registry(definitions, history)
+    for d in definitions: require_gkg_prevalence(d)
+    need(isinstance(implementation_sha256,str) and re.fullmatch('[a-f0-9]{64}',implementation_sha256), 'implementation_pin')
+    need(set(bundle)=={'normalized_observations','indicator_values','quality','provenance','batch_receipts'}, 'bundle_fields')
     dmap={(d['indicator_id'],d['version']):d for d in definitions}
     quality={q['observation_id']:q for q in bundle['quality']}
     prov={p['observation_id']:p for p in bundle['provenance']}
@@ -182,6 +204,9 @@ def validate_bundle(bundle, definitions):
     need(len(receipts)==len(bundle['batch_receipts']),'duplicate_receipt')
     for h,r in receipts.items():
         need(h==digest({k:v for k,v in r.items() if k!='receipt_sha256'}),'receipt_hash')
+    expected_receipts={r['receipt_sha256']:r for r in (source_receipt(m,implementation_sha256) for m in metrics)}
+    need(receipts==expected_receipts, 'authenticated_receipt_binding')
+    metric_by_batch={m['batch_id']:m for m in metrics}
     normalized={o['observation_id']:o for o in bundle['normalized_observations']}
     need(len(normalized)==len(bundle['normalized_observations']),'duplicate_observation')
     normalized_links={}
@@ -199,7 +224,20 @@ def validate_bundle(bundle, definitions):
         need(bool(token) and o['metric_id']=='gkg.literal_token_row_count:'+token,'source_metric_identity')
         need(o['observed_at']==iso(utc(r['batch_id'])) and o['unit']=='accepted_document_rows','source_observation_time_unit')
         need((ref,token) not in normalized_links,'duplicate_source_metric')
+        m=metric_by_batch[r['batch_id']]
+        need(o['value']==m['theme_counts'].get(token,0), 'authenticated_token_count')
+        need(o['source_record_reference']=='receipt:'+ref+'#V1THEMES:'+token, 'source_reference_format')
+        need(o['source_id']==m['source_id'] and o['source_version']=='2.1'
+             and o['transformation_version']==VERSION and o['geography'] is None and o['entity'] is None, 'source_observation_binding')
+        need(o['retrieved_at']==m['provenance']['acquisition']['finished_at'], 'source_acquisition_time')
+        flags=[]
+        if m['quarantined_rows']:flags.append('quarantined_rows_excluded')
+        if m['empty_theme_rows']:flags.append('empty_theme_rows_in_denominator')
+        need(q['flags']==flags and o['quality_status']==('suspect' if flags else 'valid')
+             and o['quality_note']==(';'.join(flags) if flags else 'verified source row count'), 'source_quality_binding')
         normalized_links[ref,token]=o['observation_id']
+    tokens={d['transformation']['parameters']['token'] for d in definitions}
+    need(set(normalized_links)=={(h,t) for h in receipts for t in tokens}, 'source_observation_set')
     ids=[]
     for v in bundle['indicator_values']:
         validate_contract('indicator-value',v)
@@ -209,7 +247,12 @@ def validate_bundle(bundle, definitions):
         validate_contract('indicator-provenance',p)
         need(p['provenance_sha256']==digest({k:x for k,x in p.items() if k not in ('observation_id','provenance_sha256')}),'provenance_hash')
         need(o['source_record_reference']=='provenance:'+p['provenance_sha256'],'provenance_link')
+        need(q['layer']=='indicator', 'indicator_quality_layer')
+        need(p['implementation_sha256']==implementation_sha256 and p['transformation_version']==VERSION
+             and o['transformation_version']==VERSION and o['source_id']=='gdelt-gkg-2.1'
+             and o['source_version']=='2.1', 'indicator_implementation_binding')
         key=(v['indicator_id'],v['indicator_version'])
+        need((p['indicator_id'],p['indicator_version'])==key, 'provenance_definition_identity')
         need(key in dmap,'definition_missing')
         need(v['definition_sha256']==p['definition_sha256']==digest(dmap[key]),'definition_binding')
         need(all(h in receipts for h in p['source_receipts']),'receipt_missing')
@@ -224,6 +267,8 @@ def validate_bundle(bundle, definitions):
         need(expected==p['expected_batches'] and len(expected)==len(set(expected)),'expected_batches')
         need(sorted(observed+missing)==sorted(expected) and len(set(observed+missing))==len(expected),'coverage_partition')
         need(observed==[receipts[h]['batch_id'] for h in p['source_receipts']],'observed_receipts')
+        need(observed==[b for b in expected if b in metric_by_batch], 'available_batch_omission')
+        need(q['duplicate_diagnostic']==duplicate_diagnostic([metric_by_batch[b] for b in observed],token), 'authenticated_duplicate_diagnostic')
         need(q['coverage']==len(observed)/len(expected),'coverage_ratio')
         need(p['window_start']==v['window_start']==o['observed_at'] and p['window_end']==v['window_end'] and p['window_minutes']==v['window_minutes'],'window_binding')
         start=datetime.fromisoformat(v['window_start'].replace('Z','+00:00'))
