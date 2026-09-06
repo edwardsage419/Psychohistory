@@ -34,17 +34,23 @@ Accepted on `main`:
 * Phase 5 preregistered semantic-audit method and frozen 120-reference sample
 * Phase 6A bounded historical evidence-recovery infrastructure and evidence
 * Phase 6A.1 targeted 26-case identity-recovery delta and sufficiency assessment
+* genuine-human identity adjudication results for the 22 Phase 6A.1 cases requiring human judgment
+* mechanical confirmed-context coverage audit against the frozen Phase 6A readiness rule
 
-Phase 5-6A.1 are accepted as **non-production research/evidence-recovery work only**. Their acceptance does not promote GKG media-prevalence tokens into validated historical social indicators.
+Phase 5-6A.1 remain **non-production research/evidence-recovery work only**. Their acceptance does not promote GKG media-prevalence tokens into validated historical social indicators.
 
 Acceptance merge: `81ea41989fd884633c535e1063bd78e1231d2c5c`.
 Acceptance review: `docs/PHASE_5_6A1_ACCEPTANCE_REVIEW.md`.
+Human identity results: `studies/gkg-semantics-v2/human-identity-review-results.csv`.
+Coverage audit: `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`.
 
 ## Current gate
 
 Primary current gate: semantic and historical stability with independent evidence validation incomplete.
 
-The bottleneck is historical document identity, evidence availability and genuine human validation. Production forecast implementation is not the current bottleneck.
+The immediate bottleneck is objective historical document identity/evidence coverage across the frozen 120-case sample. The previously pending 22-case human identity review is complete, but human `SAME_ARTICLE` judgments do not satisfy the frozen E3 identity contract by themselves.
+
+Production forecast implementation is not the current bottleneck.
 
 ## Current evidence state
 
@@ -52,25 +58,40 @@ Phase 5 remains `continue_semantic_validation`.
 
 Phase 6A remains `continue_evidence_recovery`.
 
-Phase 6A.1 is `ready_for_targeted_human_identity_review`.
+Phase 6A.1 targeted human identity review is complete. Its human layer contains:
 
-The frozen 120-case sample currently has:
+* 13 `SAME_ARTICLE`
+* 2 `DIFFERENT_ARTICLE`
+* 7 `INSUFFICIENT_EVIDENCE`
+
+These are genuine-human identity judgments stored separately from machine evidence. They do not silently rewrite `phase6a1-triage.json`, `evidence.json`, or E3 status.
+
+The frozen 120-case sample still has only:
 
 * 6 confirmed E3 contexts
-* 15 probable identities requiring genuine human identity review
-* 7 conflicting identities requiring genuine human identity review or stronger independent evidence
-* 92 unresolved/unavailable cases
+* 114 non-E3 contexts
 * 0 genuine human semantic reviews
 * 0 LLM semantic reviews counted as human evidence
 
-Historical semantic stability is unproven. Recall is unestimated. Six E3 contexts are insufficient to launch the planned full independent semantic review.
+Current E3 distribution:
+
+* `PROTEST`: 0 / required 24
+* `FOOD_SECURITY`: 5 / required 24
+* `WB_2747_UNEMPLOYMENT`: 1 / required 24
+
+The frozen readiness rule requires at least 24 identity-confirmed contexts per token and at least 4 per allocated year. The current lower-bound deficit is 66 additional E3 contexts, subject also to year-distribution constraints.
+
+Historical semantic stability remains unproven. Recall remains unestimated. Independent semantic review is not yet authorized by the frozen Phase 6A readiness rule.
 
 ## Human dependencies
 
-Current genuine-human dependencies:
+Completed genuine-human dependency:
 
-* targeted identity review of the remaining 15 probable and 7 conflicting cases where the protocol requires human judgment
-* later independent genuine human semantic review once sufficient context exists
+* targeted identity review of the 22 Phase 6A.1 probable/conflicting cases
+
+Remaining genuine-human dependencies:
+
+* later independent genuine human semantic review after sufficient objective E3 context exists
 * owner approval for consequential semantic/production promotion
 
 LLMs must not satisfy a protocol requirement for genuine human review.
@@ -84,19 +105,22 @@ Until the applicable evidence gates are satisfied, do not begin or promote:
 * semantic promotion of the experimental GKG tokens into authoritative historical indicators
 * calibration claims based on the unresolved measurement foundation
 * historical backtests that treat unresolved measurement semantics as ground truth
+* full independent semantic review before the frozen Phase 6A confirmed-context readiness threshold is met
 
 ## Next recommended actions
 
-1. Prepare the 15 probable and 7 conflicting cases for genuine targeted human identity review using the accepted evidence packet.
-2. Perform genuine human identity review without allowing LLM output to count as the human judgment.
-3. Separately improve bounded archive/evidence recovery where objective evidence can improve unresolved cases without weakening provenance, identity, TLS, peer or replay requirements.
-4. After sufficient confirmed context exists, obtain genuine independent semantic review under the preregistered protocol.
-5. Reassess cross-year semantic stability only after evidence and reviewer gates are satisfied.
+1. Build a deterministic recovery-target manifest over the complete frozen 120-case sample, preserving original sample membership and ranking targets by allocated-year E3 deficit and objective recoverability.
+2. Prioritize the 13 human `SAME_ARTICLE` cases for objective recovery where they can fill deficient year cells, without treating the human judgment itself as E3 evidence.
+3. Continue bounded publisher/archive recovery for additional frozen cases, especially cells with zero E3 coverage.
+4. Preserve `DIFFERENT_ARTICLE`, failed attempts, unresolved evidence and human judgments as visible provenance; do not replace frozen cases with substitute articles.
+5. Recompute E3 coverage mechanically after each bounded recovery batch.
+6. Start genuine independent semantic review only after every token reaches >=24 E3 contexts and every allocated year reaches >=4 E3 contexts under the frozen protocol.
+7. Reassess cross-year semantic stability only after evidence and reviewer gates are satisfied.
 
 ## Model routing for immediate work
 
-* human identity-review packet preparation/import tooling: L1-L2, Terra Medium/High
-* bounded archive/retrieval engineering under an approved protocol: L2, Terra High
+* deterministic coverage/target-manifest generation: L1-L2, Terra Medium/High
+* bounded archive/retrieval engineering under the frozen protocol: L2, Terra High
 * semantic or historical validity judgment after evidence exists: L4, Sol High
 * unresolved system-level methodology after serious Sol analysis: L5, Astra High
 
