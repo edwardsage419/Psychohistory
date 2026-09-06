@@ -133,6 +133,16 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
     (output/'inventory.json.gz').write_bytes(gzip.compress(invbytes,mtime=0))
     candidates = evaluate(inv,metrics,definitions)
     write(output/'candidate-evaluation.json',candidates)
+    selected={d['transformation']['parameters']['token'] for d in definitions}
+    write(output/'deferred-candidates.json',{'selected':sorted(selected),
+        'unregistered_observed_tokens':len(inv['entries'])-len(selected),
+        'policy':'source metrics only; no automatic indicator registration',
+        'reason':'outside bounded official-example panel; extraction meaning and historical semantic validity unresolved',
+        'examples':[{ 'token':e['token'],'rows':e['rows'],'status':'deferred',
+            'reason':'not needed for panel diversity; no classifier or historical semantic validation'}
+            for e in inv['entries'] if e['token'] in ('ELECTION','ARMEDCONFLICT','WB_1406_DISEASES')],
+        'rejected_interpretations':['event count','risk','severity','public opinion','economic magnitude','conflict intensity'],
+        'external_comparison':'deferred; no comparable complete daily geographic series in this corpus'})
     write(output/'cooccurrence.json',gm.cooccurrence(metrics,[d['transformation']['parameters']['token'] for d in definitions]))
     bundle = build(metrics,definitions,history,core.digest(code),max(a['finished_at'] for a in acquisitions))
     for name,records in bundle.items():
@@ -170,12 +180,14 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
     storage = {'measurement':'actual UTF-8 serialization bytes; gzip mtime=0; no storage engine or paid dependency',
         'sample_batches':96,'raw_archives_bytes':rawbytes,'local_full_source_metrics_gzip_bytes':metricbytes,
         'inventory_uncompressed_bytes':len(invbytes),'artifact_bytes':sizes,
+        'definition_and_history_bytes':sum((STUDY/f).stat().st_size for f in ('definitions.json','definition-history.json')),
         'quarantine_evidence_bytes':(ROOT/'studies/gkg-lossless-v1/results/quarantine.json').stat().st_size,
         'extrapolations':{},'limitations':'96 batches equal 24 hours of batch slots but span seven dates; forecasts of future volume are not measurements; compression and taxonomy size may change',
         'retention':'retain corpus and irreplaceable quarantine/provenance permanently; derived records normally retained; ordinary public raw archives only future configurable policy, no deletion implemented'}
     for label,n in {'raw_archives':rawbytes,'local_full_source_metrics_gzip':metricbytes,
         'normalized_observations':sizes['normalized_observations.jsonl'],
-        'batch_receipts':sizes['batch_receipts.jsonl']}.items():
+        'batch_receipts':sizes['batch_receipts.jsonl'],
+        'source_quality':sum(len(core.canonical(q))+1 for q in bundle['quality'] if q['layer']=='source_metric')}.items():
         storage['extrapolations'][label]={'basis':'measured bytes / 96 batches * 96 slots/day','day_bytes':n,'30_day_bytes':n*30,'365_day_bytes':n*365}
     # Indicator output is window-shaped, so extrapolate per observed window type, not per sampled day.
     for minutes,per_day in ((60,24),(1440,1)):
@@ -190,6 +202,8 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
                 'basis':'bytes/record * 7 indicators * windows/day; daily samples are incomplete and may overstate missing-list storage',
                 'day_bytes':daily,'30_day_bytes':daily*30,'365_day_bytes':daily*365}
     write(output/'storage.json',storage)
+    if code_hashes() != code:
+        raise ContractError('code','implementation_changed_during_run')
     files = {p.name:core.sha(p.read_bytes()) for p in sorted(output.iterdir()) if p.is_file()}
     write(output/'semantic-manifest.json',{'schema_version':'1.0.0','input_manifest_sha256':core.digest(manifest),
         'phase3_study_sha256':core.sha((ROOT/'studies/gkg-lossless-v1/results/study.json').read_bytes()),
@@ -199,6 +213,31 @@ def study(manifest_path, raw_root, ledger_root, output, reverse=False):
         'duration_seconds':time.perf_counter()-start,'reverse_input':reverse,'semantic_comparison_excludes':['execution.json'],
         'status':'passed'})
     return True
+
+
+def compare_runs(first, second):
+    first,second=Path(first).resolve(),Path(second).resolve()
+    if first==second or (first/'semantic-manifest.json').samefile(second/'semantic-manifest.json'):
+        raise ContractError('replay','same_evidence')
+    manifests=[]
+    for root in (first,second):
+        manifest=read(root/'semantic-manifest.json')
+        if manifest['semantic_sha256']!=core.digest(manifest['files']):
+            raise ContractError('replay','manifest_hash')
+        expected=set(manifest['files'])|{'semantic-manifest.json','execution.json'}
+        if {p.name for p in root.iterdir() if p.is_file()}!=expected:
+            raise ContractError('replay','artifact_set')
+        for name,h in manifest['files'].items():
+            if Path(name).name!=name or core.sha((root/name).read_bytes())!=h:
+                raise ContractError('replay','artifact_hash')
+        if read(root/'execution.json')['status']!='passed':
+            raise ContractError('replay','incomplete_run')
+        manifests.append(manifest)
+    if manifests[0]!=manifests[1]:
+        raise ContractError('replay','semantic_mismatch')
+    return {'schema_version':'1.0.0','status':'passed','distinct_runs':True,
+        'semantic_sha256':manifests[0]['semantic_sha256'],'compared_files':sorted(manifests[0]['files']),
+        'excluded':['execution.json'],'rule':'all stable output bytes and input/code/definition pins equal'}
 
 
 def main():

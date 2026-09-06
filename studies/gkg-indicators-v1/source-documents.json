@@ -73,5 +73,13 @@
     "local_snapshot": "artifacts/gkg-phase4/source-documents/92cef5d2f19e79a1392df55f8a83eb70bdad195354215fb32be5d8a9b85295ee.html",
     "status": "passed",
     "attempt": 2
+  },
+  {
+    "url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
+    "status": "retained_phase3_snapshot",
+    "sha256": "64062c0173a5b97180c0cbdb8b858715d03d4c8a1ebbc9956e6db80dd376281f",
+    "bytes": 434652,
+    "local_snapshot": "artifacts/gkg-phase3-evidence/source-documents/codebook-v2.1.pdf",
+    "phase4_use": "field semantics, row and geographic boundaries; not taxonomy historical version evidence"
   }
 ]

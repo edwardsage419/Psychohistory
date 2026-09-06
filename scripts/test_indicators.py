@@ -17,6 +17,8 @@ import indicator_engine as engine
 import study_gkg_indicators as runner
 
 ROOT = Path(__file__).resolve().parents[1]
+# Frozen initial release pins: additions allowed, existing version identities cannot change.
+INITIAL_HISTORY = {'gkg.media_prevalence.protest@0.1.0': 'e22d1a2cdb2d50fbcd84b3e9d34a1964bf75710f56df34eb8431c241f825a8e0', 'gkg.media_prevalence.econ_taxation@0.1.0': '75993ceb6e7aa948c658a47ca8e303501f85dd9a2bd9c54c73b9e77cdaf8a161', 'gkg.media_prevalence.food_security@0.1.0': '8734cf10b82659340f99ea84801efa39b2040ead1cd5dc87480f063dece9f068', 'gkg.media_prevalence.wb_345_sovereign_wealth_funds@0.1.0': '1e7bc65191b3204032c2bdce51049442e6818125fb533fd309896b4460075d2d', 'gkg.media_prevalence.wb_2747_unemployment@0.1.0': '970cd8ced614e6cb7d2cc956ab846dfb3e5cb8d9eba81bdb84f362dc57a0b84d', 'gkg.media_prevalence.natural_disaster_landslide@0.1.0': 'c1c80727777aa991d7b059d7761466b9a3e076b32e05e289840325341f129b39', 'gkg.media_prevalence.aviation_incident@0.1.0': '34262755b6f73798d1e98617957140d612b1ef9f8c31225ee1093e1905e83436'}
 
 
 def fixture(batch='20260904000000', themes=('PROTEST;PROTEST;',''), bad=True, identifiers=None):
@@ -168,8 +170,11 @@ class Indicators(unittest.TestCase):
 
     def test_duplicate_archive_rejected(self):
         m=copy.deepcopy(self.m);m['batch_id']='20260904001500'
-        m['provenance']['source']['batch_id']=m['batch_id'];m['provenance']['acquisition']['batch_id']=m['batch_id'];gm.seal(m)
-        with self.assertRaises(ContractError):self.run_engine([self.m,m])
+        m['provenance']['source']['batch_id']=m['batch_id'];m['provenance']['acquisition']['batch_id']=m['batch_id']
+        m['provenance']['member']=m['batch_id']+'.gkg.csv'
+        for k in ('source','acquisition'):m['provenance'][k]['source_url']='https://data.gdeltproject.org/gdeltv2/'+m['batch_id']+'.gkg.csv.zip'
+        gm.seal(m)
+        with self.assertRaises((ContractError,core.Rejection)):self.run_engine([self.m,m])
 
     def test_exact_identifier_repetition_diagnostic(self):
         m=metric(themes=('PROTEST','',''),bad=False,identifiers=['same','same','other'])
@@ -253,6 +258,97 @@ class Indicators(unittest.TestCase):
     def test_offline_suite_forbids_network(self):
         with patch('urllib.request.urlopen',side_effect=AssertionError('network forbidden')):
             self.run_engine(windows=(15,))
+
+
+    # Dedicated adversarial review regressions: these failed on e0710fa.
+    def test_review_nonempty_denominator_matches_document_rows(self):
+        m=copy.deepcopy(self.m);m['empty_theme_rows']=0;m['nonempty_theme_rows']=2;gm.seal(m)
+        with self.assertRaises((core.Rejection,ContractError)):gm.validate_metric(m)
+
+    def test_review_acquisition_chronology(self):
+        m=copy.deepcopy(self.m);m['provenance']['acquisition']['started_at']='2027-01-01T00:00:00Z';gm.seal(m)
+        with self.assertRaises((core.Rejection,ContractError)):gm.validate_metric(m)
+
+    def test_review_provenance_parser_contradiction(self):
+        m=copy.deepcopy(self.m);m['provenance']['parser_version']='2.0.0';gm.seal(m)
+        with self.assertRaises((core.Rejection,ContractError)):gm.validate_metric(m)
+
+    def test_review_source_url_batch_contradiction(self):
+        m=copy.deepcopy(self.m)
+        for key in ('source','acquisition'):m['provenance'][key]['source_url']='https://data.gdeltproject.org/gdeltv2/20150302000000.gkg.csv.zip'
+        gm.seal(m)
+        with self.assertRaises((core.Rejection,ContractError)):gm.validate_metric(m)
+
+    def test_review_numerator_must_match_normalized_inputs(self):
+        b=self.run_engine(windows=(15,));v=b['indicator_values'][0];v['sampled_numerator']=0
+        v['sampled_all_accepted_prevalence']=0;v['sampled_nonempty_prevalence']=0
+        o=v['observation'];old=o['observation_id'];o['value']=0;o['observation_id']=engine.observation_id(o)
+        for records in (b['quality'],b['provenance']):
+            for r in records:
+                if r['observation_id']==old:r['observation_id']=o['observation_id']
+        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+
+    def test_review_required_quality_flags_cannot_disappear(self):
+        b=self.run_engine(windows=(15,));o=b['indicator_values'][0]['observation'];old=o['observation_id']
+        q=b['quality'][-1];q['flags'].remove('quarantined_rows_excluded')
+        o['quality_note']=';'.join(q['flags']);o['observation_id']=engine.observation_id(o)
+        q['observation_id']=o['observation_id'];b['provenance'][0]['observation_id']=o['observation_id']
+        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+
+    def test_review_source_observation_quality_accounting(self):
+        b=self.run_engine(windows=(15,));b['quality'][0]['accepted_rows']=0
+        with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+
+    def test_committed_initial_history_is_append_only(self):
+        initial = INITIAL_HISTORY
+        history=runner.read(ROOT/'studies/gkg-indicators-v1/definition-history.json')
+        definitions=runner.read(ROOT/'studies/gkg-indicators-v1/definitions.json')
+        defs.validate_registry(definitions,history,initial)
+
+    def test_bundle_tampered_hash_denominator_and_scope(self):
+        for field,value in [('definition_sha256','b'*64),('sampled_denominator',99),('sampled_all_accepted_prevalence',.99)]:
+            b=self.run_engine(windows=(15,));b['indicator_values'][0][field]=value
+            with self.assertRaises(ContractError):engine.validate_bundle(b,[self.definition])
+
+    def test_replay_integrity_and_alias_checks(self):
+        with tempfile.TemporaryDirectory() as td:
+            roots=[Path(td)/'a',Path(td)/'b']
+            for r in roots:
+                r.mkdir();runner.write(r/'x.json',{'stable':1});runner.write(r/'execution.json',{'status':'passed','clock':r.name})
+                files={'x.json':core.sha((r/'x.json').read_bytes())}
+                runner.write(r/'semantic-manifest.json',{'files':files,'semantic_sha256':core.digest(files)})
+            self.assertEqual(runner.compare_runs(*roots)['status'],'passed')
+            with self.assertRaises(ContractError):runner.compare_runs(roots[0],roots[0])
+            (roots[1]/'x.json').write_text('{}',encoding='utf-8')
+            with self.assertRaises(ContractError):runner.compare_runs(*roots)
+
+    def test_runner_96_offline_batches_and_machine_failure(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);raw=root/'raw';ledgers=root/'ledgers';raw.mkdir();ledgers.mkdir()
+            prior=root/'studies/gkg-lossless-v1/results';prior.mkdir(parents=True)
+            batches=[];published=[];acquisitions=[]
+            start=engine.utc('20260904000000')
+            for i in range(96):
+                batch=(start+i*engine.STEP).strftime('%Y%m%d%H%M%S')
+                blob,ledger,acquisition,pub=fixture(batch,themes=('PROTEST;',),bad=False)
+                (raw/(acquisition['archive_sha256']+'.zip')).write_bytes(blob)
+                runner.write(ledgers/(batch+'.json'),ledger)
+                batches.append({'batch_id':batch,'cohort':'test','url':acquisition['source_url']})
+                published.append({**pub,'source':ledger['source']});acquisitions.append(acquisition)
+            manifest={'batches':batches};runner.write(root/'manifest.json',manifest)
+            runner.write(prior/'study.json',{'manifest_sha256':core.digest(manifest),'batches':published})
+            runner.write(prior/'provenance.json',{'batches':acquisitions});runner.write(prior/'quarantine.json',[])
+            # The real corpus selection gate is independently tested; this fixture has one year.
+            with patch.object(runner,'ROOT',root),patch.object(runner,'code_hashes',return_value={'fixture':'a'*64}),patch.object(runner,'evaluate',return_value=[]),patch('builtins.print'):
+                self.assertTrue(runner.study(root/'manifest.json',raw,ledgers,root/'run-a'))
+                self.assertTrue(runner.study(root/'manifest.json',raw,ledgers,root/'run-b',True))
+                self.assertEqual(runner.compare_runs(root/'run-a',root/'run-b')['status'],'passed')
+                # Corrupt only this temporary synthetic input; the retained research corpus is untouched.
+                (raw/(acquisitions[0]['archive_sha256']+'.zip')).write_bytes(b'broken fixture')
+                self.assertFalse(runner.study(root/'manifest.json',raw,ledgers,root/'run-c'))
+                outcomes=runner.read(root/'run-c/batch-outcomes.json')
+                self.assertEqual(len(outcomes),96);self.assertEqual(sum(o['status']=='failed' for o in outcomes),1)
+                self.assertFalse((root/'run-c/semantic-manifest.json').exists())
 
 
 if __name__=='__main__':unittest.main()

@@ -87,7 +87,9 @@ def build(metrics, definitions, history, code_sha256, retrieved_at, windows=(60,
     source_ids = {}
     for m in metrics:
         receipt = {'schema_version': VERSION, 'batch_id': m['batch_id'], **m['provenance'],
-                   'source_metric_sha256': m['semantic_sha256'], 'transformation_version': VERSION,
+                   'source_metric_sha256': m['semantic_sha256'],
+                   'counts': {k:m[k] for k in ('accepted_rows','quarantined_rows','empty_theme_rows','nonempty_theme_rows')},
+                   'transformation_version': VERSION,
                    'implementation_sha256': code_sha256}
         receipt['receipt_sha256'] = digest(receipt)
         receipts.append(receipt)
@@ -182,12 +184,22 @@ def validate_bundle(bundle, definitions):
         need(h==digest({k:v for k,v in r.items() if k!='receipt_sha256'}),'receipt_hash')
     normalized={o['observation_id']:o for o in bundle['normalized_observations']}
     need(len(normalized)==len(bundle['normalized_observations']),'duplicate_observation')
+    normalized_links={}
     for o in normalized.values():
         validate_contract('observation',o)
         need(o['observation_id'] in quality,'missing_quality')
         ref=o['source_record_reference'].split('#',1)[0].removeprefix('receipt:')
         need(ref in receipts,'source_receipt_link')
         need(o['source_snapshot_sha256']==receipts[ref]['source']['archive_sha256'],'source_hash_link')
+        q=quality[o['observation_id']];r=receipts[ref];c=r['counts']
+        need(q['layer']=='source_metric' and q['coverage']==1.0,'source_quality')
+        need(all(q[k]==c[k] for k in ('accepted_rows','quarantined_rows','empty_theme_rows')),'source_quality_accounting')
+        need(type(o['value']) is int and 0<=o['value']<=c['nonempty_theme_rows']<=c['accepted_rows'],'source_value_count')
+        token=o['source_record_reference'].partition('#V1THEMES:')[2]
+        need(bool(token) and o['metric_id']=='gkg.literal_token_row_count:'+token,'source_metric_identity')
+        need(o['observed_at']==iso(utc(r['batch_id'])) and o['unit']=='accepted_document_rows','source_observation_time_unit')
+        need((ref,token) not in normalized_links,'duplicate_source_metric')
+        normalized_links[ref,token]=o['observation_id']
     ids=[]
     for v in bundle['indicator_values']:
         validate_contract('indicator-value',v)
@@ -203,7 +215,12 @@ def validate_bundle(bundle, definitions):
         need(all(h in receipts for h in p['source_receipts']),'receipt_missing')
         need(all(h in normalized for h in p['source_observation_ids']),'normalized_input_missing')
         need(o['source_snapshot_sha256']==digest(p['source_receipts']),'aggregate_snapshot_hash')
+        token=dmap[key]['transformation']['parameters']['token']
+        need(p['source_observation_ids']==[normalized_links.get((h,token)) for h in p['source_receipts']],'source_metric_token_binding')
+        need(o['metric_id']==v['indicator_id']+'@'+v['indicator_version']+'/'+str(v['window_minutes'])+'m' and o['unit']=='fraction','indicator_identity')
+        need(o['geography'] is None and o['entity'] is None,'collection_scope')
         expected=q['expected_batches'];observed=q['observed_batches'];missing=q['missing_batches']
+        need(bool(expected),'empty_expected_batches')
         need(expected==p['expected_batches'] and len(expected)==len(set(expected)),'expected_batches')
         need(sorted(observed+missing)==sorted(expected) and len(set(observed+missing))==len(expected),'coverage_partition')
         need(observed==[receipts[h]['batch_id'] for h in p['source_receipts']],'observed_receipts')
@@ -214,13 +231,24 @@ def validate_bundle(bundle, definitions):
         need(start.utcoffset()==timedelta(0) and floor_window(start,v['window_minutes'])==start and end-start==window_size(v['window_minutes']),'window_bounds')
         need(expected==[(start+i*STEP).strftime('%Y%m%d%H%M%S') for i in range(v['window_minutes']//15)],'expected_grid')
         n,den,nonempty=v['sampled_numerator'],v['sampled_denominator'],v['nonempty_theme_denominator']
+        need(n==sum(normalized[h]['value'] for h in p['source_observation_ids']),'numerator_inputs')
+        contributing=[receipts[h]['counts'] for h in p['source_receipts']]
+        need(den==sum(c['accepted_rows'] for c in contributing) and nonempty==sum(c['nonempty_theme_rows'] for c in contributing)
+             and q['quarantined_rows']==sum(c['quarantined_rows'] for c in contributing),'denominator_inputs')
         need(n<=nonempty<=den and q['accepted_rows']==den and q['empty_theme_rows']==den-nonempty,'denominator')
         need(v['sampled_all_accepted_prevalence']==(n/den if den else None) and v['sampled_nonempty_prevalence']==(n/nonempty if nonempty else None),'diagnostic_ratio')
         need(o['value']==(n/den if den and not missing else None),'indicator_ratio')
         need(v['diagnostics_are_partial_when_incomplete']==bool(missing),'partial_diagnostic')
         need(('incomplete_window' in q['flags'])==bool(missing),'missing_flag')
         need(('zero_denominator' in q['flags'])==(den==0),'denominator_flag')
-        need(o['quality_note']==';'.join(q['flags']),'quality_binding')
+        required={'experimental_definition','historical_semantics_unvalidated','collection_scope_only'}
+        for flag,present in (('incomplete_window',bool(missing)),('zero_denominator',den==0),
+                ('quarantined_rows_excluded',q['quarantined_rows']>0),('empty_theme_rows_in_denominator',den!=nonempty),
+                ('repeated_document_identifiers',q['duplicate_diagnostic']['excess_identifier_rows']>0),
+                ('missing_document_identifiers',q['duplicate_diagnostic']['missing_identifier_rows']>0)):
+            if present: required.add(flag)
+        need(set(q['flags'])==required and len(q['flags'])==len(required),'required_quality_flags')
+        need(o['quality_note']==';'.join(q['flags']) and o['quality_status']==('missing' if o['value'] is None else 'suspect'),'quality_binding')
     need(len(ids)==len(set(ids)),'duplicate_indicator_value')
     need(set(quality)==set(ids)|set(normalized) and set(prov)==set(ids),'orphan_sidecar')
     return bundle

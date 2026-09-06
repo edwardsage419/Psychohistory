@@ -1,5 +1,6 @@
 """Offline source metrics from authenticated Phase 3 bytes, never an ontology."""
 from collections import Counter, defaultdict
+from datetime import datetime
 from itertools import combinations
 import json
 import re
@@ -80,7 +81,7 @@ def validate_metric(m):
     if m['accepted_rows'] != m['empty_theme_rows'] + m['nonempty_theme_rows']:
         fail('metric_denominator')
     observed = Counter()
-    rows = 0
+    rows = nonempty_documents = 0
     for doc, entries in m['documents'].items():
         if not re.fullmatch('[a-f0-9]{64}', doc) or not entries:
             fail('document_identity')
@@ -88,12 +89,17 @@ def validate_metric(m):
             if not isinstance(tokens, list) or any(not isinstance(t, str) or not t or ';' in t for t in tokens) or tokens != sorted(set(tokens)):
                 fail('document_tokens')
             rows += 1
+            nonempty_documents += bool(tokens)
             observed.update(tokens)
     if rows + m['missing_document_rows'] != m['accepted_rows']:
         fail('document_accounting')
     for token, count in m['theme_counts'].items():
         if not isinstance(token, str) or not token or ';' in token or type(count) is not int or not 0 < count <= m['nonempty_theme_rows']:
             fail('theme_count')
+    if not nonempty_documents <= m['nonempty_theme_rows'] <= nonempty_documents + m['missing_document_rows']:
+        fail('document_nonempty_accounting')
+    if any(n-observed[token] > m['missing_document_rows'] for token,n in m['theme_counts'].items()):
+        fail('unidentified_theme_accounting')
     if not m['missing_document_rows'] and dict(observed) != m['theme_counts']:
         fail('document_theme_accounting')
     if any(v > m['theme_counts'].get(k, 0) for k, v in observed.items()):
@@ -105,6 +111,16 @@ def validate_metric(m):
     if (p['source']['batch_id'] != m['batch_id'] or p['source']['source_id'] != m['source_id']
             or any(p['acquisition'].get(k) != v for k, v in p['source'].items())):
         fail('metric_source_binding')
+    source,acq = p['source'],p['acquisition']
+    if (source['acquisition'] != 'passed' or source['archive_bytes'] <= 0
+            or source['source_url'] != 'https://data.gdeltproject.org/gdeltv2/' + m['batch_id'] + '.gkg.csv.zip'
+            or p['member'] != m['batch_id'] + '.gkg.csv'
+            or p['parser_version'] != acq['parser_version'] or p['contract_version'] != acq['contract_version']
+            or p['parser_version'] != core.PARSER_VERSION or p['contract_version'] != core.CONTRACT_VERSION
+            or acq['transport'].get('status') != 200):
+        fail('metric_provenance_contradiction')
+    if datetime.fromisoformat(acq['started_at'].replace('Z','+00:00')) > datetime.fromisoformat(acq['finished_at'].replace('Z','+00:00')):
+        fail('acquisition_chronology')
     return m
 
 
