@@ -104,7 +104,7 @@ class ImportTests(unittest.TestCase):
             else:a['review_protocol_sha256']='0'*64
             with self.subTest(mutation=mutation),self.assertRaises(s.Invalid):r.import_humans(aa,reg,[case()],[e],**import_args(e,reg))
     def test_genuine_attested_fixture_and_blank_packet(self):
-        e=evidence();self.assertEqual(len(r.import_humans([annotation(e)],registry(),[case()],[e],**import_args(e)),1)
+        e=evidence();self.assertEqual(len(r.import_humans([annotation(e)],registry(),[case()],[e],**import_args(e))),1)
         p=r.packet([e])[0];self.assertIsNone(p['human_label']);self.assertIsNone(p['reviewer_id']);self.assertNotIn('recommendation',p)
 
 class TrustTests(unittest.TestCase):
