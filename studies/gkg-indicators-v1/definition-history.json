@@ -1,0 +1,9 @@
+{
+  "gkg.media_prevalence.protest@0.1.0": "e22d1a2cdb2d50fbcd84b3e9d34a1964bf75710f56df34eb8431c241f825a8e0",
+  "gkg.media_prevalence.econ_taxation@0.1.0": "75993ceb6e7aa948c658a47ca8e303501f85dd9a2bd9c54c73b9e77cdaf8a161",
+  "gkg.media_prevalence.food_security@0.1.0": "8734cf10b82659340f99ea84801efa39b2040ead1cd5dc87480f063dece9f068",
+  "gkg.media_prevalence.wb_345_sovereign_wealth_funds@0.1.0": "1e7bc65191b3204032c2bdce51049442e6818125fb533fd309896b4460075d2d",
+  "gkg.media_prevalence.wb_2747_unemployment@0.1.0": "970cd8ced614e6cb7d2cc956ab846dfb3e5cb8d9eba81bdb84f362dc57a0b84d",
+  "gkg.media_prevalence.natural_disaster_landslide@0.1.0": "c1c80727777aa991d7b059d7761466b9a3e076b32e05e289840325341f129b39",
+  "gkg.media_prevalence.aviation_incident@0.1.0": "34262755b6f73798d1e98617957140d612b1ef9f8c31225ee1093e1905e83436"
+}

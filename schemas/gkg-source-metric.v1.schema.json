@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gkg-source-metric v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "transformation_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "batch_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_dataset": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_field": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accepted_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "quarantined_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "empty_theme_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "nonempty_theme_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "missing_document_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "within_row_repeated_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "empty_delimiter_segments": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "theme_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "documents": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "source_collection_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "source_name_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "object",
+          "properties": {
+            "source_id": {
+              "type": "string",
+              "const": "gdelt-gkg-2.1"
+            },
+            "batch_id": {
+              "type": "string",
+              "pattern": "^[0-9]{14}$"
+            },
+            "source_url": {
+              "type": "string",
+              "pattern": "^https://data\\.gdeltproject\\.org/gdeltv2/[0-9]{14}\\.gkg\\.csv\\.zip$"
+            },
+            "archive_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "archive_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "acquisition": {
+              "type": "string",
+              "enum": [
+                "passed",
+                "failed"
+              ]
+            }
+          },
+          "required": [
+            "source_id",
+            "batch_id",
+            "source_url",
+            "archive_sha256",
+            "archive_bytes",
+            "acquisition"
+          ],
+          "additionalProperties": false
+        },
+        "acquisition": {
+          "type": "object",
+          "properties": {
+            "source_id": {
+              "type": "string",
+              "const": "gdelt-gkg-2.1"
+            },
+            "batch_id": {
+              "type": "string",
+              "pattern": "^[0-9]{14}$"
+            },
+            "source_url": {
+              "type": "string",
+              "pattern": "^https://data\\.gdeltproject\\.org/gdeltv2/[0-9]{14}\\.gkg\\.csv\\.zip$"
+            },
+            "archive_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "archive_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "acquisition": {
+              "type": "string",
+              "enum": [
+                "passed",
+                "failed"
+              ]
+            },
+            "parser_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "contract_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "started_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "finished_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "transport": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "source_id",
+            "batch_id",
+            "source_url",
+            "archive_sha256",
+            "archive_bytes",
+            "acquisition",
+            "parser_version",
+            "contract_version",
+            "started_at",
+            "finished_at",
+            "transport"
+          ],
+          "additionalProperties": false
+        },
+        "member": {
+          "type": "string",
+          "minLength": 1
+        },
+        "member_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "ledger_semantic_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "row_ledger_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "parser_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source",
+        "acquisition",
+        "member",
+        "member_sha256",
+        "ledger_semantic_sha256",
+        "row_ledger_sha256",
+        "parser_version",
+        "contract_version"
+      ],
+      "additionalProperties": false
+    },
+    "semantic_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "schema_version",
+    "transformation_version",
+    "batch_id",
+    "source_id",
+    "source_dataset",
+    "source_field",
+    "accepted_rows",
+    "quarantined_rows",
+    "empty_theme_rows",
+    "nonempty_theme_rows",
+    "missing_document_rows",
+    "within_row_repeated_tokens",
+    "empty_delimiter_segments",
+    "theme_counts",
+    "documents",
+    "source_collection_counts",
+    "source_name_counts",
+    "provenance",
+    "semantic_sha256"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "gdelt-gkg-2.1",
+      "provider": "GDELT Project",
+      "dataset_name": "Global Knowledge Graph 2.1",
+      "source_version": "2.1",
+      "access_method": "HTTPS batch ZIP downloads; Phase 2 sampled the standard English master-list path only; Translingual not evaluated",
+      "documentation_url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
+      "license_note": "Provider Terms of Use permit dataset use without fee and redistribution with GDELT attribution/link; inspected 2026-09-06. Linked publisher article rights are separate. See docs/PHASE_2_REPORT.md.",
+      "update_frequency": "15-minute batches per provider documentation; continuity requires empirical validation",
+      "geographic_coverage": "Global news monitoring; representativeness and per-geography completeness unknown",
+      "historical_coverage": "24 selected older batches from 2015-03-02 through 2026-08-05 acquired successfully; availability between sampled windows and retention guarantees unknown",
+      "reliability_note": "Phase 3: 96/96 verified archive revisions; 118415 syntactically accepted rows, 5 lossless quarantines; 96/96 independent replay matches. Recommendation promote_to_ingestion_candidate applies only to raw/parsing/provenance; no indicator validation or production activation. See docs/PHASE_3_REPORT.md.",
+      "bias_note": "Media selection, syndication, language coverage and extraction affect observations; media attention is not societal severity",
+      "cost_note": "Measured 494483985 compressed bytes for 96 study batches. Recent 72-batch mean extrapolates to about 164 decimal GB/year for this feed only; not a full-year measurement or paid-service commitment.",
+      "production_status": "candidate"
+    }
+  ]
+}

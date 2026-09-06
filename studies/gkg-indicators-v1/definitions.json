@@ -1,0 +1,444 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.protest",
+    "version": "0.1.0",
+    "title": "Protest-related media tagging",
+    "description": "Experimental exact PROTEST presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "PROTEST"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider example covers discussion of protesting, including prospective rumors; not a protest event count. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.econ_taxation",
+    "version": "0.1.0",
+    "title": "Taxation-related media tagging",
+    "description": "Experimental exact ECON_TAXATION presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "ECON_TAXATION"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider example identifies taxation coverage; no measurement of tax policy magnitude. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.food_security",
+    "version": "0.1.0",
+    "title": "Food-security-related media tagging",
+    "description": "Experimental exact FOOD_SECURITY presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "FOOD_SECURITY"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider example associates this token with food security; does not measure hunger or food access. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/announcing-our-first-api-gkg-geojson/"
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.wb_345_sovereign_wealth_funds",
+    "version": "0.1.0",
+    "title": "Sovereign-wealth-fund-related media tagging",
+    "description": "Experimental exact WB_345_SOVEREIGN_WEALTH_FUNDS presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "WB_345_SOVEREIGN_WEALTH_FUNDS"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider explicitly maps World Bank topic 345 to this token; no asset valuation or fund activity inference. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/"
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.wb_2747_unemployment",
+    "version": "0.1.0",
+    "title": "Unemployment-related media tagging",
+    "description": "Experimental exact WB_2747_UNEMPLOYMENT presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "WB_2747_UNEMPLOYMENT"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider sample discusses unemployment and lists this World Bank token; no labor market rate interpretation. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/google-bigquery-gkg-2-0-sample-queries/",
+      "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/"
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.natural_disaster_landslide",
+    "version": "0.1.0",
+    "title": "Landslide-related media tagging",
+    "description": "Experimental exact NATURAL_DISASTER_LANDSLIDE presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "NATURAL_DISASTER_LANDSLIDE"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider example includes landslides and disrupted travel coverage; no disaster-event severity inference. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "indicator_id": "gkg.media_prevalence.aviation_incident",
+    "version": "0.1.0",
+    "title": "Aviation-incident-related media tagging",
+    "description": "Experimental exact AVIATION_INCIDENT presence among accepted GKG document rows.",
+    "source_family": "GDELT",
+    "source_dataset": "GKG 2.1 English-file family",
+    "source_field": "V1THEMES",
+    "transformation": {
+      "method": "exact_token_document_prevalence",
+      "version": "1.0.0",
+      "parameters": {
+        "token": "AVIATION_INCIDENT"
+      }
+    },
+    "unit": "fraction",
+    "temporal_granularity": "configurable UTC window",
+    "geographic_scope": "sampled collection; no geographic attribution",
+    "entity_scope": "document rows",
+    "normalization_method": "numerator / denominator",
+    "denominator": "all accepted rows",
+    "aggregation_method": "ratio of sums",
+    "missing_data_policy": "null if any expected batch missing or denominator zero",
+    "duplicate_policy": "deduplicate tokens within row; retain repeated document identifiers",
+    "smoothing_policy": "none",
+    "lag_policy": "batch timestamp; no inferred event or publication time",
+    "quality_requirements": [
+      "all expected batches verified",
+      "quarantine excluded from numerator and denominator",
+      "incomplete or zero denominator is null",
+      "experimental and collection scope flags retained",
+      "no semantic equivalence claim across years"
+    ],
+    "semantic_interpretation": "Provider examples span crashes, collisions and retrospective coverage; no incident count interpretation. The scalar measures source tagging prevalence only.",
+    "known_biases": [
+      "provider outlet selection",
+      "English-file-family coverage",
+      "repeated reporting",
+      "theme extraction and taxonomy drift",
+      "empty-theme selection"
+    ],
+    "limitations": [
+      "classifier precision and recall unmeasured",
+      "sparse historical convenience sample",
+      "no real-world event, severity, risk, opinion or economic magnitude inference",
+      "source, mentioned, event and subject geography are distinct and unresolved"
+    ],
+    "provenance_requirements": [
+      "source identity and URL",
+      "archive SHA-256 and bytes",
+      "acquisition metadata and timestamps",
+      "member and row ledger hashes",
+      "parser and contract version",
+      "transformation version and implementation hash",
+      "definition version and hash",
+      "window and expected batches"
+    ],
+    "status": "experimental",
+    "documentation": [
+      "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+    ]
+  }
+]

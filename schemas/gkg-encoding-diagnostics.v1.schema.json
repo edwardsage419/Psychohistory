@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gkg-encoding-diagnostics v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "batch_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "const": "passed"
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "stage": {
+                      "type": "string",
+                      "enum": [
+                        "acquisition",
+                        "storage",
+                        "validation",
+                        "replay",
+                        "study"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "http_status": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "stage",
+                    "message",
+                    "http_status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "lines": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "utf8_rejected_lines": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "raw_field_count_distribution": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "invalid_byte_samples": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "line_number": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "uncompressed_byte_offset": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "field_number": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "invalid_bytes_hex": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "line_number",
+                    "uncompressed_byte_offset",
+                    "field_number",
+                    "invalid_bytes_hex",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "samples_truncated": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "batch_id",
+              "status",
+              "errors",
+              "sha256",
+              "lines",
+              "utf8_rejected_lines",
+              "raw_field_count_distribution",
+              "invalid_byte_samples",
+              "samples_truncated"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "batch_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "const": "failed"
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "stage": {
+                      "type": "string",
+                      "enum": [
+                        "acquisition",
+                        "storage",
+                        "validation",
+                        "replay",
+                        "study"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "http_status": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "stage",
+                    "message",
+                    "http_status"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "batch_id",
+              "status",
+              "errors"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "scope",
+    "manifest_sha256",
+    "batches"
+  ],
+  "additionalProperties": false
+}

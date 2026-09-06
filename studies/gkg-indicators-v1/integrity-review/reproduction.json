@@ -1,0 +1,10 @@
+{
+  "starting_commit": "b3627a059ecf4332291f58cd744941978bb45838",
+  "attack_accepted": true,
+  "original_token_count": 1,
+  "forged_token_count": 0,
+  "original_indicator_value": 0.5,
+  "forged_indicator_value": 0,
+  "receipt_unchanged": true,
+  "source_metric_hash_unchanged": true
+}

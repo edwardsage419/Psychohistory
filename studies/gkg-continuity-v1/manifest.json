@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0.0",
+  "study_id": "gkg-continuity-96-v1",
+  "batches": [
+    {
+      "batch_id": "20260904000000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904000000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904001500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904001500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904003000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904003000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904004500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904004500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904010000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904010000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904011500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904011500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904013000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904013000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904014500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904014500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904020000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904020000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904021500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904021500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904023000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904023000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904024500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904024500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904030000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904030000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904031500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904031500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904033000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904033000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904034500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904034500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904040000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904040000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904041500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904041500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904043000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904043000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904044500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904044500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904050000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904050000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904051500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904051500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904053000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904053000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904054500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904054500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904060000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904060000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904061500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904061500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904063000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904063000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904064500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904064500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904070000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904070000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904071500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904071500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904073000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904073000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904074500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904074500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904080000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904080000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904081500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904081500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904083000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904083000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904084500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904084500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904090000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904090000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904091500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904091500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904093000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904093000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904094500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904094500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904100000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904100000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904101500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904101500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904103000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904103000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904104500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904104500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904110000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904110000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904111500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904111500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904113000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904113000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904114500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904114500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904120000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904120000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904121500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904121500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904123000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904123000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904124500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904124500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904130000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904130000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904131500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904131500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904133000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904133000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904134500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904134500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904140000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904140000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904141500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904141500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904143000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904143000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904144500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904144500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904150000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904150000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904151500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904151500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904153000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904153000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904154500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904154500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904160000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904160000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904161500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904161500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904163000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904163000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904164500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904164500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904170000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904170000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904171500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904171500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904173000",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904173000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260904174500",
+      "cohort": "recent",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260904174500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20150302000000",
+      "cohort": "historical_2015",
+      "url": "https://data.gdeltproject.org/gdeltv2/20150302000000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20150302001500",
+      "cohort": "historical_2015",
+      "url": "https://data.gdeltproject.org/gdeltv2/20150302001500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20150302003000",
+      "cohort": "historical_2015",
+      "url": "https://data.gdeltproject.org/gdeltv2/20150302003000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20150302004500",
+      "cohort": "historical_2015",
+      "url": "https://data.gdeltproject.org/gdeltv2/20150302004500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20160905060000",
+      "cohort": "historical_2016",
+      "url": "https://data.gdeltproject.org/gdeltv2/20160905060000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20160905061500",
+      "cohort": "historical_2016",
+      "url": "https://data.gdeltproject.org/gdeltv2/20160905061500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20160905063000",
+      "cohort": "historical_2016",
+      "url": "https://data.gdeltproject.org/gdeltv2/20160905063000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20160905064500",
+      "cohort": "historical_2016",
+      "url": "https://data.gdeltproject.org/gdeltv2/20160905064500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20200905120000",
+      "cohort": "historical_2020",
+      "url": "https://data.gdeltproject.org/gdeltv2/20200905120000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20200905121500",
+      "cohort": "historical_2020",
+      "url": "https://data.gdeltproject.org/gdeltv2/20200905121500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20200905123000",
+      "cohort": "historical_2020",
+      "url": "https://data.gdeltproject.org/gdeltv2/20200905123000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20200905124500",
+      "cohort": "historical_2020",
+      "url": "https://data.gdeltproject.org/gdeltv2/20200905124500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20230905180000",
+      "cohort": "historical_2023",
+      "url": "https://data.gdeltproject.org/gdeltv2/20230905180000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20230905181500",
+      "cohort": "historical_2023",
+      "url": "https://data.gdeltproject.org/gdeltv2/20230905181500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20230905183000",
+      "cohort": "historical_2023",
+      "url": "https://data.gdeltproject.org/gdeltv2/20230905183000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20230905184500",
+      "cohort": "historical_2023",
+      "url": "https://data.gdeltproject.org/gdeltv2/20230905184500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20250905000000",
+      "cohort": "historical_2025",
+      "url": "https://data.gdeltproject.org/gdeltv2/20250905000000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20250905001500",
+      "cohort": "historical_2025",
+      "url": "https://data.gdeltproject.org/gdeltv2/20250905001500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20250905003000",
+      "cohort": "historical_2025",
+      "url": "https://data.gdeltproject.org/gdeltv2/20250905003000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20250905004500",
+      "cohort": "historical_2025",
+      "url": "https://data.gdeltproject.org/gdeltv2/20250905004500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260805120000",
+      "cohort": "historical_2026",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260805120000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260805121500",
+      "cohort": "historical_2026",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260805121500.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260805123000",
+      "cohort": "historical_2026",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260805123000.gkg.csv.zip"
+    },
+    {
+      "batch_id": "20260805124500",
+      "cohort": "historical_2026",
+      "url": "https://data.gdeltproject.org/gdeltv2/20260805124500.gkg.csv.zip"
+    }
+  ]
+}

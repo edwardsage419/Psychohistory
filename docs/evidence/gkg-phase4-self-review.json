@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_implementation_commit": "e0710fa",
+  "scope": "Phase 4 only; no Phase 3 ingestion defect found requiring architecture changes",
+  "pre_fix_regression_run": {
+    "tests": 43,
+    "passed": 36,
+    "failures": 7
+  },
+  "post_fix_full_suite": {
+    "tests": 163,
+    "passed": 162,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "duration_seconds": 16.45,
+    "skip": "Windows symlink creation privilege"
+  },
+  "findings": [
+    {
+      "id": "P4-R1",
+      "defect": "Nonempty denominator could contradict identified document rows",
+      "regression": "test_review_nonempty_denominator_matches_document_rows",
+      "fix": "Recompute nonempty bounds and residual unidentified token bounds.",
+      "status": "fixed"
+    },
+    {
+      "id": "P4-R2",
+      "defect": "Acquisition start could follow finish",
+      "regression": "test_review_acquisition_chronology",
+      "fix": "Validate aware timestamp chronology.",
+      "status": "fixed"
+    },
+    {
+      "id": "P4-R3",
+      "defect": "Parser/contract receipt could contradict acquisition",
+      "regression": "test_review_provenance_parser_contradiction",
+      "fix": "Enforce supported versions and cross-receipt equality.",
+      "status": "fixed"
+    },
+    {
+      "id": "P4-R4",
+      "defect": "Well-formed source URL could name another batch",
+      "regression": "test_review_source_url_batch_contradiction",
+      "fix": "Bind exact URL and member to batch, with passed acquisition.",
+      "status": "fixed"
+    },
+    {
+      "id": "P4-R5",
+      "defect": "Resealed indicator numerator could disagree with normalized inputs",
+      "regression": "test_review_numerator_must_match_normalized_inputs",
+      "fix": "Bind token-specific source observation identities; recompute sums and receipt denominators.",
+      "status": "fixed"
+    },
+    {
+      "id": "P4-R6",
+      "defect": "Required quarantine warning could be removed while resealing observation",
+      "regression": "test_review_required_quality_flags_cannot_disappear",
+      "fix": "Recompute mandatory quality flag set and observation quality status.",
+      "status": "fixed"
+    },
+    {
+      "id": "P4-R7",
+      "defect": "Source observation quality count could contradict source metric",
+      "regression": "test_review_source_observation_quality_accounting",
+      "fix": "Persist and reconcile compact receipt counts with source quality and observations.",
+      "status": "fixed"
+    }
+  ],
+  "other_challenges": [
+    "duplicate batch and archive rejection",
+    "UTC half-open boundary and missing whole window",
+    "literal-token case/whitespace preservation",
+    "quarantine byte/ledger authentication",
+    "input-order independent outputs",
+    "definition hash/version reuse and frozen initial history",
+    "source-independent definition compatibility",
+    "replay file tamper and same evidence rejection",
+    "96 synthetic offline batches plus one explicit corrupted-input failure"
+  ],
+  "limitation": "Adversarial review and tests do not prove absence of other bugs."
+}

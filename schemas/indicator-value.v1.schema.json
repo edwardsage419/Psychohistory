@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "indicator-value v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "indicator_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "indicator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "definition_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "observation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "observation v1",
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "type": "string"
+        },
+        "observation_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "metric_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geography": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "scheme": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "scheme",
+                "code"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "entity": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "scheme": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "scheme",
+                "code"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quality_status": {
+          "type": "string",
+          "enum": [
+            "valid",
+            "suspect",
+            "missing"
+          ]
+        },
+        "quality_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_record_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "transformation_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "observation_id",
+        "source_id",
+        "source_version",
+        "metric_id",
+        "observed_at",
+        "retrieved_at",
+        "value",
+        "unit",
+        "geography",
+        "entity",
+        "quality_status",
+        "quality_note",
+        "source_record_reference",
+        "source_snapshot_sha256",
+        "transformation_version"
+      ],
+      "additionalProperties": false
+    },
+    "window_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "window_end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "window_minutes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sampled_numerator": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sampled_denominator": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "nonempty_theme_denominator": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sampled_all_accepted_prevalence": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sampled_nonempty_prevalence": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "diagnostics_are_partial_when_incomplete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "indicator_id",
+    "indicator_version",
+    "definition_sha256",
+    "observation",
+    "window_start",
+    "window_end",
+    "window_minutes",
+    "sampled_numerator",
+    "sampled_denominator",
+    "nonempty_theme_denominator",
+    "sampled_all_accepted_prevalence",
+    "sampled_nonempty_prevalence",
+    "diagnostics_are_partial_when_incomplete"
+  ],
+  "additionalProperties": false
+}

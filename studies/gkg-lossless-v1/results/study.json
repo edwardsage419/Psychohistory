@@ -1,0 +1,3020 @@
+{
+  "batches": [
+    {
+      "accepted_rows": 1136,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1136
+      },
+      "errors": [],
+      "member": "20260904000000.gkg.csv",
+      "member_bytes": 15055077,
+      "member_sha256": "2c557aaa84e7b06e46cf5e840b7584c2c1bc710909ae52f94eff3c208a0eb853",
+      "observed_archive_sha256": "96bd98bec450ed7f8208e962bb4964c600a05fc90562552729369d6efc09d9ea",
+      "parser_version": "1.0.0",
+      "physical_rows": 1136,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "87c380c7440f59234de4804e56e3c5e8bcddc350ec22ec4e57906045bc65db99",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "ba9d0007bf8598a831c0ce32625015cf6fd8c942b3cf2fa1e814aeb2a989e06d",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4887176,
+        "archive_sha256": "96bd98bec450ed7f8208e962bb4964c600a05fc90562552729369d6efc09d9ea",
+        "batch_id": "20260904000000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904000000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1112,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1112
+      },
+      "errors": [],
+      "member": "20260904001500.gkg.csv",
+      "member_bytes": 14844707,
+      "member_sha256": "9019af052dd06efa90aecc67e82ab510ebec4a4826cb27109d1c19b0ad357b6c",
+      "observed_archive_sha256": "9af140aecec36608d289684152d74878af6d081e49bddf9447996e7300643a6f",
+      "parser_version": "1.0.0",
+      "physical_rows": 1112,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "e0aa49c7afb2420a9c783f318cc9756d777de5a169693aefeee0b2ef5f59aeeb",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "324b9d07bf3fc38cd0e55b3e94a489a79368b899ba54d36b8a5e9165e0d265a9",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4821947,
+        "archive_sha256": "9af140aecec36608d289684152d74878af6d081e49bddf9447996e7300643a6f",
+        "batch_id": "20260904001500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904001500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1106,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1106
+      },
+      "errors": [],
+      "member": "20260904003000.gkg.csv",
+      "member_bytes": 14634008,
+      "member_sha256": "039e676786142179650154287f1defbb1c90385455420a797eb02f4e448b50d1",
+      "observed_archive_sha256": "04c33187b3f90c1ed4d86c910f967b5bd06c1803e3fbde4848d127113a8eec9e",
+      "parser_version": "1.0.0",
+      "physical_rows": 1106,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "3a091b011e0d9a803e22419a8fd28e5671ca8d83ceb5bde20878b03625e7e747",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "cfaeb835c681b6a2aeb40db61fad75123f289b22fe9e44e30c1abebff7b8d36d",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4771547,
+        "archive_sha256": "04c33187b3f90c1ed4d86c910f967b5bd06c1803e3fbde4848d127113a8eec9e",
+        "batch_id": "20260904003000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904003000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1024,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1024
+      },
+      "errors": [],
+      "member": "20260904004500.gkg.csv",
+      "member_bytes": 13719542,
+      "member_sha256": "75cfb6dbebd03a07741ee8e9e91d1de607daab1e794359db4e685edd89e4bc45",
+      "observed_archive_sha256": "e84387088b8a4f3fc27f997a548f187e2663142d79657cb1153666a3007e6583",
+      "parser_version": "1.0.0",
+      "physical_rows": 1024,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "50d1a1da9d62cbce7f70f6cebdf6458fb67e1f2c7c5c6911288555921d4fa460",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e5578de93b8b61f519a29f053a49b6bba1a7900b84730c933b58195480bcc457",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4469033,
+        "archive_sha256": "e84387088b8a4f3fc27f997a548f187e2663142d79657cb1153666a3007e6583",
+        "batch_id": "20260904004500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904004500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1054,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1054
+      },
+      "errors": [],
+      "member": "20260904010000.gkg.csv",
+      "member_bytes": 13952084,
+      "member_sha256": "2b24bb9c7096da2f25a13e35df8f05a4cdd8a240b9768a77887e45e60528eee4",
+      "observed_archive_sha256": "57faf969dc89a0647a7338c8f13ded6f860523d91f2bc7bb4e7f11e521f8c7ab",
+      "parser_version": "1.0.0",
+      "physical_rows": 1054,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "014479444a1516ea955a872eb87cc5e3377d4fc91daaa1cd61f60d560367572e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "62db7b64ffb10defc85bc0aa0bee647bb635bf55dedf304db28a8dc3e7ca8610",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4538281,
+        "archive_sha256": "57faf969dc89a0647a7338c8f13ded6f860523d91f2bc7bb4e7f11e521f8c7ab",
+        "batch_id": "20260904010000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904010000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1060,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1060
+      },
+      "errors": [],
+      "member": "20260904011500.gkg.csv",
+      "member_bytes": 15770540,
+      "member_sha256": "86d8d5526d19adab3e18f25d10667bf1c0bbd7e66b8db022479a516fc5c25a8c",
+      "observed_archive_sha256": "b05cdeec5569986a9a64f8ff5e52c6d4bab1da19fa7fee4658f6ff456ee65cad",
+      "parser_version": "1.0.0",
+      "physical_rows": 1060,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "21e4f44e938693a18af4bb79999f7116402fce626965d434fa2e35494bfd5e09",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e9ea7a7f19400a396d14033ab2e44e48042160c87289deb5c3a9874a4317616a",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4910629,
+        "archive_sha256": "b05cdeec5569986a9a64f8ff5e52c6d4bab1da19fa7fee4658f6ff456ee65cad",
+        "batch_id": "20260904011500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904011500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 831,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 831
+      },
+      "errors": [],
+      "member": "20260904013000.gkg.csv",
+      "member_bytes": 10799445,
+      "member_sha256": "25d9542105533dcaef61d2b737f3e66f12a5ce85ca7cddf4c0754d4a340d1103",
+      "observed_archive_sha256": "105cf44b42ca242d0778f187275117b74c8122d0e01019c8091c4873d07584e0",
+      "parser_version": "1.0.0",
+      "physical_rows": 831,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "672fbd12b24f72945443bc70d56808b55fc582389f12d8357fd1bf475c1325b6",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "3c1f5548e275eb6bbc76a70fc0620b3cd94aa728af8ebf0ec8f8a6a6d156b67e",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3510759,
+        "archive_sha256": "105cf44b42ca242d0778f187275117b74c8122d0e01019c8091c4873d07584e0",
+        "batch_id": "20260904013000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904013000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 838,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 838
+      },
+      "errors": [],
+      "member": "20260904014500.gkg.csv",
+      "member_bytes": 10812484,
+      "member_sha256": "5e2d6a5c8c328465ca5e85dc9d3cd8fc82b50af12b881981caa70b8944629c3d",
+      "observed_archive_sha256": "7d21148d7af4843be2c4c138f2f7608170b41a6de40acfc62058113f0fb8a87e",
+      "parser_version": "1.0.0",
+      "physical_rows": 838,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "2f5791e01dd3dcfba332fb02da2ec5086652f3163b186edcbb58499971a7b5fb",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "19c7c62712534520f7060b99f880161f5b337c0fa96e4804ff3aee675c693900",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3513752,
+        "archive_sha256": "7d21148d7af4843be2c4c138f2f7608170b41a6de40acfc62058113f0fb8a87e",
+        "batch_id": "20260904014500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904014500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 817,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 817
+      },
+      "errors": [],
+      "member": "20260904020000.gkg.csv",
+      "member_bytes": 10477612,
+      "member_sha256": "72a430e345c1eaa8ce82be5dc46571b9cc0c66db48da417de7fc4bc32c74b849",
+      "observed_archive_sha256": "4ca593252b42c4cfa44938f98a2a227ce591e9cf2b31528e68b616b80f786c57",
+      "parser_version": "1.0.0",
+      "physical_rows": 817,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "32de5e2736f32030bc5b2a6f6cdd496a200568970670b0299c8c90774992a1bd",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e152f97251bad8b5b499f143ee0660bb2a6d18c3e0a347387d0cf2d847e02bc4",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3395018,
+        "archive_sha256": "4ca593252b42c4cfa44938f98a2a227ce591e9cf2b31528e68b616b80f786c57",
+        "batch_id": "20260904020000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904020000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 852,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 852
+      },
+      "errors": [],
+      "member": "20260904021500.gkg.csv",
+      "member_bytes": 11330507,
+      "member_sha256": "9e4bd938a27e85de1908f53f0eced5b12c9326afc5971ae4512551472175c054",
+      "observed_archive_sha256": "85a2ff8eb174bdcb2ccf99fc20da260c179475bfef37ba9f654120549b04fc76",
+      "parser_version": "1.0.0",
+      "physical_rows": 852,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c4b890ea93f33c702db6a7c583ce52a64f76eb7931a87b3a72e3227d9430420e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "a6219e380879da3178d393ed4be22b797808866922b43d160715aad9bfe24784",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3649963,
+        "archive_sha256": "85a2ff8eb174bdcb2ccf99fc20da260c179475bfef37ba9f654120549b04fc76",
+        "batch_id": "20260904021500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904021500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 997,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 997
+      },
+      "errors": [],
+      "member": "20260904023000.gkg.csv",
+      "member_bytes": 13026103,
+      "member_sha256": "ec36a96b0a47d10fc00d5ad1492e58a4ba93e82ce5e1323ce4f2110d46faf86e",
+      "observed_archive_sha256": "72a5684513ca46a19d33c08e37bbd7a060de88cbcd2cdbae77b412377fc4514a",
+      "parser_version": "1.0.0",
+      "physical_rows": 997,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "29deba0addc7755db7075bc7f779dda87d7ed1ce860e45ae075a46f44af798c3",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "8e31fc566e0a344cfcafadcfe654752dbc8e0e224787ecb3f298f3dfeaa29579",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4234704,
+        "archive_sha256": "72a5684513ca46a19d33c08e37bbd7a060de88cbcd2cdbae77b412377fc4514a",
+        "batch_id": "20260904023000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904023000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 853,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 853
+      },
+      "errors": [],
+      "member": "20260904024500.gkg.csv",
+      "member_bytes": 11427360,
+      "member_sha256": "3a8ef5b9b70492c9c5665f3107b8a7f745b49b40aaedd6ca1fad94144324110a",
+      "observed_archive_sha256": "3ba6f9f1294d460828679289417d52a67621f4b0ca337bb4868eadbbfd43364e",
+      "parser_version": "1.0.0",
+      "physical_rows": 853,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "33c6362fdc9750d484abeb3fade04c34ad09097653d652e5a4e10c8261869a91",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "d892a215b1f211043b83b4cd1e3029ee38c9a2899a0df1968e034a894ea0e4ea",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3712090,
+        "archive_sha256": "3ba6f9f1294d460828679289417d52a67621f4b0ca337bb4868eadbbfd43364e",
+        "batch_id": "20260904024500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904024500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 747,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 747
+      },
+      "errors": [],
+      "member": "20260904030000.gkg.csv",
+      "member_bytes": 9913279,
+      "member_sha256": "eae582955b48502f5d76a9d397aef34a9baa181aabdd7fa079c8d3e67628a8ba",
+      "observed_archive_sha256": "b86fda57bc75cfd1a0b81cd0078f633eb5051c9fda72f94c3bf7e84a7e28bff6",
+      "parser_version": "1.0.0",
+      "physical_rows": 747,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "697e92b6aac0639818957bac7cd0359c258d84656494afe7f1e0acfa4474be39",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4a52fe9ad2a59625640459f2fd0188d95f826ebb05db79c5767c4de98d696206",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3224175,
+        "archive_sha256": "b86fda57bc75cfd1a0b81cd0078f633eb5051c9fda72f94c3bf7e84a7e28bff6",
+        "batch_id": "20260904030000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904030000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 782,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 782
+      },
+      "errors": [],
+      "member": "20260904031500.gkg.csv",
+      "member_bytes": 10721693,
+      "member_sha256": "a1ed32964932070925c0b4072845f4a7a942230aaac53c34475ffb25bc371cd3",
+      "observed_archive_sha256": "b57ca2302720fd70e427f98ada7ea87da7bc810318085b610a7026786b614820",
+      "parser_version": "1.0.0",
+      "physical_rows": 782,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "a3946feb14414af4c63d75328ac752155203ac9366fff634c932d94792b3dc44",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "455113a4e4c081adc5a41f24bbf655df7ee4fbb8d62bd6571375d76f3ddfb14c",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3462460,
+        "archive_sha256": "b57ca2302720fd70e427f98ada7ea87da7bc810318085b610a7026786b614820",
+        "batch_id": "20260904031500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904031500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 748,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 748
+      },
+      "errors": [],
+      "member": "20260904033000.gkg.csv",
+      "member_bytes": 9534820,
+      "member_sha256": "7c0481da75f264df4eb8cf0e971c0a02b5c79b99635c9681dccb160a6a1db259",
+      "observed_archive_sha256": "23d0a96eddd76da341fdf6f2fa07fbed6b420d40fec79c8e3bbfb5735d3ad7ad",
+      "parser_version": "1.0.0",
+      "physical_rows": 748,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "85dfb1dfc093dbc019c4c6929163fcbb1a670c1e9cf09e65763cf81cac59fdb0",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "09e4bdf59d1ba4e889890339267bb8d62077d5548911ab74c1bbb6ebcb8361cb",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3091218,
+        "archive_sha256": "23d0a96eddd76da341fdf6f2fa07fbed6b420d40fec79c8e3bbfb5735d3ad7ad",
+        "batch_id": "20260904033000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904033000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 838,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 838
+      },
+      "errors": [],
+      "member": "20260904034500.gkg.csv",
+      "member_bytes": 11273854,
+      "member_sha256": "56a24073826b6ae500b4f47bbf0e32bf4961ebdb234530dd42eeb00c455cb135",
+      "observed_archive_sha256": "ea875ce1a401ffb71c03c350ecd9f35f30466e01276a355142cd4eff42231388",
+      "parser_version": "1.0.0",
+      "physical_rows": 838,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "306df567b51ca2930263dfb75d828d62221521493a6e67af78bfba91e5e54483",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "3338fc10de2291e26e221b55bbe60a4aade612e711ea362db40a809c2288bdc1",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3648282,
+        "archive_sha256": "ea875ce1a401ffb71c03c350ecd9f35f30466e01276a355142cd4eff42231388",
+        "batch_id": "20260904034500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904034500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 809,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 809
+      },
+      "errors": [],
+      "member": "20260904040000.gkg.csv",
+      "member_bytes": 10666177,
+      "member_sha256": "143d4a4ce258b5f9b1b250bc771872b3370a3be02b41fca69976d1f4a3977a6e",
+      "observed_archive_sha256": "d46eb2dafa5243119876e5728512a6e1ba7a3463fd5ea45c0c617d71afcbeb9e",
+      "parser_version": "1.0.0",
+      "physical_rows": 809,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "1efee3ec65c3f8dafb7295a7bbf3eb803df2b9faf7d956b3a64f37bc1051229e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "65feeff966f1de243b5f80b51034e7f9479763f95f7090b80e8024d833526964",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3448200,
+        "archive_sha256": "d46eb2dafa5243119876e5728512a6e1ba7a3463fd5ea45c0c617d71afcbeb9e",
+        "batch_id": "20260904040000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904040000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 772,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 772
+      },
+      "errors": [],
+      "member": "20260904041500.gkg.csv",
+      "member_bytes": 10068539,
+      "member_sha256": "68bb6f5450cb74f4f8031c11489aa94ce7d871f133115f945be2bb0759066730",
+      "observed_archive_sha256": "2adc113082db27dba6a118953d4afa7c32e47e08e13ae177ef6c8720bda2ce70",
+      "parser_version": "1.0.0",
+      "physical_rows": 772,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "88c9d7a6d5e9519f0fb873446c67656fa54140fd7a6b5f49f4a903ee37ea71ee",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "a54b804136161321d260e415e49d5da001c6eb1267c324e9120a910997fd393d",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3250645,
+        "archive_sha256": "2adc113082db27dba6a118953d4afa7c32e47e08e13ae177ef6c8720bda2ce70",
+        "batch_id": "20260904041500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904041500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 795,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 795
+      },
+      "errors": [],
+      "member": "20260904043000.gkg.csv",
+      "member_bytes": 10604397,
+      "member_sha256": "be3266bb1a034e1e91668f3dd8e5f605641d3cf421f998764bf47e6294c33769",
+      "observed_archive_sha256": "41cfef11ff54ee61808a1cc2a515ab89b996c0e61b8a9626767e275de7636826",
+      "parser_version": "1.0.0",
+      "physical_rows": 795,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "ae0f28ebbe66d4944bb4825f290de43fca00e76687f03a6be66be4836e8905c7",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "cd75680f7a8a58dbc0a4c9ce889479dffe7a01dd4b2ca9fcd0f81bc556008ee2",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3417893,
+        "archive_sha256": "41cfef11ff54ee61808a1cc2a515ab89b996c0e61b8a9626767e275de7636826",
+        "batch_id": "20260904043000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904043000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 790,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 790
+      },
+      "errors": [],
+      "member": "20260904044500.gkg.csv",
+      "member_bytes": 10337096,
+      "member_sha256": "afa6441c345828096805a6aefbed3343da585e4be1aab1dec4fcd22b3c894c6b",
+      "observed_archive_sha256": "178af433e4206bdda21d70a48fb484fe3541ebc599ebb3c94d9055c07f84153b",
+      "parser_version": "1.0.0",
+      "physical_rows": 790,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "fc5432fe8d5fcbd30b5eba92d4abc95fde3ea68e7aa2426b5fb4a1894ad39854",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "168616fb8cfb5028583ba4bb4cec5a627ebd3f70835d23002ff64bde4a8a6656",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3325725,
+        "archive_sha256": "178af433e4206bdda21d70a48fb484fe3541ebc599ebb3c94d9055c07f84153b",
+        "batch_id": "20260904044500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904044500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 695,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 695
+      },
+      "errors": [],
+      "member": "20260904050000.gkg.csv",
+      "member_bytes": 8894885,
+      "member_sha256": "e7218fe66e76a59014654ef3a9adb00649d0376f795d8e9fdbe6512798fa43c0",
+      "observed_archive_sha256": "6116266a2ee55e5c1b9b932a4b5735f22f4636cab927b749143d7d752e166993",
+      "parser_version": "1.0.0",
+      "physical_rows": 695,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "bca4245494eeb9263e6dac590e5d2097686b99511dd48ee2103fd0cb4e4c6ea6",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "ec77a3c30751ba5c330504874a33d1205bd532eb4874a3776a2bb1672007f510",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 2887763,
+        "archive_sha256": "6116266a2ee55e5c1b9b932a4b5735f22f4636cab927b749143d7d752e166993",
+        "batch_id": "20260904050000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904050000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 726,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 726
+      },
+      "errors": [],
+      "member": "20260904051500.gkg.csv",
+      "member_bytes": 9673401,
+      "member_sha256": "0e4ef5599c8d98d9803f863be6c0941796050d6263aa0898b94cfce281063a6e",
+      "observed_archive_sha256": "68b21f02efa6d0a8307e480c22d4255d92cfbf372769da077d7adae85e62f492",
+      "parser_version": "1.0.0",
+      "physical_rows": 726,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c175718e7813fb84a555876ead3272033d2f1e4245fb1fc915e0a9f1999bc8cc",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "c0fc9afd8a1cf8b891037caa247997ed09ec37f81014a588c9a9cc9918e9b38f",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3129386,
+        "archive_sha256": "68b21f02efa6d0a8307e480c22d4255d92cfbf372769da077d7adae85e62f492",
+        "batch_id": "20260904051500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904051500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 966,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 966
+      },
+      "errors": [],
+      "member": "20260904053000.gkg.csv",
+      "member_bytes": 13112291,
+      "member_sha256": "c9836272547732b3d70f6ca18e2d0f2afba10d7e912302d9e991f0d556228868",
+      "observed_archive_sha256": "73c88df639d50f45737992b6e9d25f6a201c6ca3ea2a3dedc056a6ba8281d353",
+      "parser_version": "1.0.0",
+      "physical_rows": 966,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "fc4de857dca0d0e902459114df221508728c1f5edd32ae0da130870d47583b1a",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4dad2475d910a9ce153f9b4015799f1b03aeea1ceb1e2919cb50655ff1832671",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4255744,
+        "archive_sha256": "73c88df639d50f45737992b6e9d25f6a201c6ca3ea2a3dedc056a6ba8281d353",
+        "batch_id": "20260904053000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904053000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 711,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 711
+      },
+      "errors": [],
+      "member": "20260904054500.gkg.csv",
+      "member_bytes": 9493607,
+      "member_sha256": "76918b635fb1a6fce62e0f8bf7fbd827218e5e73c22b15a4e11af5c101cf9827",
+      "observed_archive_sha256": "338d50c9427ad7b0b5df11f52be35326cb4e8b6be1f9bef79c9f0215a67c957e",
+      "parser_version": "1.0.0",
+      "physical_rows": 711,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "2c930b583a10dadbb7ff0adcbdd1a6881dd6fcc61a17aba3c87a370c5e99f5ea",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "048923a8bca199ada50ded59b09683ca40e584cb462ee2c7a538d6b9d5b7d48e",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3050604,
+        "archive_sha256": "338d50c9427ad7b0b5df11f52be35326cb4e8b6be1f9bef79c9f0215a67c957e",
+        "batch_id": "20260904054500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904054500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 732,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 732
+      },
+      "errors": [],
+      "member": "20260904060000.gkg.csv",
+      "member_bytes": 9422628,
+      "member_sha256": "49294533e96c2b0dd0e01ebf091e0db3f668b602aa180ed573186f2409cac908",
+      "observed_archive_sha256": "44240bd39a02cf68d34fd6ceab75af79199c38fd4e49c705531a3bddd87c84a8",
+      "parser_version": "1.0.0",
+      "physical_rows": 732,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "ecdea7dac00a029f54e04baf926ed39816959b85068c45e71ddb4630cd05dc52",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "de26be7d80e05ca3c7e508b3444c8404dd8ab3e079d8576c0204968d8806b4f1",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3035193,
+        "archive_sha256": "44240bd39a02cf68d34fd6ceab75af79199c38fd4e49c705531a3bddd87c84a8",
+        "batch_id": "20260904060000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904060000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 812,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 812
+      },
+      "errors": [],
+      "member": "20260904061500.gkg.csv",
+      "member_bytes": 9982712,
+      "member_sha256": "2e7e756c1655ac6af45b4436e8e82f87ecf0eb28e6c22e768b05439e7220b758",
+      "observed_archive_sha256": "1fdc88e69ae0898f0afd8d21758fae50874bf3e4991c18bbe9fff906b58b23a6",
+      "parser_version": "1.0.0",
+      "physical_rows": 812,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "fe31d18c58e4aa6165cfbec477ea5db31db371ed14f5744f2e514e0179ce9994",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "9b058b7022a14c93c4b4bb5c515203e90b0bec162de0dc9a1ba2d94a79de0c47",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3216239,
+        "archive_sha256": "1fdc88e69ae0898f0afd8d21758fae50874bf3e4991c18bbe9fff906b58b23a6",
+        "batch_id": "20260904061500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904061500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 924,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 924,
+        "quarantined_encoding": 1
+      },
+      "errors": [],
+      "member": "20260904063000.gkg.csv",
+      "member_bytes": 12299077,
+      "member_sha256": "afe796429260c4e8e9113f57f3a8f636924ad9b7109fd28ae2d870500d230139",
+      "observed_archive_sha256": "d1b65efd0dabe83ad9a3ba02d2dc872a175b7d046ebd0b11693d078fbb4714f8",
+      "parser_version": "1.0.0",
+      "physical_rows": 925,
+      "quarantine": [
+        {
+          "disposition": "quarantined_encoding",
+          "end": 1256794,
+          "fields_sha256": null,
+          "invalid_sequences": [
+            {
+              "bytes_hex": "f1",
+              "end": 6455,
+              "field": 27,
+              "reason": "invalid continuation byte",
+              "start": 6454
+            }
+          ],
+          "line": 96,
+          "member": "20260904063000.gkg.csv",
+          "parser_version": "1.0.0",
+          "raw_base64": "MjAyNjA5MDQwNjMwMDAtOTUJMjAyNjA5MDQwNjMwMDAJMQluZXdpbmRpYW5leHByZXNzLmNvbQlodHRwczovL3d3dy5uZXdpbmRpYW5leHByZXNzLmNvbS9pbmRpYS8yMDI2L1NlcC8wNC93bW8tcHJvamVjdHMtbmVhci0xMDAtcHJvYmFiaWxpdHktb2YtZWwtbmklQzMlQjFvLXRocm91Z2gtZmVicnVhcnktMjAyNwkJCVVOR1BfRk9SRVNUU19SSVZFUlNfT0NFQU5TO1dCXzE3NzNfQ0xJTUFURV9DSEFOR0VfSU1QQUNUUztXQl81NzFfQ0xJTUFURV9TQ0lFTkNFO1dCXzU2N19DTElNQVRFX0NIQU5HRTsJVU5HUF9GT1JFU1RTX1JJVkVSU19PQ0VBTlMsMzU7V0JfMTc3M19DTElNQVRFX0NIQU5HRV9JTVBBQ1RTLDIzMztXQl81NzFfQ0xJTUFURV9TQ0lFTkNFLDIzMztXQl81NjdfQ0xJTUFURV9DSEFOR0UsMjMzOwkJCQkJCQkxLjMyNDUwMzMxMTI1ODI4LDEuOTg2NzU0OTY2ODg3NDIsMC42NjIyNTE2NTU2MjkxMzksMi42NDkwMDY2MjI1MTY1NiwxNy4yMTg1NDMwNDYzNTc2LDAsMTI0CQl3YzoxMjQsYzEuMzoxLGMxMi4xOjIsYzEyLjEwOjE3LGMxMi4xMjoyLGMxMi4xMzo0LGMxMi4xNDoxMixjMTIuNToyLGMxMi43OjIsYzEyLjg6NCxjMTIuOToxMyxjMTMuMTI6MyxjMTQuMTo4LGMxNC4xMDo0LGMxNC4xMToxMyxjMTQuMjo1LGMxNC4zOjYsYzE0LjQ6MixjMTQuNTo3LGMxNC43OjQsYzE0Ljk6MyxjMTUuMTAzOjEsYzE1LjExNjoxLGMxNS4xNzY6MSxjMTUuMjA1OjIsYzE1LjI1NjoxLGMxNS42MjoxLGMxNi4xOjEsYzE2LjEwMDozLGMxNi4xMDE6MSxjMTYuMTA0OjEsYzE2LjEwNjo0LGMxNi4xMDg6MixjMTYuMTA5OjQsYzE2LjExMDo3LGMxNi4xMTQ6NCxjMTYuMTE1OjIsYzE2LjExNjo1LGMxNi4xMTc6NCxjMTYuMTE4OjUsYzE2LjEyOjUsYzE2LjEyMDoyLGMxNi4xMjE6MyxjMTYuMTIzOjIsYzE2LjEyNDoxLGMxNi4xMjU6MSxjMTYuMTI2OjYsYzE2LjEyNzo4LGMxNi4xMjg6MixjMTYuMTI5OjE3LGMxNi4xMzA6MSxjMTYuMTMxOjMsYzE2LjEzNDo1LGMxNi4xMzY6MSxjMTYuMTM4OjIsYzE2LjEzOTozLGMxNi4xNDA6MSxjMTYuMTQ0OjEsYzE2LjE0NTozLGMxNi4xNDY6NCxjMTYuMTQ3OjUsYzE2LjE1MDoxLGMxNi4xNTc6MSxjMTYuMTU4OjEsYzE2LjE1OTo4LGMxNi4xNjo3LGMxNi4xNjE6NCxjMTYuMTYyOjIsYzE2LjE2Mzo4LGMxNi4xNjU6MSxjMTYuMTk6MyxjMTYuMjY6OSxjMTYuMjk6MSxjMTYuMzE6NixjMTYuMzI6MSxjMTYuMzM6OCxjMTYuMzU6MyxjMTYuMzY6MyxjMTYuMzc6NyxjMTYuNDo3LGMxNi40MTozLGMxNi40NTozLGMxNi40NjoyLGMxNi40NzoxMixjMTYuNTA6MSxjMTYuNTE6MixjMTYuNTI6MyxjMTYuNTY6MSxjMTYuNTc6NjMsYzE2LjU4OjYsYzE2LjY6NCxjMTYuNjI6MyxjMTYuNjM6MyxjMTYuNjQ6MSxjMTYuNjY6MSxjMTYuNjk6MyxjMTYuNzA6NyxjMTYuNzE6MyxjMTYuNzI6NCxjMTYuNzM6MSxjMTYuNzQ6MSxjMTYuNzU6MyxjMTYuNzY6MyxjMTYuNzg6MixjMTYuODQ6NCxjMTYuODc6MixjMTYuODg6MTIsYzE2Ljg5OjUsYzE2LjkwOjQsYzE2LjkxOjEsYzE2LjkyOjcsYzE2LjkzOjIsYzE2Ljk0OjEwLGMxNi45NToxLGMxNi45NzoxLGMxNi45ODo2LGMxNy4xOjM2LGMxNy4xMDoxMyxjMTcuMTE6MTcsYzE3LjEyOjQsYzE3LjEzOjEsYzE3LjE0OjEsYzE3LjE1OjEsYzE3LjE2OjIsYzE3LjE4OjQsYzE3LjE5OjIsYzE3LjI6NCxjMTcuMjA6MyxjMTcuMjE6MSxjMTcuMjM6MSxjMTcuMjQ6NyxjMTcuMjU6NCxjMTcuMjc6OCxjMTcuMjk6MixjMTcuMzoxLGMxNy4zMDoyLGMxNy4zMTo1LGMxNy4zMjo0LGMxNy4zNDoxLGMxNy4zNjoxLGMxNy4zNzoxLGMxNy4zODoxLGMxNy4zOTo0LGMxNy40OjM0LGMxNy40MToxLGMxNy40Mjo3LGMxNy40Mzo1LGMxNy41OjE1LGMxNy43OjEzLGMxNy44OjEwLGMxNy45OjIsYzIuMTo0LGMyLjEwMjoyLGMyLjEwNDoyMixjMi4xMDc6MSxjMi4xMToxLGMyLjExMToxLGMyLjExMjozLGMyLjExNDoxLGMyLjExNjoxLGMyLjExOToyNCxjMi4xMjozLGMyLjEyMTo4LGMyLjEyNTo5LGMyLjEyNjozLGMyLjEyNzo4LGMyLjEyODo1LGMyLjEzMTo0LGMyLjEzNToyLGMyLjEzOToxLGMyLjE0OjQsYzIuMTQxOjEsYzIuMTQzOjQsYzIuMTQ3OjI0LGMyLjE0ODoyLGMyLjE1MDoxLGMyLjE1MzoxLGMyLjE1NTo5LGMyLjE1NjoyLGMyLjE1Nzo5LGMyLjE1ODo1LGMyLjE1OTo1LGMyLjE2OjIsYzIuMTYwOjEyLGMyLjE2OTozLGMyLjE3MDozLGMyLjE3MjoxLGMyLjE3NTo0LGMyLjE3NzozLGMyLjE3OToxLGMyLjE4OjMsYzIuMTgwOjMsYzIuMTgxOjMsYzIuMTgzOjMsYzIuMTg1OjIxLGMyLjE4Njo1LGMyLjE4Nzo0LGMyLjE5MDoxLGMyLjE5Mjo0LGMyLjE5MzoxMixjMi4xOTU6OSxjMi4xOTc6MyxjMi4xOTg6MjAsYzIuMTk5OjMsYzIuMjAwOjQsYzIuMjAzOjEsYzIuMjA0OjksYzIuMjA1OjMsYzIuMjA2OjEsYzIuMjA5OjMsYzIuMjEwOjgsYzIuMjEzOjEsYzIuMjE0OjUsYzIuMjE3OjMsYzIuMjIwOjMsYzIuMjIxOjEsYzIuMjIzOjEsYzIuMjI1OjMsYzIuMjI3OjEsYzIuMjU6NCxjMi4yODoxLGMyLjMxOjQsYzIuMzI6MixjMi4zNDozLGMyLjM5OjExLGMyLjQwOjEsYzIuNDQ6MyxjMi40Njo2LGMyLjQ4OjEsYzIuNTI6NCxjMi41NDo0LGMyLjU1OjIsYzIuNTc6NixjMi42MjozLGMyLjY1OjIsYzIuNzE6MSxjMi43NDoxLGMyLjc1OjExLGMyLjc2OjY0LGMyLjc3OjMsYzIuNzg6MTYsYzIuODA6MTUsYzIuODE6MyxjMi44MjoyLGMyLjgzOjEsYzIuODQ6MyxjMi44NjoxLGMyLjg3OjQsYzIuOToxLGMyLjkwOjUsYzIuOTM6MixjMi45NToyMyxjMi45NjoxLGMyLjk4OjQsYzI1LjExOjEsYzMuMToyLGMzLjI6OSxjMzUuMToxLGMzNS4xNDoxLGMzNS4yMDozLGMzNS4zMTozLGMzNS4zMjoxLGMzNS4zMzozLGMzNS43OjEsYzM1Ljg6MSxjMzkuMToxLGMzOS4xMDoxLGMzOS4xNDoxLGMzOS4xODoxLGMzOS4yOjUsYzM5LjI5OjEsYzM5LjM6MTAsYzM5LjM0OjEsYzM5LjM2OjIsYzM5LjM3OjIsYzM5LjM4OjEsYzM5LjM5OjEsYzM5LjQ6NixjMzkuNDA6MSxjMzkuNTozLGM0LjIzOjMsYzQwLjI6MSxjNDAuMzoyLGM0MC44OjIsYzQxLjE6OCxjNDIuMToyMyxjNS4xMDoxMyxjNS4xMTozLGM1LjEyOjI5LGM1LjE4OjEsYzUuMjE6MSxjNS4yMzozLGM1LjI3OjMsYzUuMjg6MSxjNS4zMDo3LGM1LjMxOjEsYzUuMzQ6MSxjNS4zNTo4LGM1LjM2OjgsYzUuNDM6MSxjNS40NjoyMyxjNS40Nzo0LGM1LjQ5OjYsYzUuNTA6NyxjNS41MTo0LGM1LjUyOjcsYzUuNTM6MTAsYzUuNTQ6MixjNS42OjMsYzUuNjE6MixjNS42Mjo0MyxjNS43OjMsYzUuOToxMyxjNi4yOjEsYzYuNDoyLGM2LjU6NCxjNi42OjIsYzcuMToxLGM3LjI6NixjOC4xMzoxLGM4LjE2OjIsYzguMTc6NSxjOC4xODoyLGM4LjIzOjcsYzguMjY6MSxjOC4zNzoxLGM4LjM4OjEsYzguNDozLGM4LjQwOjQsYzguNDI6MSxjOC40Mzo2LGM5LjE6NSxjOS4xMDoxLGM5LjEwMTQ6MSxjOS4xMDc6MixjOS4xMDk6NCxjOS4xMTA6MixjOS4xMTE6NSxjOS4xMTM6MSxjOS4xMTY6MixjOS4xMTg6MSxjOS4xMjoxLGM5LjEyMjoxLGM5LjEyMzoyLGM5LjEyNDoxLGM5LjEyNzoxLGM5LjEyODo2LGM5LjEyOToxLGM5LjEzNDoxLGM5LjE0MDoxLGM5LjE0MToyLGM5LjE0MjoxLGM5LjE0Mzo0LGM5LjE0NTozLGM5LjE0OToxLGM5LjE1OjEsYzkuMTUwOjMsYzkuMTU5OjIsYzkuMTYwOjIsYzkuMTYxOjIsYzkuMTY0OjEsYzkuMTY1OjEsYzkuMTY2OjUsYzkuMTc1OjEsYzkuMTc2OjEsYzkuMTc4OjMsYzkuMTgwOjEsYzkuMTgxOjMsYzkuMTg0OjEsYzkuMTkwOjEsYzkuMjAxOjIsYzkuMjA1OjMsYzkuMjA2OjMsYzkuMjA5OjEsYzkuMjE1OjUsYzkuMjE3OjIsYzkuMjE5OjEsYzkuMjIxOjIsYzkuMjI3OjEsYzkuMjMwOjEsYzkuMjM4OjEsYzkuMjYzOjEsYzkuMjY2OjIsYzkuMjg6MSxjOS4yODU6MSxjOS4yODg6MSxjOS4yOTI6MSxjOS4zOjMsYzkuMzA1OjIsYzkuMzE6MyxjOS4zMTM6MSxjOS4zMTU6MSxjOS4zMjozLGM5LjMzOjcsYzkuMzMwOjEsYzkuMzM3OjEsYzkuMzM5OjEsYzkuMzQ6MixjOS4zNDg6MSxjOS4zNTE6MixjOS4zNTM6MixjOS4zNTg6MixjOS4zNjA6MSxjOS4zNzozLGM5LjM3MDoxLGM5LjM3MToxLGM5LjM5OjMsYzkuMzk0OjMsYzkuMzk2OjEsYzkuNDAzOjEsYzkuNDA1OjEsYzkuNDA5OjIsYzkuNDEzOjEsYzkuNDE2OjEsYzkuNDI6MixjOS40MzA6MSxjOS40NDoxLGM5LjQ1MjoyLGM5LjQ1NDoxLGM5LjQ1NzoxLGM5LjQ2NToxLGM5LjQ4OjEsYzkuNDg4OjIsYzkuNDkxOjIsYzkuNDk0OjIsYzkuNDk2OjIsYzkuNToyLGM5LjUwNzoyLGM5LjUxMToyLGM5LjUxMzoyLGM5LjUxNzoyLGM5LjUyMTozLGM5LjUyMjoxLGM5LjUyODoxLGM5LjUzMDoxLGM5LjU0NToxLGM5LjU1NDoxLGM5LjU1NzoxLGM5LjU2MDoxLGM5LjU2MjoxLGM5LjU3NToxLGM5LjU3OTozLGM5LjU4NToxLGM5LjU4NzoxLGM5LjYwMjoyLGM5LjYxOToyLGM5LjYyOToxLGM5LjYzMDoxLGM5LjYzODoyLGM5LjY0OjEsYzkuNjQwOjIsYzkuNjQyOjIsYzkuNjQ2OjMsYzkuNjQ4OjEsYzkuNjUzOjMsYzkuNjU5OjEsYzkuNjYwOjIsYzkuNjY0OjIsYzkuNjY2OjEsYzkuNjY3OjYsYzkuNjY5OjEsYzkuNjc6MSxjOS42NzA6MixjOS42NzE6NCxjOS42NzI6MSxjOS42NzM6MixjOS42NzQ6MSxjOS42NzU6MSxjOS42NzY6MyxjOS42Nzc6MixjOS42Nzk6MyxjOS42ODI6MixjOS42ODM6MixjOS42ODQ6MSxjOS42ODY6MSxjOS42ODc6MSxjOS42OTA6MixjOS43MDoxLGM5LjcwNTozLGM5LjcxOjIsYzkuNzEwOjEsYzkuNzE3OjEsYzkuNzI6NSxjOS43MjY6NSxjOS43Mjc6MSxjOS43MzozLGM5LjczMDozLGM5LjczMjoxLGM5LjczNTo0LGM5LjczNjoyLGM5Ljc0MToxLGM5Ljc0MjoyLGM5Ljc0NzoxLGM5Ljc0ODoxLGM5Ljc0OToyLGM5Ljc1MjoxLGM5Ljc1NzoxLGM5Ljc1OToyLGM5Ljc2MDoxLGM5Ljc2Mjo1LGM5Ljc2Nzo0LGM5Ljc3MjoxLGM5Ljc4ODoxLGM5Ljg6MSxjOS44MDE6MSxjOS44MjQ6MSxjOS44MzoxLGM5LjgzNzozLGM5Ljg0OjIsYzkuODQ4OjIsYzkuODU4OjIsYzkuODY6MixjOS44NjE6MSxjOS44NjQ6NSxjOS44NjU6MSxjOS44Njg6NSxjOS44ODoxLGM5Ljg4MjozLGM5Ljg4NDoyLGM5Ljg5MDoyLGM5Ljg5NjoxLGM5Ljg5OToxLGM5LjkwOjEsYzkuOTAyOjIsYzkuOTA4OjEsYzkuOTA5OjMsYzkuOTEzOjIsYzkuOTI2OjQsYzkuOTMyOjIsYzkuOTMzOjEsYzkuOTM1OjEsYzkuOTM2OjEsYzkuOTM4OjEsYzkuOTM5OjEsYzkuOTQ1OjMsYzkuOTQ2OjEsYzkuOTU1OjEsYzkuOTY6MSxjOS45NzI6MixjOS45ODU6MixjOS45ODY6MSxjOS45OTA6MixjOS45OTk6MSx2MTAuMTowLjIyMDMxMjUsdjEwLjI6MC4yMDE3MTg5OTIyNDgwNjIsdjExLjE6MC4xMDAyODQ1MzcwMzcwMzcsdjE5LjE6Ni4wOTY2NjY2NjY2NjY2Nyx2MTkuMjo0LjkxNjY2NjY2NjY2NjY3LHYxOS4zOjUuNDU4MzMzMzMzMzMzMzMsdjE5LjQ6Ni4wNDUsdjE5LjU6NC44OSx2MTkuNjo1LjI5MTY2NjY2NjY2NjY3LHYxOS43OjYuMTQ4MzMzMzMzMzMzMzMsdjE5Ljg6NS4wMjMzMzMzMzMzMzMzMyx2MTkuOTo1LjU4NjY2NjY2NjY2NjY3LHYyMC4xOjAuNDYsdjIwLjExOjAuNjk3LHYyMC4xMzowLjQ4NCx2MjAuMTU6MC40MTU4NjM2MzYzNjM2MzYsdjIwLjM6MC42NzQsdjIwLjU6MC43NTQ0LHYyMC43OjAuNzU0NCx2MjAuOTowLjcyMTYyNSx2MjEuMTo1LjM3Mzg3NzU1MTAyMDQxLHYyNi4xOjEuNDEyNSx2NDIuMTA6LTAuMDMxMzEyMjY5MDQzNDc4Myx2NDIuMTE6MC4wMjM2ODUwNTg5NTY1MjE3LHY0Mi4yOjAuMTA5MTEwMzE1MjE3MzkxLHY0Mi4zOjAuMDcyNzE2OTgyMjE3MzkxMyx2NDIuNDowLjA5OTAzODMxMzg2OTU2NTIsdjQyLjU6MC4wOTczNTAxNDEzMDQzNDc4LHY0Mi42OjAuMDgyNTcwMTE3NDM0NzgyNix2NDIuNzotMC4wNTQ5NjIwNDc5MTMwNDM1LHY0Mi44OjAuMDc5Mzc1MzkwMzQ3ODI2MSx2NDIuOTowLjE2NDI1NzEyNDEzMDQzNQlodHRwczovL2NmLWltYWdlcy5hc3NldHR5cGUuY29tL25ld2luZGlhbmV4cHJlc3MlMkYyMDI2LTA0LTI1JTJGdHg3aTlwcWQlMkZBTklfMjAyNjA0MjUwNDQ4NTQuanBnP3JlY3Q9MCUyQzE5NSUyQzE2MDAlMkM4NDAmYXI9NDAlM0EyMSZhdXRvPWZvcm1hdCUyQ2NvbXByZXNzJm9nSW1hZ2U9dHJ1ZSZtb2RlPWNyb3AmZW5sYXJnZT10cnVlJm92ZXJsYXk9ZmFsc2Umb3ZlcmxheV9wb3NpdGlvbj1ib3R0b20mb3ZlcmxheV93aWR0aD0xMDAJCQlodHRwczovL3lvdXR1YmUuY29tL2NoYW5uZWwvVUNRdFZKLTc2S2pQZHM5ZXZUT0RrcS1BP3N1Yl9jb25maXJtYXRpb249MTsJCQk0LGluZGV4LDM5NTsJCTxQQUdFX0FVVEhPUlM+Sml0ZW5kcmEgQ2hvdWJleTwvUEFHRV9BVVRIT1JTPjxQQUdFX0FMVFVSTF9BTVA+aHR0cHM6Ly93d3cubmV3aW5kaWFuZXhwcmVzcy5jb20vYW1wL3N0b3J5L2luZGlhLzIwMjYvU2VwLzA0L3dtby1wcm9qZWN0cy1uZWFyLTEwMC1wcm9iYWJpbGl0eS1vZi1lbC1uafFvLXRocm91Z2gtZmVicnVhcnktMjAyNzwvUEFHRV9BTFRVUkxfQU1QPjxQQUdFX1RJVExFPldNTyBwcm9qZWN0cyBuZWFyLTEwMCUgcHJvYmFiaWxpdHkgb2YgRWwgTmkmI3hGMTtvIHRocm91Z2ggRmVicnVhcnkgMjAyNzwvUEFHRV9USVRMRT4K",
+          "raw_sha256": "191b3d8ee4ee8d49263eac0d4324c583ac5ea6bdae041d49dd2005bb07024f2d",
+          "reasons": [
+            {
+              "code": "invalid_utf8",
+              "detail": "Strict UTF-8 rejected; no alternative decoding"
+            }
+          ],
+          "row_id": "dc3e3b71232badc6b699711cf50fab4b5719699a3cc16ef9ed9bafb266bfa997",
+          "schema_version": "1.0.0",
+          "source": {
+            "acquisition": "passed",
+            "archive_bytes": 3979940,
+            "archive_sha256": "d1b65efd0dabe83ad9a3ba02d2dc872a175b7d046ebd0b11693d078fbb4714f8",
+            "batch_id": "20260904063000",
+            "source_id": "gdelt-gkg-2.1",
+            "source_url": "https://data.gdeltproject.org/gdeltv2/20260904063000.gkg.csv.zip"
+          },
+          "start": 1250200,
+          "timestamp": "20260904063000"
+        }
+      ],
+      "quarantine_fraction": 0.001081081081081081,
+      "quarantined_rows": 1,
+      "row_ledger_sha256": "6ca2ed8b1bbf288b7fe645e15b01c52b3ac1aa47e06519bd6bbece89ad3b42b6",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "c5fd51111f7e67e88b03660c86e128cd68d6a9703e09c12376ab8d26b5ef32e3",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3979940,
+        "archive_sha256": "d1b65efd0dabe83ad9a3ba02d2dc872a175b7d046ebd0b11693d078fbb4714f8",
+        "batch_id": "20260904063000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904063000.gkg.csv.zip"
+      },
+      "state": "parse_with_quarantine"
+    },
+    {
+      "accepted_rows": 832,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 832
+      },
+      "errors": [],
+      "member": "20260904064500.gkg.csv",
+      "member_bytes": 10385157,
+      "member_sha256": "6e82458a54f29109dce645d28212e638275d848eb1c4f2c500e913c7e5e3f60f",
+      "observed_archive_sha256": "58fb1e80d5f5a6ad20c4fcdd9de8281f495a8ecf966427ace65d221eef9137f6",
+      "parser_version": "1.0.0",
+      "physical_rows": 832,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "31b39670d44bf56b51f5ade8b84cb6c014ab9da9214289ecb69780a21613fb21",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "16dc7f1ee1b061319137a07bd580389a0a0ed9e2b0dea98b77a42bcb48951178",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3365100,
+        "archive_sha256": "58fb1e80d5f5a6ad20c4fcdd9de8281f495a8ecf966427ace65d221eef9137f6",
+        "batch_id": "20260904064500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904064500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 884,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 884
+      },
+      "errors": [],
+      "member": "20260904070000.gkg.csv",
+      "member_bytes": 11192841,
+      "member_sha256": "0c49a95df8308b951b2fc19081c836b06200077d410bd8328e865e3ad733ad50",
+      "observed_archive_sha256": "7a6d13604aba86e12e9a29607bbd943b59a83596bfc2525683ab87114ea6fbe8",
+      "parser_version": "1.0.0",
+      "physical_rows": 884,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "f0073dd9185b08aeaa9e5e1b3c07848a72536af239513f9ed183441680f2d158",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "80fab542c1eae500e024aa251d16337d742a8e0cfccda36a35ae4a563987f7ce",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3603323,
+        "archive_sha256": "7a6d13604aba86e12e9a29607bbd943b59a83596bfc2525683ab87114ea6fbe8",
+        "batch_id": "20260904070000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904070000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 772,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 772
+      },
+      "errors": [],
+      "member": "20260904071500.gkg.csv",
+      "member_bytes": 10042944,
+      "member_sha256": "1c22306f6765019a1d48d12b39fe754334252afb613417ea60afea1dfe5c3261",
+      "observed_archive_sha256": "ecda92850a4c38ed752ed30d0c89a6d14328c1b10ae64e54962b82ac017ed585",
+      "parser_version": "1.0.0",
+      "physical_rows": 772,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "99e96c966f55527d5abf24346ccebdbbc1d30505cf823a4fd20fd9985d5e7597",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "0d01947d41dfbb8fbf1130fb7de194b147599c3a2ebb1984e2ad7a3429fa4b73",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3220160,
+        "archive_sha256": "ecda92850a4c38ed752ed30d0c89a6d14328c1b10ae64e54962b82ac017ed585",
+        "batch_id": "20260904071500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904071500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 774,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 774
+      },
+      "errors": [],
+      "member": "20260904073000.gkg.csv",
+      "member_bytes": 9848497,
+      "member_sha256": "55495407a1c84cb0f76302d1eb562ad1ecd0ffb0a80afb43021182f09d8d1ffd",
+      "observed_archive_sha256": "8a90c9da6d8f824eb717e8e983caa915b50c802662940c7aa5867c6f4fa1c9dc",
+      "parser_version": "1.0.0",
+      "physical_rows": 774,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c0212ffe9426d1db78738909abc6c62c8a5754db95b2cb59349424a0eb297774",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4ddfa599fb70a5c741cf79ca70d017341f91105c09323238cc4fe5d4a3311a27",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3198406,
+        "archive_sha256": "8a90c9da6d8f824eb717e8e983caa915b50c802662940c7aa5867c6f4fa1c9dc",
+        "batch_id": "20260904073000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904073000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 884,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 884
+      },
+      "errors": [],
+      "member": "20260904074500.gkg.csv",
+      "member_bytes": 12005557,
+      "member_sha256": "f781782eab60024670526904b7fd3ac7a0366fbee5acb8b3d6bd16a8a1ea7bb4",
+      "observed_archive_sha256": "92c5b7038cba8cfa15603dba9780be5816bd845defce3ac80872f4922b7a301b",
+      "parser_version": "1.0.0",
+      "physical_rows": 884,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "f4646b80ae2e4632bb7e064c9a4478850650fd2fb49ffec5f39d1963ccd6f90d",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "77283c45063452eda680d872b8f5b23804356e3596a956bc3da092c14a222fe4",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3857761,
+        "archive_sha256": "92c5b7038cba8cfa15603dba9780be5816bd845defce3ac80872f4922b7a301b",
+        "batch_id": "20260904074500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904074500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 910,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 910
+      },
+      "errors": [],
+      "member": "20260904080000.gkg.csv",
+      "member_bytes": 11795032,
+      "member_sha256": "fab7009f299a61e07074e93f2cb2bbb636bf711fa2ad180367f3e8661c6a435f",
+      "observed_archive_sha256": "a30cfbcf15de1690a550cd46fec537e0a258a8b5e6be68c3d75490b108bf7d9e",
+      "parser_version": "1.0.0",
+      "physical_rows": 910,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "da3c7f891b82982247a190f9ec89344b6b7ea2552195aaa4e061c28f45929613",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "8f6ce2e02e9f0e1993dfd9a7a760305a95c9bbc502dc2439de8d8cbda051c1db",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3700192,
+        "archive_sha256": "a30cfbcf15de1690a550cd46fec537e0a258a8b5e6be68c3d75490b108bf7d9e",
+        "batch_id": "20260904080000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904080000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 910,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 910
+      },
+      "errors": [],
+      "member": "20260904081500.gkg.csv",
+      "member_bytes": 11702535,
+      "member_sha256": "7e4b443b6e40dea62dd607efb2b4c1536b7710b8883b735755a2b19ce7dc5d2e",
+      "observed_archive_sha256": "c0b0c93bc924783d1e71df550ebbdb7aaadcfa8634bca9aa00f79d562fcc4503",
+      "parser_version": "1.0.0",
+      "physical_rows": 910,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "35132d61acebdf09c483e632af547f105a1f273a5b737251842c157fa49994ee",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "51ab43b2f68ef06aef7a186abfa85aa025ac1f318ce9676c5e735378341d2782",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3740064,
+        "archive_sha256": "c0b0c93bc924783d1e71df550ebbdb7aaadcfa8634bca9aa00f79d562fcc4503",
+        "batch_id": "20260904081500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904081500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 905,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 905
+      },
+      "errors": [],
+      "member": "20260904083000.gkg.csv",
+      "member_bytes": 11492715,
+      "member_sha256": "e7574228cbf90a11d68769400e0d210a7368cbc4e4cdc036cdffdadef35f5723",
+      "observed_archive_sha256": "94b0b3759c9890be078ad68dbad91bccb30685b952eb6a969d88b19a6fd0b902",
+      "parser_version": "1.0.0",
+      "physical_rows": 905,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "2309f13dc7a91dc95189937355f078bcdba0528bc703c4e50176ee9492239971",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "5ef64b365878f7d9a7b6d4c46c9097d5cff2ac99ae2b8833cd6618f173ed5e3d",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3704970,
+        "archive_sha256": "94b0b3759c9890be078ad68dbad91bccb30685b952eb6a969d88b19a6fd0b902",
+        "batch_id": "20260904083000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904083000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 948,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 948
+      },
+      "errors": [],
+      "member": "20260904084500.gkg.csv",
+      "member_bytes": 12966573,
+      "member_sha256": "82a50138c4787abe287982997a36b3822c5b6a60bad63c129f0b911fda2d797d",
+      "observed_archive_sha256": "65fdb924c819dfec6a2db940e8cf89e29da0b57bab957908571789fd51f327a0",
+      "parser_version": "1.0.0",
+      "physical_rows": 948,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "f994edaed14f2fdb87c835a0d1223d5e64bf5f112c195ecd6d2f7f42f29c8c39",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "cc54a208066e4fcb13df909760ea799c76cac90a81910fd74dc04cd1704314ff",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4030872,
+        "archive_sha256": "65fdb924c819dfec6a2db940e8cf89e29da0b57bab957908571789fd51f327a0",
+        "batch_id": "20260904084500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904084500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 893,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 893
+      },
+      "errors": [],
+      "member": "20260904090000.gkg.csv",
+      "member_bytes": 11854802,
+      "member_sha256": "36bc120baeb58d7f75a7542c8567f1a34177af370697c71fea146a3b518c3878",
+      "observed_archive_sha256": "99c2aa48e03c0f5818ee144cddb55f581475d94acf103edfd588810a0b288ccb",
+      "parser_version": "1.0.0",
+      "physical_rows": 893,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "08e0e5d8960d305efb0df94b6e4fb3bfcc842927c733c574dc9bea65fe859ee7",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "0b0cbd1a6f758a21075fb50da11455c7cae070263d650ef57ac876bfee1f5a65",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3825920,
+        "archive_sha256": "99c2aa48e03c0f5818ee144cddb55f581475d94acf103edfd588810a0b288ccb",
+        "batch_id": "20260904090000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904090000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1094,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1094
+      },
+      "errors": [],
+      "member": "20260904091500.gkg.csv",
+      "member_bytes": 13823639,
+      "member_sha256": "f539a94bf779c120ef9e54d7caf56a7732d666694a47bff5c37e68be7414cb9a",
+      "observed_archive_sha256": "1689519473ac34a164e1e8a27f04f50ac5e39730be0183b273781a2969251765",
+      "parser_version": "1.0.0",
+      "physical_rows": 1094,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "23576956893a28a6a9d62d11cfb38665c66e00acd0e2c541be52b71d0fea0262",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "51f4817293164c780f16690542b220b212d8db1eeb4e86d3d547edc6a46538de",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4467410,
+        "archive_sha256": "1689519473ac34a164e1e8a27f04f50ac5e39730be0183b273781a2969251765",
+        "batch_id": "20260904091500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904091500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 970,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 970
+      },
+      "errors": [],
+      "member": "20260904093000.gkg.csv",
+      "member_bytes": 12174955,
+      "member_sha256": "25599dee86b0778e965275ee0d1941cd96de4236a76f2ba7326f9bd1f911b371",
+      "observed_archive_sha256": "c79c034a7113d9a90b570644228522463b3a6774d4e7d9af5d24be19e16a2741",
+      "parser_version": "1.0.0",
+      "physical_rows": 970,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "95d71da39b94ef32e07a17f776a965522a32e128c98af750faffaef313d6d68e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "03e043fc938de833cf1bcb33185a1c43b0fa19ec97d8a0a4039880bff2b75a98",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3932053,
+        "archive_sha256": "c79c034a7113d9a90b570644228522463b3a6774d4e7d9af5d24be19e16a2741",
+        "batch_id": "20260904093000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904093000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1102,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1102
+      },
+      "errors": [],
+      "member": "20260904094500.gkg.csv",
+      "member_bytes": 13973774,
+      "member_sha256": "2e5f483ce547974e544bed06d176c56315fb5b819e1e7bcb8da57ecc63d71d58",
+      "observed_archive_sha256": "66ace1d0aeaa38d68ad4fa4275f6e09fad428a1f8bde0438f975c1ef9a7bad31",
+      "parser_version": "1.0.0",
+      "physical_rows": 1102,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "46ba459ae7d27a2498e0dbaf5607a906f9b0d856476fffb3f7bb7098615c624e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "8e7e602c40009e8cd7c0a3124517c05741f3782c5e5cf7ea777c9d9fe2efc1ea",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4530464,
+        "archive_sha256": "66ace1d0aeaa38d68ad4fa4275f6e09fad428a1f8bde0438f975c1ef9a7bad31",
+        "batch_id": "20260904094500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904094500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1191,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1191
+      },
+      "errors": [],
+      "member": "20260904100000.gkg.csv",
+      "member_bytes": 16028488,
+      "member_sha256": "909a55f6cf90b0d7dbf6f0d49a5e306fffe4cfc531b7af9f4f0ff2555075f432",
+      "observed_archive_sha256": "cc901b54ef1d34f51184ed51fa7c39dc1f1ac34b4056051701339354471ea016",
+      "parser_version": "1.0.0",
+      "physical_rows": 1191,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c859df6dea806cb27e432154c3259b60160dab21cd0b08af5a4058f22767149c",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "65aa06a0970a601d723021d33bf65d4f205456e9212e1e6c3942c5fe8cf1e2e4",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5108651,
+        "archive_sha256": "cc901b54ef1d34f51184ed51fa7c39dc1f1ac34b4056051701339354471ea016",
+        "batch_id": "20260904100000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904100000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1034,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1034
+      },
+      "errors": [],
+      "member": "20260904101500.gkg.csv",
+      "member_bytes": 13344649,
+      "member_sha256": "9da2f0bc3e12abddc4370822add9833015cf5d9d0128ebe0089b54d3c983dfa5",
+      "observed_archive_sha256": "45b8ae530ff61a5bc777b87ae10a79161ba97dc876cb510e77490545a6db3c94",
+      "parser_version": "1.0.0",
+      "physical_rows": 1034,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "a7c0478e7cad24f3ee86f174ca0a7a3cf7c881f6b745b10fbf5ec70f19703cc9",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "322f157dc13d89a0caf0458952084db2789dd3cb7a8ec20d56e1d8534be351e0",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4309177,
+        "archive_sha256": "45b8ae530ff61a5bc777b87ae10a79161ba97dc876cb510e77490545a6db3c94",
+        "batch_id": "20260904101500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904101500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1068,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1068
+      },
+      "errors": [],
+      "member": "20260904103000.gkg.csv",
+      "member_bytes": 13463496,
+      "member_sha256": "efb5fb0e2a7a62a7220d5db2df8004456e71d2651a97d4b1db4e1d318b5862f9",
+      "observed_archive_sha256": "b1f6810b715143eb875a0fdac98ab08c9a03b103a6cffbfa3650fde56c093bc9",
+      "parser_version": "1.0.0",
+      "physical_rows": 1068,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "e669f9e45fe90e12c9277723e0cc18bef76da66ff67e0664d95da5fa81c7ea25",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "6701966c30ef05e2fe1bcbaaa5a75c7b5f0ae7612e589280fe6b07cb2a50fd1c",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4340620,
+        "archive_sha256": "b1f6810b715143eb875a0fdac98ab08c9a03b103a6cffbfa3650fde56c093bc9",
+        "batch_id": "20260904103000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904103000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1294,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1294
+      },
+      "errors": [],
+      "member": "20260904104500.gkg.csv",
+      "member_bytes": 16873896,
+      "member_sha256": "00bed86387aa0ea735fe851885f33932916f20d042d920a86378547b2ca8520f",
+      "observed_archive_sha256": "5625b64352e3741ed41fe12042c71b1f5b818ec9d9749b69410ad115ec936f21",
+      "parser_version": "1.0.0",
+      "physical_rows": 1294,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "5c196675ac5fcf3ba45c657c9fba71747068235df4ded676b6a2e6b915fec82d",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "92e84d626c3b9f0e232407df01d73a94b7e4a5cbb3f309063fae1f767deccb88",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5456894,
+        "archive_sha256": "5625b64352e3741ed41fe12042c71b1f5b818ec9d9749b69410ad115ec936f21",
+        "batch_id": "20260904104500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904104500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1220,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1220
+      },
+      "errors": [],
+      "member": "20260904110000.gkg.csv",
+      "member_bytes": 15594867,
+      "member_sha256": "7e77d8d4def3d7f5dda188d5a35fbdb8d2ced3485d3e5dc848d4c3175d453f9c",
+      "observed_archive_sha256": "de16ac0a6aea6f0048774f318345e951ede67ffc94488441f9f543207e667356",
+      "parser_version": "1.0.0",
+      "physical_rows": 1220,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "d77160b0a03a86e0eb91d997d0f064283cb82219164504cc3d87f179d1b5b345",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4d0a7769057060312d2b680b13600b5d3a46b1d2c8b0976f8f3796e972cb2b33",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5027894,
+        "archive_sha256": "de16ac0a6aea6f0048774f318345e951ede67ffc94488441f9f543207e667356",
+        "batch_id": "20260904110000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904110000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1079,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1079
+      },
+      "errors": [],
+      "member": "20260904111500.gkg.csv",
+      "member_bytes": 13484376,
+      "member_sha256": "de6b6008018bafddaee066eddc6ec5adf70bb39f02c5d00df690ffdffce29848",
+      "observed_archive_sha256": "e50ec74a668ba4fc50e8a74ad4d421b56d61c90071a76a298fcc3649802fa895",
+      "parser_version": "1.0.0",
+      "physical_rows": 1079,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "cbf88e5f8a33611f0778f7f85e7f9285f7cb7800fa3edf14baa75a207ac86bce",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "954a5df1206e48236dcb4488cb177ef421f69bcfceea398bb8e511515e470de8",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4378037,
+        "archive_sha256": "e50ec74a668ba4fc50e8a74ad4d421b56d61c90071a76a298fcc3649802fa895",
+        "batch_id": "20260904111500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904111500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1024,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1024,
+        "quarantined_encoding": 1
+      },
+      "errors": [],
+      "member": "20260904113000.gkg.csv",
+      "member_bytes": 13674622,
+      "member_sha256": "2afbe405ce8ca518998c6d45c28c165bd3b93d219bba0a8a181555c3333ac72c",
+      "observed_archive_sha256": "a084ad170b72933029e7bc29128cb35ebd77e755817baa896a331ea44575c03a",
+      "parser_version": "1.0.0",
+      "physical_rows": 1025,
+      "quarantine": [
+        {
+          "disposition": "quarantined_encoding",
+          "end": 5501095,
+          "fields_sha256": null,
+          "invalid_sequences": [
+            {
+              "bytes_hex": "f1",
+              "end": 13838,
+              "field": 27,
+              "reason": "invalid continuation byte",
+              "start": 13837
+            }
+          ],
+          "line": 427,
+          "member": "20260904113000.gkg.csv",
+          "parser_version": "1.0.0",
+          "raw_base64": "MjAyNjA5MDQxMTMwMDAtNDI2CTIwMjYwOTA0MTEzMDAwCTEJc3Vuc3Rhci5jb20ucGgJaHR0cHM6Ly93d3cuc3Vuc3Rhci5jb20ucGgvaWxvaWxvL3RyZSVDMyVCMWFzLWlsb2lsby1jaXR5LWNvbGxhYm9yYXRpbmctd2l0aC1wb3dlci1zZWN0b3ItYW1pZC1icm93bm91dHMJCQlMRUFERVI7VEFYX0ZOQ0FDVDtUQVhfRk5DQUNUX01BWU9SO0dFTkVSQUxfR09WRVJOTUVOVDtFUFVfUE9MSUNZO0VQVV9QT0xJQ1lfR09WRVJOTUVOVDtHT1ZfTE9DQUxHT1Y7U0hPUlRBR0U7QUZGRUNUO1RBWF9GTkNBQ1RfV09SS0VSUztUQVhfV09STERMQU5HVUFHRVM7VEFYX1dPUkxETEFOR1VBR0VTX0lMT05HR09TO0VDT05fRUxFQ1RSSUNBTERFTUFORDtFQ09OX0VMRUNUUklDQUxMT0FEU0hFRERJTkc7VEFYX0ZOQ0FDVF9PRkZJQ0lBTFM7VEFYX0ZOQ0FDVF9MRUFERVJTO1RBWF9XT1JMRExBTkdVQUdFU19QQU5BWTtFUFVfRUNPTk9NWV9ISVNUT1JJQztFTlZfTkFUVVJBTEdBUztXQl8xNzUxX0xJUVVFRklFRF9OQVRVUkFMX0dBUztXQl81MDdfRU5FUkdZX0FORF9FWFRSQUNUSVZFUztXQl81NDlfT0lMX0FORF9HQVNfU1lTVEVNUztFUFVfQ0FUU19NSUdSQVRJT05fRkVBUl9GRUFSO1VOR1BfRk9SRVNUU19SSVZFUlNfT0NFQU5TO1VTUEVDX1BPTElDWTE7RVBVX1BPTElDWV9ERUZJQ0lUO0VQVV9FQ09OT01ZO1RBWF9XT1JMRExBTkdVQUdFU19JTE9OR0dPOwlUQVhfV09STERMQU5HVUFHRVNfSUxPTkdHT1MsMzc1O1RBWF9XT1JMRExBTkdVQUdFU19JTE9OR0dPUywzNjg4O0dFTkVSQUxfR09WRVJOTUVOVCw3NDtHRU5FUkFMX0dPVkVSTk1FTlQsNzUxO0dFTkVSQUxfR09WRVJOTUVOVCw4NzQ7R0VORVJBTF9HT1ZFUk5NRU5ULDExNTQ7R0VORVJBTF9HT1ZFUk5NRU5ULDM1NTk7RVBVX1BPTElDWV9HT1ZFUk5NRU5ULDc0O0VQVV9QT0xJQ1lfR09WRVJOTUVOVCw3NTE7RVBVX1BPTElDWV9HT1ZFUk5NRU5ULDg3NDtFUFVfUE9MSUNZX0dPVkVSTk1FTlQsMTE1NDtFUFVfUE9MSUNZX0dPVkVSTk1FTlQsMzU1OTtXQl8xNzUxX0xJUVVFRklFRF9OQVRVUkFMX0dBUywyMTk1O1dCXzE3NTFfTElRVUVGSUVEX05BVFVSQUxfR0FTLDIzMzg7V0JfNTA3X0VORVJHWV9BTkRfRVhUUkFDVElWRVMsMjE5NTtXQl81MDdfRU5FUkdZX0FORF9FWFRSQUNUSVZFUywyMzM4O1dCXzU0OV9PSUxfQU5EX0dBU19TWVNURU1TLDIxOTU7V0JfNTQ5X09JTF9BTkRfR0FTX1NZU1RFTVMsMjMzODtHT1ZfTE9DQUxHT1YsNzQ7R09WX0xPQ0FMR09WLDM1NTk7TEVBREVSLDMwO0xFQURFUiwxMjU3O0xFQURFUiwyOTc5O1RBWF9GTkNBQ1RfTUFZT1IsMzA7VEFYX0ZOQ0FDVF9NQVlPUiwxMjU3O1RBWF9GTkNBQ1RfTUFZT1IsMjk3OTtBRkZFQ1QsMjI3O0FGRkVDVCw0ODQ7VEFYX0ZOQ0FDVF9XT1JLRVJTLDI2MztUQVhfRk5DQUNUX1dPUktFUlMsNTIwO1VTUEVDX1BPTElDWTEsMjk1MjtFUFVfUE9MSUNZX0RFRklDSVQsMjk1MjtFUFVfRUNPTk9NWSwzNjU3O0VQVV9FQ09OT01ZX0hJU1RPUklDLDE1Nzk7RVBVX0VDT05PTVlfSElTVE9SSUMsMTcwMztFUFVfRUNPTk9NWV9ISVNUT1JJQywxOTYxO1RBWF9XT1JMRExBTkdVQUdFU19QQU5BWSwxNDc4O1RBWF9XT1JMRExBTkdVQUdFU19JTE9OR0dPLDM4Nzc7VU5HUF9GT1JFU1RTX1JJVkVSU19PQ0VBTlMsMjcyMjtFTlZfTkFUVVJBTEdBUywyMTk1O0VOVl9OQVRVUkFMR0FTLDIzMzg7RUNPTl9FTEVDVFJJQ0FMREVNQU5ELDc3OTtFQ09OX0VMRUNUUklDQUxERU1BTkQsMTA2NDtFQ09OX0VMRUNUUklDQUxMT0FEU0hFRERJTkcsNzc5O0VDT05fRUxFQ1RSSUNBTExPQURTSEVERElORywxMDY0O1NIT1JUQUdFLDIwODtTSE9SVEFHRSw0NDY7VEFYX0ZOQ0FDVF9PRkZJQ0lBTFMsMTI3NztUQVhfRk5DQUNUX09GRklDSUFMUywzMDE4O0VQVV9DQVRTX01JR1JBVElPTl9GRUFSX0ZFQVIsMjY0MTtFUFVfQ0FUU19NSUdSQVRJT05fRkVBUl9GRUFSLDI4NTI7VEFYX0ZOQ0FDVF9MRUFERVJTLDEzMzg7CTQjVmlzYXlhcywgUGhpbGlwcGluZXMgKEdlbmVyYWwpLCBQaGlsaXBwaW5lcyNSUCNSUDAwIzExIzEyMy41Iy0yNDU5OTU5OzEjUGhpbGlwcGluZXMjUlAjUlAjMTMjMTIyI1JQOzQjUGFuYXksIElsb2NvcyBTdXIsIFBoaWxpcHBpbmVzI1JQI1JQMjkjMTcuNjUjMTIwLjM4MyMtMjQ0Mzk5OTs0I0FwYW5nLCBJbG9jb3MgU3VyLCBQaGlsaXBwaW5lcyNSUCNSUDI5IzE2Ljg2ODMjMTIwLjU4NiMtMjQwODg2Njs0I0lsb2lsbyBDaXR5LCBJbG9pbG8gQ2l0eSwgUGhpbGlwcGluZXMjUlAjUlBDOSMxMC42OTY5IzEyMi41NjQjLTI0Mjg0NTYJNCNQYW5heSwgSWxvY29zIFN1ciwgUGhpbGlwcGluZXMjUlAjUlAyOSMyNDIxMiMxNy42NSMxMjAuMzgzIy0yNDQzOTk5IzE0Nzg7NCNWaXNheWFzLCBQaGlsaXBwaW5lcyAoR2VuZXJhbCksIFBoaWxpcHBpbmVzI1JQI1JQMDAjMjQyNTMjMTEjMTIzLjUjLTI0NTk5NTkjMjk5OzQjVmlzYXlhcywgUGhpbGlwcGluZXMgKEdlbmVyYWwpLCBQaGlsaXBwaW5lcyNSUCNSUDAwIzI0MjUzIzExIzEyMy41Iy0yNDU5OTU5IzE4MzI7NCNWaXNheWFzLCBQaGlsaXBwaW5lcyAoR2VuZXJhbCksIFBoaWxpcHBpbmVzI1JQI1JQMDAjMjQyNTMjMTEjMTIzLjUjLTI0NTk5NTkjMjA2OTs0I1Zpc2F5YXMsIFBoaWxpcHBpbmVzIChHZW5lcmFsKSwgUGhpbGlwcGluZXMjUlAjUlAwMCMyNDI1MyMxMSMxMjMuNSMtMjQ1OTk1OSMyNjc3OzQjVmlzYXlhcywgUGhpbGlwcGluZXMgKEdlbmVyYWwpLCBQaGlsaXBwaW5lcyNSUCNSUDAwIzI0MjUzIzExIzEyMy41Iy0yNDU5OTU5IzI4ODQ7NCNBcGFuZywgSWxvY29zIFN1ciwgUGhpbGlwcGluZXMjUlAjUlAyOSMyNDIxMyMxNi44NjgzIzEyMC41ODYjLTI0MDg4NjYjODgxOzQjSWxvaWxvIENpdHksIElsb2lsbyBDaXR5LCBQaGlsaXBwaW5lcyNSUCNSUEM5IzI0MjUwIzEwLjY5NjkjMTIyLjU2NCMtMjQyODQ1NiMxMTs0I0lsb2lsbyBDaXR5LCBJbG9pbG8gQ2l0eSwgUGhpbGlwcGluZXMjUlAjUlBDOSMyNDI1MCMxMC42OTY5IzEyMi41NjQjLTI0Mjg0NTYjNzI3OzQjSWxvaWxvIENpdHksIElsb2lsbyBDaXR5LCBQaGlsaXBwaW5lcyNSUCNSUEM5IzI0MjUwIzEwLjY5NjkjMTIyLjU2NCMtMjQyODQ1NiM4NTA7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzExMzA7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzE1NTc7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzE2ODE7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzE5Mzk7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzIxMzU7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzIyNzg7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzI1OTU7NCNJbG9pbG8gQ2l0eSwgSWxvaWxvIENpdHksIFBoaWxpcHBpbmVzI1JQI1JQQzkjMjQyNTAjMTAuNjk2OSMxMjIuNTY0Iy0yNDI4NDU2IzI4MTM7MSNUaGUgUGhpbGlwcGluZXMjUlAjUlAjIzEzIzEyMiNSUCM2NzQJbGVvIHNvbGluYXAJTGVvIFNvbGluYXAsMzkxMAluYXRpb25hbCBncmlkIGNvcnBvcmF0aW9uIG9mIHRoZSBwaGlsaXBwaW5lcztpbG9pbG8gY2l0eSBidXNpbmVzcyBkZXZlbG9wbWVudCBjb3VuY2lsO3BhbmF5IGVuZXJneSBkZXZlbG9wbWVudCBjb3JwCU5hdGlvbmFsIEdyaWQgQ29ycG9yYXRpb24gT2YgVGhlIFBoaWxpcHBpbmVzLDY3NAktMi4wNDc3ODE1Njk5NjU4NywxLjAyMzg5MDc4NDk4Mjk0LDMuMDcxNjcyMzU0OTQ4ODEsNC4wOTU1NjMxMzk5MzE3NCwyMS44NDMwMDM0MTI5NjkzLDIuNzMwMzc1NDI2NjIxMTYsNTQ3CQl3Yzo1NDcsYzEuMjoxLGMxMi4xOjI2LGMxMi4xMDo1NSxjMTIuMTI6MjQsYzEyLjEzOjI1LGMxMi4xNDozNSxjMTIuMzo2LGMxMi40OjcsYzEyLjU6MTYsYzEyLjc6MjgsYzEyLjg6MjksYzEyLjk6NDEsYzEzLjEwOjEsYzEzLjExOjMsYzEzLjEyOjEsYzEzLjQ6MSxjMTQuMTozMCxjMTQuMTA6MTksYzE0LjExOjU2LGMxNC4yOjMwLGMxNC4zOjQ4LGMxNC40OjMsYzE0LjU6NjIsYzE0Ljc6MTcsYzE0Ljk6NSxjMTUuMTAyOjEsYzE1LjEwMzoyLGMxNS4xMjI6MSxjMTUuMTQzOjEsYzE1LjE0ODoxLGMxNS4xNTQ6MSxjMTUuMTg6MSxjMTUuMTk3OjQsYzE1LjIwMToyLGMxNS4yMTE6NCxjMTUuMjI6MixjMTUuMjI3OjIsYzE1LjIzMzoxLGMxNS4yNDc6MixjMTUuMjQ4OjIsYzE1LjI1MToyLGMxNS4yNTU6MixjMTUuNDoyLGMxNS42OToyLGMxNS43MToxLGMxNS44NToxLGMxNS44NjoyLGMxNi4xOjEsYzE2LjEwMDozMCxjMTYuMTAxOjIsYzE2LjEwMzoxLGMxNi4xMDU6MyxjMTYuMTA2OjE4LGMxNi4xMDg6MyxjMTYuMTA5OjMxLGMxNi4xMTo0LGMxNi4xMTA6NzIsYzE2LjExMTo0LGMxNi4xMTM6MixjMTYuMTE0OjE5LGMxNi4xMTU6MTEsYzE2LjExNjozMCxjMTYuMTE3OjE0LGMxNi4xMTg6MzgsYzE2LjEyOjU0LGMxNi4xMjA6MTksYzE2LjEyMTo3MyxjMTYuMTIyOjMsYzE2LjEyNToyNyxjMTYuMTI2OjQ4LGMxNi4xMjc6NDEsYzE2LjEyODo0LGMxNi4xMjk6NjEsYzE2LjEzMDo0LGMxNi4xMzE6MjgsYzE2LjEzNDo1NyxjMTYuMTM4OjE0LGMxNi4xMzk6MTgsYzE2LjE0OjEsYzE2LjE0MDo5LGMxNi4xNDU6MjEsYzE2LjE0NjoyMixjMTYuMTQ5OjIsYzE2LjE1MjoyLGMxNi4xNTM6OSxjMTYuMTU1OjYsYzE2LjE1NzoxMyxjMTYuMTU5OjM1LGMxNi4xNjoxMSxjMTYuMTYxOjU5LGMxNi4xNjI6NDAsYzE2LjE2MzozMCxjMTYuMTY0OjQsYzE2LjE2NToxMyxjMTYuMTg6MyxjMTYuMTk6NSxjMTYuMjo2MCxjMTYuMjE6NCxjMTYuMjQ6NixjMTYuMjY6NzAsYzE2LjI3OjIsYzE2LjI4OjQsYzE2LjM6MTEsYzE2LjMwOjIsYzE2LjMxOjI2LGMxNi4zMzo2MyxjMTYuMzQ6NCxjMTYuMzU6MzAsYzE2LjM2OjIsYzE2LjM3OjY4LGMxNi4zODoxMyxjMTYuNDozMSxjMTYuNDE6MTksYzE2LjQyOjEsYzE2LjQ1OjIwLGMxNi40NjoyLGMxNi40Nzo5NCxjMTYuNDg6MzAsYzE2LjQ5OjksYzE2LjU6MyxjMTYuNTA6OSxjMTYuNTE6MixjMTYuNTI6MjgsYzE2LjUzOjIsYzE2LjU1OjE3LGMxNi41NjoxNyxjMTYuNTc6MjUwLGMxNi41ODoyMixjMTYuNjo0MSxjMTYuNjA6NixjMTYuNjE6MyxjMTYuNjI6MTgsYzE2LjYzOjMsYzE2LjY0OjMsYzE2LjY1OjE0LGMxNi42NjoxMCxjMTYuNjg6NDAsYzE2LjY5OjE4LGMxNi43OjExLGMxNi43MDoyNyxjMTYuNzE6OSxjMTYuNzI6MixjMTYuNzQ6NCxjMTYuNzU6MTgsYzE2Ljc2OjIsYzE2Ljc4OjIxLGMxNi44OjIsYzE2LjgxOjEsYzE2LjgzOjUsYzE2Ljg0OjIzLGMxNi44NTo3LGMxNi44NjoxLGMxNi44Nzo1MixjMTYuODg6NzEsYzE2Ljg5OjQsYzE2Ljk6MTgsYzE2LjkwOjIzLGMxNi45MToxOSxjMTYuOTI6NTQsYzE2Ljk0OjQ4LGMxNi45NTo1MCxjMTYuOTY6MjMsYzE2Ljk4OjM2LGMxNy4xOjExNixjMTcuMTA6ODQsYzE3LjExOjgwLGMxNy4xMjoxMixjMTcuMTM6NixjMTcuMTQ6MixjMTcuMTU6NTgsYzE3LjE2OjM0LGMxNy4xODo1LGMxNy4xOTozMyxjMTcuMjoxMixjMTcuMjA6MjMsYzE3LjIxOjcsYzE3LjIyOjEyLGMxNy4yMzoxMixjMTcuMjQ6NDEsYzE3LjI1OjcsYzE3LjI2OjIsYzE3LjI3OjYyLGMxNy4yODo5LGMxNy4yOTo1LGMxNy4zOjIsYzE3LjMwOjcsYzE3LjMxOjMxLGMxNy4zMjoxNyxjMTcuMzM6MjYsYzE3LjM0OjExLGMxNy4zNToyNCxjMTcuMzY6MTUsYzE3LjM3OjUsYzE3LjM4OjUsYzE3LjM5OjEwLGMxNy40Ojk5LGMxNy40MDo1LGMxNy40MToxNyxjMTcuNDI6MTksYzE3LjQzOjE0LGMxNy41OjEwMixjMTcuNjozLGMxNy43OjQ1LGMxNy44OjUzLGMxNy45OjcsYzE4LjE6MSxjMTguMTM5OjMsYzE4LjE3MzoyLGMxOC4xODA6NCxjMTguMTkzOjcsYzE4LjI0NTo0LGMxOC4zMjU6MixjMTguMzI2OjIsYzE4LjM0Mjo1LGMxOC4zNToxMCxjMTguNTA6MyxjMTguNzg6MixjMi4xOjgsYzIuMTAwOjksYzIuMTAxOjEwLGMyLjEwMjo4LGMyLjEwNDo2MSxjMi4xMDY6MTksYzIuMTA4OjYsYzIuMTE6NSxjMi4xMTI6OCxjMi4xMTM6OSxjMi4xMTQ6MzAsYzIuMTE1OjYsYzIuMTE2OjEzLGMyLjExNzoyLGMyLjExOToxNTIsYzIuMTI6MTksYzIuMTIxOjMyLGMyLjEyMjo4LGMyLjEyNDoxNixjMi4xMjU6MjEsYzIuMTI2OjE4LGMyLjEyNzo1MCxjMi4xMjg6MzgsYzIuMTI5OjcyLGMyLjEzMTozLGMyLjEzMjoxMyxjMi4xMzU6MixjMi4xMzY6MixjMi4xMzg6MSxjMi4xMzk6MyxjMi4xNDo0NCxjMi4xNDE6MjMsYzIuMTQyOjE0LGMyLjE0Mzo0NSxjMi4xNDQ6MyxjMi4xNDU6MSxjMi4xNDY6MixjMi4xNDc6NTcsYzIuMTQ4OjQzLGMyLjE0OTozLGMyLjE1OjMyLGMyLjE1MDoyLGMyLjE1MTo0LGMyLjE1MjozLGMyLjE1MzozMSxjMi4xNTQ6MjgsYzIuMTU1OjU1LGMyLjE1Njo0MyxjMi4xNTc6NTIsYzIuMTU4OjM4LGMyLjE1OToyLGMyLjE2MDoyMCxjMi4xNjI6NyxjMi4xNjY6NyxjMi4xNjc6MixjMi4xNjk6MixjMi4xNzo2LGMyLjE3MDo0LGMyLjE3MjoxOSxjMi4xNzM6NCxjMi4xNzU6MSxjMi4xNzY6MSxjMi4xNzc6MjIsYzIuMTc5OjMxLGMyLjE4OjE4LGMyLjE4MDoxOCxjMi4xODE6MTgsYzIuMTgzOjE4LGMyLjE4NTo5OSxjMi4xODY6MixjMi4xODc6MjUsYzIuMTk6MyxjMi4xOTI6MTAsYzIuMTkzOjIwLGMyLjE5NDoxLGMyLjE5NTo2OCxjMi4xOTY6MTcsYzIuMTk3OjUsYzIuMTk4OjQzLGMyLjE5OToxNSxjMi4yOjIsYzIuMjA6MSxjMi4yMDA6NixjMi4yMDE6MSxjMi4yMDM6MjIsYzIuMjA0OjMyLGMyLjIwNTo4LGMyLjIwNjozLGMyLjIwNzo5LGMyLjIwOTo2LGMyLjIxOjEsYzIuMjEwOjQwLGMyLjIxMTo1LGMyLjIxMzo2LGMyLjIxNDozMCxjMi4yMTc6NCxjMi4yMjA6NCxjMi4yMjE6MTMsYzIuMjIyOjMsYzIuMjIzOjE2LGMyLjIyNToxOSxjMi4yMjY6NyxjMi4yMzoyOCxjMi4yNToyNyxjMi4yNjoxNyxjMi4yNzoxNyxjMi4yODo5LGMyLjMwOjE3LGMyLjMxOjIzLGMyLjMyOjMsYzIuMzM6NCxjMi4zNDoxNixjMi4zNToyMCxjMi4zNjoxNyxjMi4zNzoxOCxjMi4zODoyLGMyLjM5OjY5LGMyLjQ6MyxjMi40MjozLGMyLjQ0OjI0LGMyLjQ1OjU4LGMyLjQ2OjUxLGMyLjQ3OjExLGMyLjQ4OjE3LGMyLjQ5OjEsYzIuNToxLGMyLjUwOjksYzIuNTI6NDAsYzIuNTQ6NDIsYzIuNTU6MyxjMi41NjoyLGMyLjU3OjksYzIuNTg6MTgsYzIuNTk6MSxjMi42OjMsYzIuNjE6NCxjMi42MjoyNCxjMi42NDoxMCxjMi42NToyLGMyLjY2OjEsYzIuNjg6NCxjMi42OTo0LGMyLjcwOjIsYzIuNzM6NyxjMi43NDozLGMyLjc1OjcwLGMyLjc2OjMxMixjMi43Nzo1MCxjMi43ODo1MyxjMi43OTozLGMyLjgwOjYxLGMyLjgxOjIsYzIuODI6MTgsYzIuODM6MSxjMi44NDo1LGMyLjg2OjE4LGMyLjg3OjYsYzIuODg6MTgsYzIuODk6MTIsYzIuOToyMCxjMi45MDo2LGMyLjkzOjEwLGMyLjk1OjY1LGMyLjk3OjgsYzIuOTg6MzEsYzIuOTk6MSxjMjUuMToyLGMyNS4zOjEsYzI1LjU6MyxjMjUuNzoyLGMzLjE6MzEsYzMuMjo0MixjMzUuMTo1LGMzNS4xMDoxLGMzNS4xMToyLGMzNS4xMjo1LGMzNS4xNDozLGMzNS4xNTo0LGMzNS4xODoxLGMzNS4xOToyLGMzNS4yOjQsYzM1LjIwOjMwLGMzNS4yNToyLGMzNS4yNjozLGMzNS4yNzoxLGMzNS4zOjUsYzM1LjMxOjQwLGMzNS4zMjoxMCxjMzUuMzM6MzYsYzM1LjQ6NixjMzUuNTo3LGMzNS42OjIsYzM1Ljc6MyxjMzkuMTo0LGMzOS4xMDoxLGMzOS4xNzozLGMzOS4xODo1LGMzOS4yOjEwLGMzOS4zOjIyLGMzOS4zMjoxLGMzOS4zNDoxLGMzOS4zNjoxMyxjMzkuMzc6OCxjMzkuMzg6MixjMzkuMzk6NSxjMzkuNDoxNSxjMzkuNDE6MyxjMzkuNTozLGMzOS42OjIsYzM5Ljk6NCxjNC4xOjEsYzQuMTA6NCxjNC4xNDoyLGM0LjE2OjEsYzQuMTg6MSxjNC4yMzoxOCxjNC4yNDo1LGM0MC43OjIsYzQwLjg6MixjNDEuMToyOCxjNDIuMToxNTIsYzUuMTA6MzUsYzUuMTE6MTEsYzUuMTI6NjMsYzUuMTU6MSxjNS4xNjoxLGM1LjE3OjEsYzUuMTk6MTAsYzUuMjA6MyxjNS4yMToxMyxjNS4yMjo3LGM1LjIzOjE5LGM1LjI0OjUsYzUuMjU6NixjNS4yNjoxLGM1LjI3OjYsYzUuMjg6MTUsYzUuMjk6MTQsYzUuMzA6NjcsYzUuMzE6MSxjNS4zMjozLGM1LjM0OjgsYzUuMzU6MTMsYzUuMzY6MjUsYzUuMzg6MSxjNS4zOToyLGM1LjQ6NyxjNS40MDo0MyxjNS40Mzo4LGM1LjQ0OjYsYzUuNDU6MTAsYzUuNDY6NTEsYzUuNDc6MTMsYzUuNDg6NCxjNS40OTo0MCxjNS41OjMsYzUuNTA6NDgsYzUuNTE6MzEsYzUuNTI6NTksYzUuNTM6NDIsYzUuNTQ6MTgsYzUuNTU6MSxjNS41Njo0LGM1LjU4OjE2LGM1LjY6MjYsYzUuNjA6MjEsYzUuNjE6MzksYzUuNjI6MTg2LGM1Ljc6MjksYzUuODoyNyxjNS45OjE1LGM2LjE6NCxjNi4yOjUsYzYuMzoxLGM2LjQ6MjAsYzYuNTo0LGM2LjY6MSxjNy4xOjMwLGM3LjI6MzMsYzguMTozLGM4LjExOjIsYzguMTI6MSxjOC4xNTozLGM4LjIyOjQsYzguMjM6MTEsYzguMjU6MSxjOC4zNjozLGM4LjM3OjE4LGM4LjM4OjksYzguNDoyNCxjOC40MDoyLGM4LjQxOjUsYzguNDI6MTAsYzguNDM6MTIsYzkuMToyMSxjOS4xMDo2LGM5LjEwMDc6MSxjOS4xMDE0OjIsYzkuMTAxODoxNixjOS4xMDI0OjEsYzkuMTAzMDozLGM5LjEwMzg6NCxjOS4xMDQxOjEsYzkuMTA5OjMsYzkuMTEwOjEsYzkuMTExOjExLGM5LjExNjo0LGM5LjExNzoxLGM5LjExODoyLGM5LjExOTozLGM5LjEyOjEsYzkuMTIyOjMsYzkuMTI0OjIsYzkuMTI1OjEsYzkuMTI2OjEsYzkuMTI4OjIwLGM5LjEzMDoxLGM5LjEzNDoxLGM5LjEzODozLGM5LjE0MDoxLGM5LjE0MTo0LGM5LjE0MjoxLGM5LjE0Mzo1LGM5LjE0NToxLGM5LjE0ODoyLGM5LjE0OToxLGM5LjE1OjYsYzkuMTUwOjQsYzkuMTUxOjQsYzkuMTU3OjEsYzkuMTU4OjIwLGM5LjE1OTo0LGM5LjE2MDo0LGM5LjE2MTo4LGM5LjE2MjoyLGM5LjE2MzoyLGM5LjE2NDoyMCxjOS4xNjU6MTQsYzkuMTY2OjE1LGM5LjE2NzoxMyxjOS4xNjg6NSxjOS4xNzQ6MixjOS4xNzc6NSxjOS4xNzg6MTUsYzkuMTgwOjEsYzkuMTgxOjIsYzkuMTgyOjE5LGM5LjE4MzoxMyxjOS4xODQ6MyxjOS4xODg6OCxjOS4xOTA6MixjOS4xOTE6MixjOS4xOTI6NixjOS4xOTM6NSxjOS4xOTU6MyxjOS4xOTg6MTgsYzkuMTk5OjMsYzkuMjA6MixjOS4yMDA6MixjOS4yMDE6NyxjOS4yMDM6NixjOS4yMDU6MyxjOS4yMDY6MixjOS4yMDc6MSxjOS4yMDg6MyxjOS4yMDk6MSxjOS4yMTE6MSxjOS4yMTU6MixjOS4yMTc6MSxjOS4yMjQ6MixjOS4yMjU6MSxjOS4yMzE6MSxjOS4yNDM6MyxjOS4yNDY6MSxjOS4yNTozLGM5LjI1NjoyLGM5LjI1NzoyLGM5LjI2MDoyLGM5LjI2MzoxLGM5LjI2NToyLGM5LjI2NjozLGM5LjI2NzoxLGM5LjI3NToxLGM5LjI4NDoxLGM5LjI4ODoyLGM5LjI5OjIsYzkuMjkxOjEsYzkuMjk2OjEsYzkuMzoxOCxjOS4zMDA6MyxjOS4zMDI6NyxjOS4zMDM6NCxjOS4zMDQ6MSxjOS4zMDU6MyxjOS4zMDg6MixjOS4zMTc6MixjOS4zMjM6NCxjOS4zMjk6MyxjOS4zMzoyNCxjOS4zMzA6MixjOS4zMzE6MSxjOS4zMzI6MixjOS4zMzM6MSxjOS4zMzQ6MixjOS4zNDoxLGM5LjM0MzoyLGM5LjM0NDoyLGM5LjM0NTo0LGM5LjM0ODoyLGM5LjM1OjQsYzkuMzUzOjEsYzkuMzU0OjIsYzkuMzU4OjUsYzkuMzU5OjIsYzkuMzc6NixjOS4zNzA6MixjOS4zNzI6MixjOS4zODoxLGM5LjM4MzoxLGM5LjM4NDoxLGM5LjM4NTo0LGM5LjM5OjEwLGM5LjQ6MixjOS40MDo1LGM5LjQwMDo0LGM5LjQwOToxLGM5LjQyMDoxMyxjOS40MzA6MyxjOS40MzM6MSxjOS40MzU6MSxjOS40NDo2LGM5LjQ0MDo1LGM5LjQ1MToxLGM5LjQ1OToxLGM5LjQ2OjQsYzkuNDY4OjUsYzkuNDc6MSxjOS40NzM6NyxjOS40NzQ6MixjOS40NzY6MixjOS40Nzg6MSxjOS40ODo4LGM5LjQ4MDo2LGM5LjQ4MTo0LGM5LjQ4MzoxLGM5LjQ4NTozLGM5LjQ4NzoxLGM5LjQ4ODo1LGM5LjQ5OjEsYzkuNDk0OjEsYzkuNDk2OjYsYzkuNDk4OjIsYzkuNToxNyxjOS41MDE6MixjOS41MDI6MixjOS41MDM6MixjOS41MDQ6MSxjOS41MDc6NixjOS41MTE6MTYsYzkuNTEzOjExLGM5LjUxNToxLGM5LjUxNzo3LGM5LjUxOTo0LGM5LjUyMTo4LGM5LjUyMjo0LGM5LjUyMzoyLGM5LjUyNDoyLGM5LjUyODoxLGM5LjUzOjEsYzkuNTMwOjIsYzkuNTQ6MyxjOS41NDI6NSxjOS41NDY6MixjOS41NDk6MSxjOS41NTo1LGM5LjU1MDo1LGM5LjU1MToxMCxjOS41NTQ6MSxjOS41NTY6MyxjOS41NTc6MSxjOS41NTg6NCxjOS41NjoyLGM5LjU2MDo0LGM5LjU2MTo0LGM5LjU2MjozLGM5LjU2NDozLGM5LjU2NjoxLGM5LjU2NzozLGM5LjU3NjoyLGM5LjU3OToxOCxjOS41ODA6MixjOS41OTk6MTMsYzkuNjAxOjIsYzkuNjAyOjEsYzkuNjAzOjIsYzkuNjA0OjMsYzkuNjA3OjEsYzkuNjA4OjMsYzkuNjE6NyxjOS42MTM6MyxjOS42MTg6NSxjOS42MTk6MSxjOS42MjI6MSxjOS42MjU6MyxjOS42Mjc6MyxjOS42Mjk6NSxjOS42MzA6NCxjOS42MzI6MyxjOS42MzU6NSxjOS42Mzg6MSxjOS42Mzk6MixjOS42NDoxLGM5LjY0MDo3LGM5LjY0MjoyLGM5LjY0Njo1LGM5LjY0ODoyLGM5LjY1MDozLGM5LjY1MzozMCxjOS42NTU6MyxjOS42NTY6MSxjOS42NTg6MixjOS42NTk6MixjOS42NjozLGM5LjY2MDo4LGM5LjY2Mzo0LGM5LjY2NDo3LGM5LjY2NTo0LGM5LjY2NzoyLGM5LjY2OTo5LGM5LjY3MDo5LGM5LjY3MToxMyxjOS42NzI6NixjOS42NzY6NCxjOS42Nzg6MixjOS42Nzk6MixjOS42ODI6MSxjOS42ODM6NCxjOS42ODU6NSxjOS42ODY6NCxjOS42ODc6MixjOS42OTA6MixjOS42OTI6MixjOS42OTM6MixjOS42OTQ6MSxjOS42OTg6MyxjOS43MDoyLGM5LjcwMTo1LGM5LjcwMjoyLGM5LjcwNDozLGM5LjcwNToxLGM5LjcwODo0LGM5LjcwOToxLGM5LjcxOjIsYzkuNzEwOjExLGM5LjcxMToxLGM5LjcxMzoxLGM5LjcxNDoyLGM5LjcxOToxLGM5LjcyMDoxMixjOS43MjE6MTEsYzkuNzIyOjYsYzkuNzIzOjMsYzkuNzI0OjgsYzkuNzI2OjMwLGM5LjczOjUsYzkuNzMwOjIwLGM5LjczMTo0LGM5LjczMzoyLGM5LjczNDo0LGM5LjczNTo4LGM5LjczNjo4LGM5LjczOToxLGM5Ljc0MDo0LGM5Ljc0MTo2LGM5Ljc0NToxLGM5Ljc0ODo2LGM5Ljc1OjEsYzkuNzUxOjIsYzkuNzU3OjQsYzkuNzU5OjMsYzkuNzY6NixjOS43NjA6MSxjOS43NjI6MjEsYzkuNzYzOjMsYzkuNzY1OjE5LGM5Ljc2NjoyOSxjOS43Njc6MjMsYzkuNzc6MixjOS43NzE6MSxjOS43NzU6MyxjOS43NzY6MSxjOS43Nzg6NyxjOS43ODoyLGM5Ljc4MToxLGM5Ljc5MDozLGM5Ljc5MjozLGM5Ljg6MixjOS44MDI6MyxjOS44MDY6MyxjOS44MDg6MixjOS44MTI6NCxjOS44MTY6OSxjOS44MTc6MixjOS44MjoxLGM5LjgyMDoyLGM5LjgyMTo1LGM5LjgyNjozLGM5LjgyOToyLGM5LjgzOjE1LGM5LjgzMDoyLGM5LjgzNDo3LGM5LjgzNzoxLGM5Ljg0OjIsYzkuODQwOjMsYzkuODQ0OjIsYzkuODQ2OjMsYzkuODQ3OjEsYzkuODU3OjQsYzkuODYxOjUsYzkuODYzOjEsYzkuODY0OjE5LGM5Ljg2NToxMCxjOS44NjY6OSxjOS44Njc6NixjOS44Njg6MTksYzkuODY5OjIsYzkuODcxOjEsYzkuODc1OjEsYzkuODc3OjIsYzkuODg6MTMsYzkuODgyOjMsYzkuODg0OjEsYzkuODg5OjMsYzkuODkwOjEsYzkuODkzOjMsYzkuODk4OjIsYzkuODk5OjEsYzkuOTAxOjEsYzkuOTAyOjEsYzkuOTAzOjUsYzkuOTA0OjEsYzkuOTA4OjEsYzkuOTA5OjQsYzkuOTExOjMsYzkuOTEzOjEsYzkuOTE2OjMsYzkuOTIyOjIsYzkuOTIzOjEsYzkuOTI2OjEzLGM5LjkyODoxLGM5LjkzMDoyLGM5LjkzMjoyLGM5LjkzMzoxLGM5LjkzNToxMSxjOS45Mzg6NixjOS45Mzk6MSxjOS45NDA6MyxjOS45NDI6MixjOS45NDU6NCxjOS45NTM6MSxjOS45NTU6NixjOS45Njo3LGM5Ljk2MjozLGM5Ljk2NjozLGM5Ljk2OToxLGM5Ljk3OjEsYzkuOTcyOjEwLGM5Ljk3MzoxLGM5Ljk3NDoxLGM5Ljk3NToxLGM5Ljk4MDo0LGM5Ljk4MzoxLGM5Ljk4NDo1LGM5Ljk4NTozLGM5Ljk4NjoxLGM5Ljk5MDoxLGM5Ljk5OToyLHYxMC4xOjAuMjQyOTkxNjAzNDY2OTU2LHYxMC4yOjAuMjczNDQxOTYzMzM5NjkxLHYxMS4xOjAuMDI1NzEyMDg3MDg3MDg3MSx2MTkuMTo1LjY0MjM0Mzc1LHYxOS4yOjUuNTMzNzUsdjE5LjM6NS42NjEyNSx2MTkuNDo1LjcwOTIxODc1LHYxOS41OjUuNDI3MTg3NSx2MTkuNjo1LjM4NzM0Mzc1LHYxOS43OjUuNjEyNSx2MTkuODo1LjYxMjAzMTI1LHYxOS45OjUuODE5Mzc1LHYyMC4xOjAuNjA5NzUsdjIwLjEwOi0wLjI5Mix2MjAuMTE6MC42Nzk4NjY2NjY2NjY2NjcsdjIwLjEyOi0wLjI5Mix2MjAuMTM6MC41MTIyOCx2MjAuMTQ6LTAuMzA0ODc1LHYyMC4xNTowLjQxMTYwNTI2MzE1Nzg5NSx2MjAuMTY6LTAuMjc3NDM3NSx2MjAuMjotMC4yOTIsdjIwLjM6MC42OSx2MjAuNDotMC4yOTIsdjIwLjU6MC44MTM3NSx2MjAuNjotMC4yOTIsdjIwLjc6MC44MTM3NSx2MjAuODotMC4yOTIsdjIwLjk6MC43OTk3Nzc3Nzc3Nzc3NzgsdjIxLjE6NS40MDQ1NDU0NTQ1NDU0Nix2MjYuMTowLjM1NzE0Mjg1NzE0Mjg1Nyx2NDIuMTA6LTAuMDE1Njc2MzI1OTkzNDIxMSx2NDIuMTE6LTAuMDMwMDUyNzI4OTA3ODk0OCx2NDIuMjowLjEwMTU1MzQxNDA1MjYzMSx2NDIuMzowLjEwNTAxMTg2NTc4Mjg5NSx2NDIuNDowLjA4OTQxNjk3NzIxNzEwNTIsdjQyLjU6MC4xMTAwNDE0MDIzNzUsdjQyLjY6MC4wNzMxNzk2Mjk1LHY0Mi43Oi0wLjA4MDg0Mjc4NzY4NDIxMDUsdjQyLjg6LTAuMDUwOTQ0MzYxOTUzOTQ3NCx2NDIuOTowLjAwMTUwMDk2NTA0NjA1MjYzCWh0dHBzOi8vY2YtaW1hZ2VzLmFzc2V0dHlwZS5jb20vc3Vuc3RhciUyRjIwMjYtMDktMDQlMkZ6aTJyNzFzdyUyRlJhaXNhLVRyZW5hcy5qcGc/cmVjdD0wJTJDNjAlMkM3NTAlMkMzOTQmYXI9NDAlM0EyMSZhdXRvPWZvcm1hdCUyQ2NvbXByZXNzJm9nSW1hZ2U9dHJ1ZSZtb2RlPWNyb3AmZW5sYXJnZT10cnVlJm92ZXJsYXk9ZmFsc2Umb3ZlcmxheV9wb3NpdGlvbj1ib3R0b20mb3ZlcmxheV93aWR0aD0xMDAJCQlodHRwczovL3lvdXR1YmUuY29tL3VzZXIvc3VubmV4ZGVzaztodHRwczovL3lvdXR1YmUuY29tL2NoYW5uZWwvVUNyczVJNk83U3pJTlowcHVtdmh2TVRRO2h0dHBzOi8veW91dHViZS5jb20vQFN1blN0YXJQaWxpcGluYXM7CQlNYXlvciBSYWlzYSBUcmUsMjM7Q2l0eSBHb3Zlcm5tZW50LDYwO01hbnVhbCBMb2FkIERyb3BwaW5nLDYxNztOYXRpb25hbCBHcmlkIENvcnBvcmF0aW9uLDY3MDtJbG9pbG8gQ2l0eSw3NDU7SWxvaWxvIENpdHksODUxO0lsb2lsbyBDaXR5LDExMDk7UGFuYXkgRW5lcmd5IERldmVsb3BtZW50LDE0NzI7SWxvaWxvIENpdHkgQnVzaW5lc3MgRGV2ZWxvcG1lbnQsMTU0MztJbG9pbG8gQ2l0eSBCdXNpbmVzcyBEZXZlbG9wbWVudCwxNjU0O0lsb2lsbyBDaXR5IEJ1c2luZXNzIERldmVsb3BtZW50LDE4OTc7SWxvaWxvIENpdHksMjA1MDtJbG9pbG8gQ2l0eSwyMTgzO0NpdHkgR292ZXJubWVudCwzNDMxO0xlbyBTb2xpbmFwLDM4MDEJCQk8UEFHRV9BVVRIT1JTPkxlbyBTb2xpbmFwPC9QQUdFX0FVVEhPUlM+PFBBR0VfQUxUVVJMX0FNUD5odHRwczovL3d3dy5zdW5zdGFyLmNvbS5waC9hbXAvc3RvcnkvaWxvaWxvL3RyZfFhcy1pbG9pbG8tY2l0eS1jb2xsYWJvcmF0aW5nLXdpdGgtcG93ZXItc2VjdG9yLWFtaWQtYnJvd25vdXRzPC9QQUdFX0FMVFVSTF9BTVA+PFBBR0VfVElUTEU+VHJlJiN4RjE7YXM6IElsb2lsbyBDaXR5IGNvbGxhYm9yYXRpbmcgd2l0aCBwb3dlciBzZWN0b3I8L1BBR0VfVElUTEU+Cg==",
+          "raw_sha256": "2eb1438ab358c7a868f8fa2f8706655cccae2e5d8df269789fd2a48e535afb15",
+          "reasons": [
+            {
+              "code": "invalid_utf8",
+              "detail": "Strict UTF-8 rejected; no alternative decoding"
+            }
+          ],
+          "row_id": "0aa4f0ce7dd1900ee30376e240155f4d8ee25239386e62c7f842ce46e52eb5b5",
+          "schema_version": "1.0.0",
+          "source": {
+            "acquisition": "passed",
+            "archive_bytes": 4368254,
+            "archive_sha256": "a084ad170b72933029e7bc29128cb35ebd77e755817baa896a331ea44575c03a",
+            "batch_id": "20260904113000",
+            "source_id": "gdelt-gkg-2.1",
+            "source_url": "https://data.gdeltproject.org/gdeltv2/20260904113000.gkg.csv.zip"
+          },
+          "start": 5487096,
+          "timestamp": "20260904113000"
+        }
+      ],
+      "quarantine_fraction": 0.000975609756097561,
+      "quarantined_rows": 1,
+      "row_ledger_sha256": "cbbbed239006a17c2b6034d56fb70a372597db8f8e4293331ceba7d5eefbda25",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "df7b0cfd1e44f13890105ff4bd67fff2da2d65240311affb3508b31319bdd365",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4368254,
+        "archive_sha256": "a084ad170b72933029e7bc29128cb35ebd77e755817baa896a331ea44575c03a",
+        "batch_id": "20260904113000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904113000.gkg.csv.zip"
+      },
+      "state": "parse_with_quarantine"
+    },
+    {
+      "accepted_rows": 1239,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1239
+      },
+      "errors": [],
+      "member": "20260904114500.gkg.csv",
+      "member_bytes": 16321797,
+      "member_sha256": "dfe1853ddb5dd4d42215600c75d28655843668f75bd4b48ba44e270f6797cbfe",
+      "observed_archive_sha256": "50b9a0d71a8123693c7d514eca7c11c939f08a1204fed3f1270f577f81aaebdc",
+      "parser_version": "1.0.0",
+      "physical_rows": 1239,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c182d73e126a89fe539aba9771ac9ea5922776266eda3d28217c64c0572e1885",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "7d8fffb7655e2de32386ac729ffb7d5c9d7696cbe411a45facff014772f195d9",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5301228,
+        "archive_sha256": "50b9a0d71a8123693c7d514eca7c11c939f08a1204fed3f1270f577f81aaebdc",
+        "batch_id": "20260904114500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904114500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1072,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1072
+      },
+      "errors": [],
+      "member": "20260904120000.gkg.csv",
+      "member_bytes": 14136758,
+      "member_sha256": "602a53409a5cdb64b83878ffce014e641f53faa4ce1bbf2319d82604382535e9",
+      "observed_archive_sha256": "d51cbf732802e8d0cc093add7886b10f2a1db76382f0ec4f1d37e7feeaf86c8c",
+      "parser_version": "1.0.0",
+      "physical_rows": 1072,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "6a37973acb75d157fb4312e907a905491847a421e5d6c751f10d3917edc5def3",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e698143ba43bb8206797568335b599d00c2085e5fa5fdb0f3230a50da1829b55",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4592134,
+        "archive_sha256": "d51cbf732802e8d0cc093add7886b10f2a1db76382f0ec4f1d37e7feeaf86c8c",
+        "batch_id": "20260904120000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904120000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1231,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1231
+      },
+      "errors": [],
+      "member": "20260904121500.gkg.csv",
+      "member_bytes": 16442021,
+      "member_sha256": "92690b343231989500463311ef72f82abcfaa4ea61c02b42fad66d1239ea85bd",
+      "observed_archive_sha256": "717d5682eebbba8b053a24d8fd8ce274eb4a9095486f1d518f9d306fdde3975d",
+      "parser_version": "1.0.0",
+      "physical_rows": 1231,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "63af7cc21412e70a3cf5c19c9e88515a1be20909fa5fa55df4db5c1cb4eff594",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e7e494bd029c4c1b32372ad6cecdc35fb358b541ecf49a0c42d532637136ea72",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5296495,
+        "archive_sha256": "717d5682eebbba8b053a24d8fd8ce274eb4a9095486f1d518f9d306fdde3975d",
+        "batch_id": "20260904121500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904121500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1468,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1468
+      },
+      "errors": [],
+      "member": "20260904123000.gkg.csv",
+      "member_bytes": 19642617,
+      "member_sha256": "2d507c967ce0bd4ea37c07a1f9a977d1ba4fd6f823ce0dd38235ebd3de0b3284",
+      "observed_archive_sha256": "8d8a3b9dfec404a1bee8699a88c43d7ccbbfba14d4eb39a0d5ce9e0ae1ace962",
+      "parser_version": "1.0.0",
+      "physical_rows": 1468,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "52abc428dc306c4408e21f6d9179a629aa91b5234d3a929526944b253b25b782",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "61f5d33ae14b585bbd92787a3347a9c970acbf8fabce5d27109c26dfb962d684",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6346438,
+        "archive_sha256": "8d8a3b9dfec404a1bee8699a88c43d7ccbbfba14d4eb39a0d5ce9e0ae1ace962",
+        "batch_id": "20260904123000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904123000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1471,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1471
+      },
+      "errors": [],
+      "member": "20260904124500.gkg.csv",
+      "member_bytes": 20418620,
+      "member_sha256": "e87e10175dc8756b6ad52f66aa7bab3c56a84da6b5d75946f6aa23a5231aef44",
+      "observed_archive_sha256": "d840a5f00fe71c99d0513281e13600239278a9976e478a8b9c9ebacb5bd2bbb2",
+      "parser_version": "1.0.0",
+      "physical_rows": 1471,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "2affe003fc94656cf6a143b47b8058853773379fb2d3f9a393ad51b20375423f",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4ce939292b5b0fe613668f950625a3f516b3afd825a15c62d056dd91b35947d4",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6504108,
+        "archive_sha256": "d840a5f00fe71c99d0513281e13600239278a9976e478a8b9c9ebacb5bd2bbb2",
+        "batch_id": "20260904124500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904124500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1418,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1418
+      },
+      "errors": [],
+      "member": "20260904130000.gkg.csv",
+      "member_bytes": 18558992,
+      "member_sha256": "0901c2e863fe6688ec51089f6d22f9864ae1937be4be33188c5d6ade9ea492bc",
+      "observed_archive_sha256": "dc4cfb41a72b5717b5221a810c7c8f8ba3d15e3609748a72d6d670a1bfdbe490",
+      "parser_version": "1.0.0",
+      "physical_rows": 1418,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "dc98c324b3ad000314c88c2e4da1a12613df29df450dbe8339b3f79c312fe148",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "ed50d6d19ec55458cf22925cc83c83511da8655266c2c41ed16fb6979599ec54",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6008943,
+        "archive_sha256": "dc4cfb41a72b5717b5221a810c7c8f8ba3d15e3609748a72d6d670a1bfdbe490",
+        "batch_id": "20260904130000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904130000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1384,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1384
+      },
+      "errors": [],
+      "member": "20260904131500.gkg.csv",
+      "member_bytes": 17652114,
+      "member_sha256": "cc8ddf0768118c3b1958e9f00101f0a94ca4cc2eef37566132c84c683330cfbe",
+      "observed_archive_sha256": "1a79a6c846fd0afcdedc55dbd6466f850d215a1388b8d666df32c56abef1402a",
+      "parser_version": "1.0.0",
+      "physical_rows": 1384,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "09b314ebff5839d3da6d416fa5909432629006f70132372ef050d9067735d0e0",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e30641129550f67222839bf3a1b53911401a4915060ee348fcf51324f6c5d374",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5746965,
+        "archive_sha256": "1a79a6c846fd0afcdedc55dbd6466f850d215a1388b8d666df32c56abef1402a",
+        "batch_id": "20260904131500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904131500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1232,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1232
+      },
+      "errors": [],
+      "member": "20260904133000.gkg.csv",
+      "member_bytes": 16457855,
+      "member_sha256": "2d96619ce0c67b16bbf93e78c15076a8845d8b9c14fbeeac67bbda6a2ddb0701",
+      "observed_archive_sha256": "77e58479541926eadd20c2e6cee8714fdd13dc76a9836e79589bd71593649cd9",
+      "parser_version": "1.0.0",
+      "physical_rows": 1232,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "6fecfca51c5efe399e52f16c79a3ccae076f55a265628c42e731e2e6ed53b16e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "8619b6e173e13d08dd4b25fa4341aa1af69be6009170bb797362896771912c7f",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5364098,
+        "archive_sha256": "77e58479541926eadd20c2e6cee8714fdd13dc76a9836e79589bd71593649cd9",
+        "batch_id": "20260904133000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904133000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1323,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1323
+      },
+      "errors": [],
+      "member": "20260904134500.gkg.csv",
+      "member_bytes": 17892549,
+      "member_sha256": "33428c602a34fe1cf98383269d514a24578c33fc914ccc56be75ca57f629bc01",
+      "observed_archive_sha256": "5cf169d55963831acdf97b133ea6eb0fb6c9d92fe71dbc2659aa2f64c3adcee5",
+      "parser_version": "1.0.0",
+      "physical_rows": 1323,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c1c4f6553c70978ebc7b6b38e2ff10ed7cde57be12b8e006252e12daef8bdd18",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "b4d30145752e9e94cf981167d2269a7c95e0e233344061a067256935b4d279d1",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5821481,
+        "archive_sha256": "5cf169d55963831acdf97b133ea6eb0fb6c9d92fe71dbc2659aa2f64c3adcee5",
+        "batch_id": "20260904134500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904134500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1647,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1647
+      },
+      "errors": [],
+      "member": "20260904140000.gkg.csv",
+      "member_bytes": 22687540,
+      "member_sha256": "809ad5360cfe5341393271c9a2c119e1b35d2ac322cb5dfd370a3ab8c9e244d0",
+      "observed_archive_sha256": "b5cae55c01af6e11f0ba4e137ae1e1bf5f0f5fab9e240c0ea9bf87d396c7a9f6",
+      "parser_version": "1.0.0",
+      "physical_rows": 1647,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "8e41509f88ec1dd8921d53f79a7820d99b70df707f0fa5e96a09e98b2f9fa8ac",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "f1fc94b56e514c07e84739382be325168df8d2663aca071df4b9a1b7dad3a27f",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 7399439,
+        "archive_sha256": "b5cae55c01af6e11f0ba4e137ae1e1bf5f0f5fab9e240c0ea9bf87d396c7a9f6",
+        "batch_id": "20260904140000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904140000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1401,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1401,
+        "quarantined_encoding": 1
+      },
+      "errors": [],
+      "member": "20260904141500.gkg.csv",
+      "member_bytes": 18409119,
+      "member_sha256": "388312f552ad69c7b7e6df35a43a94d8c7c3086f62e6454c6b7fbda5f7908360",
+      "observed_archive_sha256": "67a45a737223d56e16c41a09129afbd5cd2cf508d01a7cf89d77200841b2f3c8",
+      "parser_version": "1.0.0",
+      "physical_rows": 1402,
+      "quarantine": [
+        {
+          "disposition": "quarantined_encoding",
+          "end": 7270535,
+          "fields_sha256": null,
+          "invalid_sequences": [
+            {
+              "bytes_hex": "e4",
+              "end": 10468,
+              "field": 27,
+              "reason": "invalid continuation byte",
+              "start": 10467
+            }
+          ],
+          "line": 560,
+          "member": "20260904141500.gkg.csv",
+          "parser_version": "1.0.0",
+          "raw_base64": "MjAyNjA5MDQxNDE1MDAtNTU5CTIwMjYwOTA0MTQxNTAwCTEJdGhlbXVuaWNoZXllLmNvbQlodHRwczovL3RoZW11bmljaGV5ZS5jb20vZ29ldGhlLW1lZGFsaXN0cy0yMDI2LWFydm8tcCVDMyVBNHJ0LWFuaXRhLXJhamEtcHJvZHJvbW9zLXRzaW5pa29yaXMtaG9ub3JlZC0zNDg4NwkJCVRBWF9FVEhOSUNJVFk7VEFYX0VUSE5JQ0lUWV9FU1RPTklBTjtUQVhfV09STERMQU5HVUFHRVM7VEFYX1dPUkxETEFOR1VBR0VTX0VTVE9OSUFOO1RBWF9GTkNBQ1Q7VEFYX0ZOQ0FDVF9DT01QT1NFUjtUQVhfRVRITklDSVRZX0lUQUxJQU47VEFYX1dPUkxETEFOR1VBR0VTX0lUQUxJQU47VEFYX0ZOQ0FDVF9XUklURVI7VEFYX0ZOQ0FDVF9UUkFOU0xBVE9SO1RBWF9FVEhOSUNJVFlfR1JFRUs7VEFYX1dPUkxETEFOR1VBR0VTX0dSRUVLO1RBWF9GTkNBQ1RfRElSRUNUT1I7VEFYX0ZOQ0FDVF9PRkZJQ0lBTDtFUFVfQ0FUU19NSUdSQVRJT05fRkVBUl9NSUdSQVRJT047VFJJQUw7VEFYX0VUSE5JQ0lUWV9HRVJNQU47VEFYX1dPUkxETEFOR1VBR0VTX0dFUk1BTjtNQVJJVElNRTtTT0NfSU5OT1ZBVElPTjtXQl8yNDczX0RJUExPTUFDWV9BTkRfTkVHT1RJQVRJT05TO1dCXzI0NzBfUEVBQ0VfT1BFUkFUSU9OU19BTkRfQ09ORkxJQ1RfTUFOQUdFTUVOVDtXQl8yNDMyX0ZSQUdJTElUWV9DT05GTElDVF9BTkRfVklPTEVOQ0U7V0JfMjQ3MV9QRUFDRUtFRVBJTkc7CVRBWF9FVEhOSUNJVFlfR0VSTUFOLDE0ODA7VEFYX1dPUkxETEFOR1VBR0VTX0dFUk1BTiwxNDgwO1RBWF9GTkNBQ1RfQ09NUE9TRVIsMTEyO1dCXzI0NzNfRElQTE9NQUNZX0FORF9ORUdPVElBVElPTlMsMzAxMDtXQl8yNDcwX1BFQUNFX09QRVJBVElPTlNfQU5EX0NPTkZMSUNUX01BTkFHRU1FTlQsMzAxMDtXQl8yNDMyX0ZSQUdJTElUWV9DT05GTElDVF9BTkRfVklPTEVOQ0UsMzAxMDtXQl8yNDcxX1BFQUNFS0VFUElORywzMDEwO1RBWF9FVEhOSUNJVFlfRVNUT05JQU4sMTAzO1RBWF9XT1JMRExBTkdVQUdFU19FU1RPTklBTiwxMDM7RVBVX0NBVFNfTUlHUkFUSU9OX0ZFQVJfTUlHUkFUSU9OLDc2MztFUFVfQ0FUU19NSUdSQVRJT05fRkVBUl9NSUdSQVRJT04sMTg4MDtFUFVfQ0FUU19NSUdSQVRJT05fRkVBUl9NSUdSQVRJT04sMjIwODtUUklBTCw4NzY7VEFYX0VUSE5JQ0lUWV9HUkVFSywxNzk7VEFYX1dPUkxETEFOR1VBR0VTX0dSRUVLLDE3OTtNQVJJVElNRSwxNjg5O1RBWF9GTkNBQ1RfV1JJVEVSLDE0NTtUQVhfRk5DQUNUX1RSQU5TTEFUT1IsMTU4O1RBWF9GTkNBQ1RfT0ZGSUNJQUwsNTMyO1RBWF9GTkNBQ1RfRElSRUNUT1IsMTk2O1RBWF9FVEhOSUNJVFlfSVRBTElBTiwxMzg7VEFYX0VUSE5JQ0lUWV9JVEFMSUFOLDE0NzE7VEFYX1dPUkxETEFOR1VBR0VTX0lUQUxJQU4sMTM4O1RBWF9XT1JMRExBTkdVQUdFU19JVEFMSUFOLDE0NzE7U09DX0lOTk9WQVRJT04sMTc2MzsJMSNHcmVlY2UjR1IjR1IjMzkjMjIjR1I7MSNFc3RvbmlhI0VOI0VOIzU5IzI2I0VOOzEjSXRhbHkjSVQjSVQjNDIuODMzMzMzIzEyLjgzMzMzMyNJVDsxI0dlcm1hbnkjR00jR00jNTEuNSMxMC41I0dNCTEjRXN0b25pYW4jRU4jRU4jIzU5IzI2I0VOIzEwMzsxI0dyZWVrI0dSI0dSIyMzOSMyMiNHUiMxNzk7MSNJdGFsaWFuI0lUI0lUIyM0Mi44MzMzMzMjMTIuODMzMzMzI0lUIzEzODsxI0l0YWxpYW4jSVQjSVQjIzQyLjgzMzMzMyMxMi44MzMzMzMjSVQjMTQ3MTsxI0dlcm1hbiNHTSNHTSMjNTEuNSMxMC41I0dNIzE0ODA7MSNHZXJtYW5zI0dNI0dNIyM1MS41IzEwLjUjR00jNjAxCXRob21hcyBvYmVyZW5kZXI7YW5pdGEgcmFqYTtwcm9kcm9tb3MgdHNpbmlrb3JpcwlUaG9tYXMgT2JlcmVuZGVyLDg1NjtBbml0YSBSYWphLDQ5O0FuaXRhIFJhamEsMTY5O0FuaXRhIFJhamEsMTM5NDtQcm9kcm9tb3MgVHNpbmlrb3Jpcyw3MjtQcm9kcm9tb3MgVHNpbmlrb3JpcywyMTc7UHJvZHJvbW9zIFRzaW5pa29yaXMsMTczOAkJCTQuOTU2ODk2NTUxNzI0MTQsNi4wMzQ0ODI3NTg2MjA2OSwxLjA3NzU4NjIwNjg5NjU1LDcuMTEyMDY4OTY1NTE3MjQsMTUuOTQ4Mjc1ODYyMDY5LDAsNDA0CTQjOCMyOCMwIzM1OTsxIzAjMCMxOTU1IzI0MjQJd2M6NDA0LGMxLjE6MixjMS4zOjIsYzEuNDo0LGMxMi4xOjIxLGMxMi4xMDozMSxjMTIuMTI6OSxjMTIuMTM6NyxjMTIuMTQ6MTcsYzEyLjM6MixjMTIuNDozLGMxMi41OjE4LGMxMi43OjExLGMxMi44OjEwLGMxMi45OjI5LGMxMy4xOjEsYzEzLjEwOjEsYzEzLjQ6MixjMTMuNjoxLGMxNC4xOjI1LGMxNC4xMDoxMSxjMTQuMTE6NDgsYzE0LjI6MjIsYzE0LjM6MjQsYzE0LjQ6MSxjMTQuNTozOCxjMTQuNjoxLGMxNC43OjIsYzE0Ljk6MSxjMTUuMTAyOjEsYzE1LjExOjEsYzE1LjExNToxLGMxNS4xNDc6MSxjMTUuMTc1OjIsYzE1LjIwNjoxLGMxNS4yMTI6MSxjMTUuMjMzOjEsYzE1LjI2MDoxLGMxNS4zMToxLGMxNS4zNDoxLGMxNS40OjEsYzE1LjQ2OjEsYzE1LjUwOjEsYzE1LjYyOjEsYzE1LjgwOjEsYzE1Ljk6MSxjMTYuMTozLGMxNi4xMDA6MixjMTYuMTAyOjEsYzE2LjEwNToyLGMxNi4xMDY6MTEsYzE2LjEwOToxNyxjMTYuMTE6NyxjMTYuMTEwOjUxLGMxNi4xMTE6MSxjMTYuMTEzOjUsYzE2LjExNDoxNixjMTYuMTE1OjMsYzE2LjExNjoxMSxjMTYuMTE3OjcsYzE2LjExODoxNCxjMTYuMTI6MzQsYzE2LjEyMDoxMSxjMTYuMTIxOjIxLGMxNi4xMjI6MSxjMTYuMTI0OjUsYzE2LjEyNToyMixjMTYuMTI2OjI2LGMxNi4xMjc6MjMsYzE2LjEyODozLGMxNi4xMjk6NDYsYzE2LjEzOjYsYzE2LjEzMDo2LGMxNi4xMzE6MTIsYzE2LjEzMzoxLGMxNi4xMzQ6MzcsYzE2LjEzNjo0LGMxNi4xMzg6MjAsYzE2LjEzOToxMyxjMTYuMTQwOjEzLGMxNi4xNDM6MSxjMTYuMTQ1OjM5LGMxNi4xNDY6MTksYzE2LjE0OToyLGMxNi4xNTE6MixjMTYuMTUzOjE0LGMxNi4xNTU6NyxjMTYuMTU2OjMsYzE2LjE1NzoxNixjMTYuMTU5OjMzLGMxNi4xNjo2LGMxNi4xNjE6MTEsYzE2LjE2MjoxNyxjMTYuMTYzOjEzLGMxNi4xNjQ6MTUsYzE2LjE2NTozLGMxNi4xNjg6MSxjMTYuMTc6NCxjMTYuMjoyMCxjMTYuMjA6MixjMTYuMjE6MyxjMTYuMjI6MixjMTYuMjY6NTQsYzE2LjI3OjEsYzE2LjM6NyxjMTYuMzA6MSxjMTYuMzE6MTIsYzE2LjMyOjEsYzE2LjMzOjIyLGMxNi4zNDoyLGMxNi4zNToyMixjMTYuMzc6MzAsYzE2LjM4OjEzLGMxNi40OjE5LGMxNi40MToxMCxjMTYuNDM6NyxjMTYuNDU6MTEsYzE2LjQ2OjYsYzE2LjQ3OjU0LGMxNi40ODozLGMxNi41OjE4LGMxNi41MDoyLGMxNi41MToxLGMxNi41MjoxMCxjMTYuNTM6MTIsYzE2LjU0OjEsYzE2LjU1OjEsYzE2LjU2OjExLGMxNi41NzoyMDksYzE2LjU4OjE5LGMxNi42OjM2LGMxNi42Mjo5LGMxNi42MzoxLGMxNi42NDoxLGMxNi42NToxMSxjMTYuNjY6NSxjMTYuNjg6MTYsYzE2LjY5OjEwLGMxNi43OjIyLGMxNi43MDoxNyxjMTYuNzE6NCxjMTYuNzI6MSxjMTYuNzM6MSxjMTYuNzQ6NSxjMTYuNzU6OSxjMTYuNzY6NCxjMTYuNzc6NCxjMTYuNzg6OSxjMTYuODA6NCxjMTYuODE6NCxjMTYuODQ6MTYsYzE2Ljg2OjQsYzE2Ljg3OjI5LGMxNi44ODoyOCxjMTYuODk6MjgsYzE2LjkwOjksYzE2LjkxOjEwLGMxNi45MjoxNCxjMTYuOTM6MyxjMTYuOTQ6MTUsYzE2Ljk1OjE1LGMxNi45Njo1LGMxNi45ODoyNixjMTcuMToxMTUsYzE3LjEwOjQ0LGMxNy4xMTo2MSxjMTcuMTI6OCxjMTcuMTM6MixjMTcuMTU6MTcsYzE3LjE2OjYsYzE3LjE4OjQsYzE3LjE5OjMwLGMxNy4yOjI5LGMxNy4yMDoxMixjMTcuMjI6NSxjMTcuMjM6NCxjMTcuMjQ6MTUsYzE3LjI1OjUsYzE3LjI2OjMsYzE3LjI3OjIyLGMxNy4yODoxLGMxNy4yOTozLGMxNy4zOjEsYzE3LjMwOjExLGMxNy4zMToxOSxjMTcuMzI6NyxjMTcuMzM6MTQsYzE3LjM1OjEyLGMxNy4zNjoxNSxjMTcuMzc6MTMsYzE3LjM4OjUsYzE3LjM5OjYsYzE3LjQ6OTIsYzE3LjQwOjE0LGMxNy40MToxNixjMTcuNDI6MjMsYzE3LjQzOjE1LGMxNy41OjU5LGMxNy42OjIsYzE3Ljc6MzAsYzE3Ljg6MzEsYzE3Ljk6MSxjMTguMTM3OjEsYzE4LjE2NToxLGMxOC4xODA6NSxjMTguMTkzOjUsYzE4LjMzMzoxLGMxOC4zNDI6NixjMi4xOjYsYzIuMTAxOjcsYzIuMTAyOjgsYzIuMTA0OjU0LGMyLjEwNjo0LGMyLjEwODoxLGMyLjExOjMsYzIuMTEwOjksYzIuMTEzOjcsYzIuMTE0OjcsYzIuMTE1OjEsYzIuMTE2OjEsYzIuMTE5OjgxLGMyLjEyOjEzLGMyLjEyMToxNixjMi4xMjI6MTEsYzIuMTI1OjEzLGMyLjEyNjoxMSxjMi4xMjc6MjEsYzIuMTI4OjksYzIuMTI5OjI1LGMyLjEzMjoyLGMyLjEzMzo2LGMyLjEzNDoxLGMyLjEzNToxLGMyLjEzODoxLGMyLjEzOToxLGMyLjE0OjIyLGMyLjE0MTo1LGMyLjE0MjoyLGMyLjE0MzoxNyxjMi4xNDQ6NyxjMi4xNDU6NSxjMi4xNDY6MixjMi4xNDc6NTIsYzIuMTQ4OjI0LGMyLjE1OjYsYzIuMTUwOjIsYzIuMTUyOjEsYzIuMTUzOjEwLGMyLjE1NDo5LGMyLjE1NToyOSxjMi4xNTY6MTQsYzIuMTU3OjI2LGMyLjE1ODoyMyxjMi4xNTk6MixjMi4xNjA6OSxjMi4xNjE6MSxjMi4xNjI6NyxjMi4xNjY6OCxjMi4xNjc6MSxjMi4xNjk6OCxjMi4xNzoxLGMyLjE3MDo4LGMyLjE3MjoxLGMyLjE3Mzo4LGMyLjE3NDoxLGMyLjE3NjoyLGMyLjE3NzoxNyxjMi4xNzk6MTQsYzIuMTg6OSxjMi4xODA6MTYsYzIuMTgxOjE1LGMyLjE4Mjo0LGMyLjE4MzoyNSxjMi4xODU6NTMsYzIuMTg2OjMsYzIuMTg3OjIwLGMyLjE5OjEsYzIuMTkxOjIsYzIuMTkyOjE4LGMyLjE5MzoxOCxjMi4xOTQ6MSxjMi4xOTU6MjAsYzIuMTk2OjIsYzIuMTk3OjMsYzIuMTk4OjIyLGMyLjE5OTo1LGMyLjIwOjEsYzIuMjAwOjUsYzIuMjAzOjIxLGMyLjIwNDoxNixjMi4yMDU6MSxjMi4yMDY6NCxjMi4yMDc6MSxjMi4yMDk6MSxjMi4yMTA6MjgsYzIuMjExOjEsYzIuMjEzOjUsYzIuMjE0OjExLGMyLjIxNzoyLGMyLjIxODoxLGMyLjIyMDozLGMyLjIyNTo5LGMyLjIyNjo0LGMyLjIzOjgsYzIuMjU6MjgsYzIuMjY6MTYsYzIuMjc6MTYsYzIuMjg6NCxjMi4zMDoxOCxjMi4zMToxNCxjMi4zMjoxLGMyLjM0OjUsYzIuMzU6NSxjMi4zNjoyLGMyLjM3OjQsYzIuMzk6NTYsYzIuNDQ6MjgsYzIuNDU6MjAsYzIuNDY6MzEsYzIuNDc6MSxjMi40ODo0LGMyLjUwOjE0LGMyLjUyOjMyLGMyLjUzOjIsYzIuNTQ6NDcsYzIuNTU6MSxjMi41NjoxLGMyLjU3OjUsYzIuNTg6NSxjMi41OTo1LGMyLjYwOjIsYzIuNjI6MjQsYzIuNjQ6MTYsYzIuNjU6NCxjMi42OToyLGMyLjcxOjIsYzIuNzM6MTAsYzIuNzU6NDcsYzIuNzY6MjI2LGMyLjc3OjIzLGMyLjc4OjQxLGMyLjgwOjMzLGMyLjgyOjEzLGMyLjgzOjMsYzIuODY6MTIsYzIuODc6MixjMi44ODo3LGMyLjg5OjYsYzIuOTo0LGMyLjkzOjYsYzIuOTU6NDQsYzIuOTY6MyxjMi45NzoyLGMyLjk4OjIzLGMyLjk5OjQsYzI1LjU6MixjMy4xOjQsYzMuMjozMSxjMzUuMToyLGMzNS4xMTozLGMzNS4xMjozLGMzNS4xMzoxLGMzNS4xNDoxMCxjMzUuMTU6MTEsYzM1LjIwOjE2LGMzNS4yMToxLGMzNS4zMToxOSxjMzUuMzI6MjIsYzM1LjMzOjE3LGMzNS40OjEsYzM1LjU6NixjMzUuNzo0LGMzOS4xNDozLGMzOS4xOToyLGMzOS4yOjYsYzM5LjM6MTMsYzM5LjMyOjMsYzM5LjM2OjIsYzM5LjM3OjUsYzM5LjM4OjMsYzM5LjQ6NyxjMzkuNDA6MyxjMzkuNDE6MixjMzkuNTozLGMzOS42OjEsYzQuMTM6MSxjNC4yMDoyLGM0LjIzOjE1LGM0MC4xOjEsYzQwLjU6NCxjNDAuNzoxLGM0MS4xOjE2LGM0Mi4xOjExMSxjNS4xMDoyMyxjNS4xMTo1LGM1LjEyOjM4LGM1LjE5OjMsYzUuMjE6NCxjNS4yMjoxLGM1LjIzOjQsYzUuMjQ6MSxjNS4yNToyLGM1LjI2OjMsYzUuMjc6MSxjNS4yODo4LGM1LjI5OjEzLGM1LjM6MyxjNS4zMDozMyxjNS4zMzoxLGM1LjM0OjEsYzUuMzU6MjEsYzUuMzY6MjIsYzUuMzc6MixjNS40OjIsYzUuNDA6NDUsYzUuNDM6NixjNS40NDoxLGM1LjQ1OjIsYzUuNDY6NTEsYzUuNDc6NixjNS40OTozMixjNS41MDozOCxjNS41MToyMixjNS41Mjo0MCxjNS41MzoyOSxjNS41NDoxNCxjNS41NTo0LGM1LjU2OjYsYzUuNjoxNixjNS42MDoxMCxjNS42MToyNCxjNS42MjoxMzYsYzUuNzoyMyxjNS44OjE0LGM1Ljk6MTEsYzYuMToxLGM2LjQ6MyxjNi41OjEwLGM3LjE6MTEsYzcuMjoyNixjOC4xOjEsYzguMTE6MixjOC4xMjo1LGM4LjE0OjEsYzguMTU6MSxjOC4xNzozLGM4LjIyOjMsYzguMjM6NyxjOC4yNDoxLGM4LjI2OjEsYzguMjc6NCxjOC4zMzozLGM4LjM2OjIsYzguMzc6MTAsYzguMzg6OSxjOC4zOTozLGM4LjQ6OSxjOC40MDoyLGM4LjQxOjEsYzguNDI6MTcsYzguNDM6MTcsYzguNTo0LGM4LjY6MSxjOS4xOjExLGM5LjEwOjIsYzkuMTAwODoyLGM5LjEwMDk6MSxjOS4xMDEwOjEsYzkuMTAxODoyLGM5LjEwMjE6MSxjOS4xMDIzOjIsYzkuMTA0MToyLGM5LjEwNzoxLGM5LjEwOToyLGM5LjExOjMsYzkuMTExOjMsYzkuMTEzOjIsYzkuMTE3OjEsYzkuMTE4OjEsYzkuMTI6MSxjOS4xMjM6MSxjOS4xMjQ6MixjOS4xMjY6NCxjOS4xMjg6MjAsYzkuMTI5OjIsYzkuMTMwOjUsYzkuMTM0OjIsYzkuMTM1OjEsYzkuMTM4OjEsYzkuMTQ6NCxjOS4xNDM6MixjOS4xNDU6MixjOS4xNDc6MixjOS4xNDg6MSxjOS4xNToxLGM5LjE1MDoxLGM5LjE1MToxLGM5LjE1NToyLGM5LjE1NjoyLGM5LjE1ODo3LGM5LjE2MTo2LGM5LjE2Mjo3LGM5LjE2NDoyLGM5LjE2NToxLGM5LjE2NjoyLGM5LjE2NzoxLGM5LjE2ODo1LGM5LjE3OjEsYzkuMTc1OjIsYzkuMTc3OjgsYzkuMTc4OjEsYzkuMTg6MixjOS4xODI6MTAsYzkuMTgzOjEsYzkuMTg0OjYsYzkuMTg4OjMsYzkuMTk6MixjOS4xOTg6MixjOS4yMDE6MSxjOS4yMDU6MixjOS4yMDk6MixjOS4yMToxLGM5LjIxMjo0LGM5LjIxNzoxLGM5LjIyOjEsYzkuMjIyOjEsYzkuMjI0OjIsYzkuMjM6MSxjOS4yMzA6MSxjOS4yMzE6MSxjOS4yMzc6MSxjOS4yMzg6NCxjOS4yNDM6MSxjOS4yNTo0LGM5LjI1MDoxLGM5LjI1MTozLGM5LjI1MjoyLGM5LjI1MzozLGM5LjI1NDoyLGM5LjI1NToyLGM5LjI1NjoxLGM5LjI1NzoyLGM5LjI1ODoyLGM5LjI2MDoyLGM5LjI2MjoyLGM5LjI2MzoyLGM5LjI3MToxLGM5LjI3NDoxLGM5LjI3NjozLGM5LjI4OjIsYzkuMjgwOjEsYzkuMjg2OjEsYzkuMjg3OjEsYzkuMjg4OjMsYzkuMjk6MSxjOS4yOTI6MSxjOS4yOTM6MSxjOS4zOjEyLGM5LjMxMToxLGM5LjMxMjo0LGM5LjMxMzoxLGM5LjMyMzoxLGM5LjMyNzoyLGM5LjMyODoyLGM5LjMzOjExLGM5LjM0OjEsYzkuMzU6NSxjOS4zNTI6MyxjOS4zNTg6MixjOS4zNTk6MSxjOS4zNzoxLGM5LjM3MDoxLGM5LjM4Mzo2LGM5LjM4NDo0LGM5LjM4NToyLGM5LjM5OjMsYzkuNDI6MSxjOS40MjA6MSxjOS40MjQ6MSxjOS40MzA6NCxjOS40MzI6OCxjOS40MzM6NSxjOS40Mzc6MSxjOS40NDoyLGM5LjQ1OjEsYzkuNDU5OjIsYzkuNDY6NCxjOS40NjM6MSxjOS40NjU6MSxjOS40NjY6NCxjOS40Njg6NyxjOS40NzA6MixjOS40NzI6MSxjOS40NzQ6MSxjOS40NzY6MixjOS40Nzk6NixjOS40ODoxLGM5LjQ4MDozLGM5LjQ4NDoxLGM5LjQ4NzoxLGM5LjQ5NjoxLGM5LjQ5ODo3LGM5LjU6MyxjOS41MDE6NyxjOS41MDI6MSxjOS41MToxLGM5LjUxMTo2LGM5LjUxMzoxNSxjOS41MTc6MSxjOS41MTk6MSxjOS41MjE6NixjOS41MjI6MSxjOS41MjM6MSxjOS41Mjg6MSxjOS41MzoyLGM5LjUzNDoxLGM5LjUzNzoyLGM5LjU0MDoxLGM5LjU0MzoxLGM5LjU0OTozLGM5LjU1MDo0LGM5LjU1MTozLGM5LjU1MzoxLGM5LjU1NjoxLGM5LjU1NzoxLGM5LjU2MDoxLGM5LjU2MToxLGM5LjU2MjoxLGM5LjU2NToxLGM5LjU2Nzo0LGM5LjU2ODoxLGM5LjU2OToxLGM5LjU3MDoxLGM5LjU3NTozLGM5LjU3Njo0LGM5LjU3OToxMCxjOS41ODE6MyxjOS41ODI6MyxjOS41ODU6NyxjOS41ODk6MixjOS41OToxLGM5LjU5MToxLGM5LjU5MjoyLGM5LjU5OToyLGM5LjYwMzoyLGM5LjYxMToxLGM5LjYxMzozLGM5LjYxNToxLGM5LjYxODo1LGM5LjYxOToxLGM5LjYyOjMsYzkuNjIyOjIsYzkuNjI0OjcsYzkuNjM6MSxjOS42MzA6NCxjOS42MzE6MSxjOS42MzU6MSxjOS42NDA6NyxjOS42NDE6MSxjOS42NDI6OCxjOS42NDg6NyxjOS42NTA6MSxjOS42NTM6MTYsYzkuNjU0OjIsYzkuNjU4OjEsYzkuNjU5OjIsYzkuNjY6MSxjOS42NjA6MyxjOS42Njk6MSxjOS42NzA6NyxjOS42NzE6MSxjOS42NzY6OCxjOS42Nzc6MyxjOS42Nzg6MSxjOS42Nzk6MSxjOS42ODozLGM5LjY4MjoyLGM5LjY4Mzo3LGM5LjY4NjoxLGM5LjcwOjEsYzkuNzAxOjExLGM5LjcwMjoxLGM5LjcwNDo2LGM5LjcwNTo0LGM5LjcwODo0LGM5LjcxMDo2LGM5LjcxNDo1LGM5LjcxOTo1LGM5LjcyMDoxLGM5LjcyMTozLGM5LjcyMjozLGM5LjcyNDozLGM5LjcyNjoxMSxjOS43Mjc6MSxjOS43Mjg6MSxjOS43MzoxLGM5LjczMDoxMCxjOS43MzE6MSxjOS43MzU6MSxjOS43MzY6NCxjOS43NDA6MSxjOS43NDE6MSxjOS43NDU6NCxjOS43NDg6NyxjOS43NToxLGM5Ljc1MjozLGM5Ljc1NjozLGM5Ljc1ODoxLGM5Ljc2OjEsYzkuNzYxOjQsYzkuNzYyOjksYzkuNzY1OjIsYzkuNzY2OjIsYzkuNzY3OjIzLGM5Ljc3NToyLGM5Ljc3NjoxLGM5Ljc3NzoxLGM5Ljc4ODozLGM5Ljc4OToxLGM5Ljc5MzozLGM5Ljc5NToyLGM5Ljg6MyxjOS44MDA6MSxjOS44MDY6MyxjOS44MDg6NyxjOS44MTI6MixjOS44MTU6MixjOS44MTY6NSxjOS44MTc6MixjOS44MTg6MSxjOS44MjoxLGM5LjgyNDoxLGM5LjgyNjoyLGM5LjgyODoxLGM5LjgzOjksYzkuODMxOjMsYzkuODM0OjEsYzkuODM3OjEsYzkuODQwOjEsYzkuODQyOjEsYzkuODU6MyxjOS44NTc6MSxjOS44NTg6MSxjOS44NjoxLGM5Ljg2MDo2LGM5Ljg2MTo1LGM5Ljg2MjoxLGM5Ljg2NDo5LGM5Ljg2NjozLGM5Ljg2ODo5LGM5Ljg3OjIsYzkuODcxOjEsYzkuODc3OjMsYzkuODg6MixjOS44ODA6MSxjOS44ODI6OSxjOS44ODM6NSxjOS44ODQ6NSxjOS44ODc6MSxjOS44ODg6MixjOS44OTA6MixjOS44OTM6MSxjOS44OTY6MSxjOS44OTk6MSxjOS45MDoyLGM5LjkwODo1LGM5LjkxMToxMCxjOS45MTM6MSxjOS45MTU6NCxjOS45MjA6MixjOS45MjE6MyxjOS45MjY6MSxjOS45MzA6MyxjOS45MzI6MixjOS45MzM6MSxjOS45MzU6OCxjOS45Mzg6NSxjOS45NDE6MyxjOS45NDI6MSxjOS45NToyLGM5Ljk1NToxLGM5Ljk1NjoxLGM5Ljk2OjEsYzkuOTYyOjEsYzkuOTY5OjMsYzkuOTc6MSxjOS45NzI6OCxjOS45NzM6MSxjOS45Nzg6NixjOS45ODA6MyxjOS45ODQ6MyxjOS45ODc6MSxjOS45OTY6MSx2MTAuMTowLjI2NzYwMjY1NzAwNDgzMSx2MTAuMjowLjIwNjU3NDA3NDA3NDA3NCx2MTEuMTowLjE4MzQ4OTIyMzM4NTY5LHYxOS4xOjUuOTg3LHYxOS4yOjUuMTI1LHYxOS4zOjUuNDExLHYxOS40OjUuODI0MzMzMzMzMzMzMzMsdjE5LjU6NS4xMTMzMzMzMzMzMzMzMyx2MTkuNjo1LjI5MSx2MTkuNzo2LjEyMTY2NjY2NjY2NjY3LHYxOS44OjUuMjA0LHYxOS45OjUuNDkyMzMzMzMzMzMzMzQsdjIwLjEwOi0wLjYyNSx2MjAuMTE6MC42ODg2NjY2NjY2NjY2NjcsdjIwLjEyOi0wLjU2MjUsdjIwLjEzOjAuNDkwMzU1NTU1NTU1NTU2LHYyMC4xNDotMC41NjI1LHYyMC4xNTowLjQ0Mjg3MjcyNzI3MjcyNyx2MjAuMTY6LTAuNTYyNSx2MjAuMzowLjQ1OCx2MjAuNTowLjg0MjI4NTcxNDI4NTcxNCx2MjAuNzowLjgyMTc3Nzc3Nzc3Nzc3OCx2MjAuOTowLjc0NTU3MTQyODU3MTQyOSx2MjEuMTo1LjY5ODIwMTg5Mjc0NDQ5LHYyNi4xOjEuNzIxODc1LHY0Mi4xMDowLjAzNjMwNzEyNTI3OTI3OTMsdjQyLjExOjAuMDU3MDYwNzU5MzQyMzQyMyx2NDIuMjowLjEwMzA0OTU5NjAzNjAzNix2NDIuMzowLjEwNzcxNjI5NjM0MjM0Mix2NDIuNDowLjA5NjY3NTYwNzM3ODM3ODQsdjQyLjU6MC4xMDE0MDc4NjM1MjI1MjMsdjQyLjY6MC4wODQ5MjUxNzk4NTU4NTU5LHY0Mi43OjAuMDg1NjM1NDUzMzg3Mzg3NCx2NDIuODowLjA4NTkyNjQxODI5NzI5NzMsdjQyLjk6MC4xMTQzOTQ1MDQwMTgwMTgJaHR0cHM6Ly90aGVtdW5pY2hleWUuY29tL2NvbnRlbnRfaW1hZ2VzL29wZW4tZ3JhcGgtdG1lLndlYnAJCQlodHRwczovL3lvdXR1YmUuY29tL3VzZXIvVGhlTXVuaWNoRXllOwkJR29ldGhlIE1lZGFsaXN0cywxNztBbml0YSBSYWphLDYxO1Byb2Ryb21vcyBUc2luaWtvcmlzLDg3O0FuaXRhIFJhamEsMjAyO1Byb2Ryb21vcyBUc2luaWtvcmlzLDI1NTtHb2V0aGUgTWVkYWwsMzAyO0dvZXRoZSBNZWRhbCw1ODc7R29ldGhlIE1lZGFsLDI1MzE7Sm9oYW5uIFdvbGZnYW5nLDI2MDQJCQk8UEFHRV9MSU5LUz5odHRwczovL3d3dy5kdy5jb20vZGUvZ29ldGhlJUUyJTgwJTkxbWVkYWlsbGVuLTIwMjYtZGFzLXNpbmQtZGllLXByZWlzdHIlQzMlQTRnZXIvYS03Njk2NzEwMTwvUEFHRV9MSU5LUz48UEFHRV9BVVRIT1JTPlRoZSBFeWUgTmV3c3BhcGVyczwvUEFHRV9BVVRIT1JTPjxQQUdFX0FMVFVSTF9BTVA+aHR0cHM6Ly90aGVtdW5pY2hleWUuY29tL2FtcC9nb2V0aGUtbWVkYWxpc3RzLTIwMjYtYXJ2by1w5HJ0LWFuaXRhLXJhamEtcHJvZHJvbW9zLXRzaW5pa29yaXMtaG9ub3JlZC0zNDg4Ny5odG1sPC9QQUdFX0FMVFVSTF9BTVA+PFBBR0VfVElUTEU+R29ldGhlIE1lZGFsaXN0cyAyMDI2OiBBcnZvIFAmI3hFNDtydCwgQW5pdGEgUmFqYSwgUHJvZHJvbW9zIFRzaW5pa29yaXMgSG9ub3JlZDwvUEFHRV9USVRMRT4K",
+          "raw_sha256": "b0ef855590cf58d993f117bfcab3ae018f0f5382fd37c64f94c274097f78a105",
+          "reasons": [
+            {
+              "code": "invalid_utf8",
+              "detail": "Strict UTF-8 rejected; no alternative decoding"
+            }
+          ],
+          "row_id": "854bc919227bf078da7175b742bbb5e32bb48f74b2d5e0fc9cbee29462ca96b4",
+          "schema_version": "1.0.0",
+          "source": {
+            "acquisition": "passed",
+            "archive_bytes": 5980126,
+            "archive_sha256": "67a45a737223d56e16c41a09129afbd5cd2cf508d01a7cf89d77200841b2f3c8",
+            "batch_id": "20260904141500",
+            "source_id": "gdelt-gkg-2.1",
+            "source_url": "https://data.gdeltproject.org/gdeltv2/20260904141500.gkg.csv.zip"
+          },
+          "start": 7259891,
+          "timestamp": "20260904141500"
+        }
+      ],
+      "quarantine_fraction": 0.0007132667617689016,
+      "quarantined_rows": 1,
+      "row_ledger_sha256": "b1da537909004b642bc34a762ede61bce89cc15099f0d33b699c071f68f549d9",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "9daad646d87809e43c70e8905cc50b4ff57ba052b25b79114d1cfb58016ad15c",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5980126,
+        "archive_sha256": "67a45a737223d56e16c41a09129afbd5cd2cf508d01a7cf89d77200841b2f3c8",
+        "batch_id": "20260904141500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904141500.gkg.csv.zip"
+      },
+      "state": "parse_with_quarantine"
+    },
+    {
+      "accepted_rows": 1484,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1484
+      },
+      "errors": [],
+      "member": "20260904143000.gkg.csv",
+      "member_bytes": 19773146,
+      "member_sha256": "67b52b683b7f9bc57998ad42e06a76cf8f32ca97d5fc7a37abcfcd65dfa96085",
+      "observed_archive_sha256": "4aca54b8f6dc0bc2c1f9b54aa5773f00021e39f47b7c57830acece8a1de5be84",
+      "parser_version": "1.0.0",
+      "physical_rows": 1484,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c82df6c1ca5beea2a7df370bf8538db96e6a956b00775c59d4a6338f66ad9ac4",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "0c4a65c08ca58d7b781d8016a4df1efeb1a88501b4577f9e7ef85ee3b025cd65",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6488863,
+        "archive_sha256": "4aca54b8f6dc0bc2c1f9b54aa5773f00021e39f47b7c57830acece8a1de5be84",
+        "batch_id": "20260904143000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904143000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1357,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1357
+      },
+      "errors": [],
+      "member": "20260904144500.gkg.csv",
+      "member_bytes": 17977341,
+      "member_sha256": "2cfa08b59ae706b9df7100733e7972167cc212a3b9877b69cecf684833fb3b5a",
+      "observed_archive_sha256": "8b0c81806bd591397b7fa82ae65ff0ab48284f9d9ff91ad789cda9eba2d8daa9",
+      "parser_version": "1.0.0",
+      "physical_rows": 1357,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "22531c3225469aca55ad0c51b1651f305872eaa1feac1ff67ca5fdeb3d89a5f3",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "bf2fd2db7f8abc123f34f72e0332b434f540d669a5b8506f267a912426fe773a",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5856726,
+        "archive_sha256": "8b0c81806bd591397b7fa82ae65ff0ab48284f9d9ff91ad789cda9eba2d8daa9",
+        "batch_id": "20260904144500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904144500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1449,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1449
+      },
+      "errors": [],
+      "member": "20260904150000.gkg.csv",
+      "member_bytes": 18927015,
+      "member_sha256": "6dd50a5150d674959405025deba12bba91774f0b2cf5bfc264661005b559cbdb",
+      "observed_archive_sha256": "40b8178a389caa889f3e434aa9d9ff66a747bf6baacb358df2a1f20bfbf818b0",
+      "parser_version": "1.0.0",
+      "physical_rows": 1449,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "992dbfd9c0da2a66f19c7e80c954b5959da937705a633e383870fd61b6ea139f",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "3ed3ad04cae5ec8b6d8583aede7f1994465ec4ea737bd9ea7f5fe854e2a4c7b7",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6171038,
+        "archive_sha256": "40b8178a389caa889f3e434aa9d9ff66a747bf6baacb358df2a1f20bfbf818b0",
+        "batch_id": "20260904150000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904150000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1472,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1472
+      },
+      "errors": [],
+      "member": "20260904151500.gkg.csv",
+      "member_bytes": 20681944,
+      "member_sha256": "38f9c3b5c11442afba93623987f55db905b662e32ec3c170676edb9aca5b7e24",
+      "observed_archive_sha256": "b443e400767676ecec2a8737a40521a6b7503563b9f626167ef2642fcba79bbb",
+      "parser_version": "1.0.0",
+      "physical_rows": 1472,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "befa01305e738ff5393e77cb8592a53c9827be5ee1dd0a909c12dfd88517b553",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "c06e0eef5e9a28b4b8e28fca187cfb679acb894297db610e28e3c739fb541d76",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6429208,
+        "archive_sha256": "b443e400767676ecec2a8737a40521a6b7503563b9f626167ef2642fcba79bbb",
+        "batch_id": "20260904151500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904151500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1622,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1622
+      },
+      "errors": [],
+      "member": "20260904153000.gkg.csv",
+      "member_bytes": 21808032,
+      "member_sha256": "5ded64f2ae2b9f3478a5f7316ec1fba4a8be45a6eaeea6435f24da0c149b8e98",
+      "observed_archive_sha256": "cb10d3f287189dc2c9fea1d9b4eb1b77eae390143a0a22514d865486ef31e0dc",
+      "parser_version": "1.0.0",
+      "physical_rows": 1622,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "3af62b3aee6b10e0fc68d557e8e4c69516e51d2776d0d4cbe7878619de9c4611",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "ab6230f3fcbd4d0193dd3e81c430627a69afb094ac64d776cb960ce4e26f3ffa",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 7093584,
+        "archive_sha256": "cb10d3f287189dc2c9fea1d9b4eb1b77eae390143a0a22514d865486ef31e0dc",
+        "batch_id": "20260904153000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904153000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1518,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1518
+      },
+      "errors": [],
+      "member": "20260904154500.gkg.csv",
+      "member_bytes": 19696274,
+      "member_sha256": "defc607098f05ff91d6ae9d05abe52303a46eb8791f417cf89c8b5bdf32c4319",
+      "observed_archive_sha256": "dab3f1216d7295bd8e7c8c71d09a175ec865a55c5870deb25e3127e49d57209b",
+      "parser_version": "1.0.0",
+      "physical_rows": 1518,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "ce9b49d675512e5ce5911d3a6fe5b6299ab51e3785b3c507127237cda63eae47",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "fba66ea16b96b0a1073c340d40b346932f410268f0f0589e4ae9aa589eabc923",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6368841,
+        "archive_sha256": "dab3f1216d7295bd8e7c8c71d09a175ec865a55c5870deb25e3127e49d57209b",
+        "batch_id": "20260904154500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904154500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1602,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1602
+      },
+      "errors": [],
+      "member": "20260904160000.gkg.csv",
+      "member_bytes": 20057171,
+      "member_sha256": "35005e6fd8b754fee5c2321e16092c77b14816e1d43d098e8575128484a2b21f",
+      "observed_archive_sha256": "3024aa1f859ef45e7869daa755d860339c9888470de7f6e089f40182717c6eb6",
+      "parser_version": "1.0.0",
+      "physical_rows": 1602,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "eb497cccd5ba440e434ef32826a72ea798c24b890c62a3f7e68c801c1aff9395",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "18cdc952fdc4a3cafe8d15318790d0414c5531c1ed57739b1b7823d720217bb6",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6539667,
+        "archive_sha256": "3024aa1f859ef45e7869daa755d860339c9888470de7f6e089f40182717c6eb6",
+        "batch_id": "20260904160000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904160000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1315,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1315
+      },
+      "errors": [],
+      "member": "20260904161500.gkg.csv",
+      "member_bytes": 17798795,
+      "member_sha256": "1d19e73dc0283a6c7d0f3638ad737dd0f9f4e127ae0abede9d621d01b2696628",
+      "observed_archive_sha256": "c47d338f0bb538bf688e842386088c3a6ded5f986dc6769266fb9b0593c45551",
+      "parser_version": "1.0.0",
+      "physical_rows": 1315,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c2c69280fa7acd27754c0dd04f4db1baf2aed62097eefea10ee4e0e95b6b8439",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "326d43f0f6233f7f4ae952cc5be5a17cbf51ef6f71563792ac31ebbb6f47aaac",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5798370,
+        "archive_sha256": "c47d338f0bb538bf688e842386088c3a6ded5f986dc6769266fb9b0593c45551",
+        "batch_id": "20260904161500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904161500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1470,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1470
+      },
+      "errors": [],
+      "member": "20260904163000.gkg.csv",
+      "member_bytes": 19319897,
+      "member_sha256": "140325d37dc0cbbddb80bb9208eb479d73474695d6e858b1fd885bcdbe3b81de",
+      "observed_archive_sha256": "0a50fd3a424ad636f5073fc99ce053f4824644cc782c7dd323b3b0eae35400de",
+      "parser_version": "1.0.0",
+      "physical_rows": 1470,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "f8934af93227234f455e054abc098b2e189ffe5b7f7189b30f0ece385033e823",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "ed46eb3b3189eb2500f9af40a01fe4ba0e6738fda270bd89d6242451fac08905",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6253237,
+        "archive_sha256": "0a50fd3a424ad636f5073fc99ce053f4824644cc782c7dd323b3b0eae35400de",
+        "batch_id": "20260904163000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904163000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1604,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1604
+      },
+      "errors": [],
+      "member": "20260904164500.gkg.csv",
+      "member_bytes": 21212809,
+      "member_sha256": "f439d4727d5eb18eb5b4dc5e9c37463c147a0202dc811e243fd6634fa42ef72c",
+      "observed_archive_sha256": "a8954b6659aed607b63a2b6f788dfe22c7314a3eeb4e4ef19359d53d50d7b2f9",
+      "parser_version": "1.0.0",
+      "physical_rows": 1604,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "e3a7fe412efad5e9999e239e7f10c546424fccf9d736770f62bb0461981e2d1a",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "b313a2849679f90a6d44d0a4b26bdfc76a55e1a870b6f2b6fecf63d30ad978be",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6888016,
+        "archive_sha256": "a8954b6659aed607b63a2b6f788dfe22c7314a3eeb4e4ef19359d53d50d7b2f9",
+        "batch_id": "20260904164500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904164500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1278,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1278
+      },
+      "errors": [],
+      "member": "20260904170000.gkg.csv",
+      "member_bytes": 16233747,
+      "member_sha256": "11d05bc5e2eb2053b27e913bbe3762a483521052e6d8c31a836ab4a4746011e7",
+      "observed_archive_sha256": "a2d299ce1b3a7d1d5b05bba4ffca02a69e2d68d96f2d8077295763153ce8a1a6",
+      "parser_version": "1.0.0",
+      "physical_rows": 1278,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "a2af1123a9e886f358a2c98aa0340154e833cae39f310ed9c4e04b55e617c0fd",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "6d4594600547b7adeb2f68d07889aca3b94f8c94d92e01cb9857b354e3e2c4bc",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5277627,
+        "archive_sha256": "a2d299ce1b3a7d1d5b05bba4ffca02a69e2d68d96f2d8077295763153ce8a1a6",
+        "batch_id": "20260904170000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904170000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1586,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1586
+      },
+      "errors": [],
+      "member": "20260904171500.gkg.csv",
+      "member_bytes": 20904466,
+      "member_sha256": "41768eb464e80c85eed8f6980325dd03fa739ebe445958808edfb6249a0b35c3",
+      "observed_archive_sha256": "e3eb4db13bffa2787a64836733e8e12a87d0cfe60326e7eae7a0ea38e1208b34",
+      "parser_version": "1.0.0",
+      "physical_rows": 1586,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "4a56a99e0637e35f0d1d6f017208bcdc369222f64c0be0f9afa37dac6d0b3b04",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "e57ed255dadadac5de8021dd9627e9a79960abcf96c14326f0b9465e543c03c9",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6779868,
+        "archive_sha256": "e3eb4db13bffa2787a64836733e8e12a87d0cfe60326e7eae7a0ea38e1208b34",
+        "batch_id": "20260904171500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904171500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1546,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1546
+      },
+      "errors": [],
+      "member": "20260904173000.gkg.csv",
+      "member_bytes": 19909970,
+      "member_sha256": "42f7fe3ffe5566e6144a5022d028da1581a939bd437c115cb6f0c1a648eb4938",
+      "observed_archive_sha256": "e972a41a62fa540609055e453f5832542d3b02cf1d6a52c21aaa6d3300abf973",
+      "parser_version": "1.0.0",
+      "physical_rows": 1546,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "1bcdd42d889e8f99622b87a617840662cb1eeaa252a5d0f88bf95a491ac4ef10",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4f9e83b53201ab4b64a08f4edf9bbb0be8388216a170740ef8033b518bd7627a",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6457380,
+        "archive_sha256": "e972a41a62fa540609055e453f5832542d3b02cf1d6a52c21aaa6d3300abf973",
+        "batch_id": "20260904173000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904173000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1669,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1669
+      },
+      "errors": [],
+      "member": "20260904174500.gkg.csv",
+      "member_bytes": 23216902,
+      "member_sha256": "3907ab4b6cdd4411dc2cfe105f3eb34e7b3666ca791cd9f0f5a86cb13243e9c4",
+      "observed_archive_sha256": "b7bfee113f1e4759deb7ca728ac9a484a4ff63a44468497514b90852471b6ac0",
+      "parser_version": "1.0.0",
+      "physical_rows": 1669,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "977834e385619f2cd6afa5a4f52965016f7b0d4cb9fc32f6c6342ef43a276f46",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "9865d4948828f15f9a0140a4d092a8a6b9bb6da8fa8de6e3920439e9301bb2fd",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 7216421,
+        "archive_sha256": "b7bfee113f1e4759deb7ca728ac9a484a4ff63a44468497514b90852471b6ac0",
+        "batch_id": "20260904174500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260904174500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1702,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1702
+      },
+      "errors": [],
+      "member": "20150302000000.gkg.csv",
+      "member_bytes": 18973855,
+      "member_sha256": "fcce30b640c2bfa1130f3ac7f735860d6a3db37a5c19b2b6e5b0247164b8ca4a",
+      "observed_archive_sha256": "a99eccbd468f572c811d8aa2a8addcb76c6401c36ccb4c783ac4b6279a029107",
+      "parser_version": "1.0.0",
+      "physical_rows": 1702,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "82c6f09a37c62ed9d138e71ec10da2a452997988a0358db775d3a15ac0e89f9a",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "4046c6f0fe40e926db2123cec961763da2dedaaa657520c63f497a40274292c4",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6088938,
+        "archive_sha256": "a99eccbd468f572c811d8aa2a8addcb76c6401c36ccb4c783ac4b6279a029107",
+        "batch_id": "20150302000000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20150302000000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1551,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1551
+      },
+      "errors": [],
+      "member": "20150302001500.gkg.csv",
+      "member_bytes": 17710129,
+      "member_sha256": "40af38f990ac324e85876249030bddc6c9d86828fbbd899143cb0e2ef13e7afc",
+      "observed_archive_sha256": "8b8ff84830b34a02eb0e9653106e2e3f0b22495cf52ab3ba2685ac4a4c15d9cf",
+      "parser_version": "1.0.0",
+      "physical_rows": 1551,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "2cbfa59a32f5422c4d03e9b8a2cf8647c444ede90560136a9adfc68b24ce7281",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "8348aab39c3b2927681458ccc09bf1e983ceb7eb8d274a7e328f991debb2483c",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5692428,
+        "archive_sha256": "8b8ff84830b34a02eb0e9653106e2e3f0b22495cf52ab3ba2685ac4a4c15d9cf",
+        "batch_id": "20150302001500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20150302001500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1749,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1749
+      },
+      "errors": [],
+      "member": "20150302003000.gkg.csv",
+      "member_bytes": 18635782,
+      "member_sha256": "6815bf377865b29fad5012ffe5f59bff2ea3126a64a86f8243d9af0a8de7f720",
+      "observed_archive_sha256": "054b9333c24edc976ad764e30daeac585a1a44bfa89f35d00c5cd81656adc139",
+      "parser_version": "1.0.0",
+      "physical_rows": 1749,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "0d74cff7c1cd2b8ec36978b24a3d06e66dc9e1e9023eede88fe3a7aed5d47450",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "6cbb73c0f3eecd9a5369278370748e0c6078db7a16da24ad675eac8f3b6d50d3",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5929095,
+        "archive_sha256": "054b9333c24edc976ad764e30daeac585a1a44bfa89f35d00c5cd81656adc139",
+        "batch_id": "20150302003000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20150302003000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1660,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1660
+      },
+      "errors": [],
+      "member": "20150302004500.gkg.csv",
+      "member_bytes": 18716887,
+      "member_sha256": "17881429d1d17ddb2732d99ddc3f90994b422824279c0f8471d46a71c9ca339b",
+      "observed_archive_sha256": "51a8ef932d2b2da260a365861dc6df6322d9d30c3a175189e2879d006346f0ab",
+      "parser_version": "1.0.0",
+      "physical_rows": 1660,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "dc1a547ac34e1d06104c775908466f257b9a1f7f2e8f89c31b12373cb4039c87",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "c5bcddfdf10432dbc603d318f7617be6422812e1553b676af26f838f137cdf88",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5995827,
+        "archive_sha256": "51a8ef932d2b2da260a365861dc6df6322d9d30c3a175189e2879d006346f0ab",
+        "batch_id": "20150302004500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20150302004500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1935,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1935
+      },
+      "errors": [],
+      "member": "20160905060000.gkg.csv",
+      "member_bytes": 23567030,
+      "member_sha256": "41931adbe25748ee2463ab02483828007fa9156803299d68bc6ff3b14cb2973d",
+      "observed_archive_sha256": "d74547d710275c8b85e7065c27105892fbafef9f12d56e26223d570b8cf1341b",
+      "parser_version": "1.0.0",
+      "physical_rows": 1935,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "240e3f7fdb39b987a83a6daef5c2de8fb9f547ca465709f1ab23650da514a01c",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "9eb61bc1afe474f91a02489421f1d766d0ff65758479e532c7b7825a5e909480",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 7422734,
+        "archive_sha256": "d74547d710275c8b85e7065c27105892fbafef9f12d56e26223d570b8cf1341b",
+        "batch_id": "20160905060000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20160905060000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1755,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1755
+      },
+      "errors": [],
+      "member": "20160905061500.gkg.csv",
+      "member_bytes": 22313746,
+      "member_sha256": "596ca22796fa383ece7db8200a2bcebabdd51fd634a992faa2bd4e720eae766e",
+      "observed_archive_sha256": "46b590ecd0f7c03ccb4140ff0b70aea3e52ab0fd3d38835f30afb882ab6af9cf",
+      "parser_version": "1.0.0",
+      "physical_rows": 1755,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "1df09c12a9fbb73a0e6f931e70ee7866fd561e70382558d396b5013a0b81ee7f",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "b9dbd462cb10e8ef07fe2a4c0a3da20ed7aee8b68d7a303ab4aeb6216c6a7465",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6990870,
+        "archive_sha256": "46b590ecd0f7c03ccb4140ff0b70aea3e52ab0fd3d38835f30afb882ab6af9cf",
+        "batch_id": "20160905061500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20160905061500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1941,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1941
+      },
+      "errors": [],
+      "member": "20160905063000.gkg.csv",
+      "member_bytes": 26162900,
+      "member_sha256": "254e373d9ec31c50a3927ae921cdfdb93989badbfa99d4fb4a1ad5c8dcd67f02",
+      "observed_archive_sha256": "7ce9cda4070a80eea09bce9428588e67fa636b72ccde9ee624718cdf8eb84703",
+      "parser_version": "1.0.0",
+      "physical_rows": 1941,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "817555821315add160a7b6c920de547a324f49c5df032cb33efa1211eb3a33fc",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "172fe33f8dedb3edd4f6f34c884a3ec20495ec8d67143c6768f4522cb6ff92f6",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 8201749,
+        "archive_sha256": "7ce9cda4070a80eea09bce9428588e67fa636b72ccde9ee624718cdf8eb84703",
+        "batch_id": "20160905063000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20160905063000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 2117,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 2117
+      },
+      "errors": [],
+      "member": "20160905064500.gkg.csv",
+      "member_bytes": 27043979,
+      "member_sha256": "ba9e1f07870f393aa6e1e61818e2a70e5b148a261326f3865702413ae59b1de4",
+      "observed_archive_sha256": "fd78060201e1201b5c93a52c3400fb9e31f14592f3265aba86d17794bafee6fb",
+      "parser_version": "1.0.0",
+      "physical_rows": 2117,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "1f08b176c7cc48467ba0160550a752d1f7e2eebbc8f90542b848ad7de16d4a65",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "153e5d81e02279beabe6f484417698c23c3fb158c0fc2c60e34b59b8977a4546",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 8528153,
+        "archive_sha256": "fd78060201e1201b5c93a52c3400fb9e31f14592f3265aba86d17794bafee6fb",
+        "batch_id": "20160905064500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20160905064500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 821,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 821
+      },
+      "errors": [],
+      "member": "20200905120000.gkg.csv",
+      "member_bytes": 10764374,
+      "member_sha256": "d7d256ee6d2c027c67daedca94b53469497271a8bd5695297144b1e099195959",
+      "observed_archive_sha256": "a6163f256df4e0768a0b8fde5b4b1a86819c0294b7070874588d4cff9deeb6f1",
+      "parser_version": "1.0.0",
+      "physical_rows": 821,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "88713dfd92375e5d4095e6b7b3dcaaab6c3ae7073c89ae67b9589d86c1dd7d3e",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "dedcd92896cd5683eea15a213e3416ae05abaf70064227e29e690b99e51c1097",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3462206,
+        "archive_sha256": "a6163f256df4e0768a0b8fde5b4b1a86819c0294b7070874588d4cff9deeb6f1",
+        "batch_id": "20200905120000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20200905120000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 871,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 871
+      },
+      "errors": [],
+      "member": "20200905121500.gkg.csv",
+      "member_bytes": 11493359,
+      "member_sha256": "476a5b63b2512c6605523048b72257e3d0eb750a1c40a747659c2c54ac2a3c66",
+      "observed_archive_sha256": "45081daed4091b31bc1c8ff9b76f8fcc9ae2b3be0e22949d6724c60ea37a6c92",
+      "parser_version": "1.0.0",
+      "physical_rows": 871,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "0f3abfe415596e4db72e67e22958ccf469ad1def669f36e0ad1193d91791d618",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "902fae02efb77676be44a3b56674a1d4d2d225311e918d8e1729fe61ace9fd57",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3674685,
+        "archive_sha256": "45081daed4091b31bc1c8ff9b76f8fcc9ae2b3be0e22949d6724c60ea37a6c92",
+        "batch_id": "20200905121500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20200905121500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1036,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1036
+      },
+      "errors": [],
+      "member": "20200905123000.gkg.csv",
+      "member_bytes": 13730538,
+      "member_sha256": "c4ad280a45d787cf531864fd5853455fc3b795ef13986cbe9b483787f9e6381f",
+      "observed_archive_sha256": "b2edcf7f8ec77e45d2da92d9a53c9b2464e760d7e09da6ea5cfe6052d5aa027f",
+      "parser_version": "1.0.0",
+      "physical_rows": 1036,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "93190604ef1ed6439404d0ded9367dbe7fce129d80c4e25f65ad7707aeb8fd9b",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "7c0272aca4c041304baf556729d7f7e2c98df3667f6dde1613d20f7449b420a6",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 4419757,
+        "archive_sha256": "b2edcf7f8ec77e45d2da92d9a53c9b2464e760d7e09da6ea5cfe6052d5aa027f",
+        "batch_id": "20200905123000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20200905123000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 766,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 766
+      },
+      "errors": [],
+      "member": "20200905124500.gkg.csv",
+      "member_bytes": 9544536,
+      "member_sha256": "f890f176226a843a8b2769a8dacd915076e3d0689ace7335e3f1a6b092aa6546",
+      "observed_archive_sha256": "b08c5743d916eafb0a39337f570cadfc31b87e28c0e236c9df44016bc931694b",
+      "parser_version": "1.0.0",
+      "physical_rows": 766,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "7afbcce491c7c1e025a67b04595e7e12208247fcc4ac6504696f228570f58973",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "cb09e291997972c2a49e3564bf1e9b951976ecb56e688897c9f71490cd6b3253",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 3071144,
+        "archive_sha256": "b08c5743d916eafb0a39337f570cadfc31b87e28c0e236c9df44016bc931694b",
+        "batch_id": "20200905124500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20200905124500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 2359,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 2359,
+        "quarantined_encoding": 2
+      },
+      "errors": [],
+      "member": "20230905180000.gkg.csv",
+      "member_bytes": 30687759,
+      "member_sha256": "efd5fae315bd6c28517d42d18f120c01f4a50994e13c10445236cfc42542bf74",
+      "observed_archive_sha256": "e235ebad1a7fe296fade0f447fd848d4ae79b2ad7b7f4fed9028dab486b1710f",
+      "parser_version": "1.0.0",
+      "physical_rows": 2361,
+      "quarantine": [
+        {
+          "disposition": "quarantined_encoding",
+          "end": 1042017,
+          "fields_sha256": null,
+          "invalid_sequences": [
+            {
+              "bytes_hex": "a0",
+              "end": 9782,
+              "field": 27,
+              "reason": "invalid start byte",
+              "start": 9781
+            }
+          ],
+          "line": 76,
+          "member": "20230905180000.gkg.csv",
+          "parser_version": "1.0.0",
+          "raw_base64": "MjAyMzA5MDUxODAwMDAtNzUJMjAyMzA5MDUxODAwMDAJMQlhbnRhcmFuZXdzLmNvbQlodHRwczovL2VuLmFudGFyYW5ld3MuY29tL25ld3MvMjkyOTI5L2luZG9uZXNpYW4tbWluaXN0ZXItdmlldG5hbXMtdmluZmFzdC1kaXNjdXNzLWV2LWNvb3BlcmF0aW9uJUMzJTgyJUMyJUEwCQkJVEFYX0VUSE5JQ0lUWTtUQVhfRVRITklDSVRZX0lORE9ORVNJQU47VEFYX1dPUkxETEFOR1VBR0VTO1RBWF9XT1JMRExBTkdVQUdFU19JTkRPTkVTSUFOO1dCXzY5OF9UUkFERTtUQVhfRk5DQUNUO1RBWF9GTkNBQ1RfTUlOSVNURVI7V0JfNTY2X0VOVklST05NRU5UX0FORF9OQVRVUkFMX1JFU09VUkNFUztXQl81OTBfRUNPU1lTVEVNUztVTkdQX0ZPUkVTVFNfUklWRVJTX09DRUFOUztFUFVfRUNPTk9NWV9ISVNUT1JJQztXQl8xOTIxX1BSSVZBVEVfU0VDVE9SX0RFVkVMT1BNRU5UO1dCXzM0Nl9DT01QRVRJVElWRV9JTkRVU1RSSUVTO1dCXzgxOF9JTkRVU1RSWV9QT0xJQ1lfQU5EX1JFQUxfU0VDVE9SUztXQl8xMjgxX01BTlVGQUNUVVJJTkc7UkVMQVRJT05TO1RBWF9GTkNBQ1RfUFJPRFVDRVI7V0JfNTA3X0VORVJHWV9BTkRfRVhUUkFDVElWRVM7V0JfODk1X01JTklOR19TWVNURU1TO1dCXzI5MzVfTklDS0VMO1dCXzE2OTlfTUVUQUxfT1JFX01JTklORztHRU5FUkFMX0dPVkVSTk1FTlQ7RVBVX1BPTElDWTtFUFVfUE9MSUNZX0dPVkVSTk1FTlQ7VVNQRUNfUE9MSUNZMTtDUklTSVNMRVhfVDExX1VQREFURVNTWU1QQVRIWTsJV0JfODE4X0lORFVTVFJZX1BPTElDWV9BTkRfUkVBTF9TRUNUT1JTLDYzMTtXQl84MThfSU5EVVNUUllfUE9MSUNZX0FORF9SRUFMX1NFQ1RPUlMsMTcwMTtXQl8xMjgxX01BTlVGQUNUVVJJTkcsNjMxO1dCXzEyODFfTUFOVUZBQ1RVUklORywxNzAxO1VTUEVDX1BPTElDWTEsMTM2OTtXQl81MDdfRU5FUkdZX0FORF9FWFRSQUNUSVZFUyw5OTk7V0JfODk1X01JTklOR19TWVNURU1TLDk5OTtXQl8yOTM1X05JQ0tFTCw5OTk7V0JfMTY5OV9NRVRBTF9PUkVfTUlOSU5HLDk5OTtXQl82OThfVFJBREUsNDU7V0JfNjk4X1RSQURFLDEzMzc7RVBVX0VDT05PTVlfSElTVE9SSUMsMzU1O0dFTkVSQUxfR09WRVJOTUVOVCwxMTQyO0VQVV9QT0xJQ1lfR09WRVJOTUVOVCwxMTQyO1dCXzU2Nl9FTlZJUk9OTUVOVF9BTkRfTkFUVVJBTF9SRVNPVVJDRVMsMzIzO1dCXzU5MF9FQ09TWVNURU1TLDMyMztVTkdQX0ZPUkVTVFNfUklWRVJTX09DRUFOUywzMjM7VEFYX0ZOQ0FDVF9NSU5JU1RFUiw1NDtSRUxBVElPTlMsODc2O1RBWF9GTkNBQ1RfUFJPRFVDRVIsOTg5O1dCXzE5MjFfUFJJVkFURV9TRUNUT1JfREVWRUxPUE1FTlQsMzc2O1dCXzM0Nl9DT01QRVRJVElWRV9JTkRVU1RSSUVTLDM3NjtUQVhfRVRITklDSVRZX0lORE9ORVNJQU4sMzk7VEFYX0VUSE5JQ0lUWV9JTkRPTkVTSUFOLDExMzE7VEFYX1dPUkxETEFOR1VBR0VTX0lORE9ORVNJQU4sMzk7VEFYX1dPUkxETEFOR1VBR0VTX0lORE9ORVNJQU4sMTEzMTtDUklTSVNMRVhfVDExX1VQREFURVNTWU1QQVRIWSwxNDczOwkxI1ZpZXRuYW0sIFJlcHVibGljIE9mI1ZNI1ZNIzE2LjE2NjY2NyMxMDcuODMzMzMzI1ZNOzQjQW50YXJhLCBBY2VoLCBJbmRvbmVzaWEjSUQjSUQwMSMzLjUyOTIjOTkuMDE4NCMxMDExOTEwNjsxI0luZG9uZXNpYSNJRCNJRCMtNSMxMjAjSUQJNCNBbnRhcmEsIEFjZWgsIEluZG9uZXNpYSNJRCNJRDAxIzE4NTg1IzMuNTI5MiM5OS4wMTg0IzEwMTE5MTA2IzE1OzEjSW5kb25lc2lhI0lEI0lEIyMtNSMxMjAjSUQjMjY7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCMyMTU7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM2NTI7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM3MTc7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM4OTQ7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM5NTk7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCMxNzQwOzEjSW5kb25lc2lhbiNJRCNJRCMjLTUjMTIwI0lEIzM5OzEjSW5kb25lc2lhbiNJRCNJRCMjLTUjMTIwI0lEIzExMzE7MSNWaWV0bmFtI1ZNI1ZNIyMxNi4xNjY2NjcjMTA3LjgzMzMzMyNWTSM5NzsxI1ZpZXRuYW0jVk0jVk0jIzE2LjE2NjY2NyMxMDcuODMzMzMzI1ZNIzcyNzsxI1ZpZXRuYW0jVk0jVk0jIzE2LjE2NjY2NyMxMDcuODMzMzMzI1ZNIzkwNAl6dWxraWZsaSBoYXNhbgladWxraWZsaSBIYXNhbiw2OQkJCTIuNzQ1MDk4MDM5MjE1NjksMy41Mjk0MTE3NjQ3MDU4OCwwLjc4NDMxMzcyNTQ5MDE5Niw0LjMxMzcyNTQ5MDE5NjA4LDE0LjExNzY0NzA1ODgyMzUsMCwyMzUJCXdjOjIzNSxjMS4yOjcsYzEuMzoyLGMxMi4xOjksYzEyLjEwOjIxLGMxMi4xMjoyLGMxMi4xMzo1LGMxMi4xNDoxNixjMTIuMzo0LGMxMi40OjEsYzEyLjU6NixjMTIuNzo2LGMxMi44OjYsYzEyLjk6MjAsYzEzLjE6MSxjMTMuNDoxLGMxMy43OjIsYzE0LjE6MTYsYzE0LjEwOjksYzE0LjExOjI2LGMxNC4yOjksYzE0LjM6MTMsYzE0LjQ6MixjMTQuNToxOCxjMTQuNzo4LGMxNC45OjQsYzE1LjEwMzo0LGMxNS4xMTA6MSxjMTUuMTc1OjEsYzE1LjE5NzoxLGMxNS4yMTE6MSxjMTUuMjI5OjEsYzE1LjI2OjEsYzE2LjEwMDo2LGMxNi4xMDE6MSxjMTYuMTAyOjEsYzE2LjEwNjo0LGMxNi4xMDk6NixjMTYuMTE6NCxjMTYuMTEwOjIzLGMxNi4xMTM6MSxjMTYuMTE0OjUsYzE2LjExNTo1LGMxNi4xMTY6NixjMTYuMTE3OjcsYzE2LjExODoxMCxjMTYuMTI6MTIsYzE2LjEyMDo3LGMxNi4xMjE6MTYsYzE2LjEyMjoxLGMxNi4xMjU6MTQsYzE2LjEyNjoxNyxjMTYuMTI3OjEzLGMxNi4xMjg6MSxjMTYuMTI5OjIyLGMxNi4xMzA6MSxjMTYuMTMxOjUsYzE2LjEzMzoyLGMxNi4xMzQ6MTAsYzE2LjEzODoxLGMxNi4xMzk6NCxjMTYuMTQwOjQsYzE2LjE0NToxMSxjMTYuMTQ2OjEzLGMxNi4xNTI6MSxjMTYuMTUzOjMsYzE2LjE1Nzo1LGMxNi4xNTk6NSxjMTYuMTY6MixjMTYuMTYxOjE1LGMxNi4xNjI6OSxjMTYuMTYzOjE3LGMxNi4xNjQ6MSxjMTYuMTY1OjEsYzE2LjE5OjQsYzE2LjI6MTcsYzE2LjIxOjEsYzE2LjIyOjMsYzE2LjI2OjEzLGMxNi4yODoxLGMxNi4zOjgsYzE2LjMwOjEsYzE2LjMxOjE2LGMxNi4zMzoxOSxjMTYuMzQ6NCxjMTYuMzU6NixjMTYuMzY6MSxjMTYuMzc6MTgsYzE2LjM4OjMsYzE2LjQ6MTMsYzE2LjQxOjUsYzE2LjQzOjEsYzE2LjQ1OjYsYzE2LjQ2OjEsYzE2LjQ3OjM2LGMxNi40ODoxMixjMTYuNDk6MixjMTYuNToxLGMxNi41MDozLGMxNi41MToxLGMxNi41MjoyMyxjMTYuNTM6MixjMTYuNTQ6MyxjMTYuNTY6MTYsYzE2LjU3OjExMCxjMTYuNTg6MTAsYzE2LjY6MTUsYzE2LjYwOjUsYzE2LjYxOjEsYzE2LjYyOjQsYzE2LjYzOjEsYzE2LjY0OjMsYzE2LjY1OjMsYzE2LjY2OjQsYzE2LjY4OjEyLGMxNi42OTo0LGMxNi43OjgsYzE2LjcwOjYsYzE2LjcxOjYsYzE2LjcyOjIsYzE2Ljc0OjIsYzE2Ljc1OjUsYzE2Ljc2OjEsYzE2Ljc4OjcsYzE2LjgwOjUsYzE2LjgyOjEsYzE2LjgzOjEsYzE2Ljg0OjE3LGMxNi44NzoyNCxjMTYuODg6MTQsYzE2Ljg5OjIsYzE2LjkwOjMsYzE2LjkxOjIsYzE2LjkyOjExLGMxNi45Mzo0LGMxNi45NDoxMyxjMTYuOTU6MTMsYzE2Ljk2OjgsYzE2Ljk4OjksYzE3LjE6NTUsYzE3LjEwOjE5LGMxNy4xMToyMSxjMTcuMTI6MTAsYzE3LjE1OjIxLGMxNy4xNjo4LGMxNy4xODo0LGMxNy4xOToxMCxjMTcuMjo4LGMxNy4yMDozLGMxNy4yMjo1LGMxNy4yMzo5LGMxNy4yNDoxNyxjMTcuMjU6MyxjMTcuMjc6MTksYzE3LjI4OjUsYzE3LjMwOjQsYzE3LjMxOjEwLGMxNy4zMjo0LGMxNy4zMzo2LGMxNy4zNDoyLGMxNy4zNToyLGMxNy4zNjo3LGMxNy4zNzo2LGMxNy4zODoxLGMxNy4zOTozLGMxNy40OjQ2LGMxNy40MDoyLGMxNy40MTo5LGMxNy40MjoxMCxjMTcuNDM6OCxjMTcuNTo1MixjMTcuNjozLGMxNy43OjI0LGMxNy44OjIyLGMxNy45OjMsYzE4LjE4MDoyLGMxOC4xOTM6MixjMTguMjM6MSxjMTguMzQyOjIsYzE4LjM1OjIsYzIuMTo4LGMyLjEwMDoyLGMyLjEwMTo0LGMyLjEwMjo4LGMyLjEwNDozNCxjMi4xMDY6OSxjMi4xMDc6MixjMi4xMTo2LGMyLjExMToxLGMyLjExMjoyLGMyLjExMzoyLGMyLjExNDo3LGMyLjExNjozLGMyLjExOTo2MyxjMi4xMjo0LGMyLjEyMToxNCxjMi4xMjI6NCxjMi4xMjM6MSxjMi4xMjU6NixjMi4xMjY6NCxjMi4xMjc6MTQsYzIuMTI4OjEyLGMyLjEyOToyMSxjMi4xMzE6MyxjMi4xMzI6MyxjMi4xMzM6MSxjMi4xMzU6MSxjMi4xMzY6NixjMi4xNDoyNixjMi4xNDE6NSxjMi4xNDM6MTYsYzIuMTQ0OjMsYzIuMTQ1OjEsYzIuMTQ2OjIsYzIuMTQ3OjM4LGMyLjE0ODoxMyxjMi4xNDk6MSxjMi4xNToxMyxjMi4xNTI6MixjMi4xNTM6NixjMi4xNTQ6NSxjMi4xNTU6MjQsYzIuMTU2OjEyLGMyLjE1NzoyMCxjMi4xNTg6MTIsYzIuMTU5OjUsYzIuMTYwOjExLGMyLjE2MjoyLGMyLjE2MzoxLGMyLjE2NToxLGMyLjE2NjozLGMyLjE2OToyLGMyLjE3OjIsYzIuMTcwOjIsYzIuMTcyOjEsYzIuMTczOjEsYzIuMTc0OjEsYzIuMTc2OjEsYzIuMTc3OjcsYzIuMTc5OjYsYzIuMTg6NCxjMi4xODA6NCxjMi4xODE6NSxjMi4xODM6NSxjMi4xODU6MjgsYzIuMTg2OjMsYzIuMTg3OjcsYzIuMTk6MSxjMi4xOTA6MSxjMi4xOTE6MSxjMi4xOTI6MixjMi4xOTM6MTYsYzIuMTk1OjMyLGMyLjE5NjozLGMyLjE5NzoxLGMyLjE5ODoxMyxjMi4xOTk6NCxjMi4yMDoxLGMyLjIwMDoxLGMyLjIwMzoxMCxjMi4yMDQ6NyxjMi4yMDU6NSxjMi4yMDY6MSxjMi4yMDc6MSxjMi4yMDk6MSxjMi4yMTA6MTMsYzIuMjEyOjEsYzIuMjEzOjIsYzIuMjE0OjE0LGMyLjIxNToyLGMyLjIxNzoxLGMyLjIxODoxLGMyLjIyMDozLGMyLjIyMToxMyxjMi4yMjI6MSxjMi4yMjM6MTcsYzIuMjI0OjMsYzIuMjI1OjIsYzIuMjI2OjUsYzIuMjI3OjEsYzIuMjM6NixjMi4yNToxMCxjMi4yNjoxMSxjMi4yNzoxMSxjMi4yODo0LGMyLjMwOjUsYzIuMzE6NixjMi4zMzozLGMyLjM0OjYsYzIuMzU6MyxjMi4zNjozLGMyLjM3OjMsYzIuMzk6MzYsYzIuNDE6MSxjMi40MjoyLGMyLjQzOjIsYzIuNDQ6MTMsYzIuNDU6MjYsYzIuNDY6MTAsYzIuNDc6MyxjMi40ODoxMSxjMi41OjEsYzIuNTA6MSxjMi41Mjo2LGMyLjUzOjEsYzIuNTQ6OCxjMi41Nzo1LGMyLjU4OjE2LGMyLjY6MSxjMi42MDozLGMyLjYxOjEsYzIuNjI6NCxjMi42NDo1LGMyLjY2OjEsYzIuNjg6MixjMi43MDoxLGMyLjcxOjIsYzIuNzU6MjUsYzIuNzY6MTQ0LGMyLjc3OjEzLGMyLjc4OjE4LGMyLjg6MSxjMi44MDoxOSxjMi44Mjo3LGMyLjg2OjcsYzIuODc6NixjMi44ODo4LGMyLjg5OjQsYzIuOTozLGMyLjkwOjEsYzIuOTM6NCxjMi45NToyNSxjMi45NzozLGMyLjk4OjE4LGMyLjk5OjMsYzI1LjU6MSxjMy4xOjMsYzMuMjoxOCxjMzUuMTo1LGMzNS4xMToxLGMzNS4xMjo4LGMzNS4xMzoyLGMzNS4xNDo3LGMzNS4xNTo0LGMzNS4yOjEsYzM1LjIwOjUsYzM1LjM6MixjMzUuMzE6MjYsYzM1LjMyOjEzLGMzNS4zMzo1LGMzNS41OjUsYzM1Ljc6NCxjMzkuMToxLGMzOS4xMDoxLGMzOS4xNzo0LGMzOS4yOjEsYzM5LjM6MSxjMzkuMzA6MSxjMzkuMzY6MyxjMzkuMzc6NSxjMzkuNDozLGMzOS40MTo0LGMzOS41OjEsYzQuMTA6MyxjNC4xMjoyLGM0LjE5OjEsYzQuMjoxLGM0LjIzOjQsYzQuOToxLGM0MC41OjEsYzQxLjE6MjAsYzQyLjE6NzUsYzUuMTA6MTksYzUuMTE6NyxjNS4xMjoyOCxjNS4xODoxLGM1LjIxOjEsYzUuMjM6NixjNS4yNzoxLGM1LjI4OjUsYzUuMjk6MyxjNS4zOjIsYzUuMzA6MTUsYzUuMzE6MixjNS4zNDoyLGM1LjM1OjksYzUuMzY6MTEsYzUuMzc6MSxjNS40OjcsYzUuNDA6MTMsYzUuNDM6MixjNS40NTo0LGM1LjQ2OjM2LGM1LjQ3OjMsYzUuNDg6MixjNS40OToxNSxjNS41OjIsYzUuNTA6MTMsYzUuNTE6MTIsYzUuNTI6MTgsYzUuNTM6MjcsYzUuNTQ6NyxjNS41NjozLGM1LjY6NCxjNS42MDozLGM1LjYxOjEwLGM1LjYyOjg2LGM1Ljc6OCxjNS44OjIxLGM1Ljk6MixjNi4xOjMsYzYuMjozLGM2LjQ6NCxjNi41OjYsYzcuMTo3LGM3LjI6MTUsYzguMToxLGM4LjEyOjEsYzguMTc6MyxjOC4yMDoyLGM4LjIyOjIsYzguMjM6NSxjOC4zNDoxLGM4LjM2OjEsYzguMzc6NCxjOC4zODoxMixjOC4zOToxLGM4LjQ6NCxjOC40MDoxLGM4LjQyOjEwLGM4LjQzOjQsYzguODoxLGM5LjE6NCxjOS4xMDoyLGM5LjEwMTI6MSxjOS4xMDIzOjEsYzkuMTAzMDoyLGM5LjEwMzg6MSxjOS4xMDM5OjIsYzkuMTA0MToxLGM5LjEwOToyLGM5LjExMToxLGM5LjEyMjoyLGM5LjEyODo3LGM5LjEyOToyLGM5LjEzMDoxLGM5LjE0MTozLGM5LjE0ODoyLGM5LjE1OjEsYzkuMTUxOjYsYzkuMTU3OjIsYzkuMTU4OjUsYzkuMTYwOjEsYzkuMTYxOjQsYzkuMTYyOjIsYzkuMTY0OjEsYzkuMTY1OjIsYzkuMTY2OjIsYzkuMTY4OjYsYzkuMTcxOjEsYzkuMTc1OjIsYzkuMTc2OjIsYzkuMTc3OjEsYzkuMTc4OjEsYzkuMTg6MixjOS4xODI6NSxjOS4xODQ6NSxjOS4xODU6MSxjOS4xODY6MyxjOS4xODg6MyxjOS4xOTA6MSxjOS4xOTI6MSxjOS4xOTM6MSxjOS4xOTc6MixjOS4xOTg6NCxjOS4yOjEsYzkuMjAwOjEsYzkuMjAxOjEsYzkuMjAzOjcsYzkuMjA3OjEsYzkuMjA4OjEsYzkuMjA5OjEsYzkuMjI0OjQsYzkuMjI5OjEsYzkuMjMxOjMsYzkuMjMzOjEsYzkuMjM1OjIsYzkuMjM4OjIsYzkuMjQxOjEsYzkuMjQ2OjEsYzkuMjQ4OjEsYzkuMjU6MyxjOS4yNTA6MSxjOS4yNTY6MixjOS4yNjA6MSxjOS4yNjI6MSxjOS4yNjU6MSxjOS4yNzA6MSxjOS4yNzQ6MSxjOS4yNzY6MixjOS4yODA6MSxjOS4yODI6MixjOS4yODQ6MyxjOS4yODg6MixjOS4yOTA6MSxjOS4yOTQ6MSxjOS4zOjcsYzkuMzAwOjEsYzkuMzAyOjEsYzkuMzA0OjIsYzkuMzA1OjEsYzkuMzA2OjEsYzkuMzEwOjIsYzkuMzEyOjEsYzkuMzE3OjEsYzkuMzIzOjMsYzkuMzI2OjMsYzkuMzI4OjEsYzkuMzI5OjEsYzkuMzM6MixjOS4zMzk6MixjOS4zNDg6MSxjOS4zNToxLGM5LjM1MjoxLGM5LjM3OjYsYzkuMzcxOjEsYzkuMzc4OjEsYzkuMzgxOjIsYzkuMzgyOjEsYzkuMzgzOjEsYzkuMzg0OjMsYzkuMzk6NixjOS4zOTA6MixjOS4zOTE6MSxjOS4zOTU6MixjOS4zOTg6MSxjOS40MjoyLGM5LjQyODoxLGM5LjQ0OjIsYzkuNDQwOjIsYzkuNDQ2OjIsYzkuNDY6MSxjOS40NzM6MSxjOS40NzQ6MSxjOS40NzY6MixjOS40Nzc6MSxjOS40Nzk6MixjOS40ODozLGM5LjQ4ODoxLGM5LjQ4OToxLGM5LjQ5NzoxLGM5LjQ5ODo0LGM5LjUwMDoyLGM5LjUwMToxLGM5LjUxMTo4LGM5LjUxMzoxLGM5LjUxNzoyLGM5LjUyMToxLGM5LjUyMjoyLGM5LjUzMDoxLGM5LjUzMzoxLGM5LjUzNDoxLGM5LjUzNzoxLGM5LjU0OjEsYzkuNTQwOjEsYzkuNTQ2OjEsYzkuNTQ5OjEsYzkuNTUxOjIsYzkuNTU0OjEsYzkuNTU2OjEsYzkuNTYyOjEsYzkuNTY0OjIsYzkuNTY4OjEsYzkuNTc5OjYsYzkuNTk6MSxjOS41OTE6MSxjOS42MDk6MSxjOS42MToyLGM5LjYxODoxLGM5LjYyOjEsYzkuNjI0OjIsYzkuNjI1OjIsYzkuNjI3OjMsYzkuNjI5OjIsYzkuNjMwOjMsYzkuNjMyOjIsYzkuNjM1OjIsYzkuNjQ6MSxjOS42NDA6MyxjOS42NDI6NCxjOS42NDM6MSxjOS42NDY6NCxjOS42NDg6MyxjOS42NDk6MSxjOS42NTA6MSxjOS42NTM6MTAsYzkuNjU0OjIsYzkuNjU1OjIsYzkuNjU4OjEsYzkuNjU5OjgsYzkuNjYwOjQsYzkuNjYzOjUsYzkuNjY1OjEsYzkuNjY2OjIsYzkuNjY3OjEsYzkuNjY5OjIsYzkuNjcwOjgsYzkuNjcxOjIsYzkuNjcyOjYsYzkuNjczOjIsYzkuNjc0OjIsYzkuNjc1OjIsYzkuNjc2OjMsYzkuNjc3OjIsYzkuNjc5OjEsYzkuNjgyOjEsYzkuNjgzOjMsYzkuNjg0OjIsYzkuNjg2OjEsYzkuNjg3OjMsYzkuNjkzOjEsYzkuNjk5OjEsYzkuNzA6MixjOS43MDE6NCxjOS43MDI6NCxjOS43MDQ6MyxjOS43MDU6MyxjOS43MDg6MyxjOS43MTA6NCxjOS43MTQ6MyxjOS43MTg6MSxjOS43MjA6NCxjOS43MjE6MyxjOS43MjI6MSxjOS43MjM6MSxjOS43MjQ6MyxjOS43MjU6MSxjOS43MjY6NyxjOS43Mjc6NCxjOS43MzA6NSxjOS43MzE6MSxjOS43MzM6MSxjOS43MzU6NixjOS43MzY6MixjOS43Mzc6NCxjOS43Mzk6MSxjOS43NDA6NCxjOS43NDE6MixjOS43NDQ6MixjOS43NDg6NCxjOS43NToxLGM5Ljc1MjoyLGM5Ljc1NDozLGM5Ljc1NToyLGM5Ljc1OToxLGM5Ljc2OjMsYzkuNzYwOjIsYzkuNzYyOjQsYzkuNzY1OjMsYzkuNzY2OjQsYzkuNzY3OjgsYzkuNzcxOjEsYzkuNzc0OjEsYzkuNzc2OjIsYzkuNzc4OjEsYzkuNzgwOjEsYzkuNzg1OjEsYzkuNzg4OjEsYzkuNzg5OjEsYzkuNzkwOjMsYzkuNzkyOjIsYzkuNzkzOjEsYzkuNzk1OjEsYzkuNzk5OjEsYzkuODA6MSxjOS44MDI6MyxjOS44MDg6MSxjOS44MDk6MSxjOS44MTA6MyxjOS44MTI6NCxjOS44MTY6NCxjOS44MTk6MixjOS44MjI6MSxjOS44MjY6MyxjOS44Mzo2LGM5LjgzMjo0LGM5LjgzNDoyLGM5LjgzNzoxLGM5Ljg0MDoxLGM5Ljg0MToxLGM5Ljg0MzoyLGM5Ljg0ODoyLGM5Ljg1ODozLGM5Ljg2MDozLGM5Ljg2MToxLGM5Ljg2MjozLGM5Ljg2NDo0LGM5Ljg2NToyLGM5Ljg2NjoyLGM5Ljg2ODo0LGM5Ljg3NzoxLGM5Ljg5OjEsYzkuODkwOjEsYzkuOTAzOjIsYzkuOTA4OjEsYzkuOTI2OjIsYzkuOTMwOjEsYzkuOTMxOjIsYzkuOTMyOjEsYzkuOTM1OjUsYzkuOTQ2OjEsYzkuOTU1OjIsYzkuOTU4OjEsYzkuOTY6NCxjOS45NjI6MSxjOS45NjQ6MSxjOS45NjY6MixjOS45Njg6MSxjOS45Njk6MSxjOS45NzoxLGM5Ljk3MjozLGM5Ljk3ODoyLGM5Ljk4OjEsYzkuOTgwOjMsYzkuOTg0OjIsYzkuOTg1OjEsdjEwLjE6MC4yNjQ0NzE3MjYxOTA0NzYsdjEwLjI6MC4yODA3NDE4Njk5MTg2OTksdjExLjE6MC4xMTAzNzUxMDUyNjMxNTgsdjE5LjE6NS43MzU2MjUsdjE5LjI6NS4wMjUsdjE5LjM6NS40NTYyNSx2MTkuNDo1Ljg5NSx2MTkuNTo0Ljg5NTYyNSx2MTkuNjo1LjYyMTg3NSx2MTkuNzo1LjYzNjI1LHYxOS44OjUuMTc0Mzc1LHYxOS45OjUuMzUxMjUsdjIwLjE6MC42MjYsdjIwLjExOjAuNTg0LHYyMC4xMzowLjQwMTE0Mjg1NzE0Mjg1Nyx2MjAuMTQ6LTAuMzc1LHYyMC4xNTowLjM2NzU1NTU1NTU1NTU1Nix2MjAuMTY6LTAuMzEyNSx2MjAuMzowLjYyNix2MjAuNTowLjYyNix2MjAuNzowLjYyNix2MjAuOTowLjYyNix2MjEuMTo1LjQ3NjkzNTQ4Mzg3MDk3LHYyNi4xOjEuNTgzMzMzMzMzMzMzMzMsdjQyLjEwOjAuMDU5OTQ1OTYyOTMzMzMzMyx2NDIuMTE6MC4wMjc0Mjc0NjgxNDY2NjY3LHY0Mi4yOjAuMTIyNDM0NjExMzg2NjY3LHY0Mi4zOjAuMDk2ODQ5Mzc4ODI2NjY2Nix2NDIuNDowLjA5OTE3NDQ0Mzk4NjY2NjcsdjQyLjU6MC4wODc4MjkyNjgyMjY2NjY3LHY0Mi42OjAuMDc4NTk2NDQwMzIsdjQyLjc6LTAuMDI2NjI1MDcwMTczMzMzMyx2NDIuODowLjA0Nzg3NDMxMTAxMzMzMzQsdjQyLjk6MC4wMzEwNTAxNzQxMglodHRwczovL2Nkbi5hbnRhcmFuZXdzLmNvbS9jYWNoZS8xMjAweDgwMC8yMDIzLzA5LzA1L0lNR18wMDY5LnBuZwkJCWh0dHBzOi8veW91dHViZS5jb20vdXNlci9hbnRhcmFuZXdzOwkJVHJhZGUgTWluaXN0ZXIgWnVsa2lmbGkgSGFzYW4sNjA7VHJhZGUgTWluaXN0cnksMTM5MAkJCTxQQUdFX0FVVEhPUlM+YW50YXJhbmV3cy5jb208L1BBR0VfQVVUSE9SUz48UEFHRV9QUkVDSVNFUFVCVElNRVNUQU1QPjIwMjMwOTA1MTczNDAwPC9QQUdFX1BSRUNJU0VQVUJUSU1FU1RBTVA+PFBBR0VfQUxUVVJMX0FNUD5odHRwczovL2VuLmFudGFyYW5ld3MuY29tL2FtcC9uZXdzLzI5MjkyOS9pbmRvbmVzaWFuLW1pbmlzdGVyLXZpZXRuYW1zLXZpbmZhc3QtZGlzY3Vzcy1ldi1jb29wZXJhdGlvbqA8L1BBR0VfQUxUVVJMX0FNUD48UEFHRV9USVRMRT5JbmRvbmVzaWFuIG1pbmlzdGVyLCBWaWV0bmFtJ3MgVmluRmFzdCBkaXNjdXNzIEVWIGNvb3BlcmF0aW9uPC9QQUdFX1RJVExFPgo=",
+          "raw_sha256": "0db2b2d690fffb33e2097078c75234d85b710a1b6a3071fdba0d847300b72d9b",
+          "reasons": [
+            {
+              "code": "invalid_utf8",
+              "detail": "Strict UTF-8 rejected; no alternative decoding"
+            }
+          ],
+          "row_id": "e2a2440bbd7121ff35fc1737ef849bd56c6c6d06f40901e1bbb1bf932855bb5a",
+          "schema_version": "1.0.0",
+          "source": {
+            "acquisition": "passed",
+            "archive_bytes": 9777462,
+            "archive_sha256": "e235ebad1a7fe296fade0f447fd848d4ae79b2ad7b7f4fed9028dab486b1710f",
+            "batch_id": "20230905180000",
+            "source_id": "gdelt-gkg-2.1",
+            "source_url": "https://data.gdeltproject.org/gdeltv2/20230905180000.gkg.csv.zip"
+          },
+          "start": 1032130,
+          "timestamp": "20230905180000"
+        },
+        {
+          "disposition": "quarantined_encoding",
+          "end": 2177500,
+          "fields_sha256": null,
+          "invalid_sequences": [
+            {
+              "bytes_hex": "a0",
+              "end": 9777,
+              "field": 27,
+              "reason": "invalid start byte",
+              "start": 9776
+            }
+          ],
+          "line": 173,
+          "member": "20230905180000.gkg.csv",
+          "parser_version": "1.0.0",
+          "raw_base64": "MjAyMzA5MDUxODAwMDAtMTcyCTIwMjMwOTA1MTgwMDAwCTEJYW50YXJhbmV3cy5jb20JaHR0cHM6Ly9lbi5hbnRhcmFuZXdzLmNvbS9uZXdzLzI5MjkyOS9pbmRvbmVzaWFuLW1pbmlzdGVyLXZpZXRuYW1zLXZpbmZhc3QtZGlzY3Vzcy1ldi1jb29wZXJhdGlvbiVDMiVBMAkJCVRBWF9FVEhOSUNJVFk7VEFYX0VUSE5JQ0lUWV9JTkRPTkVTSUFOO1RBWF9XT1JMRExBTkdVQUdFUztUQVhfV09STERMQU5HVUFHRVNfSU5ET05FU0lBTjtXQl82OThfVFJBREU7VEFYX0ZOQ0FDVDtUQVhfRk5DQUNUX01JTklTVEVSO1dCXzU2Nl9FTlZJUk9OTUVOVF9BTkRfTkFUVVJBTF9SRVNPVVJDRVM7V0JfNTkwX0VDT1NZU1RFTVM7VU5HUF9GT1JFU1RTX1JJVkVSU19PQ0VBTlM7RVBVX0VDT05PTVlfSElTVE9SSUM7V0JfMTkyMV9QUklWQVRFX1NFQ1RPUl9ERVZFTE9QTUVOVDtXQl8zNDZfQ09NUEVUSVRJVkVfSU5EVVNUUklFUztXQl84MThfSU5EVVNUUllfUE9MSUNZX0FORF9SRUFMX1NFQ1RPUlM7V0JfMTI4MV9NQU5VRkFDVFVSSU5HO1JFTEFUSU9OUztUQVhfRk5DQUNUX1BST0RVQ0VSO1dCXzUwN19FTkVSR1lfQU5EX0VYVFJBQ1RJVkVTO1dCXzg5NV9NSU5JTkdfU1lTVEVNUztXQl8yOTM1X05JQ0tFTDtXQl8xNjk5X01FVEFMX09SRV9NSU5JTkc7R0VORVJBTF9HT1ZFUk5NRU5UO0VQVV9QT0xJQ1k7RVBVX1BPTElDWV9HT1ZFUk5NRU5UO1VTUEVDX1BPTElDWTE7Q1JJU0lTTEVYX1QxMV9VUERBVEVTU1lNUEFUSFk7CUNSSVNJU0xFWF9UMTFfVVBEQVRFU1NZTVBBVEhZLDE0NzM7VEFYX0ZOQ0FDVF9QUk9EVUNFUiw5ODk7UkVMQVRJT05TLDg3NjtUQVhfRk5DQUNUX01JTklTVEVSLDU0O1RBWF9FVEhOSUNJVFlfSU5ET05FU0lBTiwzOTtUQVhfRVRITklDSVRZX0lORE9ORVNJQU4sMTEzMTtUQVhfV09STERMQU5HVUFHRVNfSU5ET05FU0lBTiwzOTtUQVhfV09STERMQU5HVUFHRVNfSU5ET05FU0lBTiwxMTMxO1dCXzE5MjFfUFJJVkFURV9TRUNUT1JfREVWRUxPUE1FTlQsMzc2O1dCXzM0Nl9DT01QRVRJVElWRV9JTkRVU1RSSUVTLDM3NjtXQl81NjZfRU5WSVJPTk1FTlRfQU5EX05BVFVSQUxfUkVTT1VSQ0VTLDMyMztXQl81OTBfRUNPU1lTVEVNUywzMjM7VU5HUF9GT1JFU1RTX1JJVkVSU19PQ0VBTlMsMzIzO0dFTkVSQUxfR09WRVJOTUVOVCwxMTQyO0VQVV9QT0xJQ1lfR09WRVJOTUVOVCwxMTQyO0VQVV9FQ09OT01ZX0hJU1RPUklDLDM1NTtVU1BFQ19QT0xJQ1kxLDEzNjk7V0JfODE4X0lORFVTVFJZX1BPTElDWV9BTkRfUkVBTF9TRUNUT1JTLDYzMTtXQl84MThfSU5EVVNUUllfUE9MSUNZX0FORF9SRUFMX1NFQ1RPUlMsMTcwMTtXQl8xMjgxX01BTlVGQUNUVVJJTkcsNjMxO1dCXzEyODFfTUFOVUZBQ1RVUklORywxNzAxO1dCXzY5OF9UUkFERSw0NTtXQl82OThfVFJBREUsMTMzNztXQl81MDdfRU5FUkdZX0FORF9FWFRSQUNUSVZFUyw5OTk7V0JfODk1X01JTklOR19TWVNURU1TLDk5OTtXQl8yOTM1X05JQ0tFTCw5OTk7V0JfMTY5OV9NRVRBTF9PUkVfTUlOSU5HLDk5OTsJMSNJbmRvbmVzaWEjSUQjSUQjLTUjMTIwI0lEOzEjVmlldG5hbSwgUmVwdWJsaWMgT2YjVk0jVk0jMTYuMTY2NjY3IzEwNy44MzMzMzMjVk07NCNBbnRhcmEsIEFjZWgsIEluZG9uZXNpYSNJRCNJRDAxIzMuNTI5MiM5OS4wMTg0IzEwMTE5MTA2CTEjSW5kb25lc2lhI0lEI0lEIyMtNSMxMjAjSUQjMjY7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCMyMTU7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM2NTI7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM3MTc7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM4OTQ7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCM5NTk7MSNJbmRvbmVzaWEjSUQjSUQjIy01IzEyMCNJRCMxNzQwOzQjQW50YXJhLCBBY2VoLCBJbmRvbmVzaWEjSUQjSUQwMSMxODU4NSMzLjUyOTIjOTkuMDE4NCMxMDExOTEwNiMxNTsxI1ZpZXRuYW0jVk0jVk0jIzE2LjE2NjY2NyMxMDcuODMzMzMzI1ZNIzk3OzEjVmlldG5hbSNWTSNWTSMjMTYuMTY2NjY3IzEwNy44MzMzMzMjVk0jNzI3OzEjVmlldG5hbSNWTSNWTSMjMTYuMTY2NjY3IzEwNy44MzMzMzMjVk0jOTA0OzEjSW5kb25lc2lhbiNJRCNJRCMjLTUjMTIwI0lEIzM5OzEjSW5kb25lc2lhbiNJRCNJRCMjLTUjMTIwI0lEIzExMzEJenVsa2lmbGkgaGFzYW4JWnVsa2lmbGkgSGFzYW4sNjkJCQkyLjc0NTA5ODAzOTIxNTY5LDMuNTI5NDExNzY0NzA1ODgsMC43ODQzMTM3MjU0OTAxOTYsNC4zMTM3MjU0OTAxOTYwOCwxNC4xMTc2NDcwNTg4MjM1LDAsMjM1CQl3YzoyMzUsYzEuMjo3LGMxLjM6MixjMTIuMTo5LGMxMi4xMDoyMSxjMTIuMTI6MixjMTIuMTM6NSxjMTIuMTQ6MTYsYzEyLjM6NCxjMTIuNDoxLGMxMi41OjYsYzEyLjc6NixjMTIuODo2LGMxMi45OjIwLGMxMy4xOjEsYzEzLjQ6MSxjMTMuNzoyLGMxNC4xOjE2LGMxNC4xMDo5LGMxNC4xMToyNixjMTQuMjo5LGMxNC4zOjEzLGMxNC40OjIsYzE0LjU6MTgsYzE0Ljc6OCxjMTQuOTo0LGMxNS4xMDM6NCxjMTUuMTEwOjEsYzE1LjE3NToxLGMxNS4xOTc6MSxjMTUuMjExOjEsYzE1LjIyOToxLGMxNS4yNjoxLGMxNi4xMDA6NixjMTYuMTAxOjEsYzE2LjEwMjoxLGMxNi4xMDY6NCxjMTYuMTA5OjYsYzE2LjExOjQsYzE2LjExMDoyMyxjMTYuMTEzOjEsYzE2LjExNDo1LGMxNi4xMTU6NSxjMTYuMTE2OjYsYzE2LjExNzo3LGMxNi4xMTg6MTAsYzE2LjEyOjEyLGMxNi4xMjA6NyxjMTYuMTIxOjE2LGMxNi4xMjI6MSxjMTYuMTI1OjE0LGMxNi4xMjY6MTcsYzE2LjEyNzoxMyxjMTYuMTI4OjEsYzE2LjEyOToyMixjMTYuMTMwOjEsYzE2LjEzMTo1LGMxNi4xMzM6MixjMTYuMTM0OjEwLGMxNi4xMzg6MSxjMTYuMTM5OjQsYzE2LjE0MDo0LGMxNi4xNDU6MTEsYzE2LjE0NjoxMyxjMTYuMTUyOjEsYzE2LjE1MzozLGMxNi4xNTc6NSxjMTYuMTU5OjUsYzE2LjE2OjIsYzE2LjE2MToxNSxjMTYuMTYyOjksYzE2LjE2MzoxNyxjMTYuMTY0OjEsYzE2LjE2NToxLGMxNi4xOTo0LGMxNi4yOjE3LGMxNi4yMToxLGMxNi4yMjozLGMxNi4yNjoxMyxjMTYuMjg6MSxjMTYuMzo4LGMxNi4zMDoxLGMxNi4zMToxNixjMTYuMzM6MTksYzE2LjM0OjQsYzE2LjM1OjYsYzE2LjM2OjEsYzE2LjM3OjE4LGMxNi4zODozLGMxNi40OjEzLGMxNi40MTo1LGMxNi40MzoxLGMxNi40NTo2LGMxNi40NjoxLGMxNi40NzozNixjMTYuNDg6MTIsYzE2LjQ5OjIsYzE2LjU6MSxjMTYuNTA6MyxjMTYuNTE6MSxjMTYuNTI6MjMsYzE2LjUzOjIsYzE2LjU0OjMsYzE2LjU2OjE2LGMxNi41NzoxMTAsYzE2LjU4OjEwLGMxNi42OjE1LGMxNi42MDo1LGMxNi42MToxLGMxNi42Mjo0LGMxNi42MzoxLGMxNi42NDozLGMxNi42NTozLGMxNi42Njo0LGMxNi42ODoxMixjMTYuNjk6NCxjMTYuNzo4LGMxNi43MDo2LGMxNi43MTo2LGMxNi43MjoyLGMxNi43NDoyLGMxNi43NTo1LGMxNi43NjoxLGMxNi43ODo3LGMxNi44MDo1LGMxNi44MjoxLGMxNi44MzoxLGMxNi44NDoxNyxjMTYuODc6MjQsYzE2Ljg4OjE0LGMxNi44OToyLGMxNi45MDozLGMxNi45MToyLGMxNi45MjoxMSxjMTYuOTM6NCxjMTYuOTQ6MTMsYzE2Ljk1OjEzLGMxNi45Njo4LGMxNi45ODo5LGMxNy4xOjU1LGMxNy4xMDoxOSxjMTcuMTE6MjEsYzE3LjEyOjEwLGMxNy4xNToyMSxjMTcuMTY6OCxjMTcuMTg6NCxjMTcuMTk6MTAsYzE3LjI6OCxjMTcuMjA6MyxjMTcuMjI6NSxjMTcuMjM6OSxjMTcuMjQ6MTcsYzE3LjI1OjMsYzE3LjI3OjE5LGMxNy4yODo1LGMxNy4zMDo0LGMxNy4zMToxMCxjMTcuMzI6NCxjMTcuMzM6NixjMTcuMzQ6MixjMTcuMzU6MixjMTcuMzY6NyxjMTcuMzc6NixjMTcuMzg6MSxjMTcuMzk6MyxjMTcuNDo0NixjMTcuNDA6MixjMTcuNDE6OSxjMTcuNDI6MTAsYzE3LjQzOjgsYzE3LjU6NTIsYzE3LjY6MyxjMTcuNzoyNCxjMTcuODoyMixjMTcuOTozLGMxOC4xODA6MixjMTguMTkzOjIsYzE4LjIzOjEsYzE4LjM0MjoyLGMxOC4zNToyLGMyLjE6OCxjMi4xMDA6MixjMi4xMDE6NCxjMi4xMDI6OCxjMi4xMDQ6MzQsYzIuMTA2OjksYzIuMTA3OjIsYzIuMTE6NixjMi4xMTE6MSxjMi4xMTI6MixjMi4xMTM6MixjMi4xMTQ6NyxjMi4xMTY6MyxjMi4xMTk6NjMsYzIuMTI6NCxjMi4xMjE6MTQsYzIuMTIyOjQsYzIuMTIzOjEsYzIuMTI1OjYsYzIuMTI2OjQsYzIuMTI3OjE0LGMyLjEyODoxMixjMi4xMjk6MjEsYzIuMTMxOjMsYzIuMTMyOjMsYzIuMTMzOjEsYzIuMTM1OjEsYzIuMTM2OjYsYzIuMTQ6MjYsYzIuMTQxOjUsYzIuMTQzOjE2LGMyLjE0NDozLGMyLjE0NToxLGMyLjE0NjoyLGMyLjE0NzozOCxjMi4xNDg6MTMsYzIuMTQ5OjEsYzIuMTU6MTMsYzIuMTUyOjIsYzIuMTUzOjYsYzIuMTU0OjUsYzIuMTU1OjI0LGMyLjE1NjoxMixjMi4xNTc6MjAsYzIuMTU4OjEyLGMyLjE1OTo1LGMyLjE2MDoxMSxjMi4xNjI6MixjMi4xNjM6MSxjMi4xNjU6MSxjMi4xNjY6MyxjMi4xNjk6MixjMi4xNzoyLGMyLjE3MDoyLGMyLjE3MjoxLGMyLjE3MzoxLGMyLjE3NDoxLGMyLjE3NjoxLGMyLjE3Nzo3LGMyLjE3OTo2LGMyLjE4OjQsYzIuMTgwOjQsYzIuMTgxOjUsYzIuMTgzOjUsYzIuMTg1OjI4LGMyLjE4NjozLGMyLjE4Nzo3LGMyLjE5OjEsYzIuMTkwOjEsYzIuMTkxOjEsYzIuMTkyOjIsYzIuMTkzOjE2LGMyLjE5NTozMixjMi4xOTY6MyxjMi4xOTc6MSxjMi4xOTg6MTMsYzIuMTk5OjQsYzIuMjA6MSxjMi4yMDA6MSxjMi4yMDM6MTAsYzIuMjA0OjcsYzIuMjA1OjUsYzIuMjA2OjEsYzIuMjA3OjEsYzIuMjA5OjEsYzIuMjEwOjEzLGMyLjIxMjoxLGMyLjIxMzoyLGMyLjIxNDoxNCxjMi4yMTU6MixjMi4yMTc6MSxjMi4yMTg6MSxjMi4yMjA6MyxjMi4yMjE6MTMsYzIuMjIyOjEsYzIuMjIzOjE3LGMyLjIyNDozLGMyLjIyNToyLGMyLjIyNjo1LGMyLjIyNzoxLGMyLjIzOjYsYzIuMjU6MTAsYzIuMjY6MTEsYzIuMjc6MTEsYzIuMjg6NCxjMi4zMDo1LGMyLjMxOjYsYzIuMzM6MyxjMi4zNDo2LGMyLjM1OjMsYzIuMzY6MyxjMi4zNzozLGMyLjM5OjM2LGMyLjQxOjEsYzIuNDI6MixjMi40MzoyLGMyLjQ0OjEzLGMyLjQ1OjI2LGMyLjQ2OjEwLGMyLjQ3OjMsYzIuNDg6MTEsYzIuNToxLGMyLjUwOjEsYzIuNTI6NixjMi41MzoxLGMyLjU0OjgsYzIuNTc6NSxjMi41ODoxNixjMi42OjEsYzIuNjA6MyxjMi42MToxLGMyLjYyOjQsYzIuNjQ6NSxjMi42NjoxLGMyLjY4OjIsYzIuNzA6MSxjMi43MToyLGMyLjc1OjI1LGMyLjc2OjE0NCxjMi43NzoxMyxjMi43ODoxOCxjMi44OjEsYzIuODA6MTksYzIuODI6NyxjMi44Njo3LGMyLjg3OjYsYzIuODg6OCxjMi44OTo0LGMyLjk6MyxjMi45MDoxLGMyLjkzOjQsYzIuOTU6MjUsYzIuOTc6MyxjMi45ODoxOCxjMi45OTozLGMyNS41OjEsYzMuMTozLGMzLjI6MTgsYzM1LjE6NSxjMzUuMTE6MSxjMzUuMTI6OCxjMzUuMTM6MixjMzUuMTQ6NyxjMzUuMTU6NCxjMzUuMjoxLGMzNS4yMDo1LGMzNS4zOjIsYzM1LjMxOjI2LGMzNS4zMjoxMyxjMzUuMzM6NSxjMzUuNTo1LGMzNS43OjQsYzM5LjE6MSxjMzkuMTA6MSxjMzkuMTc6NCxjMzkuMjoxLGMzOS4zOjEsYzM5LjMwOjEsYzM5LjM2OjMsYzM5LjM3OjUsYzM5LjQ6MyxjMzkuNDE6NCxjMzkuNToxLGM0LjEwOjMsYzQuMTI6MixjNC4xOToxLGM0LjI6MSxjNC4yMzo0LGM0Ljk6MSxjNDAuNToxLGM0MS4xOjIwLGM0Mi4xOjc1LGM1LjEwOjE5LGM1LjExOjcsYzUuMTI6MjgsYzUuMTg6MSxjNS4yMToxLGM1LjIzOjYsYzUuMjc6MSxjNS4yODo1LGM1LjI5OjMsYzUuMzoyLGM1LjMwOjE1LGM1LjMxOjIsYzUuMzQ6MixjNS4zNTo5LGM1LjM2OjExLGM1LjM3OjEsYzUuNDo3LGM1LjQwOjEzLGM1LjQzOjIsYzUuNDU6NCxjNS40NjozNixjNS40NzozLGM1LjQ4OjIsYzUuNDk6MTUsYzUuNToyLGM1LjUwOjEzLGM1LjUxOjEyLGM1LjUyOjE4LGM1LjUzOjI3LGM1LjU0OjcsYzUuNTY6MyxjNS42OjQsYzUuNjA6MyxjNS42MToxMCxjNS42Mjo4NixjNS43OjgsYzUuODoyMSxjNS45OjIsYzYuMTozLGM2LjI6MyxjNi40OjQsYzYuNTo2LGM3LjE6NyxjNy4yOjE1LGM4LjE6MSxjOC4xMjoxLGM4LjE3OjMsYzguMjA6MixjOC4yMjoyLGM4LjIzOjUsYzguMzQ6MSxjOC4zNjoxLGM4LjM3OjQsYzguMzg6MTIsYzguMzk6MSxjOC40OjQsYzguNDA6MSxjOC40MjoxMCxjOC40Mzo0LGM4Ljg6MSxjOS4xOjQsYzkuMTA6MixjOS4xMDEyOjEsYzkuMTAyMzoxLGM5LjEwMzA6MixjOS4xMDM4OjEsYzkuMTAzOToyLGM5LjEwNDE6MSxjOS4xMDk6MixjOS4xMTE6MSxjOS4xMjI6MixjOS4xMjg6NyxjOS4xMjk6MixjOS4xMzA6MSxjOS4xNDE6MyxjOS4xNDg6MixjOS4xNToxLGM5LjE1MTo2LGM5LjE1NzoyLGM5LjE1ODo1LGM5LjE2MDoxLGM5LjE2MTo0LGM5LjE2MjoyLGM5LjE2NDoxLGM5LjE2NToyLGM5LjE2NjoyLGM5LjE2ODo2LGM5LjE3MToxLGM5LjE3NToyLGM5LjE3NjoyLGM5LjE3NzoxLGM5LjE3ODoxLGM5LjE4OjIsYzkuMTgyOjUsYzkuMTg0OjUsYzkuMTg1OjEsYzkuMTg2OjMsYzkuMTg4OjMsYzkuMTkwOjEsYzkuMTkyOjEsYzkuMTkzOjEsYzkuMTk3OjIsYzkuMTk4OjQsYzkuMjoxLGM5LjIwMDoxLGM5LjIwMToxLGM5LjIwMzo3LGM5LjIwNzoxLGM5LjIwODoxLGM5LjIwOToxLGM5LjIyNDo0LGM5LjIyOToxLGM5LjIzMTozLGM5LjIzMzoxLGM5LjIzNToyLGM5LjIzODoyLGM5LjI0MToxLGM5LjI0NjoxLGM5LjI0ODoxLGM5LjI1OjMsYzkuMjUwOjEsYzkuMjU2OjIsYzkuMjYwOjEsYzkuMjYyOjEsYzkuMjY1OjEsYzkuMjcwOjEsYzkuMjc0OjEsYzkuMjc2OjIsYzkuMjgwOjEsYzkuMjgyOjIsYzkuMjg0OjMsYzkuMjg4OjIsYzkuMjkwOjEsYzkuMjk0OjEsYzkuMzo3LGM5LjMwMDoxLGM5LjMwMjoxLGM5LjMwNDoyLGM5LjMwNToxLGM5LjMwNjoxLGM5LjMxMDoyLGM5LjMxMjoxLGM5LjMxNzoxLGM5LjMyMzozLGM5LjMyNjozLGM5LjMyODoxLGM5LjMyOToxLGM5LjMzOjIsYzkuMzM5OjIsYzkuMzQ4OjEsYzkuMzU6MSxjOS4zNTI6MSxjOS4zNzo2LGM5LjM3MToxLGM5LjM3ODoxLGM5LjM4MToyLGM5LjM4MjoxLGM5LjM4MzoxLGM5LjM4NDozLGM5LjM5OjYsYzkuMzkwOjIsYzkuMzkxOjEsYzkuMzk1OjIsYzkuMzk4OjEsYzkuNDI6MixjOS40Mjg6MSxjOS40NDoyLGM5LjQ0MDoyLGM5LjQ0NjoyLGM5LjQ2OjEsYzkuNDczOjEsYzkuNDc0OjEsYzkuNDc2OjIsYzkuNDc3OjEsYzkuNDc5OjIsYzkuNDg6MyxjOS40ODg6MSxjOS40ODk6MSxjOS40OTc6MSxjOS40OTg6NCxjOS41MDA6MixjOS41MDE6MSxjOS41MTE6OCxjOS41MTM6MSxjOS41MTc6MixjOS41MjE6MSxjOS41MjI6MixjOS41MzA6MSxjOS41MzM6MSxjOS41MzQ6MSxjOS41Mzc6MSxjOS41NDoxLGM5LjU0MDoxLGM5LjU0NjoxLGM5LjU0OToxLGM5LjU1MToyLGM5LjU1NDoxLGM5LjU1NjoxLGM5LjU2MjoxLGM5LjU2NDoyLGM5LjU2ODoxLGM5LjU3OTo2LGM5LjU5OjEsYzkuNTkxOjEsYzkuNjA5OjEsYzkuNjE6MixjOS42MTg6MSxjOS42MjoxLGM5LjYyNDoyLGM5LjYyNToyLGM5LjYyNzozLGM5LjYyOToyLGM5LjYzMDozLGM5LjYzMjoyLGM5LjYzNToyLGM5LjY0OjEsYzkuNjQwOjMsYzkuNjQyOjQsYzkuNjQzOjEsYzkuNjQ2OjQsYzkuNjQ4OjMsYzkuNjQ5OjEsYzkuNjUwOjEsYzkuNjUzOjEwLGM5LjY1NDoyLGM5LjY1NToyLGM5LjY1ODoxLGM5LjY1OTo4LGM5LjY2MDo0LGM5LjY2Mzo1LGM5LjY2NToxLGM5LjY2NjoyLGM5LjY2NzoxLGM5LjY2OToyLGM5LjY3MDo4LGM5LjY3MToyLGM5LjY3Mjo2LGM5LjY3MzoyLGM5LjY3NDoyLGM5LjY3NToyLGM5LjY3NjozLGM5LjY3NzoyLGM5LjY3OToxLGM5LjY4MjoxLGM5LjY4MzozLGM5LjY4NDoyLGM5LjY4NjoxLGM5LjY4NzozLGM5LjY5MzoxLGM5LjY5OToxLGM5LjcwOjIsYzkuNzAxOjQsYzkuNzAyOjQsYzkuNzA0OjMsYzkuNzA1OjMsYzkuNzA4OjMsYzkuNzEwOjQsYzkuNzE0OjMsYzkuNzE4OjEsYzkuNzIwOjQsYzkuNzIxOjMsYzkuNzIyOjEsYzkuNzIzOjEsYzkuNzI0OjMsYzkuNzI1OjEsYzkuNzI2OjcsYzkuNzI3OjQsYzkuNzMwOjUsYzkuNzMxOjEsYzkuNzMzOjEsYzkuNzM1OjYsYzkuNzM2OjIsYzkuNzM3OjQsYzkuNzM5OjEsYzkuNzQwOjQsYzkuNzQxOjIsYzkuNzQ0OjIsYzkuNzQ4OjQsYzkuNzU6MSxjOS43NTI6MixjOS43NTQ6MyxjOS43NTU6MixjOS43NTk6MSxjOS43NjozLGM5Ljc2MDoyLGM5Ljc2Mjo0LGM5Ljc2NTozLGM5Ljc2Njo0LGM5Ljc2Nzo4LGM5Ljc3MToxLGM5Ljc3NDoxLGM5Ljc3NjoyLGM5Ljc3ODoxLGM5Ljc4MDoxLGM5Ljc4NToxLGM5Ljc4ODoxLGM5Ljc4OToxLGM5Ljc5MDozLGM5Ljc5MjoyLGM5Ljc5MzoxLGM5Ljc5NToxLGM5Ljc5OToxLGM5LjgwOjEsYzkuODAyOjMsYzkuODA4OjEsYzkuODA5OjEsYzkuODEwOjMsYzkuODEyOjQsYzkuODE2OjQsYzkuODE5OjIsYzkuODIyOjEsYzkuODI2OjMsYzkuODM6NixjOS44MzI6NCxjOS44MzQ6MixjOS44Mzc6MSxjOS44NDA6MSxjOS44NDE6MSxjOS44NDM6MixjOS44NDg6MixjOS44NTg6MyxjOS44NjA6MyxjOS44NjE6MSxjOS44NjI6MyxjOS44NjQ6NCxjOS44NjU6MixjOS44NjY6MixjOS44Njg6NCxjOS44Nzc6MSxjOS44OToxLGM5Ljg5MDoxLGM5LjkwMzoyLGM5LjkwODoxLGM5LjkyNjoyLGM5LjkzMDoxLGM5LjkzMToyLGM5LjkzMjoxLGM5LjkzNTo1LGM5Ljk0NjoxLGM5Ljk1NToyLGM5Ljk1ODoxLGM5Ljk2OjQsYzkuOTYyOjEsYzkuOTY0OjEsYzkuOTY2OjIsYzkuOTY4OjEsYzkuOTY5OjEsYzkuOTc6MSxjOS45NzI6MyxjOS45Nzg6MixjOS45ODoxLGM5Ljk4MDozLGM5Ljk4NDoyLGM5Ljk4NToxLHYxMC4xOjAuMjY0NDcxNzI2MTkwNDc2LHYxMC4yOjAuMjgwNzQxODY5OTE4Njk5LHYxMS4xOjAuMTEwMzc1MTA1MjYzMTU4LHYxOS4xOjUuNzM1NjI1LHYxOS4yOjUuMDI1LHYxOS4zOjUuNDU2MjUsdjE5LjQ6NS44OTUsdjE5LjU6NC44OTU2MjUsdjE5LjY6NS42MjE4NzUsdjE5Ljc6NS42MzYyNSx2MTkuODo1LjE3NDM3NSx2MTkuOTo1LjM1MTI1LHYyMC4xOjAuNjI2LHYyMC4xMTowLjU4NCx2MjAuMTM6MC40MDExNDI4NTcxNDI4NTcsdjIwLjE0Oi0wLjM3NSx2MjAuMTU6MC4zNjc1NTU1NTU1NTU1NTYsdjIwLjE2Oi0wLjMxMjUsdjIwLjM6MC42MjYsdjIwLjU6MC42MjYsdjIwLjc6MC42MjYsdjIwLjk6MC42MjYsdjIxLjE6NS40NzY5MzU0ODM4NzA5Nyx2MjYuMToxLjU4MzMzMzMzMzMzMzMzLHY0Mi4xMDowLjA1OTk0NTk2MjkzMzMzMzMsdjQyLjExOjAuMDI3NDI3NDY4MTQ2NjY2Nyx2NDIuMjowLjEyMjQzNDYxMTM4NjY2Nyx2NDIuMzowLjA5Njg0OTM3ODgyNjY2NjYsdjQyLjQ6MC4wOTkxNzQ0NDM5ODY2NjY3LHY0Mi41OjAuMDg3ODI5MjY4MjI2NjY2Nyx2NDIuNjowLjA3ODU5NjQ0MDMyLHY0Mi43Oi0wLjAyNjYyNTA3MDE3MzMzMzMsdjQyLjg6MC4wNDc4NzQzMTEwMTMzMzM0LHY0Mi45OjAuMDMxMDUwMTc0MTIJaHR0cHM6Ly9jZG4uYW50YXJhbmV3cy5jb20vY2FjaGUvMTIwMHg4MDAvMjAyMy8wOS8wNS9JTUdfMDA2OS5wbmcJCQlodHRwczovL3lvdXR1YmUuY29tL3VzZXIvYW50YXJhbmV3czsJCVRyYWRlIE1pbmlzdGVyIFp1bGtpZmxpIEhhc2FuLDYwO1RyYWRlIE1pbmlzdHJ5LDEzOTAJCQk8UEFHRV9BVVRIT1JTPmFudGFyYW5ld3MuY29tPC9QQUdFX0FVVEhPUlM+PFBBR0VfUFJFQ0lTRVBVQlRJTUVTVEFNUD4yMDIzMDkwNTE3MzQwMDwvUEFHRV9QUkVDSVNFUFVCVElNRVNUQU1QPjxQQUdFX0FMVFVSTF9BTVA+aHR0cHM6Ly9lbi5hbnRhcmFuZXdzLmNvbS9hbXAvbmV3cy8yOTI5MjkvaW5kb25lc2lhbi1taW5pc3Rlci12aWV0bmFtcy12aW5mYXN0LWRpc2N1c3MtZXYtY29vcGVyYXRpb26gPC9QQUdFX0FMVFVSTF9BTVA+PFBBR0VfVElUTEU+SW5kb25lc2lhbiBtaW5pc3RlciwgVmlldG5hbSdzIFZpbkZhc3QgZGlzY3VzcyBFViBjb29wZXJhdGlvbjwvUEFHRV9USVRMRT4K",
+          "raw_sha256": "70742ac3c4e603918c4c1996e7a346311ece2981734327e4d4cb5886db21b9e2",
+          "reasons": [
+            {
+              "code": "invalid_utf8",
+              "detail": "Strict UTF-8 rejected; no alternative decoding"
+            }
+          ],
+          "row_id": "56d63a61c3349aae6e3f855527a34e9425b230c591021964a0ded21a198582a8",
+          "schema_version": "1.0.0",
+          "source": {
+            "acquisition": "passed",
+            "archive_bytes": 9777462,
+            "archive_sha256": "e235ebad1a7fe296fade0f447fd848d4ae79b2ad7b7f4fed9028dab486b1710f",
+            "batch_id": "20230905180000",
+            "source_id": "gdelt-gkg-2.1",
+            "source_url": "https://data.gdeltproject.org/gdeltv2/20230905180000.gkg.csv.zip"
+          },
+          "start": 2167618,
+          "timestamp": "20230905180000"
+        }
+      ],
+      "quarantine_fraction": 0.0008470986869970351,
+      "quarantined_rows": 2,
+      "row_ledger_sha256": "93d29687c67fdeea94b05703bae2a1f3644d7642deeafe082e1b5b00a1055429",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "427ffa06ccee6f3692c952fb4383bbf28f7b59eb358f5785ec520834649c10e4",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 9777462,
+        "archive_sha256": "e235ebad1a7fe296fade0f447fd848d4ae79b2ad7b7f4fed9028dab486b1710f",
+        "batch_id": "20230905180000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20230905180000.gkg.csv.zip"
+      },
+      "state": "parse_with_quarantine"
+    },
+    {
+      "accepted_rows": 2340,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 2340
+      },
+      "errors": [],
+      "member": "20230905181500.gkg.csv",
+      "member_bytes": 29075997,
+      "member_sha256": "2aec9cbd956c00221d5be01c56733c9fc7113e7e781d68893b574ed21afee8a8",
+      "observed_archive_sha256": "cdb127db833f3dbc241dd325c9260dd5252a3caa3df4be2e889845239dfd59a5",
+      "parser_version": "1.0.0",
+      "physical_rows": 2340,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "c01ce3f75202d7ad4b15e689b92fb56f54be3c33d3b9d89d3630eadfc88e2d0f",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "6d603919841f16b90fb3d2e8449eef1afdb56cdf12a1e47198b70677ed503418",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 9405058,
+        "archive_sha256": "cdb127db833f3dbc241dd325c9260dd5252a3caa3df4be2e889845239dfd59a5",
+        "batch_id": "20230905181500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20230905181500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 2627,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 2627
+      },
+      "errors": [],
+      "member": "20230905183000.gkg.csv",
+      "member_bytes": 32392549,
+      "member_sha256": "037d96a9f8e3c00e450dc4d0111da24cdd4677032e7cf8f606ef29fb0844fbe3",
+      "observed_archive_sha256": "6ad363f31e17c830b97ed618b9de79e8172cdb6ab048d115b9bf4844c4f7b8eb",
+      "parser_version": "1.0.0",
+      "physical_rows": 2627,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "75c8d0cc78c5b1ef71fa6604adbbdb9c8ec91e3ae3c8214e95f885c97fa983da",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "f591ce571056e96af5f1a6e79857c8a5decad73ff0484987b09b40c91fb26580",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 10518491,
+        "archive_sha256": "6ad363f31e17c830b97ed618b9de79e8172cdb6ab048d115b9bf4844c4f7b8eb",
+        "batch_id": "20230905183000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20230905183000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 2593,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 2593
+      },
+      "errors": [],
+      "member": "20230905184500.gkg.csv",
+      "member_bytes": 32339101,
+      "member_sha256": "1385293573204d7e3e8a8107031f300cd95bcaf12cbf76e13025ec1723e25cd5",
+      "observed_archive_sha256": "15523cfe24d1403f175909d75dddda9a38c7c3d0fe546550e60889cb502523cb",
+      "parser_version": "1.0.0",
+      "physical_rows": 2593,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "7e33de18af297115667e4c75cf6657594da411cc79afaaf39642e41dab5ddefa",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "70b9203b47acf88b07094cc2ad1423c99486fe257b40ccd83cf188fb76d4d460",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 10495325,
+        "archive_sha256": "15523cfe24d1403f175909d75dddda9a38c7c3d0fe546550e60889cb502523cb",
+        "batch_id": "20230905184500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20230905184500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1436,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1436
+      },
+      "errors": [],
+      "member": "20250905000000.gkg.csv",
+      "member_bytes": 17937903,
+      "member_sha256": "41c998c74773eb54d6f91d572eaeb863b304350b5bb5b7a76d09acf84162c1fb",
+      "observed_archive_sha256": "cdf27b65f0037da689f1c6e7c2f2d67736076c54667445e97352d2d506d1455d",
+      "parser_version": "1.0.0",
+      "physical_rows": 1436,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "b85d7d5ddf487af80831754f0e8c7802810639c9ba9ca2911bc5a20039fbbccf",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "fce4db834dbd969f8b01cbd3eb634d98dcce2aec9364269a57f51da334719a39",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5792514,
+        "archive_sha256": "cdf27b65f0037da689f1c6e7c2f2d67736076c54667445e97352d2d506d1455d",
+        "batch_id": "20250905000000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20250905000000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1446,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1446
+      },
+      "errors": [],
+      "member": "20250905001500.gkg.csv",
+      "member_bytes": 18986479,
+      "member_sha256": "7f929679ea9d06cc8e741343cc6be0b68af8c006475710cb29864e43b32bde6f",
+      "observed_archive_sha256": "d093a5244c72b3d63d3d31a376a41f19b9fbde3175c036fde4f8cae5b8d3625d",
+      "parser_version": "1.0.0",
+      "physical_rows": 1446,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "f374a7737843bc483a7a9ef4104e13c4dccb729146e82d53a1d05d8d8b800b4f",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "5c2276d3406b8739ad11d4ce38601972edd40f9f21731925a1446abd5c4299f5",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6120090,
+        "archive_sha256": "d093a5244c72b3d63d3d31a376a41f19b9fbde3175c036fde4f8cae5b8d3625d",
+        "batch_id": "20250905001500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20250905001500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1577,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1577
+      },
+      "errors": [],
+      "member": "20250905003000.gkg.csv",
+      "member_bytes": 19049436,
+      "member_sha256": "525bb13c0e034c84d0706f9cb7a322d2bb7cf0ba580e316247acafa76a1a36a4",
+      "observed_archive_sha256": "c9d30bcc64f407eb9419df5ae0eb6c7f408aeb6e829e43984e0cbfc60ec429e0",
+      "parser_version": "1.0.0",
+      "physical_rows": 1577,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "e0285ff587ad9b7b46539721e7d1b0b8b6486054795ccbcd5df69501f061f9e1",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "76a8c2707c93ae1d2a2f65ece8cbd16240431fa4e3f2c85d0ffeb511111a3fe0",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6138895,
+        "archive_sha256": "c9d30bcc64f407eb9419df5ae0eb6c7f408aeb6e829e43984e0cbfc60ec429e0",
+        "batch_id": "20250905003000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20250905003000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1625,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1625
+      },
+      "errors": [],
+      "member": "20250905004500.gkg.csv",
+      "member_bytes": 21781685,
+      "member_sha256": "8c3b80898de7a150053117b2c4d37c31696b095e34964893de8bf0aa32be1468",
+      "observed_archive_sha256": "1aec981b8ad97918e4d6d99ff5e9e59af1f70805edc468fb2b47942806e8a223",
+      "parser_version": "1.0.0",
+      "physical_rows": 1625,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "5cd58dbecc5b33c3bd389e86c4888c592723fd7c8a831b08507f11d540cf9f84",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "1aaf56cf464a287745599a9b0f93c45ae5c1bfe82bcf92b0d127d31ee442de33",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6968532,
+        "archive_sha256": "1aec981b8ad97918e4d6d99ff5e9e59af1f70805edc468fb2b47942806e8a223",
+        "batch_id": "20250905004500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20250905004500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1268,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1268
+      },
+      "errors": [],
+      "member": "20260805120000.gkg.csv",
+      "member_bytes": 16479494,
+      "member_sha256": "7d7351eb159018fca9bbce5fc68b6ed44661e8b5f218e0dd0d689de96769dee0",
+      "observed_archive_sha256": "c21636fce3e67cbccfd62a5c7bbac29856e023f9437ae6c44a7e04c7c2b8d61b",
+      "parser_version": "1.0.0",
+      "physical_rows": 1268,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "d2b072dd830d5bd4af3dd4dc246483fe7c57aa6cf0fac1eb407ddf347dfd60e6",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "7089a1d42c7ff4141d1043f5802f62fbf17b7418c45b1bd7e5c5a3e1d284b495",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5332870,
+        "archive_sha256": "c21636fce3e67cbccfd62a5c7bbac29856e023f9437ae6c44a7e04c7c2b8d61b",
+        "batch_id": "20260805120000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260805120000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1409,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1409
+      },
+      "errors": [],
+      "member": "20260805121500.gkg.csv",
+      "member_bytes": 19158209,
+      "member_sha256": "95c76367bf50e995a870565e6544fb8cb197f280492c01da813ee42cf58990dd",
+      "observed_archive_sha256": "f4f1fe514bf472f9f46082b5f0fdad7eaae55393f8cf4fb28b133c699e45c304",
+      "parser_version": "1.0.0",
+      "physical_rows": 1409,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "8750828010f05b40d2b9022a732c365656fccef897853dc16e798496176b03b8",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "3867be48604693c7651eac039e06ef9e7944402dcd67cc6a132ed6b0311f2258",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 6147233,
+        "archive_sha256": "f4f1fe514bf472f9f46082b5f0fdad7eaae55393f8cf4fb28b133c699e45c304",
+        "batch_id": "20260805121500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260805121500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1335,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1335
+      },
+      "errors": [],
+      "member": "20260805123000.gkg.csv",
+      "member_bytes": 17835270,
+      "member_sha256": "e0786d859a64e5e37f78227196821bcb28636cc9bb7329127ad315ede283e46b",
+      "observed_archive_sha256": "dd3ac0e3ce272d1939c0c8e7f370c648d9f7d14538d17a0b5e033db17c45e75d",
+      "parser_version": "1.0.0",
+      "physical_rows": 1335,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "927fee296d6560f4af135e0f53f4490d514aa1e523eae887ba6db5c0d0712f53",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "2da7fbd495b6d8ac701a2c5d534db99de2d14c7f4c7c5565a1d0a6eac9511235",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5771929,
+        "archive_sha256": "dd3ac0e3ce272d1939c0c8e7f370c648d9f7d14538d17a0b5e033db17c45e75d",
+        "batch_id": "20260805123000",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260805123000.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    },
+    {
+      "accepted_rows": 1323,
+      "archive_state": "passed",
+      "disposition_counts": {
+        "accepted": 1323
+      },
+      "errors": [],
+      "member": "20260805124500.gkg.csv",
+      "member_bytes": 17182326,
+      "member_sha256": "a03cfe9f4d70b0d75f1a5e689b5a05fc8d43ccff1f20bd0c65a54219d1b8abed",
+      "observed_archive_sha256": "e322077b12cd5bac6c3331e71459af9acfac4720024d201a1016e095de3f103b",
+      "parser_version": "1.0.0",
+      "physical_rows": 1323,
+      "quarantine": [],
+      "quarantine_fraction": 0.0,
+      "quarantined_rows": 0,
+      "row_ledger_sha256": "6537bdc0c16a589e3ba6ded15daf9f83800c9f63c1d462ce3ed1cfdbea64845d",
+      "schema_version": "1.0.0",
+      "semantic_sha256": "8b5499c5c3dca5f465a3c8d6b2a2a4d29961d08c8fffd6210f2f38a36558d6ac",
+      "source": {
+        "acquisition": "passed",
+        "archive_bytes": 5553111,
+        "archive_sha256": "e322077b12cd5bac6c3331e71459af9acfac4720024d201a1016e095de3f103b",
+        "batch_id": "20260805124500",
+        "source_id": "gdelt-gkg-2.1",
+        "source_url": "https://data.gdeltproject.org/gdeltv2/20260805124500.gkg.csv.zip"
+      },
+      "state": "clean_parse"
+    }
+  ],
+  "code_hashes": {
+    "contracts.py": "f41f8e4eef7928eabab020bf2690fd4964a3a2a86030d42e9ab287bcabafdc73",
+    "gkg-lossless-assessment.v1.schema.json": "6e02a8e6f02484fa5e8caa880b6cd556771b43ce4e445681d2251bdc2ca20dac",
+    "gkg-lossless-batch.v1.schema.json": "5cf1fb30712df4dddb55597454356e9d85a2b86a6e9d7c46b6610aaec8e30603",
+    "gkg-lossless-quarantine.v1.schema.json": "ffac860d822c96dcb56cbaa00d9b21112ce7ecb995bc47900e428f1c9e3176b4",
+    "gkg-lossless-replay.v1.schema.json": "3125cf2f2116d41d8e65956b97ec72404587ac4b5d7dfef21aef6ff6f724daf6",
+    "gkg-lossless-row.v1.schema.json": "87bc64f7ae90ae93c79a50aacf9489a5e3aa90171d71024b8c33cf2c6c36e85b",
+    "gkg_lossless.py": "708d7c89d4162d9d7fa295294bde2a1251d40fcd30272a85f0b2257e42e07d00",
+    "gkg_lossless_contracts.py": "60cb706fb97db231d90df2f574a4f6d549b9500474e6aa595e1c8e348d37f458",
+    "replay_gkg_lossless.py": "f5cf23e63c053f4d421b2ee7507ef413b4b7efa855aee6925e8c34d70a347d59",
+    "study_contracts.py": "04224558bdafac5d543b546b1d4d53a26e3a692f311a1e15b40936d4ea4c1cd8",
+    "study_gkg.py": "4b8693ff99300a53f2f60b42fb7ac8a3237eba619401bca10c7063040364d9ed",
+    "validate_gkg.py": "d7a609131d6854c65cb25ed245e52390a4eb289bab15bbf459d71ddd671c05c1"
+  },
+  "created_at": "2026-09-05T23:29:32+00:00",
+  "manifest_sha256": "443f60269a89251655b0636799988e15034b55a8ceb58ffea57c8d236bf2ef15",
+  "phase2_report_sha256": "1b5256a4e5c240fe91185b455443e15af3f67dd374386ab7f9de4a20af2df141",
+  "schema_version": "1.0.0",
+  "summary": {
+    "accepted_rows": 118415,
+    "acquisition_passed": 96,
+    "affected_batches": 4,
+    "archive_verified": 96,
+    "batch_states": {
+      "clean_parse": 92,
+      "parse_with_quarantine": 4
+    },
+    "duplicate_archives": {},
+    "duplicate_members": {},
+    "failure_categories": {},
+    "physical_rows": 118420,
+    "quarantine_categories": {
+      "quarantined_encoding": 5
+    },
+    "quarantine_percentage": 0.00422225975342003,
+    "quarantined_rows": 5,
+    "scheduled": 96,
+    "source_hash_consistent": 96
+  }
+}

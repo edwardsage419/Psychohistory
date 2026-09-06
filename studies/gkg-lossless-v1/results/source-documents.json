@@ -1,0 +1,22 @@
+[
+  {
+    "bytes": 434652,
+    "effective_url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf",
+    "http_status": 200,
+    "name": "codebook-v2.1.pdf",
+    "retrieved_at": "2026-09-05T23:24:45.252401+00:00",
+    "sha256": "64062c0173a5b97180c0cbdb8b858715d03d4c8a1ebbc9956e6db80dd376281f",
+    "status": "passed",
+    "url": "https://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf"
+  },
+  {
+    "bytes": 40881,
+    "effective_url": "https://blog.gdeltproject.org/new-gkg-2-0-article-metadata-fields/",
+    "http_status": 200,
+    "name": "article-metadata.html",
+    "retrieved_at": "2026-09-05T23:24:46.058820+00:00",
+    "sha256": "f5c4af60cdbc577bb34f3ff064f0bba20958f95483f8f68dc033d860d2bfd7ad",
+    "status": "passed",
+    "url": "https://blog.gdeltproject.org/new-gkg-2-0-article-metadata-fields/"
+  }
+]

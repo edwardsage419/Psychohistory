@@ -1,0 +1,98 @@
+{
+  "batches": [
+    {
+      "batch_id": "20260904063000",
+      "errors": [],
+      "invalid_byte_samples": [
+        {
+          "field_number": 27,
+          "invalid_bytes_hex": "f1",
+          "line_number": 96,
+          "reason": "invalid continuation byte",
+          "uncompressed_byte_offset": 1256654
+        }
+      ],
+      "lines": 925,
+      "raw_field_count_distribution": {
+        "27": 925
+      },
+      "samples_truncated": false,
+      "sha256": "d1b65efd0dabe83ad9a3ba02d2dc872a175b7d046ebd0b11693d078fbb4714f8",
+      "status": "passed",
+      "utf8_rejected_lines": 1
+    },
+    {
+      "batch_id": "20260904113000",
+      "errors": [],
+      "invalid_byte_samples": [
+        {
+          "field_number": 27,
+          "invalid_bytes_hex": "f1",
+          "line_number": 427,
+          "reason": "invalid continuation byte",
+          "uncompressed_byte_offset": 5500933
+        }
+      ],
+      "lines": 1025,
+      "raw_field_count_distribution": {
+        "27": 1025
+      },
+      "samples_truncated": false,
+      "sha256": "a084ad170b72933029e7bc29128cb35ebd77e755817baa896a331ea44575c03a",
+      "status": "passed",
+      "utf8_rejected_lines": 1
+    },
+    {
+      "batch_id": "20260904141500",
+      "errors": [],
+      "invalid_byte_samples": [
+        {
+          "field_number": 27,
+          "invalid_bytes_hex": "e4",
+          "line_number": 560,
+          "reason": "invalid continuation byte",
+          "uncompressed_byte_offset": 7270358
+        }
+      ],
+      "lines": 1402,
+      "raw_field_count_distribution": {
+        "27": 1402
+      },
+      "samples_truncated": false,
+      "sha256": "67a45a737223d56e16c41a09129afbd5cd2cf508d01a7cf89d77200841b2f3c8",
+      "status": "passed",
+      "utf8_rejected_lines": 1
+    },
+    {
+      "batch_id": "20230905180000",
+      "errors": [],
+      "invalid_byte_samples": [
+        {
+          "field_number": 27,
+          "invalid_bytes_hex": "a0",
+          "line_number": 76,
+          "reason": "invalid start byte",
+          "uncompressed_byte_offset": 1041911
+        },
+        {
+          "field_number": 27,
+          "invalid_bytes_hex": "a0",
+          "line_number": 173,
+          "reason": "invalid start byte",
+          "uncompressed_byte_offset": 2177394
+        }
+      ],
+      "lines": 2361,
+      "raw_field_count_distribution": {
+        "27": 2361
+      },
+      "samples_truncated": false,
+      "sha256": "e235ebad1a7fe296fade0f447fd848d4ae79b2ad7b7f4fed9028dab486b1710f",
+      "status": "passed",
+      "utf8_rejected_lines": 2
+    }
+  ],
+  "manifest_sha256": "443f60269a89251655b0636799988e15034b55a8ceb58ffea57c8d236bf2ef15",
+  "schema_version": "1.0.0",
+  "scope": "encoding-failed batches only; byte-level diagnostics, not normalized observations"
+}

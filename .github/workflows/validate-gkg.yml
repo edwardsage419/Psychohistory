@@ -27,13 +27,13 @@ jobs:
           python-version: "3.12"
 
       - name: Run local validator tests
-        working-directory: scripts
-        run: python test_validate_gkg.py
+        run: python -B -m unittest discover -s scripts -p 'test_*.py' -v
 
       - name: Validate latest live GKG batch
-        run: python scripts/validate_gkg.py --top-themes 100
+        run: python -B scripts/validate_gkg.py --integration
 
       - name: Upload validation report
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: gkg-validation-report

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GKG lossless assessment v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "scope": {
+      "type": "string",
+      "const": "raw acquisition, archive verification, lossless parsing, quarantine and provenance only"
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": [
+        "promote_to_ingestion_candidate",
+        "continue_validation",
+        "reject_as_primary_source"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "replay_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "detail"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "scope",
+    "recommendation",
+    "gates",
+    "replay_sha256",
+    "errors",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

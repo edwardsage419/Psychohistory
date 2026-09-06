@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "validation-report v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string"
+    },
+    "validator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_id": {
+      "const": "gdelt-gkg-2.1",
+      "type": "string"
+    },
+    "source_reference": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "discovery": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "line": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "md5": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{32}$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "line",
+            "url",
+            "bytes",
+            "md5",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed"
+      ]
+    },
+    "zip_bytes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sha256": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "compressed_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "uncompressed_bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "name",
+          "compressed_bytes",
+          "uncompressed_bytes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valid_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bad_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown_date_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "empty_theme_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "field_count_distribution": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "date_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "theme_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "row_error_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "required": [
+        "rows",
+        "valid_rows",
+        "bad_rows",
+        "unknown_date_rows",
+        "empty_theme_rows",
+        "complete",
+        "field_count_distribution",
+        "date_counts",
+        "theme_counts",
+        "row_error_counts"
+      ],
+      "additionalProperties": false
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "resource_limit",
+              "metadata_encoding",
+              "metadata_invalid",
+              "zip_member_count",
+              "zip_member_name",
+              "zip_encrypted",
+              "empty_data",
+              "invalid_rows",
+              "invalid_encoding",
+              "invalid_zip",
+              "unsupported_zip",
+              "invalid_arguments",
+              "integration_required",
+              "invalid_url",
+              "metadata_mismatch",
+              "http_error",
+              "network_error",
+              "io_error",
+              "report_write_error"
+            ]
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "discovery",
+              "acquisition",
+              "validation",
+              "report"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "code",
+          "stage",
+          "message"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "validator_version",
+    "validated_at",
+    "source_id",
+    "source_reference",
+    "discovery",
+    "status",
+    "zip_bytes",
+    "sha256",
+    "members",
+    "statistics",
+    "errors"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+{
+  "first_run": "artifacts/gkg-phase3-run3",
+  "implementation_commit": "97798e2",
+  "phase2_known_invalid_spans_matched": 5,
+  "preliminary_runs_preserved": [
+    "artifacts/gkg-phase3-run1",
+    "artifacts/gkg-phase3-run2"
+  ],
+  "preliminary_semantic_matches": 96,
+  "schema_version": "1.0.0",
+  "second_run": "artifacts/gkg-phase3-run4",
+  "source_code_hashes": {
+    "contracts.py": "f41f8e4eef7928eabab020bf2690fd4964a3a2a86030d42e9ab287bcabafdc73",
+    "gkg-lossless-assessment.v1.schema.json": "6e02a8e6f02484fa5e8caa880b6cd556771b43ce4e445681d2251bdc2ca20dac",
+    "gkg-lossless-batch.v1.schema.json": "5cf1fb30712df4dddb55597454356e9d85a2b86a6e9d7c46b6610aaec8e30603",
+    "gkg-lossless-quarantine.v1.schema.json": "ffac860d822c96dcb56cbaa00d9b21112ce7ecb995bc47900e428f1c9e3176b4",
+    "gkg-lossless-replay.v1.schema.json": "3125cf2f2116d41d8e65956b97ec72404587ac4b5d7dfef21aef6ff6f724daf6",
+    "gkg-lossless-row.v1.schema.json": "87bc64f7ae90ae93c79a50aacf9489a5e3aa90171d71024b8c33cf2c6c36e85b",
+    "gkg_lossless.py": "708d7c89d4162d9d7fa295294bde2a1251d40fcd30272a85f0b2257e42e07d00",
+    "gkg_lossless_contracts.py": "60cb706fb97db231d90df2f574a4f6d549b9500474e6aa595e1c8e348d37f458",
+    "replay_gkg_lossless.py": "f5cf23e63c053f4d421b2ee7507ef413b4b7efa855aee6925e8c34d70a347d59",
+    "study_contracts.py": "04224558bdafac5d543b546b1d4d53a26e3a692f311a1e15b40936d4ea4c1cd8",
+    "study_gkg.py": "4b8693ff99300a53f2f60b42fb7ac8a3237eba619401bca10c7063040364d9ed",
+    "validate_gkg.py": "d7a609131d6854c65cb25ed245e52390a4eb289bab15bbf459d71ddd671c05c1"
+  },
+  "starting_commit": "eabba6a",
+  "test_evidence_sha256": "d3afa22a037862a66e5f1ad4501fad647e4ad717a4ee9ac1799cbce3f960bc3e",
+  "test_log_sha256": "1f60ea914115092276548792cd033c0d0993e359d28e7c65edcdfd66471dd9ad",
+  "test_script_sha256": "ea74b989c3c70d7f9dd6c846aa5fc39addf0385df67457c0022bebc876eba92d"
+}

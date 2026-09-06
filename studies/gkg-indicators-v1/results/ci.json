@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "commit": "033fd34fe25ac0d20276d09c1b676ab3d874c21c",
+  "workflow": "Offline data foundation tests",
+  "platform": "Ubuntu",
+  "run_id": 34001418505,
+  "job_id": 101400853141,
+  "url": "https://github.com/edwardsage419/Psychohistory/actions/runs/34001418505",
+  "conclusion": "success",
+  "tests": 163,
+  "passed": 163,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "duration_seconds": 1.777,
+  "command": "python -B -m unittest discover -s scripts -p 'test_*.py' -v",
+  "test_log_summary": [
+    "Ran 163 tests in 1.777s",
+    "OK"
+  ],
+  "note": "Includes the symlink test skipped on local Windows; no network fixture required."
+}
