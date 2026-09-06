@@ -63,9 +63,27 @@ Use this order when tradeoffs arise:
 * Evaluation rules must be defined before outcome scoring whenever practical.
 * New infrastructure must justify its cost and operational burden.
 
+## Authoritative startup context
+
+For substantial Psychohistory work, begin with these durable repository files:
+
+1. `AGENTS.md` for Codex execution discipline and L0-L5 routing.
+2. `CURRENT_STATE.md` for the compact authoritative operational state.
+3. `SCIENTIFIC_INVARIANTS.md` for scientific rules that must not be silently violated.
+4. `docs/DEVELOPMENT_GOVERNANCE.md` when the task affects project advancement, methodology, promotion, gates, human-review boundaries, or model allocation.
+5. Only then read the phase reports, decisions, code, and tests relevant to the bounded task.
+
+Do not rely on chat memory as the primary source of project state when repository evidence is available.
+
+If `CURRENT_STATE.md` conflicts with Git history or immutable evidence, Git evidence wins and the state file must be corrected.
+
 ## Governance relationship
 
 `AGENTS.md` governs how Codex executes an already bounded task.
+
+`CURRENT_STATE.md` records where the project currently is.
+
+`SCIENTIFIC_INVARIANTS.md` records the durable scientific constraints.
 
 `docs/DEVELOPMENT_GOVERNANCE.md` governs what should be developed next, project gates, GPT planning responsibilities, human-review boundaries, task decomposition, and model-allocation strategy.
 
@@ -79,17 +97,16 @@ Genuine human-review requirements must remain human requirements. LLM output mus
 
 Before implementing a substantial change:
 
-1. Read this file and the documents in `docs/` that are relevant to the task.
-2. When the task affects project advancement, promotion, methodology, or gate decisions, also read `docs/DEVELOPMENT_GOVERNANCE.md`.
-3. Inspect the current code and tests.
-4. Classify the task using the L0 to L5 policy below.
-5. State the intended change, assumptions, risks, and acceptance criteria in the pull request or issue when appropriate.
-6. Prefer small, reviewable changes over broad rewrites without tests.
-7. Add or update tests for transformation logic and failure behavior.
-8. Never fabricate source mappings, field meanings, or validation results.
-9. If a required fact is unknown, record it as an open question and stop that specific assumption from entering production logic.
-10. Restrict inspection and edits to files relevant to the task. Expand scope only when a concrete dependency requires it.
-11. Stop once the requested behavior and acceptance criteria are satisfied. Do not continue with unrelated refactoring or optional cleanup unless explicitly requested.
+1. Read the authoritative startup context above.
+2. Inspect only the current code and tests relevant to the bounded task.
+3. Classify the task using the L0 to L5 policy below.
+4. State the intended change, assumptions, risks, and acceptance criteria in the pull request or issue when appropriate.
+5. Prefer small, reviewable changes over broad rewrites without tests.
+6. Add or update tests for transformation logic and failure behavior.
+7. Never fabricate source mappings, field meanings, or validation results.
+8. If a required fact is unknown, record it as an open question and stop that specific assumption from entering production logic.
+9. Restrict inspection and edits to files relevant to the task. Expand scope only when a concrete dependency requires it.
+10. Stop once the requested behavior and acceptance criteria are satisfied. Do not continue with unrelated refactoring or optional cleanup unless explicitly requested.
 
 ## Task risk classification and model guidance
 
@@ -299,7 +316,7 @@ Any change that can alter historical results should normally be treated as L4.
 
 ## Scientific integrity checks
 
-For every L4 or L5 task, answer all applicable questions before declaring completion:
+For every L4 or L5 task, check the applicable rules in `SCIENTIFIC_INVARIANTS.md` and answer all applicable questions before declaring completion:
 
 1. Was every input available at the historical prediction timestamp?
 2. Does historical reconstruction use information that became available later?
@@ -322,8 +339,8 @@ Do not scan the entire repository by default.
 
 For each task:
 
-1. Read `AGENTS.md` first.
-2. Read only the relevant documents in `docs/`.
+1. Read the authoritative startup files first.
+2. Read only the phase reports and decision records relevant to the task.
 3. Inspect only the code and tests related to the requested change.
 4. Expand scope only because of a concrete dependency discovered during the task.
 5. Avoid repository wide analysis unless the task explicitly requires it.
@@ -346,6 +363,6 @@ Record unrelated findings separately instead of expanding the current task.
 
 ## Current phase
 
-The accepted `main` baseline contains the completed Phase 1-4 foundation. Later semantic-audit and evidence-recovery work exists on the active development branch and is not automatically authoritative until reviewed and accepted.
+Use `CURRENT_STATE.md` as the compact current project state instead of duplicating detailed mutable status here.
 
-The current bottleneck is semantic and historical evidence quality. Do not begin production forecasting, composite-state construction, or semantic promotion until the applicable gates in `docs/DEVELOPMENT_GOVERNANCE.md` are satisfied.
+At the time this rule was introduced, the accepted `main` baseline contained the Phase 1-4 foundation and the current bottleneck was semantic and historical evidence quality. Any later state change must be reflected in `CURRENT_STATE.md`.
