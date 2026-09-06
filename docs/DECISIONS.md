@@ -186,3 +186,26 @@ with about 180 GB/year of raw ZIPs under the mixed-cohort mean. Those are explic
 extrapolations, not capacity guarantees. No engine, paid dependency, deletion or
 frequency/field reduction is introduced. Next: bounded semantic annotations and
 provider-version evidence before durable interpretive indicator history.
+
+## Phase 5: bounded semantic evidence remains insufficient
+
+Decision: all three audited tokens (PROTEST, FOOD_SECURITY,
+WB_2747_UNEMPLOYMENT) remain continue_semantic_validation. No historical pilot,
+production indicators, final ontology or forecasting is promoted. Phase 4 remains
+frozen; its legitimate numerical outputs are unchanged.
+
+The preregistered 120-reference sample was fixed before publisher retrieval.
+One attempt per reference yielded 21 provisional contexts, 32 insufficient-context
+results and 67 unavailable results; no replacements. There are no actual human
+semantic labels and no article LLM reviews. Human review remains explicitly
+human_validation_not_completed. Provider examples support topical interpretation,
+but neither those examples nor updated lookup histograms establish cross-year
+extractor stability. Missing World Bank token rows in the sampled 2015 hour are
+not semantic negatives or a demonstrated deployment boundary.
+
+Retain compact evidence and independently pinned trust roots; source hashes cannot
+recreate discarded publisher text. The zero/near-zero-cost principle adds no paid
+service or recurring dependency. See PHASE_5_REPORT.md and
+SEMANTIC_AUDIT_ARCHITECTURE.md. Next recommended issue: recover dated evidence for
+the frozen references under a versioned retrieval plan and obtain two independent
+human reviews, preserving the original missingness and sample.

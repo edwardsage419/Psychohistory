@@ -1,0 +1,65 @@
+{
+  "additional_fields": "forbidden",
+  "labels": {
+    "ambiguous": "Relevant context exists but supports competing reasonable semantic readings; not a replacement for clear mismatch or missing text.",
+    "contextual_topic_match": "A meaningful causal, policy or explanatory connection to the concept; not merely a passing name.",
+    "direct_topic_match": "Substantive explicit discussion of the expected concept; prospective or historical topic discussion counts when substantive.",
+    "document_unavailable": "No successful bounded public article retrieval, including HTTP/network/unsupported-response failure.",
+    "incidental_or_weak_match": "Genuine concept mentioned only in passing, background or an unrelated list.",
+    "insufficient_context": "Accessible response cannot establish article identity or adequate semantic context, including blocked pages, homepage/replacement redirects and uncertain extraction.",
+    "semantic_mismatch": "Sufficient context establishes a different subject or lexical/metaphorical collision, without substantive expected concept. Do not conceal clear mismatch as ambiguous."
+  },
+  "notes": "Omitted; categorical reasons required.",
+  "preregistration_sha256": "b0a00fa7574fa60241c0adbec56a1469171070a218127db63605dd5d95eb5e41",
+  "required_annotation_fields": [
+    "case_id",
+    "token",
+    "batch_id",
+    "year",
+    "cohort",
+    "source_reference",
+    "DocumentIdentifier",
+    "title",
+    "evidence_locator",
+    "content_sha256",
+    "evidence_sha256",
+    "label",
+    "reviewer_type",
+    "reviewer_id",
+    "reviewed_at",
+    "protocol_version",
+    "confidence",
+    "reason_code"
+  ],
+  "review": {
+    "adjudication": "No automatic majority adjudication; gate must pass for both independent human reviewers. Disagreement remains visible.",
+    "blinding": "none; year/source shown, no prevalence or expected conclusion in packet",
+    "confidence": [
+      "high",
+      "medium",
+      "low"
+    ],
+    "human_requirements": "Two independently registered genuine human reviewers; registry must be supplied by trusted operator, not inferred from submitted annotations. No manufactured human reviews.",
+    "human_status": "human_validation_not_completed",
+    "llm_role": "not used; optional future secondary assistance requires separate explicit reviewer registration",
+    "machine_role": "retrieval and context preparation only, never topical ground truth",
+    "mode": "unblinded_human_packet",
+    "reason_codes": [
+      "explicit_topic_reference",
+      "meaningful_context",
+      "passing_reference",
+      "lexical_collision",
+      "different_subject",
+      "competing_readings",
+      "missing_context",
+      "retrieval_failed"
+    ],
+    "reviewer_types": [
+      "human",
+      "llm",
+      "machine"
+    ],
+    "version": "1.0.0"
+  },
+  "version": "1.0.0"
+}

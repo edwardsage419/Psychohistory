@@ -1,0 +1,204 @@
+{
+  "baseline": "046a43f299f56c7122e9cc488a86732e295dc00d",
+  "decision_rules": {
+    "otherwise": "continue_semantic_validation",
+    "phase": "Promote selected tokens only if at least one passes all gates; otherwise continue unless audit method integrity cannot be repaired.",
+    "promotion": "All gates pass per token, remains experimental.",
+    "reject": "Both independent humans fail positive consistency with sufficient cohort coverage and reviewable sample.",
+    "segmentation": "Authoritative evidence of an invalidating dated change, not just token absence."
+  },
+  "gates": {
+    "auditability": "All sample, excerpt, receipt, reviewer and protocol claims authenticate to independently supplied roots; hashes cannot reconstruct discarded article bytes.",
+    "availability": {
+      "min_pooled_reviewable_fraction": 0.6,
+      "min_reviewable_per_eligible_year": 4
+    },
+    "cross_year": {
+      "eligible_years": "sampled years with positive candidate population; absent-token years explicitly untested",
+      "max_year_match_rate_spread": 0.25,
+      "min_reviewed_per_eligible_year_per_human": 3
+    },
+    "documentation": "Provider supports expected topical interpretation, not necessarily classifier precision.",
+    "positive_consistency": {
+      "direct_plus_contextual_min": 0.85,
+      "min_reviewed_per_human": 24,
+      "mismatch_max": 0.1
+    },
+    "reviewer_quality": {
+      "independent_humans_required": 2,
+      "min_agreement": 0.8,
+      "min_paired": 24
+    },
+    "taxonomy": "Pass only with bounded affirmative version/change evidence supporting comparison; undocumented history remains unresolved. Known invalidating change requires segmentation.",
+    "uncertainty": "Important extractor/identity/selection limitations must be bounded; unresolved material issues prevent promotion."
+  },
+  "labels": {
+    "ambiguous": "Relevant context exists but supports competing reasonable semantic readings; not a replacement for clear mismatch or missing text.",
+    "contextual_topic_match": "A meaningful causal, policy or explanatory connection to the concept; not merely a passing name.",
+    "direct_topic_match": "Substantive explicit discussion of the expected concept; prospective or historical topic discussion counts when substantive.",
+    "document_unavailable": "No successful bounded public article retrieval, including HTTP/network/unsupported-response failure.",
+    "incidental_or_weak_match": "Genuine concept mentioned only in passing, background or an unrelated list.",
+    "insufficient_context": "Accessible response cannot establish article identity or adequate semantic context, including blocked pages, homepage/replacement redirects and uncertain extraction.",
+    "semantic_mismatch": "Sufficient context establishes a different subject or lexical/metaphorical collision, without substantive expected concept. Do not conceal clear mismatch as ambiguous."
+  },
+  "protocol_version": "1.0.0",
+  "retrieval": {
+    "cache": "source-content SHA256 + token + extractor/protocol hash; review cache additionally pins excerpt, prompt, model and settings; no cached judgment without independent receipt root",
+    "concurrency": 4,
+    "extractor_version": "1.0.0",
+    "full_articles_retained": false,
+    "identity_policy": "HTTP success is not article identity proof. Cross-host or changed path (except scheme/trailing slash) and homepage responses require manual identity verification. No automatic topic labeling.",
+    "max_attempts": 1,
+    "max_bytes": 2097152,
+    "max_redirects": 5,
+    "max_retained_quote_words": 25,
+    "method": "bounded public HTTP(S) GET; original address only; redirects logged",
+    "selection": "Complete sentence containing concept cue, with adjacent complete sentence when word budget permits; cue locates evidence, never assigns semantics. If unavailable, bounded complete paragraph/title fallback and manual-context flag.",
+    "timeout_seconds": 12
+  },
+  "review": {
+    "adjudication": "No automatic majority adjudication; gate must pass for both independent human reviewers. Disagreement remains visible.",
+    "blinding": "none; year/source shown, no prevalence or expected conclusion in packet",
+    "confidence": [
+      "high",
+      "medium",
+      "low"
+    ],
+    "human_requirements": "Two independently registered genuine human reviewers; registry must be supplied by trusted operator, not inferred from submitted annotations. No manufactured human reviews.",
+    "human_status": "human_validation_not_completed",
+    "llm_role": "not used; optional future secondary assistance requires separate explicit reviewer registration",
+    "machine_role": "retrieval and context preparation only, never topical ground truth",
+    "mode": "unblinded_human_packet",
+    "reason_codes": [
+      "explicit_topic_reference",
+      "meaningful_context",
+      "passing_reference",
+      "lexical_collision",
+      "different_subject",
+      "competing_readings",
+      "missing_context",
+      "retrieval_failed"
+    ],
+    "reviewer_types": [
+      "human",
+      "llm",
+      "machine"
+    ],
+    "version": "1.0.0"
+  },
+  "sampling": {
+    "2015_wb_absence": "No eligible tagged rows; allocation zero, semantic outcome not evaluated; no inferred negative.",
+    "algorithm": "sha256-ranked-theme-richness-edges-v1",
+    "allocations": {
+      "FOOD_SECURITY": {
+        "historical_2015": 6,
+        "historical_2016": 6,
+        "historical_2020": 6,
+        "historical_2023": 6,
+        "historical_2025": 6,
+        "historical_2026": 5,
+        "recent": 5
+      },
+      "PROTEST": {
+        "historical_2015": 6,
+        "historical_2016": 6,
+        "historical_2020": 6,
+        "historical_2023": 6,
+        "historical_2025": 6,
+        "historical_2026": 5,
+        "recent": 5
+      },
+      "WB_2747_UNEMPLOYMENT": {
+        "historical_2015": 0,
+        "historical_2016": 8,
+        "historical_2020": 8,
+        "historical_2023": 8,
+        "historical_2025": 8,
+        "historical_2026": 4,
+        "recent": 4
+      }
+    },
+    "cap": 120,
+    "deduplication": "Exact DocumentIdentifier globally unique; fixed token order and lexicographic cohort order. Canonical earliest batch/line row per token/reference; content duplicates retained as retrieval outcomes but count once per token/year analysis.",
+    "edge_strategy": "Per token/cohort select one lowest and one highest distinct-theme-count row (ties by seeded rank), then fill by seeded rank. Metadata richness is an edge proxy, not a semantic label.",
+    "negative_samples": 0,
+    "population": "Accepted Phase 3 rows with exact V1THEMES token and public HTTP(S) DocumentIdentifier in original 96 archives.",
+    "recall": "recall_not_estimated",
+    "replacement_policy": "never",
+    "seed": "psychohistory-phase5-2026-09-06-v1",
+    "shortfall_policy": "record unfilled slots, never expand other cells post hoc"
+  },
+  "schema_version": "1.0.0",
+  "study_id": "gkg-semantics-v1",
+  "token_order": [
+    "PROTEST",
+    "FOOD_SECURITY",
+    "WB_2747_UNEMPLOYMENT"
+  ],
+  "tokens": {
+    "FOOD_SECURITY": {
+      "ambiguous": "Relevant context exists but supports competing reasonable semantic readings; not a replacement for clear mismatch or missing text.",
+      "concept": "Reliable access to adequate food, insecurity of that access, and substantive food-security policy, supply or humanitarian conditions; not hunger severity.",
+      "contextual": "Agriculture, prices, supply or humanitarian conditions with an explicit meaningful food-access connection.",
+      "direct": "Substantive food access, hunger risk, food insecurity or food-security policy.",
+      "exclusions": [
+        "agriculture alone",
+        "food mention alone",
+        "hunger severity inference"
+      ],
+      "failure_conditions": [
+        "match below preregistered threshold",
+        "material cross-year mismatch or unknown extractor changes",
+        "insufficient human or historical evidence"
+      ],
+      "false_positive": "Generic food, farming, cuisine or prices without food-security relevance.",
+      "incidental": "Genuine concept only a passing secondary reference.",
+      "insufficient_context": "Accessible response cannot establish article identity or adequate semantic context, including blocked pages, homepage/replacement redirects and uncertain extraction.",
+      "temporal_hypothesis": "Meaningful topic match remains consistent across eligible sampled years; identical literal spelling is insufficient evidence.",
+      "unavailable": "No successful bounded public article retrieval, including HTTP/network/unsupported-response failure."
+    },
+    "PROTEST": {
+      "ambiguous": "Relevant context exists but supports competing reasonable semantic readings; not a replacement for clear mismatch or missing text.",
+      "concept": "Collective protest, public demonstrations or organized dissent as a media topic, not protest event counts.",
+      "contextual": "Policy or social discussion meaningfully connected to protest activity.",
+      "direct": "Substantive protest, demonstration or organized dissent discussion, including planned or historical protests.",
+      "exclusions": [
+        "event count/severity inference",
+        "isolated protest word",
+        "background name without topical role"
+      ],
+      "failure_conditions": [
+        "match below preregistered threshold",
+        "material cross-year mismatch or unknown extractor changes",
+        "insufficient human or historical evidence"
+      ],
+      "false_positive": "Personal objection, metaphor or unrelated lexical use without collective protest subject.",
+      "incidental": "Genuine concept only a passing secondary reference.",
+      "insufficient_context": "Accessible response cannot establish article identity or adequate semantic context, including blocked pages, homepage/replacement redirects and uncertain extraction.",
+      "temporal_hypothesis": "Meaningful topic match remains consistent across eligible sampled years; identical literal spelling is insufficient evidence.",
+      "unavailable": "No successful bounded public article retrieval, including HTTP/network/unsupported-response failure."
+    },
+    "WB_2747_UNEMPLOYMENT": {
+      "ambiguous": "Relevant context exists but supports competing reasonable semantic readings; not a replacement for clear mismatch or missing text.",
+      "concept": "Unemployment, joblessness and closely connected labor-market policy as media subject matter; not an unemployment-rate observation.",
+      "contextual": "Labor-market or macroeconomic explanation with an explicit meaningful unemployment connection.",
+      "direct": "Substantive unemployment/joblessness discussion or rate reporting.",
+      "exclusions": [
+        "employment alone",
+        "all labor news",
+        "absence in 2015 as semantic negative",
+        "prevalence interpreted as unemployment rate"
+      ],
+      "failure_conditions": [
+        "match below preregistered threshold",
+        "material cross-year mismatch or unknown extractor changes",
+        "insufficient human or historical evidence"
+      ],
+      "false_positive": "Generic employment, jobs or macroeconomics without unemployment connection.",
+      "incidental": "Genuine concept only a passing secondary reference.",
+      "insufficient_context": "Accessible response cannot establish article identity or adequate semantic context, including blocked pages, homepage/replacement redirects and uncertain extraction.",
+      "temporal_hypothesis": "Meaningful topic match remains consistent across eligible sampled years; identical literal spelling is insufficient evidence.",
+      "unavailable": "No successful bounded public article retrieval, including HTTP/network/unsupported-response failure."
+    }
+  }
+}
