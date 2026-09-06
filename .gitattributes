@@ -12,3 +12,6 @@ studies/gkg-semantics-v1/*.csv text eol=lf
 
 studies/gkg-semantics-v1/results/*.json text eol=lf
 studies/gkg-semantics-v1/results/*.csv text eol=lf
+
+studies/gkg-semantics-v2/*.json text eol=lf
+studies/gkg-semantics-v2/*.csv text eol=lf
