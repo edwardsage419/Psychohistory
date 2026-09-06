@@ -63,20 +63,33 @@ Use this order when tradeoffs arise:
 * Evaluation rules must be defined before outcome scoring whenever practical.
 * New infrastructure must justify its cost and operational burden.
 
+## Governance relationship
+
+`AGENTS.md` governs how Codex executes an already bounded task.
+
+`docs/DEVELOPMENT_GOVERNANCE.md` governs what should be developed next, project gates, GPT planning responsibilities, human-review boundaries, task decomposition, and model-allocation strategy.
+
+For substantial work, do not treat an entire numbered Phase as one task or one risk level. Decompose methodological decisions, implementation, testing, evidence acquisition, analysis, and final judgment when they have different risk profiles.
+
+Missing evidence is not a reasoning problem. Do not recommend escalation to a stronger model merely because historical evidence, independent labels, human review, source documentation, or document identity is unavailable.
+
+Genuine human-review requirements must remain human requirements. LLM output must not be used to satisfy them.
+
 ## Working method for Codex
 
 Before implementing a substantial change:
 
 1. Read this file and the documents in `docs/` that are relevant to the task.
-2. Inspect the current code and tests.
-3. Classify the task using the L0 to L5 policy below.
-4. State the intended change, assumptions, risks, and acceptance criteria in the pull request or issue when appropriate.
-5. Prefer small, reviewable changes over broad rewrites without tests.
-6. Add or update tests for transformation logic and failure behavior.
-7. Never fabricate source mappings, field meanings, or validation results.
-8. If a required fact is unknown, record it as an open question and stop that specific assumption from entering production logic.
-9. Restrict inspection and edits to files relevant to the task. Expand scope only when a concrete dependency requires it.
-10. Stop once the requested behavior and acceptance criteria are satisfied. Do not continue with unrelated refactoring or optional cleanup unless explicitly requested.
+2. When the task affects project advancement, promotion, methodology, or gate decisions, also read `docs/DEVELOPMENT_GOVERNANCE.md`.
+3. Inspect the current code and tests.
+4. Classify the task using the L0 to L5 policy below.
+5. State the intended change, assumptions, risks, and acceptance criteria in the pull request or issue when appropriate.
+6. Prefer small, reviewable changes over broad rewrites without tests.
+7. Add or update tests for transformation logic and failure behavior.
+8. Never fabricate source mappings, field meanings, or validation results.
+9. If a required fact is unknown, record it as an open question and stop that specific assumption from entering production logic.
+10. Restrict inspection and edits to files relevant to the task. Expand scope only when a concrete dependency requires it.
+11. Stop once the requested behavior and acceptance criteria are satisfied. Do not continue with unrelated refactoring or optional cleanup unless explicitly requested.
 
 ## Task risk classification and model guidance
 
@@ -206,6 +219,25 @@ Recommended model and reasoning:
 
 Use Astra XHigh only when High remains insufficient. Max reasoning is outside the normal workflow and should be exceptional.
 
+## Astra authorization discipline
+
+Astra is reserved for a specific unresolved L5 question, not for an entire Phase.
+
+Do not recommend Astra merely because:
+
+* the task is large
+* many files are involved
+* many tests are required
+* CI or retrieval is difficult
+* the repository context is large
+* the Phase is important
+* evidence is missing
+* implementation is lengthy but already specified
+
+Appropriate Astra uses include unresolved repository-wide methodology, consequential cross-year validity judgments, fundamental forecast or resolution methodology, difficult leakage audits, and core scientific disputes that remain materially uncertain after Sol High analysis.
+
+Once the difficult decision is resolved, reassess and downgrade deterministic implementation to Terra when appropriate.
+
 ## Escalation policy
 
 Start with the lowest model that is expected to complete the task reliably.
@@ -228,6 +260,8 @@ Escalation is justified when one or more of the following occur:
 * Probability, calibration, scoring, resolution, or forecast semantics are affected.
 
 Do not repeatedly retry the same uncertain problem with a weaker model when the uncertainty is architectural, methodological, or scientific.
+
+Do not escalate because evidence is absent. Record the evidence gap and stop or perform bounded evidence recovery instead.
 
 ## Downgrade policy
 
@@ -312,4 +346,6 @@ Record unrelated findings separately instead of expanding the current task.
 
 ## Current phase
 
-The next phase is architecture reset and data foundation design. The immediate objective is to establish a durable data model and source evaluation process before expanding the dashboard or building production forecasting logic.
+The accepted `main` baseline contains the completed Phase 1-4 foundation. Later semantic-audit and evidence-recovery work exists on the active development branch and is not automatically authoritative until reviewed and accepted.
+
+The current bottleneck is semantic and historical evidence quality. Do not begin production forecasting, composite-state construction, or semantic promotion until the applicable gates in `docs/DEVELOPMENT_GOVERNANCE.md` are satisfied.
