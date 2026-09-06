@@ -24,7 +24,11 @@ def evidence():
     c=case();x=r.identify(c,receipt(),body(),{'source_hash_scope':'complete_response_body','content_sha256':s.sha(body())},method='original_publisher')
     return {**{k:c[k] for k in ('case_id','token','year','cohort')},'source':c['source_name'],'original_url':c['DocumentIdentifier'],'recovered_url':c['DocumentIdentifier'],**x}
 def registry():return [{'reviewer_id':'human-a','reviewer_type':'human','person_id':'person-a','independence_group':'group-a','human_attestation_reference':'fictional offline fixture only'}]
-def annotation(e):return {**{k:e[k] for k in ('case_id','token','year','cohort','original_url')},'evidence_sha256':s.digest(e),'human_label':'direct_topic_match','reviewer_id':'human-a','reviewer_type':'human','reviewed_at':'2026-09-06T01:00:00Z'}
+def annotation(e):
+    p=protocol();return {**{k:e[k] for k in ('case_id','token','year','cohort','original_url')},'evidence_sha256':s.digest(e),'human_label':'direct_topic_match','reviewer_id':'human-a','reviewer_type':'human','reviewed_at':'2026-09-06T01:00:00Z','review_protocol_version':p['version'],'review_protocol_sha256':s.digest(p)}
+def import_args(e,reg=None):
+    p=protocol();reg=registry() if reg is None else reg
+    return dict(registry_root=s.digest(reg),evidence_hashes={'case1':s.digest(e)},review_protocol=p,review_protocol_root=s.digest(p))
 
 class FrozenTests(unittest.TestCase):
     def test_frozen_120_case_ids_and_metadata_no_resampling(self):
@@ -85,9 +89,9 @@ class ImportTests(unittest.TestCase):
         e=evidence();root=s.digest(e);bad=copy.deepcopy(e);bad['excerpt']='Altered.'
         with self.assertRaises(s.Invalid):r.validate_evidence([bad],[case()],trusted_hashes={'case1':root})
         a=annotation(e);a['evidence_sha256']='0'*64
-        with self.assertRaises(s.Invalid):r.import_humans([a],registry(),[case()],[e],registry_root=s.digest(registry()),evidence_hashes={'case1':root})
+        with self.assertRaises(s.Invalid):r.import_humans([a],registry(),[case()],[e],**import_args(e))
     def test_human_identity_attestation_duplicate_and_case_guards(self):
-        for mutation in ('machine','llm','attestation','duplicate_person','duplicate_annotation','fake_case','metadata','invalid_label'):
+        for mutation in ('machine','llm','attestation','duplicate_person','duplicate_annotation','fake_case','metadata','invalid_label','stale_protocol_version','stale_protocol_hash'):
             e=evidence();a=annotation(e);reg=registry();aa=[a]
             if mutation in ('machine','llm'):reg[0]['reviewer_type']=mutation
             elif mutation=='attestation':reg[0]['human_attestation_reference']=''
@@ -95,10 +99,12 @@ class ImportTests(unittest.TestCase):
             elif mutation=='duplicate_annotation':aa.append(a)
             elif mutation=='fake_case':a['case_id']='fake'
             elif mutation=='metadata':a['year']=2015
-            else:a['human_label']='made_up'
-            with self.subTest(mutation=mutation),self.assertRaises(s.Invalid):r.import_humans(aa,reg,[case()],[e],registry_root=s.digest(reg),evidence_hashes={'case1':s.digest(e)})
+            elif mutation=='invalid_label':a['human_label']='made_up'
+            elif mutation=='stale_protocol_version':a['review_protocol_version']='0.9.0'
+            else:a['review_protocol_sha256']='0'*64
+            with self.subTest(mutation=mutation),self.assertRaises(s.Invalid):r.import_humans(aa,reg,[case()],[e],**import_args(e,reg))
     def test_genuine_attested_fixture_and_blank_packet(self):
-        e=evidence();self.assertEqual(len(r.import_humans([annotation(e)],registry(),[case()],[e],registry_root=s.digest(registry()),evidence_hashes={'case1':s.digest(e)})),1)
+        e=evidence();self.assertEqual(len(r.import_humans([annotation(e)],registry(),[case()],[e],**import_args(e)),1)
         p=r.packet([e])[0];self.assertIsNone(p['human_label']);self.assertIsNone(p['reviewer_id']);self.assertNotIn('recommendation',p)
 
 class TrustTests(unittest.TestCase):
