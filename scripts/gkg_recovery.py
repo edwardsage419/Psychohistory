@@ -105,18 +105,22 @@ def packet(evidence):
     keys=('case_id','token','year','source','original_url','recovered_url','identity_status','title','excerpt')
     return [{**{k:e[k] for k in keys},'evidence_sha256':s.digest(e),'human_label':None,'reviewer_id':None} for e in evidence]
 
-def import_humans(annotations,registry,cases,evidence,*,registry_root,evidence_hashes):
-    s.authenticate(registry,registry_root,'human_registry');validate_evidence(evidence,cases,trusted_hashes=evidence_hashes)
+def import_humans(annotations,registry,cases,evidence,*,registry_root,evidence_hashes,review_protocol,review_protocol_root):
+    s.authenticate(registry,registry_root,'human_registry')
+    s.authenticate(review_protocol,review_protocol_root,'review_protocol')
+    s.require(isinstance(review_protocol.get('version'),str) and review_protocol['version'],'review_protocol_version')
+    validate_evidence(evidence,cases,trusted_hashes=evidence_hashes)
     for key in ('reviewer_id','person_id','independence_group'):
         s.require(all(r.get(key) for r in registry) and len({r[key] for r in registry})==len(registry),'duplicate_or_missing_reviewer')
     for r in registry:s.require(r.get('reviewer_type')=='human' and r.get('human_attestation_reference'),'human_attestation')
     rm={r['reviewer_id']:r for r in registry};em={e['case_id']:e for e in evidence};seen=set()
-    required={'case_id','token','year','cohort','original_url','evidence_sha256','human_label','reviewer_id','reviewer_type','reviewed_at'}
+    required={'case_id','token','year','cohort','original_url','evidence_sha256','human_label','reviewer_id','reviewer_type','reviewed_at','review_protocol_version','review_protocol_sha256'}
     for a in annotations:
         s.require(set(a)==required and a['case_id'] in em and a['reviewer_id'] in rm,'annotation_contract')
         key=(a['case_id'],a['reviewer_id']);s.require(key not in seen,'duplicate_annotation');seen.add(key)
         e=em[a['case_id']]
         s.require(a['reviewer_type']=='human','not_human')
+        s.require(a['review_protocol_version']==review_protocol['version'] and a['review_protocol_sha256']==review_protocol_root,'stale_review_protocol')
         for k in ('token','year','cohort','original_url'):s.require(a[k]==e[k],'frozen_metadata')
         s.require(a['evidence_sha256']==s.digest(e),'stale_evidence')
         s.require(a['human_label'] in s.LABELS,'invalid_label')
