@@ -9,7 +9,8 @@
 - `19e882d`: preregistered measurement and candidate selection protocol.
 - `e0710fa`: definitions, schemas, source metrics, aggregation, study and initial tests.
 - `210c0db`: adversarial review fixes and replay checks.
-- The evidence/report commit containing this file follows those commits; its own identifier is available from Git history. Final test/CI evidence is recorded separately to avoid a self-referential commit hash.
+- `43cf624`: complete inventory, normalized/indicator outputs, replay evidence, architecture, decisions and report.
+- The final verification commit adds scoped LF checkout rules and CI evidence; its own identifier is available from Git history, avoiding a self-referential hash.
 
 Baseline command: `python -B -m unittest discover -s scripts -p "test_*.py"`. Baseline: 116 tests, 115 passed, one Windows symlink-permission skip, no failures/errors. Initial implementation: 36 new tests passed; full suite 152 tests, 151 passed, one skip. Dedicated adversarial regressions then produced **7 confirmed failures** on the initial implementation. After fixes: **163 tests, 162 passed, one Windows symlink-permission skip, no failures/errors**. CI runs the same suite fully offline on Ubuntu, where the symlink test can execute; see the final CI evidence for its exact result.
 
@@ -117,7 +118,7 @@ Changing a definition under an existing ID/version fails its history pin; initia
 
 Two independent final runs read every original ZIP: the first uses Phase 3 run3 ledgers in ascending order, the second run4 ledgers in descending order. **All 14 stable output files and input/definition/implementation pins are identical.** Semantic SHA-256: `2f381e429bafa6e6c59b9739b32bd014e3b80a014005939d65d33ce6f427b5fd`. Measured durations: 83.136s and 83.094s. Runtime clocks and duration appear only in execution evidence. Original acquisition times remain pinned provenance. Observation identity also follows the existing contract exclusion of retrieved_at.
 
-[Replay evidence](../studies/gkg-indicators-v1/results/replay.json) verifies file hashes, distinct run evidence and semantic manifests, rejecting alias/self-comparison and mutated files. The exact implementation bytes and registry inputs are also retained under `artifacts/gkg-phase4/source-snapshot/`; byte-level code pins include the current checkout line endings. Cross-platform replays must restore those pins or declare a new implementation fingerprint. The published result directory adds report/verification evidence; replay validation itself applies to the two original local run directories, whose exact artifact sets are preserved.
+[Replay evidence](../studies/gkg-indicators-v1/results/replay.json) verifies file hashes, distinct run evidence and semantic manifests, rejecting alias/self-comparison and mutated files. The exact implementation bytes and registry inputs are also retained under `artifacts/gkg-phase4/source-snapshot/`; byte-level code pins include the current checkout line endings. Cross-platform replays must restore those pins or declare a new implementation fingerprint. Scoped `.gitattributes` rules preserve canonical LF bytes for published Phase 4 JSON/JSONL evidence on Windows as well as Linux. The published result directory adds report/verification evidence; replay validation itself applies to the two original local run directories, whose exact artifact sets are preserved.
 
 ## Measured storage and cost
 
