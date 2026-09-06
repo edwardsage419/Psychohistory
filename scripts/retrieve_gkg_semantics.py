@@ -93,6 +93,9 @@ def identity_requires_review(original,final):
     a,b=urlsplit(original),urlsplit(final)
     return (a.hostname or '').removeprefix('www.')!=(b.hostname or '').removeprefix('www.') or a.path.rstrip('/')!=b.path.rstrip('/') or a.query!=b.query or b.path in ('','/')
 
+def blocked_context(e):
+    return bool(re.search(r'access denied|request blocked|verify you are human|just a moment|page not found|captcha|enable javascript',e['title']+' '+e['excerpt'],re.I))
+
 def retrieve(case,p,*,opener_factory=None):
     cfg=p['retrieval'];started=time.monotonic();redirects=Redirects(cfg['max_redirects'])
     url=case['DocumentIdentifier']
@@ -120,7 +123,9 @@ def retrieve(case,p,*,opener_factory=None):
             result=extract_context(blob,case['token'],e['charset'])
             validate_extraction(blob,case['token'],result,content_hash=e['content_sha256'],charset=e['charset'])
             e.update(result)
-            if e['identity_review_required']:
+            if blocked_context(e):
+                e['availability']='insufficient_context';e['failure_category']='blocked_or_error_page'
+            elif e['identity_review_required']:
                 e['availability']='insufficient_context';e['failure_category']='article_identity_requires_review'
             elif e['manual_context_required']:
                 e['availability']='insufficient_context';e['failure_category']='context_requires_manual_review'

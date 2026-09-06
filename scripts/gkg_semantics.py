@@ -157,6 +157,9 @@ def validate_annotations(annotations,sample,evidence,reviewers,p,*,reviewer_hash
     registry={r['reviewer_id']:r for r in reviewers}
     for r in reviewers:
         require(r['reviewer_type'] in ('human','llm','machine') and r['reviewer_id'],'reviewer_identity')
+        if r['reviewer_type']=='llm':
+            require(all(r.get(k) for k in ('model_version','prompt_sha256','protocol_sha256')) and isinstance(r.get('settings'),dict),'llm_review_configuration')
+            require(r['protocol_sha256']==digest(p),'llm_registry_protocol')
         if r['reviewer_type']=='human':
             require(r.get('human_attestation_reference') and r.get('independence_group'),'human_attestation')
     cases={c['case_id']:c for c in sample['cases']}; es={e['case_id']:e for e in evidence}; seen=set()
@@ -199,7 +202,7 @@ def unique_cases(cases,evidence):
     for c in sorted(cases,key=lambda x:x['case_id']):
         e=es[c['case_id']]
         # Only exact source-content duplicates. Error pages never supply reviewed counts.
-        key=e['content_sha256'] or c['case_id']
+        key=(e['content_sha256'] if e.get('source_hash_scope')=='complete_response_body' else None) or c['case_id']
         if key not in seen:
             result.append(c);seen.add(key)
     return result
@@ -262,7 +265,7 @@ def assess(sample,p,evidence,annotations,reviewers,taxonomy,*,trust):
     for token in TOKENS:
         cases=[c for c in sample['cases'] if c['token']==token]
         totals=summary(cases,evidence,annotations)
-        years=sorted({c['year'] for c in cases})
+        years=required_years(sample,p,token)
         yearly={str(y):summary([c for c in cases if c['year']==y],evidence,annotations) for y in years}
         perhuman={r['reviewer_id']:summary(cases,evidence,annotations,r['reviewer_id']) for r in humans}
         peryearhuman={r['reviewer_id']:{str(y):summary([c for c in cases if c['year']==y],evidence,annotations,r['reviewer_id']) for y in years} for r in humans}
@@ -273,7 +276,7 @@ def assess(sample,p,evidence,annotations,reviewers,taxonomy,*,trust):
         segmentation=any(f['category']=='authoritative_provider_statement' and token in f.get('invalidating_dated_change',[]) for f in taxonomy)
         uncertainty=not any(f['category']=='unresolved' and token in f.get('tokens',[]) and f.get('material',True) for f in taxonomy)
         pairs=[a for a in ag['pairs'] if a['paired']>=p['gates']['reviewer_quality']['min_paired']]
-        reviewer_pass=any(a['raw_agreement']>=p['gates']['reviewer_quality']['min_agreement'] for a in pairs)
+        reviewer_pass=bool(pairs) and all(a['raw_agreement']>=p['gates']['reviewer_quality']['min_agreement'] for a in pairs)
         eligible=[]
         for r in humans:
             rid=r['reviewer_id'];s=perhuman[rid];ys=peryearhuman[rid]
@@ -300,3 +303,13 @@ def assess(sample,p,evidence,annotations,reviewers,taxonomy,*,trust):
         'tokens':results,'recommendation':'promote_selected_tokens_to_history_pilot' if any(t['decision']=='historically_usable_experimental' for t in results) else 'continue_semantic_validation',
         'agreement':agreement(sample['cases'],evidence,annotations,reviewers),'recall':'recall_not_estimated',
         'human_validation':'human_validation_not_completed' if any(t['semantic_status']=='human_validation_not_completed' for t in results) else 'completed_bounded_review'}
+
+
+def required_years(sample,p,token):
+    # Allocated strata cannot disappear from gates because all references collided or failed.
+    return sorted({cell['year'] for cell in sample['populations']
+        if cell['token']==token and p['sampling']['allocations'][token][cell['cohort']]>0})
+
+def validate_packet(candidate,sample,evidence,p):
+    require(candidate==packet(sample,evidence,p),'packet_derivation_or_blinding')
+    return candidate

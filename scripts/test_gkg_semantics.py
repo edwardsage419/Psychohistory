@@ -34,7 +34,7 @@ def fixture():
             'protocol_sha256':s.digest(p),'title':'Example','excerpt':'People discussed unemployment today.',
             'locator':{'paragraph_index':0,'start':0,'end':35},'extractor_version':'1.0.0','context_level':'complete_sentence_context',
             'manual_context_required':False,'identity_review_required':False,'content_sha256':s.digest(c),
-            'download_bytes':100,'http_status':200,'availability':'retrieved_context','attempts':1,'retrieved_at':'2026-09-06T00:00:00Z'}
+            'source_hash_scope':'complete_response_body','download_bytes':100,'http_status':200,'availability':'retrieved_context','attempts':1,'retrieved_at':'2026-09-06T00:00:00Z'}
         e['context_sha256']=s.context_hash(e);es.append(e)
     return p,sample,es
 
@@ -216,3 +216,39 @@ class RetrievalTests(unittest.TestCase):
         with patch('socket.getaddrinfo',return_value=[(2,1,6,'',('127.0.0.1',80))]),self.assertRaises(s.Invalid):net.check_public('http://example.org/a')
 
 if __name__=='__main__':unittest.main()
+
+class AdversarialReviewTests(unittest.TestCase):
+    def test_block_page_with_topic_text_not_reviewable(self):
+        class Response(io.BytesIO):
+            status=200
+            headers=Message()
+            headers['Content-Type']='text/html; charset=utf-8'
+            def geturl(self):return 'https://example.org/story'
+        class Opener:
+            def open(self,*a,**kw):return Response(b'<title>Access Denied</title><p>People discussed unemployment today.</p>')
+        e=net.retrieve({'case_id':'a','DocumentIdentifier':'https://example.org/story','token':'WB_2747_UNEMPLOYMENT'},protocol(),opener_factory=lambda _:Opener())
+        self.assertNotEqual(e['availability'],'retrieved_context')
+    def test_hash_scope_prefix_not_exact_article_duplicate(self):
+        p,sample,es=fixture();cs=sample['cases'][:2];es=es[:2]
+        for e in es:e.update(content_sha256='a'*64,source_hash_scope='bounded_prefix',availability='document_unavailable')
+        self.assertEqual(len(s.unique_cases(cs,es)),2)
+    def test_untrusted_blinded_flag_not_accepted(self):
+        p,sample,es=fixture();packet=s.packet(sample,es,p)
+        packet[0]['blinded']=True
+        # Review packets are derived evidence too, and must compare with pinned inputs.
+        with self.assertRaises(s.Invalid):s.validate_packet(packet,sample,es,p)
+    def test_stale_model_registry_configuration_rejected(self):
+        p,sample,es=fixture();r=[{'reviewer_id':'a','reviewer_type':'llm'}]
+        a=annotation(sample['cases'][0],es[0]);a['reviewer_type']='llm'
+        with self.assertRaises(s.Invalid):s.validate_annotations([a],sample,es,r,p,reviewer_hash=s.digest(r))
+    def test_eligible_year_not_dropped_after_selection_shortfall(self):
+        p=protocol();cs=candidates()
+        # Shared references are allocated to earlier panel; food-year candidates exist but cannot be selected.
+        for c in cs:
+            if c['cohort']=='historical_2015':c['tokens']=list(s.TOKENS[:2])
+        sample=s.select_sample(cs,p,protocol_hash=s.digest(p))
+        # Force genuine exhausted global URL population in one positive stratum through allocation-sized population.
+        cs=[c for c in cs if c['cohort']!='historical_2015']+cs[:6]
+        sample=s.select_sample(cs,p,protocol_hash=s.digest(p))
+        self.assertTrue(any(x['token']=='FOOD_SECURITY' and x['year']==2015 and x['unique_references']>0 and x['selected']==0 for x in sample['populations']))
+        self.assertIn(2015,s.required_years(sample,p,'FOOD_SECURITY'))
