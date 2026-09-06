@@ -30,7 +30,7 @@ def verify_artifacts(root,manifest,*,trusted_manifest_hash):
         s.require(path.is_file() and not path.is_symlink() and s.sha(path.read_bytes())==h,'artifact_binding')
     return True
 
-def export(data,output,*,evidence_revision):
+def export(data,output,*,evidence_revision,trusted_manifest_hash=None):
     output=Path(output);p=data['preregistration.json'];sample=data['sample.json'];es=data['retrieval.json'];annotations=data['annotations.json'];rs=data['reviewers.json'];taxonomy=data['taxonomy-evidence.json']
     trust={'protocol':data['sample-trust.json']['protocol_sha256'],'sample':data['sample-trust.json']['sample_sha256'],
         'receipts':data['retrieval-trust.json']['receipt_hashes'],'reviewers':s.digest(rs),'annotations':s.digest(annotations),'taxonomy':s.digest(taxonomy)}
@@ -81,13 +81,16 @@ def export(data,output,*,evidence_revision):
         'artifacts':{n:s.sha((output/n).read_bytes()) for n in sorted(names)},
         'trust_boundary':'Caller supplies independently accepted full manifest SHA256; a candidate manifest is not its own authority.'}
     write(output/'assessment-manifest.json',manifest)
-    verify_artifacts(output,manifest,trusted_manifest_hash=s.digest(manifest))
+    if trusted_manifest_hash is not None:
+        verify_artifacts(output,manifest,trusted_manifest_hash=trusted_manifest_hash)
     return result,manifest
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--evidence-commit',required=True);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    result,manifest=export(load_trusted(args.evidence_commit),args.output,evidence_revision=args.evidence_commit)
-    print(json.dumps({'recommendation':result['recommendation'],'manifest_sha256':s.digest(manifest),
+    parser=argparse.ArgumentParser();parser.add_argument('--evidence-commit',required=True);parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--trusted-manifest-sha256',default=None,help='Optional independently accepted manifest SHA256 for verification mode.')
+    args=parser.parse_args()
+    result,manifest=export(load_trusted(args.evidence_commit),args.output,evidence_revision=args.evidence_commit,trusted_manifest_hash=args.trusted_manifest_sha256)
+    print(json.dumps({'recommendation':result['recommendation'],'manifest_sha256':s.digest(manifest),'manifest_authenticated':args.trusted_manifest_sha256 is not None,
         'tokens':[{k:t[k] for k in ('token','decision','gates')} for t in result['tokens']]}))
 
 if __name__=='__main__':main()
