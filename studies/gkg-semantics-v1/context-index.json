@@ -1,0 +1,84 @@
+{
+  "baseline": "046a43f299f56c7122e9cc488a86732e295dc00d",
+  "baseline_tests": {
+    "failures": 0,
+    "passed": 190,
+    "skip_reason": "Windows symlink privilege",
+    "skipped": 1,
+    "total": 191
+  },
+  "decisions": [
+    "zero/near-zero recurring cost",
+    "no forecasts, production change, main merge or long backfill",
+    "Phase 4 frozen; 96 original ZIPs intact",
+    "no paid/model article review; human review remains pending unless actually supplied"
+  ],
+  "dependencies": [
+    "Phase 5 -> authenticated original ZIP/Phase 3 ledger -> sampled row -> retrieval receipt -> human annotation",
+    "Phase 4 numeric outputs are read-only"
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating rules",
+      "sha256": "38b2b17fdf6d6809047f44b4746114c08645ce58dfe006686a6ffda7c24b33f5"
+    },
+    {
+      "path": "docs/PHASE_4_REPORT.md",
+      "purpose": "accepted measurements",
+      "sha256": "a1137e1d785a6cf2b1f09cbf5f2d0400a89ed3c3f1c2ff1f240231ce4e675548"
+    },
+    {
+      "path": "docs/PHASE_4_INTEGRITY_REVIEW.md",
+      "purpose": "external trust boundary",
+      "sha256": "0053d912550e7b896e4c0439ac5731ba03eb23bd7bb3482bc904cd4b4e0e332b"
+    },
+    {
+      "path": "docs/INDICATOR_ARCHITECTURE.md",
+      "purpose": "frozen indicator contracts",
+      "sha256": "d79518f0b326d8961efb1a269c864c88f5c956bc5319ff29b55f686dd089806c"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "purpose": "cost and scope decisions",
+      "sha256": "87538d2b598f7a64dd6d19da34039cbc477f7947042a8d53f49d3eaf4910558f"
+    },
+    {
+      "path": "scripts/gkg_lossless.py",
+      "purpose": "authenticate raw/ledger rows",
+      "sha256": "de4006b40dfb4dbcefe72064cf458c1f916d1e09c4c2960a6576d3379f6c451a"
+    },
+    {
+      "path": "scripts/gkg_indicator_metrics.py",
+      "purpose": "authenticate source metric",
+      "sha256": "d7adf67d50c6dc2bd2abf0b27b447e4ca2f823841e6c4223aad1c53de7033d30"
+    },
+    {
+      "path": "studies/gkg-indicators-v1/integrity-review/baseline-trust.json",
+      "purpose": "independent metric pins",
+      "sha256": "67bb914f92f9db55f02ba86b77e093b989b7350c0ab16320d639e2e0fc9800db"
+    },
+    {
+      "path": "studies/gkg-lossless-v1/results/study.json",
+      "purpose": "published ledger pins",
+      "sha256": "bebe8825afd467b3aae6fea3928db5024516f2153833d0bdaa8ae05f7139ea3f"
+    },
+    {
+      "path": "studies/gkg-lossless-v1/results/provenance.json",
+      "purpose": "original acquisitions",
+      "sha256": "42c4369a63b8bb1b0d18722c657642627b7bf255c4fee08c2665a93f1bfd66eb"
+    },
+    {
+      "path": "studies/gkg-continuity-v1/manifest.json",
+      "purpose": "96 batch cohort identity",
+      "sha256": "608b3e947f789983febc21dbf7a80c1b7ecc061d42b649d4b69ee9a638f91328"
+    }
+  ],
+  "unknowns": [
+    "historical extractor versions",
+    "semantic stability",
+    "article survival and relevant context",
+    "actual human annotations"
+  ],
+  "version": "1.0.0"
+}
