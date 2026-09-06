@@ -161,3 +161,14 @@ before indicator research. That bounded acquisition phase is recorded in
 PHASE_2_REPORT.md and does not authorize the indicator Phase 2 described above.
 Its next recommended issue is lossless encoding and row-quarantine policy;
 production ingestion, ontology and forecast work remain deferred.
+
+## Execution note: Phase 4 measurement foundation
+
+The owner's phase numbering supersedes the original planning sequence above.
+Phase 3 ingestion is accepted at 09586cd. Phase 4 indicator foundation and GKG
+semantic validation is recorded in PHASE_4_REPORT.md. Current recommendation:
+continue_semantic_validation. The next recommended issue is a preregistered,
+bounded semantic audit across historical cohorts and provider-version evidence;
+not the original roadmap's forecasting phase. Experimental media prevalence must
+not become a social-severity/risk series without additional validation. Production,
+forecasting, final ontology and geographic attribution remain deferred.

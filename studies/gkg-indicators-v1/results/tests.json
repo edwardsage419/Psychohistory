@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "code_commit": "210c0db",
+  "command": "python -B -m unittest discover -s scripts -p test_*.py",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "tests": 163,
+  "passed": 162,
+  "skipped": 1,
+  "failures": 0,
+  "errors": 0,
+  "duration_seconds": 15.687,
+  "skip_reason": "Windows symlink creation privilege",
+  "baseline_tests": 116,
+  "phase4_tests": 47,
+  "network_calls_by_tests": 0,
+  "full_corpus_replay": "replay.json",
+  "self_review": "../../../docs/evidence/gkg-phase4-self-review.json"
+}

@@ -156,3 +156,33 @@ lossless parsing, quarantine and provenance only. This validates no theme semant
 or indicators and does not activate production ingestion. See PHASE_3_REPORT.md.
 Near-zero-cost retention separates permanent quarantine/receipts from future
 configurable ordinary raw retention. No research archive is deleted.
+
+## 2026 09 06: Phase 4 experimental measurement foundation
+
+Decision: continue_semantic_validation. Phase 3 remains an accepted ingestion
+candidate. Phase 4 supplies source-independent IndicatorDefinition v1, seven
+experimental exact-token media-prevalence definitions at version 0.1.0, and
+observation v1 output with separate quality and provenance. This does not promote
+any token to a validated social-condition, event or risk measure.
+
+The selection protocol was committed before selection. All 96 original archives
+remain intact. Their 118,415 accepted rows contain 9,927 literal tokens; five
+quarantines remain excluded. There are 24 complete sampled hours but no complete
+sampled day. Missing expected slots produce null values; numeric sampled counts
+remain visible. Use ratio of sums over all accepted rows, including empty-theme
+rows; nonempty-theme prevalence and exact-identifier deduplication are diagnostics.
+No aliases, smoothing, final ontology, geographical attribution or predictions.
+
+Two independently ordered full replays agree on 14 stable output files. Seven
+adversarially demonstrated validation gaps were fixed with regression tests.
+Cross-year taxonomy/extractor semantics and classifier validity remain unresolved;
+the two selected World Bank tokens are absent in the 2015 hour. Identical token
+strings do not prove stable historical meaning. See PHASE_4_REPORT.md.
+
+Continue the zero/near-zero recurring cost rule: standard-library JSONL/gzip and
+local storage, Git for compact evidence/code. Measured derived representation
+extrapolates to about 527 MB/year for this seven-indicator configuration, compared
+with about 180 GB/year of raw ZIPs under the mixed-cohort mean. Those are explicit
+extrapolations, not capacity guarantees. No engine, paid dependency, deletion or
+frequency/field reduction is introduced. Next: bounded semantic annotations and
+provider-version evidence before durable interpretive indicator history.
