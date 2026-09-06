@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "indicator-quality v1",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "observation_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "accepted_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "empty_theme_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage": {
+          "type": "number"
+        },
+        "layer": {
+          "type": "string",
+          "const": "source_metric"
+        }
+      },
+      "required": [
+        "observation_id",
+        "flags",
+        "accepted_rows",
+        "quarantined_rows",
+        "empty_theme_rows",
+        "coverage",
+        "layer"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "observation_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "accepted_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "empty_theme_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage": {
+          "type": "number"
+        },
+        "layer": {
+          "type": "string",
+          "const": "indicator"
+        },
+        "expected_batches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "observed_batches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "missing_batches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "duplicate_diagnostic": {
+          "type": "object",
+          "properties": {
+            "identified_rows": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "missing_identifier_rows": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "distinct_identifiers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "repeated_identifiers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "excess_identifier_rows": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_identifier_token_numerator": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "unique_identifier_prevalence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "method": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "identified_rows",
+            "missing_identifier_rows",
+            "distinct_identifiers",
+            "repeated_identifiers",
+            "excess_identifier_rows",
+            "unique_identifier_token_numerator",
+            "unique_identifier_prevalence",
+            "method"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "observation_id",
+        "flags",
+        "accepted_rows",
+        "quarantined_rows",
+        "empty_theme_rows",
+        "coverage",
+        "layer",
+        "expected_batches",
+        "observed_batches",
+        "missing_batches",
+        "duplicate_diagnostic"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

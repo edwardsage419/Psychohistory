@@ -1,0 +1,24 @@
+{
+  "PROTEST": [
+    "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+  ],
+  "ECON_TAXATION": [
+    "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+  ],
+  "FOOD_SECURITY": [
+    "https://blog.gdeltproject.org/announcing-our-first-api-gkg-geojson/"
+  ],
+  "WB_345_SOVEREIGN_WEALTH_FUNDS": [
+    "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/"
+  ],
+  "WB_2747_UNEMPLOYMENT": [
+    "https://blog.gdeltproject.org/google-bigquery-gkg-2-0-sample-queries/",
+    "https://blog.gdeltproject.org/world-bank-group-topical-taxonomy-now-in-gkg/"
+  ],
+  "NATURAL_DISASTER_LANDSLIDE": [
+    "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+  ],
+  "AVIATION_INCIDENT": [
+    "https://blog.gdeltproject.org/announcing-gdelt-geographic-news-search/"
+  ]
+}
