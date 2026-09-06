@@ -183,6 +183,13 @@ def validate_annotations(annotations,sample,evidence,reviewers,p,*,reviewer_hash
             require(a['label']=='insufficient_context','insufficient_label')
         if a['reviewer_type']=='machine':
             require(a['label'] in LABELS[5:],'machine_semantic_judgment')
+    # Exact duplicate bodies cannot carry contradictory labels from one reviewer for the same concept.
+    duplicate_labels={}
+    for a in annotations:
+        e=es[a['case_id']]
+        key=(a['reviewer_id'],a['token'],content_identity(e))
+        require(key not in duplicate_labels or duplicate_labels[key]==a['label'],'duplicate_content_label_conflict')
+        duplicate_labels[key]=a['label']
     return annotations
 
 def validate_taxonomy(findings,*,trusted_hash):
@@ -197,12 +204,15 @@ def validate_taxonomy(findings,*,trusted_hash):
             require(f['category']=='authoritative_provider_statement' and f.get('version_interval_evidence'),'taxonomy_stability_overclaim')
     return findings
 
+def content_identity(e):
+    return (e['content_sha256'] if e.get('source_hash_scope')=='complete_response_body' else None) or e['case_id']
+
 def unique_cases(cases,evidence):
     es={e['case_id']:e for e in evidence}; seen=set(); result=[]
     for c in sorted(cases,key=lambda x:x['case_id']):
         e=es[c['case_id']]
         # Only exact source-content duplicates. Error pages never supply reviewed counts.
-        key=(e['content_sha256'] if e.get('source_hash_scope')=='complete_response_body' else None) or c['case_id']
+        key=content_identity(e)
         if key not in seen:
             result.append(c);seen.add(key)
     return result
@@ -211,7 +221,16 @@ def summary(cases,evidence,annotations,reviewer_id=None):
     es={e['case_id']:e for e in evidence}; selected=len(cases)
     raw=Counter(es[c['case_id']]['availability'] for c in cases)
     unique=unique_cases(cases,evidence); ids={c['case_id'] for c in unique}
-    labels=Counter(a['label'] for a in annotations if a['case_id'] in ids and a['reviewer_id']==reviewer_id)
+    scope={c['case_id']:c for c in cases}
+    canonical_groups={(c['token'],content_identity(es[c['case_id']])) for c in unique}
+    grouped_labels={}
+    for a in annotations:
+        if a['case_id'] in scope and a['reviewer_id']==reviewer_id:
+            key=(a['token'],content_identity(es[a['case_id']]))
+            if key in canonical_groups:
+                require(key not in grouped_labels or grouped_labels[key]==a['label'],'duplicate_content_label_conflict')
+                grouped_labels[key]=a['label']
+    labels=Counter(grouped_labels.values())
     n=sum(labels[x] for x in SEMANTIC)
     reviewable=sum(es[c['case_id']]['availability']=='retrieved_context' for c in unique)
     def rate(n,d):return n/d if d else None
@@ -226,13 +245,21 @@ def summary(cases,evidence,annotations,reviewer_id=None):
 def agreement(cases,evidence,annotations,reviewers):
     humans=[r for r in reviewers if r['reviewer_type']=='human']; pairs=[]
     unique=unique_cases(cases,evidence); bycase={c['case_id']:c for c in unique}
-    index={(a['case_id'],a['reviewer_id']):a['label'] for a in annotations}
+    es={e['case_id']:e for e in evidence}
+    scope={c['case_id']:c for c in cases}
+    index={}
+    for a in annotations:
+        if a['case_id'] in scope:
+            key=(a['token'],content_identity(es[a['case_id']]),a['reviewer_id'])
+            require(key not in index or index[key]==a['label'],'duplicate_content_label_conflict')
+            index[key]=a['label']
     for i,r in enumerate(humans):
         for s in humans[i+1:]:
             if r['independence_group']==s['independence_group']:continue
             values=[]
             for cid,c in bycase.items():
-                a,b=index.get((cid,r['reviewer_id'])),index.get((cid,s['reviewer_id']))
+                key=(c['token'],content_identity(es[cid]))
+                a,b=index.get((*key,r['reviewer_id'])),index.get((*key,s['reviewer_id']))
                 if a in SEMANTIC and b in SEMANTIC: values.append((c,a,b))
             def counts(rows):
                 matrix=Counter((a,b) for _,a,b in rows)

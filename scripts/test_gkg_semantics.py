@@ -31,7 +31,7 @@ def fixture():
     p=protocol();sample=s.select_sample(candidates(),p,protocol_hash=s.digest(p));es=[]
     for c in sample['cases']:
         e={'case_id':c['case_id'],'original_url':c['DocumentIdentifier'],'final_url':c['DocumentIdentifier'],
-            'protocol_sha256':s.digest(p),'title':'Example','excerpt':'People discussed unemployment today.',
+            'protocol_sha256':s.digest(p),'failure_category':None,'title':'Example','excerpt':'People discussed unemployment today.',
             'locator':{'paragraph_index':0,'start':0,'end':35},'extractor_version':'1.0.0','context_level':'complete_sentence_context',
             'manual_context_required':False,'identity_review_required':False,'content_sha256':s.digest(c),
             'source_hash_scope':'complete_response_body','download_bytes':100,'http_status':200,'availability':'retrieved_context','attempts':1,'retrieved_at':'2026-09-06T00:00:00Z'}
@@ -215,7 +215,7 @@ class RetrievalTests(unittest.TestCase):
         self.assertFalse(s.public_reference('file:///etc/passwd'));self.assertFalse(s.public_reference('https://user:pass@example.org/a'))
         with patch('socket.getaddrinfo',return_value=[(2,1,6,'',('127.0.0.1',80))]),self.assertRaises(s.Invalid):net.check_public('http://example.org/a')
 
-if __name__=='__main__':unittest.main()
+
 
 class AdversarialReviewTests(unittest.TestCase):
     def test_block_page_with_topic_text_not_reviewable(self):
@@ -252,3 +252,71 @@ class AdversarialReviewTests(unittest.TestCase):
         sample=s.select_sample(cs,p,protocol_hash=s.digest(p))
         self.assertTrue(any(x['token']=='FOOD_SECURITY' and x['year']==2015 and x['unique_references']>0 and x['selected']==0 for x in sample['populations']))
         self.assertIn(2015,s.required_years(sample,p,'FOOD_SECURITY'))
+
+class AssessmentIntegrationTests(unittest.TestCase):
+    def setUp(self):
+        self.p,self.sample,self.es=fixture();self.rs=reviewers()
+        self.aa=[annotation(c,e,r['reviewer_id']) for c,e in zip(self.sample['cases'],self.es) for r in self.rs]
+        self.tax=[{'id':'synthetic-only','category':'authoritative_provider_statement','claim':'Fictional test evidence, never study finding','limitations':'synthetic fixture only',
+            'url':'https://blog.gdeltproject.org/synthetic-test-only/','source_sha256':'a'*64,'supports_topic':list(s.TOKENS),
+            'tokens':list(s.TOKENS),'proves_historical_stability':True,'version_interval_evidence':'synthetic fixture covering test cohorts'}]
+    def trust(self):return {'protocol':s.digest(self.p),'sample':s.digest(self.sample),'receipts':{e['case_id']:s.digest(e) for e in self.es},'reviewers':s.digest(self.rs),'annotations':s.digest(self.aa),'taxonomy':s.digest(self.tax)}
+    def run_assessment(self):return s.assess(self.sample,self.p,self.es,self.aa,self.rs,self.tax,trust=self.trust())
+    def test_all_gates_can_pass_in_synthetic_fixture(self):
+        self.assertEqual(self.run_assessment()['recommendation'],'promote_selected_tokens_to_history_pilot')
+    def test_semantic_mismatch_can_reject_with_sufficient_human_evidence(self):
+        for a in self.aa:a.update(label='semantic_mismatch',reason_code='different_subject')
+        self.assertTrue(all(t['decision']=='reject_for_historical_indicator_use' for t in self.run_assessment()['tokens']))
+    def test_documented_change_requires_segmentation(self):
+        self.tax[0].update(proves_historical_stability=False,invalidating_dated_change=['PROTEST'])
+        out=self.run_assessment();self.assertEqual(out['tokens'][0]['decision'],'requires_version_segmentation');self.assertEqual(out['tokens'][1]['decision'],'continue_semantic_validation')
+    def test_favorable_pair_cannot_hide_third_reviewer_disagreement(self):
+        self.rs.append({'reviewer_id':'c','reviewer_type':'human','human_attestation_reference':'synthetic fixture','independence_group':'c'})
+        self.aa.extend(annotation(c,e,'c','contextual_topic_match') for c,e in zip(self.sample['cases'],self.es))
+        self.assertTrue(all(t['gates']['reviewer_quality']=='fail' for t in self.run_assessment()['tokens']))
+    def test_annotation_forgery_rejected_by_external_root(self):
+        trust=self.trust();self.aa[0].update(label='contextual_topic_match',reason_code='meaningful_context')
+        with self.assertRaises(s.Invalid):s.assess(self.sample,self.p,self.es,self.aa,self.rs,self.tax,trust=trust)
+    def test_export_replay_and_manifest_attack(self):
+        import tempfile
+        import assess_gkg_semantics as audit
+        data={'preregistration.json':self.p,'sample.json':self.sample,'sample-trust.json':{'protocol_sha256':s.digest(self.p),'sample_sha256':s.digest(self.sample)},
+            'retrieval.json':self.es,'retrieval-trust.json':{'receipt_hashes':self.trust()['receipts'],'sample_sha256':s.digest(self.sample)},
+            'annotations.json':self.aa,'reviewers.json':self.rs,'taxonomy-evidence.json':self.tax,'annotation-protocol.json':{'preregistration_sha256':s.digest(self.p)}}
+        with tempfile.TemporaryDirectory() as tmp:
+            a=Path(tmp)/'a';b=Path(tmp)/'b';a.mkdir();b.mkdir()
+            ra,ma=audit.export(data,a,evidence_revision='synthetic-fixture');rb,mb=audit.export(data,b,evidence_revision='synthetic-fixture')
+            self.assertEqual(ra,rb);self.assertEqual(ma,mb)
+            root=s.digest(ma);(a/'assessment.json').write_text('{}',encoding='utf-8');ma['artifacts']['assessment.json']=s.sha(b'{}')
+            with self.assertRaises(s.Invalid):audit.verify_artifacts(a,ma,trusted_manifest_hash=root)
+    def test_orphan_manifest_path_rejected(self):
+        import assess_gkg_semantics as audit
+        m={'artifacts':{'../outside':'a'*64}}
+        with self.assertRaises(s.Invalid):audit.verify_artifacts('.',m,trusted_manifest_hash=s.digest(m))
+
+
+
+class DuplicateReviewRegressionTests(unittest.TestCase):
+    def test_review_on_noncanonical_duplicate_is_counted_once(self):
+        p,sample,es=fixture();cs=sorted(sample['cases'][:2],key=lambda c:c['case_id']);em={e['case_id']:e for e in es};es=[em[c['case_id']] for c in cs]
+        es[1]['content_sha256']=es[0]['content_sha256']
+        out=s.summary(cs,es,[annotation(cs[1],es[1])],'a')
+        self.assertEqual(out['semantic_reviewed'],1)
+    def test_conflicting_duplicate_reviews_not_silently_discarded(self):
+        p,sample,es=fixture();cs=sample['cases'][:2];es=es[:2];es[1]['content_sha256']=es[0]['content_sha256']
+        aa=[annotation(cs[0],es[0]),annotation(cs[1],es[1],label='semantic_mismatch')]
+        with self.assertRaises(s.Invalid):s.validate_annotations(aa,{'cases':cs},es,reviewers(),p,reviewer_hash=s.digest(reviewers()))
+
+
+
+class FinalBoundaryTests(unittest.TestCase):
+    def test_preregistration_matches_preinspection_root(self):
+        self.assertEqual(s.digest(protocol()),'b0a00fa7574fa60241c0adbec56a1469171070a218127db63605dd5d95eb5e41')
+    def test_incomplete_http_response_is_machine_readable(self):
+        from http.client import IncompleteRead
+        class Opener:
+            def open(self,*a,**kw):raise IncompleteRead(b'partial',10)
+        e=net.retrieve({'case_id':'a','DocumentIdentifier':'https://example.org/story','token':'PROTEST'},protocol(),opener_factory=lambda _:Opener())
+        self.assertEqual(e['availability'],'document_unavailable');self.assertEqual(e['failure_category'],'http_protocol_error')
+
+if __name__=='__main__':unittest.main()

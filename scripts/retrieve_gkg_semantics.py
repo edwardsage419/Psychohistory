@@ -2,6 +2,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from html.parser import HTMLParser
+from http.client import HTTPException
 import ipaddress
 import json
 from pathlib import Path
@@ -133,6 +134,11 @@ def retrieve(case,p,*,opener_factory=None):
     except urllib.error.HTTPError as exc:
         e.update(http_status=exc.code,final_url=exc.geturl(),failure_category='http_error',failure_detail=str(exc.code))
         exc.close()
+    except HTTPException as exc:
+        e['failure_category']='http_protocol_error';e['failure_detail']=type(exc).__name__
+        partial=getattr(exc,'partial',None)
+        if isinstance(partial,bytes) and partial:
+            e.update(download_bytes=len(partial),content_sha256=sem.sha(partial),source_hash_scope='incomplete_response')
     except UnicodeError:
         e.update(availability='insufficient_context',failure_category='decode_error')
     except (LookupError,sem.Invalid) as exc:
