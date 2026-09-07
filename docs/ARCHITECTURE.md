@@ -2,7 +2,11 @@
 
 ## Status
 
-This document defines the intended architecture direction. It is a design baseline, not a claim that every component already exists.
+This document defines the intended architecture direction. It is not a claim that every component already exists or is authorized to be implemented.
+
+The current implementation is mature through source validation, reproducible observations, experimental indicator infrastructure, provenance, semantic-audit tooling and historical evidence recovery. Composite-state, forecast, outcome-resolution, calibration and decision-support components remain future architecture until their scientific gates are satisfied.
+
+The retired V0.2 frontend, seven-topic taxonomy, GDELT DOC updater and `data/gdelt.json` pattern are preserved only in Git history. They are not active architecture.
 
 ## System shape
 
@@ -10,7 +14,7 @@ Psychohistory should evolve into a layered pipeline:
 
 Source acquisition
 ↓
-Raw or source referenced records
+Raw or source-referenced evidence
 ↓
 Normalization
 ↓
@@ -18,194 +22,213 @@ Quality checks
 ↓
 Base indicators
 ↓
-Composite state and trend indicators
+Interpretable multi-source state/trend representation
 ↓
-Forecast features
+Forecast features and evidence snapshots
 ↓
 Forecast generation
 ↓
 Immutable forecast registry
 ↓
-Outcome resolution
+Independent outcome resolution
 ↓
 Evaluation and calibration
 ↓
-API or export layer
+API/export layer
 ↓
-Dashboard and decision support
+Presentation and decision support
+
+Each transition is gate-controlled. The existence of a downstream schema or implementation idea does not authorize advancement when an upstream evidence gate remains open.
 
 ## Layer 1: source registry
 
 Maintain a registry of every data source with at least:
 
-* Provider
-* Dataset or endpoint
-* License and usage constraints
-* Access method
-* Update frequency
-* Geographic coverage
-* Historical coverage
-* Reliability history
-* Known biases
-* Cost
-* Source documentation reference
-* Current production status
+* provider
+* dataset or endpoint
+* license and usage constraints
+* access method
+* update frequency
+* geographic coverage
+* historical coverage
+* reliability history
+* known biases
+* cost
+* source documentation reference
+* current production status
 
 No source should enter production simply because it is easy to query.
 
-## Layer 2: acquisition
+## Layer 2: acquisition and evidence
 
-Each source should have an independent ingestion adapter.
+Each source should have an independent ingestion or evidence-acquisition adapter.
 
 Acquisition code should:
 
-* Preserve retrieval timestamps.
-* Record source identifiers and versions where available.
-* Detect partial and complete failures.
-* Avoid silently replacing missing values with plausible values.
-* Be idempotent for repeated runs.
-* Support backfill when the provider permits it.
-* Produce machine readable run metadata.
+* preserve retrieval timestamps
+* record source identifiers and versions where available
+* detect partial and complete failures
+* preserve objective identity and provenance
+* avoid silently replacing missing values or unavailable evidence
+* be idempotent where repeated acquisition semantics permit it
+* support backfill where the provider permits it
+* produce machine-readable run metadata
 
-GitHub Actions may remain useful during the low cost stage. The architecture must permit migration to scheduled cloud jobs later.
+For historical evidence recovery, failed attempts, mismatches and unresolved identity are first-class results. Replacement sampling or silent substitution is prohibited when a protocol freezes sample membership.
+
+GitHub Actions may remain useful during the low-cost stage. Scheduled jobs must not mutate the authoritative scientific baseline merely to refresh transient monitoring data.
 
 ## Layer 3: raw and normalized storage
 
-The current single `data/gdelt.json` pattern should be considered transitional.
+The former single-file V0.2 dashboard data pattern has been retired.
 
-The initial replacement may still use repository files if data volume remains small, but schemas must be separated by purpose. A later move to SQLite, DuckDB, Postgres, object storage, or a similar system should remain possible without changing indicator semantics.
+Early research may continue to use versioned repository files for compact evidence and local ignored storage for larger raw artifacts. A later move to SQLite, DuckDB, Parquet, Postgres, object storage or a similar system should remain possible without changing scientific semantics.
 
 A normalized observation should generally include:
 
-* Observation time
-* Retrieval time
-* Source
-* Metric identifier
-* Value
-* Unit
-* Geographic scope
-* Entity scope if applicable
-* Source record reference
-* Quality status
-* Schema version
+* observation time
+* retrieval time
+* source
+* metric identifier
+* value
+* unit
+* geographic scope
+* entity scope if applicable
+* source record reference
+* quality status
+* schema version
 
-## Layer 4: quality system
+Storage technology must not become a hidden semantic dependency.
+
+## Layer 4: quality and provenance
 
 Quality checks should cover where relevant:
 
-* Schema validity
-* Missingness
-* Duplicate records
-* Staleness
-* Abrupt unexplained distribution shifts
-* Coverage changes
-* Source outages
-* Unexpected unit or scale changes
+* schema validity
+* missingness
+* duplicate records
+* staleness
+* unexpected distribution shifts
+* coverage changes
+* source outages
+* unexpected unit or scale changes
+* source identity conflicts
+* historical version uncertainty
+* replayability and trust-root integrity
 
-Quality failures should be visible downstream.
+Quality failures should remain visible downstream rather than being silently repaired into plausible data.
 
 ## Layer 5: indicator registry
 
 Every indicator requires documentation of:
 
-* Identifier and human name
-* Purpose
-* Source inputs
-* Formula
-* Unit or normalized range
-* Directionality
-* Update frequency
-* Geography
-* Minimum history requirement
-* Missing data behavior
-* Known limitations
-* Version
+* identifier and human name
+* purpose and semantic interpretation
+* source inputs
+* formula/transformation
+* unit or normalized range
+* directionality where applicable
+* update frequency
+* geography/entity scope
+* minimum history requirement
+* missing-data behavior
+* smoothing and lag rules
+* known biases and limitations
+* quality requirements
+* provenance requirements
+* version and promotion status
 
-Indicator changes that alter historical meaning require a new version.
+Indicator changes that alter historical meaning require a new version. A technically reproducible token count does not automatically become a validated social indicator.
 
-## Layer 6: composite indices
+## Layer 6: multi-source state and trend representation
 
-Composite indices should combine multiple base indicators only when the combination has a defensible rationale.
+Composite or latent state construction should begin only when multiple sufficiently independent validated indicators exist.
 
-Weights, normalization, smoothing, lag structure, and missing data rules must be explicit. Composite indices must be decomposable into their inputs.
+Weights, normalization, smoothing, lag structure and missing-data rules must be explicit. Composite values must be decomposable into contributing indicators and should preserve uncertainty.
 
-The current seven topic taxonomy is not an architectural requirement. It should be replaced or retained only after empirical evaluation.
+Prefer independent evidence families over increasingly elaborate transformations of one news source. Do not publish an opaque single world-risk score.
 
 ## Layer 7: forecasting
 
-Forecast objects should contain at least:
+Forecast objects should eventually contain at least:
 
-* Forecast ID
-* Creation timestamp
-* Forecast type
-* Question or target
-* Event definition or trend definition
-* Geography
-* Horizon
-* Probability or predictive distribution
-* Method identifier
-* Model version
-* Feature snapshot reference
-* Evidence snapshot reference
-* Resolution source
-* Resolution rule
-* Resolution deadline
-* Status
+* forecast ID
+* creation timestamp
+* forecast type
+* target and target-definition version
+* event or trend definition
+* geography or entity scope
+* horizon
+* probability or predictive distribution
+* method identifier
+* model version
+* feature snapshot reference
+* evidence snapshot reference
+* resolution source and rule reference
+* status
+* immutable content identity
 
-Once issued, substantive forecast fields should be immutable.
+Once issued, substantive forecast fields should be immutable. Forecast architecture remains future work until the applicable measurement gates are satisfied.
 
 ## Layer 8: resolution and evaluation
 
 Outcome resolution should be independent from forecast generation when possible.
 
-Evaluation metrics may include Brier score, log score, calibration curves, discrimination measures, interval coverage, directional accuracy, baseline comparison, and stability through time. Metric choice depends on forecast type.
+Resolution must preserve source references, rule versions, ambiguity policy and resolver provenance.
+
+Evaluation metrics may include Brier score, log score, calibration curves, discrimination measures, interval coverage, directional accuracy, baseline comparison and stability through time. Metric choice depends on forecast type.
+
+Historical evaluation must use only data and rules available at the relevant historical time.
 
 ## Layer 9: AI analysis
 
-AI should consume structured observations, indicators, forecasts, and source evidence. It should not become the sole source of historical facts or numerical indicators.
+AI should consume structured observations, indicators, forecasts and source evidence. It should not become the sole source of historical facts or numerical indicators.
 
 AI responsibilities may include:
 
-* Evidence synthesis
-* Scenario generation
-* Contradiction detection
-* Forecast rationale drafting
-* Feature hypothesis generation
-* Natural language interface
+* evidence synthesis
+* scenario generation
+* contradiction detection
+* forecast-rationale drafting
+* feature-hypothesis generation
+* natural-language interface
 
-Model prompts and versions used in production analysis should be recorded.
+Model and prompt versions used in consequential analysis should be recorded. AI forecast value must eventually be measured against transparent baselines.
 
-## Layer 10: presentation
+## Layer 10: presentation and decision support
 
-The dashboard should read prepared outputs. Browser code should not perform critical source acquisition or hidden analytical transformations.
+The interface should read prepared outputs. Browser code should not perform critical source acquisition or hidden analytical transformations.
 
-The interface should eventually distinguish:
+A future product should distinguish:
 
-* Current observations
-* Trends
-* Composite state estimates
-* Forecasts
-* Evidence
-* Historical forecast performance
-* Data quality and freshness
+* current observations
+* validated and experimental indicators
+* trends and decomposable state estimates
+* forecasts
+* evidence
+* historical forecast performance
+* data quality and freshness
+* uncertainty
+
+Investment research and personal-planning outputs should remain downstream decision-support artifacts, distinguishable from observations and forecasts.
+
+The next interface will be designed from validated research outputs. The retired V0.2 frontend imposes no compatibility requirement.
 
 ## Infrastructure cost principle
 
-Default to zero or near-zero recurring infrastructure cost. Paid infrastructure should be introduced only when a free approach materially harms data integrity, reproducibility, reliability, analytical quality, or product capability, and the benefit is supported by evidence.
+Default to zero or near-zero recurring infrastructure cost. Paid infrastructure should be introduced only when a free approach materially harms data integrity, reproducibility, reliability, analytical quality or product capability and the benefit is supported by evidence.
 
-Local files, Git/GitHub for compact evidence, and lightweight local SQLite,
-DuckDB or Parquet storage are compatibility targets, not selections. Free
-execution capacity must be measured rather than assumed unlimited. The
-[retention design](GKG_RETENTION_POLICY.md) separates permanent evidence from
-raw retention; no Phase 3 deletion or reduced sampling is authorized.
+Local files, Git/GitHub for compact evidence, and lightweight local SQLite, DuckDB or Parquet storage remain compatibility targets rather than predetermined selections.
+
+Do not weaken provenance, evidence retention, scientific thresholds or historical reproducibility to reduce infrastructure cost.
 
 ## Initial technology posture
 
-For the next stage, prefer simple technology that Codex can maintain reliably:
+For the current stage, prefer technology that GPT and Codex can maintain and audit reliably:
 
-* Python for ingestion, normalization, indicators, tests, and evaluation.
-* GitHub Actions for scheduled jobs while volume and runtime remain reasonable.
-* Versioned files or a lightweight analytical database during early validation.
-* Static frontend or a thin application layer until product requirements justify a backend service.
+* Python for acquisition, normalization, indicators, replay, tests and evaluation
+* GitHub Actions for bounded CI and low-frequency read-only integration checks
+* versioned files for compact evidence and local analytical storage for larger artifacts
+* no active frontend until product requirements are justified by validated outputs
 
-Do not introduce distributed infrastructure, queues, microservices, or paid databases before they solve a demonstrated limitation.
+Do not introduce distributed infrastructure, queues, microservices, paid databases or production forecasting machinery before they solve a demonstrated and currently authorized limitation.
