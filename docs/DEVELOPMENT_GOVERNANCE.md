@@ -61,6 +61,8 @@ The human operator remains responsible for:
 
 An LLM must never be relabeled as a human reviewer or used to satisfy a protocol requirement for independent genuine human judgment.
 
+Model-assisted human review with final human adjudication must remain labelled as such and must not be described as independent or blinded unless those conditions were actually satisfied.
+
 ## Development gates
 
 Psychohistory should advance by evidence gates rather than by phase numbering alone.
@@ -87,7 +89,7 @@ Missing historical evidence is a data problem, not a reason to increase model st
 
 Question: Where the protocol requires human or independent-source validation, has that validation actually occurred with sufficient evidence and independence?
 
-Do not infer completion from machine preprocessing, LLM review, or unavailable cases.
+Do not infer completion from machine preprocessing, LLM review, model-assisted identity review, or unavailable cases.
 
 ### Gate 5: experimental historical indicator promotion
 
@@ -235,15 +237,17 @@ Before recommending a new development task, GPT should check whether unresolved 
 
 ## Current governance interpretation
 
-The authoritative `main` baseline contains accepted Phase 1-4 data/measurement foundation work, Phase 5 preregistered semantic-audit work, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, the completed model-assisted human identity review, and the confirmed-context coverage audit.
+The authoritative `main` baseline contains accepted Phase 1-4 data/measurement foundation work, Phase 5 preregistered semantic-audit work, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, completed model-assisted human identity review with final human adjudication, and the evidence-sufficiency `1.0.1` correction.
 
 Phase 5-6A.1 remain non-production research and evidence-recovery work. Acceptance into `main` does not semantically promote the three audited GKG tokens.
 
-The current gate is semantic and historical stability with independent evidence validation incomplete. The immediate bottleneck is objective document identity and E3 evidence sufficiency across the immutable frozen 120-reference sample.
+The current gate is Gate 3A, historical document identity and evidence sufficiency. Current readiness is based on review-ready E2/E3 context under evidence-sufficiency version `1.0.1`, not an E3-only count. Exact mutable counts and deficits belong in `CURRENT_STATE.md` and the machine-readable correction/oracle artifacts rather than being duplicated in this governance policy.
 
-The current frozen evidence state remains exactly six E3 contexts: `PROTEST` 0, `FOOD_SECURITY` 5, `WB_2747_UNEMPLOYMENT` 1. The readiness threshold remains at least 24 E3 per token and at least 4 E3 per allocated year before independent semantic review.
+The completed 22-case identity review is model-assisted with final human adjudication. Its `SAME_ARTICLE`, `DIFFERENT_ARTICLE`, and `INSUFFICIENT_EVIDENCE` outcomes remain separate from machine evidence and do not satisfy the later independent semantic-review requirement.
 
-The current accepted next task is the deterministic recovery-target manifest defined in `docs/NEXT_ACCEPTED_TASK.md`. It must preserve frozen membership, keep human and machine provenance separate, exclude known mismatches from promotion targets, and stop after manifest plus bounded batch preparation unless network recovery is explicitly authorized.
+The current accepted next task is the deterministic recovery-target manifest defined in `docs/NEXT_ACCEPTED_TASK.md`. It must preserve frozen membership, keep human and machine provenance separate, use the corrected E2/E3 review-ready definition, exclude current mismatches from promotion targeting, and stop after manifest plus bounded batch preparation unless network recovery is explicitly authorized.
+
+The historical `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`, original recovery-manifest preflight/oracle and `docs/CODEX_EXECUTION_READINESS_AUDIT.md` remain provenance for the pre-correction state and are superseded for current execution by the correction contract, V2 preflight and V2 oracle named in `CURRENT_STATE.md` and `docs/NEXT_ACCEPTED_TASK.md`.
 
 Do not begin production forecasting, composite-state construction, semantic promotion, calibration claims, or historical backtests that treat unresolved measurement semantics as ground truth.
 
