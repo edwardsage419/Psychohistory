@@ -210,48 +210,78 @@ Do not publish a single opaque global risk score.
 
 ## Gate 7: forecast registry and baselines
 
-Status: future and blocked for production use.
+Status: future and blocked for production use. Architecture planning is complete enough to constrain a later bounded implementation, but no forecast schema or engine is currently authorized.
 
-Before issuing formal forecasts, define versioned forecast objects containing at least:
+Planning documents:
+
+* `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
+* `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
+* `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
+* `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
+
+Gate 7 should be decomposed rather than implemented as one forecast object:
+
+### Gate 7A: target and resolution semantics
+
+Define versioned target definitions and compatible resolution rules before probabilities are issued.
+
+### Gate 7B: point-in-time snapshot and method contracts
+
+Require admissible information cutoffs, vintage-aware feature/evidence snapshots, versioned forecast methods and transparent baseline methods.
+
+### Gate 7C: forecast issuance registry
+
+Implement append-only issuance, immutable substantive forecast content, explicit run attempts and append-only corrections.
+
+Formal forecast records should bind at least:
 
 * forecast ID
 * issue timestamp
-* target and target-definition version
+* information cutoff
+* forecast class
+* target definition ID/version/hash
 * horizon
 * probability or predictive distribution
-* method/model version
+* method/model version/hash
 * feature snapshot
 * evidence snapshot
-* resolution rule reference
-* status and immutable content hash
+* resolution rule ID/version/hash
+* run-attempt reference
+* immutable substantive content hash
 
-Substantive forecast content becomes immutable after issuance.
+Binary event forecasts and directional/categorical trend forecasts may share issuance/provenance machinery, but their target and scoring semantics remain distinct.
 
-Simple transparent baselines should exist before AI forecasting is evaluated.
+All formally issued forecasts remain discoverable, including forecasts later superseded for future use or difficult to resolve. Simple transparent baselines are first-class forecast methods and should exist before AI forecasting is evaluated.
 
 ## Gate 8: outcome resolution
 
 Status: future.
 
-Outcome resolution must be specified independently enough to prevent hindsight-driven reinterpretation.
+Outcome resolution must be specified independently enough to prevent hindsight-driven reinterpretation and remain bound to the target/rule versions fixed at issuance.
 
 Required design:
 
-* resolution source
+* resolution source hierarchy
 * resolution date and deadline
-* event or trend criteria
+* event/trend criteria
+* target-data vintage/reference
 * ambiguity policy
 * unresolved policy
+* source-conflict policy
 * resolver/version provenance
-* audit trail for metadata corrections
+* append-only correction trail
 
-Forecast generation and outcome resolution should be separated where practical.
+Resolution states must permit explicit unresolved, ambiguity, insufficient-evidence and source-conflict conditions where the rule cannot support a defensible outcome.
+
+Forecast generation and outcome resolution should be separated where practical. A missing or conflicting resolution cannot be converted into a negative outcome merely to increase the scoreable sample.
 
 ## Gate 9: scoring, calibration and historical evaluation
 
 Status: future.
 
-Only forecasts with valid immutable records and independently defined outcomes may enter scoring.
+Only forecasts with valid immutable issuance records and independently defined outcomes may enter scoring.
+
+Confirmatory evaluation must use a frozen evaluation-cohort manifest that records inclusion/exclusion policy, unresolved treatment, failed-run treatment, target/method versions, horizon grouping, primary metrics and baseline methods before result inspection.
 
 Potential metrics include:
 
@@ -259,12 +289,17 @@ Potential metrics include:
 * log score
 * calibration/reliability curves
 * discrimination
-* interval coverage
-* directional accuracy
+* interval/distribution scoring for future continuous forecasts
 * baseline-relative performance
 * performance by horizon and event class where sample size permits
 
-Historical evaluation must use only information that was actually available at the simulated historical timestamp. Look-ahead leakage is a blocking failure.
+Every evaluation must disclose enough registry accounting to reconstruct its denominator, including issued, eligible, resolved, unresolved, excluded and failed counts where applicable.
+
+Historical evaluation must use only information, vintages, transformation states, retrieval corpora, models/tools and rules admissible at the simulated historical timestamp. Look-ahead leakage is a blocking failure.
+
+Repeated forecasts sharing one underlying event cannot automatically be treated as independent samples. Repeated tuning on one historical cohort converts that cohort into development data for stronger confirmatory claims.
+
+Calibration is an evaluation over immutable forecasts, not a mechanism for retroactively changing their probabilities. Any learned calibration transform used prospectively becomes part of a new causally fitted forecast-method version.
 
 ## Gate 10: AI forecasting and decision support
 
@@ -281,9 +316,11 @@ Potential comparisons include:
 * market-implied probabilities where appropriate
 * expert priors
 
-AI may support evidence synthesis, contradiction detection, scenario generation and forecast reasoning, but unsupported facts must remain detectable and model/prompt versions must be recorded.
+AI may support evidence synthesis, contradiction detection, scenario generation and forecast reasoning, but unsupported facts must remain detectable and consequential model/prompt/tool provenance must be recorded.
 
-Decision-support outputs for investing or personal planning remain downstream artifacts and must stay distinguishable from observations and forecasts.
+A current LLM applied to an old date is normally a retrospective model experiment because parameter-level future knowledge may exist. It cannot be labelled as a genuine contemporaneous historical forecast without independently establishing historical model availability and information boundaries.
+
+Decision-support outputs for investing or personal planning remain downstream artifacts and must stay distinguishable from observations, forecasts and forecast-resolution outcomes.
 
 ## Product layer
 
@@ -314,4 +351,4 @@ Do not weaken evidence retention, scientific thresholds or historical reproducib
 
 The only currently accepted advancement task is defined in `docs/NEXT_ACCEPTED_TASK.md`.
 
-Do not use this roadmap as authorization to start later gates. Each later gate requires a separately bounded task and applicable acceptance review.
+Do not use this roadmap or the future Gate 6-10 design documents as authorization to start later gates. Each later gate requires a separately bounded task and applicable acceptance review.
