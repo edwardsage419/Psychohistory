@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "status": "accepted_current_correction_contract",
+  "scope": "Recompute Phase 6A/6A.1 evidence sufficiency without changing frozen sample membership, machine document identity, or human identity judgments.",
+  "historical_assessment_manifest": {
+    "path": "studies/gkg-semantics-v2/assessment-manifest.json",
+    "git_blob_sha": "4ca5034e2080ba4b1430dc07787028fabd4ae5eb",
+    "preservation_rule": "Historical artifacts and their recorded implementation hashes remain immutable provenance. Current corrected implementation is pinned separately below."
+  },
+  "authenticated_inputs": {
+    "evidence_file_sha256": "5e828feff976b47da5d9da67174b1b47c0a91a1003e3cbf1fff028ed5237b70d",
+    "phase6a1_triage_file_sha256": "9d7f27660cfc9034cec8fe4b203c863e63c3f5c2aad7cb6a4a777abf80f10869",
+    "frozen_sample_sha256": "3a8710caabb8d571edbbd5f80276e00f25cec26c9622655d3b3db8d7045b9a46"
+  },
+  "corrected_implementation_git_blobs": {
+    "scripts/gkg_recovery.py": "96bef6b018ab5a5f53a35a76e864208501c0f60b",
+    "scripts/phase6a1_recovery.py": "7066057ae724064cf7445f01af323081da7f581a"
+  },
+  "evidence_sufficiency": {
+    "version": "1.0.1",
+    "review_ready_levels": ["E2", "E3"],
+    "rule": "Identity-confirmed evidence is E1 unless its compact excerpt and locator represent the frozen Phase 5 token-cue context path. Review-ready archive/equivalent context is E2; review-ready original/same-publisher context is E3.",
+    "historical_bug": "Version 1.0.0 used non-empty excerpt as the E1 versus E2/E3 boundary, which could promote bounded manual fallback paragraphs that contained no token-cue context."
+  },
+  "expected_current_machine_identity_counts": {
+    "identity_confirmed": 6,
+    "identity_probable_manual_review_required": 15,
+    "identity_mismatch": 7,
+    "identity_unresolved": 92
+  },
+  "expected_current_evidence_sufficiency_counts": {
+    "E0": 114,
+    "E1": 3,
+    "E2": 0,
+    "E3": 3
+  },
+  "expected_e1_case_ids": [
+    "61c7c1dd513d1d62021d93228f909aef8a2d961f3e850dca97c21ac2b45a3642",
+    "9443d204438f5a3213b4c7b39aec856ba8ae66e5a2d383b5e89817bb4a6b1cc5",
+    "a6140896cd33c01e2e14e4fd8f9a44331ddc16f739648a5ffc945d5daa4fb1dc"
+  ],
+  "expected_e3_case_ids": [
+    "374a5d91e1d48f34c1c096ce025537660995161964315da7473ebfd68cf8d2ca",
+    "544d11e2fe2d02e978eb4f6c4e4910a4ca5acd309033e115b587195de2e5b7a1",
+    "3971850d00836d8a487c96f2128ac0ebd040bd5cee818d70c42939f90c377d57"
+  ],
+  "expected_review_ready_total": 3,
+  "scientific_non_changes": [
+    "no frozen sample change",
+    "no replacement or resampling",
+    "no machine identity-status change",
+    "no human identity-review change",
+    "no semantic judgment",
+    "no semantic promotion"
+  ]
+}
