@@ -1,11 +1,12 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "purpose": "Independent expected-output regression oracle for the deterministic recovery-target manifest after the evidence-sufficiency 1.0.1 correction. This file is not evidence and is not a trust authority.",
   "supersedes_for_current_planning": "studies/gkg-semantics-v2/recovery-manifest-expected-baseline.json",
-  "trust_rule": "Authenticate frozen machine inputs independently, recompute the current view, then compare derived outputs with this oracle. Never use this oracle to authenticate evidence.",
+  "trust_rule": "Authenticate frozen machine inputs and current correction dependencies independently, recompute the current view, then compare derived outputs with this oracle. Never use this oracle to authenticate evidence.",
   "correction_contract": {
     "path": "studies/gkg-semantics-v2/context-sufficiency-correction.json",
-    "git_blob_sha": "7b3e83066e9ff1b6edfc337a256488494d5ffc14",
+    "git_blob_sha": "147581c47c8d8e6b20e78aac86f532cdb8f3a7eb",
+    "contract_version": "1.0.1",
     "evidence_sufficiency_version": "1.0.1",
     "review_ready_levels": ["E2", "E3"]
   },
@@ -19,9 +20,18 @@
       "replacement": false,
       "resampling": false
     },
+    "phase5_preregistration": {
+      "path": "studies/gkg-semantics-v1/preregistration.json",
+      "git_blob_sha": "6197a7c7b06f97876eb0710b893995f6b2051b1d"
+    },
     "phase6a_protocol": {
       "path": "studies/gkg-semantics-v2/phase6a-protocol.json",
       "git_blob_sha": "31392b97a3bc4881e2e550d956ca4fcfe4b15e9b"
+    },
+    "phase6a1_protocol": {
+      "path": "studies/gkg-semantics-v2/phase6a1-protocol.json",
+      "git_blob_sha": "2b9f90f0f280842e3cb1ea6080fac9bb10a46064",
+      "file_sha256": "1f2a5b377b2b306fc9b460c40fa34bcbfd5863005c800fd2707aaf983def425c"
     },
     "assessment_manifest": {
       "path": "studies/gkg-semantics-v2/assessment-manifest.json",
@@ -30,8 +40,12 @@
     "evidence_file_sha256": "5e828feff976b47da5d9da67174b1b47c0a91a1003e3cbf1fff028ed5237b70d",
     "phase6a1_triage_file_sha256": "9d7f27660cfc9034cec8fe4b203c863e63c3f5c2aad7cb6a4a777abf80f10869",
     "human_identity_review_git_blob_sha": "6ea6884e73918f7f3d3a52c076885dc409f5aca7",
-    "corrected_gkg_recovery_git_blob_sha": "96bef6b018ab5a5f53a35a76e864208501c0f60b",
-    "corrected_phase6a1_recovery_git_blob_sha": "7066057ae724064cf7445f01af323081da7f581a"
+    "corrected_semantic_dependency_git_blobs": {
+      "scripts/gkg_semantics.py": "9029b7b7c248f496513fe75f10fb80e1bcd920b7",
+      "scripts/retrieve_gkg_semantics.py": "30df55f7bf7e85bdc74555ebf6ac73328d5b0bb3",
+      "scripts/gkg_recovery.py": "5a5926be950ab60b72fdc1b9c4bb2d9bb6d77683",
+      "scripts/phase6a1_recovery.py": "7066057ae724064cf7445f01af323081da7f581a"
+    }
   },
   "expected_frozen_state": {
     "manifest_rows": 120,
