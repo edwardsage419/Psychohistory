@@ -29,11 +29,13 @@ This is a long term project. Do not optimize for rapid visual demos at the expen
 
 ## Current strategic decision
 
-Treat the existing V0.2 application as a prototype and research artifact. Preserve useful experiments, especially the successful GDELT GKG validation work. Do not let the existing frontend, JSON schema, seven topic taxonomy, or DOC API implementation constrain the new architecture.
+The earlier V0.2 application, seven-topic dashboard taxonomy and GDELT DOC 2.0 updater are retired from the active development tree. Git history preserves them as historical provenance, but they are not architectural constraints and should not be restored without a separately approved bounded historical need.
 
-The GDELT DOC 2.0 API path is considered unsuitable as a production ingestion method in GitHub Actions because repeated real runs produced severe HTTP 429 failures. Do not spend further development effort on retry tuning unless new evidence changes this conclusion.
+The owner's active development workflow is GPT-led governance and design with bounded Codex execution. Earlier assistant-specific plans, including the abandoned Claude-era development direction, are non-authoritative unless a decision has been independently accepted into the current repository governance, protocol or scientific evidence chain.
 
-GDELT GKG remains a candidate source because the validation workflow has successfully downloaded and parsed current GKG files in GitHub Actions.
+The GDELT DOC 2.0 API path remains unsuitable as a production ingestion method in GitHub Actions because repeated real runs produced severe HTTP 429 failures. Do not spend further development effort on retry tuning unless new evidence changes this conclusion.
+
+GDELT GKG remains a research candidate because the validated acquisition, lossless parsing, provenance and indicator foundations are preserved. Current semantic and historical evidence gates still block production promotion.
 
 ## Priority order
 
@@ -363,6 +365,6 @@ Record unrelated findings separately instead of expanding the current task.
 
 ## Current phase
 
-Use `CURRENT_STATE.md` as the compact current project state instead of duplicating detailed mutable status here.
+Use `CURRENT_STATE.md` as the compact current project state instead of duplicating mutable phase or gate status here.
 
-At the time this rule was introduced, the accepted `main` baseline contained the Phase 1-4 foundation and the current bottleneck was semantic and historical evidence quality. Any later state change must be reflected in `CURRENT_STATE.md`.
+Do not infer current state from historical prose in this guide, old branches, retired prototypes or prior assistant plans. Any material state change must be reflected in `CURRENT_STATE.md` and supported by Git history or immutable evidence.
