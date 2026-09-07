@@ -29,24 +29,25 @@ Accepted research currently includes:
 * Phase 5 preregistered semantic audit and frozen 120-reference sample
 * Phase 6A bounded historical evidence recovery
 * Phase 6A.1 targeted 26-case identity recovery
-* completed model-assisted human identity review for the 22 cases requiring human judgment
-* confirmed-context coverage audit against the frozen Phase 6A readiness rule
+* completed model-assisted human identity review with final human adjudication for the 22 cases requiring identity review
+* evidence-sufficiency correction version `1.0.1`
 
-This work remains non-production research. The frozen 120-case sample currently contains exactly 6 E3 identity-confirmed contexts:
+This work remains non-production research.
 
-* `PROTEST`: 0
-* `FOOD_SECURITY`: 5
-* `WB_2747_UNEMPLOYMENT`: 1
+Current readiness uses review-ready E2/E3 context, with at least 24 review-ready contexts per token and at least 4 per allocated year before independent semantic review begins. Exact current counts are intentionally centralized in `CURRENT_STATE.md` and the machine-readable correction contract rather than duplicated here.
 
-The readiness rule requires at least 24 E3 contexts per token and at least 4 per allocated year before independent semantic review begins.
+Current correction artifacts:
 
-See `CURRENT_STATE.md` and `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md` for the authoritative operational summary.
+* `studies/gkg-semantics-v2/context-sufficiency-correction.json`
+* `docs/PHASE6A1_CONTEXT_SUFFICIENCY_CORRECTION.md`
+
+The older confirmed-context coverage audit and original manifest preflight/oracle remain historical provenance for the pre-correction state and are superseded for current planning.
 
 ## Current task
 
-The current accepted next task is to generate a deterministic recovery-target manifest over the complete frozen 120-reference sample, then prepare a small bounded recovery batch. The frozen sample, evidence hierarchy and human/machine provenance separation must remain unchanged.
+The current accepted next task is to generate a deterministic recovery-target manifest over the complete frozen 120-reference sample and prepare the next bounded recovery batch. The frozen sample, document-identity contract and human/machine provenance separation must remain unchanged.
 
-See `docs/NEXT_ACCEPTED_TASK.md` for the exact scope, acceptance criteria and stop conditions.
+Current execution uses the V2 preparation artifacts and exact task contract in `docs/NEXT_ACCEPTED_TASK.md`. Network recovery is not authorized by the manifest-generation task.
 
 ## Active development model
 
@@ -63,7 +64,8 @@ The project must preserve these distinctions:
 * observation is not reality
 * media attention is not real-world severity or event count
 * machine retrieval is not genuine human review
-* human `SAME_ARTICLE` judgment is not automatically E3 evidence
+* model-assisted identity review is not independent/blinded semantic review
+* human `SAME_ARTICLE` judgment does not create E2/E3 machine evidence
 * missing evidence cannot be reasoned into existence
 * historical outputs and issued forecasts must not be silently rewritten
 
@@ -100,4 +102,4 @@ Normal offline tests do not require network access.
 
 Development advances by evidence gates rather than old phase numbering. See `docs/ROADMAP.md` and `docs/DEVELOPMENT_GOVERNANCE.md`.
 
-The present bottleneck is historical document identity and evidence sufficiency. The project must resolve that bottleneck before semantic promotion, composite-state construction or forecasting work can advance.
+The present bottleneck is Gate 3A historical document identity and review-ready evidence sufficiency. The project must resolve that bottleneck before semantic promotion, composite-state construction or forecasting work can advance.
