@@ -19,6 +19,12 @@ def archive_locator(url,original,stamp):
     s.require(m[1]==stamp and uri(m[2])==uri(original),'archive_locator_mismatch')
     return m[2]
 
+def reviewable_context(e):
+    """True only for compact context located by the frozen Phase 5 token-cue path."""
+    token=e.get('token');excerpt=e.get('excerpt') or '';locator=e.get('evidence_locator')
+    cue=old.CUES.get(token)
+    return bool(locator and excerpt and cue and re.search(cue,excerpt,re.I))
+
 class Metadata(HTMLParser):
     def __init__(self):super().__init__();self.canonical=[];self.dates=[];self.article=False;self.in_json=False;self.parts=[]
     def handle_starttag(self,tag,attrs):
@@ -86,7 +92,8 @@ def identify(case,receipt,blob,prior,*,method,capture=None):
         capture_ok=abs((datetime.strptime(capture,'%Y%m%d%H%M%S').replace(tzinfo=timezone.utc)-batch).total_seconds())<=7*86400
     else:capture_ok=same
     if result['canonical_urls'] and meta.article and date_ok and capture_ok:
-        result.update(identity_status='identity_confirmed',identity_reason='canonical_dated_article_and_'+('dated_archive_locator' if method=='dated_wayback_capture' else 'prior_response_hash'),excerpt=context['excerpt'],evidence_locator=context['locator'])
+        reviewable=not context['manual_context_required']
+        result.update(identity_status='identity_confirmed',identity_reason='canonical_dated_article_and_'+('dated_archive_locator' if method=='dated_wayback_capture' else 'prior_response_hash'),excerpt=context['excerpt'] if reviewable else '',evidence_locator=context['locator'] if reviewable else None)
     elif result['content_changed_from_phase5'] and method!='dated_wayback_capture':result['identity_reason']='publisher_content_changed_requires_review'
     return result
 
@@ -124,6 +131,6 @@ def import_humans(annotations,registry,cases,evidence,*,registry_root,evidence_h
         for k in ('token','year','cohort','original_url'):s.require(a[k]==e[k],'frozen_metadata')
         s.require(a['evidence_sha256']==s.digest(e),'stale_evidence')
         s.require(a['human_label'] in s.LABELS,'invalid_label')
-        s.require(e['identity_status']=='identity_confirmed' and e['excerpt'],'not_ready_for_semantic_review')
+        s.require(e['identity_status']=='identity_confirmed' and reviewable_context(e),'not_ready_for_semantic_review')
         s.require(datetime.fromisoformat(a['reviewed_at'].replace('Z','+00:00')).tzinfo is not None,'review_timestamp')
     return annotations
