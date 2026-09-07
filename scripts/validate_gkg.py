@@ -21,12 +21,14 @@ import zlib
 
 BASE_URL = 'https://data.gdeltproject.org/gdeltv2/'
 LASTUPDATE_URL = BASE_URL + 'lastupdate.txt'
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 EXPECTED_FIELDS = 27
 MAX_ZIP_BYTES = 64 * 1024 * 1024
 MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
 MAX_LINE_BYTES = 8 * 1024 * 1024
-URL_PATTERN = r'https?://data\.gdeltproject\.org/gdeltv2/[0-9]{14}\.gkg\.csv\.zip'
+URL_PATTERN = r'https://data\.gdeltproject\.org/gdeltv2/[0-9]{14}\.gkg\.csv\.zip'
+METADATA_URL_PATTERN = r'https?://data\.gdeltproject\.org/gdeltv2/[0-9]{14}\.gkg\.csv\.zip'
+FETCH_URL_PATTERN = r'https://data\.gdeltproject\.org/gdeltv2/(?:lastupdate\.txt|[0-9]{14}\.gkg\.csv\.zip)'
 
 
 class Failure(Exception):
@@ -35,9 +37,22 @@ class Failure(Exception):
         self.code = code
 
 
+class StrictRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not re.fullmatch(FETCH_URL_PATTERN, newurl):
+            raise Failure('unsafe_redirect', 'Redirect left the GDELT HTTPS validation endpoint')
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def _open(request, timeout=60):
+    return urllib.request.build_opener(StrictRedirect()).open(request, timeout=timeout)
+
+
 def fetch_bytes(url, limit=MAX_ZIP_BYTES):
+    if not re.fullmatch(FETCH_URL_PATTERN, url):
+        raise Failure('invalid_url', 'Expected a GDELT HTTPS validation URL')
     request = urllib.request.Request(url, headers={'User-Agent': 'Psychohistory-GKG/' + VERSION})
-    with urllib.request.urlopen(request, timeout=60) as response:
+    with _open(request, timeout=60) as response:
         blob = response.read(limit + 1)
     if len(blob) > limit:
         raise Failure('resource_limit', 'Download exceeds byte limit')
@@ -58,9 +73,12 @@ def discover_latest():
         if (len(parts) != 3 or len(parts[0]) > 20
                 or not parts[0].isascii() or not parts[0].isdigit()
                 or int(parts[0]) <= 0 or not re.fullmatch(r'[a-fA-F0-9]{32}', parts[1])
-                or not re.fullmatch(URL_PATTERN, parts[2])):
+                or not re.fullmatch(METADATA_URL_PATTERN, parts[2])):
             raise Failure('metadata_invalid', 'Invalid GKG metadata entry')
-        candidates.append({'line': line, 'url': parts[2], 'bytes': int(parts[0]),
+        # The metadata feed has historically emitted HTTP locators. Preserve the
+        # original line for provenance, but validation acquisition is HTTPS only.
+        normalized_url = 'https://' + parts[2].split('://', 1)[1]
+        candidates.append({'line': line, 'url': normalized_url, 'bytes': int(parts[0]),
                            'md5': parts[1].lower(), 'sha256': hashlib.sha256(raw).hexdigest()})
     if len(candidates) != 1:
         raise Failure('metadata_invalid', 'Expected exactly one GKG metadata entry')
@@ -185,7 +203,7 @@ def run_validation(*, input_path=None, url=None, integration=False, run_at=None)
                 report['discovery'] = discover_latest()
                 url = report['discovery']['url']
             if not re.fullmatch(URL_PATTERN, url):
-                raise Failure('invalid_url', 'Expected a GDELT GKG batch URL')
+                raise Failure('invalid_url', 'Expected a GDELT HTTPS GKG batch URL')
             report['source_reference'] = url
             stage = 'acquisition'
             blob = fetch_bytes(url)
