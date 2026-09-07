@@ -13,13 +13,23 @@ At every gate, the project may:
 
 Failure or rejection is a valid scientific outcome.
 
+## Candidate lifecycle rule
+
+Gates 1 through 5 are normally applied to the relevant source/measurement candidate, not as a permanent global lock requiring every existing candidate to succeed before another candidate can be researched.
+
+The current GKG work is one candidate lifecycle. Failure, restriction or pause of GKG does not constitute failure of Psychohistory.
+
+A new source family may begin a separately authorized Gate 1/2 admission and measurement-validation path when governance selects it. This does not authorize multi-source state construction; Gate 6B still requires multiple sufficiently validated and sufficiently independent indicators.
+
+For the current GKG path, recovery must remain bounded. After each explicitly authorized network-recovery batch, governance reassesses whether another batch can materially change the scientific decision. Possible outcomes are continue, restrict, pause or reject. See `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
+
 ## Current position
 
 Authoritative branch: `main`.
 
 Accepted work includes Phase 1-4 data/measurement foundation, Phase 5 preregistered semantic audit, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, completed model-assisted human identity review with final human adjudication, and the evidence-sufficiency `1.0.1` correction.
 
-Current gate: Gate 3A, historical document identity and evidence sufficiency.
+Current gate: Gate 3A, historical document identity and evidence sufficiency for the GKG candidate.
 
 Readiness before independent semantic review requires at least 24 review-ready E2/E3 contexts per token and at least 4 review-ready E2/E3 contexts per allocated year. Exact current counts are maintained in `CURRENT_STATE.md` and the machine-readable correction contract rather than duplicated here.
 
@@ -56,7 +66,7 @@ Current GKG token metrics remain media-attention measurements. They do not measu
 
 ## Gate 3A: historical document identity and evidence sufficiency
 
-Status: current bottleneck.
+Status: current bottleneck for the GKG candidate.
 
 Goal: obtain sufficient objective, replayable historical context for the immutable frozen 120-reference Phase 5 sample.
 
@@ -64,12 +74,13 @@ Immediate work:
 
 1. Generate the deterministic recovery-target manifest across all 120 references using evidence-sufficiency version `1.0.1`.
 2. Preserve the accepted machine identity states and historical evidence artifacts; recompute current E0/E1/E2/E3 classification mechanically rather than rewriting historical evidence files.
-3. Prioritize deficient token/year cells using review-ready E2/E3 coverage under the frozen protocol.
+3. Prioritize deficient token/year cells using review-ready E2/E3 coverage under the accepted protocol.
 4. Treat E1 as identity-confirmed but context-insufficient evidence that may still require bounded context recovery.
 5. Use human `SAME_ARTICLE` judgments only as recovery guidance, never as automatic E2/E3 promotion.
 6. Keep human `DIFFERENT_ARTICLE` and objective identity mismatches visible and exclude current mismatches from promotion targeting under the accepted task rules.
 7. Perform bounded objective publisher/archive recovery only after the manifest and batch are accepted and network recovery is explicitly authorized.
 8. Recompute review-ready E2/E3 coverage mechanically after each bounded accepted batch.
+9. Reassess recovery viability after each batch; do not authorize indefinite recovery merely because deficits remain.
 
 Hard constraints:
 
@@ -84,16 +95,18 @@ Hard constraints:
 Possible outcomes:
 
 * readiness threshold reached
-* partial progress with further bounded recovery justified
-* formal recovery infeasibility for some cells or tokens
+* partial progress with another bounded batch justified
+* restricted historical validity/use case
+* pause pending a genuinely new recovery capability
+* rejection of the GKG candidate for historical-indicator promotion
 
 Evidence standards must not be weakened to force advancement.
 
-## Gate 3B: historical semantic stability
+## Gate 3B: historical semantic stability and selection robustness
 
 Status: blocked by Gate 3A evidence sufficiency.
 
-Goal: determine whether the audited token meaning is defensible across the intended historical period.
+Goal: determine whether the audited token meaning is defensible across the intended historical period and whether the semantic evidence is too selected by survivorship/recoverability to support promotion.
 
 Questions include:
 
@@ -101,6 +114,12 @@ Questions include:
 * Is there evidence of provider taxonomy or extractor drift?
 * Are ambiguous or context-dependent uses frequent enough to invalidate a historical series?
 * Is a restricted historical validity period more defensible than full-period continuity?
+* Does reviewability vary materially by year, outlet, cohort, frozen selection role or recovery method?
+* Could unresolved/unreviewable frozen cases plausibly change the semantic conclusion?
+
+The Phase 5 report already warned that survivor-only semantic comparisons would be biased. Therefore the 24/4 E2/E3 readiness threshold is an evidence-volume threshold, not a representativeness claim.
+
+Before any Gate 5 promotion, apply `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`. Keep reviewed and full selected denominators visible, preserve unresolved cases, and use explicit missingness sensitivity where the unresolved share can affect the conclusion.
 
 Each token may end as:
 
@@ -109,7 +128,7 @@ Each token may end as:
 * experimental only
 * rejected
 
-No production semantics follow automatically from token-string continuity.
+No production semantics follow automatically from token-string continuity or a favorable survivor-only review rate.
 
 ## Gate 4: independent semantic validation
 
@@ -125,14 +144,17 @@ Requirements:
 * explicit disagreement and ambiguity handling
 * no LLM output counted as human evidence
 * reproducible review import and provenance
+* full frozen denominator accounting retained alongside actually reviewed cases
 
 The completed 22-case model-assisted identity review with final human adjudication does not satisfy this later independent semantic-review requirement.
+
+Passing Gate 4 semantic-label thresholds does not override an unresolved Gate 3B selection/missingness problem.
 
 ## Gate 5: experimental historical indicator promotion
 
 Status: future.
 
-Only measurements passing the applicable integrity, semantic and independent-validation gates may enter an experimental historical indicator registry.
+Only measurements passing the applicable integrity, semantic, selection/missingness and independent-validation gates may enter an experimental historical indicator registry.
 
 Promotion records should include:
 
@@ -152,6 +174,8 @@ Promotion to experimental does not imply production decision authority.
 ## Gate 6A: independent source-family expansion
 
 Status: future. Research planning exists, but no new source integration is currently authorized.
+
+Gate 6A is the portfolio-level expansion decision that selects new source families for their own bounded Gate 1/2 admission and measurement-validation lifecycle. It does not require the GKG candidate to have succeeded, but it does require explicit authorization.
 
 Priority is diversity of evidence-generation mechanisms rather than adding many provider names or correlated news feeds.
 
@@ -185,7 +209,7 @@ Each family must pass its own access/license, provenance, time-semantics, revisi
 
 Status: future.
 
-Composite or latent state construction begins only after multiple sufficiently independent validated indicators exist.
+Composite or latent state construction begins only when multiple sufficiently independent validated indicators exist.
 
 Candidate dimensions may include economic stress, social tension, institutional stress, geopolitical stress, resource stress and technology transition, but names and definitions require evidence rather than intuition alone.
 
@@ -344,4 +368,4 @@ Do not weaken evidence retention, scientific thresholds or historical reproducib
 
 The only currently accepted advancement task is defined in `docs/NEXT_ACCEPTED_TASK.md`.
 
-Do not use this roadmap or the future Gate 6-10 design documents as authorization to start later gates. Each later gate requires a separately bounded task and applicable acceptance review.
+Do not use this roadmap, the Gate 3 guard, or future Gate 6-10 design documents as authorization to start later gates. Each later gate or new candidate source requires a separately bounded task and applicable acceptance review.
