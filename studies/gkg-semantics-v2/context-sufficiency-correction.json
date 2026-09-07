@@ -1,21 +1,28 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "accepted_current_correction_contract",
   "scope": "Recompute Phase 6A/6A.1 evidence sufficiency without changing frozen sample membership, machine document identity, or human identity judgments.",
   "historical_assessment_manifest": {
     "path": "studies/gkg-semantics-v2/assessment-manifest.json",
     "git_blob_sha": "4ca5034e2080ba4b1430dc07787028fabd4ae5eb",
-    "preservation_rule": "Historical artifacts and their recorded implementation hashes remain immutable provenance. Current corrected implementation is pinned separately below."
+    "preservation_rule": "Historical artifacts and their recorded implementation hashes remain immutable provenance. Current corrected implementation and semantic dependencies are pinned separately below."
   },
   "authenticated_inputs": {
     "evidence_file_sha256": "5e828feff976b47da5d9da67174b1b47c0a91a1003e3cbf1fff028ed5237b70d",
     "phase6a1_triage_file_sha256": "9d7f27660cfc9034cec8fe4b203c863e63c3f5c2aad7cb6a4a777abf80f10869",
-    "frozen_sample_sha256": "3a8710caabb8d571edbbd5f80276e00f25cec26c9622655d3b3db8d7045b9a46"
+    "phase6a1_protocol_file_sha256": "1f2a5b377b2b306fc9b460c40fa34bcbfd5863005c800fd2707aaf983def425c",
+    "frozen_sample_sha256": "3a8710caabb8d571edbbd5f80276e00f25cec26c9622655d3b3db8d7045b9a46",
+    "phase5_preregistration_git_blob_sha": "6197a7c7b06f97876eb0710b893995f6b2051b1d",
+    "phase6a_protocol_git_blob_sha": "31392b97a3bc4881e2e550d956ca4fcfe4b15e9b",
+    "phase6a1_protocol_git_blob_sha": "2b9f90f0f280842e3cb1ea6080fac9bb10a46064"
   },
   "corrected_implementation_git_blobs": {
-    "scripts/gkg_recovery.py": "96bef6b018ab5a5f53a35a76e864208501c0f60b",
+    "scripts/gkg_semantics.py": "9029b7b7c248f496513fe75f10fb80e1bcd920b7",
+    "scripts/retrieve_gkg_semantics.py": "30df55f7bf7e85bdc74555ebf6ac73328d5b0bb3",
+    "scripts/gkg_recovery.py": "5a5926be950ab60b72fdc1b9c4bb2d9bb6d77683",
     "scripts/phase6a1_recovery.py": "7066057ae724064cf7445f01af323081da7f581a"
   },
+  "implementation_note": "Evidence-sufficiency 1.0.1 depends on the frozen Phase 5 cue/extractor semantics imported by gkg_recovery. Those semantic dependencies are now pinned explicitly. The current gkg_recovery blob also preserves non-default URI ports during identity comparison; this hardening does not change the accepted 120-case machine identity or evidence-sufficiency counts.",
   "evidence_sufficiency": {
     "version": "1.0.1",
     "review_ready_levels": ["E2", "E3"],
