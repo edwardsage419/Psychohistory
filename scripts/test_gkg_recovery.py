@@ -75,6 +75,11 @@ class IdentityTests(unittest.TestCase):
         self.assertEqual(result['identity_status'],'identity_confirmed')
         self.assertEqual(result['excerpt'],'');self.assertIsNone(result['evidence_locator'])
         self.assertFalse(r.reviewable_context({**result,'token':'PROTEST'}))
+    def test_uri_identity_preserves_nondefault_ports_but_allows_normal_scheme_upgrade(self):
+        self.assertEqual(r.uri('http://www.example.org/article'),r.uri('https://example.org/article'))
+        self.assertEqual(r.uri('http://example.org:80/article'),r.uri('https://example.org:443/article'))
+        self.assertNotEqual(r.uri('https://example.org:8443/article'),r.uri('https://example.org/article'))
+        self.assertNotEqual(r.uri('http://example.org:443/article'),r.uri('https://example.org/article'))
     def test_unrelated_article_and_same_title(self):
         for blob,expected in ((body().replace(b'/article',b'/unrelated'),'identity_mismatch'),(b'<title>Example article</title><p>People protest against the policy.</p>','identity_probable_manual_review_required')):
             result=r.identify(case(),receipt(blob),blob,{},method='original_publisher');self.assertEqual(result['identity_status'],expected);self.assertEqual(result['excerpt'],'')
@@ -83,7 +88,7 @@ class IdentityTests(unittest.TestCase):
         result=r.identify(case(),receipt(changed),changed,{'source_hash_scope':'complete_response_body','content_sha256':s.sha(body())},method='original_publisher')
         self.assertTrue(result['content_changed_from_phase5']);self.assertNotEqual(result['identity_status'],'identity_confirmed')
     def test_archive_locator_mismatch(self):
-        for url in ('https://web.archive.org/web/20200905120000/https://example.org/wrong','https://web.archive.org/web/20200906120000/https://example.org/article','https://evil.example/web/20200905120000/https://example.org/article'):
+        for url in ('https://web.archive.org/web/20200905120000/https://example.org/wrong','https://web.archive.org/web/20200906120000/https://example.org/article','https://evil.example/web/20200905120000/https://example.org/article','https://web.archive.org/web/20200905120000/https://example.org:8443/article'):
             with self.subTest(url=url),self.assertRaises(s.Invalid):r.archive_locator(url,case()['DocumentIdentifier'],'20200905120000')
     def test_discovery_alone_not_identity_evidence(self):
         def fake(url,cfg):return {**receipt(), 'status':404,'content_sha256':None,'failure':'http_404'},None
