@@ -17,6 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def protocol():return json.loads((ROOT/'studies/gkg-semantics-v2/phase6a-protocol.json').read_text(encoding='utf-8-sig'))
 def case():return {'case_id':'case1','token':'PROTEST','year':2020,'cohort':'historical_2020','batch_id':'20200905120000','source_name':'example.org','DocumentIdentifier':'https://example.org/article'}
 def body():return b'<title>Example article</title><link rel="canonical" href="https://example.org/article"><meta property="og:type" content="article"><meta property="article:published_time" content="2020-09-05T10:00:00Z"><p>People protest against the policy.</p>'
+def fallback_body():return b'<title>Example article</title><link rel="canonical" href="https://example.org/article"><meta property="og:type" content="article"><meta property="article:published_time" content="2020-09-05T10:00:00Z"><p>Click here for global prices.</p>'
 def receipt(blob=None):
     blob=body() if blob is None else blob
     return {'status':200,'failure':None,'content_type':'text/html','charset':'utf-8','content_sha256':s.sha(blob),'final_url':'https://example.org/article','retrieved_at':'2026-09-06T00:00:00Z'}
@@ -69,6 +70,11 @@ class NetworkTests(unittest.TestCase):
 
 class IdentityTests(unittest.TestCase):
     def test_confirmed_requires_dates_canonical_and_independent_hash(self):self.assertEqual(evidence()['identity_status'],'identity_confirmed')
+    def test_confirmed_fallback_paragraph_is_not_reviewable_context(self):
+        blob=fallback_body();result=r.identify(case(),receipt(blob),blob,{'source_hash_scope':'complete_response_body','content_sha256':s.sha(blob)},method='original_publisher')
+        self.assertEqual(result['identity_status'],'identity_confirmed')
+        self.assertEqual(result['excerpt'],'');self.assertIsNone(result['evidence_locator'])
+        self.assertFalse(r.reviewable_context({**result,'token':'PROTEST'}))
     def test_unrelated_article_and_same_title(self):
         for blob,expected in ((body().replace(b'/article',b'/unrelated'),'identity_mismatch'),(b'<title>Example article</title><p>People protest against the policy.</p>','identity_probable_manual_review_required')):
             result=r.identify(case(),receipt(blob),blob,{},method='original_publisher');self.assertEqual(result['identity_status'],expected);self.assertEqual(result['excerpt'],'')
@@ -90,6 +96,10 @@ class ImportTests(unittest.TestCase):
         with self.assertRaises(s.Invalid):r.validate_evidence([bad],[case()],trusted_hashes={'case1':root})
         a=annotation(e);a['evidence_sha256']='0'*64
         with self.assertRaises(s.Invalid):r.import_humans([a],registry(),[case()],[e],**import_args(e))
+    def test_legacy_nonempty_fallback_context_cannot_enter_semantic_review(self):
+        e=evidence();e['excerpt']='Click here for global prices.';e['evidence_locator']={'kind':'normalized_html_paragraph','paragraph_index':0,'start':0,'end':29,'paragraph_sha256':'0'*64}
+        self.assertFalse(r.reviewable_context(e))
+        with self.assertRaises(s.Invalid):r.import_humans([annotation(e)],registry(),[case()],[e],**import_args(e))
     def test_human_identity_attestation_duplicate_and_case_guards(self):
         for mutation in ('machine','llm','attestation','duplicate_person','duplicate_annotation','fake_case','metadata','invalid_label','stale_protocol_version','stale_protocol_hash'):
             e=evidence();a=annotation(e);reg=registry();aa=[a]
