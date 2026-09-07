@@ -26,6 +26,8 @@ Core pipeline:
 
 public data/news -> normalized observations -> indicators -> state/trends -> probabilistic forecasts -> outcome resolution -> backtesting/calibration -> decision support
 
+The north star remains heterogeneous public observations, transparent indicators, dated forecasts, independent outcome resolution, empirical evaluation, and evidence-aware decision support. GKG is one candidate media-attention family inside that program; recovering GKG is not itself the project objective.
+
 ## Accepted baseline
 
 Authoritative baseline: `main`.
@@ -39,6 +41,7 @@ Accepted on `main`:
 * completed model-assisted human identity review with final human adjudication for the 22 cases requiring identity review
 * historical confirmed-context coverage audit
 * evidence-sufficiency correction version `1.0.1`, which fixes the E1 versus E2/E3 boundary without changing frozen membership or machine identity
+* current Gate 3 selection-bias and recovery-pivot safeguard in `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`
 
 Phase 5-6A.1 remain non-production research/evidence-recovery work only. Their acceptance does not promote GKG media-prevalence tokens into validated historical social indicators.
 
@@ -48,8 +51,11 @@ Human identity results: `studies/gkg-semantics-v2/human-identity-review-results.
 Historical pre-correction coverage audit: `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`.
 Current correction contract: `studies/gkg-semantics-v2/context-sufficiency-correction.json`.
 Current correction report: `docs/PHASE6A1_CONTEXT_SUFFICIENCY_CORRECTION.md`.
+Current Gate 3 guard: `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
 
-## Operational cleanup on 2026-09-07
+Historical Phase 6A.1 reports and the original Phase 5-6A.1 acceptance review retain the pre-correction six-E3 snapshot as historical provenance. Their old sufficiency counts and old next-step wording do not override this file or the current correction contract.
+
+## Operational cleanup and hardening on 2026-09-07
 
 The retired V0.2 frontend, static dashboard data, GDELT DOC updater script and scheduled workflow were removed from the active tree. Git history preserves them for provenance.
 
@@ -59,11 +65,11 @@ The intended automation posture is:
 * read-only live GKG integration validation at low frequency plus manual dispatch
 * no scheduled workflow that commits transient monitoring data directly to authoritative `main`
 
-The live GKG validator has also been tightened to an HTTPS-only GDELT acquisition boundary with provider-preserving redirects. This changes transport safety only and does not rewrite accepted historical evidence.
+The live GKG validator is constrained to an HTTPS-only GDELT acquisition boundary with provider-preserving redirects. Evidence URI comparison also preserves non-default ports while retaining the already accepted normal HTTP-to-HTTPS/default-port equivalence. These transport/identity hardenings do not rewrite accepted historical evidence.
 
 ## Current gate
 
-Primary current gate: Gate 3A, historical document identity and evidence sufficiency.
+Primary current gate: Gate 3A, historical document identity and evidence sufficiency for the GKG candidate.
 
 The immediate bottleneck is objective historical document identity and review-ready context coverage across the frozen 120-case sample. The 22-case identity review is complete, but human `SAME_ARTICLE` judgments remain separate provenance and do not satisfy machine evidence-sufficiency requirements by themselves.
 
@@ -124,14 +130,26 @@ There are still:
 * 0 independent human semantic reviews counted toward the later semantic-validation gate
 * 0 LLM semantic reviews counted as human evidence
 
+## Selection and missingness limitation
+
+The current 24-per-token and 4-per-allocated-year E2/E3 readiness rule is a minimum evidence-volume condition for later semantic review. It is not evidence that the review-ready subset is representative.
+
+Phase 5 already showed strong historical availability differences and warned that survivor-only semantic comparison would be biased. Successful recovery may remain associated with year, outlet, document survival and the frozen cue/extractor path.
+
+Before any GKG token can enter Gate 5 experimental historical-indicator promotion, the project must perform the selection/missingness analysis defined in `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`. Semantic rates must retain reviewed and full selected denominators, recall remains unestimated, and unresolved cases cannot be dropped merely because they are inconvenient.
+
+Reaching the current readiness threshold may authorize a later independent semantic-review task. It does not by itself authorize indicator promotion.
+
 ## Current recovery-manifest task
 
 The current accepted task is `docs/NEXT_ACCEPTED_TASK.md`.
 
-Execution must use evidence-sufficiency `1.0.1`, review-ready E2/E3 coverage, and the V2 preparation artifacts:
+Execution must use evidence-sufficiency `1.0.1`, review-ready E2/E3 coverage, and the current V2 preparation artifacts:
 
 * `docs/PHASE6A_RECOVERY_MANIFEST_PREFLIGHT_V2.md`
 * `studies/gkg-semantics-v2/recovery-manifest-expected-baseline-v2.json`
+
+The correction contract now pins the Phase 5 preregistration/cue-extractor semantics, Phase 6A/6A.1 protocols, and current recovery implementations required to reproduce evidence sufficiency. Silent semantic dependency drift must fail closed.
 
 The earlier preflight, original recovery-manifest oracle, historical confirmed-context coverage audit, and `docs/CODEX_EXECUTION_READINESS_AUDIT.md` preserve the pre-correction state and are superseded for current execution.
 
@@ -141,7 +159,19 @@ Under unchanged current inputs, the first bounded recovery batch is defined mech
 
 The corrected V2 oracle pins membership at 10 cases. The implementation must derive that membership from authoritative inputs rather than hard-code it.
 
+The accepted Phase 6A.1 `canonical_publisher` method is now explicitly normalized in manifest ordering and allowed-method logic. It must not be confused with the deferred Phase 6A `canonical_publisher_archive` method.
+
 Network recovery is not authorized by the manifest-generation task.
+
+## Candidate lifecycle and pivot rule
+
+Gates 1 through 5 are interpreted at the relevant source/measurement-candidate level unless a specification explicitly states a project-wide prerequisite.
+
+Failure or restriction of GKG does not constitute failure of Psychohistory and does not permanently block research on other source families. A separately authorized future source may begin its own Gate 1/2 admission and measurement-validation path while GKG remains limited or rejected.
+
+After the deterministic manifest and after each separately authorized bounded GKG network-recovery batch, governance must reassess whether another batch can materially change the scientific decision. Valid outcomes include continuing bounded recovery, restricting the valid period/use case, pausing pending a genuinely new capability, or rejecting the candidate while preserving all evidence.
+
+No numeric recovery-yield threshold is invented at this stage. Missing evidence never justifies lowering identity, context, reviewer or semantic standards.
 
 ## Human dependencies
 
@@ -165,19 +195,19 @@ Until the applicable evidence gates are satisfied, do not begin or promote:
 
 ## Next recommended actions
 
-1. Generate the deterministic recovery-target manifest over the complete frozen 120-case sample using the corrected E2/E3 review-ready definition.
+1. Generate the deterministic recovery-target manifest over the complete frozen 120-case sample using the corrected E2/E3 review-ready definition and pinned semantic dependencies.
 2. Preserve all historical evidence artifacts and human identity judgments; do not rewrite the frozen sample or machine identity states.
 3. Prioritize recovery targets according to `docs/NEXT_ACCEPTED_TASK.md`, including the 13 human `SAME_ARTICLE` cases where their deficient cells justify Tier A.
 4. Preserve `DIFFERENT_ARTICLE`, failed attempts, unresolved evidence and machine mismatches as visible provenance; do not replace frozen cases with substitute articles.
-5. After explicit authorization for bounded network recovery, recompute review-ready coverage mechanically after each accepted batch.
+5. After explicit authorization for a bounded network-recovery batch, recompute review-ready coverage mechanically and reassess recovery viability before authorizing another batch.
 6. Begin independent semantic review only after every token reaches at least 24 review-ready E2/E3 contexts and every allocated year reaches at least 4.
-7. Reassess cross-year semantic stability only after evidence and reviewer gates are satisfied.
+7. Before any Gate 5 promotion decision, complete the selection/missingness guard and reassess cross-year semantic stability.
 
 ## Model routing for immediate work
 
 * deterministic coverage/target-manifest generation: L1-L2, Terra Medium/High
-* bounded archive/retrieval engineering under the frozen protocol: L2, Terra High
-* semantic or historical validity judgment after evidence exists: L4, Sol High
+* bounded archive/retrieval engineering under the accepted protocol: L2, Terra High
+* semantic, selection-bias or historical validity judgment after evidence exists: L4, Sol High
 * unresolved system-level methodology after serious Sol analysis: L5, Astra High
 
 Do not use stronger models to compensate for missing historical evidence or missing human review.
