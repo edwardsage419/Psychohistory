@@ -8,6 +8,14 @@ This document governs what Psychohistory should develop next, how work should be
 
 The objective is reliable scientific progress per unit of compute while preserving evidence quality, reproducibility, historical validity, and the project's near-zero-cost development constraint.
 
+## Active development authority
+
+Owner decision, 2026-09-07: active Psychohistory development is governed by GPT and executed through bounded Codex work. The earlier Claude-era product direction and V0.2 application plan are retired.
+
+Historical code and documents remain valid as provenance where Git history, phase evidence or accepted decisions depend on them. They do not remain architectural authority merely because they existed earlier.
+
+When an old plan conflicts with accepted `main`, current governance, scientific invariants or immutable evidence, the accepted current repository state wins.
+
 ## Responsibility model
 
 ### GPT: governance and task planning
@@ -49,7 +57,7 @@ The human operator remains responsible for:
 * genuine human semantic review when required by protocol
 * approval of consequential promotion decisions
 * approval of major changes to scientific definitions or project direction
-* final acceptance of work into the authoritative baseline
+* final acceptance of consequential work into the authoritative baseline
 
 An LLM must never be relabeled as a human reviewer or used to satisfy a protocol requirement for independent genuine human judgment.
 
@@ -227,16 +235,20 @@ Before recommending a new development task, GPT should check whether unresolved 
 
 ## Current governance interpretation
 
-The accepted `main` baseline currently contains Phase 1-4 work. Later semantic-audit and evidence-recovery work exists on the active development branch and must be reviewed independently before becoming authoritative.
+The authoritative `main` baseline contains accepted Phase 1-4 data/measurement foundation work, Phase 5 preregistered semantic-audit work, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, the completed model-assisted human identity review, and the confirmed-context coverage audit.
 
-The current research bottleneck is semantic and historical evidence quality, not forecast implementation.
+Phase 5-6A.1 remain non-production research and evidence-recovery work. Acceptance into `main` does not semantically promote the three audited GKG tokens.
 
-Do not begin production forecasting, composite-state construction, or semantic promotion merely because the engineering framework can support them.
+The current gate is semantic and historical stability with independent evidence validation incomplete. The immediate bottleneck is objective document identity and E3 evidence sufficiency across the immutable frozen 120-reference sample.
 
-The next work should remain bounded to evidence recovery, required human identity/semantic review, review-import integrity, and acceptance review of completed semantic-audit work until the applicable gates are satisfied.
+The current frozen evidence state remains exactly six E3 contexts: `PROTEST` 0, `FOOD_SECURITY` 5, `WB_2747_UNEMPLOYMENT` 1. The readiness threshold remains at least 24 E3 per token and at least 4 E3 per allocated year before independent semantic review.
+
+The current accepted next task is the deterministic recovery-target manifest defined in `docs/NEXT_ACCEPTED_TASK.md`. It must preserve frozen membership, keep human and machine provenance separate, exclude known mismatches from promotion targets, and stop after manifest plus bounded batch preparation unless network recovery is explicitly authorized.
+
+Do not begin production forecasting, composite-state construction, semantic promotion, calibration claims, or historical backtests that treat unresolved measurement semantics as ground truth.
 
 ## Updating this policy
 
-Change this document when the governance model itself changes.
+Change this document when the governance model itself changes or when a stale current-governance paragraph would materially misroute future work.
 
-Do not rewrite it merely to reflect routine project progress. Current implementation status belongs in reports or current-state documentation; durable decision rules belong here.
+Routine mutable project status belongs in `CURRENT_STATE.md` and accepted task scope belongs in `docs/NEXT_ACCEPTED_TASK.md`.
