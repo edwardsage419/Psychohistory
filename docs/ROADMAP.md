@@ -1,174 +1,309 @@
-# Roadmap
+# Psychohistory Roadmap
 
-## Phase 0: architecture reset
+## Roadmap rule
 
-Goal: establish durable project rules before new production features.
+Psychohistory advances by evidence gates, not by old phase numbering. Historical Phase reports remain valid records of completed work, but their numbering does not determine the next task.
 
-Acceptance criteria:
+At every gate, the project may:
 
-* Codex operating guide exists.
-* Product vision is explicit.
-* Target architecture is documented.
-* Conceptual data model is documented.
-* Existing V0.2 components are classified as keep, replace, or retire.
-* Open questions are recorded.
+* advance when acceptance criteria are met
+* remain experimental when evidence is incomplete
+* restrict an indicator to a narrower time range or use case
+* reject a candidate when evidence shows it is unsuitable
 
-## Phase 1: data source foundation
+Failure or rejection is a valid scientific outcome.
 
-Goal: build a reliable, testable source ingestion foundation.
+## Current position
 
-Work:
+Authoritative branch: `main`.
 
-* Create a source registry.
-* Complete GDELT GKG technical validation and document observed field frequencies.
-* Research additional candidate source families.
-* Define ingestion run metadata and quality reporting.
-* Establish normalized observation schema.
-* Choose early storage format based on actual data volume.
-* Add backfill strategy where feasible.
+Accepted work includes Phase 1-4 data/measurement foundation, Phase 5 preregistered semantic audit, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, completed model-assisted human identity review, and the confirmed-context coverage audit.
 
-Acceptance criteria:
+Current gate: semantic and historical stability with independent evidence validation incomplete.
 
-* At least one production candidate source can run automatically with reliable failure reporting.
-* Repeated runs are idempotent.
-* Source provenance is preserved.
-* Schema tests and failure tests exist.
-* Data can be backfilled or the absence of backfill is explicitly documented.
+Current frozen 120-reference E3 state:
 
-## Phase 2: indicator research and registry
+* `PROTEST`: 0
+* `FOOD_SECURITY`: 5
+* `WB_2747_UNEMPLOYMENT`: 1
 
-Goal: replace the current seven topic prototype with defensible base indicators.
+Readiness before independent semantic review requires:
 
-Work:
+* at least 24 E3 contexts per token
+* at least 4 E3 contexts per allocated year
 
-* Propose candidate indicators across economic, financial, conflict, political, energy, technology, public health, disaster, demographic, and sentiment domains where reliable data exists.
-* Evaluate overlap, coverage, lag, revision behavior, and source bias.
-* Define normalization and missing data rules.
-* Create indicator registry and versioning.
+The immediate accepted task is the deterministic recovery-target manifest in `docs/NEXT_ACCEPTED_TASK.md`.
 
-Acceptance criteria:
+## Gate 1: source and evidence integrity
 
-* Every production indicator has documented semantics and tests.
-* Media attention indicators are clearly labeled as attention measures.
-* Indicator history can be reproduced from source data and code.
+Status for the GKG research path: substantially established for the bounded research corpus.
 
-## Phase 3: composite state and trend system
+Required capabilities:
 
-Goal: derive interpretable higher level conditions from multiple indicators.
+* reproducible acquisition or exact source references
+* byte/integrity validation
+* lossless parsing and quarantine
+* source/version provenance
+* deterministic replay
+* explicit failure states
 
-Work:
+Completed work in Phase 1-3 provides the current foundation. New source families must independently pass equivalent integrity requirements before promotion.
 
-* Define candidate composite dimensions.
-* Test weighting and normalization approaches.
-* Compare simple transparent baselines before complex models.
-* Add decomposition views showing component contributions.
+## Gate 2: measurement validity
 
-Acceptance criteria:
+Status for current GKG exact-token media-prevalence measurements: experimental foundation established, stronger interpretation not established.
 
-* Composite values are reproducible and decomposable.
-* Historical behavior is inspected for obvious artifacts.
-* Version changes preserve prior histories.
+Required capabilities:
 
-## Phase 4: forecast registry and baseline forecasting
+* explicit versioned IndicatorDefinition
+* reproducible transformation
+* defined denominator, aggregation, missingness and lag policies
+* quality and provenance records
+* documented known biases and limitations
 
-Goal: make falsifiable forecasting a first class system component.
+Current GKG token metrics remain media-attention measurements. They do not measure event counts, public opinion, severity or real-world risk without further validation.
 
-Work:
+## Gate 3A: historical document identity and evidence sufficiency
 
-* Define macro trend forecast schema.
-* Define concrete event forecast schema.
-* Build immutable forecast storage.
-* Define resolution sources and rules.
-* Establish simple baselines before AI or machine learning methods.
+Status: current bottleneck.
 
-Acceptance criteria:
+Goal: obtain sufficient objective, replayable historical context for the immutable frozen 120-reference Phase 5 sample.
 
-* Forecasts have unique IDs, timestamps, horizons, probabilities, evidence references, and resolution rules.
-* Issued forecasts cannot be silently edited.
-* At least one automated or reproducible baseline forecast method exists.
+Immediate work:
 
-## Phase 5: evaluation and calibration
+1. Generate the deterministic recovery-target manifest across all 120 references.
+2. Preserve the existing six E3 contexts exactly.
+3. Prioritize deficient token/year cells under the frozen protocol.
+4. Use human `SAME_ARTICLE` judgments only as recovery guidance, never as automatic E3 promotion.
+5. Exclude human `DIFFERENT_ARTICLE` and objective identity mismatches from promotion targets.
+6. Perform bounded objective publisher/archive recovery only after the manifest and batch are accepted.
+7. Recompute E3 coverage mechanically after each bounded batch.
 
-Goal: measure whether forecasting adds value.
+Hard constraints:
 
-Work:
+* no replacement sampling
+* no syndicated substitution
+* no guessed archive identity
+* no unrelated search-result substitution
+* no silent change to the frozen identity hierarchy
+* no rewriting machine evidence with human judgments
 
-* Implement scoring appropriate to each forecast class.
-* Compare forecasts against naive baselines.
-* Build calibration and error reports.
-* Track performance by method, horizon, geography, and event class where sample size permits.
+Possible outcomes:
 
-Acceptance criteria:
+* readiness threshold reached
+* partial progress with further bounded recovery justified
+* formal recovery infeasibility for some cells or tokens
 
-* Forecast performance can be reproduced from stored records.
-* Model comparison uses predefined metrics.
-* Weak performance remains visible rather than being hidden by selective examples.
+Evidence standards must not be weakened to force advancement.
 
-## Phase 6: AI analysis
+## Gate 3B: historical semantic stability
 
-Goal: use language models where structured reasoning and synthesis add value.
+Status: blocked by Gate 3A evidence sufficiency.
 
-Work:
+Goal: determine whether the audited token meaning is defensible across the intended historical period.
 
-* Add evidence synthesis from structured data.
-* Add scenario generation and contradiction checks.
-* Experiment with AI assisted forecast generation against baselines.
-* Record model and prompt versions.
+Questions include:
 
-Acceptance criteria:
+* Does the same token represent sufficiently similar topical content across allocated years?
+* Is there evidence of provider taxonomy or extractor drift?
+* Are ambiguous or context-dependent uses frequent enough to invalidate a historical series?
+* Is a restricted historical validity period more defensible than full-period continuity?
 
-* AI outputs are traceable to evidence snapshots.
-* AI forecast performance is scored against baselines.
-* Hallucinated or unsupported facts are detectable through source references and validation.
+Each token may end as:
 
-## Phase 7: product interface
+* promotable over the intended period
+* promotable only over a restricted period
+* experimental only
+* rejected
 
-Goal: turn the validated system into a useful formal product.
+No production semantics follow automatically from token-string continuity.
 
-Work:
+## Gate 4: independent semantic validation
 
-* Redesign dashboard around state, trends, forecasts, evidence, quality, and track record.
-* Add user oriented explanations of uncertainty.
-* Add investment research and personal planning views as evidence synthesis surfaces.
-* Evaluate whether accounts, backend services, and paid infrastructure are justified.
+Status: blocked until the frozen E3 readiness threshold is met.
 
-Acceptance criteria:
+Goal: obtain genuine independent human semantic review under a preregistered protocol.
 
-* The interface exposes data freshness and quality.
-* Forecast history and accuracy are prominent.
-* User facing conclusions can be traced to underlying evidence.
+Requirements:
 
-## Near term Codex tasks
+* genuine human reviewers
+* sufficient objective context
+* preserved reviewer independence where required
+* explicit disagreement and ambiguity handling
+* no LLM output counted as human evidence
+* reproducible review import and provenance
 
-Codex should begin with Phase 0 and Phase 1 only.
+The completed 22-case human identity review does not satisfy this later semantic-review requirement.
 
-Immediate engineering sequence:
+## Gate 5: experimental historical indicator promotion
 
-1. Audit existing repository files and workflows.
-2. Remove accidental generated Python bytecode from source control and add appropriate ignore rules.
-3. Produce a keep, replace, retire inventory for V0.2.
-4. Formalize the GKG validation output into a stable machine readable report schema.
-5. Add tests around GKG validation edge cases.
-6. Design the source registry and normalized observation schema in code.
-7. Research and propose the first production ingestion path before modifying the current dashboard data contract.
+Status: future.
 
-Do not begin production forecast logic until the data foundation has passed its acceptance criteria.
+Only measurements passing the applicable integrity, semantic and independent-validation gates may enter an experimental historical indicator registry.
 
-## Execution note: 2026-09-06
+Promotion records should include:
 
-The owner requested a Phase 2 GKG continuity/reproducibility/historical study
-before indicator research. That bounded acquisition phase is recorded in
-PHASE_2_REPORT.md and does not authorize the indicator Phase 2 described above.
-Its next recommended issue is lossless encoding and row-quarantine policy;
-production ingestion, ontology and forecast work remain deferred.
+* indicator ID and definition version
+* validated interpretation
+* applicable time range
+* source family and transformation
+* evidence basis
+* known biases and limitations
+* unresolved uncertainty
+* quality requirements
+* provenance requirements
+* promotion status
 
-## Execution note: Phase 4 measurement foundation
+Promotion to experimental does not imply production decision authority.
 
-The owner's phase numbering supersedes the original planning sequence above.
-Phase 3 ingestion is accepted at 09586cd. Phase 4 indicator foundation and GKG
-semantic validation is recorded in PHASE_4_REPORT.md. Current recommendation:
-continue_semantic_validation. The next recommended issue is a preregistered,
-bounded semantic audit across historical cohorts and provider-version evidence;
-not the original roadmap's forecasting phase. Experimental media prevalence must
-not become a social-severity/risk series without additional validation. Production,
-forecasting, final ontology and geographic attribution remain deferred.
+## Gate 6A: independent source-family expansion
+
+Status: future, but research planning may begin after the current evidence bottleneck is controlled.
+
+Priority is diversity of evidence families rather than adding many correlated news feeds.
+
+Candidate families may include:
+
+* official macroeconomic statistics
+* labor-market data
+* prices, rates and financial-market data
+* trade and industrial activity
+* energy production, consumption and prices
+* food and commodity data
+* conflict and security event datasets
+* disasters and climate observations
+* public-health data
+* demographic data
+* surveys and confidence measures
+* technology-adoption signals
+* news/media attention as one observation family
+
+Each family must pass its own provenance, time-semantics, revision and historical-continuity review.
+
+## Gate 6B: interpretable state representation
+
+Status: future.
+
+Composite or latent state construction begins only after multiple sufficiently independent validated indicators exist.
+
+Candidate dimensions may include economic stress, social tension, institutional stress, geopolitical stress, resource stress and technology transition, but names and definitions require evidence rather than intuition alone.
+
+Requirements:
+
+* transparent component list
+* explicit weighting or model specification
+* decomposition into contributing indicators
+* versioned historical semantics
+* missingness and revision policy
+* uncertainty representation
+* tests against simple transparent baselines
+
+Do not publish a single opaque global risk score.
+
+## Gate 7: forecast registry and baselines
+
+Status: future and blocked for production use.
+
+Before issuing formal forecasts, define versioned forecast objects containing at least:
+
+* forecast ID
+* issue timestamp
+* target and target-definition version
+* horizon
+* probability or predictive distribution
+* method/model version
+* feature snapshot
+* evidence snapshot
+* resolution rule reference
+* status and immutable content hash
+
+Substantive forecast content becomes immutable after issuance.
+
+Simple transparent baselines should exist before AI forecasting is evaluated.
+
+## Gate 8: outcome resolution
+
+Status: future.
+
+Outcome resolution must be specified independently enough to prevent hindsight-driven reinterpretation.
+
+Required design:
+
+* resolution source
+* resolution date and deadline
+* event or trend criteria
+* ambiguity policy
+* unresolved policy
+* resolver/version provenance
+* audit trail for metadata corrections
+
+Forecast generation and outcome resolution should be separated where practical.
+
+## Gate 9: scoring, calibration and historical evaluation
+
+Status: future.
+
+Only forecasts with valid immutable records and independently defined outcomes may enter scoring.
+
+Potential metrics include:
+
+* Brier score
+* log score
+* calibration/reliability curves
+* discrimination
+* interval coverage
+* directional accuracy
+* baseline-relative performance
+* performance by horizon and event class where sample size permits
+
+Historical evaluation must use only information that was actually available at the simulated historical timestamp. Look-ahead leakage is a blocking failure.
+
+## Gate 10: AI forecasting and decision support
+
+Status: future.
+
+AI value must be measured against transparent baselines rather than assumed.
+
+Potential comparisons include:
+
+* historical base rate
+* persistence
+* simple trend rules
+* simple statistical models
+* market-implied probabilities where appropriate
+* expert priors
+
+AI may support evidence synthesis, contradiction detection, scenario generation and forecast reasoning, but unsupported facts must remain detectable and model/prompt versions must be recorded.
+
+Decision-support outputs for investing or personal planning remain downstream artifacts and must stay distinguishable from observations and forecasts.
+
+## Product layer
+
+A user-facing product should follow scientific capability rather than lead it.
+
+When justified, the interface should expose:
+
+* current observations
+* indicator values and trends
+* source quality and freshness
+* state estimates with decomposition
+* active forecasts
+* evidence and uncertainty
+* resolution history
+* calibration and baseline comparisons
+
+The retired V0.2 frontend is not a design constraint. A new interface should be designed from validated research outputs when the underlying gates justify it.
+
+## Infrastructure rule
+
+Default to zero or near-zero recurring cost while the research foundation is being validated.
+
+Paid infrastructure is justified only when a free approach materially harms data integrity, reproducibility, reliability, analytical quality or product capability and the benefit is supported by evidence.
+
+Do not weaken evidence retention, scientific thresholds or historical reproducibility to save infrastructure cost.
+
+## Next bounded work
+
+The only currently accepted advancement task is defined in `docs/NEXT_ACCEPTED_TASK.md`.
+
+Do not use this roadmap as authorization to start later gates. Each later gate requires a separately bounded task and applicable acceptance review.
