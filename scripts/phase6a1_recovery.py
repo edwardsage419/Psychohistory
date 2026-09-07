@@ -17,11 +17,12 @@ from assess_gkg_semantics import verify_artifacts
 BASE='f7073ab51e4eb0195fa740a38e96c2a945453602'
 DIR=ROOT/'studies/gkg-semantics-v2'
 TARGET_STATES=('identity_probable_manual_review_required','identity_mismatch')
+EVIDENCE_SUFFICIENCY_VERSION='1.0.1'
 
 def pinned(name):return json.loads(subprocess.check_output(['git','show',BASE+':studies/gkg-semantics-v2/'+name],cwd=ROOT))
 def level(e):
     if e['identity_status']!='identity_confirmed':return 'E0'
-    if not e['excerpt']:return 'E1'
+    if not r.reviewable_context(e):return 'E1'
     if e['retrieval_method'] in ('original_publisher','same_path_https_candidate','canonical_publisher'):return 'E3'
     if e['retrieval_method']=='dated_wayback_capture':return 'E2'
     return 'E0' # Similar syndicated content has no authenticated equivalence anchor here.
@@ -34,7 +35,7 @@ def resolve(base,delta,*,base_root,delta_root):
     for old in base:
         e=copy.deepcopy(dm.get(old['case_id'],old))
         for k in ('case_id','token','year','cohort','original_url'):s.require(e[k]==old[k],'frozen_metadata_changed')
-        e['evidence_sufficiency_version']='1.0.0';e['evidence_sufficiency']=level(e);result.append(e)
+        e['evidence_sufficiency_version']=EVIDENCE_SUFFICIENCY_VERSION;e['evidence_sufficiency']=level(e);result.append(e)
     return result
 
 def import_reviews(annotations,registry,cases,evidence,**trust):
@@ -110,7 +111,7 @@ def run(cases,base,p,fetcher=fetch):
 def publish(base,delta,attempts,review_protocol,out):
     evidence=resolve(base,delta,base_root=s.digest(base),delta_root=s.digest(delta)) # generation, not external authentication claim
     packet=r.packet(evidence)
-    for row,e in zip(packet,evidence):row.update(evidence_sufficiency=e['evidence_sufficiency'],evidence_sufficiency_version='1.0.0',provenance={'baseline':BASE,'attempt_sha256':e['attempt_sha256']},review_protocol_version=review_protocol['version'],review_protocol_sha256=s.digest(review_protocol))
+    for row,e in zip(packet,evidence):row.update(evidence_sufficiency=e['evidence_sufficiency'],evidence_sufficiency_version=EVIDENCE_SUFFICIENCY_VERSION,provenance={'baseline':BASE,'attempt_sha256':e['attempt_sha256']},review_protocol_version=review_protocol['version'],review_protocol_sha256=s.digest(review_protocol))
     stats={'version':'1.0.0','targeted':26,'original_references':120,'before':dict(Counter(e['identity_status'] for e in base)),'after':dict(Counter(e['identity_status'] for e in evidence)),
         'levels':dict(Counter(e['evidence_sufficiency'] for e in evidence)),'attempts':len(attempts),'failures':dict(Counter(a['failure'] for a in attempts if a.get('failure'))),'human_semantic_reviews':0,
         'recommendation':'ready_for_targeted_human_identity_review' if any(e['identity_status']=='identity_probable_manual_review_required' for e in delta) else 'continue_evidence_recovery'}
