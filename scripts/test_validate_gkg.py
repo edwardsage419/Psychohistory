@@ -7,12 +7,14 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import urllib.error
+import urllib.request
 import zipfile
 
 import validate_gkg as gkg
 
 STAMP = '2026-09-06T00:00:00Z'
 URL = gkg.BASE_URL + '20260906000000.gkg.csv.zip'
+HTTP_URL = URL.replace('https://', 'http://')
 
 
 def row(record='record-1', date='20260906000000', themes='TEST_A;TEST_B;'):
@@ -133,6 +135,16 @@ class ValidatorTests(unittest.TestCase):
                 self.assertEqual(report['errors'][0]['code'], expected)
                 self.assertEqual(report['errors'][0]['stage'], 'discovery')
 
+    def test_legacy_http_metadata_is_upgraded_before_acquisition(self):
+        blob = fixture();metadata = f'{len(blob)} {hashlib.md5(blob).hexdigest()} {HTTP_URL}'.encode()
+        with patch.object(gkg, 'fetch_bytes', side_effect=[metadata, blob]) as fetch:
+            report = gkg.run_validation(integration=True, run_at=STAMP)
+        self.assertEqual(report['status'], 'passed')
+        self.assertEqual(report['discovery']['url'], URL)
+        self.assertEqual(report['source_reference'], URL)
+        self.assertEqual(fetch.call_args_list[1].args[0], URL)
+        self.assertIn(HTTP_URL, report['discovery']['line'])
+
     def test_http_and_network_failures(self):
         for url, stage in [(None, 'discovery'), (URL, 'acquisition')]:
             for error, code in [(urllib.error.HTTPError(URL, 429, 'limit', {}, None), 'http_error'),
@@ -184,10 +196,18 @@ class ValidatorTests(unittest.TestCase):
             self.assertEqual(json.loads(stderr.getvalue())['errors'][-1]['code'], 'report_write_error')
 
     def test_invalid_url(self):
-        with patch.object(gkg, 'fetch_bytes') as fetch:
-            report = gkg.run_validation(url='https://example.org/x.zip', integration=True)
-            self.assertEqual(report['errors'][0]['code'], 'invalid_url')
-            fetch.assert_not_called()
+        for bad in ('https://example.org/x.zip', HTTP_URL):
+            with self.subTest(bad=bad), patch.object(gkg, 'fetch_bytes') as fetch:
+                report = gkg.run_validation(url=bad, integration=True)
+                self.assertEqual(report['errors'][0]['code'], 'invalid_url')
+                fetch.assert_not_called()
+
+    def test_redirect_may_not_leave_gdelt_https_endpoint(self):
+        handler=gkg.StrictRedirect();request=urllib.request.Request(URL)
+        for bad in (HTTP_URL, 'https://example.org/20260906000000.gkg.csv.zip'):
+            with self.subTest(bad=bad),self.assertRaises(gkg.Failure) as caught:
+                handler.redirect_request(request, None, 302, 'Found', {}, bad)
+            self.assertEqual(caught.exception.code,'unsafe_redirect')
 
     def test_encrypted_and_unsupported_zip(self):
         import struct
@@ -209,7 +229,7 @@ class ValidatorTests(unittest.TestCase):
         self.assertEqual(report['errors'][0]['code'], 'invalid_encoding')
 
     def test_download_limit(self):
-        with patch.object(gkg.urllib.request, 'urlopen', return_value=io.BytesIO(b'1234')):
+        with patch.object(gkg, '_open', return_value=io.BytesIO(b'1234')):
             with self.assertRaises(gkg.Failure) as caught:
                 gkg.fetch_bytes(URL, limit=3)
             self.assertEqual(caught.exception.code, 'resource_limit')
