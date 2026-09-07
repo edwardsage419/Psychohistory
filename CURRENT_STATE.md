@@ -1,6 +1,6 @@
 # Psychohistory Current State
 
-Last updated: 2026-09-06
+Last updated: 2026-09-07
 
 ## Authority
 
@@ -15,6 +15,8 @@ For project status, prefer evidence in this order:
 5. ChatGPT memory or conversation context
 
 If this file conflicts with Git evidence, Git evidence wins and this file must be corrected.
+
+Owner development decision as of 2026-09-07: active project governance and design are GPT-led and bounded implementation is performed with Codex. The earlier Claude-era product direction is retired and is not an architectural authority unless a specific decision has independently entered the accepted repository evidence/governance chain.
 
 ## Project objective
 
@@ -43,6 +45,18 @@ Acceptance merge: `81ea41989fd884633c535e1063bd78e1231d2c5c`.
 Acceptance review: `docs/PHASE_5_6A1_ACCEPTANCE_REVIEW.md`.
 Human identity results: `studies/gkg-semantics-v2/human-identity-review-results.csv`.
 Coverage audit: `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`.
+
+## Operational cleanup on 2026-09-07
+
+The retired V0.2 frontend, static dashboard data, GDELT DOC updater script and scheduled workflow were removed from the active tree. Git history preserves them for provenance.
+
+This maintenance does not change Phase 1-6A.1 evidence, the frozen sample, E3 identity status, human review results, indicator semantics or the current scientific gate.
+
+The intended automation posture is now:
+
+* offline tests on pull requests and pushes to `main`
+* read-only live GKG integration validation at low frequency plus manual dispatch
+* no scheduled workflow that commits transient monitoring data directly to authoritative `main`
 
 ## Current gate
 
@@ -134,10 +148,11 @@ A new GPT or Codex session continuing Psychohistory should begin with:
 2. `CURRENT_STATE.md`
 3. `SCIENTIFIC_INVARIANTS.md`
 4. `docs/DEVELOPMENT_GOVERNANCE.md`
-5. only the phase reports, decisions, code and tests relevant to the bounded task
+5. `docs/NEXT_ACCEPTED_TASK.md`
+6. only the phase reports, decisions, code and tests relevant to the bounded task
 
 Do not scan the whole repository unless the task genuinely requires repository-wide review.
 
 ## Update rule
 
-Update this file only when project state materially changes: accepted research enters `main`, a gate changes, a major evidence blocker is resolved/discovered, a human dependency changes, or the next authoritative priority changes.
+Update this file only when project state materially changes: accepted research enters `main`, a gate changes, a major evidence blocker is resolved/discovered, a human dependency changes, the next authoritative priority changes, or an operational change materially affects how future sessions interpret or execute the project.
