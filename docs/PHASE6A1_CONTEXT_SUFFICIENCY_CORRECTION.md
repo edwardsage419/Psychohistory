@@ -130,25 +130,48 @@ The following remain historical records and are not rewritten to erase the origi
 * `docs/PHASE_6A_REPORT.md`
 * `docs/PHASE_6A1_REPORT.md`
 * `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`
+* `docs/PHASE_5_6A1_ACCEPTANCE_REVIEW.md`
 * `studies/gkg-semantics-v2/recovery-manifest-expected-baseline.json`
 * `docs/PHASE6A_RECOVERY_MANIFEST_PREFLIGHT.md`
 * `docs/CODEX_EXECUTION_READINESS_AUDIT.md`
 
-They describe the historical state at the time they were produced. For current planning, corrected evidence-sufficiency version `1.0.1`, this document, the V2 recovery preflight, and the V2 expected-output oracle take precedence.
+They describe the historical state at the time they were produced. For current planning, corrected evidence-sufficiency version `1.0.1`, this document, `CURRENT_STATE.md`, the V2 recovery preflight, and the V2 expected-output oracle take precedence.
 
-## Implementation correction
+## Dependency and implementation correction
 
-Current corrected implementation:
+The machine-readable correction contract is version `1.0.1` and now closes the dependency chain needed to reproduce the current sufficiency interpretation.
 
+It binds:
+
+* the frozen Phase 5 preregistration containing the cue/extractor selection contract
+* the accepted Phase 6A protocol
+* the accepted Phase 6A.1 protocol
+* `scripts/gkg_semantics.py`
+* `scripts/retrieve_gkg_semantics.py`
+* `scripts/gkg_recovery.py`
+* `scripts/phase6a1_recovery.py`
+
+This is required because `gkg_recovery.reviewable_context()` depends on the frozen Phase 5 token-cue vocabulary and recovery uses the Phase 5 extractor. A later change to those semantics must fail the current integrity binding and require a new explicit version instead of silently changing E1/E2/E3 counts.
+
+Current implementation behavior:
+
+* `scripts/retrieve_gkg_semantics.py` defines the frozen cue/extractor path used by evidence-sufficiency `1.0.1`.
 * `scripts/gkg_recovery.py` requires reviewable token-cue context before semantic import and withholds fallback excerpts from newly confirmed evidence.
 * `scripts/phase6a1_recovery.py` computes E1 when identity is confirmed but reviewable context is absent.
-* the historical assessment implementation pins remain preserved; current corrected implementation is independently bound by `studies/gkg-semantics-v2/context-sufficiency-correction.json`.
+* evidence URI comparison preserves non-default ports while continuing the accepted normal HTTP-to-HTTPS/default-port equivalence; this closes a URI-identity edge case without changing current frozen results.
+* the historical assessment implementation pins remain preserved; current corrected dependencies are independently bound by `studies/gkg-semantics-v2/context-sufficiency-correction.json`.
 
-Regression tests authenticate the historical evidence/triage file bytes before computing the canonical object digests used by the overlay resolver.
+Regression tests authenticate historical evidence/triage file bytes before computing canonical object digests used by the overlay resolver, and they verify the current semantic dependency Git objects against the correction contract.
+
+## Selection-bias non-claim
+
+The correction establishes which recovered context is sufficiently reviewable. It does not establish that the review-ready subset is representative of all frozen token-positive cases.
+
+Phase 5 already recorded strong availability differences and warned against survivor-only semantic comparison. Current selection/missingness safeguards are defined separately in `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md` and remain applicable before semantic promotion.
 
 ## Scientific non-changes
 
-This correction changes no frozen sample membership, no original URL, no machine identity status, no human identity judgment, no semantic label, and no production promotion.
+This correction changes no frozen sample membership, no original URL, no current machine identity status, no human identity judgment, no semantic label, and no production promotion.
 
 The current gate remains Gate 3A historical document identity/evidence sufficiency.
 
