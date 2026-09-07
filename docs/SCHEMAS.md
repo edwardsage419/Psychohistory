@@ -56,7 +56,8 @@ Replay: `python -B scripts/validate_gkg.py --input batch.zip --output report.jso
 Live: `python -B scripts/validate_gkg.py --integration [--url GKG_URL]`.
 The misleading old `--date` and display-only `--top-themes` options are removed.
 The report replaces V0.2.1-A's unversioned shape; only validation artifact consumers
-need migration. The dashboard reads no validation reports and is unchanged.
+need migration. The retired V0.2 dashboard never consumed validation reports and
+has since been removed from the active tree.
 
 ## Source registry v1.0.0
 
@@ -67,7 +68,7 @@ historical coverage, reliability, biases and cost. Unknown facts are explicitly
 marked `unknown` in notes; unknown source version is null. Production status is
 candidate, production, rejected or retired. Status changes require evidence;
 passing a contract does not authorize promotion. This is a research registry,
-not an ingestion adapter, and it does not alter the legacy dashboard sources.
+not an ingestion adapter, and it does not itself authorize production ingestion.
 
 ## Normalized numeric observation v1.0.0
 
@@ -113,6 +114,6 @@ out-of-range offset minutes is not accepted as input validation.
 
 The separate v1 study manifest, results, replay and byte-diagnostic contracts are
 documented in [GKG_STUDY_SCHEMA.md](GKG_STUDY_SCHEMA.md). They do not change the
-observation or dashboard contracts. Phase 2 keeps source production status candidate.
+observation or product contracts. Phase 2 keeps source production status candidate.
 
 Phase 3 adds separate [lossless row, quarantine, batch, replay and assessment contracts](GKG_LOSSLESS_CONTRACTS.md). Phase 2 evidence is not reinterpreted.
