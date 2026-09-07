@@ -1,0 +1,188 @@
+{
+  "version": "1.0.0",
+  "purpose": "Independent expected-output baseline for the deterministic recovery-target manifest preflight. This file is a regression oracle only and is not an evidence or trust authority.",
+  "preflight_main_commit": "fbe7ef5c68fd82f4f3a1f7b012810ffecbecccfb",
+  "trust_rule": "Recompute from independently accepted frozen evidence and protocol inputs. Never validate evidence by trusting this baseline itself.",
+  "input_bindings": {
+    "frozen_sample_reference": {
+      "path": "studies/gkg-semantics-v2/frozen-sample-reference.json",
+      "git_blob_sha": "dfaabc6308ed71a2b36c418714afd2ea7055efcd",
+      "sample_content_sha256": "3a8710caabb8d571edbbd5f80276e00f25cec26c9622655d3b3db8d7045b9a46",
+      "case_ids_sha256": "50dace526474525e69f552cc833221c07e5ef91305f755fd8f4ac64c026c9895",
+      "cases": 120,
+      "replacement": false,
+      "resampling": false
+    },
+    "phase6a_protocol": {
+      "path": "studies/gkg-semantics-v2/phase6a-protocol.json",
+      "git_blob_sha": "31392b97a3bc4881e2e550d956ca4fcfe4b15e9b"
+    },
+    "assessment_manifest": {
+      "path": "studies/gkg-semantics-v2/assessment-manifest.json",
+      "git_blob_sha": "4ca5034e2080ba4b1430dc07787028fabd4ae5eb"
+    },
+    "evidence": {
+      "path": "studies/gkg-semantics-v2/evidence.json",
+      "content_sha256": "5e828feff976b47da5d9da67174b1b47c0a91a1003e3cbf1fff028ed5237b70d"
+    },
+    "phase6a1_protocol": {
+      "path": "studies/gkg-semantics-v2/phase6a1-protocol.json",
+      "git_blob_sha": "2b9f90f0f280842e3cb1ea6080fac9bb10a46064",
+      "content_sha256": "1f2a5b377b2b306fc9b460c40fa34bcbfd5863005c800fd2707aaf983def425c",
+      "target_count": 26
+    },
+    "phase6a1_triage": {
+      "path": "studies/gkg-semantics-v2/phase6a1-triage.json",
+      "content_sha256": "9d7f27660cfc9034cec8fe4b203c863e63c3f5c2aad7cb6a4a777abf80f10869"
+    },
+    "phase6a1_availability": {
+      "path": "studies/gkg-semantics-v2/phase6a1-availability.json",
+      "git_blob_sha": "c6aff8a99ab07dfa98e38e1afe0c94b6cbe283c2",
+      "content_sha256": "040ef06815f576d308689fa6de23d9cfbf0166a7c5a2cc4537dae2caf6f4b21a"
+    },
+    "human_identity_review": {
+      "path": "studies/gkg-semantics-v2/human-identity-review-results.csv",
+      "git_blob_sha": "6ea6884e73918f7f3d3a52c076885dc409f5aca7"
+    },
+    "coverage_audit": {
+      "path": "docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md",
+      "git_blob_sha": "61cf2d3f51a30278e5a04ae032a268ec23f0e58f"
+    },
+    "overlay_implementation": {
+      "path": "scripts/phase6a1_recovery.py",
+      "git_blob_sha": "ff52b481d93832c4d0d4c2eba0bc58393915370c",
+      "content_sha256_from_assessment_manifest": "15fdef25a22ce0232420cd15801ddbce099adbb666a8757bdff42f94b1419a6c"
+    }
+  },
+  "expected_frozen_state": {
+    "manifest_rows": 120,
+    "unique_case_ids": 120,
+    "non_e3_rows": 114,
+    "e3_rows": 6,
+    "machine_identity_counts": {
+      "identity_confirmed": 6,
+      "identity_probable_manual_review_required": 15,
+      "identity_mismatch": 7,
+      "identity_unresolved": 92
+    },
+    "evidence_sufficiency_counts": {
+      "E3": 6,
+      "E0": 114
+    },
+    "human_identity_counts": {
+      "SAME_ARTICLE": 13,
+      "DIFFERENT_ARTICLE": 2,
+      "INSUFFICIENT_EVIDENCE": 7
+    }
+  },
+  "expected_e3_case_ids": [
+    "61c7c1dd513d1d62021d93228f909aef8a2d961f3e850dca97c21ac2b45a3642",
+    "9443d204438f5a3213b4c7b39aec856ba8ae66e5a2d383b5e89817bb4a6b1cc5",
+    "374a5d91e1d48f34c1c096ce025537660995161964315da7473ebfd68cf8d2ca",
+    "544d11e2fe2d02e978eb4f6c4e4910a4ca5acd309033e115b587195de2e5b7a1",
+    "a6140896cd33c01e2e14e4fd8f9a44331ddc16f739648a5ffc945d5daa4fb1dc",
+    "3971850d00836d8a487c96f2128ac0ebd040bd5cee818d70c42939f90c377d57"
+  ],
+  "expected_token_coverage": {
+    "PROTEST": {"current_e3": 0, "required_total": 24, "total_deficit": 24},
+    "FOOD_SECURITY": {"current_e3": 5, "required_total": 24, "total_deficit": 19},
+    "WB_2747_UNEMPLOYMENT": {"current_e3": 1, "required_total": 24, "total_deficit": 23}
+  },
+  "expected_year_cells": {
+    "PROTEST": {
+      "2015": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2016": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2020": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2023": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2025": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2026": {"current_e3": 0, "minimum": 4, "deficit": 4}
+    },
+    "FOOD_SECURITY": {
+      "2015": {"current_e3": 1, "minimum": 4, "deficit": 3},
+      "2016": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2020": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2023": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2025": {"current_e3": 1, "minimum": 4, "deficit": 3},
+      "2026": {"current_e3": 3, "minimum": 4, "deficit": 1}
+    },
+    "WB_2747_UNEMPLOYMENT": {
+      "2016": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2020": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2023": {"current_e3": 0, "minimum": 4, "deficit": 4},
+      "2025": {"current_e3": 1, "minimum": 4, "deficit": 3},
+      "2026": {"current_e3": 0, "minimum": 4, "deficit": 4}
+    }
+  },
+  "expected_tier_a_case_ids": [
+    "fdf4e8e8fd4387f8734c40cffd6936c0ee5fb1897b6fe378d8225ba0880c4eaa",
+    "194bde000746759edf4a787b6c7794c5153068695b5e7df3f74f308a69c1b654",
+    "fe06652e1d34ae9808843795bc3d7cbdbb40e7684a82819e68d5a2db6d01d0e0",
+    "da06132eebc199a31debb4dec3b1d7d8d219ead51f657ce36e67f791b357281a",
+    "edbc803ec616278c7558e78af730e80e569da4259c446e53115641ec1aa59408",
+    "eb1ebf5f941b79628ac2d4238285747436e9d2f612f92e5bba43c89c9187815d",
+    "bd15553ad11249ff596865b3989d098c94ada012f3e1d97e68f7dfc2883d246a",
+    "e57372329cda46d28c0a73c0c736fe3ee4b972637c1fe25a4dbe705331b60948",
+    "745ce5ea9b3a0e51f50d97462aac8078fa91098c90b12e4e77414578a6310c67",
+    "c53b0be8810a53fd1c46c0fa9107188b6dbdfc63af09b9cf9c5adabe43e981ec",
+    "5c4aa90d7b080ec8063905db4414e74c31c17c3bfee3bd6e9e04c0cdad3400cb",
+    "2485b3733f5a41a3244eac8d6fa53fdb4bef5fc7cb95e6177809b76ff7481d46",
+    "9f8db6b75f5c0051eed87eb830e6e60dcf761759471b017beb84c5829dce74d7"
+  ],
+  "expected_promotion_excluded_case_ids": [
+    "a09f8e635c68d00d02c82f6030a069a7d664ccd5b370c11121e88b19e430ca65",
+    "e6a28be6a9faf1c3fd76e41313504842e221e5b21a476f2c617fbfd5aecee8db",
+    "1ec0c4b40166feadfc0f984e68a4ea712c386ff88656039ce697b93dca22dedc",
+    "9dabe88f50f13946b4300f59fdf7e38a77f14607faf2ea0e327be8da96bd3a95",
+    "eb1ebf5f941b79628ac2d4238285747436e9d2f612f92e5bba43c89c9187815d",
+    "144fa4dcca5c9b0b0e10d4d75d7652603832ff23bf92760aebc3861ba0fd7ca7",
+    "745ce5ea9b3a0e51f50d97462aac8078fa91098c90b12e4e77414578a6310c67"
+  ],
+  "expected_different_article_case_ids": [
+    "a09f8e635c68d00d02c82f6030a069a7d664ccd5b370c11121e88b19e430ca65",
+    "144fa4dcca5c9b0b0e10d4d75d7652603832ff23bf92760aebc3861ba0fd7ca7"
+  ],
+  "expected_tier_a_but_promotion_excluded_case_ids": [
+    "eb1ebf5f941b79628ac2d4238285747436e9d2f612f92e5bba43c89c9187815d",
+    "745ce5ea9b3a0e51f50d97462aac8078fa91098c90b12e4e77414578a6310c67"
+  ],
+  "expected_first_bounded_batch": {
+    "selection_rule": "Tier A AND year_cell_current_e3 == 0 AND promotion_target_excluded == false",
+    "membership_count": 9,
+    "membership_case_ids": [
+      "fdf4e8e8fd4387f8734c40cffd6936c0ee5fb1897b6fe378d8225ba0880c4eaa",
+      "194bde000746759edf4a787b6c7794c5153068695b5e7df3f74f308a69c1b654",
+      "fe06652e1d34ae9808843795bc3d7cbdbb40e7684a82819e68d5a2db6d01d0e0",
+      "da06132eebc199a31debb4dec3b1d7d8d219ead51f657ce36e67f791b357281a",
+      "edbc803ec616278c7558e78af730e80e569da4259c446e53115641ec1aa59408",
+      "c53b0be8810a53fd1c46c0fa9107188b6dbdfc63af09b9cf9c5adabe43e981ec",
+      "5c4aa90d7b080ec8063905db4414e74c31c17c3bfee3bd6e9e04c0cdad3400cb",
+      "2485b3733f5a41a3244eac8d6fa53fdb4bef5fc7cb95e6177809b76ff7481d46",
+      "9f8db6b75f5c0051eed87eb830e6e60dcf761759471b017beb84c5829dce74d7"
+    ],
+    "ordering_contract": "Membership is pinned here. Exact ordering must be recomputed from accepted objective recoverability signals and stable frozen-sample order; do not hard-code this array order."
+  },
+  "not_pinned_by_this_baseline": [
+    "Tier B count and membership",
+    "Tier C count and membership",
+    "Tier D count and membership beyond independently known human/mismatch constraints",
+    "exact objective-recoverability ordering",
+    "the 120 manifest rows themselves",
+    "any future recovery result",
+    "any semantic judgment or semantic promotion"
+  ],
+  "fail_closed_conditions": [
+    "frozen membership is not exactly 120 unique cases",
+    "case_ids_sha256 differs from the frozen reference",
+    "pre-recovery E3 is not exactly six",
+    "the six E3 case IDs differ",
+    "machine identity counts differ from 6/15/7/92",
+    "human identity counts differ from 13/2/7",
+    "coverage matrix differs from the accepted coverage audit",
+    "human SAME_ARTICLE is used to create E3",
+    "any frozen case or original URL is replaced",
+    "an identity_mismatch is treated as currently promotion eligible",
+    "a DIFFERENT_ARTICLE case is treated as a promotion target",
+    "the first bounded batch membership differs from the deterministic nine-case set under unchanged inputs",
+    "a new scientific ranking criterion is required"
+  ]
+}
