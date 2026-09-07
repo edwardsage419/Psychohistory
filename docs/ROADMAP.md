@@ -17,20 +17,11 @@ Failure or rejection is a valid scientific outcome.
 
 Authoritative branch: `main`.
 
-Accepted work includes Phase 1-4 data/measurement foundation, Phase 5 preregistered semantic audit, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, completed model-assisted human identity review, and the confirmed-context coverage audit.
+Accepted work includes Phase 1-4 data/measurement foundation, Phase 5 preregistered semantic audit, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, completed model-assisted human identity review with final human adjudication, and the evidence-sufficiency `1.0.1` correction.
 
-Current gate: semantic and historical stability with independent evidence validation incomplete.
+Current gate: Gate 3A, historical document identity and evidence sufficiency.
 
-Current frozen 120-reference E3 state:
-
-* `PROTEST`: 0
-* `FOOD_SECURITY`: 5
-* `WB_2747_UNEMPLOYMENT`: 1
-
-Readiness before independent semantic review requires:
-
-* at least 24 E3 contexts per token
-* at least 4 E3 contexts per allocated year
+Readiness before independent semantic review requires at least 24 review-ready E2/E3 contexts per token and at least 4 review-ready E2/E3 contexts per allocated year. Exact current counts are maintained in `CURRENT_STATE.md` and the machine-readable correction contract rather than duplicated here.
 
 The immediate accepted task is the deterministic recovery-target manifest in `docs/NEXT_ACCEPTED_TASK.md`.
 
@@ -71,13 +62,14 @@ Goal: obtain sufficient objective, replayable historical context for the immutab
 
 Immediate work:
 
-1. Generate the deterministic recovery-target manifest across all 120 references.
-2. Preserve the existing six E3 contexts exactly.
-3. Prioritize deficient token/year cells under the frozen protocol.
-4. Use human `SAME_ARTICLE` judgments only as recovery guidance, never as automatic E3 promotion.
-5. Exclude human `DIFFERENT_ARTICLE` and objective identity mismatches from promotion targets.
-6. Perform bounded objective publisher/archive recovery only after the manifest and batch are accepted.
-7. Recompute E3 coverage mechanically after each bounded batch.
+1. Generate the deterministic recovery-target manifest across all 120 references using evidence-sufficiency version `1.0.1`.
+2. Preserve the accepted machine identity states and historical evidence artifacts; recompute current E0/E1/E2/E3 classification mechanically rather than rewriting historical evidence files.
+3. Prioritize deficient token/year cells using review-ready E2/E3 coverage under the frozen protocol.
+4. Treat E1 as identity-confirmed but context-insufficient evidence that may still require bounded context recovery.
+5. Use human `SAME_ARTICLE` judgments only as recovery guidance, never as automatic E2/E3 promotion.
+6. Keep human `DIFFERENT_ARTICLE` and objective identity mismatches visible and exclude current mismatches from promotion targeting under the accepted task rules.
+7. Perform bounded objective publisher/archive recovery only after the manifest and batch are accepted and network recovery is explicitly authorized.
+8. Recompute review-ready E2/E3 coverage mechanically after each bounded accepted batch.
 
 Hard constraints:
 
@@ -87,6 +79,7 @@ Hard constraints:
 * no unrelated search-result substitution
 * no silent change to the frozen identity hierarchy
 * no rewriting machine evidence with human judgments
+* no treating a non-empty fallback paragraph as review-ready context unless it satisfies the accepted context-sufficiency contract
 
 Possible outcomes:
 
@@ -120,20 +113,20 @@ No production semantics follow automatically from token-string continuity.
 
 ## Gate 4: independent semantic validation
 
-Status: blocked until the frozen E3 readiness threshold is met.
+Status: blocked until the frozen review-ready E2/E3 readiness threshold is met.
 
 Goal: obtain genuine independent human semantic review under a preregistered protocol.
 
 Requirements:
 
 * genuine human reviewers
-* sufficient objective context
+* sufficient objective review-ready context
 * preserved reviewer independence where required
 * explicit disagreement and ambiguity handling
 * no LLM output counted as human evidence
 * reproducible review import and provenance
 
-The completed 22-case human identity review does not satisfy this later semantic-review requirement.
+The completed 22-case model-assisted identity review with final human adjudication does not satisfy this later independent semantic-review requirement.
 
 ## Gate 5: experimental historical indicator promotion
 
