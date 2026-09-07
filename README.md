@@ -6,6 +6,8 @@ public observations -> normalized observations -> indicators -> state/trends -> 
 
 The project is currently still in the measurement and historical-evidence stage. Production forecasting, production composite state, calibration claims and semantic promotion are blocked until the applicable scientific gates are satisfied.
 
+GKG is one experimental media-attention candidate, not the project objective. Failure, restriction or pause of that candidate does not constitute failure of Psychohistory. The long-term objective requires heterogeneous evidence families and falsifiable forecast evaluation.
+
 ## Start here
 
 For substantial work, read in this order:
@@ -31,10 +33,13 @@ Accepted research currently includes:
 * Phase 6A.1 targeted 26-case identity recovery
 * completed model-assisted human identity review with final human adjudication for the 22 cases requiring identity review
 * evidence-sufficiency correction version `1.0.1`
+* current Gate 3 recovery-selection and pivot safeguard
 
 This work remains non-production research.
 
 Current readiness uses review-ready E2/E3 context, with at least 24 review-ready contexts per token and at least 4 per allocated year before independent semantic review begins. Exact current counts are intentionally centralized in `CURRENT_STATE.md` and the machine-readable correction contract rather than duplicated here.
+
+Readiness is a minimum evidence-volume condition. It is not proof that the review-ready subset is representative. Before any GKG semantic promotion, selection/missingness risk must be addressed under `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
 
 Current correction artifacts:
 
@@ -48,6 +53,8 @@ The older confirmed-context coverage audit and original manifest preflight/oracl
 The current accepted next task is to generate a deterministic recovery-target manifest over the complete frozen 120-reference sample and prepare the next bounded recovery batch. The frozen sample, document-identity contract and human/machine provenance separation must remain unchanged.
 
 Current execution uses the V2 preparation artifacts and exact task contract in `docs/NEXT_ACCEPTED_TASK.md`. Network recovery is not authorized by the manifest-generation task.
+
+After any later explicitly authorized bounded recovery batch, governance must reassess whether another batch can materially change the scientific decision. Recovery is not an open-ended requirement to rescue GKG.
 
 ## Active development model
 
@@ -67,6 +74,7 @@ The project must preserve these distinctions:
 * model-assisted identity review is not independent/blinded semantic review
 * human `SAME_ARTICLE` judgment does not create E2/E3 machine evidence
 * missing evidence cannot be reasoned into existence
+* reviewable evidence is not automatically representative evidence
 * historical outputs and issued forecasts must not be silently rewritten
 
 The full invariant set is in `SCIENTIFIC_INVARIANTS.md`.
@@ -100,6 +108,6 @@ Normal offline tests do not require network access.
 
 ## Roadmap
 
-Development advances by evidence gates rather than old phase numbering. See `docs/ROADMAP.md` and `docs/DEVELOPMENT_GOVERNANCE.md`.
+Development advances by evidence gates and candidate lifecycles rather than old phase numbering. See `docs/ROADMAP.md`, `docs/DEVELOPMENT_GOVERNANCE.md`, and `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
 
-The present bottleneck is Gate 3A historical document identity and review-ready evidence sufficiency. The project must resolve that bottleneck before semantic promotion, composite-state construction or forecasting work can advance.
+The present bounded bottleneck is Gate 3A historical document identity and review-ready evidence sufficiency for the GKG candidate. The project does not need to force that candidate to succeed in order to preserve progress toward the wider multi-source forecasting objective.
