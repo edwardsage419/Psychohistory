@@ -3,10 +3,15 @@ name: Offline data foundation tests
 on:
   pull_request: {}
   push:
-    branches: [codex/project-reset-architecture]
+    branches: [main]
+  workflow_dispatch: {}
 
 permissions:
   contents: read
+
+concurrency:
+  group: offline-tests-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
