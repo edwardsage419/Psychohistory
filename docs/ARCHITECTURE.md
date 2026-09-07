@@ -6,6 +6,8 @@ This document defines the intended architecture direction. It is not a claim tha
 
 The current implementation is mature through source validation, reproducible observations, experimental indicator infrastructure, provenance, semantic-audit tooling and historical evidence recovery. Composite-state, forecast, outcome-resolution, calibration and decision-support components remain future architecture until their scientific gates are satisfied.
 
+Future Gate 7-9 design is specified in `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`, `docs/GATE7_9_SCHEMA_REQUIREMENTS.md` and `docs/FUTURE_EVALUATION_SAFEGUARDS.md`. These are design constraints, not implementation authorization.
+
 The retired V0.2 frontend, seven-topic taxonomy, GDELT DOC updater and `data/gdelt.json` pattern are preserved only in Git history. They are not active architecture.
 
 ## System shape
@@ -150,35 +152,46 @@ Prefer independent evidence families over increasingly elaborate transformations
 
 ## Layer 7: forecasting
 
+Future forecasting follows `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`.
+
+Before an issued forecast can exist, the architecture must already have versioned target semantics, a compatible resolution rule, an admissible point-in-time information snapshot and a versioned forecast method.
+
 Forecast objects should eventually contain at least:
 
 * forecast ID
-* creation timestamp
-* forecast type
-* target and target-definition version
-* event or trend definition
-* geography or entity scope
+* issuance timestamp
+* information cutoff
+* forecast class
+* target and target-definition version/hash
+* geography or entity scope where applicable
 * horizon
 * probability or predictive distribution
-* method identifier
-* model version
+* method identifier/version/hash
+* model and prompt/configuration identity where applicable
 * feature snapshot reference
 * evidence snapshot reference
-* resolution source and rule reference
+* resolution rule reference/version/hash
+* run-attempt reference
 * status
-* immutable content identity
+* immutable substantive content identity
 
-Once issued, substantive forecast fields should be immutable. Forecast architecture remains future work until the applicable measurement gates are satisfied.
+Run attempts and issued forecasts are separate concepts. Failed pre-issue attempts remain auditable when scientifically consequential.
+
+Once issued, substantive forecast fields are immutable. Corrections append records and preserve the original. Forecast architecture remains future work until the applicable measurement gates are satisfied.
 
 ## Layer 8: resolution and evaluation
 
-Outcome resolution should be independent from forecast generation when possible.
+Outcome resolution should be independent from forecast generation when possible and must remain bound to the target and resolution-rule versions fixed at issuance.
 
-Resolution must preserve source references, rule versions, ambiguity policy and resolver provenance.
+Resolution must preserve source references, target-data vintage, rule versions, ambiguity/unresolved states and resolver provenance. Missing or conflicting evidence cannot be converted into a convenient negative outcome merely to increase scoreable sample size.
 
-Evaluation metrics may include Brier score, log score, calibration curves, discrimination measures, interval coverage, directional accuracy, baseline comparison and stability through time. Metric choice depends on forecast type.
+Confirmatory evaluation operates on a frozen evaluation-cohort manifest. The cohort accounts for every issued forecast within scope as eligible, unresolved, excluded under a predefined rule, or otherwise reproducibly outside scope. Forecasts do not disappear because they perform poorly or are difficult to resolve.
 
-Historical evaluation must use only data and rules available at the relevant historical time.
+Evaluation metrics may include Brier score, log score, calibration curves, discrimination measures, interval coverage, directional accuracy, baseline comparison and stability through time. Metric choice depends on forecast class and must be fixed before confirmatory result inspection.
+
+Historical evaluation must use only data, vintages, transformation states, models/tools and rules admissible at the relevant historical information cutoff. Current-model historical experiments are separately classified from genuine contemporaneous forecasts.
+
+Detailed future schema constraints are defined in `docs/GATE7_9_SCHEMA_REQUIREMENTS.md` and point-in-time/adversarial requirements in `docs/FUTURE_EVALUATION_SAFEGUARDS.md`.
 
 ## Layer 9: AI analysis
 
@@ -194,6 +207,8 @@ AI responsibilities may include:
 * natural-language interface
 
 Model and prompt versions used in consequential analysis should be recorded. AI forecast value must eventually be measured against transparent baselines.
+
+For formal AI forecasts, preserve model/configuration, prompt/template, tool/retrieval policy, structured input/evidence snapshots, run-attempt provenance and any human override. Private chain-of-thought is not a required scientific artifact.
 
 ## Layer 10: presentation and decision support
 
