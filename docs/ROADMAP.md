@@ -158,11 +158,19 @@ Promotion to experimental does not imply production decision authority.
 
 ## Gate 6A: independent source-family expansion
 
-Status: future, but research planning may begin after the current evidence bottleneck is controlled.
+Status: future. Research planning exists, but no new source integration is currently authorized.
 
-Priority is diversity of evidence families rather than adding many correlated news feeds.
+Priority is diversity of evidence-generation mechanisms rather than adding many provider names or correlated news feeds.
 
-Candidate families may include:
+Current planning documents:
+
+* `docs/MULTI_SOURCE_STRATEGY.md`
+* `docs/SOURCE_FAMILY_RESEARCH_2026_09.md`
+* `docs/GATE6A_SOURCE_ADMISSION.md`
+
+The current research recommendation for a first future expansion wave is to study BIS financial/monetary statistics, EIA energy statistics and ILOSTAT labor statistics as three materially different source families after Gate 6A is explicitly activated. This order is planning guidance only.
+
+Candidate families include:
 
 * official macroeconomic statistics
 * labor-market data
@@ -178,7 +186,7 @@ Candidate families may include:
 * technology-adoption signals
 * news/media attention as one observation family
 
-Each family must pass its own provenance, time-semantics, revision and historical-continuity review.
+Each family must pass its own access/license, provenance, time-semantics, revision/vintage, historical-continuity, measurement and upstream-lineage review. Provider diversity must not be counted as evidence independence when the same upstream series or documentary sources are reused.
 
 ## Gate 6B: interpretable state representation
 
