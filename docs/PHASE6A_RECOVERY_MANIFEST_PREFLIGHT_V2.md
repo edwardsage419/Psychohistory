@@ -92,21 +92,22 @@ Allocated-year coverage:
 
 ## Trust sequence
 
-Do not confuse file-byte hashes with canonical JSON object digests.
+Do not confuse file-byte hashes with canonical JSON object digests, and do not let mutable current code redefine the frozen context contract silently.
 
 Use this sequence:
 
 1. Authenticate `studies/gkg-semantics-v1/sample.json` against the frozen sample SHA from `frozen-sample-reference.json`.
-2. Read the raw bytes of `evidence.json` and `phase6a1-triage.json`.
-3. Verify their byte SHA-256 values against the independently accepted `assessment-manifest.json` artifact entries.
-4. Parse the authenticated bytes.
-5. Compute canonical object digests with the accepted `gkg_semantics.digest()` helper.
-6. Pass those canonical digests to `phase6a1_recovery.resolve()` as `base_root` and `delta_root`.
-7. Recompute evidence sufficiency using the current corrected implementation and version `1.0.1`.
-8. Verify the resulting identity and sufficiency counts against the independently accepted correction contract.
-9. Join the human identity layer only after verifying its accepted Git object and frozen metadata.
-10. Derive tiers, ranks, coverage, and first-batch membership from the authenticated current view.
-11. Only after derivation compare with the V2 oracle.
+2. Verify `studies/gkg-semantics-v1/preregistration.json`, Phase 6A protocol, Phase 6A.1 protocol, `gkg_semantics.py`, `retrieve_gkg_semantics.py`, `gkg_recovery.py`, and `phase6a1_recovery.py` against the current `context-sufficiency-correction.json` bindings.
+3. Read the raw bytes of `evidence.json` and `phase6a1-triage.json`.
+4. Verify their byte SHA-256 values against the independently accepted `assessment-manifest.json` artifact entries.
+5. Parse the authenticated bytes.
+6. Compute canonical object digests with the pinned `gkg_semantics.digest()` helper.
+7. Pass those canonical digests to `phase6a1_recovery.resolve()` as `base_root` and `delta_root`.
+8. Recompute evidence sufficiency using version `1.0.1`.
+9. Verify the resulting identity and sufficiency counts against the independently accepted correction contract.
+10. Join the human identity layer only after verifying its accepted Git object and frozen metadata.
+11. Derive tiers, ranks, coverage, and first-batch membership from the authenticated current view.
+12. Only after derivation compare with the V2 oracle.
 
 A freshly computed digest of an unauthenticated candidate file is not an external trust root.
 
@@ -129,7 +130,7 @@ Apply exactly:
 5. Otherwise a cell with no remaining review-ready deficit: Tier D.
 6. Otherwise machine `identity_confirmed` with E1: Tier B.
 7. Otherwise machine `identity_probable_manual_review_required`: Tier B.
-8. Otherwise unresolved with an explicit URI-equivalent recovered/canonical locator under accepted `gkg_recovery.uri()` semantics: Tier B.
+8. Otherwise unresolved with an explicit URI-equivalent recovered/canonical locator under the pinned `gkg_recovery.uri()` semantics: Tier B.
 9. Otherwise deficient-cell unresolved: Tier C.
 10. Residual non-review-ready case: Tier D.
 
@@ -158,12 +159,24 @@ For non-review-ready rows:
    * mismatch
    * unresolved
 4. retained non-empty `content_sha256` before absent
-5. accepted retrieval-method hierarchy where applicable
+5. accepted retrieval-method rank
 6. frozen order
 
 No weighted score is allowed.
 
-If a method cannot be deterministically mapped without inventing a new scientific rule, stop and escalate rather than guess.
+Normalize the accepted Phase 6A and Phase 6A.1 method vocabulary as follows:
+
+* rank 0: `original_publisher`
+* rank 1: `same_path_https_candidate`, `canonical_publisher`
+* rank 2: `wayback_availability_discovery`
+* rank 3: `dated_wayback_capture`
+* rank 4: `unavailable` or no successful evidence method
+
+`canonical_publisher` was introduced by the accepted Phase 6A.1 canonical-policy path and is already treated as same-publisher E3-capable evidence when reviewable. Ranking it with `same_path_https_candidate` is a deterministic method-family normalization only. It does not change identity or evidence sufficiency.
+
+This clarification is necessary because current E1 case `61c7c1dd513d1d62021d93228f909aef8a2d961f3e850dca97c21ac2b45a3642` carries `retrieval_method=canonical_publisher`; the manifest must not falsely stop on an already accepted method.
+
+If a method lies outside the accepted Phase 6A/6A.1 vocabulary above, stop and escalate rather than inventing a new scientific rule.
 
 ## Current exact review-ready set
 
@@ -226,14 +239,17 @@ The canonical output must exclude wall-clock generation timestamps, random IDs, 
 
 ## Recovery method vocabulary
 
-The manifest may describe only frozen protocol-permitted method families:
+The manifest may describe only accepted method families:
 
 * `original_publisher`
 * `same_path_https_candidate` when exact applicability exists
+* `canonical_publisher` only when an exact same-publisher canonical/final locator already exists in accepted evidence/protocol provenance; never guess the path
 * `wayback_availability_discovery`
 * `dated_wayback_capture` after exact valid locator discovery
 
 `unavailable` is a state.
+
+The deferred Phase 6A `canonical_publisher_archive` method remains out of scope and must not be confused with Phase 6A.1 `canonical_publisher`.
 
 No broad search, guessed publisher/archive identity, unrelated result substitution, or syndicated replacement is allowed.
 
@@ -245,6 +261,7 @@ Fail closed unless:
 
 * exactly 120 frozen rows and 120 unique IDs
 * sample/hash/reference bindings match
+* pinned preregistration/protocol/extractor/recovery dependencies match the correction contract
 * identity counts are 6/15/7/92
 * sufficiency is E0=114, E1=3, E2=0, E3=3
 * exact E1/E3 sets match the V2 oracle
@@ -255,6 +272,7 @@ Fail closed unless:
 * HIR-11/HIR-15 remain Tier A plus excluded
 * all mismatches and human DIFFERENT cases are promotion-excluded
 * human INSUFFICIENT cases are Tier D unless no tier is possible because a future independently obtained E2/E3 supersedes current state
+* the current E1 `canonical_publisher` method maps to rank 1 without a false stop
 * first batch membership matches the derived ten-case set under unchanged inputs
 * human SAME never creates E2/E3
 * frozen machine/human artifacts remain byte unchanged
@@ -262,9 +280,9 @@ Fail closed unless:
 
 ## Stop conditions
 
-Stop if frozen membership, authenticated machine inputs, corrected sufficiency counts, human counts, coverage, or V2 oracle comparison cannot be reconciled without changing accepted scientific semantics.
+Stop if frozen membership, authenticated machine inputs, pinned semantic dependencies, corrected sufficiency counts, human counts, coverage, or V2 oracle comparison cannot be reconciled without changing accepted scientific semantics.
 
-Stop if deterministic ranking requires a new scientific criterion.
+Stop if deterministic ranking requires a new scientific criterion or encounters a method outside the accepted Phase 6A/6A.1 vocabulary.
 
 Stop if implementation would modify frozen evidence or human-review artifacts.
 
