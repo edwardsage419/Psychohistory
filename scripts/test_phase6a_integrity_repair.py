@@ -10,7 +10,9 @@ STUDY=ROOT/'studies/gkg-semantics-v2'
 
 class Phase6ARepairIntegrity(unittest.TestCase):
     def git_blob(self,path):
-        return subprocess.check_output(['git','hash-object',path],cwd=ROOT,text=True).strip()
+        # Repository code identity is LF-stable across Windows/Linux checkouts.
+        payload=(ROOT/path).read_bytes().replace(b'\r\n',b'\n')
+        return subprocess.check_output(['git','hash-object','--stdin'],cwd=ROOT,input=payload).decode().strip()
 
     def test_historical_manifest_artifacts_remain_bound(self):
         manifest=json.loads((STUDY/'assessment-manifest.json').read_text(encoding='utf-8-sig'))
