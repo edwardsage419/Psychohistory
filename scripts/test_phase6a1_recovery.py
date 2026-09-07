@@ -55,10 +55,12 @@ class TriageTests(unittest.TestCase):
         with self.assertRaises(s.Invalid):t.resolve(base,delta,base_root=s.digest(base),delta_root=root)
     def test_current_frozen_view_recomputes_corrected_sufficiency(self):
         directory=ROOT/'studies/gkg-semantics-v2'
-        base=json.loads((directory/'evidence.json').read_text(encoding='utf-8'))
-        delta=json.loads((directory/'phase6a1-triage.json').read_text(encoding='utf-8'))
-        manifest=json.loads((directory/'assessment-manifest.json').read_text(encoding='utf-8'))
-        current=t.resolve(base,delta,base_root=manifest['artifacts']['evidence.json'],delta_root=manifest['artifacts']['phase6a1-triage.json'])
+        manifest=json.loads((directory/'assessment-manifest.json').read_text(encoding='utf-8-sig'))
+        base_bytes=(directory/'evidence.json').read_bytes();delta_bytes=(directory/'phase6a1-triage.json').read_bytes()
+        self.assertEqual(s.sha(base_bytes),manifest['artifacts']['evidence.json'])
+        self.assertEqual(s.sha(delta_bytes),manifest['artifacts']['phase6a1-triage.json'])
+        base=json.loads(base_bytes);delta=json.loads(delta_bytes)
+        current=t.resolve(base,delta,base_root=s.digest(base),delta_root=s.digest(delta))
         self.assertEqual(len(current),120)
         self.assertEqual(Counter(e['identity_status'] for e in current),Counter({'identity_unresolved':92,'identity_probable_manual_review_required':15,'identity_mismatch':7,'identity_confirmed':6}))
         self.assertEqual(Counter(e['evidence_sufficiency'] for e in current),Counter({'E0':114,'E1':3,'E3':3}))
