@@ -56,7 +56,7 @@ Current execution uses the V2 preparation artifacts and exact task contract in `
 
 After any later explicitly authorized bounded recovery batch, governance must reassess whether another batch can materially change the scientific decision. Recovery is not an open-ended requirement to rescue GKG.
 
-## active development model
+## Active development model
 
 The active development workflow is GPT-led project governance and design with bounded Codex execution under `AGENTS.md`.
 
