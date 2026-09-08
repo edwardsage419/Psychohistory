@@ -86,7 +86,7 @@ The full invariant set is in `SCIENTIFIC_INVARIANTS.md`.
 * `scripts/`: ingestion, validation, replay, indicator and recovery code plus offline tests
 * `studies/`: immutable or append-only study artifacts and evidence
 * `docs/`: architecture, protocols, reports, decisions, governance and audits
-* `.github/workflows/`: CI and read-only live source validation
+* `.github/workflows/`: offline CI for pull requests and pushes to `main`
 
 The current repository no longer contains an active product frontend. Presentation work is deferred until the research foundation justifies it.
 
