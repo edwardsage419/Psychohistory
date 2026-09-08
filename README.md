@@ -56,7 +56,7 @@ Current execution uses the V2 preparation artifacts and exact task contract in `
 
 After any later explicitly authorized bounded recovery batch, governance must reassess whether another batch can materially change the scientific decision. Recovery is not an open-ended requirement to rescue GKG.
 
-## Active development model
+## active development model
 
 The active development workflow is GPT-led project governance and design with bounded Codex execution under `AGENTS.md`.
 
@@ -86,7 +86,7 @@ The full invariant set is in `SCIENTIFIC_INVARIANTS.md`.
 * `scripts/`: ingestion, validation, replay, indicator and recovery code plus offline tests
 * `studies/`: immutable or append-only study artifacts and evidence
 * `docs/`: architecture, protocols, reports, decisions, governance and audits
-* `.github/workflows/`: CI and read-only live source validation
+* `.github/workflows/`: offline CI for pull requests and pushes to `main`
 
 The current repository no longer contains an active product frontend. Presentation work is deferred until the research foundation justifies it.
 
