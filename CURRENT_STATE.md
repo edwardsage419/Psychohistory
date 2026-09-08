@@ -62,12 +62,12 @@ The retired V0.2 frontend, static dashboard data, GDELT DOC updater script and s
 The intended automation posture is:
 
 * offline tests on pull requests and pushes to `main`
-* read-only live GKG integration validation by manual dispatch only
-* no scheduled workflow that commits transient monitoring data directly to authoritative `main`
+* no standing live-source workflow is required by the current Gate 3A task
+* no workflow commits transient monitoring data directly to authoritative `main`
 
-The daily schedule for the live GKG validator was removed on 2026-09-08 because transient latest-batch monitoring does not advance the current frozen historical-evidence gate and repeated external-network failures create operational noise. The validator and manual dispatch remain available for explicitly authorized integration checks.
+The live `Validate GKG Source` workflow was retired on 2026-09-08 after an Actions audit. It validates only the latest upstream GKG batch and does not advance the frozen historical-evidence gate or the current deterministic manifest task. Its network dependence also created operational noise. `scripts/validate_gkg.py` remains preserved as historical and reusable integration tooling and may be run explicitly outside the standing Actions set if a future authorized source-admission or production-ingestion task requires current live validation.
 
-The live GKG validator is constrained to an HTTPS-only GDELT acquisition boundary with provider-preserving redirects. Evidence URI comparison also preserves non-default ports while retaining the already accepted normal HTTP-to-HTTPS/default-port equivalence. These transport/identity hardenings do not rewrite accepted historical evidence.
+The preserved GKG validator code is constrained to an HTTPS-only GDELT acquisition boundary with provider-preserving redirects. Evidence URI comparison also preserves non-default ports while retaining the already accepted normal HTTP-to-HTTPS/default-port equivalence. These transport and identity hardenings do not rewrite accepted historical evidence.
 
 ## Current gate
 
