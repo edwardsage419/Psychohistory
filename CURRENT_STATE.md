@@ -1,6 +1,16 @@
 # Psychohistory Current State
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
+
+## Project status
+
+Status: `PAUSED`.
+
+Active Psychohistory development and research execution were paused by owner decision on 2026-09-09 as a strategic resource-allocation decision. This pause does not alter accepted scientific evidence, frozen samples, machine identity states, human adjudication, evidence-sufficiency classifications, protocols, invariants, or provenance.
+
+While status remains `PAUSED`, no task described in this file, `docs/NEXT_ACCEPTED_TASK.md`, a roadmap, phase report, issue, or prior chat is authorized for execution solely because it is documented. Substantive work requires an explicit owner reactivation decision first.
+
+The pause decision and reactivation procedure are recorded in `docs/PROJECT_PAUSE.md`.
 
 ## Authority
 
@@ -16,7 +26,7 @@ For project status, prefer evidence in this order:
 
 If this file conflicts with Git evidence, Git evidence wins and this file must be corrected.
 
-Owner development decision as of 2026-09-07: active project governance and design are GPT-led and bounded implementation is performed with Codex. The earlier Claude-era product direction is retired and is not an architectural authority unless a specific decision has independently entered the accepted repository evidence/governance chain.
+Owner development decision as of 2026-09-07: active project governance and design were GPT-led and bounded implementation was performed with Codex before the project pause. The earlier Claude-era product direction is retired and is not an architectural authority unless a specific decision has independently entered the accepted repository evidence/governance chain.
 
 ## Project objective
 
@@ -69,13 +79,13 @@ The live `Validate GKG Source` workflow was retired on 2026-09-08 after an Actio
 
 The preserved GKG validator code is constrained to an HTTPS-only GDELT acquisition boundary with provider-preserving redirects. Evidence URI comparison also preserves non-default ports while retaining the already accepted normal HTTP-to-HTTPS/default-port equivalence. These transport and identity hardenings do not rewrite accepted historical evidence.
 
-## Current gate
+## Current gate at pause
 
-Primary current gate: Gate 3A, historical document identity and evidence sufficiency for the GKG candidate.
+Primary scientific gate at the pause point: Gate 3A, historical document identity and evidence sufficiency for the GKG candidate.
 
-The immediate bottleneck is objective historical document identity and review-ready context coverage across the frozen 120-case sample. The 22-case identity review is complete, but human `SAME_ARTICLE` judgments remain separate provenance and do not satisfy machine evidence-sufficiency requirements by themselves.
+The immediate bottleneck at the pause point was objective historical document identity and review-ready context coverage across the frozen 120-case sample. The 22-case identity review is complete, but human `SAME_ARTICLE` judgments remain separate provenance and do not satisfy machine evidence-sufficiency requirements by themselves.
 
-Production forecast implementation is not the current bottleneck.
+Production forecast implementation was not the current bottleneck.
 
 ## Current machine identity state
 
@@ -142,11 +152,13 @@ Before any GKG token can enter Gate 5 experimental historical-indicator promotio
 
 Reaching the current readiness threshold may authorize a later independent semantic-review task. It does not by itself authorize indicator promotion.
 
-## Current recovery-manifest task
+## Frozen recovery-manifest task
 
-The current accepted task is `docs/NEXT_ACCEPTED_TASK.md`.
+At the pause point, the accepted next task was `docs/NEXT_ACCEPTED_TASK.md`.
 
-Execution must use evidence-sufficiency `1.0.1`, review-ready E2/E3 coverage, and the current V2 preparation artifacts:
+Execution is suspended while project status is `PAUSED`. The task contract is preserved unchanged as a recovery point and must not be executed unless the owner explicitly reactivates Psychohistory and confirms that it remains the correct next task.
+
+If reactivated without a superseding accepted decision, execution must use evidence-sufficiency `1.0.1`, review-ready E2/E3 coverage, and the current V2 preparation artifacts:
 
 * `docs/PHASE6A_RECOVERY_MANIFEST_PREFLIGHT_V2.md`
 * `studies/gkg-semantics-v2/recovery-manifest-expected-baseline-v2.json`
@@ -186,7 +198,7 @@ LLMs must not satisfy a protocol requirement for genuine human review.
 
 ## Blocked work
 
-Until the applicable evidence gates are satisfied, do not begin or promote:
+Until the project is explicitly reactivated and the applicable evidence gates are satisfied, do not begin or promote:
 
 * production forecasting
 * production composite-state construction
@@ -195,17 +207,23 @@ Until the applicable evidence gates are satisfied, do not begin or promote:
 * historical backtests that treat unresolved measurement semantics as ground truth
 * independent semantic review before the frozen review-ready coverage threshold is met
 
-## Next recommended actions
+The project pause additionally blocks execution of the frozen recovery-manifest task and any new evidence-recovery batch until explicit reactivation.
 
-1. Generate the deterministic recovery-target manifest over the complete frozen 120-case sample using the corrected E2/E3 review-ready definition and pinned semantic dependencies.
-2. Preserve all historical evidence artifacts and human identity judgments; do not rewrite the frozen sample or machine identity states.
-3. Prioritize recovery targets according to `docs/NEXT_ACCEPTED_TASK.md`, including the 13 human `SAME_ARTICLE` cases where their deficient cells justify Tier A.
-4. Preserve `DIFFERENT_ARTICLE`, failed attempts, unresolved evidence and machine mismatches as visible provenance; do not replace frozen cases with substitute articles.
-5. After explicit authorization for a bounded network-recovery batch, recompute review-ready coverage mechanically and reassess recovery viability before authorizing another batch.
-6. Begin independent semantic review only after every token reaches at least 24 review-ready E2/E3 contexts and every allocated year reaches at least 4.
-7. Before any Gate 5 promotion decision, complete the selection/missingness guard and reassess cross-year semantic stability.
+## Reactivation path
 
-## Model routing for immediate work
+There are no active development actions while project status is `PAUSED`.
+
+Before substantive work resumes:
+
+1. Record an explicit owner reactivation decision.
+2. Review `docs/PROJECT_PAUSE.md` and reassess the project against material changes in AI, forecasting, measurement science, data availability, competition, and intended product value since 2026-09-09.
+3. Revalidate this repository state and immutable evidence against Git history.
+4. Decide explicitly whether `docs/NEXT_ACCEPTED_TASK.md` remains the correct next task.
+5. If it remains correct, generate the deterministic recovery-target manifest over the complete frozen 120-case sample using the corrected E2/E3 review-ready definition and pinned semantic dependencies.
+6. Preserve all historical evidence artifacts and human identity judgments; do not rewrite the frozen sample or machine identity states.
+7. Continue only through separately authorized bounded tasks and the existing scientific gates.
+
+## Model routing if reactivated
 
 * deterministic coverage/target-manifest generation: L1-L2, Terra Medium/High
 * bounded archive/retrieval engineering under the accepted protocol: L2, Terra High
@@ -216,17 +234,20 @@ Do not use stronger models to compensate for missing historical evidence or miss
 
 ## Startup procedure
 
-A new GPT or Codex session continuing Psychohistory should begin with:
+A new GPT or Codex session inspecting or considering continuation of Psychohistory should begin with:
 
 1. `AGENTS.md`
 2. `CURRENT_STATE.md`
-3. `SCIENTIFIC_INVARIANTS.md`
-4. `docs/DEVELOPMENT_GOVERNANCE.md`
-5. `docs/NEXT_ACCEPTED_TASK.md`
-6. only the phase reports, decisions, code and tests relevant to the bounded task
+3. `docs/PROJECT_PAUSE.md`
+4. `SCIENTIFIC_INVARIANTS.md`
+5. `docs/DEVELOPMENT_GOVERNANCE.md`
+6. `docs/NEXT_ACCEPTED_TASK.md` only after explicit owner reactivation
+7. only the phase reports, decisions, code and tests relevant to the bounded task
+
+If project status is still `PAUSED`, stop before implementation or research execution unless the owner has explicitly requested reactivation. Inspection, summarization, comparison, and reuse analysis do not themselves constitute reactivation.
 
 Do not scan the whole repository unless the task genuinely requires repository-wide review.
 
 ## Update rule
 
-Update this file only when project state materially changes: accepted research enters `main`, a gate changes, a major evidence blocker is resolved/discovered, a human dependency changes, the next authoritative priority changes, or an operational change materially affects how future sessions interpret or execute the project.
+Update this file only when project state materially changes: accepted research enters `main`, a gate changes, a major evidence blocker is resolved/discovered, a human dependency changes, the next authoritative priority changes, the project is paused/reactivated, or an operational change materially affects how future sessions interpret or execute the project.
