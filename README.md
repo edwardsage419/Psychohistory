@@ -1,23 +1,28 @@
 # Psychohistory
 
+**Project status: `PAUSED`**
+
+Active development was paused by owner decision on 2026-09-09. The pause is a strategic resource-allocation decision and does not change accepted scientific results, frozen evidence, protocols, or provenance. No task in this repository is authorized for execution while the project remains paused. See `docs/PROJECT_PAUSE.md` and `CURRENT_STATE.md` before any substantive work.
+
 Psychohistory is a long-running, falsifiable evidence and forecasting research project. Its intended chain is:
 
 public observations -> normalized observations -> indicators -> state/trends -> probabilistic forecasts -> outcome resolution -> evaluation/calibration -> decision support
 
-The project is currently still in the measurement and historical-evidence stage. Production forecasting, production composite state, calibration claims and semantic promotion are blocked until the applicable scientific gates are satisfied.
+At the pause point, the project remained in the measurement and historical-evidence stage. Production forecasting, production composite state, calibration claims and semantic promotion were blocked until the applicable scientific gates were satisfied.
 
 GKG is one experimental media-attention candidate, not the project objective. Failure, restriction or pause of that candidate does not constitute failure of Psychohistory. The long-term objective requires heterogeneous evidence families and falsifiable forecast evaluation.
 
 ## Start here
 
-For substantial work, read in this order:
+For substantial inspection or any future reactivation review, read in this order:
 
 1. `AGENTS.md`
 2. `CURRENT_STATE.md`
-3. `SCIENTIFIC_INVARIANTS.md`
-4. `docs/DEVELOPMENT_GOVERNANCE.md`
-5. `docs/NEXT_ACCEPTED_TASK.md`
-6. Only the files required for the bounded task
+3. `docs/PROJECT_PAUSE.md`
+4. `SCIENTIFIC_INVARIANTS.md`
+5. `docs/DEVELOPMENT_GOVERNANCE.md`
+6. `docs/NEXT_ACCEPTED_TASK.md` only if reactivation has been explicitly authorized
+7. Only the files required for the bounded task
 
 Git history and immutable evidence artifacts are the system of record. Chat summaries are secondary context.
 
@@ -25,7 +30,7 @@ Git history and immutable evidence artifacts are the system of record. Chat summ
 
 Authoritative branch: `main`.
 
-Accepted research currently includes:
+Accepted research at the pause point includes:
 
 * Phase 1-4 data and measurement foundation
 * Phase 5 preregistered semantic audit and frozen 120-reference sample
@@ -48,21 +53,23 @@ Current correction artifacts:
 
 The older confirmed-context coverage audit and original manifest preflight/oracle remain historical provenance for the pre-correction state and are superseded for current planning.
 
-## Current task
+## Frozen next task
 
-The current accepted next task is to generate a deterministic recovery-target manifest over the complete frozen 120-reference sample and prepare the next bounded recovery batch. The frozen sample, document-identity contract and human/machine provenance separation must remain unchanged.
+At the time of pause, the accepted next task was to generate a deterministic recovery-target manifest over the complete frozen 120-reference sample and prepare the next bounded recovery batch. The frozen sample, document-identity contract and human/machine provenance separation must remain unchanged.
 
-Current execution uses the V2 preparation artifacts and exact task contract in `docs/NEXT_ACCEPTED_TASK.md`. Network recovery is not authorized by the manifest-generation task.
+That task is preserved in `docs/NEXT_ACCEPTED_TASK.md` as a recovery point. It is not currently authorized for execution. A new explicit owner reactivation decision is required before it or any replacement task begins.
 
-After any later explicitly authorized bounded recovery batch, governance must reassess whether another batch can materially change the scientific decision. Recovery is not an open-ended requirement to rescue GKG.
+If reactivated without a superseding accepted decision, execution would use the V2 preparation artifacts and exact task contract in `docs/NEXT_ACCEPTED_TASK.md`. Network recovery is not authorized by the manifest-generation task.
 
-## Active development model
+After any future explicitly authorized bounded recovery batch, governance must reassess whether another batch can materially change the scientific decision. Recovery is not an open-ended requirement to rescue GKG.
 
-The active development workflow is GPT-led project governance and design with bounded Codex execution under `AGENTS.md`.
+## Development model at pause
+
+Before the pause, the active development workflow was GPT-led project governance and design with bounded Codex execution under `AGENTS.md`. This workflow should not be treated as authorization to resume work while project status is `PAUSED`.
 
 The earlier V0.2 application and its GDELT DOC 2.0 updater have been retired from the active tree. Earlier assistant-specific product plans, including the abandoned Claude-era development direction, are not architectural authority. Git history preserves the retired implementation for provenance and historical inspection.
 
-Do not restore the V0.2 dashboard, seven-topic taxonomy, DOC updater or scheduled direct writes to `main` unless a separately approved historical investigation requires them.
+Do not restore the V0.2 dashboard, seven-topic taxonomy, DOC updater or scheduled direct writes to `main` unless a separately approved future reactivation decision requires them.
 
 ## Scientific boundaries
 
@@ -88,7 +95,7 @@ The full invariant set is in `SCIENTIFIC_INVARIANTS.md`.
 * `docs/`: architecture, protocols, reports, decisions, governance and audits
 * `.github/workflows/`: offline CI for pull requests and pushes to `main`
 
-The current repository no longer contains an active product frontend. Presentation work is deferred until the research foundation justifies it.
+The current repository no longer contains an active product frontend. Presentation work was deferred while the research foundation remained unresolved.
 
 ## Local verification
 
@@ -108,6 +115,6 @@ Normal offline tests do not require network access.
 
 ## Roadmap
 
-Development advances by evidence gates and candidate lifecycles rather than old phase numbering. See `docs/ROADMAP.md`, `docs/DEVELOPMENT_GOVERNANCE.md`, and `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
+Development, if reactivated, advances by evidence gates and candidate lifecycles rather than old phase numbering. See `docs/ROADMAP.md`, `docs/DEVELOPMENT_GOVERNANCE.md`, and `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
 
-The present bounded bottleneck is Gate 3A historical document identity and review-ready evidence sufficiency for the GKG candidate. The project does not need to force that candidate to succeed in order to preserve progress toward the wider multi-source forecasting objective.
+At the pause point, the bounded bottleneck was Gate 3A historical document identity and review-ready evidence sufficiency for the GKG candidate. The project did not need to force that candidate to succeed in order to preserve progress toward the wider multi-source forecasting objective.
