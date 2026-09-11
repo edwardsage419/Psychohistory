@@ -1,334 +1,396 @@
 # Next Accepted Task
 
-Last updated: 2026-09-07
+Last updated: 2026-09-11
+
+## Task name
+
+Forecast Trust Core v0.1 contracts and deterministic verifier.
 
 ## Goal
 
-Generate a deterministic recovery-target manifest over the complete frozen 120-case `gkg-semantics-v2` sample, then prepare the next bounded evidence-recovery batch without changing frozen sample membership, the accepted document-identity contract, human identity judgments, or semantic conclusions.
+Implement the minimum machine readable contracts and deterministic verification infrastructure required before Psychohistory can later create a genuine prospective Forecast Ledger Genesis.
 
-This task uses corrected evidence-sufficiency version `1.0.1` and treats E2/E3 as review-ready context.
+This task creates no real forecast, performs no network retrieval, resolves no outcome, calculates no performance score, and changes no accepted historical GKG evidence.
+
+The purpose is to make future issuance fail closed unless target semantics, resolution semantics, point in time evidence, method identity, run provenance, and immutable forecast content are bound coherently.
+
+## Strategic asset strengthened
+
+Primary assets:
+
+1. provenance integrity
+2. prospective longitudinal readiness
+3. trust and comparison infrastructure
+4. low cost durability
 
 ## Classification
 
-Risk: L2 for deterministic target selection and bounded recovery preparation under accepted scientific semantics.
+Risk: L2 for deterministic implementation under already accepted forecast architecture and schema requirements.
 
-Recommended Codex model: GPT-5.6 Terra High.
+Recommended Codex model: GPT 5.6 Terra High.
 
-Escalate to Sol High only if execution exposes a new ambiguity that would alter identity semantics, evidence-sufficiency meaning, trust boundaries, sample membership, readiness criteria, or deterministic ranking rules.
+Escalate to Sol High before implementation continues if execution exposes a new semantic choice that can alter target meaning, resolution meaning, point in time admissibility, trusted root semantics, forecast immutability, correction semantics, or future scoring eligibility.
 
 Astra is not authorized for routine execution.
 
 ## Authoritative inputs
 
-Read only what is needed, in this order:
+Read only what is required, in this order:
 
 1. `AGENTS.md`
 2. `CURRENT_STATE.md`
-3. `SCIENTIFIC_INVARIANTS.md`
-4. `docs/DEVELOPMENT_GOVERNANCE.md`
-5. `studies/gkg-semantics-v2/frozen-sample-reference.json`
-6. `studies/gkg-semantics-v1/sample.json`
-7. `studies/gkg-semantics-v1/preregistration.json`
-8. `studies/gkg-semantics-v2/phase6a-protocol.json`
-9. `studies/gkg-semantics-v2/assessment-manifest.json`
-10. `studies/gkg-semantics-v2/evidence.json`
-11. `studies/gkg-semantics-v2/phase6a1-protocol.json`
-12. `studies/gkg-semantics-v2/phase6a1-triage.json`
-13. `studies/gkg-semantics-v2/context-sufficiency-correction.json`
-14. `studies/gkg-semantics-v2/human-identity-review-results.csv`
-15. `docs/PHASE6A1_CONTEXT_SUFFICIENCY_CORRECTION.md`
-16. `scripts/gkg_semantics.py`
-17. `scripts/retrieve_gkg_semantics.py`
-18. `scripts/gkg_recovery.py`
-19. `scripts/phase6a1_recovery.py`
-
-The correction contract explicitly pins the Phase 5 cue/extractor semantics and the current recovery implementations because evidence-sufficiency `1.0.1` depends on them. Do not substitute a later unpinned extractor or cue vocabulary while recomputing the current state.
-
-The historical `phase6a1-availability.json`, `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`, `docs/PHASE_6A1_REPORT.md`, and `docs/PHASE_5_6A1_ACCEPTANCE_REVIEW.md` preserve pre-correction state. Their old E3 counts and next-step wording are historical provenance and do not override current correction artifacts or `CURRENT_STATE.md`.
-
-Do not scan unrelated repository history or future-gate code unless a concrete preservation check requires it.
-
-## Current execution aids
-
-Only after independently authenticating and recomputing the authoritative current state, read:
-
-* `docs/PHASE6A_RECOVERY_MANIFEST_PREFLIGHT_V2.md`
-* `studies/gkg-semantics-v2/recovery-manifest-expected-baseline-v2.json`
-
-These are regression aids, not evidence authorities.
-
-The following files remain historical preparation records and are superseded for current execution:
-
-* `docs/PHASE6A_RECOVERY_MANIFEST_PREFLIGHT.md`
-* `studies/gkg-semantics-v2/recovery-manifest-expected-baseline.json`
-* `docs/CODEX_EXECUTION_READINESS_AUDIT.md`
-
-Do not force current results to match those historical pre-correction counts.
-
-## Trust-root and overlay sequence
-
-Do not confuse raw-file SHA-256 with the canonical JSON object digest expected by `phase6a1_recovery.resolve()`.
-
-Use this sequence exactly:
-
-1. Authenticate `studies/gkg-semantics-v1/sample.json` against the frozen sample SHA-256 recorded in `frozen-sample-reference.json`; verify 120 unique cases, no replacement/resampling, and the accepted case-ID set hash.
-2. Verify the current `preregistration.json`, Phase 6A protocol, Phase 6A.1 protocol, and four semantic/implementation dependencies against `context-sufficiency-correction.json` before recomputing evidence sufficiency.
-3. Read raw bytes for `evidence.json` and `phase6a1-triage.json`.
-4. Verify the byte SHA-256 of those files against the independently accepted artifact hashes in `assessment-manifest.json`.
-5. Parse the authenticated bytes.
-6. Compute canonical object digests with the pinned `gkg_semantics.digest()` helper.
-7. Call/reuse `phase6a1_recovery.resolve()` with those canonical object digests as `base_root` and `delta_root`.
-8. Recompute evidence sufficiency with current version `1.0.1` and verify the result against `context-sufficiency-correction.json`.
-9. Verify the human identity CSV against accepted Git object `6ea6884e73918f7f3d3a52c076885dc409f5aca7` before joining by `case_id`.
-10. Keep machine evidence, human identity review, and generated manifest artifacts separate.
-
-A digest computed from an unauthenticated candidate file is not an external trust root. Once file bytes or Git objects have been independently authenticated, computing the canonical object digest required by `resolve()` is valid transformation of authenticated input.
-
-## Frozen and corrected facts
-
-Frozen sample remains exactly 120 cases.
-
-Current machine identity counts remain:
-
-* `identity_confirmed`: 6
-* `identity_probable_manual_review_required`: 15
-* `identity_mismatch`: 7
-* `identity_unresolved`: 92
-
-Corrected evidence sufficiency version `1.0.1` is:
-
-* E0: 114
-* E1: 3
-* E2: 0
-* E3: 3
-
-Review-ready context means E2 or E3. Current review-ready count is 3.
-
-Current review-ready token coverage:
-
-* `PROTEST`: 0 / 24, deficit 24
-* `FOOD_SECURITY`: 2 / 24, deficit 22
-* `WB_2747_UNEMPLOYMENT`: 1 / 24, deficit 23
-
-Current lower-bound token deficit is 69 additional review-ready contexts, subject also to allocated-year minima.
-
-The model-assisted human identity review with final human adjudication contains:
-
-* 13 `SAME_ARTICLE`
-* 2 `DIFFERENT_ARTICLE`
-* 7 `INSUFFICIENT_EVIDENCE`
-
-This human layer is separate provenance. It is not independent/blinded semantic review and never creates E2 or E3.
-
-## Review-ready versus recovery target
-
-Rows in E2/E3 receive no recovery tier and no recovery rank.
-
-E1 means identity is confirmed but retained compact context remains insufficient for semantic review. E1 rows remain recovery candidates for additional objective context recovery.
-
-Recovery priority and promotion exclusion are independent dimensions.
-
-## Exact tier precedence
-
-Assign tiers after resolving the machine view, recomputing sufficiency, computing review-ready coverage, and joining human identity review.
-
-Apply exactly:
-
-1. If `review_ready == true` (E2 or E3), assign no recovery tier and no recovery rank.
-2. If human decision is `SAME_ARTICLE` and the allocated year cell has `year_cell_deficit > 0`, assign Tier A. This takes precedence over current machine mismatch for HIR-11 and HIR-15.
-3. Otherwise, if human decision is `INSUFFICIENT_EVIDENCE` or `DIFFERENT_ARTICLE`, assign Tier D.
-4. Otherwise, if current machine identity is `identity_mismatch`, assign Tier D.
-5. Otherwise, if the allocated year cell has no remaining review-ready deficit, assign Tier D.
-6. Otherwise, if machine identity is `identity_confirmed` with E1, assign Tier B.
-7. Otherwise, if machine identity is `identity_probable_manual_review_required`, assign Tier B.
-8. Otherwise, an `identity_unresolved` case may receive Tier B only when accepted resolved evidence contains an explicit URI-equivalent `recovered_url` or canonical URL under the pinned `gkg_recovery.uri()` semantics.
-9. Otherwise, a deficient-cell `identity_unresolved` case receives Tier C.
-10. Any residual non-review-ready case receives Tier D.
-
-Do not use title similarity, publication date, publisher reputation, semantic desirability, current accessibility, or later forecasting utility to alter tier membership.
-
-## Promotion exclusion
-
-Set `promotion_target_excluded = true` independently when either applies:
-
-* current machine identity is `identity_mismatch`
-* human decision is `DIFFERENT_ARTICLE`
-
-Tier assignment never clears this flag.
-
-Under unchanged current inputs the exclusion union contains seven cases. HIR-11 and HIR-15 remain Tier A plus promotion-excluded.
-
-## Deterministic recovery ordering
-
-Do not invent weighted scores.
-
-For non-review-ready cases, rank lexicographically by:
-
-1. tier A, B, C, D
-2. year-cell review-ready deficit descending
-3. machine state rank:
-   * `identity_confirmed` E1
-   * `identity_probable_manual_review_required`
-   * `identity_mismatch`
-   * `identity_unresolved`
-4. non-empty accepted `content_sha256` before absent
-5. accepted retrieval-method rank below
-6. frozen sample order
-
-Normalize the already accepted Phase 6A and Phase 6A.1 method vocabulary only for deterministic ordering:
-
-* rank 0: `original_publisher`
-* rank 1: `same_path_https_candidate` and `canonical_publisher`
-* rank 2: `wayback_availability_discovery`
-* rank 3: `dated_wayback_capture`
-* rank 4: `unavailable` or no successful evidence method
-
-`canonical_publisher` is an accepted Phase 6A.1 same-publisher locator method. It shares rank 1 with `same_path_https_candidate`; equal-rank cases fall through to frozen order. This normalization does not change evidence sufficiency, identity status, or promotion eligibility.
-
-If a current non-review-ready method is outside the accepted Phase 6A plus Phase 6A.1 vocabulary above, stop and escalate rather than inventing a new rank.
-
-## Fixed output footprint
-
-Create exactly:
-
-* `scripts/phase6a_recovery_manifest.py`
-* `scripts/test_phase6a_recovery_manifest.py`
-* `studies/gkg-semantics-v2/recovery-target-manifest.json`
-* `docs/PHASE6A_RECOVERY_TARGET_MANIFEST.md`
-
-Change a path only if a concrete repository constraint makes it impossible and report that constraint.
-
-## Canonical output
-
-The canonical manifest must contain all 120 cases in immutable frozen order.
-
-Every non-review-ready row receives a deterministic `recovery_rank`. Review-ready rows receive none.
-
-Minimum fields:
-
-* `frozen_order`
-* `case_id`, `token`, `year`, `cohort`, `source`, `original_url`
-* `machine_identity_status`
-* `evidence_sufficiency_version`
-* `evidence_sufficiency`
-* `review_ready`
-* human `review_id`, decision, confidence when present
-* year-cell review-ready count/minimum/deficit
-* token review-ready count/minimum/deficit
-* recovery tier and rank
-* promotion exclusion and reason
-* structured objective recoverability signals
-* structured rationale codes
-* allowed next recovery methods
-* immutable source/evidence provenance sufficient for replay
-
-Per-row provenance must preserve frozen source-row identity, accepted baseline evidence-row identity/digest, Phase 6A.1 delta identity/digest when overlaid, resolved evidence-row digest, and human review ID when present.
-
-Top-level bindings must identify the frozen sample, authenticated machine inputs, sufficiency correction contract, pinned semantic dependencies/current implementation identity, and human review artifact.
-
-Use repository canonical JSON serialization. Do not include wall-clock timestamps, random IDs, local paths, or environment-specific metadata in the canonical scientific output.
-
-## Allowed recovery methods
-
-The manifest may list only accepted method families:
-
-* `original_publisher`
-* `same_path_https_candidate` when an exact HTTPS equivalent is applicable
-* `canonical_publisher` only when an exact same-publisher canonical/final locator is already present in accepted evidence/protocol provenance; never guess a canonical path
-* `wayback_availability_discovery`
-* `dated_wayback_capture` only after an exact valid locator is discovered
-
-`unavailable` is a state, not a next recovery method.
-
-The Phase 6A protocol's deferred `canonical_publisher_archive` remains out of scope. It is distinct from the accepted Phase 6A.1 `canonical_publisher` method and may not be inferred from publisher naming or guessed paths.
-
-No broad search, syndicated substitution, guessed publisher/archive path, or unrelated-result substitution is allowed.
-
-This task performs no network recovery.
-
-## First bounded batch
-
-Define mechanically:
-
-`Tier A AND year_cell_review_ready_count == 0 AND promotion_target_excluded == false`
-
-Under unchanged current inputs the independently derived membership must match the ten-case set in the V2 oracle.
-
-Do not hard-code those IDs as the algorithm.
-
-The current count is 10 because the `FOOD_SECURITY` 2025 cell now has zero review-ready context after the sufficiency correction, so HIR-12 joins the historical nine-case batch.
-
-## Required validation
-
-Mechanically verify:
-
-* 120 rows and 120 unique frozen case IDs
-* frozen case-ID set hash exact
-* no replacement/resampling
-* machine identity 6/15/7/92
-* sufficiency E0=114/E1=3/E2=0/E3=3
-* exact E1 and E3 sets from the V2 oracle
-* review-ready count exactly 3
-* human counts 13/2/7
-* human judgments do not mutate machine identity or sufficiency
-* corrected review-ready token/year coverage exact
-* all 13 SAME cases are Tier A while their cells remain deficient
-* HIR-11/HIR-15 are Tier A plus promotion-excluded
-* all current mismatches and human DIFFERENT cases are promotion-excluded
-* human INSUFFICIENT cases remain Tier D under current non-review-ready state
-* three current E2/E3 review-ready cases have no recovery tier
-* current E1 cases remain visible recovery candidates
-* the E1 case whose current retrieval method is `canonical_publisher` maps deterministically without triggering a false stop
-* first bounded batch membership is exact ten under unchanged inputs
-* identical inputs produce byte-identical canonical output
-* frozen evidence, delta, protocols, preregistration, sample, and human-review artifacts remain byte unchanged
-
-Add mutation tests for duplicate cases, frozen metadata changes, trust-root mismatches, semantic-dependency drift, human-to-E2/E3 promotion, tier-precedence errors, exclusion removal, review-ready/E1 confusion, unsupported retrieval methods, and first-batch drift.
+3. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
+4. `SCIENTIFIC_INVARIANTS.md`
+5. `docs/DEVELOPMENT_GOVERNANCE.md`
+6. `docs/ARCHITECTURE.md`
+7. `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
+8. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
+9. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
+10. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
+11. existing repository schema and contract helpers only as implementation conventions require
+
+Do not scan GKG studies or historical recovery code unless a shared repository utility must be reused and the reason is documented.
 
 ## Scientific invariants
 
-Applicable invariants include I3, I4, I6, I8, I9, I11 and I12.
+At minimum, enforce the implications of:
 
-In particular:
+1. I1 No future information
+2. I2 Forecast immutability
+3. I3 Versioned semantics
+4. I4 Historical reproducibility
+5. I5 Independent outcome resolution
+6. I6 Evidence traceability
+7. I8 Explicit uncertainty
+8. I9 No silent historical rewrite
+9. I10 Evaluation integrity
+10. I12 Missing evidence cannot be reasoned into existence
 
-* no human judgment rewrites machine evidence
-* no missing context is inferred into existence
-* identity-confirmed E1 is not treated as review-ready
-* no frozen case is replaced by a convenient article
-* no semantic desirability or forecast usefulness enters target ranking
-* no current-page similarity alone confirms historical identity
-* changing the pinned cue/extractor semantics requires a new explicit version; it cannot silently alter current sufficiency
+## Scope
+
+### 1. Target definition contract
+
+Implement a versioned contract representing at least:
+
+1. `target_id`
+2. `target_version`
+3. forecast class
+4. formal semantics
+5. allowed outcome or category space
+6. geography or entity rule where applicable
+7. reference period and horizon rules
+8. target measurement or source rule
+9. vintage or revision rule where applicable
+10. ambiguity policy
+11. unresolved policy
+12. resolution deadline rule
+13. substantive content hash
+
+The first implementation may support binary and categorical or directional target classes. Continuous targets remain out of scope unless the existing accepted design can support them without introducing new semantics.
+
+### 2. Resolution rule contract
+
+Implement a versioned contract representing at least:
+
+1. `resolution_rule_id`
+2. version
+3. compatible target identities or compatibility contract
+4. source hierarchy
+5. source conflict policy
+6. evidence sufficiency rule
+7. allowed resolution states
+8. vintage selection rule where applicable
+9. resolution deadline
+10. ambiguity and unresolved handling
+11. substantive content hash
+
+The contract must permit explicit unresolved states. It must not silently coerce missing evidence into a resolved negative outcome.
+
+### 3. Point in time evidence snapshot contract
+
+Implement a contract representing or binding at least:
+
+1. snapshot ID
+2. information cutoff
+3. snapshot close or creation time
+4. deterministic member list
+5. source identity for each member
+6. observation, publication, availability, retrieval, or vintage time fields required by the member type
+7. transformation or definition version where derived
+8. content identity or source reference
+9. trusted upstream root or independent authentication reference where needed
+10. snapshot root
+
+The validator must enforce member admissibility against the information cutoff under explicit timestamp semantics.
+
+Do not guess availability when it is unknown. Unknown admissibility must fail issuance validation or remain an explicitly ineligible state under the accepted contract.
+
+### 4. Forecast method contract
+
+Implement a versioned method definition representing at least:
+
+1. method ID and version
+2. method family
+3. compatible forecast classes
+4. required inputs
+5. implementation identity
+6. fitted state reference where applicable
+7. model identity where applicable
+8. prompt or configuration identity where applicable
+9. retrieval and tool policy
+10. randomness and seed policy where applicable
+11. probability and post processing semantics
+12. limitations
+13. substantive content hash
+
+A method that requires fitted state must fail validation when that state is absent.
+
+### 5. Forecast run attempt contract
+
+Implement a record representing at least:
+
+1. attempt ID
+2. method identity
+3. start and end timestamps
+4. information cutoff
+5. input snapshot references
+6. run status
+7. failure or abort reason where applicable
+8. output reference if successful
+9. configuration or seed where applicable
+10. tool or evidence log reference where applicable
+
+Supported terminal states must include:
+
+1. `issued`
+2. `failed_pre_issue`
+3. `aborted_pre_issue`
+4. `invalid_pre_issue`
+
+Retries must require distinct attempt IDs.
+
+### 6. Issued forecast contract
+
+Implement the formal immutable issuance record representing at least:
+
+1. forecast ID
+2. issued timestamp
+3. information cutoff
+4. forecast class
+5. target ID, version, and hash
+6. horizon start and end
+7. geography or entity scope where applicable
+8. probability or categorical distribution
+9. method ID, version, and hash
+10. model or configuration identity where applicable
+11. evidence and feature snapshot roots as applicable
+12. resolution rule ID, version, and hash
+13. code identity where consequential
+14. run attempt reference
+15. substantive content hash
+16. lifecycle status
+
+Validation must enforce:
+
+1. `information_cutoff <= issued_at`
+2. valid probability semantics
+3. target and horizon compatibility
+4. exact trusted target, method, resolution, and snapshot bindings
+5. successful admissibility verification of the point in time snapshot
+6. valid issued run attempt reference
+7. prohibition of backdated issuance under the accepted issuance API or verifier boundary
+8. deterministic substantive content identity
+9. failure on substantive mutation
+
+### 7. Forecast correction contract
+
+Implement append only correction semantics representing at least:
+
+1. correction ID
+2. original forecast ID
+3. correction timestamp
+4. correction type
+5. reason
+6. affected fields
+7. authority or reviewer reference where applicable
+8. linked corrected metadata or replacement forecast where applicable
+9. future scoring consequence classification
+10. substantive content hash
+
+The original issuance must remain unchanged.
+
+Probability, target, or horizon changes cannot be accepted as ordinary metadata correction.
+
+## Trusted root rule
+
+A scientific object cannot authenticate its own upstream semantics merely by repeating a hash inside itself.
+
+The verifier must accept independently supplied trusted definitions or roots for consequential bindings where circular self authentication would otherwise occur.
+
+At minimum, issuance verification must compare the forecast bound target, resolution rule, method, and evidence snapshot identities against independently supplied or independently authenticated objects.
+
+A test must demonstrate that modifying an upstream object and resealing downstream hashes does not pass when the trusted external root remains unchanged.
+
+## Canonicalization and hashing
+
+Use one deterministic repository documented canonical JSON representation for new forecast trust objects.
+
+Requirements:
+
+1. UTF 8
+2. deterministic key ordering
+3. deterministic separators and newline policy
+4. no wall clock values injected by canonicalization
+5. no random identifiers generated inside validation
+6. substantive content hash excludes its own hash field
+7. hash coverage is explicit per object type
+8. repeated validation of identical bytes and trusted inputs produces identical results
+
+Use SHA 256 unless an existing repository invariant requires another accepted digest.
+
+Do not create a new cryptographic protocol.
+
+## Validation architecture
+
+Prefer small standard library Python modules consistent with the current repository.
+
+Separate:
+
+1. structural contract validation
+2. canonicalization and content identity
+3. cross object referential integrity
+4. point in time admissibility
+5. issuance verification
+6. correction verification
+
+Unknown required semantics must fail closed.
+
+Validation errors should be machine readable enough for future audit tooling.
+
+## Fixed output footprint
+
+Create exactly these new files unless a concrete repository constraint requires a documented deviation:
+
+1. `schemas/forecast-target.v1.schema.json`
+2. `schemas/forecast-resolution-rule.v1.schema.json`
+3. `schemas/forecast-method.v1.schema.json`
+4. `schemas/forecast-evidence-snapshot.v1.schema.json`
+5. `schemas/forecast-run-attempt.v1.schema.json`
+6. `schemas/forecast-issuance.v1.schema.json`
+7. `schemas/forecast-correction.v1.schema.json`
+8. `scripts/forecast_ledger_contracts.py`
+9. `scripts/verify_forecast_ledger.py`
+10. `scripts/test_forecast_ledger_contracts.py`
+11. `docs/FORECAST_LEDGER_CORE.md`
+
+Existing shared contract helpers may be changed only when necessary for clean reuse and only with regression tests proving existing contracts remain unchanged in meaning.
+
+Do not add a database, web server, workflow, frontend, or live model integration.
+
+## Required adversarial tests
+
+At minimum test rejection of:
+
+1. duplicate target, method, attempt, forecast, or correction IDs within a verification package where uniqueness is required
+2. invalid target version or changed target semantic hash
+3. incompatible target and resolution rule
+4. probability outside the allowed range
+5. categorical probabilities that do not satisfy the declared normalization tolerance
+6. invalid horizon
+7. `information_cutoff > issued_at`
+8. evidence member available after information cutoff
+9. unknown evidence availability required for issuance admissibility
+10. altered evidence snapshot membership
+11. changed method version or fitted state
+12. missing required fitted state
+13. run attempt with a non issued terminal state referenced by an issuance
+14. reused attempt ID for a retry
+15. substantive forecast mutation after issuance
+16. correction timestamp before or equal to issuance when later time is required
+17. probability, target, or horizon mutation disguised as metadata correction
+18. unknown referenced object
+19. independently trusted root mismatch
+20. resealed altered upstream object attempting circular self authentication
+21. nondeterministic canonical output
+22. unsupported required semantic value
+
+Map the applicable tests to the accepted FCT, PTI, RES, EVAL, and AI safeguard identifiers where those mappings already exist. Do not invent a new safeguard meaning merely to obtain a complete identifier list.
+
+## Positive fixtures
+
+Tests may create synthetic fixtures under temporary directories.
+
+Synthetic fixtures must be clearly labelled and must never be written into a real prospective ledger or presented as issued forecasts.
+
+No genuine Forecast Ledger Genesis record is created by this task.
+
+## Preservation requirements
+
+Before and after implementation, verify that this task does not modify:
+
+1. frozen GKG samples
+2. GKG evidence artifacts
+3. accepted human review artifacts
+4. accepted historical study outputs
+5. existing scientific invariants
+
+Existing offline tests must continue to pass.
 
 ## Acceptance criteria
 
-The task is accepted only if the complete offline test suite passes and all current corrected counts above are independently reproduced before comparing against the V2 oracle.
+Accept only if:
 
-No semantic review, semantic promotion, composite construction, forecasting, calibration, or backtesting begins.
+1. all seven new contracts are versioned and documented
+2. deterministic canonicalization and SHA 256 identities are implemented
+3. point in time admissibility fails closed
+4. cross object trusted binding is verified independently
+5. issuance mutation is detectable
+6. corrections are append only in semantics
+7. all required positive and adversarial tests pass
+8. the complete existing offline test suite passes
+9. repeated runs on identical synthetic fixtures are byte and result deterministic
+10. no real forecast or network action occurs
+11. no existing historical evidence is modified
+12. `docs/FORECAST_LEDGER_CORE.md` documents trust boundaries, object relationships, validation entry points, and the exact boundary before Genesis
 
 ## Stop conditions
 
 Stop and escalate to Sol High if:
 
-* frozen membership/authentication fails
-* machine identity cannot reconcile to 6/15/7/92
-* sufficiency cannot reconcile to 114/3/0/3 under version 1.0.1
-* a pinned preregistration/protocol/extractor/recovery dependency differs from the correction contract without an accepted version change
-* exact E1/E3 sets differ under unchanged authenticated inputs
-* review-ready coverage differs from the corrected V2 baseline
-* human counts do not reconcile to 13/2/7
-* a required trust root would be circular
-* current inputs and V2 oracle disagree without an explained stale-oracle cause
-* ranking requires a new scientific criterion
-* a recovery method outside the accepted Phase 6A/6A.1 vocabulary would need a new rank
-* a recovery method would violate frozen identity, archive-distance, provenance, or no-substitution rules
-* implementation would modify accepted evidence or human-review artifacts
+1. implementation requires choosing new target or resolution semantics not already constrained by accepted documents
+2. timestamp semantics are insufficient to determine point in time admissibility
+3. trusted root validation would be circular
+4. content hash coverage is ambiguous for a scientifically consequential field
+5. correction semantics could permit silent forecast rewriting
+6. current accepted forecast architecture and schema requirements materially conflict
+7. a requirement would make retrospective synthetic fixtures indistinguishable from genuine prospective issuance
+8. compatibility with existing contract infrastructure would require weakening existing validation
+9. implementation would need network access, paid infrastructure, or a production database
+10. any accepted historical scientific artifact would need reinterpretation or modification
 
 Otherwise complete with Terra High.
 
+## Explicitly out of scope
+
+This task does not authorize:
+
+1. Forecast Ledger Genesis
+2. real forecast issuance
+3. choosing the first target family
+4. external LLM calls
+5. market data subscriptions
+6. outcome resolution
+7. scoring or calibration
+8. failure corpus records
+9. external model leaderboards
+10. GKG recovery
+11. new source family integration
+12. frontend or API development
+13. scheduled production workflows
+14. multi user authentication
+
 ## After this task
 
-Only after explicit authorization, run bounded objective evidence/context recovery against the accepted manifest, recompute E2/E3 review-ready coverage mechanically, and repeat while preserving the frozen sample and accepted versioned protocols.
+After acceptance, the next governance task is an adversarial Trust Core review followed by a separate Forecast Ledger Genesis protocol design.
 
-After each accepted bounded recovery batch, reassess recovery viability before authorizing another batch. Evidence recovery is not an open-ended requirement to rescue GKG at any cost. A later governance decision may continue recovery, restrict the validated period/use case, or reject this candidate while preserving the result as scientific evidence.
-
-Independent semantic review remains blocked until each token has at least 24 review-ready E2/E3 contexts and every allocated year has at least four.
+Genesis should select a deliberately small set of objectively resolvable, low cost targets and transparent baselines. The first genuine prospective issuance occurs only after that protocol is accepted.
