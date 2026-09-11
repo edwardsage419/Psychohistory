@@ -6,7 +6,7 @@ Last updated: 2026-09-11
 
 This document defines the intended architecture after the 2026-09-11 strategic reactivation.
 
-The primary system is a forecast evidence, ledger, resolution, evaluation, failure, and trust architecture. Measurement and indicator research remains a supporting subsystem that can feed forecast evidence when its individual scientific gates are satisfied.
+The primary system is a forecast evidence, ledger, prospective anchoring, resolution, evaluation, failure, and trust architecture. Measurement and indicator research remains a supporting subsystem that can feed forecast evidence when its individual scientific gates are satisfied.
 
 Existing accepted GKG research and historical evidence are unchanged.
 
@@ -23,6 +23,8 @@ Point in time evidence and feature snapshot
 Forecast method and run attempt
 ↓
 Immutable forecast issuance
+↓
+Independent prospective time anchor receipt
 ↓
 Append only correction history
 ↓
@@ -62,7 +64,7 @@ The measurement path is one producer of forecast inputs. Direct official data, t
 
 Dependencies are evaluated per forecast and per measurement candidate.
 
-A forecast may enter an experimental prospective ledger when its own target, resolution, point in time evidence, method, and issuance requirements are satisfied.
+A forecast may enter an experimental prospective ledger only when its own target, resolution, point in time evidence, method, issuance, and accepted external time anchoring requirements are satisfied.
 
 An unresolved GKG measurement blocks forecasts that depend on that GKG interpretation. It does not block unrelated targets that use independently defensible evidence.
 
@@ -174,7 +176,7 @@ Issuance converts a prepared forecast into an immutable scientific record.
 Every issuance should bind:
 
 1. forecast ID
-2. issued timestamp
+2. locally claimed issuance timestamp
 3. information cutoff
 4. target ID, version, and hash
 5. forecast class and horizon
@@ -187,11 +189,35 @@ Every issuance should bind:
 12. substantive content hash
 13. lifecycle status
 
-Backdated formal issuance is prohibited.
-
 Substantive mutation after issuance must fail verification.
 
-## Layer 7: correction ledger
+A local timestamp is metadata. It does not independently prove when the forecast content first existed.
+
+## Layer 7: prospective time anchor ledger
+
+Genuine prospective status requires independent evidence that the committed forecast content existed no later than an externally supported time.
+
+The issuance anchor or receipt remains separate from the forecast object.
+
+A receipt should bind:
+
+1. receipt ID
+2. anchor scheme and version
+3. forecast content hash or deterministic batch root
+4. external reference or proof material
+5. external observation, submission, or confirmation time semantics supported by the scheme
+6. verifier or verification method version where applicable
+7. verification state
+8. proof content identity
+9. finality or delay semantics where relevant
+
+Local file timestamps, operator controlled clocks, Git author or committer timestamps, and digital signatures alone are insufficient as the sole independent proof of prospective existence time.
+
+The architecture may support deterministic batch anchoring when it reduces cost. Batch membership must be immutable relative to the anchored root.
+
+Forecast Ledger Genesis must select and test at least one accepted low cost external anchor mechanism. Forecast Trust Core v0.1 remains provider neutral and uses synthetic fixtures only.
+
+## Layer 8: correction ledger
 
 Corrections append records and preserve the original issuance.
 
@@ -199,7 +225,7 @@ Metadata corrections, invalidation, and replacement forecasts require explicit s
 
 Probability, target, or horizon changes cannot be disguised as metadata corrections.
 
-## Layer 8: outcome resolution ledger
+## Layer 9: outcome resolution ledger
 
 Outcome resolution should be operationally separate from forecast generation where practical.
 
@@ -209,7 +235,7 @@ Supported states must include defensible unresolved conditions such as ambiguity
 
 A missing resolution does not become a negative outcome merely to increase the scoreable sample.
 
-## Layer 9: evaluation and calibration
+## Layer 10: evaluation and calibration
 
 Confirmatory evaluation operates on frozen cohort manifests.
 
@@ -221,7 +247,7 @@ Potential metrics include Brier score, log score, calibration measures, discrimi
 
 Calibration analyses never rewrite issued forecasts. A learned calibration transform used prospectively becomes a new method component with fitting provenance.
 
-## Layer 10: Forecast Failure Corpus
+## Layer 11: Forecast Failure Corpus
 
 The Failure Corpus is a first class derived scientific asset.
 
@@ -243,15 +269,17 @@ Failure classes may include data quality, missing information, method specificat
 
 The system must avoid causal overclaiming when an error source cannot be established.
 
-## Layer 11: trust profiles and audit outputs
+## Layer 12: trust profiles and audit outputs
 
 After sufficient prospective history exists, evaluation may produce method trust profiles by target class, horizon, regime, evidence quality, or other preregistered groupings.
 
 Potential comparison subjects include internal baselines, statistical models, econometric models, language models, agentic systems, expert estimates, public consensus, and market implied probabilities where appropriate.
 
+Trust outputs should preserve their dimensions and evidence basis. Avoid compressing heterogeneous performance into one opaque universal trust score.
+
 A leaderboard may summarize results. The underlying verifiable lineage and diagnostic evidence remain the primary asset.
 
-## Layer 12: public and commercial interfaces
+## Layer 13: public and commercial interfaces
 
 Presentation should read prepared authoritative outputs.
 
@@ -322,6 +350,7 @@ For the current stage prefer:
 2. local ignored storage for large raw evidence
 3. SQLite, DuckDB, or Parquet when query volume or artifact size justifies them
 4. content hashes and independently trusted roots where appropriate
+5. portable external anchor proof material when the Genesis mechanism is selected
 
 A production database, object store, or hosted API should appear only when a demonstrated requirement exists.
 
@@ -337,6 +366,6 @@ Avoid queues, microservices, always on servers, broad scheduled ingestion, and r
 
 The currently authorized implementation boundary is Forecast Trust Core v0.1 as defined in `docs/NEXT_ACCEPTED_TASK.md`.
 
-That task may create the minimum contracts and deterministic verifier needed for future issuance.
+That task may create the minimum contracts and deterministic verifier needed for future issuance, including a provider neutral prospective time anchor receipt contract.
 
-It may not issue real forecasts, resolve outcomes, perform confirmatory evaluation, resume GKG network recovery, build a frontend, or introduce production infrastructure.
+It may not issue real forecasts, select or contact a real anchor service, grant genuine prospective status, resolve outcomes, perform confirmatory evaluation, resume GKG network recovery, build a frontend, or introduce production infrastructure.
