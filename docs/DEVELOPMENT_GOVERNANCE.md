@@ -1,140 +1,221 @@
 # Psychohistory Development Governance
 
+Last updated: 2026-09-11
+
 ## Purpose
 
-This document governs what Psychohistory should develop next, how work should be decomposed, and which decisions belong to GPT, Codex, or a human operator.
+This document governs what Psychohistory develops next, how work is decomposed, and which decisions belong to GPT, Codex, or a human operator.
 
 `AGENTS.md` governs Codex execution behavior. This document governs project direction and task routing.
 
-The objective is reliable scientific progress per unit of compute while preserving evidence quality, reproducibility, historical validity, and the project's near-zero-cost development constraint.
+The objective is durable scientific and commercial option value per unit of maintenance and compute while preserving evidence quality, reproducibility, historical validity, and the near zero recurring cost constraint.
 
 ## Active development authority
 
-Owner decision, 2026-09-07: active Psychohistory development is governed by GPT and executed through bounded Codex work. The earlier Claude-era product direction and V0.2 application plan are retired.
+Owner decision, 2026-09-11: Psychohistory is reactivated under `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`.
 
-Historical code and documents remain valid as provenance where Git history, phase evidence or accepted decisions depend on them. They do not remain architectural authority merely because they existed earlier.
+The strategic north star is an independent evidence layer for machine forecasting.
 
-When an old plan conflicts with accepted `main`, current governance, scientific invariants or immutable evidence, the accepted current repository state wins.
+GPT remains the project governance and design layer. Bounded implementation should be routed to the lowest model class that can execute the accepted contract reliably.
+
+Historical plans remain provenance. They do not retain active authority when superseded by accepted current decisions.
+
+## Strategic priority rule
+
+The primary sequence is:
+
+1. Forecast Trust Core
+2. Prospective Forecast Ledger
+3. Outcome and Evaluation Ledger
+4. Forecast Failure Corpus
+5. Model Neutral Trust and Audit Layer
+6. Public and Institutional Interfaces
+
+Measurement research is a supporting track.
+
+A proposed core task should materially improve provenance integrity, prospective longitudinal history, failure knowledge, trust or comparison value, or low cost durability. Work that improves none of these requires explicit justification.
+
+## Dependency scoped advancement
+
+Scientific dependencies are evaluated at the level of the forecast, method, target, source, or measurement candidate they actually affect.
+
+An unresolved GKG semantic question blocks a forecast that relies on that GKG interpretation. It does not globally block target definitions, ledger infrastructure, or forecasts based on independently defensible evidence.
+
+A formal prospective forecast is authorized only when its own target semantics, resolution rule, information cutoff, evidence provenance, method identity, and issuance integrity satisfy the accepted contracts.
+
+This dependency model replaces the earlier global sequencing assumption that all forecasting work must wait for a complete multi source state representation.
 
 ## Responsibility model
 
 ### GPT: governance and task planning
 
-When the owner asks to continue Psychohistory, GPT should act as the project governance layer before producing a Codex task.
+When the owner asks to continue Psychohistory, GPT should:
 
-GPT should:
+1. read the current accepted state and strategic decision
+2. identify the active program track and actual bottleneck
+3. distinguish engineering, methodology, evidence, and human dependencies
+4. preserve historical evidence and accepted scientific semantics
+5. refuse to substitute stronger reasoning for missing evidence or genuine human review
+6. decompose work into bounded independently reviewable tasks
+7. classify each task L0 through L5 using `AGENTS.md`
+8. choose the lowest model and reasoning level expected to complete it reliably
+9. define scope, acceptance criteria, stop conditions, and escalation conditions
+10. verify that the task strengthens at least one strategic asset
+11. produce a bounded Codex prompt only after the design is sufficiently specified
 
-1. Read the current accepted repository state and relevant active development reports.
-2. Identify the current scientific or engineering gate.
-3. Identify the actual bottleneck rather than assuming the next numbered phase should begin.
-4. Determine whether the bottleneck is engineering, methodological, evidentiary, or human-dependent.
-5. Refuse to substitute stronger model reasoning for missing evidence or required human judgment.
-6. Decompose broad phases into independently reviewable tasks.
-7. Classify each task L0-L5 using `AGENTS.md`.
-8. Recommend the lowest model and reasoning level expected to complete each task reliably.
-9. Define scope, acceptance criteria, stop conditions, and escalation conditions.
-10. Produce a bounded Codex prompt only after those decisions are made.
-
-GPT should not automatically translate requests such as "continue Phase N" into one large Codex task.
+GPT should not advance later scientific claims merely because an engineering task succeeds.
 
 ### Codex: bounded execution
 
 Codex should:
 
-1. Execute the bounded task under `AGENTS.md`.
-2. Classify the task and warn when the selected model appears below the recommended minimum.
-3. Preserve specifications, evidence, provenance, tests, and historical semantics.
-4. Stop at the defined acceptance criteria.
-5. Report unresolved uncertainty rather than silently expanding scope.
+1. execute only the accepted bounded task
+2. preserve specifications, evidence, provenance, and historical semantics
+3. add deterministic validation and adversarial tests where required
+4. fail closed on unrecognized scientific semantics
+5. stop at the acceptance boundary
+6. report unresolved ambiguity rather than silently expanding scope
 
-Codex should not independently advance the project to a later scientific gate merely because implementation of the current task succeeds.
+Codex does not independently authorize a real forecast, scientific promotion, evaluation claim, or commercial deployment.
 
-### Human operator: authority and genuine human evidence
+### Human operator: consequential authority and genuine human evidence
 
 The human operator remains responsible for:
 
-* genuine human identity judgments when required by protocol
-* genuine human semantic review when required by protocol
-* approval of consequential promotion decisions
-* approval of major changes to scientific definitions or project direction
-* final acceptance of consequential work into the authoritative baseline
+1. approval of major project direction changes
+2. final acceptance of consequential work into the authoritative baseline
+3. genuine human identity or semantic review when required by protocol
+4. consequential target, resolution, measurement, or promotion decisions where governance requires owner approval
+5. commercial commitments that create material recurring cost or obligations
 
-An LLM must never be relabeled as a human reviewer or used to satisfy a protocol requirement for independent genuine human judgment.
+An LLM cannot satisfy a protocol requirement for genuine independent human judgment.
 
-Model-assisted human review with final human adjudication must remain labelled as such and must not be described as independent or blinded unless those conditions were actually satisfied.
+## Program gates
 
-## Development gates
+### Gate A1: minimum Forecast Trust Core
 
-Psychohistory should advance by evidence gates rather than by phase numbering alone.
+Question: Can the system represent and verify targets, resolution rules, point in time evidence snapshots, forecast methods, run attempts, issuance, and corrections without circular trust or silent mutation?
 
-### Gate 1: source and evidence integrity
+Current status: active implementation target.
 
-Question: Can the source be acquired, preserved or referenced reproducibly, parsed safely, and traced through provenance?
+No real forecast issuance occurs inside this gate.
 
-Do not advance a source when acquisition or provenance is unreliable.
+### Gate A2: adversarial ledger verification
 
-### Gate 2: measurement validity
+Question: Does the verifier fail on future information, backdated issuance, altered target or method semantics, changed evidence membership, self sealed altered trust roots, invalid probabilities, broken references, and disguised substantive corrections?
 
-Question: Is the transformation from source data to an observation or indicator explicit, versioned, reproducible, and empirically understood?
+Passing ordinary schema validation alone is insufficient.
 
-A technically reproducible metric is not automatically a valid measure of a real-world condition.
+### Gate B1: Genesis protocol
 
-### Gate 3: semantic and historical stability
+Question: Has a small prospective forecast program fixed target semantics, resolution rules, evidence cutoff policy, method set, retry policy, correction policy, cadence, and evaluation plan before issuance?
 
-Question: Is there sufficient evidence that the measurement has an interpretable meaning and that historical comparisons are defensible across the intended time range?
+No retrospective record may be represented as prospective Genesis history.
 
-Missing historical evidence is a data problem, not a reason to increase model strength.
+### Gate B2: Forecast Ledger Genesis
 
-### Gate 4: independent validation
+Question: Can the first formal forecast be issued as an immutable prospective record under accepted contracts and independently verified afterward?
 
-Question: Where the protocol requires human or independent-source validation, has that validation actually occurred with sufficient evidence and independence?
+Genesis should favor low ambiguity targets, low cost public evidence, and transparent baseline methods.
 
-Do not infer completion from machine preprocessing, LLM review, model-assisted identity review, or unavailable cases.
+### Gate C: prospective continuity
 
-### Gate 5: experimental historical indicator promotion
+Question: Can the operator sustain issuance quality over time without increasing question volume or infrastructure faster than audit capacity?
 
-Question: Is the measurement sufficiently supported to enter an explicitly experimental historical indicator registry?
+Continuity takes priority over breadth.
 
-Promotion must record definition version, evidence basis, known limitations, applicable time range, and unresolved uncertainty.
+### Gate D1: outcome resolution
 
-### Gate 6: multi-source state construction
+Question: Can outcomes be resolved under the versions fixed at issuance while preserving ambiguity, insufficient evidence, source conflict, and expired unresolved states where required?
 
-Question: Can multiple independent data families support a defensible representation of a broader real-world state?
+### Gate D2: confirmatory evaluation
 
-Prefer independent evidence families over a more elaborate transformation of one news source.
+Question: Can a frozen cohort account for every forecast in scope before confirmatory score inspection and preserve baseline information parity, dependency structure, and complete denominators?
 
-### Gate 7: forecast registry
+Look ahead leakage is a blocking failure.
 
-Question: Are targets, horizons, timestamps, evidence snapshots, probability semantics, versions, and immutable forecast records sufficiently specified?
+### Gate E: Forecast Failure Corpus
 
-Do not begin production forecasting before the measurement foundation is adequate for the intended target.
+Question: Can forecast errors be classified with explicit evidence and uncertainty without inventing causal explanations?
 
-### Gate 8: outcome resolution
+Unknown failure attribution is an acceptable state.
 
-Question: Are outcome definitions and resolution rules specified independently enough to prevent hindsight-driven scoring?
+### Gate F: model neutral trust evaluation
 
-### Gate 9: scoring, calibration and backtesting
+Question: Is there enough prospective evidence to compare method families under common target, information, resolution, and scoring rules?
 
-Question: Can forecasts be evaluated using only information and rules that would have been available at the relevant historical time?
+Leaderboards remain secondary to reproducible evidence and failure diagnostics.
 
-Look-ahead leakage and retrospective reinterpretation are blocking failures.
+### Gate G: public research interface
 
-### Gate 10: AI forecasting and decision support
+Question: Can authoritative prepared outputs be exposed with low maintenance burden and no hidden browser side scientific transformations?
 
-Question: Does AI add measurable forecasting or decision value over transparent baselines under the established evaluation framework?
+### Gate H: institutional commercialization
 
-AI sophistication should come after the evaluation system can falsify its performance.
+Question: Does accumulated evidence support a product an institution will pay for, and can delivery preserve scientific independence and low maintenance operation?
+
+Paid infrastructure requires demonstrated revenue or a clearly evidenced reliability need.
+
+## Supporting measurement gates
+
+Each source or indicator candidate independently uses these gates:
+
+### M1: source and evidence integrity
+
+Can the source be acquired, preserved or referenced reproducibly, parsed safely, and traced through provenance?
+
+### M2: measurement validity
+
+Is the transformation explicit, versioned, reproducible, and empirically understood?
+
+### M3: semantic and historical stability
+
+Is there sufficient evidence that comparisons are interpretable across the intended period?
+
+### M4: independent validation
+
+Where genuine human or independent source validation is required, has it actually occurred?
+
+### M5: experimental indicator promotion
+
+Is the measurement sufficiently supported for explicitly experimental use under a recorded definition and limitation set?
+
+Candidate failure, restriction, or pause is a valid outcome.
+
+## Current GKG interpretation
+
+GKG remains a preserved experimental media attention candidate within Track M.
+
+Its accepted frozen sample, machine identity states, evidence sufficiency correction, human identity review, missingness safeguards, and historical evidence remain unchanged.
+
+The pre reactivation deterministic GKG recovery target manifest remains preserved in Git history. Further recovery requires a new bounded information gain decision and no longer controls the project wide queue.
+
+GKG does not need to succeed before Forecast Trust Core implementation or Forecast Ledger Genesis unless the selected Genesis target explicitly depends on GKG semantics.
+
+## Evidence versus reasoning rule
+
+Always distinguish insufficient reasoning from insufficient evidence.
+
+Examples of evidence limitations include unavailable historical documents, unresolved document identity, unknown vintage data, absent independent labels, unknown model versions, and missing source documentation.
+
+When evidence is insufficient:
+
+1. record the gap
+2. determine whether bounded recovery is justified
+3. obtain genuine human review when required
+4. preserve unknown or ambiguous states
+5. stop the affected scientific claim when its dependency remains unmet
+
+Stronger model reasoning does not create missing evidence.
 
 ## Task decomposition rule
 
-Never assign one risk level merely because work belongs to the same Phase.
-
-Decompose work into, when applicable:
+Decompose broad work into separate units where applicable:
 
 1. methodological or architectural decision
-2. deterministic implementation
-3. tests and regression protection
-4. evidence acquisition or recovery
+2. deterministic contract implementation
+3. tests and adversarial regression protection
+4. evidence acquisition
 5. analysis of collected evidence
 6. final scientific judgment
 
@@ -142,117 +223,70 @@ Classify each component separately.
 
 Typical routing:
 
-* mechanical documentation or formatting: L0, Luna Low
-* local deterministic implementation: L1, Terra Medium
-* cross-file engineering and bounded retrieval: L2, Terra High
-* architecture, schema, or semantic design: L3, Sol Medium
-* scientific-validity decisions: L4, Sol High
-* unresolved system-level methodological judgment: L5, Astra High
+1. mechanical documentation or formatting: L0, Luna Low
+2. local deterministic implementation: L1, Terra Medium
+3. cross file engineering, validators, bounded retrieval: L2, Terra High
+4. architecture, schema, or semantic design: L3, Sol Medium or High
+5. scientific validity decisions: L4, Sol High
+6. unresolved system level methodology: L5, Astra High
 
-Astra XHigh is exceptional. Max is outside the normal workflow.
+Astra is exceptional and task specific.
 
 ## Astra authorization policy
 
-Astra should be rare and task-specific.
+Astra may be appropriate for consequential unresolved questions such as repository wide methodological integrity, difficult point in time leakage analysis, fundamental resolution methodology, calibration methodology with conflicting assumptions, or core scientific design that remains materially uncertain after Sol High review.
 
-Astra is appropriate for consequential unresolved questions such as:
+Large file count, routine implementation, CI failure, retrieval difficulty, or unavailable evidence do not by themselves justify Astra.
 
-* repository-wide methodological integrity review
-* unresolved cross-year measurement validity
-* fundamental forecast or resolution methodology
-* calibration methodology with conflicting assumptions
-* difficult look-ahead leakage audit
-* core methodology that remains materially uncertain after Sol High analysis
-
-Astra is normally not justified merely because:
-
-* a task is large
-* many files are involved
-* many tests must be written
-* a Phase is important
-* retrieval is difficult
-* CI is failing
-* context is large
-* evidence is unavailable
-* routine implementation follows an approved design
-
-After Astra or Sol resolves a design question, downgrade deterministic implementation to Terra when appropriate.
-
-## Evidence versus reasoning rule
-
-Always distinguish insufficient reasoning from insufficient evidence.
-
-Examples of evidence limitations include unavailable historical articles, unresolved document identity, missing independent labels, unknown historical classifier versions, and absent source documentation.
-
-Increasing reasoning strength cannot turn absent evidence into valid evidence.
-
-When evidence is insufficient:
-
-1. record the gap
-2. determine whether bounded recovery is possible
-3. obtain genuine human review when required
-4. preserve unknown or ambiguous states
-5. stop promotion if the gate remains unmet
+After a design question is resolved, deterministic implementation should return to Terra when appropriate.
 
 ## Cost discipline
 
-Default target for ordinary future Codex task volume:
+The project should optimize for reliable completed work per unit of compute and maintenance.
 
-* Luna: about 5%
-* Terra Medium: about 30%
-* Terra High: about 40%
-* Sol Medium: about 10%
-* Sol High: about 12%
-* Astra High: about 3%
-* Astra XHigh: near zero
+Default to zero or near zero recurring infrastructure cost.
 
-These are planning targets, not quotas. Scientific risk overrides the percentages.
+Avoid permanent services, broad scheduled collection, paid databases, distributed systems, and recurring model calls until a demonstrated scientific or commercial need exists.
 
-The intended operating pattern is roughly 75% Terra, 22% Sol, and 3% Astra by task count.
+Static artifacts, local execution, Git provenance, and lightweight storage are preferred during the trust and ledger foundation stages.
 
-Optimize for reliable completed work per unit of compute, not minimum tokens and not maximum model capability.
+## Standard continuation procedure
 
-## Standard GPT continuation procedure
+When the owner says to continue Psychohistory, GPT should return a bounded next task with:
 
-When the owner says "continue Psychohistory" or equivalent, GPT should produce a next-task decision with these fields:
+1. active program track and gate
+2. current authoritative baseline
+3. actual bottleneck
+4. strategic asset strengthened
+5. next bounded task
+6. L0 through L5 classification
+7. recommended model and reasoning level
+8. human dependency
+9. files and modules in scope
+10. important exclusions
+11. acceptance criteria
+12. stop conditions
+13. escalation conditions
+14. ready to use Codex prompt
 
-* Current gate
-* Current repository/baseline state
-* Actual bottleneck
-* Next bounded task
-* L0-L5 classification
-* Recommended model
-* Recommended reasoning level
-* Why that model is sufficient
-* Whether Astra is authorized
-* Human dependency
-* Files/modules in scope
-* Files/modules explicitly out of scope when useful
-* Acceptance criteria
-* Stop conditions
-* Escalation conditions
-* Ready-to-use Codex prompt
+Before recommending work, check whether an evidence or human dependency blocks the specific claim being advanced.
 
-Before recommending a new development task, GPT should check whether unresolved evidence or human-review requirements block advancement.
+Do not globally route back to GKG recovery unless a current accepted decision makes GKG the relevant dependency.
 
 ## Current governance interpretation
 
-The authoritative `main` baseline contains accepted Phase 1-4 data/measurement foundation work, Phase 5 preregistered semantic-audit work, Phase 6A bounded historical evidence recovery, Phase 6A.1 targeted identity recovery, completed model-assisted human identity review with final human adjudication, and the evidence-sufficiency `1.0.1` correction.
+Project status is `ACTIVE_STRATEGIC_REALIGNMENT`.
 
-Phase 5-6A.1 remain non-production research and evidence-recovery work. Acceptance into `main` does not semantically promote the three audited GKG tokens.
+Primary active track is Forecast Trust Core.
 
-The current gate is Gate 3A, historical document identity and evidence sufficiency. Current readiness is based on review-ready E2/E3 context under evidence-sufficiency version `1.0.1`, not an E3-only count. Exact mutable counts and deficits belong in `CURRENT_STATE.md` and the machine-readable correction/oracle artifacts rather than being duplicated in this governance policy.
+The accepted next task is `docs/NEXT_ACCEPTED_TASK.md`, which implements minimum forecast ledger contracts and deterministic verification without real issuance.
 
-The completed 22-case identity review is model-assisted with final human adjudication. Its `SAME_ARTICLE`, `DIFFERENT_ARTICLE`, and `INSUFFICIENT_EVIDENCE` outcomes remain separate from machine evidence and do not satisfy the later independent semantic-review requirement.
+Existing future forecast architecture and safeguards are now active design constraints for this bounded implementation. They remain constraints rather than evidence that production forecasting is already scientifically validated.
 
-The current accepted next task is the deterministic recovery-target manifest defined in `docs/NEXT_ACCEPTED_TASK.md`. It must preserve frozen membership, keep human and machine provenance separate, use the corrected E2/E3 review-ready definition, exclude current mismatches from promotion targeting, and stop after manifest plus bounded batch preparation unless network recovery is explicitly authorized.
-
-The historical `docs/PHASE6A1_CONFIRMED_COVERAGE_AUDIT.md`, original recovery-manifest preflight/oracle and `docs/CODEX_EXECUTION_READINESS_AUDIT.md` remain provenance for the pre-correction state and are superseded for current execution by the correction contract, V2 preflight and V2 oracle named in `CURRENT_STATE.md` and `docs/NEXT_ACCEPTED_TASK.md`.
-
-Do not begin production forecasting, composite-state construction, semantic promotion, calibration claims, or historical backtests that treat unresolved measurement semantics as ground truth.
+No current task authorizes real forecast issuance, outcome scoring, GKG network recovery, a frontend, multi user architecture, or paid infrastructure.
 
 ## Updating this policy
 
-Change this document when the governance model itself changes or when a stale current-governance paragraph would materially misroute future work.
+Change this document when the governance model, active program structure, or dependency interpretation changes materially.
 
-Routine mutable project status belongs in `CURRENT_STATE.md` and accepted task scope belongs in `docs/NEXT_ACCEPTED_TASK.md`.
+Mutable counts and active evidence state belong in `CURRENT_STATE.md`. Bounded implementation scope belongs in `docs/NEXT_ACCEPTED_TASK.md`.
