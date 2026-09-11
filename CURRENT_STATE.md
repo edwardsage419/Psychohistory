@@ -4,126 +4,74 @@ Last updated: 2026-09-11
 
 ## Project status
 
-Status: `ACTIVE_STRATEGIC_REALIGNMENT`.
+Status: `ARCHIVED_INACTIVE`.
 
-The owner explicitly reactivated Psychohistory on 2026-09-11 and accepted a revised long horizon strategy. The governing decision is `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`.
+Psychohistory has been deliberately placed into an inactive preservation state by owner decision on 2026-09-11.
 
-The project is now centered on an independent evidence layer for machine forecasting. The primary compounding asset is prospective, immutable, point in time forecast history with reproducible target, evidence, method, resolution, evaluation, and failure records.
+The governing archive decision is `docs/PROJECT_ARCHIVE_2026_09_11.md`.
 
-The 2026-09-09 pause remains a valid historical decision record. It no longer blocks development after the 2026-09-11 reactivation decision.
+There is no active development or research execution task in this repository.
+
+The clean successor project will be created in a separate repository and will use `docs/NEW_PROJECT_MIGRATION_PACKET.md` as predecessor design input.
 
 ## Authority
 
-This file is the compact operational state for continuing Psychohistory across devices, conversations, Codex sessions, and model changes.
+This file is the compact operational state for future inspection of Psychohistory.
 
-Use evidence in this order when project state conflicts:
+Use evidence in this order when state conflicts:
 
 1. Git history and immutable evidence artifacts
 2. this `CURRENT_STATE.md`
-3. accepted decision records and task contracts
-4. `SCIENTIFIC_INVARIANTS.md`, `AGENTS.md`, and `docs/DEVELOPMENT_GOVERNANCE.md`
-5. chat context
+3. `docs/PROJECT_ARCHIVE_2026_09_11.md`
+4. accepted decision records and scientific protocols
+5. `SCIENTIFIC_INVARIANTS.md`
+6. chat context
 
 Historical scientific evidence remains governed by the exact protocols and artifacts under which it was created.
 
-## Strategic objective
+## Archive meaning
 
-Working position:
+Psychohistory is preserved as:
 
-Psychohistory is an independent evidence layer for machine forecasting.
+1. a historical research predecessor
+2. a source of audited methodological lessons
+3. a case study in measurement validity, provenance, and evidence recovery
+4. the provenance source for selected successor project forecast trust concepts
 
-The core product question is:
+The repository is not the implementation workspace for the successor project.
 
-Which forecasts deserve trust, based on what was actually known, issued, resolved, and measured at the time?
+Inspection, reproduction, audit, citation, and migration review are allowed.
 
-The strategic progression is:
+Substantive development requires a new explicit owner decision explaining why the work belongs in Psychohistory rather than the successor project.
 
-Forecast Trust Core
-→ Prospective Forecast Ledger
-→ Outcome and Evaluation Ledger
-→ Forecast Failure Corpus
-→ Model Neutral Trust and Audit Layer
-→ Public and Institutional Interfaces
+## Successor project boundary
 
-The project should gain value as elapsed prospective history accumulates.
+The successor project starts from a clean repository and a new Genesis.
 
-## Primary moat
+It may adapt selected Psychohistory methodology, including:
 
-Core durable assets are:
+1. scientific invariants
+2. point in time and data vintage rules
+3. target and resolution contracts
+4. forecast method and run attempt provenance
+5. immutable issuance and append only corrections
+6. independent prospective time anchoring
+7. frozen evaluation cohorts and denominator accounting
+8. baseline parity
+9. Forecast Failure Corpus principles
+10. near zero cost development discipline
 
-1. prospective records that existed before outcomes were known
-2. immutable and replayable provenance
-3. long lived method and schema continuity
-4. explicit failed, ambiguous, and unresolved records
-5. accumulated calibration and error history
-6. structured forecast failure evidence
-7. cross method comparability under stable rules
-8. independence from any one model provider or source family
-9. near zero cost durability that permits multi year operation
+The full migration specification is `docs/NEW_PROJECT_MIGRATION_PACKET.md`.
 
-Software alone is replaceable. Prospective history cannot be recreated after the fact.
+Psychohistory study artifacts do not automatically become native scientific evidence of the successor project.
 
-## Active program tracks
+## Preserved scientific baseline
 
-### Track A: Forecast Trust Core
+All accepted Psychohistory scientific evidence remains unchanged by archiving.
 
-Status: `PRIMARY_ACTIVE_TRACK`.
+The frozen GKG 120 case sample remains immutable.
 
-Build the minimum contracts and deterministic verifier for target definitions, resolution rules, point in time evidence snapshots, forecast methods, run attempts, issued forecasts, and append only corrections.
-
-The first implementation task must create no real forecasts and require no network service.
-
-### Track B: Prospective Forecast Ledger
-
-Status: `BLOCKED_BY_TRACK_A_MINIMUM_CORE`.
-
-After the minimum Trust Core passes acceptance, define a small curated Genesis forecast protocol and begin genuine prospective issuance. Quality of provenance takes priority over question volume.
-
-### Track C: Forecast Failure Corpus
-
-Status: `FUTURE_AFTER_RESOLUTIONS`.
-
-Accumulate structured error and failure evidence from resolved forecasts, including method, information set, uncertainty, baseline comparison, failure class, and known limitations.
-
-### Track D: Trust and Audit Layer
-
-Status: `FUTURE_AFTER_SUFFICIENT_LEDGER_HISTORY`.
-
-Compare internal and external forecasting methods under common contracts. Potential method families include transparent statistical baselines, econometric methods, language models, agentic systems, expert estimates, public consensus, and market implied probabilities where appropriate.
-
-### Track E: Public and Commercial Interfaces
-
-Status: `FUTURE`.
-
-Preferred sequence is static public views and exports, then machine readable verification, professional research outputs, private institutional audits and custom benchmarks, and finally paid hosted services or APIs when demand justifies recurring cost.
-
-### Track M: Measurement Research
-
-Status: `SECONDARY_BOUNDED_RESEARCH`.
-
-Existing indicator and source validation work remains valid and preserved. GKG remains one experimental media attention candidate. Its recovery path no longer controls the global project queue.
-
-Additional GKG recovery requires a separately accepted bounded task showing useful expected scientific information gain. New source family work should support a concrete forecast target, trust evaluation, or defined measurement question.
-
-## Dependency rule
-
-Forecast authorization is dependency scoped.
-
-A formal experimental prospective forecast may proceed only when its own target semantics, information cutoff, evidence provenance, method identity, resolution rule, and issuance integrity are defensible.
-
-A forecast that depends on an unresolved or unvalidated measurement remains blocked or must be explicitly classified under an accepted experimental protocol.
-
-An unrelated unresolved measurement candidate does not block a forecast whose evidence foundation is independently valid.
-
-This replaces the earlier global sequencing assumption that broad multi source state construction must precede all forecast ledger work.
-
-## Preserved GKG scientific state
-
-The accepted GKG research baseline remains unchanged by strategic reactivation.
-
-The frozen 120 case sample remains immutable.
-
-Current machine identity counts remain:
+Current accepted machine identity counts remain:
 
 1. `identity_confirmed`: 6
 2. `identity_probable_manual_review_required`: 15
@@ -137,88 +85,74 @@ Evidence sufficiency version remains `1.0.1`:
 3. E2: 0
 4. E3: 3
 
-Review ready context remains E2 or E3, with current review ready total 3.
+Review ready context remains E2 or E3, with total 3 at archive time.
 
-The completed model assisted human identity review remains separate provenance with 13 `SAME_ARTICLE`, 2 `DIFFERENT_ARTICLE`, and 7 `INSUFFICIENT_EVIDENCE` outcomes.
+The model assisted human identity review remains separate provenance with:
 
-Historical semantic stability remains unproven. Recall remains unestimated. Independent semantic review remains unauthorized until its accepted prerequisites are satisfied.
+1. 13 `SAME_ARTICLE`
+2. 2 `DIFFERENT_ARTICLE`
+3. 7 `INSUFFICIENT_EVIDENCE`
 
-The old deterministic recovery target manifest task in `docs/NEXT_ACCEPTED_TASK.md` as it existed before reactivation is preserved by Git history. It is superseded as the active global next task.
+Historical semantic stability remains unproven. Recall remains unestimated. Archiving resolves none of these scientific uncertainties.
 
-## Current primary gate
+## Preserved forecast trust design
 
-Current primary engineering gate: Forecast Trust Core v0.1.
+The 2026-09-11 strategic realignment and forecast trust design remain valuable predecessor methodology.
 
-The project already has accepted forecast, outcome, point in time, and evaluation design constraints in:
+Key preserved documents include:
 
-1. `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
-2. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
-3. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
-4. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
+1. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
+2. `docs/DECISION_2026_09_11_PROSPECTIVE_TIME_ANCHOR.md`
+3. `docs/FORECAST_ARCHITECTURE_ACTIVATION_2026_09_11.md`
+4. `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
+5. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
+6. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
+7. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
+8. `SCIENTIFIC_INVARIANTS.md`
 
-The active task is defined in `docs/NEXT_ACCEPTED_TASK.md`.
+These documents are predecessor design evidence. New implementation belongs in the successor project.
 
-The task should implement minimum machine readable contracts and deterministic validation only. It must not issue a real forecast, start a network service, create a production database, or rewrite historical GKG evidence.
+## No active task
 
-## Immediate sequence
+`docs/NEXT_ACCEPTED_TASK.md` now records that Psychohistory has no active task.
 
-1. Complete and accept Forecast Trust Core v0.1 contracts and verifier.
-2. Conduct an adversarial review of issuance integrity, point in time admissibility, external trust roots, and correction semantics.
-3. Define a Forecast Ledger Genesis protocol with a deliberately small set of low cost, objectively resolvable targets and transparent baselines.
-4. Begin prospective issuance only after the Genesis protocol is accepted.
-5. Preserve every issued, failed where policy requires, corrected, unresolved, and resolved record.
-6. Add outcome resolution and frozen cohort evaluation as observations mature.
-7. Build the Failure Corpus from actual resolved history.
-8. Add model comparison and institutional audit capabilities only after sufficient evidence exists.
+The former Forecast Trust Core v0.1 task remains recoverable through Git history and has been distilled into the successor migration packet.
 
-## Non goals for the current stage
+Do not begin:
 
-Do not prioritize:
+1. Forecast Trust Core implementation here
+2. Forecast Ledger Genesis here
+3. GKG recovery
+4. semantic review or indicator promotion
+5. new source integration
+6. production forecasting
+7. outcome scoring or calibration
+8. API or frontend development
+9. scheduled production workflows
+10. new recurring infrastructure
 
-1. a large forecasting community
-2. prediction market operation
-3. frontier model training
-4. high frequency or real time market prediction
-5. broad real time news coverage
-6. a single opaque global risk score
-7. a feature rich frontend
-8. multi user authentication
-9. paid databases or distributed infrastructure
-10. large question volume
+## Archive preservation rule
 
-## Cost posture
+Do not rewrite, reinterpret, normalize away, or delete accepted evidence because the project is inactive.
 
-The zero or near zero recurring cost constraint remains active.
+Failed, missing, unresolved, mismatched, ambiguous, and negative results remain first class historical records.
 
-Prefer local deterministic execution, Git for compact authoritative artifacts, content hashes, standard library or lightweight open source dependencies, and SQLite, DuckDB, or Parquet only when a demonstrated need appears.
-
-Paid infrastructure requires evidence that it materially improves reliability, reproducibility, product value, or revenue capacity.
-
-## Development routing
-
-Current expected routing:
-
-1. forecast contract implementation and deterministic validators: L2, Terra High
-2. new schema semantics or unresolved trust boundary decisions: L3 to L4, Sol High
-3. consequential unresolved methodology after serious Sol review: L5, Astra High
-4. routine documentation and deterministic tests: lowest reliable model
-
-Model strength never substitutes for missing evidence or required genuine human review.
+Critical preservation repair may be proposed only when required to prevent loss or corruption of accepted artifacts. Such work requires explicit authorization and must preserve historical meaning.
 
 ## Startup procedure
 
-A new GPT or Codex session should begin with:
+A future GPT or Codex session inspecting Psychohistory should begin with:
 
-1. `AGENTS.md`
-2. `CURRENT_STATE.md`
-3. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
+1. `CURRENT_STATE.md`
+2. `docs/PROJECT_ARCHIVE_2026_09_11.md`
+3. `docs/NEW_PROJECT_MIGRATION_PACKET.md` if successor provenance is relevant
 4. `SCIENTIFIC_INVARIANTS.md`
-5. `docs/DEVELOPMENT_GOVERNANCE.md`
-6. `docs/NEXT_ACCEPTED_TASK.md`
-7. only files directly required by the bounded task
+5. only the historical files required for the inspection task
 
-Do not default back to the frozen GKG recovery task from pre reactivation history.
+If the requested goal is continued Forecast Trust development, stop and direct that work to the separate successor project unless the owner explicitly reactivates Psychohistory.
 
-## Update rule
+## Reactivation rule
 
-Update this file only when project status, primary track, accepted evidence, active task, gate state, major blocker, or operating policy materially changes.
+Reactivation requires an explicit owner decision recorded in the repository.
+
+The decision must state why the proposed work belongs in Psychohistory rather than the successor project and must define a bounded next task before implementation begins.
