@@ -10,9 +10,9 @@ Forecast Trust Core v0.1 contracts and deterministic verifier.
 
 Implement the minimum machine readable contracts and deterministic verification infrastructure required before Psychohistory can later create a genuine prospective Forecast Ledger Genesis.
 
-This task creates no real forecast, performs no network retrieval, resolves no outcome, calculates no performance score, and changes no accepted historical GKG evidence.
+This task creates no real forecast, performs no network retrieval, contacts no external timestamp service, resolves no outcome, calculates no performance score, and changes no accepted historical GKG evidence.
 
-The purpose is to make future issuance fail closed unless target semantics, resolution semantics, point in time evidence, method identity, run provenance, and immutable forecast content are bound coherently.
+The purpose is to make future issuance fail closed unless target semantics, resolution semantics, point in time evidence, method identity, run provenance, immutable forecast content, and an independently verifiable prospective time anchor can be bound coherently.
 
 ## Strategic asset strengthened
 
@@ -29,7 +29,7 @@ Risk: L2 for deterministic implementation under already accepted forecast archit
 
 Recommended Codex model: GPT 5.6 Terra High.
 
-Escalate to Sol High before implementation continues if execution exposes a new semantic choice that can alter target meaning, resolution meaning, point in time admissibility, trusted root semantics, forecast immutability, correction semantics, or future scoring eligibility.
+Escalate to Sol High before implementation continues if execution exposes a new semantic choice that can alter target meaning, resolution meaning, point in time admissibility, trusted root semantics, forecast immutability, correction semantics, prospective anchor semantics, or future scoring eligibility.
 
 Astra is not authorized for routine execution.
 
@@ -40,14 +40,16 @@ Read only what is required, in this order:
 1. `AGENTS.md`
 2. `CURRENT_STATE.md`
 3. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
-4. `SCIENTIFIC_INVARIANTS.md`
-5. `docs/DEVELOPMENT_GOVERNANCE.md`
-6. `docs/ARCHITECTURE.md`
-7. `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
-8. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
-9. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
-10. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
-11. existing repository schema and contract helpers only as implementation conventions require
+4. `docs/DECISION_2026_09_11_PROSPECTIVE_TIME_ANCHOR.md`
+5. `SCIENTIFIC_INVARIANTS.md`
+6. `docs/DEVELOPMENT_GOVERNANCE.md`
+7. `docs/ARCHITECTURE.md`
+8. `docs/FORECAST_ARCHITECTURE_ACTIVATION_2026_09_11.md`
+9. `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
+10. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
+11. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
+12. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
+13. existing repository schema and contract helpers only as implementation conventions require
 
 Do not scan GKG studies or historical recovery code unless a shared repository utility must be reused and the reason is documented.
 
@@ -174,7 +176,7 @@ Retries must require distinct attempt IDs.
 Implement the formal immutable issuance record representing at least:
 
 1. forecast ID
-2. issued timestamp
+2. claimed issued timestamp
 3. information cutoff
 4. forecast class
 5. target ID, version, and hash
@@ -192,17 +194,39 @@ Implement the formal immutable issuance record representing at least:
 
 Validation must enforce:
 
-1. `information_cutoff <= issued_at`
+1. `information_cutoff <= claimed_issued_at`
 2. valid probability semantics
 3. target and horizon compatibility
 4. exact trusted target, method, resolution, and snapshot bindings
 5. successful admissibility verification of the point in time snapshot
 6. valid issued run attempt reference
-7. prohibition of backdated issuance under the accepted issuance API or verifier boundary
-8. deterministic substantive content identity
-9. failure on substantive mutation
+7. deterministic substantive content identity
+8. failure on substantive mutation
 
-### 7. Forecast correction contract
+A locally claimed issuance time is not sufficient evidence of genuine prospective status. Prospective status additionally requires a valid issuance anchor receipt under the accepted Genesis protocol.
+
+### 7. Prospective issuance anchor receipt contract
+
+Implement a provider neutral contract representing at least:
+
+1. anchor receipt ID
+2. anchor scheme and scheme version
+3. forecast substantive content hash or deterministic batch root containing it
+4. external anchor reference or proof material
+5. independently observed or derived anchor time semantics
+6. verification method version where applicable
+7. verification status
+8. proof content identity
+9. delay or finality semantics where relevant
+10. substantive content hash for the receipt itself where applicable
+
+The contract must distinguish local claimed issuance time from external anchor time and finality time when the selected scheme has those concepts.
+
+The current task must support synthetic anchor fixtures for deterministic tests. Synthetic fixtures must be incapable of granting genuine prospective classification.
+
+No real anchor provider is selected or contacted by this task.
+
+### 8. Forecast correction contract
 
 Implement append only correction semantics representing at least:
 
@@ -221,13 +245,26 @@ The original issuance must remain unchanged.
 
 Probability, target, or horizon changes cannot be accepted as ordinary metadata correction.
 
+## Prospective classification rule
+
+The verifier must keep these concepts separate:
+
+1. forecast object is structurally and semantically valid
+2. forecast object is content immutable relative to its trusted root
+3. forecast content has a valid external anchor receipt
+4. anchor semantics establish a qualifying prospective time under a future accepted Genesis protocol
+
+Forecast Trust Core v0.1 may verify the first three properties against synthetic or provider neutral fixtures.
+
+It must not hard code a rule that any arbitrary receipt grants genuine prospective status. Genesis will select the accepted anchor scheme and classification policy separately.
+
 ## Trusted root rule
 
 A scientific object cannot authenticate its own upstream semantics merely by repeating a hash inside itself.
 
 The verifier must accept independently supplied trusted definitions or roots for consequential bindings where circular self authentication would otherwise occur.
 
-At minimum, issuance verification must compare the forecast bound target, resolution rule, method, and evidence snapshot identities against independently supplied or independently authenticated objects.
+At minimum, issuance verification must compare the forecast bound target, resolution rule, method, evidence snapshot, and applicable anchor binding against independently supplied or independently authenticated objects.
 
 A test must demonstrate that modifying an upstream object and resealing downstream hashes does not pass when the trusted external root remains unchanged.
 
@@ -261,7 +298,8 @@ Separate:
 3. cross object referential integrity
 4. point in time admissibility
 5. issuance verification
-6. correction verification
+6. anchor receipt binding verification
+7. correction verification
 
 Unknown required semantics must fail closed.
 
@@ -277,27 +315,28 @@ Create exactly these new files unless a concrete repository constraint requires 
 4. `schemas/forecast-evidence-snapshot.v1.schema.json`
 5. `schemas/forecast-run-attempt.v1.schema.json`
 6. `schemas/forecast-issuance.v1.schema.json`
-7. `schemas/forecast-correction.v1.schema.json`
-8. `scripts/forecast_ledger_contracts.py`
-9. `scripts/verify_forecast_ledger.py`
-10. `scripts/test_forecast_ledger_contracts.py`
-11. `docs/FORECAST_LEDGER_CORE.md`
+7. `schemas/forecast-issuance-anchor.v1.schema.json`
+8. `schemas/forecast-correction.v1.schema.json`
+9. `scripts/forecast_ledger_contracts.py`
+10. `scripts/verify_forecast_ledger.py`
+11. `scripts/test_forecast_ledger_contracts.py`
+12. `docs/FORECAST_LEDGER_CORE.md`
 
 Existing shared contract helpers may be changed only when necessary for clean reuse and only with regression tests proving existing contracts remain unchanged in meaning.
 
-Do not add a database, web server, workflow, frontend, or live model integration.
+Do not add a database, web server, workflow, frontend, live model integration, or real anchor integration.
 
 ## Required adversarial tests
 
 At minimum test rejection of:
 
-1. duplicate target, method, attempt, forecast, or correction IDs within a verification package where uniqueness is required
+1. duplicate target, method, attempt, forecast, anchor receipt, or correction IDs within a verification package where uniqueness is required
 2. invalid target version or changed target semantic hash
 3. incompatible target and resolution rule
 4. probability outside the allowed range
 5. categorical probabilities that do not satisfy the declared normalization tolerance
 6. invalid horizon
-7. `information_cutoff > issued_at`
+7. `information_cutoff > claimed_issued_at`
 8. evidence member available after information cutoff
 9. unknown evidence availability required for issuance admissibility
 10. altered evidence snapshot membership
@@ -306,15 +345,18 @@ At minimum test rejection of:
 13. run attempt with a non issued terminal state referenced by an issuance
 14. reused attempt ID for a retry
 15. substantive forecast mutation after issuance
-16. correction timestamp before or equal to issuance when later time is required
-17. probability, target, or horizon mutation disguised as metadata correction
-18. unknown referenced object
-19. independently trusted root mismatch
-20. resealed altered upstream object attempting circular self authentication
-21. nondeterministic canonical output
-22. unsupported required semantic value
+16. anchor receipt bound to the wrong forecast hash or batch root
+17. synthetic anchor receipt incorrectly granting genuine prospective status
+18. changed anchor proof material with a resealed local receipt
+19. correction timestamp before or equal to issuance when later time is required
+20. probability, target, or horizon mutation disguised as metadata correction
+21. unknown referenced object
+22. independently trusted root mismatch
+23. resealed altered upstream object attempting circular self authentication
+24. nondeterministic canonical output
+25. unsupported required semantic value
 
-Map the applicable tests to the accepted FCT, PTI, RES, EVAL, and AI safeguard identifiers where those mappings already exist. Do not invent a new safeguard meaning merely to obtain a complete identifier list.
+Map applicable tests to the accepted FCT, PTI, RES, EVAL, and AI safeguard identifiers where those mappings already exist. Do not invent a new safeguard meaning merely to obtain a complete identifier list.
 
 ## Positive fixtures
 
@@ -340,18 +382,20 @@ Existing offline tests must continue to pass.
 
 Accept only if:
 
-1. all seven new contracts are versioned and documented
+1. all eight new contracts are versioned and documented
 2. deterministic canonicalization and SHA 256 identities are implemented
 3. point in time admissibility fails closed
 4. cross object trusted binding is verified independently
 5. issuance mutation is detectable
-6. corrections are append only in semantics
-7. all required positive and adversarial tests pass
-8. the complete existing offline test suite passes
-9. repeated runs on identical synthetic fixtures are byte and result deterministic
-10. no real forecast or network action occurs
-11. no existing historical evidence is modified
-12. `docs/FORECAST_LEDGER_CORE.md` documents trust boundaries, object relationships, validation entry points, and the exact boundary before Genesis
+6. anchor receipt binding is independently verifiable under provider neutral test semantics
+7. synthetic anchors cannot grant genuine prospective classification
+8. corrections are append only in semantics
+9. all required positive and adversarial tests pass
+10. the complete existing offline test suite passes
+11. repeated runs on identical synthetic fixtures are byte and result deterministic
+12. no real forecast, network action, or external anchor action occurs
+13. no existing historical evidence is modified
+14. `docs/FORECAST_LEDGER_CORE.md` documents trust boundaries, object relationships, prospective classification boundaries, validation entry points, and the exact boundary before Genesis
 
 ## Stop conditions
 
@@ -362,11 +406,12 @@ Stop and escalate to Sol High if:
 3. trusted root validation would be circular
 4. content hash coverage is ambiguous for a scientifically consequential field
 5. correction semantics could permit silent forecast rewriting
-6. current accepted forecast architecture and schema requirements materially conflict
-7. a requirement would make retrospective synthetic fixtures indistinguishable from genuine prospective issuance
-8. compatibility with existing contract infrastructure would require weakening existing validation
-9. implementation would need network access, paid infrastructure, or a production database
-10. any accepted historical scientific artifact would need reinterpretation or modification
+6. provider neutral anchor semantics cannot be represented without prematurely selecting a real provider
+7. current accepted forecast architecture and schema requirements materially conflict
+8. a requirement would make retrospective synthetic fixtures indistinguishable from genuine prospective issuance
+9. compatibility with existing contract infrastructure would require weakening existing validation
+10. implementation would need network access, paid infrastructure, a production database, or a real timestamp service
+11. any accepted historical scientific artifact would need reinterpretation or modification
 
 Otherwise complete with Terra High.
 
@@ -376,21 +421,26 @@ This task does not authorize:
 
 1. Forecast Ledger Genesis
 2. real forecast issuance
-3. choosing the first target family
-4. external LLM calls
-5. market data subscriptions
-6. outcome resolution
-7. scoring or calibration
-8. failure corpus records
-9. external model leaderboards
-10. GKG recovery
-11. new source family integration
-12. frontend or API development
-13. scheduled production workflows
-14. multi user authentication
+3. genuine prospective classification
+4. selection of an external anchor mechanism
+5. network timestamp submission
+6. choosing the first target family
+7. external LLM calls
+8. market data subscriptions
+9. outcome resolution
+10. scoring or calibration
+11. failure corpus records
+12. external model leaderboards
+13. GKG recovery
+14. new source family integration
+15. frontend or API development
+16. scheduled production workflows
+17. multi user authentication
 
 ## After this task
 
-After acceptance, the next governance task is an adversarial Trust Core review followed by a separate Forecast Ledger Genesis protocol design.
+After acceptance, the next governance task is an adversarial Trust Core review.
 
-Genesis should select a deliberately small set of objectively resolvable, low cost targets and transparent baselines. The first genuine prospective issuance occurs only after that protocol is accepted.
+Then design a separate Forecast Ledger Genesis protocol that selects a deliberately small set of objectively resolvable, low cost targets, transparent baselines, and at least one accepted low cost external time anchoring mechanism.
+
+The first genuine prospective issuance occurs only after the Genesis protocol is accepted and the chosen anchor path has passed its own verification tests.
