@@ -1,111 +1,120 @@
 # Psychohistory
 
-**Project status: `PAUSED`**
+**Project status: `ACTIVE_STRATEGIC_REALIGNMENT`**
 
-Active development was paused by owner decision on 2026-09-09. The pause is a strategic resource-allocation decision and does not change accepted scientific results, frozen evidence, protocols, or provenance. No task in this repository is authorized for execution while the project remains paused. See `docs/PROJECT_PAUSE.md` and `CURRENT_STATE.md` before any substantive work.
+Psychohistory was explicitly reactivated by owner decision on 2026-09-11. The governing strategic decision is `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`.
 
-Psychohistory is a long-running, falsifiable evidence and forecasting research project. Its intended chain is:
+The project is being developed as an independent evidence layer for machine forecasting.
 
-public observations -> normalized observations -> indicators -> state/trends -> probabilistic forecasts -> outcome resolution -> evaluation/calibration -> decision support
+Its primary long term chain is:
 
-At the pause point, the project remained in the measurement and historical-evidence stage. Production forecasting, production composite state, calibration claims and semantic promotion were blocked until the applicable scientific gates were satisfied.
+Forecast Trust Core
+→ Prospective Forecast Ledger
+→ Outcome Resolution and Evaluation
+→ Forecast Failure Corpus
+→ Model Neutral Trust and Audit Layer
+→ Public and Institutional Interfaces
 
-GKG is one experimental media-attention candidate, not the project objective. Failure, restriction or pause of that candidate does not constitute failure of Psychohistory. The long-term objective requires heterogeneous evidence families and falsifiable forecast evaluation.
+The project is designed to gain value as genuine prospective history accumulates. Immutable point in time records, reproducibility, explicit failures, calibration history, and model neutral comparison are the intended durable assets.
 
 ## Start here
 
-For substantial inspection or any future reactivation review, read in this order:
+For substantial inspection or continuation, read in this order:
 
 1. `AGENTS.md`
 2. `CURRENT_STATE.md`
-3. `docs/PROJECT_PAUSE.md`
+3. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
 4. `SCIENTIFIC_INVARIANTS.md`
 5. `docs/DEVELOPMENT_GOVERNANCE.md`
-6. `docs/NEXT_ACCEPTED_TASK.md` only if reactivation has been explicitly authorized
-7. Only the files required for the bounded task
+6. `docs/NEXT_ACCEPTED_TASK.md`
+7. only files directly required for the bounded task
 
-Git history and immutable evidence artifacts are the system of record. Chat summaries are secondary context.
+Git history and immutable evidence artifacts remain the system of record for historical scientific evidence.
 
-## Current accepted baseline
+## Current active task
 
-Authoritative branch: `main`.
+The current primary track is Forecast Trust Core.
 
-Accepted research at the pause point includes:
+`docs/NEXT_ACCEPTED_TASK.md` defines the bounded implementation of Forecast Trust Core v0.1 contracts and a deterministic verifier.
 
-* Phase 1-4 data and measurement foundation
-* Phase 5 preregistered semantic audit and frozen 120-reference sample
-* Phase 6A bounded historical evidence recovery
-* Phase 6A.1 targeted 26-case identity recovery
-* completed model-assisted human identity review with final human adjudication for the 22 cases requiring identity review
-* evidence-sufficiency correction version `1.0.1`
-* current Gate 3 recovery-selection and pivot safeguard
+That task creates machine readable contracts for target definitions, resolution rules, point in time evidence snapshots, forecast methods, run attempts, issued forecasts, and append only corrections.
 
-This work remains non-production research.
+It creates no genuine forecast and requires no network service.
 
-Current readiness uses review-ready E2/E3 context, with at least 24 review-ready contexts per token and at least 4 per allocated year before independent semantic review begins. Exact current counts are intentionally centralized in `CURRENT_STATE.md` and the machine-readable correction contract rather than duplicated here.
+After acceptance, the next governance work is an adversarial Trust Core review followed by a separate Forecast Ledger Genesis protocol.
 
-Readiness is a minimum evidence-volume condition. It is not proof that the review-ready subset is representative. Before any GKG semantic promotion, selection/missingness risk must be addressed under `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
+## Strategic position
 
-Current correction artifacts:
+The core product question is:
 
-* `studies/gkg-semantics-v2/context-sufficiency-correction.json`
-* `docs/PHASE6A1_CONTEXT_SUFFICIENCY_CORRECTION.md`
+Which forecasts deserve trust, based on what was actually known, issued, resolved, and measured at the time?
 
-The older confirmed-context coverage audit and original manifest preflight/oracle remain historical provenance for the pre-correction state and are superseded for current planning.
+Psychohistory should remain model neutral. Statistical baselines, econometric methods, language models, agentic systems, experts, public consensus estimates, and market implied probabilities may eventually be evaluated under common evidence rules when appropriate.
 
-## Frozen next task
+The project should avoid direct competition on model training scale, community size, prediction market liquidity, real time feed breadth, high frequency prediction, and frontend feature volume.
 
-At the time of pause, the accepted next task was to generate a deterministic recovery-target manifest over the complete frozen 120-reference sample and prepare the next bounded recovery batch. The frozen sample, document-identity contract and human/machine provenance separation must remain unchanged.
+## Long term moat
 
-That task is preserved in `docs/NEXT_ACCEPTED_TASK.md` as a recovery point. It is not currently authorized for execution. A new explicit owner reactivation decision is required before it or any replacement task begins.
+The project should accumulate:
 
-If reactivated without a superseding accepted decision, execution would use the V2 preparation artifacts and exact task contract in `docs/NEXT_ACCEPTED_TASK.md`. Network recovery is not authorized by the manifest-generation task.
+1. prospective records created before outcomes are known
+2. immutable and replayable evidence lineage
+3. long lived versioned target, method, and resolution contracts
+4. explicit failed, ambiguous, unresolved, and corrected records
+5. calibration and baseline comparison history
+6. a structured Forecast Failure Corpus
+7. cross model trust profiles under common rules
+8. multi year operational continuity at near zero recurring cost
 
-After any future explicitly authorized bounded recovery batch, governance must reassess whether another batch can materially change the scientific decision. Recovery is not an open-ended requirement to rescue GKG.
+A future competitor can reproduce software more easily than it can recreate years of genuine prospective evidence.
 
-## Development model at pause
+## Supporting measurement research
 
-Before the pause, the active development workflow was GPT-led project governance and design with bounded Codex execution under `AGENTS.md`. This workflow should not be treated as authorization to resume work while project status is `PAUSED`.
+Psychohistory retains a measurement research track for source validation, observations, indicators, semantic stability, and optional multi source state representations.
 
-The earlier V0.2 application and its GDELT DOC 2.0 updater have been retired from the active tree. Earlier assistant-specific product plans, including the abandoned Claude-era development direction, are not architectural authority. Git history preserves the retired implementation for provenance and historical inspection.
+GKG remains one preserved experimental media attention candidate. Its frozen sample, accepted evidence, machine identity states, evidence sufficiency correction, human review provenance, failures, and unresolved cases remain unchanged.
 
-Do not restore the V0.2 dashboard, seven-topic taxonomy, DOC updater or scheduled direct writes to `main` unless a separately approved future reactivation decision requires them.
+GKG recovery no longer controls the global project queue. A future GKG recovery batch requires a separately accepted bounded task.
+
+An unresolved measurement candidate blocks only claims and forecasts that depend on that measurement.
 
 ## Scientific boundaries
 
-The project must preserve these distinctions:
+The project preserves these distinctions:
 
-* observation is not reality
-* media attention is not real-world severity or event count
-* machine retrieval is not genuine human review
-* model-assisted identity review is not independent/blinded semantic review
-* human `SAME_ARTICLE` judgment does not create E2/E3 machine evidence
-* missing evidence cannot be reasoned into existence
-* reviewable evidence is not automatically representative evidence
-* historical outputs and issued forecasts must not be silently rewritten
+1. observation is distinct from underlying reality
+2. media attention does not establish event severity or prevalence
+3. machine retrieval does not count as genuine human review
+4. model assisted identity review does not count as independent blinded semantic review
+5. missing evidence cannot be inferred into existence
+6. reviewable evidence does not establish representativeness
+7. formal forecast issuance is distinct from a model run or narrative scenario
+8. issued forecast substance cannot be silently rewritten
+9. outcome ambiguity and insufficient evidence remain explicit
+10. historical experiments must declare their actual information and model availability class
 
 The full invariant set is in `SCIENTIFIC_INVARIANTS.md`.
 
 ## Repository map
 
-* `schemas/`: versioned machine-readable contracts
-* `registry/`: source registry material
-* `scripts/`: ingestion, validation, replay, indicator and recovery code plus offline tests
-* `studies/`: immutable or append-only study artifacts and evidence
-* `docs/`: architecture, protocols, reports, decisions, governance and audits
-* `.github/workflows/`: offline CI for pull requests and pushes to `main`
+1. `schemas/`: versioned machine readable contracts
+2. `registry/`: source registry material
+3. `scripts/`: deterministic tooling, validators, studies, and offline tests
+4. `studies/`: immutable or append only research artifacts and evidence
+5. `docs/`: architecture, protocols, reports, decisions, governance, and audits
+6. `.github/workflows/`: bounded CI
 
-The current repository no longer contains an active product frontend. Presentation work was deferred while the research foundation remained unresolved.
+The repository currently has no active product frontend.
 
 ## Local verification
 
-Python 3.12+, standard library only for the current research code:
+Python 3.12 or later, with the current research code primarily using the standard library:
 
 ```sh
 python -B -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 
-Live GKG validation is explicitly integration-scoped:
+Live GKG validation remains explicitly integration scoped and is unrelated to the current active Forecast Trust Core task:
 
 ```sh
 python -B scripts/validate_gkg.py --integration
@@ -113,8 +122,16 @@ python -B scripts/validate_gkg.py --integration
 
 Normal offline tests do not require network access.
 
+## Cost posture
+
+Default to zero or near zero recurring cost.
+
+Prefer local execution, compact Git tracked scientific artifacts, static publication, content hashes, and lightweight analytical storage.
+
+Paid infrastructure should appear only after demonstrated scientific, reliability, product, or revenue need.
+
 ## Roadmap
 
-Development, if reactivated, advances by evidence gates and candidate lifecycles rather than old phase numbering. See `docs/ROADMAP.md`, `docs/DEVELOPMENT_GOVERNANCE.md`, and `docs/GATE3_RECOVERY_SELECTION_AND_PIVOT_GUARD.md`.
+See `docs/ROADMAP.md` for the active program sequence and `docs/ARCHITECTURE.md` for the dependency scoped system design.
 
-At the pause point, the bounded bottleneck was Gate 3A historical document identity and review-ready evidence sufficiency for the GKG candidate. The project did not need to force that candidate to succeed in order to preserve progress toward the wider multi-source forecasting objective.
+The historical project pause is preserved in `docs/PROJECT_PAUSE.md`. The 2026-09-11 reactivation decision supersedes its execution guard for current development.
