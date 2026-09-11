@@ -1,76 +1,79 @@
 # Psychohistory Project Pause
 
-Status: `PAUSED`
+Historical status: `SUPERSEDED_BY_REACTIVATION`
 
 Pause decision date: 2026-09-09
 
-Pre-pause authoritative `main` HEAD: `de19c795ffc702341679b97431560fbc10fcf42f`
+Reactivation decision date: 2026-09-11
 
-## Decision
+Pre pause authoritative `main` HEAD: `de19c795ffc702341679b97431560fbc10fcf42f`
 
-The owner has paused active Psychohistory development and research execution as a strategic resource-allocation decision.
+## Historical decision
 
-This pause is not a scientific rejection of Psychohistory, is not a rejection of GKG as a candidate, and does not change any accepted empirical result, frozen sample, human adjudication, machine identity state, evidence-sufficiency state, protocol, invariant, or provenance record.
+The owner paused active Psychohistory development and research execution on 2026-09-09 as a strategic resource allocation decision.
 
-The repository is intentionally preserved as a recoverable research asset. Future work may resume after an explicit reactivation decision.
+The pause preserved the repository as a recoverable research asset. It changed no accepted empirical result, frozen sample, human adjudication, machine identity state, evidence sufficiency state, protocol, invariant, or provenance record.
 
-## Execution guard
+The pause commit on `main` remains historical provenance.
 
-While project status is `PAUSED`, no repository task is authorized for execution merely because it appears in a roadmap, task contract, phase report, issue, prior chat, or historical plan.
+## Supersession
 
-In particular, do not automatically execute `docs/NEXT_ACCEPTED_TASK.md`, run a new evidence-recovery batch, expand source families, begin semantic review, promote indicators, implement forecasting, restore the retired frontend, or resume live-source automation.
+On 2026-09-11 the owner explicitly reactivated Psychohistory and accepted a revised strategy recorded in:
 
-An explicit owner decision to reactivate Psychohistory is required before substantive development or research execution resumes.
+`docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
 
-## Frozen work state
+The former pause execution guard therefore no longer blocks current development after that decision is accepted into the authoritative baseline.
 
-At the time of pause, the accepted next bounded task remained the deterministic recovery-target manifest defined in `docs/NEXT_ACCEPTED_TASK.md`.
+The active project state is maintained in `CURRENT_STATE.md`.
 
-That task contract is preserved unchanged as a recovery point. It is a frozen next task, not an active authorization.
+## Frozen work state at pause
 
-`CURRENT_STATE.md` remains the compact scientific and operational snapshot of the accepted research state at pause. Immutable evidence artifacts and Git history remain authoritative for the underlying evidence.
+At the time of pause, the accepted next bounded task was the deterministic recovery target manifest defined by the then current version of `docs/NEXT_ACCEPTED_TASK.md`.
+
+That task remains preserved in Git history as the exact recovery point for the GKG research track.
+
+The 2026-09-11 strategic reactivation superseded it as the global active priority. Future GKG recovery requires a separately accepted bounded task.
 
 ## Preservation rule
 
-The pause itself must not rewrite accepted scientific evidence.
+Reactivation does not rewrite historical scientific evidence.
 
 Preserve without reinterpretation or replacement:
 
-* the frozen 120-case sample and its identity bindings
-* accepted Phase 5, Phase 6A, and Phase 6A.1 evidence and protocols
-* the evidence-sufficiency correction contract version `1.0.1`
-* machine identity states
-* model-assisted human identity-review results and their separate provenance
-* selection and missingness safeguards
-* scientific invariants and historical reports
-* failed, unresolved, mismatched, and unavailable evidence states
+1. the frozen 120 case sample and identity bindings
+2. accepted Phase 5, Phase 6A, and Phase 6A.1 evidence and protocols
+3. evidence sufficiency correction version `1.0.1`
+4. machine identity states
+5. model assisted human identity review results and their separate provenance
+6. selection and missingness safeguards
+7. scientific invariants and historical reports
+8. failed, unresolved, mismatched, and unavailable evidence states
 
-No pause-related documentation should be treated as evidence that previously unresolved scientific questions have been resolved.
+No current strategic document should be treated as evidence that a previously unresolved GKG scientific question has been resolved.
 
-## Strategic rationale
+## Historical strategic rationale
 
-The owner is reallocating active development effort to evaluate a new project direction centered on AI measurement validity, falsification, and the validation of AI-generated indicators, scores, classifications, and research claims.
+The pause was originally used to reallocate development effort while considering work centered on AI measurement validity, falsification, and validation of AI generated indicators, scores, classifications, and research claims.
 
-Psychohistory may later serve as a research case study or source of reusable validation methods. Any reuse in another project should occur through explicit extraction or adaptation and must not silently mutate Psychohistory's accepted evidence chain.
+The reactivated Psychohistory strategy incorporates closely related trust and falsification concerns into a broader forecast evidence program.
 
-This strategic rationale is a product and research-prioritization decision. It is not part of the scientific evidence supporting or rejecting Psychohistory's hypotheses.
+The current design emphasizes prospective forecast provenance, immutable issuance, outcome resolution, calibration, failure analysis, and model neutral auditability while preserving measurement validity as a supporting research track.
 
-## Reactivation procedure
+## Current continuation path
 
-Before resuming substantive Psychohistory work:
+For active work after reactivation, read:
 
-1. Record an explicit owner decision to reactivate the project.
-2. Review material changes in forecasting, AI, measurement science, available data sources, competing projects, and the intended product value since 2026-09-09.
-3. Re-read `AGENTS.md`, `CURRENT_STATE.md`, `SCIENTIFIC_INVARIANTS.md`, and `docs/DEVELOPMENT_GOVERNANCE.md`.
-4. Revalidate the repository and immutable evidence against Git history.
-5. Decide explicitly whether the frozen `docs/NEXT_ACCEPTED_TASK.md` is still the correct next task.
-6. If strategy, methodology, or task priority has changed, record a new accepted decision before implementation.
-7. Resume bounded execution only after the pause status has been deliberately replaced by an active project state.
+1. `AGENTS.md`
+2. `CURRENT_STATE.md`
+3. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
+4. `SCIENTIFIC_INVARIANTS.md`
+5. `docs/DEVELOPMENT_GOVERNANCE.md`
+6. `docs/NEXT_ACCEPTED_TASK.md`
 
-Do not infer reactivation from a request to inspect, summarize, compare, cite, or reuse Psychohistory materials.
+Do not use the historical pause guard or the pre reactivation GKG next task as current execution authority.
 
-## Repository posture while paused
+## Historical value of this file
 
-The repository should remain available and readable rather than being deleted or treated as abandoned. Existing offline CI may remain configured; absent new development activity it creates no standing research program.
+This file remains in the repository to preserve why development stopped on 2026-09-09, what state was frozen, and how later reactivation relates to that stop.
 
-The intended state is a preserved, reproducible, recoverable research baseline with no active development mandate.
+It should not be deleted merely because the project is active again.
