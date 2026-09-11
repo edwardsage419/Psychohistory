@@ -14,7 +14,8 @@ This amendment changes authorization and dependency interpretation. It does not 
 2. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
 3. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
 4. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
-5. `SCIENTIFIC_INVARIANTS.md`
+5. `docs/DECISION_2026_09_11_PROSPECTIVE_TIME_ANCHOR.md`
+6. `SCIENTIFIC_INVARIANTS.md`
 
 ## Superseded boundary statements
 
@@ -23,7 +24,7 @@ Where the older forecast architecture documents state that schema implementation
 The new rule is dependency scoped:
 
 1. Forecast Trust Core contracts and validators may be implemented now.
-2. A future forecast may be issued only when the dependencies of that specific forecast satisfy accepted target, evidence, method, resolution, and issuance requirements.
+2. A future forecast may be issued only when the dependencies of that specific forecast satisfy accepted target, evidence, method, resolution, issuance, and prospective anchoring requirements.
 3. An unresolved measurement candidate blocks forecasts that depend on that measurement.
 4. An unresolved measurement candidate does not block unrelated target or ledger infrastructure work.
 5. A complete multi source state representation is not a universal prerequisite for forecast issuance.
@@ -40,10 +41,11 @@ That task may implement:
 4. forecast method contract
 5. run attempt contract
 6. issued forecast contract
-7. append only correction contract
-8. deterministic canonicalization, hashing, cross object verification, and adversarial tests
+7. provider neutral prospective issuance anchor receipt contract
+8. append only correction contract
+9. deterministic canonicalization, hashing, cross object verification, anchor binding verification, and adversarial tests
 
-It may not create a genuine prospective forecast.
+It may not create a genuine prospective forecast or contact a real anchoring service.
 
 ## Requirements retained without relaxation
 
@@ -65,14 +67,16 @@ The following older requirements remain fully active:
 14. current models used on historical dates require truthful historical experiment classification
 15. repeated forecasts may require dependency grouping
 16. transparent baselines are first class forecast methods
+17. a local claimed issuance time is insufficient as the sole proof that forecast content existed prospectively
+18. genuine prospective status requires an accepted independent external time anchor under the Genesis protocol
 
 ## Genesis boundary
 
 Forecast Ledger Genesis requires a separate accepted protocol after Forecast Trust Core v0.1 passes implementation and adversarial review.
 
-Genesis must fix its target set, target versions, resolution rules, evidence cutoff policy, issuance cadence, method set, retry policy, correction policy, and initial evaluation plan before the first genuine forecast is issued.
+Genesis must fix its target set, target versions, resolution rules, evidence cutoff policy, issuance cadence, method set, retry policy, correction policy, initial evaluation plan, and at least one accepted low cost external time anchoring mechanism before the first genuine forecast is issued.
 
-No synthetic test fixture or retrospective experiment may be presented as part of prospective Genesis history.
+No synthetic test fixture, locally timestamped object, or retrospective experiment may be presented as part of prospective Genesis history.
 
 ## GKG boundary
 
