@@ -2,445 +2,48 @@
 
 Last updated: 2026-09-11
 
-## Task name
+## Status
 
-Forecast Trust Core v0.1 contracts and deterministic verifier.
+There is no active accepted development task for Psychohistory.
 
-## Goal
+Project status: `ARCHIVED_INACTIVE`.
 
-Implement the minimum machine readable contracts and deterministic verification infrastructure required before Psychohistory can later create a genuine prospective Forecast Ledger Genesis.
+The governing decision is `docs/PROJECT_ARCHIVE_2026_09_11.md`.
 
-This task creates no real forecast, performs no network retrieval, contacts no external timestamp service, resolves no outcome, calculates no performance score, and changes no accepted historical GKG evidence.
+## Execution rule
 
-The purpose is to make future issuance fail closed unless target semantics, resolution semantics, point in time evidence, method identity, run provenance, immutable forecast content, and an independently verifiable prospective time anchor can be bound coherently.
+Do not execute a historical task from Git history, a roadmap, prior issue, prior chat, or older version of this file merely because it was once accepted.
 
-## Strategic asset strengthened
+Substantive work requires a new explicit owner reactivation decision recorded in Psychohistory.
 
-Primary assets:
+Inspection, audit, reproduction, citation, and migration review remain allowed.
 
-1. provenance integrity
-2. prospective longitudinal readiness
-3. trust and comparison infrastructure
-4. low cost durability
+## Superseded active task
 
-## Classification
+Immediately before archiving, the accepted task was Forecast Trust Core v0.1 contracts and deterministic verifier.
 
-Risk: L2 for deterministic implementation under already accepted forecast architecture and schema requirements.
+That task is intentionally not implemented in Psychohistory.
 
-Recommended Codex model: GPT 5.6 Terra High.
+Its reusable requirements have been distilled into `docs/NEW_PROJECT_MIGRATION_PACKET.md` for a clean successor repository.
 
-Escalate to Sol High before implementation continues if execution exposes a new semantic choice that can alter target meaning, resolution meaning, point in time admissibility, trusted root semantics, forecast immutability, correction semantics, prospective anchor semantics, or future scoring eligibility.
+The successor project should independently version and own its implementation, schemas, tests, prospective ledger, time anchors, resolutions, evaluations, and failure records.
 
-Astra is not authorized for routine execution.
+## Historical GKG work
 
-## Authoritative inputs
+Earlier GKG recovery tasks also remain inactive.
 
-Read only what is required, in this order:
+No GKG recovery, independent semantic review, indicator promotion, or source expansion is authorized by this file.
 
-1. `AGENTS.md`
-2. `CURRENT_STATE.md`
-3. `docs/DECISION_2026_09_11_STRATEGIC_REACTIVATION.md`
-4. `docs/DECISION_2026_09_11_PROSPECTIVE_TIME_ANCHOR.md`
-5. `SCIENTIFIC_INVARIANTS.md`
-6. `docs/DEVELOPMENT_GOVERNANCE.md`
-7. `docs/ARCHITECTURE.md`
-8. `docs/FORECAST_ARCHITECTURE_ACTIVATION_2026_09_11.md`
-9. `docs/FORECAST_OUTCOME_EVALUATION_ARCHITECTURE.md`
-10. `docs/GATE7_9_SCHEMA_REQUIREMENTS.md`
-11. `docs/FUTURE_EVALUATION_SAFEGUARDS.md`
-12. `docs/DECISION_2026_09_07_POINT_IN_TIME_EVALUATION.md`
-13. existing repository schema and contract helpers only as implementation conventions require
+## If Psychohistory is ever reactivated
 
-Do not scan GKG studies or historical recovery code unless a shared repository utility must be reused and the reason is documented.
+A future owner decision must first define:
 
-## Scientific invariants
+1. why the work belongs in Psychohistory rather than the successor project
+2. the scientific or preservation objective
+3. the bounded scope
+4. the applicable invariants
+5. acceptance criteria
+6. stop conditions
+7. model and human dependencies
 
-At minimum, enforce the implications of:
-
-1. I1 No future information
-2. I2 Forecast immutability
-3. I3 Versioned semantics
-4. I4 Historical reproducibility
-5. I5 Independent outcome resolution
-6. I6 Evidence traceability
-7. I8 Explicit uncertainty
-8. I9 No silent historical rewrite
-9. I10 Evaluation integrity
-10. I12 Missing evidence cannot be reasoned into existence
-
-## Scope
-
-### 1. Target definition contract
-
-Implement a versioned contract representing at least:
-
-1. `target_id`
-2. `target_version`
-3. forecast class
-4. formal semantics
-5. allowed outcome or category space
-6. geography or entity rule where applicable
-7. reference period and horizon rules
-8. target measurement or source rule
-9. vintage or revision rule where applicable
-10. ambiguity policy
-11. unresolved policy
-12. resolution deadline rule
-13. substantive content hash
-
-The first implementation may support binary and categorical or directional target classes. Continuous targets remain out of scope unless the existing accepted design can support them without introducing new semantics.
-
-### 2. Resolution rule contract
-
-Implement a versioned contract representing at least:
-
-1. `resolution_rule_id`
-2. version
-3. compatible target identities or compatibility contract
-4. source hierarchy
-5. source conflict policy
-6. evidence sufficiency rule
-7. allowed resolution states
-8. vintage selection rule where applicable
-9. resolution deadline
-10. ambiguity and unresolved handling
-11. substantive content hash
-
-The contract must permit explicit unresolved states. It must not silently coerce missing evidence into a resolved negative outcome.
-
-### 3. Point in time evidence snapshot contract
-
-Implement a contract representing or binding at least:
-
-1. snapshot ID
-2. information cutoff
-3. snapshot close or creation time
-4. deterministic member list
-5. source identity for each member
-6. observation, publication, availability, retrieval, or vintage time fields required by the member type
-7. transformation or definition version where derived
-8. content identity or source reference
-9. trusted upstream root or independent authentication reference where needed
-10. snapshot root
-
-The validator must enforce member admissibility against the information cutoff under explicit timestamp semantics.
-
-Do not guess availability when it is unknown. Unknown admissibility must fail issuance validation or remain an explicitly ineligible state under the accepted contract.
-
-### 4. Forecast method contract
-
-Implement a versioned method definition representing at least:
-
-1. method ID and version
-2. method family
-3. compatible forecast classes
-4. required inputs
-5. implementation identity
-6. fitted state reference where applicable
-7. model identity where applicable
-8. prompt or configuration identity where applicable
-9. retrieval and tool policy
-10. randomness and seed policy where applicable
-11. probability and post processing semantics
-12. limitations
-13. substantive content hash
-
-A method that requires fitted state must fail validation when that state is absent.
-
-### 5. Forecast run attempt contract
-
-Implement a record representing at least:
-
-1. attempt ID
-2. method identity
-3. start and end timestamps
-4. information cutoff
-5. input snapshot references
-6. run status
-7. failure or abort reason where applicable
-8. output reference if successful
-9. configuration or seed where applicable
-10. tool or evidence log reference where applicable
-
-Supported terminal states must include:
-
-1. `issued`
-2. `failed_pre_issue`
-3. `aborted_pre_issue`
-4. `invalid_pre_issue`
-
-Retries must require distinct attempt IDs.
-
-### 6. Issued forecast contract
-
-Implement the formal immutable issuance record representing at least:
-
-1. forecast ID
-2. claimed issued timestamp
-3. information cutoff
-4. forecast class
-5. target ID, version, and hash
-6. horizon start and end
-7. geography or entity scope where applicable
-8. probability or categorical distribution
-9. method ID, version, and hash
-10. model or configuration identity where applicable
-11. evidence and feature snapshot roots as applicable
-12. resolution rule ID, version, and hash
-13. code identity where consequential
-14. run attempt reference
-15. substantive content hash
-16. lifecycle status
-
-Validation must enforce:
-
-1. `information_cutoff <= claimed_issued_at`
-2. valid probability semantics
-3. target and horizon compatibility
-4. exact trusted target, method, resolution, and snapshot bindings
-5. successful admissibility verification of the point in time snapshot
-6. valid issued run attempt reference
-7. deterministic substantive content identity
-8. failure on substantive mutation
-
-A locally claimed issuance time is not sufficient evidence of genuine prospective status. Prospective status additionally requires a valid issuance anchor receipt under the accepted Genesis protocol.
-
-### 7. Prospective issuance anchor receipt contract
-
-Implement a provider neutral contract representing at least:
-
-1. anchor receipt ID
-2. anchor scheme and scheme version
-3. forecast substantive content hash or deterministic batch root containing it
-4. external anchor reference or proof material
-5. independently observed or derived anchor time semantics
-6. verification method version where applicable
-7. verification status
-8. proof content identity
-9. delay or finality semantics where relevant
-10. substantive content hash for the receipt itself where applicable
-
-The contract must distinguish local claimed issuance time from external anchor time and finality time when the selected scheme has those concepts.
-
-The current task must support synthetic anchor fixtures for deterministic tests. Synthetic fixtures must be incapable of granting genuine prospective classification.
-
-No real anchor provider is selected or contacted by this task.
-
-### 8. Forecast correction contract
-
-Implement append only correction semantics representing at least:
-
-1. correction ID
-2. original forecast ID
-3. correction timestamp
-4. correction type
-5. reason
-6. affected fields
-7. authority or reviewer reference where applicable
-8. linked corrected metadata or replacement forecast where applicable
-9. future scoring consequence classification
-10. substantive content hash
-
-The original issuance must remain unchanged.
-
-Probability, target, or horizon changes cannot be accepted as ordinary metadata correction.
-
-## Prospective classification rule
-
-The verifier must keep these concepts separate:
-
-1. forecast object is structurally and semantically valid
-2. forecast object is content immutable relative to its trusted root
-3. forecast content has a valid external anchor receipt
-4. anchor semantics establish a qualifying prospective time under a future accepted Genesis protocol
-
-Forecast Trust Core v0.1 may verify the first three properties against synthetic or provider neutral fixtures.
-
-It must not hard code a rule that any arbitrary receipt grants genuine prospective status. Genesis will select the accepted anchor scheme and classification policy separately.
-
-## Trusted root rule
-
-A scientific object cannot authenticate its own upstream semantics merely by repeating a hash inside itself.
-
-The verifier must accept independently supplied trusted definitions or roots for consequential bindings where circular self authentication would otherwise occur.
-
-At minimum, issuance verification must compare the forecast bound target, resolution rule, method, evidence snapshot, and applicable anchor binding against independently supplied or independently authenticated objects.
-
-A test must demonstrate that modifying an upstream object and resealing downstream hashes does not pass when the trusted external root remains unchanged.
-
-## Canonicalization and hashing
-
-Use one deterministic repository documented canonical JSON representation for new forecast trust objects.
-
-Requirements:
-
-1. UTF 8
-2. deterministic key ordering
-3. deterministic separators and newline policy
-4. no wall clock values injected by canonicalization
-5. no random identifiers generated inside validation
-6. substantive content hash excludes its own hash field
-7. hash coverage is explicit per object type
-8. repeated validation of identical bytes and trusted inputs produces identical results
-
-Use SHA 256 unless an existing repository invariant requires another accepted digest.
-
-Do not create a new cryptographic protocol.
-
-## Validation architecture
-
-Prefer small standard library Python modules consistent with the current repository.
-
-Separate:
-
-1. structural contract validation
-2. canonicalization and content identity
-3. cross object referential integrity
-4. point in time admissibility
-5. issuance verification
-6. anchor receipt binding verification
-7. correction verification
-
-Unknown required semantics must fail closed.
-
-Validation errors should be machine readable enough for future audit tooling.
-
-## Fixed output footprint
-
-Create exactly these new files unless a concrete repository constraint requires a documented deviation:
-
-1. `schemas/forecast-target.v1.schema.json`
-2. `schemas/forecast-resolution-rule.v1.schema.json`
-3. `schemas/forecast-method.v1.schema.json`
-4. `schemas/forecast-evidence-snapshot.v1.schema.json`
-5. `schemas/forecast-run-attempt.v1.schema.json`
-6. `schemas/forecast-issuance.v1.schema.json`
-7. `schemas/forecast-issuance-anchor.v1.schema.json`
-8. `schemas/forecast-correction.v1.schema.json`
-9. `scripts/forecast_ledger_contracts.py`
-10. `scripts/verify_forecast_ledger.py`
-11. `scripts/test_forecast_ledger_contracts.py`
-12. `docs/FORECAST_LEDGER_CORE.md`
-
-Existing shared contract helpers may be changed only when necessary for clean reuse and only with regression tests proving existing contracts remain unchanged in meaning.
-
-Do not add a database, web server, workflow, frontend, live model integration, or real anchor integration.
-
-## Required adversarial tests
-
-At minimum test rejection of:
-
-1. duplicate target, method, attempt, forecast, anchor receipt, or correction IDs within a verification package where uniqueness is required
-2. invalid target version or changed target semantic hash
-3. incompatible target and resolution rule
-4. probability outside the allowed range
-5. categorical probabilities that do not satisfy the declared normalization tolerance
-6. invalid horizon
-7. `information_cutoff > claimed_issued_at`
-8. evidence member available after information cutoff
-9. unknown evidence availability required for issuance admissibility
-10. altered evidence snapshot membership
-11. changed method version or fitted state
-12. missing required fitted state
-13. run attempt with a non issued terminal state referenced by an issuance
-14. reused attempt ID for a retry
-15. substantive forecast mutation after issuance
-16. anchor receipt bound to the wrong forecast hash or batch root
-17. synthetic anchor receipt incorrectly granting genuine prospective status
-18. changed anchor proof material with a resealed local receipt
-19. correction timestamp before or equal to issuance when later time is required
-20. probability, target, or horizon mutation disguised as metadata correction
-21. unknown referenced object
-22. independently trusted root mismatch
-23. resealed altered upstream object attempting circular self authentication
-24. nondeterministic canonical output
-25. unsupported required semantic value
-
-Map applicable tests to the accepted FCT, PTI, RES, EVAL, and AI safeguard identifiers where those mappings already exist. Do not invent a new safeguard meaning merely to obtain a complete identifier list.
-
-## Positive fixtures
-
-Tests may create synthetic fixtures under temporary directories.
-
-Synthetic fixtures must be clearly labelled and must never be written into a real prospective ledger or presented as issued forecasts.
-
-No genuine Forecast Ledger Genesis record is created by this task.
-
-## Preservation requirements
-
-Before and after implementation, verify that this task does not modify:
-
-1. frozen GKG samples
-2. GKG evidence artifacts
-3. accepted human review artifacts
-4. accepted historical study outputs
-5. existing scientific invariants
-
-Existing offline tests must continue to pass.
-
-## Acceptance criteria
-
-Accept only if:
-
-1. all eight new contracts are versioned and documented
-2. deterministic canonicalization and SHA 256 identities are implemented
-3. point in time admissibility fails closed
-4. cross object trusted binding is verified independently
-5. issuance mutation is detectable
-6. anchor receipt binding is independently verifiable under provider neutral test semantics
-7. synthetic anchors cannot grant genuine prospective classification
-8. corrections are append only in semantics
-9. all required positive and adversarial tests pass
-10. the complete existing offline test suite passes
-11. repeated runs on identical synthetic fixtures are byte and result deterministic
-12. no real forecast, network action, or external anchor action occurs
-13. no existing historical evidence is modified
-14. `docs/FORECAST_LEDGER_CORE.md` documents trust boundaries, object relationships, prospective classification boundaries, validation entry points, and the exact boundary before Genesis
-
-## Stop conditions
-
-Stop and escalate to Sol High if:
-
-1. implementation requires choosing new target or resolution semantics not already constrained by accepted documents
-2. timestamp semantics are insufficient to determine point in time admissibility
-3. trusted root validation would be circular
-4. content hash coverage is ambiguous for a scientifically consequential field
-5. correction semantics could permit silent forecast rewriting
-6. provider neutral anchor semantics cannot be represented without prematurely selecting a real provider
-7. current accepted forecast architecture and schema requirements materially conflict
-8. a requirement would make retrospective synthetic fixtures indistinguishable from genuine prospective issuance
-9. compatibility with existing contract infrastructure would require weakening existing validation
-10. implementation would need network access, paid infrastructure, a production database, or a real timestamp service
-11. any accepted historical scientific artifact would need reinterpretation or modification
-
-Otherwise complete with Terra High.
-
-## Explicitly out of scope
-
-This task does not authorize:
-
-1. Forecast Ledger Genesis
-2. real forecast issuance
-3. genuine prospective classification
-4. selection of an external anchor mechanism
-5. network timestamp submission
-6. choosing the first target family
-7. external LLM calls
-8. market data subscriptions
-9. outcome resolution
-10. scoring or calibration
-11. failure corpus records
-12. external model leaderboards
-13. GKG recovery
-14. new source family integration
-15. frontend or API development
-16. scheduled production workflows
-17. multi user authentication
-
-## After this task
-
-After acceptance, the next governance task is an adversarial Trust Core review.
-
-Then design a separate Forecast Ledger Genesis protocol that selects a deliberately small set of objectively resolvable, low cost targets, transparent baselines, and at least one accepted low cost external time anchoring mechanism.
-
-The first genuine prospective issuance occurs only after the Genesis protocol is accepted and the chosen anchor path has passed its own verification tests.
+Only then should this file be replaced with a new accepted task contract.
